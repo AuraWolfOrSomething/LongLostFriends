@@ -1,0 +1,29 @@
+## UnknownAge
+???[X]
+
+## HeHim
+He/Him[X]
+
+## SheHer
+She/Her[X]
+
+## TheyThem
+They/Them[X]
+
+## AnyPronouns
+Any[X]
+
+## HeThem
+He/Them[X]
+
+## SheThem
+She/Them[X]
+
+## HeAny
+He/Any[X]
+
+## SheAny
+She/Any[X]
+
+## TheyAny
+They/Any[X]

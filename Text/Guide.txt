@@ -1,0 +1,778 @@
+
+#0x05C9 GuideAdviceHeader
+Advice[X]
+
+## GuideUiHeader
+UI/UX[X]
+
+## GuideStatsHeader
+Stats[X]
+
+## GuideCombatHeader
+Combat[X]
+
+## GuideGoldShopsHeader
+Gold/Shops[X]
+
+## GuideOtherHeader
+Other[X]
+
+## GuideCreditsHeader
+Credits[X]
+
+## GuideAboutTopic
+About: [X]
+
+## PrepScreenGuideText
+Guide[X]
+
+## GuideHeader_HelpText
+Help Text[X]
+
+## GuideEntry_HelpText
+Viewing the help text for...[N]
+- A weapon rank will show the[N]
+unit's current WEXP and the[N]
+WEXP needed to reach the[N]
+next rank.[N]
+- A stat will either show the[N]
+formula for calculating that[N]
+stat or the highest value[N]
+they can have in that stat.[N]
+- A support will show the points[N]
+needed to advance the pair to[N]
+the next rank, the points they[N]
+get each chapter, and the[N]
+benefits they get if they're[N]
+set as an active support.[N]
+- An affinity will show the[N]
+bonuses that it provides.[N]
+- A weapon or tome that cannot[N]
+activate critical hits will show[N]
+their Crit as "--".[N]
+- A character will show their[N]
+current age and their pronouns.[N]
+[N]
+Some "elements" can also have[N]
+multiple pages of help text.[N]
+- Unpromoted playable units[N]
+have their promotion bonus[N]
+information.[N]
+- If a unit has more than one[N]
+effect, such as Rally Mov or[N]
+Sleep, you can cycle through[N]
+the description of each effect.[N]
+- Certain items go more in depth[N]
+on what they do. These items[N]
+will trail off ("...") if another[N]
+page exists.[N][N]
+Press "A" to read the next page.[N]
+It will automatically loop if[N]
+you've reached the last[N]
+page of information.[N]
+Note that these additional[N]
+pages can only be read:[N]
+- On the unit stat screen[N]
+- While at a shop/previewing one[N]
+- After selecting "Item",[N]
+"Attack", or "Staff"[X]
+
+## GuideHeader_AiToggle
+AI Toggle[X]
+
+## GuideEntry_AiToggle
+Selecting this option will[N]
+display an enemy/NPC's AI[N]
+on the minimug box instead[N]
+of their name.[N][N]
+During Preparations, this[N]
+option is available after[N]
+selecting "Check Map".[X]
+
+## GuideHeader_Plan
+Plan[X]
+
+## GuideEntry_Plan
+Selecting this command will[N]
+grant you the ability to[N]
+move and act with any unit.[N]
+This includes units that[N]
+have already acted and[N]
+units that belong to other[N]
+factions.[N]
+Units can be moved to tiles[N]
+normally not accessible,[N]
+whether that's due to terrain,[N]
+being out of range, or both.[N]
+Player phase won't automatically[N]
+end after all units have moved,[N]
+but you can still end the turn[N]
+with the "End" command.[N][N]
+While planning is on, no[N]
+permanent progress can be[N]
+made. This means that:[N]
+- Suspend data will not update[N]
+to match the state of the[N]
+chapter during planning.[N]
+- Fulfilling the win condition(s)[N]
+will not end the chapter.[N]
+- Fulfilling the lose condition(s)[N]
+will not trigger a Game Over.[N][N]
+While planning is on, two new[N]
+commands are available in[N]
+the map menu:[N]
+- Future: This will advance the[N]
+current turn number to the next[N]
+turn where an event happens,[N]
+such as reinforcements.[N]
+- Act: This will reset the[N]
+chapter to the state it was[N]
+in before planning started.[X]
+
+## GuideHeader_RecruitInfo
+Recruitment Information[X]
+
+## GuideEntry_RecruitInfo
+If an enemy or NPC can be[N]
+recruited or is related to[N]
+another unit's recruitment,[N]
+the third page of the[N]
+stat screen will reveal[N]
+information about it.[X]
+
+## GuideHeader_LButtonCycling
+L Button Cycling[X]
+
+## GuideEntry_LButtonCycling
+If the cursor is on an enemy[N]
+or NPC, you can go to the[N]
+next unit in that faction[N]
+by pressing "L".[X]
+
+## GuideHeader_Skl
+Skill (Skl)[X]
+
+## GuideEntry_Skl
+For every point of Skl:[N]
+- If the wielded weapon has[N]
+any Crit, it's increased by[N]
+an additional 0.5.[N]
+If a unit has 20+ Skl, they[N]
+receive more benefits.[N]
+- They can use weapons, tomes,[N]
+and staves one rank higher than[N]
+the user's rank.[N]
+They still need at least an E[N]
+rank to use E rank items.[N]
+- The AS penalty from Wt is[N]
+reduced by Skl-20.[X]
+
+## GuideHeader_AS
+Attack Speed (AS)[X]
+
+## GuideEntry_AS
+For every point of AS,[N]
+Avoid is increased by 1.5.[N]
+(Down from 2)[N]
+The AS penalty from Wt can[N]
+be further reduced by Skl-20.[X]
+
+## GuideHeader_TomeRange
+Tome Range[X]
+
+## GuideEntry_TomeRange
+There are some tomes that[N]
+have 1-2 range, but most of[N]
+them sacrifice that flexibility[N]
+in exchange for another benefit.[N]
+Keep an eye on what your magic[N]
+units have equipped if they'll[N]
+be exposed on enemy phase![X]
+
+## GuideHeader_Fatigue
+Fatigue/Fatigue Restoration[X]
+
+## GuideEntry_Fatigue
+Fatigue (Ftg) is a stat that[N]
+increases by 1 every time[N]
+a unit...[N]
+- Enters combat, whether the[N]
+attacker or the defender.[N]
+- Uses a staff. The staff's[N]
+rank doesn't affect this.[N]
+- Steals, dances, or summons.[N]
+There is no direct penalty for[N]
+a unit having more/less Ftg.[N]
+The cap for all units is 30.[N][N]
+Fatigue Restoration (Frs) is a[N]
+stat that controls how much Ftg[N]
+is restored when the unit is[N]
+not deployed for one chapter.[N]
+This is the only way to lower Ftg.[N]
+The stat is different for each[N]
+character, but most have a[N]
+value in the range of 5-10.[X]
+
+## GuideHeader_RbtNoc
+Noc/Rbt[X]
+
+## GuideEntry_RbtNoc
+The number of undeployed[N]
+chapters (Noc) shown on[N]
+Page 3 caps at 3 chapters.[N]
+Once a unit is deployed, their[N]
+Noc will be set to 0.[N]
+When a unit gains experience,[N]
+they'll gain additional EXP[N]
+based on their Noc.[N]
+- Noc 1 or 2 = 25% more[N]
+- Noc 3 = 50% more[N][N]
+The Rested Bonus Threshold[N]
+(Rbt) is a stat equal to the[N]
+unit's HP/3.[N]
+If a unit has Fatigue less than[N]
+or equal to their Rbt, they[N]
+will get stat boosts equal to[N]
+their Noc for the entire chapter.[N]
+(Noc of 1 = +1; 2 = +2; 3 = +3)[N]
+The stats boosted are Pow,[N]
+Skl, Spd, Lck, Def, and Res.[X]
+
+## GuideHeader_StaffStats
+Staff Stats[X]
+
+## GuideEntry_StaffStats
+Staff Healing is now based[N]
+on the user's Resistance[N]
+instead of their Power.[N]
+Staff Hit is always 100.[X]
+
+## GuideHeader_LevelingUp
+Level Up Gains[X]
+
+## GuideEntry_LevelingUp
+When finalizing a level up,[N]
+the unit's stats will be[N]
+compared to their expected[N]
+averages at the same level.[N][N]
+If a stat is at +2 and would[N]
+increase, another RN is used[N]
+for a final result.[N]
+If a stat is at -2 and wouldn't[N]
+increase, another RN is used[N]
+for a final result.[N]
+Stats (normally) cannot deviate[N]
+beyond +/- 3.[N][N]
+If a unit's net deviation from[N]
+their averages is less than 1[N]
+and their current level up[N]
+increases less stats than[N]
+expected (total growths/100),[N]
+the lowest deviated stat is[N]
+increased (random if tied).[N]
+This process will repeat until[N]
+the level up has gains equal[N]
+to the expected amount.[X]
+
+## GuideHeader_StatCaps
+Stat Caps[X]
+
+## GuideEntry_StatCaps
+Units may have an additional[N]
+modifier to their class's cap.[N]
+These cap modifiers only exist[N]
+for Pow, Skl, Spd, Def, and Res.[X]
+
+## GuideHeader_GlancingBlows
+Glancing Blows[X]
+
+## GuideEntry_GlancingBlows
+If a unit would miss an attack[N]
+due to the 2 RNs, the attack is[N]
+rerolled with 1 RN.[N]
+If this attack now hits,[N]
+it does half damage.[X]
+
+## GuideHeader_WeaponTriangle
+Weapon Triangle (3 mt, 15 hit)[X]
+
+## GuideEntry_WeaponTriangle
+The effect on Mt is now +/- 3[N]
+(Up from +/- 1).[N]
+The effect on Hit is still +/- 15.[N]
+The Magic Triangle also[N]
+uses these values.[X]
+
+## GuideHeader_Terrain
+Terrain[X]
+
+## GuideEntry_Terrain
+Certain terrain has been buffed.[N]
+Res bonuses match Def bonuses.[X]
+
+## GuideHeader_WEXP
+WEXP[X]
+
+## GuideEntry_WEXP
+Followup/double attacks no[N]
+longer give additional WEXP.[N]
+Additionally, defeating an enemy[N]
+doesn't double the WEXP gained.[X]
+
+## GuideHeader_CriticalHits
+Critical Hits[X]
+
+## GuideEntry_CriticalHits
+If the wielded weapon has any[N]
+crit, Skl increases the unit's[N]
+critical hit rate by an[N]
+additional 0.5 per Skl point.[N][N]
+The multiplier for a Critical[N]
+Hit is now dependent on the[N]
+net crit in battle.[N]
+1% to 9% crit: 1.5x damage[N]
+10% to 19% crit: 2.0x damage[N]
+20% to 29% crit: 2.5x damage[N]
+30% and above: 3.0x damage[N][N]
+If a unit wielding a killer weapon[N]
+is calculated to land an attack[N]
+on their enemy, as long as they:[N]
+   1. Have at least 4 more Skl[N]
+       than their enemy[N]
+   2. Have a net crit above 0[N]
+... then the hit is guaranteed[N]
+to be a Critical Hit.[X]
+
+## GuideHeader_Effectiveness
+Effectiveness[X]
+
+## GuideEntry_Effectiveness
+If not specified, Bows have a Mt[N]
+multiplier of x3 when calculating[N]
+damage dealt on a flying unit.[N][N]
+Some weapons receive a Might[N]
+penalty if the wielder's foe[N]
+isn't weak to the weapon.[N]
+The weapon's description will[N]
+specify if it receieves one.[X]
+
+## GuideHeader_WeaponRank
+Weapon Rank Bonuses[X]
+
+## GuideEntry_WeaponRank
+Having an S rank in a weapon[N]
+or magic type will augment the[N]
+unit when they use that type.[N]
+They receive +3 Atk, +15 Hit,[N]
++15 Staff Hit, and deal +5[N]
+Staff Healing.[N]
+These buffs are nullified if[N]
+the user has WTD against[N]
+their enemy.[X]
+
+## GuideHeader_Bargains
+Bargains[X]
+
+## GuideEntry_Bargains
+Above the preparations shop's[N]
+usual merchandise is a[N]
+limited stock of items that[N]
+changes after each chapter.[N]
+These items can only be bought[N]
+once; the price of the item will[N]
+display as 0 to show you've[N]
+already purchased the item.[X]
+
+## GuideHeader_Coupons
+Coupons[X]
+
+## GuideEntry_Coupons
+These one-use items lower[N]
+the next purchase of an item[N]
+by 50% and don't stack with[N]
+any other discount.[N]
+If you don't want to use[N]
+the coupon on a purchase,[N]
+trade it away or make the[N]
+purchase with another unit.[X]
+
+## GuideHeader_SellWisely
+"Sell Wisely"[X]
+
+## GuideEntry_SellWisely
+While there are situations to get[N]
+additional gold, there are no[N]
+items that only exist to be sold.[N]
+If you need additional gold,[N]
+you'll have to pick something[N]
+to sell. Choose wisely![X]
+
+## GuideHeader_ReinforceWarn
+RW Toggle[X]
+
+## GuideEntry_ReinforceWarn
+By default, this option is on.[N]
+This toggle decides whether or[N]
+not to display reinforcement[N]
+warnings to you.[N]
+One turn before reinforcements[N]
+appear, the cursor will reveal[N]
+where they will spawn.[N]
+Shortly after that, there will[N]
+be a hint on what kind of class[N]
+to expect.[N]
+If you want more information[N]
+about an incoming wave, use[N]
+the "Plan" command, then[N]
+the "Future" command.[N][N]
+During Preparations, this[N]
+option is available after[N]
+selecting "Check Map".[X]
+
+## GuideHeader_TradeGiveTake
+Trade/Give/Take[X]
+
+## GuideEntry_TradeGiveTake
+Trade, Give, and Take can[N]
+be done more than once[N]
+on a unit's turn.[N]
+These actions will still[N]
+"lock" the unit into their[N]
+current position.[X]
+
+## GuideHeader_Experience
+Experience[X]
+
+## GuideEntry_Experience
+Combat experience is affected[N]
+by unit level more.[N]
+Promoted classes don't alter[N]
+the experience gained as much[N]
+for either combatant.[N][N]
+Units that don't have any[N]
+weapon ranks gain 20 EXP[N]
+for surviving a fight.[N][N]
+Staff experience is overall[N]
+higher compared to FE8.[N]
+For example, Heal provides[N]
+15 EXP (Up from 11)[N]
+and Mend provides[N]
+20 EXP (Up from 12).[N][N]
+Steal, Dance, and Summon[N]
+each provide 20 EXP.[N]
+Stealing certain items will[N]
+instead provide 30 EXP.[N]
+These items are as follows:[N]
+  - Gems[N]
+  - Promotion Items[N]
+  - Elixir[N]
+  - Perfectus[X]
+  
+## GuideHeader_Reorganize
+Reorganize[X]
+
+## GuideEntry_Reorganize
+The Reorganize ("Reorg")[N]
+command moves items up in[N]
+a unit's inventory.[N]
+This is useful if a promoted[N]
+unit has multiple gems, as[N]
+only the top most gem will[N]
+provide its benefits.[N]
+If a unit reorganizes, they[N]
+can still return to their[N]
+previous position as if they[N]
+hadn't moved, just like[N]
+equipping a weapon or tome.[X]
+
+## GuideHeader_Stealing
+Stealing[X]
+
+## GuideEntry_Stealing
+Units with the Cunning skill[N]
+have the ability to steal items.[N]
+They can steal even if their[N]
+inventory is full and/or if[N]
+their target is faster.[N][N]
+(TO BE IMPLEMENTED)[N]
+If their target is asleep, [N]
+their weapons, tomes, and[N]
+staves can be stolen.[X]
+
+## GuideHeader_PostMapConvoySend
+Post-Map Convoy Sending[X]
+
+## GuideEntry_PostMapConvoySend
+At the end of the chapter,[N]
+recruited units that have[N]
+died will have their[N]
+inventories sent to the convoy,[N]
+unless the convoy is full or[N]
+not present with the party.[X]
+
+## GuideEntry_PostMapConvoySendCapture
+At the end of the chapter,[N]
+recruited units that have[N]
+died and enemies that are[N]
+still captured will have their[N]
+inventories sent to the convoy,[N]
+unless the convoy is full or[N]
+not present with the party.[X]
+
+## GuideHeader_Supports
+Supports[X]
+
+## GuideEntry_Supports
+Support points are gained for[N]
+all available units at the[N]
+end of the chapter.[N]
+If both units are deployed,[N]
+they get 100% more points.[N]
+If both units aren't deployed,[N]
+they get 50% more points.[N][N]
+Units can reach A rank with[N]
+all of their support partners,[N]
+but only one support can be[N]
+active for a unit.[N]
+The active support can be[N]
+changed during Preparations.[N]
+When active, the units must be[N]
+within 3 tiles to receive the[N]
+benefits of their relationship.[N][N]
+If a unit unlocks a paired ending,[N]
+it can be set by pressing "A" on[N]
+the relevant unit while they're[N]
+set as the active support.[N][N]
+Please note that there may be a[N]
+small visual glitch after setting[N]
+a support as active; it will fix[N]
+itself after leaving the page.[X]
+
+## GuideHeader_Affinities
+Affinities[X]
+
+## GuideEntry_Affinities
+Fire: +0.5 Atk, +0.2 Def,[N]
+       +2.5 Crit[N]
+Thunder: +0.2 Atk, +0.2 Def,[N]
+              +2.5 Crit, +5 Dodge[N]
+Wind: +0.2 Atk, +0.2 Def,[N]
+        +3.5 Hit, +2.5 Avoid[N]
+Ice: +0.2 Atk, +0.5 Def,[N]
+      +5 Dodge[N]
+Dark: +0.5 Atk, +0.2 Def,[N]
+         +2.5 Avoid[N]
+Light: +0.2 Atk, +0.5 Def,[N]
+         +3.5 Hit[N]
+Anima: +0.5 Atk, +0.5 Def[N]
+Life: +0.5 Atk, +0.5 Def[N]
+        +3.5 Hit, +2.5 Avoid,[N]
+        +2.5 Crit, +5 Dodge[X]
+
+## GuideHeader_Effects
+Status Effects[X]
+
+## GuideEntry_Effects
+The duration on statuses,[N]
+debuffs, and buffs decreases[N]
+for all the units of a faction[N]
+at the end of that faction's[N]
+phase, instead of at the[N]
+beginning of their phase.[X]
+
+## GuideHeader_RnRandomizer
+RN Randomizer[X]
+
+## GuideEntry_RnRandomizer
+Random numbers are "burned"[N]
+constantly, even at times[N]
+that they aren't needed.[N]
+Frame perfect play is required[N]
+to achieve a specific set of[N]
+assumed outcomes.[X]
+
+## GuideHeader_McVicar
+McVicar[X]
+
+## GuideEntry_McVicar
+McVicar, a Fosrelian Sniper,[N]
+can be recruited by impressing[N]
+him three times.[N]
+This is a process that takes[N]
+multiple chapters to complete.[N]
+There are a total of six[N]
+opportunities to impress him.[N]
+The second McVicar entry[N]
+goes over these specific[N]
+instances in-depth.[N]
+After the third success,[N]
+the last step is to talk[N]
+to McVicar with Zoren.[N][N]
+McVicar must survive in any[N]
+chapter that he's present in,[N]
+or else he won't show up[N]
+in the future.[N]
+Additionally, McVicar will be[N]
+hired to kill specific bosses.[N]
+Such bosses must be defeated[N]
+before McVicar can do so.[N]
+If a boss is defeated[N]
+before he even appears on[N]
+the map, it will count.[N]
+Remember, you can view[N]
+Page 3 of the Stat Screen[N]
+if you wish to learn if a[N]
+certain boss is related[N]
+to McVicar's recruitment.[X]
+
+## GuideHeader_McVicar2
+McVicar (2)[X]
+
+## GuideEntry_McVicar2
+When reading coordinates,[N]
+(0,0) is the top left[N]
+corner of the map.[N][N]
+Note: It isn't possible to[N]
+complete McVicar's recruitment[N]
+in this current patch.[N][N]
+Chapter 4[N]
+Defeat Artus[N]
+McVicar shows up on[N]
+Turn 8 at (0,3)[X]
+
+## GuideHeader_Promoting
+Promoting[X]
+
+## GuideEntry_Promoting
+Units that promote keep their[N]
+Lv in their new class.[N]
+Furthermore, promoted units[N]
+can reach Lv 25.[N][N]
+There are several types of[N]
+promotion items.[N][N]
+Master Seals can be used by[N]
+any unpromoted unit that is[N]
+at least Level 10.[N][N]
+The Late Crest can only be[N]
+used by an unpromoted unit that[N]
+is Level 20, but it is reusable.[N][N]
+Vulnerable Bolts can only be[N]
+used by unpromoted units that[N]
+either wield a bow or staff,[N]
+or are in the "Thief" class.[X]
+
+## GuideHeader_Capture
+Capture[X]
+
+## GuideEntry_Capture
+Specific enemies can be[N]
+captured by your units.[N]
+A unit with a 1 range weapon[N]
+can try to capture an adjacent[N]
+enemy if they have enough Aid.[N]
+The unit attempting to capture[N]
+has their Pow/Skl/Spd reduced[N]
+by 50% for that battle.[N]
+If the enemy is defeated, they[N]
+are rescued by the unit[N]
+that defeated them.[N]
+Unless the enemy is dropped,[N]
+you can trade with them.[X]
+
+## GuideHeader_Credits
+Credits[X]
+
+## GuideEntry_Credits
+A more comprehensive list can[N]
+be found in the same folder[N]
+that this patch is in.[N]
+If you are not on either[N]
+list, but there is something[N]
+included that was made by you,[N]
+made by you, please notify me[N]
+on the FEU thread.[N]
+Also, if you would liked to be[N]
+credited under a different name,[N]
+feel free to let me know![N]
+[N]
+--- Creator ---[N]
+Aura Wolf[N]
+[N]
+--- Engine Hacks ---[N]
+2WB[N]
+7743[N]
+aera[N]
+Agro[N]
+Brendor[N]
+circleseverywhere[N]
+Colorz[N]
+Datagne[N]
+Gryz[N]
+Hextator[N]
+hypergammaspaces[N]
+Kenpuku[N]
+Kirb[N]
+Lord Reyson[N]
+nat[N]
+Nintenlord[N]
+Pikmin1211[N]
+Sme[N]
+Snek[N]
+Teraspark[N]
+Tequila[N]
+TR143[N]
+Vennobennu[N]
+Vesly[N]
+Zane[N]
+[N]
+--- Portraits ---[N]
+Alusq[N]
+CapibaraInSpace[N]
+LaurentLacroix[N]
+Levin64[N]
+SSHX[N]
+Sterling_Glovner[N]
+WAve[N]
+[N]
+--- Weapon Icons ---[N]
+Beansy[N]
+EldritchA[N]
+Indogutsu Tenbuki[N]
+Lord Glenn[N]
+SMITHYGCN[N]
+[N]
+--- Map Sprites ---[N]
+Alusq[N]
+flasuban[N]
+MeatOfJustice[N]
+[N]
+--- Class Cards ---[N]
+flasuban[N]
+Rasdel[N]
+[N]
+--- Animations ---[N]
+Alfred Kamon[N]
+Alusq[N]
+Asael[N]
+Leo_link[N]
+Marlon0024[N]
+MeatOfJustice[N]
+Mikey Seregon[N]
+Primefusion[N]
+Spud[N]
+TheBlindArcher[N]
+[N]
+--- Other Graphics ---[N]
+Alusq[N]
+Black Mage[N]
+Blaze[N]
+Kirb[N]
+Monkeybard[N]
+Pikmin1211[N]
+Zaim[N]
+[N]
+--- Music ---[N]
+Alusq[N]
+Pikmin1211[N]
+Scraiza[N]
+[X]

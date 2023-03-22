@@ -1,0 +1,694 @@
+
+## Ch3ZorenIntro1
+[OpenFarLeft][LoadOldMan]
+[OpenLeft][LoadOldWoman]
+[OpenMidRight][LoadZoren][ToggleSmile]
+We've taken care of the bandits,[N]
+so we'll be off now.[A]
+
+[OpenLeft]
+Thank you so much, Zoren![AN]
+We're sorry we didn't keep a[N]
+closer eye on the young one.[A]
+
+[OpenMidRight][ToggleSmile]
+Don't worry, there's not much[N]
+that could've stopped him.[AN]
+He's a stubborn lad, I'm afraid.[AN]
+[ToggleSmile]Anyways, you two take care[N]
+of yourselves, alright?[A]
+
+[OpenLeft]
+We should be the ones[N]
+saying that![AN]
+Good luck![A]
+
+[OpenFarLeft]
+Make sure our boy comes home.[AN]
+But don't push yourselves too hard.[A]
+[X]
+
+## Ch3DavisIntro1
+[OpenFarRight][LoadDavis]
+Whew, that's the last[N]
+of my coin.[AN]
+[OpenFarRight][MoveFarRight][ToggleSmile]
+Hey, that's soaring[Beat][N]
+that's Zoren![A]
+[X]
+
+## Ch3DavisIntro2
+
+[OpenMidLeft][LoadZoren]
+[OpenFarRight][LoadDavis]
+[OpenFarRight][MoveMidRight]
+[OpenMidRight][ToggleSmile]
+So, what's the plan,[N]
+boss man?[A][ToggleSmile]
+
+[OpenMidLeft]
+[Beat]Just Zoren is fine.[AN]
+It doesn't look like my[N]
+friend's in [TR]Lor Mova[TR],[AN]
+so I'll be continuing my[N]
+search in [TR]Argustia[TR].[A]
+
+[OpenMidRight][MoveRight]
+[OpenRight][MoveMidRight]
+[OpenMidRight][MoveMidRight][ToggleSmile]
+Never fear![AN]
+With a pair of eyes like mine,[AN]
+and a pair of men like us,[AN]
+it won't[Beat]it won't take long[N]
+at all![A][ToggleSmile]
+
+[OpenMidLeft]
+You don't have anything else to do?[AN]
+You[Beat]seem to be having a lot of fun[N]
+already, here in town.[A]
+
+[OpenMidRight][MoveMidRight][ToggleSmile]
+Oh, don't be silly![AN]
+A great vendor[Beat]great adventure across[N]
+the sea is just what I need![AN]
+You know, I could use some friends that'll[N]
+remember me when I'm gone, you know?[AN]
+So, what are we doing today?[A][ToggleSmile]
+
+[OpenMidLeft]
+Davis, we're[TMM]--[TMM][A]
+
+[OpenMidRight][MoveFarRight]
+[OpenFarRight][MoveFarRight]
+Wait[Beat]is that more hold[Beat][N]
+more gold in my pocket?[AN]
+[OpenFarRight][MoveFarRight][ToggleSmile]
+Perfect![AN]
+I've got enough for one[N]
+last drink![A]
+[X]
+
+## Ch3ZorenIntro2
+
+[OpenMidLeft][LoadZoren]
+[OpenMidRight][LoadIris]
+
+[OpenMidLeft][ToggleSmile]
+Sir Iris, I'll be heading back[N]
+to Port Atelier.[AN]
+I should be able to retrace my steps,[N]
+so[Beat]I guess this is farewell.[AN]
+What will you do, if I may ask?[A][ToggleSmile]
+
+[OpenMidRight]
+Based on what you just said,[N]
+I'm going to Port Atelier.[A]
+
+[OpenMidLeft]
+Oh, you're sticking around?[A]
+
+[OpenMidRight]
+I don't see why not.[A]
+
+[OpenMidLeft]
+[Beat]Back in [TR]Argustia[TR], it's true that you[N]
+said you'd make sure I'd reunite with him.[AN]
+However, we also thought he'd be in[N]
+[TR]Lor Mova[TR].[AN]
+I don't think it's fair to hold you to your word,[N]
+when it was made with a faulty assumption.[AN]
+Besides, you have your duties to attend[N]
+to, right?[AN]
+Maybe Prince Orland has recovered[N]
+enough to[TMM]--[TMM][A]
+
+[OpenMidRight]
+Zoren, he is[Beat]no longer[N]
+mine to protect.[AN]
+Didn't I tell you that?[A]
+
+[OpenMidLeft]
+This is my first[N]
+time hearing it.[A]
+
+[OpenMidRight]
+Well, that's the reality[N]
+we live in.[AN]
+Once I was well enough to[N]
+move, I resigned.[AN]
+I am[Beat]no longer bound to[N]
+duties that I can't fulfill.[A]
+
+[OpenMidLeft]
+Sir Iris[Beat][A]
+
+[OpenMidRight]
+So, are there preparations[N]
+to be made here in town,[AN]
+or are we leaving now?[A]
+
+[OpenMidLeft]
+[Beat]We're leaving.[AN]
+If [TR]Pyrus[TR] isn't here, I don't feel any[N]
+need to prolong our stay in [TR]Lor Mova[TR].[AN]
+I'll go gather everyone.[A]
+
+[OpenMidRight]
+Understood.[A]
+[X]
+
+## Ch3DavisIntro3
+[OpenMidRight][LoadIris]
+
+[OpenFarFarLeft][LoadZoren][MoveFarLeft]
+[OpenFarLeft]
+Actually, could you get Davis?[AN]
+He went into the tavern.[AN]
+It's not his first visit today.[A]
+
+[OpenMidRight][ToggleSmile]
+Heh.[AN]
+Leave him to me.[A]
+[X]
+
+## Ch3ZorenIntro3
+
+[OpenMidLeft][LoadZoren]
+[OpenMidRight][LoadGrace][ToggleSmile]
+Welcome to Port Atelier![AN]
+You must be Zoren.[A]
+
+[OpenMidLeft][ToggleSmile]
+I am.[AN]
+And you are[Beat]?[A]
+
+[OpenMidRight][ToggleSmile]
+Grace, sir.[AN]
+Sir Gert told me to accompany[N]
+you for your help, as of late.[A]
+
+[OpenMidLeft][ToggleSmile]
+I see.[AN][ToggleSmile]
+Another reason to give[N]
+him my thanks.[A]
+
+[OpenMidRight]
+I've found a ship that can take[N]
+us to [TR]Argustia[TR].[AN]
+With a group of this size, the[N]
+captain said it'll work just fine.[A]
+
+[OpenMidLeft]
+Greeting us here was enough already, but[N]
+are you sure you want to leave [TR]Lor Mova[TR]?[A]
+
+[OpenMidRight]
+There's a friend I want to see.[AN]
+Currently, she's stationed in [TR]Argustia[TR].[AN]
+It's a very convenient opportunity,[N]
+don't you think?[A]
+
+[OpenMidLeft]
+Ah, it's important to keep[N]
+up with friends.[AN]
+I, of all people, can't argue[N]
+against that.[AN]
+Welcome aboard, Grace.[AN]
+Now then, what's the cost[N]
+of the voyage?[A]
+
+[OpenMidRight]
+Sir Gert has taken care of that.[AN]
+Some small compensation and[N]
+a letter did the trick.[A]
+
+[OpenMidLeft][ToggleSmile]
+Is that so?[AN]
+Gert's helped me enough,[N]
+but this, too?[A]
+
+[OpenMidRight][ToggleSmile]
+He didn't think you'd[N]
+accept it in person,[AN]
+so he decided to do it[N]
+in this manner.[A][ToggleSmile]
+
+[OpenMidLeft]
+How sharp of him.[AN]
+No matter, there's no[N]
+refusing it now.[AN][ToggleSmile]
+Please introduce me to[N]
+the captain.[A]
+
+[OpenMidRight]
+Of course.[AN]
+It's possible he's still checking[N]
+the ship's inventory,[AN]
+so be mindful of where you are.[A]
+[X]
+
+## Ch3Intro1
+[OpenMidLeft][LoadAugustus]
+[OpenMidRight][LoadEnemySoldier]
+
+[OpenMidLeft]
+[Beat]A party of six, you say?[A]
+
+[OpenMidRight]
+Yes, Commander Augustus![AN]
+Once I noticed one of them was a knight,[AN]
+I figured they'd surrender if we took a[N]
+few of his friends.[AN]
+
+[OpenMidLeft]
+Were they well-armed?[AN]
+Trained?[A]
+
+[OpenMidRight]
+I think they'll make good[N]
+combatants, sir.[AN]
+They took a few of us out[N]
+before they surrendered,[AN]
+and only one of them was[N]
+completely defenseless.[A]
+
+[OpenMidLeft]
+I suppose we'll see[N]
+soon enough.[AN]
+Good work, Captain.[AN]
+You are dismissed.[A]
+
+[OpenMidRight]
+Thank you, sir![A]
+
+[ClearFace]
+[OpenMidLeft][ClearFace]
+
+[OpenMidLeft][LoadEnemySoldier]
+[OpenMidRight][LoadAugustus]
+
+It's been a while since we've[N]
+had this many captives.[AN]
+Make sure all of our prisoners[N]
+are fit for tomorrow's fight.[A]
+
+[OpenMidLeft]
+Yes, sir![A]
+[X]
+
+## Ch3Intro2
+[OpenFarLeft][LoadEnemySoldier][MoveMidLeft]
+[OpenMidLeft][MoveMidLeft]
+Listen up, scum![AN]
+Bet you're feeling pretty[N]
+miserable right now, huh?[AN]
+Thinking about how much you[N]
+wanna leave your tiny cell?[AN]
+[CloseSpeechSlow]
+[OpenMidLeft][MoveLeft]
+[OpenLeft]
+If so, then I've got great news![AN]
+You get to fight for your freedom![AN]
+Commander Augustus only releases the[N]
+best and most entertaining prisoners,[AN]
+so don't think about holding back![AN]
+Your first fight is tomorrow,[N]
+so eat up and rest well tonight![A]
+[ClearFace]
+
+[StopForEvents]
+
+[OpenLeft][LoadColette]
+[OpenFarRight][LoadMyra]
+
+[OpenLeft][MoveRight]
+[OpenRight]
+[Beat]Entertaining?[A]
+
+[OpenFarRight]
+We're probably up against[N]
+other prisoners.[A]
+
+[OpenRight]
+Wait[Beat]does that mean Sir[N]
+Lorrand and the others are[Beat][A]
+
+[OpenFarRight]
+I don't know.[AN]
+I[Beat] I don't want to[N]
+think about it[Beat][A]
+
+[OpenRight]
+Oh, Myra, I think I'm[N]
+gonna be sick[Beat][A]
+
+[OpenFarFarLeft]
+[Beat][A]
+[CloseSpeechSlow]
+
+[StopForEvents]
+
+[OpenFarFarLeft]
+Eat that.[AN]
+It should keep[N]
+you at ease.[AN]
+I don't need it.[A]
+
+[OpenRight][ClearFace]
+[OpenRight][LoadColette][MoveLeft]
+[OpenLeft][MoveLeft][ToggleSmile]
+Oh, thank you, Mister[Beat]?[A]
+
+[OpenFarFarLeft]
+Percy.[AN]
+Don't mention it.[A][ToggleSmile]
+
+[OpenFarRight]
+Colette![A]
+
+[OpenLeft][ClearFace]
+[OpenLeft][LoadColette]
+I trust him, Myra.[AN]
+I don't know why,[N]
+but I can't help it.[A]
+
+[OpenFarFarLeft]
+[Beat]Don't get too attached to me.[AN]
+I imagine I'll be fighting you tomorrow.[AN]
+Take solace in this, however.[AN]
+They won't separate you from your friends.[A]
+
+[OpenFarRight]
+How do you know that?[A]
+
+[OpenFarFarLeft]
+[Beat]Are you sure you want to know?[A]
+
+[OpenFarRight]
+[Beat]Perhaps I shouldn't pry.[A]
+
+[OpenFarFarLeft]
+Smart.[AN]
+Just know that it[N]
+doesn't happen anymore.[A]
+[CloseSpeechSlow]
+
+[OpenLeft][ClearFace]
+[OpenFarRight][ClearFace]
+
+[OpenMidLeft][LoadVivian]
+[OpenMidRight][LoadLorrand]
+
+[OpenMidLeft]
+Sir Lorrand?[A]
+
+[OpenMidRight]
+What's on your mind, Vivian?[A]
+
+[OpenMidLeft]
+There must be something we can do to[N]
+avoid these kinds of situations, right?[A]
+
+[OpenMidRight]
+Well, we'd be foolish to expect rainbows[N]
+and sunshine traveling across [TR]Tricinia[TR], no?[AN]
+I hope you knew the risks when you agreed[N]
+to join up.[A]
+
+[OpenMidLeft]
+Even so, surely there's still room[N]
+for improvement on our end.[AN]
+Despite our set route, there must[N]
+be something we can try.[AN]
+Something more specific than "being[N]
+more cautious".[A]
+
+[OpenMidRight]
+Hmm[Beat][A]
+
+[OpenMidLeft]
+Perhaps I'm being too optimistic.[AN]
+I still don't know much about strategy,[N]
+but back in the castle,[AN]
+I was always amazed at what people would[N]
+come up with at the war meetings.[AN]
+I never really considered what made some[N]
+suggestions feasible and others impossible.[A]
+
+[OpenMidRight]
+[Beat]Well, whenever we see this kind[N]
+of formation, we could try[Beat][A]
+[CloseSpeechSlow]
+
+[OpenMidLeft][ClearFace]
+[OpenMidRight][ClearFace]
+
+[OpenMidLeft][LoadShana]
+[OpenMidRight][LoadRivia]
+
+[OpenMidLeft]
+How are you holding up, Rivia?[AN]
+You've hardly eaten.[A]
+
+[OpenMidRight]
+I'll manage.[AN]
+I've just been thinking[N]
+about asking you something.[A]
+
+[OpenMidLeft]
+Please, ask away.[A]
+
+[OpenMidRight]
+How do you[Beat]find peace[N]
+at a time like this?[AN]
+Being here is[Beat]unsettling.[AN]
+Never been a prisoner before.[AN]
+But you don't seem to be[N]
+bothered by all of this.[A]
+
+[OpenMidLeft]
+There's only so much we can control.[AN]
+Dwelling on things outside of our[N]
+power is[Beat]fairly miserable.[AN]
+We don't have freedom, but we do[N]
+have food and bedding.[A]
+
+[OpenMidRight]
+[Beat][A]
+
+[OpenMidLeft]
+It's true that things will probably[N]
+get worse if we don't escape.[AN]
+Even still, we were taken alive.[AN]
+It means we have a chance to get[N]
+out of this awful situation.[AN]
+It's up to us to count the[N]
+blessings we're given.[A]
+
+[OpenMidRight]
+I see.[AN]
+I'll try to be[N]
+more positive.[A]
+
+[OpenMidLeft]
+It's not as easy as I[N]
+make it sound,[AN]
+but you'll get there[N]
+in time.[AN]
+I know you can.[A]
+
+[X]
+
+## Ch3Intro3
+[OpenMidLeft][LoadEnemySoldier]
+[MoveMidLeft]
+You lot![AN]
+Hurry up and grab a weapon![AN]
+Your opponents are in[N]
+the courtyard already![AN]
+
+[OpenFarRight][LoadLorrand]
+[OpenMidLeft][CloseSpeechSlow]
+[OpenFarRight][MoveRight]
+[OpenRight][MoveRight][ClearFace]
+
+[OpenFarRight][LoadVivian]
+[MoveRight]
+[OpenRight][MoveRight][ClearFace]
+
+[OpenFarRight][LoadMyra]
+[MoveRight]
+[OpenFarRight][LoadColette]
+[OpenRight]
+[TMM]([TR]No staves[TR]?[AN]
+I guess I'll grab a spare lance[N]
+for one of the others.)[A][TMM]
+[MoveRight][ClearFace]
+
+[OpenFarRight][MoveRight]
+[OpenRight][MoveRight][ClearFace]
+
+[OpenMidLeft][ClearFace]
+
+[OpenMidLeft][LoadRivia]
+[OpenMidRight][LoadShana]
+
+[OpenMidLeft]
+Shana, there's one[N]
+sword left.[AN]
+You[TMM]--[TMM][A]
+
+[OpenMidRight]
+No, you take it, Rivia.[AN]
+I found a suitable tome.[AN]
+Besides, it's better if both[N]
+of us are armed.[A]
+
+[OpenMidLeft]
+[Beat]Very well.[A]
+[X]
+
+## Ch3Intro4
+[OpenMidLeft][LoadColette]
+[Beat][A]
+
+[OpenMidRight][LoadLorrand][MoveRight]
+[OpenRight]
+Are you alright, Colette?[AN]
+It's not a pleasant sight,[N]
+even for me.[AN]
+You'd think they'd at least take[N]
+them away between the fights.[A]
+
+[OpenMidLeft]
+[Beat]I'll make it.[AN]
+I was stupid to even hope that[N]
+these would be non-lethal fights.[AN]
+[ClearFace]
+
+[OpenMidLeft][LoadShana]
+The war held nothing back, but at[N]
+least there were causes to fight for.[AN]
+But this[Beat]this is wasteful.[A]
+
+[OpenRight]
+We're only as valuable as our[N]
+captors see us.[AN]
+It's not a kind reality, Mother Shana,[N]
+but we won't be here for long.[AN]
+We'll think of something.[A]
+
+[OpenFarRight][LoadRivia]
+Aye, that we will.[AN]
+We'll get through this mess,[N]
+one way or another.[A]
+[X]
+
+## Ch3Intro5
+[OpenMidLeft][LoadAugustus][MoveLeft]
+[OpenLeft][ToggleSmile]
+To our newest entertainers here,[N]
+I welcome you![AN]
+We'll be watching with great interest.[AN]
+Show no mercy to your opponents, and[N]
+most importantly, don't disappoint us![AN]
+Let the battle between the old guard[N]
+and the newcomers commence![A][ToggleSmile]
+[X]
+
+## Ch3Intro6
+[OpenMidRight][LoadPercy]
+[Beat][A]
+[X]
+
+## Ch3Intro7
+[OpenFarLeft][LoadMyra]
+[OpenLeft][LoadColette][MoveRight]
+[OpenRight]
+The man from earlier[Beat][A]
+
+[OpenFarLeft]
+He was right after all.[AN]
+I'm sorry, Colette.[A]
+[X]
+
+## Ch3Intro8
+[OpenRight][LoadShana]
+[TMM]...[.4]?[TMM][A]
+
+[OpenFarRight][LoadLorrand]
+Something the matter,[N]
+Mother Shana?[A]
+
+[OpenRight][ClearFace]
+[OpenFarRight][MoveRight]
+[OpenLeft][LoadShana]
+Just now, I received a vision.[AN]
+This wall can crumble and collapse,[N]
+but it'll take many blows.[A]
+
+[OpenFarLeft][LoadMyra]
+Truly?[AN]
+It appears to be[N]
+in good shape.[A]
+
+[OpenFarRight][LoadRivia]
+If Shana says it can,[N]
+then we'll make it happen.[A]
+
+[OpenRight]
+It could be our way out.[AN]
+Some of us could focus on that, and[N]
+the rest could keep our enemies at bay.[A]
+[OpenFarLeft][ClearFace]
+[OpenLeft][ClearFace]
+
+[OpenMidLeft][LoadVivian]
+Our foes have quite the[N]
+selection of weapons.[AN]
+Confronting them would[N]
+be worthwhile.[A]
+
+[OpenFarRight]
+Hmm[Beat] We'd have a better shot at[N]
+breaking out with their gear.[AN]
+Can't argue against that.[A]
+
+[OpenMidLeft][MoveLeft]
+[OpenFarLeft][LoadColette]
+[OpenFarLeft][MoveFarLeft]
+That's heartless![AN]
+These guys aren't our enemies,[N]
+they're forced to[TMM]--[TMM][A]
+
+[OpenRight]
+The decision is up to Mother Shana.[AN]
+Either way, once the wall falls, the[N]
+captives might stop fighting us.[AN]
+[CloseSpeechSlow]
+
+[OpenFarLeft][ClearFace]
+[OpenLeft][ClearFace]
+
+[OpenMidLeft][LoadShana]
+[OpenRight]
+Mother Shana, we await[N]
+your orders.[A]
+
+[OpenMidLeft]
+Thank you, Sir Lorrand.[A]
+
+[OpenRight][ClearFace]
+[OpenFarRight][ClearFace]
+[OpenMidLeft][MoveLeft]
+[OpenLeft]
+Steel yourselves, everyone.[AN]
+This won't be easy, but we're[N]
+getting out of here.[AN]
+[TR]We'll have to stay on the move[N]
+even after we destroy the wall.[AN]
+And until we leave the courtyard, we[N]
+should leave the guards alone.[AN]
+If we don't attack them, they[N]
+shouldn't attack us, either.[A][TR]
+[X]

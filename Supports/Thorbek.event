@@ -1,0 +1,12 @@
+ThorbekSupportList:
+SupportList(Thorbek,ThorbekSupportList)
+
+SupportPartner(Armond,30,25)
+SupportPartner(Mason,15,25)
+SupportPartner(Ember,15,25)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(3)

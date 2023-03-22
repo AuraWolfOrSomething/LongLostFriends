@@ -1,0 +1,58 @@
+
+#define AttackItemWindowTextEntry(textID,spacing,nextLine) "SHORT textID; BYTE spacing; BYTE nextLine"
+#define AttackItemWindowValueEntry(byteInData,spacing,nextLine) "BYTE byteInData; BYTE spacing; BYTE nextLine"
+
+PUSH
+
+//Move weapon icon to the left (to make room)
+ORG 0x1EA04
+BYTE 0x44
+//BYTE 0x4A
+
+ORG 0x1E908
+#include "asm/AttackItemWindowTextAndValues.lyn.event"
+
+//Change arrows to appear when AS is different (instead of Crit)
+ORG 0x1E5CC
+BYTE 0x5E
+
+ORG 0x1E5CE
+BYTE 0x5E
+
+ORG 0x1E71C
+BYTE 0x5E
+
+ORG 0x1E722
+BYTE 0x5E
+
+ORG 0x1E864
+BYTE 0x5E
+
+ORG 0x1E86A
+BYTE 0x5E
+
+POP
+
+//Order of info:
+//Weapon Icon & WEXP
+//Attack, AS
+//Hit, Avoid
+
+AttackItemWindowTextInfo:
+AttackItemWindowTextEntry(RankCurrentLabel,0x20,8)
+AttackItemWindowTextEntry(0x4F3,2,0)
+//AttackItemWindowTextEntry(0x501,0x32,8) //Crit
+AttackItemWindowTextEntry(0x504,0x32,8) //AS
+AttackItemWindowTextEntry(0x4F4,2,0)
+AttackItemWindowTextEntry(0x4F5,0x32,0)
+WORD 0
+
+AttackItemWindowValueInfo:
+AttackItemWindowValueEntry(0x28,0x4C,8)
+AttackItemWindowValueEntry(0x5A,0x24,0)
+//AttackItemWindowValueEntry(0x66,0x54,8) //Crit
+AttackItemWindowValueEntry(0x5E,0x54,8) //AS
+AttackItemWindowValueEntry(0x60,0x24,0)
+AttackItemWindowValueEntry(0x62,0x54,0)
+BYTE 0
+ALIGN 4

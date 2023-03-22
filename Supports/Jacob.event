@@ -1,0 +1,12 @@
+JacobSupportList:
+SupportList(Jacob,JacobSupportList)
+
+SupportPartner(Marcey,20,30)
+SupportPartner(Orville,30,25)
+SupportPartner(Nordica,30,25)
+SupportPartner(Kingsly,0,25)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(4)

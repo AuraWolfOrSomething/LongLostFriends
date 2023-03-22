@@ -1,0 +1,75 @@
+
+#include "PromotionInternal.event"
+
+#define PromotionItemEntry(itemID,levelRequirement,classList) "BYTE itemID 0 levelRequirement 0; POIN classList"
+#define PromotionBranchEntry(class,promotedClass) "PUSH; ORG class*2+0x95DFA4; BYTE promotedClass 0; POP"
+#define PromotionBranchEntry(class,promotedClass,promotedClass2) "PUSH; ORG class*2+0x95DFA4; BYTE promotedClass promotedClass2; POP"
+
+PUSH
+
+PromotionItemTable:
+PromotionItemEntry(KingsEmblem,10,KingsEmblemClassList)
+PromotionItemEntry(MasterSeal,10,MasterSealClassList)
+PromotionItemEntry(LateCrest,20,MasterSealClassList)
+PromotionItemEntry(VulnerableBolt,10,VulnerableBoltClassList)
+WORD 0
+
+ORG 0x8ADF57
+KingsEmblemClassList:
+BYTE ZorenLord
+
+NotUsablePromoList: //also terminates KingsEmblemClassList
+BYTE 0
+
+MasterSealClassList:
+BYTE Cavalier Cavalier_F Knight Knight_F Mercenary Mercenary_F Myrmidon Myrmidon_F WyvernRider WyvernRider_F Mage Mage_F Shaman Shaman_F Fighter Brigand Pirate Monk PegasusKnight Soldier Lancer
+
+//not sure which ones I'm using yet, so here we go
+BYTE Journeyman_1 Journeyman_2 Recruit_1 Recruit_2 Pupil_1 Pupil_2
+
+VulnerableBoltClassList: //included into MasterSealClassList and terminates both lists
+BYTE Thief Archer Archer_F Priest Cleric Troubadour 0
+
+POP
+
+PromotionBranchEntry(Knight,General)
+PromotionBranchEntry(Knight_F,General_F)
+
+PromotionBranchEntry(Cavalier,Paladin)
+PromotionBranchEntry(Cavalier_F,Paladin_F)
+
+PromotionBranchEntry(Archer,Sniper)
+PromotionBranchEntry(Archer_F,Sniper_F)
+PromotionBranchEntry(Thief,Assassin)
+
+PromotionBranchEntry(Myrmidon,Swordmaster)
+PromotionBranchEntry(Myrmidon_F,Swordmaster_F)
+PromotionBranchEntry(Mercenary,Hero)
+PromotionBranchEntry(Mercenary_F,Hero_F)
+PromotionBranchEntry(Soldier,0)
+PromotionBranchEntry(Lancer,0)
+PromotionBranchEntry(Deserter,0)
+PromotionBranchEntry(Fighter,Warrior)
+PromotionBranchEntry(Pirate,Berserker)
+PromotionBranchEntry(Brigand,Berserker)
+
+PromotionBranchEntry(Mage,Sage)
+PromotionBranchEntry(Mage_F,Sage_F)
+PromotionBranchEntry(Monk,Bishop)
+PromotionBranchEntry(Shaman,Druid)
+PromotionBranchEntry(Shaman_F,Druid_F)
+PromotionBranchEntry(Priest,MageKnight)
+PromotionBranchEntry(Cleric,Bishop_F)
+
+PromotionBranchEntry(Troubadour,Valkyrie)
+
+PromotionBranchEntry(PegasusKnight,Falconknight)
+PromotionBranchEntry(WyvernRider,WyvernLord)
+
+PromotionBranchEntry(ZorenLord,0)
+
+PromotionBranchEntry(Journeyman_1,Fighter)
+PromotionBranchEntry(Recruit_1,0)
+PromotionBranchEntry(Pupil_1,0)
+
+PromotionBranchEntry(Peer,0)

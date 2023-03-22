@@ -1,0 +1,12 @@
+# 0x0002 textWeaponRankIncreasedTo
+ Weapon rank increased to [X]
+
+# 0x0013
+Power increased.[X]
+
+# 0x0014
+Power increased.[X]
+
+#0x3A LearnedSkillText
+#first text ID in the free block
+Learned  [X]

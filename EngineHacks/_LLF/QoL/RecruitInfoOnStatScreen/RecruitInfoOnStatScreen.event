@@ -1,0 +1,15 @@
+//CheckIfRecruitOrFatigue is called from MSS, so go to that if you want to take a look at how it differentiates between Fatigue or Recruit info
+//MiscData/StatScreenRecruitText
+
+#include "asm/CheckIfRecruitOrFatigue.lyn.event"
+ALIGN 4
+
+#include "asm/McVicarProgressTracking.lyn.event"
+ALIGN 4
+
+McVicarImpressionEventIDList:
+SHORT McVicarFirstImpressionEventID
+SHORT McVicarSecondImpressionEventID
+SHORT McVicarThirdImpressionEventID
+SHORT 0
+ALIGN 4

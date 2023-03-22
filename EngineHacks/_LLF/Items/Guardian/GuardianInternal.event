@@ -1,0 +1,70 @@
+
+#include "asm/GuardianForEachTileInAoe.lyn.event"
+ALIGN 4
+
+GuardianStaffIdLink:
+BYTE Guardian
+ALIGN 4
+
+
+//-------------------------------------------
+//Condition
+//-------------------------------------------
+
+#include "asm/GuardianCondition.lyn.event"
+ALIGN 4
+
+#include "asm/GuardianStaffRangeSetup.lyn.event"
+ALIGN 4
+
+#include "asm/TryAddUnitToGuardianTargetList.lyn.event"
+ALIGN 4
+
+#include "asm/GuardianLookForUnitsInAoeRange.lyn.event"
+ALIGN 4
+
+
+//-------------------------------------------
+//Target
+//-------------------------------------------
+
+#include "asm/GuardianTarget.lyn.event"
+ALIGN 4
+
+#include "asm/GuardianTargetPosSelect_Init.lyn.event"
+ALIGN 4
+
+#include "asm/GuardianTargetSelection_Loop.lyn.event"
+ALIGN 4
+
+#include "asm/GuardianTargetPosSelect_Cancel.lyn.event"
+ALIGN 4
+
+gProc_GuardianTargetPosSelection:
+PROC_CALL_ROUTINE(0x15360|1) //LockGameLogic
+PROC_CALL_ROUTINE(GuardianTargetPosSelect_Init)
+PROC_WHILE_EXISTS(0x59A548) //gProc_CameraMovement
+PROC_LOOP_ROUTINE(GuardianTargetSelection_Loop) 
+PROC_CALL_ROUTINE(0x297D0|1) //WarpTargetPosSelect_Confirm
+PROC_GOTO(0x64)
+PROC_LABEL(0x63)
+PROC_CALL_ROUTINE(GuardianTargetPosSelect_Cancel)
+PROC_LABEL(0x64)
+PROC_CALL_ROUTINE(0x15370|1) //UnlockGameLogic
+PROC_END
+
+GuardianTargetBottomTextLink:
+SHORT GuardianTargetBottomText
+ALIGN 4
+
+
+//-------------------------------------------
+//Effect
+//-------------------------------------------
+
+#include "asm/GuardianEffect.lyn.event"
+ALIGN 4
+
+#include "asm/ApplyGuardianBuffOnUnit.lyn.event"
+ALIGN 4
+

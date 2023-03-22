@@ -1,0 +1,183 @@
+
+//AsmDependencies/ExtraEventUnitSpace & ExternalHacks/UnitStatOffsets
+
+#include "EEUSDefinitions.event"
+
+StatOffsTable: //by chapter id
+POIN PrologueStatModifiers
+POIN Chapter1StatModifiers
+POIN Chapter2StatModifiers
+POIN Chapter3StatModifiers
+POIN Chapter4StatModifiers
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+POIN Chapter3StatModifiers
+WORD 0
+
+EEUS_ItemUsesTable:
+WORD 0
+WORD 0 //POIN Ch1ItemUses
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+
+EEUS_StartingStatusTable:
+WORD 0
+WORD 0 //POIN Ch1StartingStatuses
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+POIN Ch3StartingStatuses
+WORD 0
+
+EEUS_GenericSkillTable:
+WORD 0
+POIN Ch1GenericSkills
+POIN Ch2GenericSkills
+POIN Ch3GenericSkills
+POIN Ch4GenericSkills
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+WORD 0
+POIN Ch3GenericSkills
+WORD 0
+
+PrologueStatModifiers:
+EditStats(0,0,0,1,0,0,0,0) //Lv2 Merc
+ALIGN 4
+
+Chapter1StatModifiers:
+EditStats(0,0,0,0,0,0,0,0) //Bruce
+EditStats(0,0,0,0,0,0,0,0) //Thief w/ Slow
+EditStats(0,0,0,0,0,0,0,0) //Thief w/ Snaillike
+ALIGN 4
+
+//TESTING
+/*
+Ch1ItemUses:
+ItemUses(5,3,0,0)
+
+Ch1StartingStatuses:
+StartFullHp; StartStatus(SleepStatus,2)
+ALIGN 4
+*/
+
+Ch1GenericSkills:
+BYTE ExpertiseID
+BYTE SlowSkillID
+ALIGN 4
+
+Chapter2StatModifiers:
+EditStats(0,0,0,0,0,0,0,0) //Brigand w/ Snaillike
+EditStats(1,1,4,0,0,0,4,0) //Hand Axe Brigand
+EditStats(-3,-3,-1,-3,-1,-1,-3,0) //Mason
+EditStats(10,12,4,0,1,2,5,0) //NPC Soldier
+ALIGN 4
+
+Ch2GenericSkills:
+BYTE SnaillikeID
+ALIGN 4
+
+Chapter3StatModifiers:
+EditStats(0,0,0,0,0,0,0,0) //Prisoners w/ Slow
+EditStats(2,-1,0,0,2,-3,0,0) //Bishop Prisoner
+EditStats(2,-3,0,2,2,2,2,0) //Ballista Sniper
+EditStats(0,0,0,0,0,0,0,0) //Sleeping Guard
+ALIGN 4
+
+Ch3StartingStatuses:
+StartFullHp; StartNormalStatus
+StartFullHp; StartNormalStatus
+StartFullHp; StartNormalStatus
+StartFullHp; StartStatus(SleepStatus,3)
+ALIGN 4
+
+Ch3GenericSkills:
+BYTE SlowSkillID
+BYTE SnaillikeID
+BYTE 0
+BYTE 0
+ALIGN 4
+
+Chapter4StatModifiers:
+EditStats(0,0,0,0,0,0,0,0) //Artus
+EditStats(-1,0,0,0,2,0,0,0) //Thieves
+EditStats(0,0,0,0,2,0,3,0) //Generic NPCs
+EditStats(0,0,0,0,0,0,0,0) //McVicar
+ALIGN 4
+
+Ch4GenericSkills:
+BYTE ExpertiseID
+BYTE SnaillikeID //SlowSkillID
+BYTE 0
+BYTE UncooperativeID
+ALIGN 4

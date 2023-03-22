@@ -1,0 +1,52 @@
+
+PUSH
+
+ORG 0x59ABEC
+POIN CheckBeforeMiscEvents|1
+
+ORG 0x5A8080
+POIN CheckBeforeMiscEvents|1
+
+POP
+
+#include "asm/CheckBeforeMiscEvents.lyn.event"
+ALIGN 4
+
+
+CheckBeforeMiscEventsList:
+POIN Ch1_IsArlettFree
+POIN Ch3_IsWallDestroyed
+POIN Ch3_IsWallAt35HP
+WORD 0
+
+
+#include "asm/Ch1_IsArlettFree.lyn.event"
+
+ArlettFreedEventIDLink:
+SHORT ArlettFreedEventID
+
+ArlettCellWall:
+BYTE 7 5 0x1B //x, y, terrain type that's checked for
+
+ArlettFreed_StartingLocation:
+BYTE 6 6
+
+ALIGN 4
+
+
+#include "asm/Ch3_IsWallDestroyed.lyn.event"
+ALIGN 4
+
+Ch3WallDestroyedEventIDLink:
+SHORT Ch3WallDestroyedEventID
+
+Ch3Wall:
+BYTE 0 8 0x1B //x, y, terrain type that's checked for
+ALIGN 4
+
+#include "asm/Ch3_IsWallAt35HP.lyn.event"
+ALIGN 4
+
+Ch3WallReached35HPEventIDLink:
+SHORT Ch3WallReached35HPEventID
+ALIGN 4

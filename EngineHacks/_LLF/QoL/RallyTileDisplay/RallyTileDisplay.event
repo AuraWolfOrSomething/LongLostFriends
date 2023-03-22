@@ -1,0 +1,18 @@
+
+//Requires ItemRangeFix
+
+/*
+In UnitMenu, change Rally command to this:
+
+MenuCommand(UM_Rally, UM_RallyDesc, NormalText, RallyCommandUsability, RallyCommandEffect, RallyTileDisplayOn, 0x023B84)
+*/
+
+
+#include "asm/RallyTileDisplay.lyn.event"
+ALIGN 4
+
+//For display purposes only; changing these values doesn't change how the rally skills function
+RallyRangeLink:
+BYTE 1 //min range
+BYTE 2 //max range
+ALIGN 4

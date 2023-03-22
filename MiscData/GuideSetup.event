@@ -1,0 +1,97 @@
+
+//Mechanics/Guide
+
+#define GuideEntry(groupByTopic,groupByChapter,headerID,infoID,chapterID,readEventID) "BYTE groupByTopic groupByChapter; SHORT headerID infoID; BYTE chapterID 0; SHORT readEventID 0"
+
+GuideTopicList:
+SHORT 0
+SHORT GuideAdviceHeader
+SHORT GuideUiHeader
+SHORT GuideStatsHeader
+SHORT GuideCombatHeader
+SHORT GuideGoldShopsHeader
+SHORT GuideOtherHeader
+SHORT GuideCreditsHeader
+SHORT 1
+ALIGN 4
+
+GuideChapterHeaderList:
+SHORT GuideAdviceHeader 0
+SHORT 0x05C0 0 //Prologue
+SHORT 0x05C1 0 //Chapter 1
+SHORT 0x05C2 0 //Chapter 2
+SHORT 0x05C3 0 //Chapter 3
+SHORT 0x05C4 0 //Chapter 4
+SHORT 0x05C5 0 //Chapter 5
+SHORT 0x05C6 0 //Chapter 6
+SHORT 0 0
+
+ALIGN 4
+
+//MESSAGE guideyEntryListy currentOffset
+GuideEntryList:
+
+//Advice/Info
+GuideEntry(1,0,0x05C0,GuideAdvicePrologue,Prologue,GuideChapterAdvice)
+GuideEntry(1,0,0x05C1,GuideAdviceChapter1,Ch_1,GuideChapterAdvice)
+GuideEntry(1,0,0x05C2,GuideAdviceChapter2,Ch_2,GuideChapterAdvice)
+GuideEntry(1,0,0x05C3,GuideAdviceChapter3,Ch_3,GuideChapterAdvice)
+GuideEntry(1,0,0x05C3,GuideAdviceChapter3,Ch_3P2,GuideChapterAdvice)
+GuideEntry(1,0,0x05C4,GuideAdviceChapter4,Ch_4,GuideChapterAdvice)
+GuideEntry(1,0,GuideHeader_EndOfDemo,GuideAdviceEndOfDemo,Ch_5,GuideChapterAdvice)
+
+//Credits
+GuideEntry(7,1,GuideHeader_Credits,GuideEntry_Credits,AllChapters,GuideCredits_First)
+
+//UI
+GuideEntry(2,1,GuideHeader_HelpText,GuideEntry_HelpText,AllChapters,GuideUI_First)
+GuideEntry(2,1,GuideHeader_AiToggle,GuideEntry_AiToggle,AllChapters,GuideUI_First+1)
+GuideEntry(2,1,GuideHeader_Plan,GuideEntry_Plan,AllChapters,GuideUI_First+2)
+GuideEntry(2,2,GuideHeader_RecruitInfo,GuideEntry_RecruitInfo,AllChapters,GuideUI_First+3)
+GuideEntry(2,2,GuideHeader_LButtonCycling,GuideEntry_LButtonCycling,AllChapters,GuideUI_First+4)
+
+//Stats
+GuideEntry(3,1,GuideHeader_Skl,GuideEntry_Skl,AllChapters,GuideStats_First)
+GuideEntry(3,1,GuideHeader_AS,GuideEntry_AS,AllChapters,GuideStats_First+1)
+GuideEntry(3,1,GuideHeader_TomeRange,GuideEntry_TomeRange,AllChapters,GuideStats_First+2)
+GuideEntry(3,2,GuideHeader_Fatigue,GuideEntry_Fatigue,AllChapters,GuideStats_First+3)
+GuideEntry(3,2,GuideHeader_RbtNoc,GuideEntry_RbtNoc,AllChapters,GuideStats_First+4)
+GuideEntry(3,2,GuideHeader_StaffStats,GuideEntry_StaffStats,AllChapters,GuideStats_First+5)
+GuideEntry(3,2,GuideHeader_LevelingUp,GuideEntry_LevelingUp,AllChapters,GuideStats_First+6)
+GuideEntry(3,4,GuideHeader_StatCaps,GuideEntry_StatCaps,AllChapters,GuideStats_First+7)
+
+//Combat
+GuideEntry(4,1,GuideHeader_GlancingBlows,GuideEntry_GlancingBlows,AllChapters,GuideCombat_First)
+GuideEntry(4,1,GuideHeader_WeaponTriangle,GuideEntry_WeaponTriangle,AllChapters,GuideCombat_First+1)
+GuideEntry(4,1,GuideHeader_Terrain,GuideEntry_Terrain,AllChapters,GuideCombat_First+2)
+GuideEntry(4,1,GuideHeader_WEXP,GuideEntry_WEXP,AllChapters,GuideCombat_First+3)
+GuideEntry(4,2,GuideHeader_CriticalHits,GuideEntry_CriticalHits,AllChapters,GuideCombat_First+4)
+GuideEntry(4,4,GuideHeader_Effectiveness,GuideEntry_Effectiveness,AllChapters,GuideCombat_First+5)
+GuideEntry(4,5,GuideHeader_WeaponRank,GuideEntry_WeaponRank,AllChapters,GuideCombat_First+6)
+
+//Gold
+GuideEntry(5,2,GuideHeader_Bargains,GuideEntry_Bargains,AllChapters,GuideGold_First)
+GuideEntry(5,2,GuideHeader_Coupons,GuideEntry_Coupons,AllChapters,GuideGold_First+1)
+GuideEntry(5,2,GuideHeader_SellWisely,GuideEntry_SellWisely,AllChapters,GuideGold_First+2)
+
+//Other
+GuideEntry(6,1,GuideHeader_ReinforceWarn,GuideEntry_ReinforceWarn,AllChapters,GuideOther_First)
+GuideEntry(6,1,GuideHeader_TradeGiveTake,GuideEntry_TradeGiveTake,AllChapters,GuideOther_First+1)
+GuideEntry(6,1,GuideHeader_Experience,GuideEntry_Experience,AllChapters,GuideOther_First+2)
+GuideEntry(6,2,GuideHeader_Reorganize,GuideEntry_Reorganize,AllChapters,GuideOther_First+3)
+GuideEntry(6,2,GuideHeader_Stealing,GuideEntry_Stealing,AllChapters,GuideOther_First+4)
+GuideEntry(6,2,GuideHeader_PostMapConvoySend,GuideEntry_PostMapConvoySend,AllChapters,GuideOther_First+5)
+GuideEntry(6,3,GuideHeader_Supports,GuideEntry_Supports,AllChapters,GuideOther_First+6)
+GuideEntry(6,3,GuideHeader_Affinities,GuideEntry_Affinities,AllChapters,GuideOther_First+7)
+GuideEntry(6,3,GuideHeader_Effects,GuideEntry_Effects,AllChapters,GuideOther_First+8)
+GuideEntry(6,3,GuideHeader_RnRandomizer,GuideEntry_RnRandomizer,AllChapters,GuideOther_First+9)
+GuideEntry(6,5,GuideHeader_McVicar,GuideEntry_McVicar,AllChapters,GuideOther_First+10)
+GuideEntry(6,5,GuideHeader_McVicar2,GuideEntry_McVicar2,AllChapters,GuideOther_First+11)
+//GuideEntry(6,5,GuideHeader_Promoting,GuideEntry_Promoting,AllChapters,GuideOther_First+12)
+//GuideEntry(6,6,GuideHeader_Capture,GuideEntry_Capture,AllChapters,GuideOther_First+13)
+
+
+//End of the guide
+WORD 0xC 0 0
+
+//MESSAGE endOfGuideSetup currentOffset

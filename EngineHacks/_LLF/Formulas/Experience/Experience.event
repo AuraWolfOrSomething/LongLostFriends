@@ -1,0 +1,78 @@
+PUSH
+
+//Combat Experience
+ORG 0x2C35E
+BYTE 4 //bonus levels for a promoted unit when calculating experience; default value is 20
+
+ORG 0x2C368
+jumpToHack(ExperienceForDamage)
+
+ORG 0x2C370
+SHORT 0x1C20 0x4B02 //mov r0, r4; ldr r3 (ExperienceForSurvival)
+SHORT 0x469E 0xF800 //mov lr, r3; bl lr+0
+SHORT 0xE119 0 //b 0x2C5AE
+POIN ExperienceForSurvival
+
+ORG 0x2C398
+//jumpToHack(ClassPowerDefeatExp)
+#include "asm/ClassPowerDefeatExp.lyn.event"
+ALIGN 4
+
+ORG 0x2C450
+//jumpToHack(ExperienceForDefeat)
+#include "asm/ExperienceForDefeat.lyn.event"
+ALIGN 4
+
+ORG 0x2C574
+SHORT 0xE6FC 0 //b 0x2C370
+//BL(0x2C370)
+
+/*
+ORG 0x2C5AE
+SHORT 0x4B01 0x4718 //ldr r3,  (CombatAddToAccumulatedExperience); bx r3
+SHORT 0
+POIN CombatAddToAccumulatedExperience
+*/
+
+ORG 0x2C638
+jumpToHack(ExperienceForStaff)
+
+ORG 0x2C6C8
+SHORT 0x1C20 0x4B03 //mov r0, r4; ldr r3 (ExperienceForOtherActions)
+SHORT 0x469E 0xF800 //mov lr, r3; bl lr+0
+SHORT 0x1C20 //mov r0, r4
+BL(0x2BA28)
+SHORT 0xE001 //b (0x2C6DC)
+POIN (ExperienceForOtherActions)
+
+POP
+
+//--------------------------------------
+//Back to free space
+//--------------------------------------
+
+
+#include "asm/ExperienceForDamage.lyn.event"
+ALIGN 4
+
+#ifdef TESTING_ALWAYS_LEVEL_UP
+	#include "asm/SetExpGainTo100.lyn.event"
+	ALIGN 4
+#else
+	#include "asm/BonusEXPForUndeployedChapters.lyn.event"
+	ALIGN 4
+#endif
+
+#include "asm/ExperienceForSurvival.lyn.event"
+SurvivalBonusExpClassList:
+BYTE Peer 0
+ALIGN 4
+
+#include "asm/ExperienceForStaff.lyn.event"
+ALIGN 4
+
+#include "asm/ExperienceForOtherActions.lyn.event"
+ALIGN 4
+
+//#include "asm/CombatAddToAccumulatedExperience.lyn.event"
+//ALIGN 4

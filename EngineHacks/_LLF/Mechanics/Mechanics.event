@@ -1,0 +1,51 @@
+
+#include "BattleRulesAndFlow/BattleRulesAndFlow.event"
+ALIGN 4
+
+#include "OtherCurrency/OtherCurrency.event"
+ALIGN 4
+
+#include "PostMapFunctions/PostMapFunctions.event"
+ALIGN 4
+
+#include "ToggleDeploymentSwapping/ToggleDeploymentSwapping.event"
+ALIGN 4
+
+#include "Bargains/Bargains.event"
+ALIGN 4
+
+#include "LevelingUp/LevelingUp.event"
+ALIGN 4
+
+#include "ItemCooldown/ItemCooldown.event"
+ALIGN 4
+
+#include "CharacterModifiersOnClassCaps/CharacterModifiersOnClassCaps.event"
+ALIGN 4
+
+#include "Promotion/Promotion.event"
+ALIGN 4
+
+#include "Captives/Captives.event"
+ALIGN 4
+
+#include "Guide/Guide.event"
+ALIGN 4
+
+#include "TerrainMovementCost/TerrainMovementCost.event"
+ALIGN 4
+
+#include "BagsOfGold/BagsOfGold.event"
+ALIGN 4
+
+#include "StatusDebuffs/StatusDebuffs.event"
+ALIGN 4
+
+#include "EnemiesDoNotBlockEnemiesFromSpawning/EnemiesDoNotBlockEnemiesFromSpawning.event"
+ALIGN 4
+
+#include "WeaponRankModifiers/WeaponRankModifiers.event"
+ALIGN 4
+
+#include "StaffUsageRequisites/StaffUsageRequisites.event"
+ALIGN 4

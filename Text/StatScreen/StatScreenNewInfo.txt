@@ -1,0 +1,92 @@
+## SS_FatigueText
+Ftg[X]
+
+## SS_FatigueHelpText
+Fatigue. Builds up after certain actions[N]
+unless force deployed. Not directly harmful.[X]
+
+## SS_RestedBonusThresholdText
+Rbt[X]
+
+## SS_RestedBonusThresholdHelpText
+Rested bonus threshold. If >= Ftg, get[NL]
+stat bonuses equal to Noc for 1 map.[X]
+
+## RestedBonusCalcHelpText
+HP/3[X]
+
+## SS_FatigueRestoredText
+Frs[X]
+
+## SS_FatigueRestoredHelpText
+Fatigue restoration. Lowers Ftg by this[NL]
+stat if this unit is voluntarily undeployed.[X]
+
+## FatigueRestoredCalcHelpText
+Character dependent[X]
+
+## SS_FatigueUndeployedChapterText
+Noc[X]
+
+## SS_FatigueUndeployedChapterHelpText
+Number of consecutive undeployed maps.[NL]
+Boons are added as this stat increases.[X]
+ 
+## SS_AttackSpeedHelpText
+Attack Speed. Allows followup attacks[NL]
+when a unit has 4+ AS over their enemy.[X]
+
+## SS_AttackSpeedCalcHelpText
+Spd - (Wt - Con; minimum 0)[X]
+
+## SS_AttackCalcHelpText
+Mt + Pow[X]
+
+## SS_HitCalcHelpText
+Wpn Hit + Skl*2 + Lck/2[X]
+
+## SS_RangeCalcHelpText
+Wpn Rng[X]
+
+## SS_CritCalcHelpText
+Wpn Crit + Skl; if Wpn Crit = 0, Skl/2[X]
+
+## SS_AvoidCalcHelpText
+Terrain + AS*1.5 + Lck[X]
+
+## AffinityFireBenefitsHelpText
+Fire. Provides 0.5 Atk, 0.2 Def,[N]
+and 2.5 Crit per support rank.[X]
+
+## AffinityThunderBenefitsHelpText
+Thunder. Provides 0.2 Atk, 0.2 Def,[N]
+2.5 Crit, and 5 Dodge per support rank.[X]
+
+## AffinityWindBenefitsHelpText
+Wind. Provides 0.2 Atk, 0.2 Def,[N]
+3.5 Hit, and 2.5 Avoid per support rank.[X]
+
+## AffinityIceBenefitsHelpText
+Ice. Provides 0.2 Atk, 0.5 Def,[N]
+and 5 Dodge per support rank.[X]
+
+## AffinityDarkBenefitsHelpText
+Dark. Provides 0.5 Atk, 0.2 Def,[N]
+and 2.5 Avoid per support rank.[X]
+
+## AffinityLightBenefitsHelpText
+Light. Provides 0.2 Atk, 0.5 Def,[N]
+and 3.5 Hit per support rank.[X]
+
+## AffinityAnimaBenefitsHelpText
+Anima. Provides 0.5 Atk and[N]
+0.5 Def per support rank.[X]
+
+## AffinityLifeBenefitsHelpText
+Life. Provides 0.5 Atk, 0.5 Def,[N]
+3.5 Hit, 2.5 Avoid, 2.5 Crit,[N]
+and 5 Dodge per support rank.[X]
+
+## RecruitmentInformationHelpText
+Information on how to recruit this[NL]
+unit or another specified unit.[X]

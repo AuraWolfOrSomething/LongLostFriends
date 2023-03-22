@@ -1,0 +1,94 @@
+#ifndef ClassAnimTable
+  //#define ClassAnimTable (0xc00008-0x20)
+  #define ClassAnimTable (NewClassAnimTable-0x20)
+#endif
+
+#define AnimTableEntry(index) "ORG ClassAnimTable + (index * 0x20)"
+#define ProtectSpace_AnimTableEntry(index) "ORG ClassAnimTable+(index*0x20); WORD 0 0 0 0 0 0 0 0"
+
+#define LastAnimId 0xD0
+
+//////////////Installed animations go here:
+
+
+BYTE LastAnimId 0x00 0x00 0x00 0x00 0x00 0x00 0x00 
+  
+NewClassAnimTable:
+#incbin "FE8VanillaAnimTable.dmp"
+ProtectSpace_AnimTableEntry(LastAnimId)
+
+{
+#include "Lord/Sword/Sword Installer.event"
+#include "Lord/Magic/Magic Installer.event"
+}
+
+{
+#include "Deserter/Lance/Lance Installer.event"
+#include "Deserter/Unarmed/Unarmed Installer.event"
+}
+
+{
+#include "Hunter/Bow/Bow Installer.event"
+#include "Hunter/Unarmed/Unarmed Installer.event"
+}
+
+{
+#include "Knight/Sword/Sword Installer.event"
+}
+
+{
+#include "WyvernRider/Axe/Axe Installer.event"
+#include "WyvernRider/Handaxe/Handaxe Installer.event"
+}
+
+{
+#include "AxeCavalier/Axe/Axe Installer.event"
+#include "AxeCavalier/Handaxe/Handaxe Installer.event"
+}
+
+SetClassAnimation(ZorenLord,AnimTableZorenLord)
+SetClassAnimation(Deserter,AnimTableDeserter)
+SetClassAnimation(Hunter,AnimTableHunter)
+SetClassAnimation(Knight,AnimTableKnight)
+SetClassAnimation(Knight_F,AnimTableKnight)
+SetClassAnimation(WyvernRider,AnimTableWyvernRider)
+SetClassAnimation(WyvernRider_F,AnimTableWyvernRider)
+SetClassAnimation(Cavalier,AnimTableCavalier)
+
+AnimTableZorenLord:
+AddClassAnimation(0x03,Swords,GenericAni)
+AddClassAnimation(0x04,Anima,GenericAni)
+AddClassAnimation(0x04,Disarmed,GenericAni)
+EndClassAnimation
+
+AnimTableDeserter:
+AddClassAnimation(0xCA,Lances,GenericAni)
+AddClassAnimation(0xCB,Disarmed,GenericAni)
+EndClassAnimation
+
+AnimTableHunter:
+AddClassAnimation(0xCC,Bow,GenericAni)
+AddClassAnimation(0xCD,Disarmed,GenericAni)
+EndClassAnimation
+
+AnimTableKnight:
+AddClassAnimation(0xCE,Sword,GenericAni)
+AddClassAnimation(0x40,Lance,GenericAni)
+AddClassAnimation(0x41,Disarmed,GenericAni)
+EndClassAnimation
+
+AnimTableWyvernRider:
+AddClassAnimation(0x58,Axe,GenericAni)
+AddClassAnimation(0x5A,HandAxe,CustomAni)
+AddClassAnimation(0x5A,Tomahawk,CustomAni)
+AddClassAnimation(0x59,Disarmed,GenericAni)
+EndClassAnimation
+
+AnimTableCavalier:
+AddClassAnimation(0x34,Sword,GenericAni)
+AddClassAnimation(0x35,Lance,GenericAni)
+AddClassAnimation(0xCF,Axe,GenericAni)
+AddClassAnimation(0xD0,HandAxe,CustomAni)
+AddClassAnimation(0xD0,Tomahawk,CustomAni)
+AddClassAnimation(0x36,Disarmed,GenericAni)
+EndClassAnimation

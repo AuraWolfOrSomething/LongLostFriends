@@ -1,0 +1,417 @@
+#define FreeSpace 0xb2a610
+#define FreeSpaceBLRange 0x1c1ec0
+
+#define ChapterTileset(chapter, object, palette, config) "PUSH; ORG 0x8b0890 + (148* chapter) + 4; SHORT object; BYTE palette config; POP"
+#define ChapterTileAnims(chapter, anim1, anim2) "PUSH; ORG 0x8b0890 + (148* chapter) + 9; BYTE anim1 anim2; POP"
+
+#ifndef DebuffTable
+  #define DebuffTable     0x0203F100
+  #define DebuffTableSize 0x00000440
+#endif
+
+#define LunarBrace MoonBracelet
+#define SolarBrace SunBracelet
+
+// Attribute for defining items with passive stat bonuses
+#define PASSIVE_ITEM_BOOSTS_ATTR 0x00800000
+
+// this is for if you use the legacy way of define item attributes in your table (this is for byte 3)
+// (which is sadly what the included table also does TODO: fix that)
+#define PassiveBoosts 0x80
+
+#define StatBonus(HPB,StrB,MagB,SklB,SpdB,DefB,ResB,LckB,MovB,ConB) "BYTE HPB StrB SklB SpdB DefB ResB LckB MovB ConB MagB 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0"
+
+#define GrowthBonus(HPB,StrB,MagB,SklB,SpdB,DefB,ResB,LckB) "BYTE 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 HPB StrB SklB SpdB DefB ResB LckB MagB 0x0 0x0"
+
+#include "EngineHacks/SkillSystem/skill_definitions.event"
+
+// #define __DEBUG__ // Uncomment to get the Debug startup menu :p
+
+
+//--------------------------------------------------
+//End of included definitions from Skill Systems
+//--------------------------------------------------
+
+//#define ADVariable 0x0203F081
+//#define CurrentPromotionItem 0x0203F082
+#define KeyStatusBuffer 0x0858791C //to imitate pressing a key (useful if a breakpoint repeatedly stops you from trying to do so), put keycode at #4, #6, #8 and #C
+
+//Each character entry is 8 bytes
+//The first four are considered debuffs; the next four are considered buffs
+#define AnyDebuffs 0x01030FFF
+#define AnyBuffs 0x00001F0F
+
+#define CurrentVersion 2
+#define CurrentVersionRam 0x0203F100
+
+#define USE_FATIGUE
+#define USE_PREP_SCREEN_GUIDE
+//#define TESTING_PURPOSES
+//#define TESTING_EASY_MOVEMENT
+//#define TESTING_EASY_MOVEMENT_REFRESH
+//#define TESTING_EASY_RECRUITMENT
+//#define TESTING_EASY_CLEAR
+//#define TESTING_ALWAYS_LEVEL_UP
+//#define TESTING_WORST_OUTCOME
+//#define TESTING_PARTY_SWAP
+//#define TESTING_AI
+//#define TESTING_TEXT
+//#define TESTING_CHAPTER_TRANSITION
+//#define ENABLE_PERSONAL_INFO
+
+#include "ImportantEventIDs.event"
+
+//Location of Arrays, will have to update after moving arrays
+#ifndef CharacterTable
+   #define CharacterTable 0x803D30
+#endif
+#ifndef ClassTable
+  #define ClassTable 0x807110
+#endif
+/*
+#ifndef ItemTable
+  #define ItemTable 0x1000000 //vanilla at 0x809B10
+#endif
+*/
+#define ChapterDataArrayOffset 0x8B0890
+#define EventTableOffset 0x8B363C
+#define BossMusicTableOffset 0x758A60
+//#define BQTableOffset 0x9EC6BC //vanilla offset
+//#define DeathQuoteTable 0x9ECD4C //vanilla offset
+
+#define Load(Units) "LOAD1 0x1 Units; ENUN"
+#define Load(Units1,Units2) "LOAD1 0x1 Units1; LOAD1 0x1 Units2; ENUN"
+#define LoadAgain(Units) "LOAD2 0x1 Units; ENUN"
+//#define LoadPrepUnits(Units) "LOAD1 0x0 Units; ENUN; CALL MoveMainLordToSlot1Event"
+#define LoadPrepUnits(Units) "LOAD1 0x0 Units; ENUN"
+#define NoUnitFlags 0x00
+
+#define BlackBG 0x35
+#define VillageReward(item) "SVAL 0x3 item; GIVEITEMTO 0xFFFF"
+#define CharacterReward(char,item) "SVAL 0x3 item; GIVEITEMTO char"
+#define CheckIfPlayerUnit(conditionalID) "CHECK_ALLEGIANCE 0xFFFF; IFEQUAL conditionalID sC s0"
+#define CheckADValue(conditionalID,adMin) "SETVAL 0x4 adMin; ASMC AD_CheckValue+0x1; SETVAL 0xC 0x1; IFEQ conditionalID 0xC 0x4"
+#define CheckADValueElse(conditionalID,adMin) "SETVAL 0x4 adMin; ASMC AD_CheckValue+0x1; SETVAL 0xC 0x1; IFNE conditionalID 0xC 0x4"
+//#define SLOTS_ADD SADD
+#define StartSkipCheckpoint "CALL $591F40"
+//#define TransitionToSaving "CALL TransitionToSavingEvent"
+//#define ChooseMainLord "CALL ChooseMainLordEvent"
+//#define MoveMainLordToSlot1 "CALL MoveMainLordToSlot1Event"
+#define GotoPrepScreenThenReturn "CALL $591FD8"
+#define DoNotWinIfPlanning(condID,condID2) "CHECK_EVENTID PlanEventID; IFNE condID sC s0; CALL DoNotWinIfPlanningEvent; GOTO condID2; LABEL condID"
+#define CheckIfTerrainAtCoord(terrainType,coordX,coordY) "SVAL s1 coordY; SVAL s2 8; SLSL s1 s1 s2; SVAL s2 coordX; SADD sB s1 s2; SVAL s1 terrainType; ASMC AsmcCheckIfTerrainAtCoord|1"
+#define ReturnTerrainAtCoord(coordX,coordY) "SVAL s1 coordY; SVAL s2 8; SLSL s1 s1 s2; SVAL s2 coordX; SADD sB s1 s2; ASMC AsmcReturnTerrainAtCoord|1"
+#define ReturnOpponentID(thisUnitID) "SVAL s1 thisUnitID; ASMC AsmcReturnOpponentID|1"
+
+#define EventMenuCommand(aTextId) "WORD 0; SHORT aTextId 0; WORD 0; POIN (0x04F448+1); WORD 0; POIN (prEventMenuCommandEffect+1); WORD 0 0 0"
+#define EventMenuCommandEnd "WORD 0 0 0 0 0 0 0 0 0"
+
+#define EndlessTurnEventPlayer(eventID,pointer,turn) "TURN eventID pointer [turn, 255] 0"
+#define Door(eventID,coordX,coordY) "DOOR eventID [coordX,coordY] 0x12"
+#define Chest(eventID,item,coordX,coordY) "CHES eventID item [coordX,coordY] 0x14"
+#define ChestMoney(eventID,amountOfMoney,coordX,coordY) "CHES eventID 0x77+amountOfMoney*0x10000 [coordX,coordY] 0x14"
+#define Village(eventID,eventID2,offset,villX,villY) "VILL eventID offset [villX,villY] 0x10; LOCA eventID2 [villX,villY-1] 0x20"
+
+#define Coords(x,y) "x+(y<<6)"
+
+#define Camera(unit,duration) "CAM1 unit; STAL duration" 
+#define Camera(coord1,coord2,duration) "CAM1 [coord1,coord2]; STAL duration" 
+//Note: Camera will cover 7 to the left and right, 5 above, and 4 below the coordinates
+
+#define Notice(unit,duration) "CUMO unit; STAL duration; CURE" 
+#define Notice(coord1,coord2,duration) "CUMO [coord1,coord2]; STAL duration; CURE"
+
+#define Move(unit,coord1,coord2) "MOVE 0x0 unit [coord1,coord2]"
+#define Move(unit,coord1,coord2,speed) "MOVE speed unit [coord1,coord2]"
+
+#define MoveAndWait(unit,coord1,coord2) "MOVE 0x0 unit [coord1,coord2]; ENUN"
+#define MoveAndWait(unit,coord1,coord2,speed) "MOVE speed unit [coord1,coord2]; ENUN"
+
+#define MoveAtCoords(oldXCoord,oldYCoord,newXCoord,newYCoord) "SVAL sB (oldYCoord<<16)|oldXCoord; MOVE 0 (-2) [newXCoord,newYCoord]"
+#define MoveAtCoordsAndWait(oldXCoord,oldYCoord,newXCoord,newYCoord) "SVAL sB (oldYCoord<<16)|oldXCoord; MOVE 0 (-2) [newXCoord,newYCoord]; ENUN"
+
+#define FollowUnit_T "EVBIT_T 0x9"
+#define FollowUnit_F "EVBIT_F 0x9"
+#define EndBattle "SETVAL 1 0xFFFFFFFF;                              SAVETOQUEUE"
+#define Kill(unitid) "SET_SOMETHING unitid; DISA_IF unitid"
+#define ObtainMoney(gold) "SVAL s3 gold; GIVEITEMTOMAIN 0"
+
+#define ReinforcementWarningEventHeader(condID) "SVAL s0 0; CHECK_EVENTID ReinforcementWarningsToggleEventID; IFNE condID sC s0"
+#define InfantryWarning "CALL InfantryWarningEvent"
+#define ArmorWarning "CALL ArmorWarningEvent"
+#define HorseWarning "CALL HorseWarningEvent"
+#define MageWarning "CALL MageWarningEvent"
+#define PegasusWarning "CALL PegasusWarningEvent"
+#define WyvernWarning "CALL WyvernWarningEvent"
+#define BanditWarning "CALL BanditWarningEvent"
+#define ThiefWarning "CALL ThiefWarningEvent"
+#define SoundWarning(textID,sound1,sound2) "TUTORIALTEXTBOXSTART; SETVAL 0xB 0xFFFFFFFF; TEXTSHOW textID; TEXTEND; REMA; SOUN sound1; STAL 8; SOUN sound2; STAL 8; SOUN sound1; STAL 8; SOUN sound2; STAL 8"
+
+#define DeathQuoteTableEntry(CharacterID,Chapter,TextPointer,EventPointer,TriggerID) "SHORT CharacterID; BYTE 0xFF; BYTE Chapter; SHORT TriggerID; SHORT TextPointer; POIN EventPointer"
+#define EndDeathQuoteTable "SHORT 0xFFFF 0 0 0 0 0"
+
+//Chapter IDs
+#define Ch_1 0x01
+#define Ch_2 0x02
+#define Ch_3 0x03
+#define Ch_3P2 0x17
+#define Ch_4 0x04
+#define Ch_5 0x06
+#define Ch_6 0x07
+#define Ch_7 0x08
+#define Ch_8 0x09
+#define Ch_9 0x0A
+#define MaevaCutsceneMap 0x49
+#define Ch3EndingMap 0x4A
+#define Ch3IntroMap 0x4B
+
+#define AllChapters 0xFF
+
+
+//Characters
+#define Zoren 0x01
+#define Iris 0x02
+#define Marcey 0x03
+#define Kamron 0x04
+#define Orville 0x05
+#define Nordica 0x06
+#define Franklin 0x07
+#define Laric 0x08
+#define Curcio 0x09
+#define Armond 0x0A
+#define Luther 0x0B
+#define Jacob 0x0C
+#define Gemmora 0x0D
+#define Thorbek 0x0E
+#define Grace 0x0F
+#define Arlett 0x10
+#define Ember 0x11
+#define Davis 0x12
+#define Korsana 0x13
+#define Rylan 0x14
+#define Kingsly 0x15
+#define Hazel 0x16
+#define Mason 0x17
+#define Shana 0x18
+#define Lorrand 0x19
+#define Rivia 0x1A
+#define Vivian 0x1B
+#define Colette 0x1C
+#define Myra 0x1D
+#define Percy 0x1E
+#define Jade 0x1F
+#define McVicar 0x20
+#define Jayce 0x21
+#define Nevel 0x22
+#define Angel 0x23
+#define Avery 0x24
+#define Yama 0x25
+
+#define Quinten 0x26
+#define Gert 0x27
+#define Fenris 0x28
+#define Zolma 0x29
+#define Pyrus 0x2A
+#define Olympia 0x2B
+#define Cain 0x2C
+
+#define Stanrel 0x68 //Prologue
+#define Bruce 0x46 //Chapter 1
+#define Talon 0x47 //Chapter 2
+#define Augustus 0x49 //Chapter 3
+#define Calder 0x48 //Chapter 4
+#define Artus 0x5B //Chapter 4
+#define Zino 0x4A //Chapter 5
+#define Zinoa 0x4A //Chapter 5
+
+
+#define PrologueBandit 0x66
+#define PrologueBandit2 0x67
+#define Informant 0x65
+
+#define Enemy0 0x80
+#define Enemy0S 0x81
+#define Enemy1 0x82
+#define Enemy1S 0x83
+#define Enemy2 0x84
+#define Enemy2S 0x85
+#define Enemy2S2 0x86
+#define Tricinian0 0x87
+#define Tricinian1 0x88
+#define Tricinian2 0x89
+#define Tricinian3 0x8A
+#define Tricinian4 0x8B
+#define Tricinian5 0x8C
+
+#define Ch1NPCMerc 0xA7
+#define Ch2NPCSoldier 0xA8
+#define Ch3Prisoner1 0xA9
+#define Ch3Prisoner2 0xAA
+#define Ch3Prisoner3 0xAB
+#define Ch3Prisoner4 0xAC
+#define Ch3Prisoner5 0xAD
+#define Ch3Prisoner6 0xAE
+#define Ch3Prisoner7 0xAF
+
+//Classes
+#define Falconknight FalcoKnight
+#define FalconKnight FalcoKnight
+
+#define Lancer 0x01
+#define ZorenLord 0x02
+#define Deserter 0x46
+#define Hunter 0x54
+
+
+//Items
+#define BronzeSword 0x02
+#define BronzeLance 0x15
+//#define BronzeAxe 0x27 //old slot
+#define BronzeAxe 0x9A
+//#define BronzeBow 0x33 //old slot
+#define BronzeBow 0x30
+//#define QuickBow 0x30 //old item
+#define NoviceSword 0x08
+#define NoviceLance 0x18
+#define NoviceAxe 0x22
+#define NoviceBow 0x0A
+#define CopperSword 0x81
+#define CopperLance 0x82
+#define CopperAxe 0x83
+#define CopperBow 0x84
+//#define DefenderSword 0x09
+//#define Armorslayer 0x0E
+#define BronzeLongbow 0x34
+#define IronLongbow 0x3D
+#define Greatbow 0x44
+#define SeraphRobe 0x5B
+#define Swiftsole 0x62
+#define Swiftsoles 0x62
+#define LateCrest 0x64
+#define VulnerableBolt 0x66
+//#define MasterSeal 0x88
+#define KingsEmblem 0x98
+#define RubySword 0x9B
+#define SapphireLance 0x9C
+#define EmeraldAxe 0x9D
+#define Defender 0x9E
+#define Item1000G 0x9F
+#define _1000G 0x9F
+#define Concoction 0xA2
+#define ArmsScroll 0xAB
+#define ArcaneGreatbow 0xAC
+#define Ensnare 0xB3
+#define Stalk 0xB4 //old name
+#define Devour 0xB4
+#define Aid 0xBC
+#define Block 0xBD
+
+#define ClericGem 0x74
+#define ArcherGem 0x75
+#define FighterGem 0x76
+#define KnightGem 0xBA
+#define MyrmidonGem 0xBB
+#define BrigandGem 0xCF
+#define KarbaltGem 0xDA
+#define SelnaGem 0xDB
+#define ThelrimGem 0xDC
+
+#define Corrosion 0xBF
+#define Elwarp 0xC0
+#define MasterKey 0xC1
+#define LearningRing 0xC2
+#define Secure 0xC3
+#define Elthunder 0xC4
+#define Bolganone 0xC5
+#define Donbettyr 0xC6
+#define Wind 0xC7
+#define Lucent 0xC8
+#define Redeem 0xC9 //old def
+#define Ruin 0xC9
+#define Corrupt 0xCA //old name
+#define Truth 0xCA
+#define UsedSilverCard 0xCB
+#define Coupon 0xCC
+#define Distort 0xCD
+#define Fortune 0xCE
+
+#define Gale 0xD0
+#define Ray 0xD1
+#define Luster 0xD2
+#define Worm 0xD3
+#define Enigma 0xD4
+#define Perfectus 0xD5
+#define FocusBelt 0xD6
+#define Whetstone 0xD7
+#define ScoutBadge 0xD8
+#define HalfGuard 0xD9
+
+#define Quake 0xDD
+#define Eternity 0xDE
+#define Thoron 0xDF
+#define Insight 0xE0
+#define Soul 0xE1
+#define Thani 0xE2
+#define Swift 0xE3
+#define Shade 0xE4
+#define Afflict 0xE5
+#define HuntingGreatbow 0xE6
+#define Guardian 0xE7
+#define Distract 0xE8
+#define RookieGem 0xE9
+#define PupilGem 0xEA
+#define RecruitGem 0xEB
+#define Rustbow 0xEC
+#define HeavyHoveringBoots 0xED
+
+#define Empower 0x7D //0xBE
+//#define WeakLockpick 0x79
+//#define FragileLockpick 0x79
+
+
+//AI
+#define NoAINoHeal [0x00,0x00,0x04,0x00]
+#define AttackInRangeNoHealAI [0x00,0x03,0x04,0x00]
+#define AttackInDoubleRangeAI [0x00,0x06,0x00,0x00]
+#define AttackInDoubleRangeNoHealAI [0x00,0x06,0x04,0x00]
+#define AttackInDoubleRangeExceptionAI [0x00,0x07,0x00,0x00]
+#define AttackInDoubleRangeExceptionNoHealAI [0x00,0x07,0x04,0x00]
+#define Working_AttackWallAI [0x0,0xE,0xC,0x0]
+#define StationaryAI [0x03,0x03,0x00,0x20]
+#define FightWithLeaderAI [0x0D,0x03,0x00,0x00]
+#define EscapeAvoidCombat [0x06,0x0C,0x04,0x00]
+#define LootThenEscape [0x06,0x05,0x04,0x00]
+#define RaidAndAttack [0x00,0x04,0x00,0x00]
+#define RaidAndAttackNoHeal [0x00,0x04,0x04,0x00]
+
+
+//Music + Sound Effects
+#define MapTheme_OgreBattle_Thunder 0x09
+#define MapTheme_Riviera_BattleAgainstDemons 0x0A
+#define MapTheme_FE5_Adversity 0x0B
+#define MapTheme_FFT_DecisiveBattle 0x0C
+#define MapTheme_TRS_KnightsOfLazeria 0x0D
+#define CutsceneTheme_FFT_Anxiety 0x2C
+#define PrepTheme_OrangeJuice_KaiTheme 0x34
+
+#define InfantryWarningSoundID 0x92
+#define ArmorWarningSoundID 0x93
+#define HorseWarningSoundID 0x94
+#define PegasusWarningSoundID 0xA8
+#define WyvernWarningSoundID 0xA9
+#define ThiefWarningSoundID 0xAD
+
+#define Footsteps1 0x0096
+#define Footsteps2 0x0097
+#define HorseTrot1 0x009B
+#define HorseTrot2 0x009C
+#define WyvernFlying1 0x00A0
+#define WyvernFlying2 0x00A1
+#define ArmorWalk1 0x00A2
+#define ArmorWalk2 0x00A3
+#define PegasusFlying1 0x00A6
+#define PegasusFlying2 0x00A7
+#define BrigandBattleCry 0x00E7
+#define BoltingSparks 0x0119
+#define UnlockingDoor 0x00B1
+

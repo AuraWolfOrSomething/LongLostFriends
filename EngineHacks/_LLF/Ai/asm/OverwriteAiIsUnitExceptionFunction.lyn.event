@@ -1,0 +1,8 @@
+ALIGN 4
+PUSH
+ORG CURRENTOFFSET+$1;OverwriteAiIsUnitExceptionFunction:
+POP
+SHORT $4901 $4B02 $4718
+BYTE $0 $0
+POIN CURRENTOFFSET-7
+POIN AiTargetExceptionCheck

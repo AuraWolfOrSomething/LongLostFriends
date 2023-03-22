@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="15" height="10" tilewidth="16" tileheight="16" nextobjectid="1">
+ <tileset firstgid="1" name="01003803" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
+  <image source="../../../Tilesets/FE8/01003803.png" width="512" height="512"/>
+ </tileset>
+ <layer name="MainMapLayer" width="15" height="10">
+  <properties>
+   <property name="Anims1" value="0x05"/>
+   <property name="Anims2" value="0"/>
+   <property name="ChapterID" value="0x4A"/>
+   <property name="Main" value=""/>
+   <property name="MapID" value="0xE5"/>
+   <property name="ObjectType" value="0x01"/>
+   <property name="PaletteID" value="0x38"/>
+   <property name="TileConfig" value="0x03"/>
+  </properties>
+  <data encoding="csv">
+785,947,166,881,947,721,784,101,644,600,598,784,131,687,134,
+816,721,785,786,132,165,816,133,721,646,697,133,627,457,530,
+71,80,72,99,785,786,100,783,134,678,629,598,686,496,546,
+115,39,144,67,132,721,783,674,772,881,786,602,494,716,427,
+721,114,170,785,786,100,164,99,641,816,131,633,207,627,748,
+101,103,138,165,133,721,165,643,131,133,209,3,177,685,654,
+68,784,47,785,786,99,101,673,164,686,68,697,231,338,210,
+881,946,786,132,67,164,783,100,721,134,769,565,773,99,721,
+816,134,163,721,785,883,133,45,72,785,786,600,598,772,68,
+132,783,164,783,163,816,67,721,169,80,72,166,629,598,686
+</data>
+ </layer>
+</map>

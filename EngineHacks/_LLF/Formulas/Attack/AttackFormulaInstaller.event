@@ -1,0 +1,10 @@
+PUSH
+
+ORG 0x2AABC
+#include "AttackFormulaParameters.lyn.event"
+ALIGN 4
+
+POP
+
+#include "AttackFormula.lyn.event"
+ALIGN 4

@@ -1,0 +1,71 @@
+
+DebuffTableLink:
+WORD DebuffTable
+
+DebuffTableSizeLink:
+WORD DebuffTableSize
+
+#include "CountUnits/CountUnits.lyn.event"
+ALIGN 4
+
+#include "GetDistance/GetDistance.lyn.event"
+ALIGN 4
+
+#include "StoreInventoryAtStackPointer/StoreInventoryAtStackPointer.lyn.event"
+ALIGN 4
+
+#include "CheckWeaponTriangleConnection/CheckWeaponTriangleConnection.lyn.event"
+ALIGN 4
+
+#include "RemoveItem/RemoveItem.lyn.event"
+ALIGN 4
+
+#include "CountCopiesOfItem/CountCopiesOfItem.lyn.event"
+ALIGN 4
+
+#include "FindItemInUnitInventory/FindItemInUnitInventory.lyn.event"
+ALIGN 4
+
+#include "MapMenu/MapMenu.event"
+ALIGN 4
+
+#include "GetUnitAtCursor/GetUnitAtCursor.lyn.event"
+ALIGN 4
+
+#include "PlayerPhaseMainIdle/PlayerPhaseMainIdle.event"
+ALIGN 4
+
+#include "PrepScreenModding/PrepScreenModding.event"
+ALIGN 4
+
+#include "ExtraEventUnitSpace/ExtraEventUnitSpace.event"
+ALIGN 4
+
+//#include "DecideUnitMenu/DecideUnitMenu.event"
+ALIGN 4
+
+#include "SwitchGameplayPhase/SwitchGameplayPhase.event"
+ALIGN 4
+
+#include "TerrainAtCoords/TerrainAtCoords.event"
+ALIGN 4
+
+#include "ResetCursor/ResetCursor.event"
+ALIGN 4
+
+#include "UniversalCaps.event"
+
+#include "EventSilentEditInventory/EventSilentEditInventory.event"
+ALIGN 4
+
+#include "TryAddUnitToRescueTargetList/TryAddUnitToRescueTargetList.event"
+ALIGN 4
+
+#include "BattleQuoteConditionalChecks/BattleQuoteConditionalChecks.event"
+ALIGN 4
+
+#include "DurabilityDisplay/DurabilityDisplay.event"
+ALIGN 4
+
+#include "ShoppingEdits/ShoppingEdits.event"
+ALIGN 4

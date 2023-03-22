@@ -1,0 +1,39 @@
+
+#include "asmAilmentCounterplay/AreNegativeStatusesEffective.lyn.event"
+ALIGN 4
+
+#include "asmAilmentCounterplay/AreDebuffsEffective.lyn.event"
+ALIGN 4
+
+#include "asmAilmentCounterplay/AreDebuffsHalved.lyn.event"
+ALIGN 4
+
+/*
+#include "asmAilmentCounterplay/AreNegativeStatusesBlocked.lyn.event"
+ALIGN 4
+
+#include "asmAilmentCounterplay/AreDebuffsBlocked.lyn.event"
+ALIGN 4
+*/
+
+NegativeStatusExceptionList:
+//POIN IsGuardianNullifyActive
+WORD 0
+
+DebuffExceptionList:
+//POIN IsGuardianNullifyActive
+WORD 0
+
+DebuffHalvingList:
+POIN IsDebuffHalfActive
+WORD 0
+
+/*
+NegativeStatusBlockingList:
+POIN IsNegativeStatusBlockActive
+WORD 0
+
+NegativeDebuffBlockingList:
+POIN IsDebuffBlockActive
+WORD 0
+*/

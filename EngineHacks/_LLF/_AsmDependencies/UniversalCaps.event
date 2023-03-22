@@ -1,0 +1,50 @@
+
+#define HpCap 60
+	#define HPCap HpCap
+#define LuckCap 30
+	#define LukCap LuckCap
+	#define LckCap LuckCap
+#define MovCap 15
+	#define MovementCap MovCap
+	#define MoveCap MovCap
+#define ConCap 25
+#define FtgCap 30
+	#define FatigueCap FtgCap
+#define NocCap 3
+
+//Luck Cap
+
+PUSH
+
+ORG 0x926FC
+BYTE LuckCap
+
+ORG 0x9C154
+BYTE LuckCap
+
+ORG 0x9C31C
+BYTE LuckCap
+
+/*
+These addresses are part of a rewritten routine that will load an offset that always has the updated cap; no need edit them
+
+ORG 0x18250 //EnsureNoUnitStatCapOverflow
+BYTE LuckCap
+
+ORG 0x18254 //EnsureNoUnitStatCapOverflow
+BYTE LuckCap
+
+ORG 0x2C016 //CheckForLevelUpCaps
+BYTE LuckCap
+
+ORG 0x2C01C //CheckForLevelUpCaps
+BYTE LuckCap
+*/
+
+/*
+This one must be edited manually due to its new routine
+ORG 0x872AE //mss_defs draw_luck_bar_at macro)
+BYTE LuckCap
+*/
+
+POP

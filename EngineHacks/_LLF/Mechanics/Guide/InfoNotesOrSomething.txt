@@ -1,0 +1,21 @@
+Vanilla Guide List goes from 08B19E0C to 08B1A0B7
+
+Vanilla Entries are 0x0C (12 dec) bytes long
+"BYTE groupByTopic groupByChapter; SHORT headerID infoID availableEventID readEventID 0"
+
+Guide ended by 0xC, then eleven (dec) 0's
+
+08B12AA4: Pointer to RAM offset for handling Guide info
+
+Routines
+
+- 080CECB0
+	- 080CEAE8: 
+	- 080CEBA4: 
+	- 0804EB68: 
+	- 080CE148: shows "About :" if sorting is by topic rather than chapter
+	
+- 080CE414: when player moves to new topic, check which entries are available
+
+- 080CEF48: checks player input
+  - Disable checking if select button was pressed with "ORG 0xCEF5E; BYTE 0xD010" //beq (0xCEF82)

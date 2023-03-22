@@ -1,0 +1,25 @@
+
+PUSH
+
+ORG 0x1E380
+BL(WarpAndElwarpRange)
+SHORT 0x1C03 //mov r3, r0
+
+ORG continueInBlRange
+WarpAndElwarpRange:
+SHORT 0xB500 0x7F81 //push {r14}; ldrb r1, [r0,#0x1E]
+SHORT 0x4A04 0x7812 //ldr r2 (WarpStaffLink); ldrb r2, [r2]
+SHORT 0x4291 0xD101 //cmp r1, r2; bne (0x2AAE0)
+SHORT 0x2005 0xE001 //mov r0, #5; b (0x2AAE4)
+BL(0x18A1C) //GetUnitMagBy2Range
+SHORT 0xBC02 0x4708 //0x2AAE4: pop {r1}; bx r1
+POIN WarpStaffLink
+
+#undef continueInBlRange
+#define continueInBlRange currentOffset
+
+POP
+
+WarpStaffLink:
+BYTE Warp
+ALIGN 4

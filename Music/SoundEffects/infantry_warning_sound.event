@@ -1,0 +1,52 @@
+//Event file generated from Sappy .s format.
+	#include "MPlayDef.event"
+
+	#define	infantry_warning_sound_grp  0x211BEC
+	#define	infantry_warning_sound_pri  0
+	#define	infantry_warning_sound_rev  0
+	#define	infantry_warning_sound_mvl  127
+	#define	infantry_warning_sound_key  0
+	#define	infantry_warning_sound_tbs  1
+	#define	infantry_warning_sound_exg  0
+	#define	infantry_warning_sound_cmp  1
+
+	// .rodata
+	//	infantry_warning_sound
+	ALIGN 4
+
+//**************** Track 1 (Midi-Chn.1) ****************//
+
+infantry_warning_sound_1:
+	BYTE		VOL     127*infantry_warning_sound_mvl/mxv
+	BYTE	KEYSH   infantry_warning_sound_key+0
+// 000   ----------------------------------------
+	BYTE	TEMPO   200*infantry_warning_sound_tbs/2
+	BYTE		VOICE   0
+	BYTE		N12     Cn3   v127
+	BYTE	W12
+	BYTE		        Bn2 
+	BYTE	W12
+	BYTE		        Cn3 
+	BYTE	W12
+	BYTE		        Bn2 
+	BYTE	W12
+	BYTE		        Cn3 
+	BYTE	W12
+	BYTE		        Bn2 
+	BYTE	W12
+	BYTE	FINE
+
+//******************************************************//
+	ALIGN 4
+
+infantry_warning_sound:
+	BYTE	1	// NumTrks
+	BYTE	0	// NumBlks
+	BYTE	infantry_warning_sound_pri	// Priority
+	BYTE	infantry_warning_sound_rev	// Reverb.
+
+	POIN2	infantry_warning_sound_grp
+
+	POIN2	infantry_warning_sound_1
+
+	

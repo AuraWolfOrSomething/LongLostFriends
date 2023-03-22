@@ -1,0 +1,26 @@
+#ifndef ArlettFreedEventID
+  #define ArlettFreedEventID 0x0A
+#endif
+
+#define ArlettCellDoorEventID 0x0B
+#define ArlettRemarkEventID 0x0C
+#define LeftTileEventID 0x0D
+#define RightTileEventID 0x0E
+#define EntranceTileEventID 0x0F
+#define BruceZorenQuoteEventID 0x10
+#define BruceDavisQuoteEventID 0x11
+#define BruceArlettQuoteEventID 0x12
+
+/*#ifndef Ch1PotentialCaptiveGoneID
+	#define Ch1PotentialCaptiveGoneID 0x0A
+#endif
+*/
+
+/*
+#define RightHouseEventID 0x0B
+#define ChestEventID 0x0C
+#define BreguetDeathEventID 0x0D
+#define BeranEscapedID 0x0E
+
+#define RylanLastStandQuoteEventID 0x0F
+*/

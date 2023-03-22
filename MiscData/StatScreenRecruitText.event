@@ -1,0 +1,16 @@
+
+//LLF/QoL/RecruitInfoOnStatScreen & Necessary/MSS
+
+#define DisplayRecruitmentInfoEntry(charID,chapterID,textID,textID2) "BYTE charID; BYTE chapterID; SHORT textID; SHORT textID2"
+
+DisplayRecruitmentInfoTextList:
+DisplayRecruitmentInfoEntry(Arlett,Ch_1,ArlettRecruitInfoLine1,ArlettRecruitInfoLine2)
+DisplayRecruitmentInfoEntry(Thorbek,Ch_2,ThorbekRecruitInfoLine1,ThorbekRecruitInfoLine2)
+DisplayRecruitmentInfoEntry(Mason,Ch_2,MasonRecruitInfoLine1,MasonRecruitInfoLine2)
+DisplayRecruitmentInfoEntry(Percy,Ch_3,PercyRecruitInfoLine1,PercyRecruitInfoLine2)
+DisplayRecruitmentInfoEntry(Rylan,Ch_4,RylanRecruitInfoLine1,RylanRecruitInfoLine2)
+DisplayRecruitmentInfoEntry(McVicar,Ch_4,McVicarRecruitInfoLine1,McVicarRecruitInfoLine2)
+DisplayRecruitmentInfoEntry(Artus,Ch_4,ArtusRecruitInfoLine1,ArtusRecruitInfoLine2)
+
+SHORT 0
+ALIGN 4

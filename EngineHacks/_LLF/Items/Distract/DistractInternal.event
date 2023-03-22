@@ -1,0 +1,84 @@
+
+#include "asm/DistractStaffRangeSetup.lyn.event"
+ALIGN 4
+
+//-------------------------------------------
+//Condition
+//-------------------------------------------
+
+#include "asm/DistractCondition.lyn.event"
+ALIGN 4
+
+#include "asm/TryAddUnitToDistractTargetList.lyn.event"
+ALIGN 4
+
+
+//-------------------------------------------
+//Target
+//-------------------------------------------
+
+#include "asm/DistractTarget.lyn.event"
+ALIGN 4
+
+#include "asm/MakeTargetListForDistract.lyn.event"
+ALIGN 4
+
+#include "asm/DistractTargetSelection_OnSelect.lyn.event"
+ALIGN 4
+
+#include "asm/DistractTargetPosSelect_Init.lyn.event"
+ALIGN 4
+
+#include "asm/DistractTargetSelection_Loop.lyn.event"
+ALIGN 4
+
+#include "asm/DistractTargetPosSelect_Cancel.lyn.event"
+ALIGN 4
+
+gProc_DistractTargetPosSelection:
+PROC_SET_DESTRUCTOR(0x08029840|1) //WarpTargetPosSelect_Destruct
+PROC_CALL_ROUTINE(0x15360|1) //LockGameLogic
+PROC_CALL_ROUTINE(DistractTargetPosSelect_Init)
+PROC_WHILE_EXISTS(0x59A548) //gProc_CameraMovement
+PROC_LOOP_ROUTINE(DistractTargetSelection_Loop) 
+PROC_CALL_ROUTINE(0x297D0|1) //WarpTargetPosSelect_Confirm
+PROC_SLEEP(0)
+PROC_GOTO(0x64)
+PROC_LABEL(0x63)
+
+PROC_CALL_ROUTINE(DistractTargetPosSelect_Cancel)
+PROC_SLEEP(0)
+PROC_LABEL(0x64)
+
+PROC_CALL_ROUTINE(0x15370|1) //UnlockGameLogic
+PROC_END
+
+DistractTargetBottomTextLink:
+SHORT DistractTargetBottomText
+SHORT DistractTargetBottomText2
+ALIGN 4
+
+//-------------------------------------------
+//Effect
+//-------------------------------------------
+
+#include "asm/DistractEffect.lyn.event"
+ALIGN 4
+
+DistractEffectEvent:
+STAL 95
+BYTE 0x4B 0x0D 0x00 0x06
+POIN Show_map_emotion_Install|1
+STAL 40
+SADD sB s2 s0
+SETVAL sD 0
+	//s1 is set during DistractEffect
+	SAVETOQUEUE
+	SETVAL s1 0
+	SAVETOQUEUE
+//MOVE_DEFINED UnitInSlot2
+MOVE_DEFINED UnitAtCoords
+ENUN
+NoFade
+ENDA
+

@@ -1,0 +1,13 @@
+MarceySupportList:
+SupportList(Marcey,MarceySupportList)
+
+SupportPartner(Jacob,20,30)
+//SupportPartner(Kamron,0,15)
+SupportPartner(Hazel,20,20)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(2)

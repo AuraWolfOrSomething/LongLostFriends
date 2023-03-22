@@ -1,0 +1,4 @@
+
+#include "asm/ReturnOpponentID.lyn.event"
+ALIGN 4
+

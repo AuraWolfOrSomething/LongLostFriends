@@ -1,0 +1,13 @@
+HazelSupportList:
+SupportList(Hazel,HazelSupportList)
+
+//SupportPartner(Zoren,20,30)
+SupportPartner(Marcey,20,20)
+SupportPartner(Cain,80,40)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(2)

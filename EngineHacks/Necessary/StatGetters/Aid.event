@@ -1,0 +1,49 @@
+#ifndef MODULAR_GETTER_AID_EVENT
+#define MODULAR_GETTER_AID_EVENT
+
+#include "_Common.event"
+
+pAidModifiers: // Aid
+	POIN prAddUnitFinalConstitution prSubstractOne prEscortSkill prEscortPlusSkill prAdjustAidIfMounted prGemAid-1
+	#ifdef DEBUFFS_MIN_ZERO
+	POIN prMinZero
+	#endif
+WORD 0
+
+prAddUnitFinalConstitution:
+	rAdd(rCallExternal(prConGetter))
+
+prSubstractOne:
+	rSubConst(1)
+	
+prEscortSkill:
+	rIfUnitHasSkill(EscortID)
+		rAddConst(1)
+	
+prEscortPlusSkill:
+	rIfUnitHasSkill(EscortPlusID)
+		rAddConst(2)
+
+prAdjustAidIfMounted:
+{
+	rIfUnitHasAttribute(CA_MOUNTEDAID)
+		//rCallSequence(_prNegate _prAddBaseMountedAidBonus)
+		//rCallSequence(_prNegate _prAddBaseMountedAidBonus _prAddMoreIfNotFemale)
+		rCallSequence(_prNegate _prAddBaseMountedAidBonus _prAddMoreIfHorseMount)
+
+_prNegate:
+	rMinus(rCurrent)
+
+_prAddBaseMountedAidBonus:
+	//rAddConst(24)
+	rAddConst(19)
+	
+_prAddMoreIfHorseMount:
+	rIfUnitHasAttribute(CA_MOUNTED, rAddConst(5))
+
+/*_prAddMoreIfNotFemale: // Stupid mechanic imo, but we're going vanilla so :shrug:
+	rIfUnitHasNotAttribute(CA_FEMALE, rAddConst(5))
+*/
+}
+
+#endif // MODULAR_GETTER_AID_EVENT

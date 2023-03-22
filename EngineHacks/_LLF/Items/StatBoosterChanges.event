@@ -1,0 +1,42 @@
+
+  //these only adjust how much a stat increases when the item is used
+  PUSH
+  
+  //seraph robe
+  ORG 0x8AEEDC
+  BYTE 0x04
+  
+  //energy ring
+  ORG 0x8AEEE9
+  BYTE 0x01
+  
+  //secret book
+  ORG 0x8AEEF6
+  BYTE 0x01
+  
+  //speedwings
+  ORG 0x8AEF03
+  BYTE 0x01
+  
+  //goddess icon
+  ORG 0x8AEF12
+  BYTE 0x01
+  
+  //dragonshield
+  ORG 0x8AEF1C
+  BYTE 0x01
+  
+  //talisman
+  ORG 0x8AEF29
+  BYTE 0x01
+  
+  //swiftsole
+  ORG 0x8AEF37
+  BYTE 0x01
+  
+  //body ring
+  ORG 0x8AEF44
+  BYTE 0x01
+  
+  POP
+  

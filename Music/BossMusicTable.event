@@ -1,0 +1,10 @@
+  
+  #define BossMusicEntry(entryID,character,music) "PUSH; ORG BossMusicTableOffset+entryID*8; BYTE character 0 0 0; BYTE music 0 0 0; POP"
+  
+  BossMusicEntry(0x0,Bardal,The_Battle_to_be_Won)
+  BossMusicEntry(0x1,Aragon,Powerful_Foe)
+  BossMusicEntry(0x2,Levi,The_Battle_to_be_Won)
+  BossMusicEntry(0x3,Octavio,The_Battle_to_be_Won)
+  BossMusicEntry(0x4,Delvin,The_Battle_to_be_Won)
+  BossMusicEntry(0x5,Malak_Boss,The_Battle_to_be_Won)
+  

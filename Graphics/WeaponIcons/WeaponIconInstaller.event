@@ -1,0 +1,551 @@
+
+PUSH
+
+ORG 0x5926F4
+
+
+//---------------------------------------------------
+//Swords
+//---------------------------------------------------
+
+#define SwordIcon_First 0
+
+	#define IronSwordIcon SwordIcon_First
+	#incbin "Swords/IronSword.dmp"
+
+	#define BronzeSwordIcon SwordIcon_First+1
+	#incbin "Swords/BronzeSword.dmp"
+
+	#define SteelSwordIcon SwordIcon_First+2
+	#incbin "Swords/SteelSword.dmp"
+
+	#define SilverSwordIcon SwordIcon_First+3
+	#incbin "Swords/SilverSword.dmp"
+
+	#define IronBladeIcon SwordIcon_First+4
+	#incbin "Swords/IronBlade.dmp"
+
+	#define SteelBladeIcon SwordIcon_First+5
+	#incbin "Swords/SteelBlade.dmp"
+
+	#define SilverBladeIcon SwordIcon_First+6
+	#incbin "Swords/SilverBlade.dmp"
+
+	#define NoviceSwordIcon SwordIcon_First+7
+	#incbin "Swords/NoviceSword.dmp"
+
+	#define KillingEdgeIcon SwordIcon_First+8
+	#incbin "Swords/KillingEdge.dmp"
+
+	#define ArmorslayerIcon SwordIcon_First+9
+	#incbin "Swords/Armorslayer.dmp"
+
+	#define LightBrandIcon SwordIcon_First+10
+	#incbin "Swords/LightBrand.dmp"
+
+	#define LancereaverIcon SwordIcon_First+11
+	#incbin "Swords/Lancereaver.dmp"
+
+	#define ZanbatoIcon SwordIcon_First+12
+	#incbin "Swords/Zanbato.dmp"
+
+	#define CopperSwordIcon SwordIcon_First+13
+	#incbin "Swords/CopperSword.dmp"
+	
+	#define RubySwordIcon SwordIcon_First+14
+	#incbin "Swords/RubySword.dmp"
+	
+	#define RapierIcon SwordIcon_First+15
+	#incbin "Swords/Rapier.dmp"
+
+
+//---------------------------------------------------
+//Lances
+//---------------------------------------------------
+
+#define LanceIcon_First SwordIcon_First+16
+
+	#define IronLanceIcon LanceIcon_First
+	#incbin "Lances/IronLance.dmp"
+	
+	#define BronzeLanceIcon LanceIcon_First+1
+	#incbin "Lances/BronzeLance.dmp"
+	
+	#define SteelLanceIcon LanceIcon_First+2
+	#incbin "Lances/SteelLance.dmp"
+	
+	#define SilverLanceIcon LanceIcon_First+3
+	#incbin "Lances/SilverLance.dmp"
+	
+	#define NoviceLanceIcon LanceIcon_First+4
+	#incbin "Lances/NoviceLance.dmp"
+	
+	#define KillerLanceIcon LanceIcon_First+5
+	#incbin "Lances/KillerLance.dmp"
+	
+	#define HorseslayerIcon LanceIcon_First+6
+	#incbin "Lances/Horseslayer.dmp"
+	
+	#define JavelinIcon LanceIcon_First+7
+	#incbin "Lances/Javelin.dmp"
+	
+	#define SpearIcon LanceIcon_First+8
+	#incbin "Lances/Spear.dmp"
+	
+	#define AxereaverIcon LanceIcon_First+9
+	#incbin "Lances/Axereaver.dmp"
+	
+	#define CopperLanceIcon LanceIcon_First+10
+	#incbin "Lances/CopperLance.dmp"
+	
+	#define HeavySpearIcon LanceIcon_First+11
+	#incbin "Lances/HeavySpear.dmp"
+	
+	#define ShortSpearIcon LanceIcon_First+12
+	#incbin "Lances/ShortSpear.dmp"
+	
+	#define SapphireLanceIcon LanceIcon_First+13
+	#incbin "Lances/SapphireLance.dmp"
+	
+	#define DefenderIcon LanceIcon_First+14
+	#incbin "Lances/Defender.dmp"
+
+
+
+//---------------------------------------------------
+//Axes
+//---------------------------------------------------
+
+#define AxeIcon_First LanceIcon_First+15
+
+	#define IronAxeIcon AxeIcon_First
+	#incbin "Axes/IronAxe.dmp"
+	
+	#define SteelAxeIcon AxeIcon_First+1
+	#incbin "Axes/SteelAxe.dmp"
+	
+	#define SilverAxeIcon AxeIcon_First+2
+	#incbin "Axes/SilverAxe.dmp"
+	
+	#define NoviceAxeIcon AxeIcon_First+3
+	#incbin "Axes/NoviceAxe.dmp"
+	
+	#define KillerAxeIcon AxeIcon_First+4
+	#incbin "Axes/KillerAxe.dmp"
+	
+	#define HalberdIcon AxeIcon_First+5
+	#incbin "Axes/Halberd.dmp"
+	
+	#define HammerIcon AxeIcon_First+6
+	#incbin "Axes/Hammer.dmp"
+	
+	#define BronzeAxeIcon AxeIcon_First+7
+	#incbin "Axes/BronzeAxe.dmp"
+	
+	#define HandAxeIcon AxeIcon_First+8
+	#incbin "Axes/HandAxe.dmp"
+	
+	#define TomahawkIcon AxeIcon_First+9
+	#incbin "Axes/Tomahawk.dmp"
+	
+	#define SwordreaverIcon AxeIcon_First+10
+	#incbin "Axes/Swordreaver.dmp"
+	
+	#define HatchetIcon AxeIcon_First+11
+	#incbin "Axes/Hatchet.dmp"
+	
+	#define CopperAxeIcon AxeIcon_First+12
+	#incbin "Axes/CopperAxe.dmp"
+	
+	#define BattleAxeIcon AxeIcon_First+13
+	#incbin "Axes/BattleAxe.dmp"
+	
+	#define EmeraldAxeIcon AxeIcon_First+14
+	#incbin "Axes/EmeraldAxe.dmp"
+	
+	#define DevilAxeIcon AxeIcon_First+15
+	#incbin "Axes/DevilAxe.dmp"
+
+
+//---------------------------------------------------
+//Bows
+//---------------------------------------------------
+
+#define BowIcon_First AxeIcon_First+16
+
+	#define NoviceBowIcon BowIcon_First
+	#incbin "Bows/NoviceBow.dmp"
+	
+	#define IronBowIcon BowIcon_First+1
+	#incbin "Bows/IronBow.dmp"
+	
+	#define SteelBowIcon BowIcon_First+2
+	#incbin "Bows/SteelBow.dmp"
+	
+	#define SilverBowIcon BowIcon_First+3
+	#incbin "Bows/SilverBow.dmp"
+	
+	//#define QuickBowIcon BowIcon_First+4
+	//#incbin "Bows/QuickBow.dmp"
+	
+	#define ShortBowIcon BowIcon_First+4
+	#incbin "Bows/ShortBow.dmp"
+	
+	#define KillerBowIcon BowIcon_First+5
+	#incbin "Bows/KillerBow.dmp"
+	
+	#define BronzeBowIcon BowIcon_First+6
+	#incbin "Bows/BronzeBow.dmp"
+	
+	#define BronzeLongbowIcon BowIcon_First+7
+	#incbin "Bows/BronzeLongbow.dmp"
+	
+	#define IronLongbowIcon BowIcon_First+8
+	#incbin "Bows/IronLongbow.dmp"
+	
+	#define GreatbowIcon BowIcon_First+9
+	#incbin "Bows/Greatbow.dmp"
+	
+	#define CopperBowIcon BowIcon_First+10
+	#incbin "Bows/CopperBow.dmp"
+	
+	#define ArcaneGreatbowIcon BowIcon_First+11
+	#incbin "Bows/ArcaneGreatbow.dmp"
+	
+	#define HuntingGreatbowIcon BowIcon_First+12
+	//#incbin "Bows/HuntingGreatbow.dmp"
+	#incbin "Other/NoItemIcon.dmp"
+	
+	#define BallistaIcon BowIcon_First+13
+	#incbin "Bows/Ballista.dmp"
+	
+	#define RustbowIcon BowIcon_First+14
+	#incbin "Bows/Rustbow.dmp"
+
+
+//---------------------------------------------------
+//Anima
+//---------------------------------------------------
+
+#define AnimaIcon_First BowIcon_First+15
+
+	#define FireIcon AnimaIcon_First
+	#incbin "Anima/Fire.dmp"
+	
+	#define ThunderIcon AnimaIcon_First+1
+	#incbin "Anima/Thunder.dmp"
+	
+	#define ElfireIcon AnimaIcon_First+2
+	#incbin "Anima/Elfire.dmp"
+	
+	#define BoltingIcon AnimaIcon_First+3
+	#incbin "Anima/Bolting.dmp"
+	
+	#define FimbulvetrIcon AnimaIcon_First+4
+	#incbin "Anima/Fimbulvetr.dmp"
+	
+	#define ElthunderIcon AnimaIcon_First+5
+	#incbin "Anima/Elthunder.dmp"
+	
+	#define BolganoneIcon AnimaIcon_First+6
+	#incbin "Anima/Bolganone.dmp"
+	
+	#define DonbettyrIcon AnimaIcon_First+7
+	#incbin "Anima/Donbettyr.dmp"
+	
+	#define WindIcon AnimaIcon_First+8
+	#incbin "Anima/Wind.dmp"
+	
+	#define GaleIcon AnimaIcon_First+9
+	#incbin "Anima/Gale.dmp"
+	
+	#define QuakeIcon AnimaIcon_First+10
+	//#incbin "Anima/Quake.dmp"
+	#incbin "Other/NoItemIcon.dmp"
+	
+	#define EternityIcon AnimaIcon_First+11
+	//#incbin "Anima/Eternity.dmp"
+	#incbin "Other/NoItemIcon.dmp"
+	
+	#define ThoronIcon AnimaIcon_First+12
+	//#incbin "Anima/Thoron.dmp"
+	#incbin "Other/NoItemIcon.dmp"
+
+
+//---------------------------------------------------
+//Light
+//---------------------------------------------------
+
+#define LightIcon_First AnimaIcon_First+13
+
+	#define LightningIcon LightIcon_First
+	#incbin "Light/Lightning.dmp"
+	
+	#define ShineIcon LightIcon_First+1
+	#incbin "Light/Shine.dmp"
+	
+	#define DivineIcon LightIcon_First+2
+	#incbin "Light/Divine.dmp"
+	
+	#define PurgeIcon LightIcon_First+3
+	#incbin "Light/Purge.dmp"
+	
+	#define AuraIcon LightIcon_First+4
+	#incbin "Light/Aura.dmp"
+	
+	#define LucentIcon LightIcon_First+5
+	#incbin "Light/Lucent.dmp"
+	
+	#define FortuneIcon LightIcon_First+6
+	#incbin "Light/Fortune.dmp"
+	
+	#define RayIcon LightIcon_First+7
+	#incbin "Light/Ray.dmp"
+	
+	#define LusterIcon LightIcon_First+8
+	#incbin "Light/Luster.dmp"
+	
+	#define InsightIcon LightIcon_First+9
+	#incbin "Light/Insight.dmp"
+	
+	#define SoulIcon LightIcon_First+10
+	//#incbin "Light/Soul.dmp"
+	#incbin "Other/NoItemIcon.dmp"
+	
+	#define ThaniIcon LightIcon_First+11
+	//#incbin "Light/Thani.dmp"
+	#incbin "Other/NoItemIcon.dmp"
+	
+	#define SwiftIcon LightIcon_First+12
+	//#incbin "Light/Swift.dmp"
+	#incbin "Other/NoItemIcon.dmp"
+
+
+//---------------------------------------------------
+//Dark
+//---------------------------------------------------
+
+#define DarkIcon_First LightIcon_First+13
+
+	#define FluxIcon DarkIcon_First
+	#incbin "Dark/Flux.dmp"
+	
+	#define LunaIcon DarkIcon_First+1
+	#incbin "Dark/Luna.dmp"
+	
+	#define NosferatuIcon DarkIcon_First+2
+	#incbin "Dark/Nosferatu.dmp"
+	
+	#define FenrirIcon DarkIcon_First+3
+	#incbin "Dark/Fenrir.dmp"
+	
+	#define EnsnareIcon DarkIcon_First+4
+	#incbin "Dark/Ensnare.dmp"
+	
+	#define DevourIcon DarkIcon_First+5
+	#incbin "Dark/Devour.dmp"
+	
+	#define TruthIcon DarkIcon_First+6
+	#incbin "Dark/Truth.dmp"
+	
+	#define DistortIcon DarkIcon_First+7
+	#incbin "Dark/Distort.dmp"
+	
+	#define WormIcon DarkIcon_First+8
+	#incbin "Dark/Worm.dmp"
+	
+	#define EnigmaIcon DarkIcon_First+9
+	#incbin "Dark/Enigma.dmp"
+	
+	#define ShadeIcon DarkIcon_First+10
+	#incbin "Dark/Shade.dmp"
+	
+	#define AfflictIcon DarkIcon_First+11
+	#incbin "Dark/Afflict.dmp"
+	
+	#define RuinIcon DarkIcon_First+12
+	//#incbin "Dark/Ruin.dmp"
+	#incbin "Other/NoItemIcon.dmp"
+
+
+//---------------------------------------------------
+//Staves
+//---------------------------------------------------
+
+#define StaffIcon_First DarkIcon_First+13
+
+	#define HealIcon StaffIcon_First
+	#incbin "Staves/Heal.dmp"
+	
+	#define MendIcon StaffIcon_First+1
+	#incbin "Staves/Mend.dmp"
+	
+	#define RecoverIcon StaffIcon_First+2
+	#incbin "Staves/Recover.dmp"
+	
+	#define PhysicIcon StaffIcon_First+3
+	#incbin "Staves/Physic.dmp"
+	
+	#define FortifyIcon StaffIcon_First+4
+	#incbin "Staves/Fortify.dmp"
+	
+	#define RestoreIcon StaffIcon_First+5
+	#incbin "Staves/Restore.dmp"
+	
+	#define WarpIcon StaffIcon_First+6
+	#incbin "Staves/Warp.dmp"
+	
+	#define RescueIcon StaffIcon_First+7
+	#incbin "Staves/Rescue.dmp"
+	
+	#define HammerneIcon StaffIcon_First+8
+	#incbin "Staves/Hammerne.dmp"
+	
+	#define BarrierIcon StaffIcon_First+9
+	#incbin "Staves/Barrier.dmp"
+	
+	#define AidIcon StaffIcon_First+10
+	#incbin "Staves/Aid.dmp"
+	
+	#define BlockIcon StaffIcon_First+11
+	#incbin "Staves/Block.dmp"
+	
+	#define EmpowerIcon StaffIcon_First //not sure if this will actually be a thing
+	
+	#define CorrosionIcon StaffIcon_First+12
+	#incbin "Staves/Corrosion.dmp"
+	
+	#define ElwarpIcon StaffIcon_First+13
+	#incbin "Staves/Elwarp.dmp"
+	
+	#define SecureIcon StaffIcon_First+14
+	#incbin "Staves/Secure.dmp"
+	
+	#define GuardianIcon StaffIcon_First+15
+	#incbin "Staves/Guardian.dmp"
+	
+	#define DistractIcon StaffIcon_First+16
+	#incbin "Staves/Distract.dmp"
+
+
+//---------------------------------------------------
+//Other
+//---------------------------------------------------
+
+#define ItemIcon_First StaffIcon_First+17
+
+	#define LateCrestIcon ItemIcon_First
+	#incbin "Other/LateCrest.dmp"
+	
+	#define VulnerableBoltIcon ItemIcon_First+1
+	#incbin "Other/NoItemIcon.dmp"
+	
+	#define ChestKeyIcon ItemIcon_First+2
+	#incbin "Other/ChestKey.dmp"
+	
+	#define DoorKeyIcon ItemIcon_First+3
+	#incbin "Other/DoorKey.dmp"
+	
+	#define LockpickIcon ItemIcon_First+4
+	#incbin "Other/Lockpick.dmp"
+	
+	#define VulneraryIcon ItemIcon_First+5
+	#incbin "Other/Vulnerary.dmp"
+	
+	#define ElixirIcon ItemIcon_First+6
+	#incbin "Other/Elixir.dmp"
+	
+	#define PureWaterIcon ItemIcon_First+7
+	#incbin "Other/PureWater.dmp"
+	
+	#define SilverCardIcon ItemIcon_First+8
+	#incbin "Other/SilverCard.dmp"
+	
+	#define ClericGemIcon ItemIcon_First+9
+	#incbin "Other/ClericGem.dmp"
+	
+	#define ArcherGemIcon ItemIcon_First+10
+	#incbin "Other/ArcherGem.dmp"
+	
+	#define FighterGemIcon ItemIcon_First+11
+	#incbin "Other/FighterGem.dmp"
+	
+	#define LightRuneIcon ItemIcon_First+12
+	#incbin "Other/LightRune.dmp"
+	
+	#define MasterSealIcon ItemIcon_First+13
+	#incbin "Other/MasterSeal.dmp"
+	
+	#define ConcoctionIcon ItemIcon_First+14
+	#incbin "Other/Concoction.dmp"
+	
+	#define ArmsScrollIcon ItemIcon_First+15
+	#incbin "Other/ArmsScroll.dmp"
+	
+	#define KnightGemIcon ItemIcon_First+16
+	#incbin "Other/KnightGem.dmp"
+	
+	#define MyrmidonGemIcon ItemIcon_First+17
+	#incbin "Other/MyrmidonGem.dmp"
+	
+	#define MasterKeyIcon ItemIcon_First+18
+	#incbin "Other/MasterKey.dmp"
+	
+	#define LearningRingIcon ItemIcon_First+19
+	#incbin "Other/LearningRing.dmp"
+	
+	#define UsedSilverCardIcon ItemIcon_First+20
+	#incbin "Other/UsedSilverCard.dmp"
+	
+	#define CouponIcon ItemIcon_First+21
+	#incbin "Other/Coupon.dmp"
+	
+	#define BrigandGemIcon ItemIcon_First+22
+	#incbin "Other/BrigandGem.dmp"
+	
+	#define PerfectusIcon ItemIcon_First+23
+	#incbin "Other/NoItemIcon.dmp"
+	
+	#define FocusBeltIcon ItemIcon_First+24
+	#incbin "Other/FocusBelt.dmp"
+	
+	#define WhetstoneIcon ItemIcon_First+25
+	#incbin "Other/NoItemIcon.dmp"
+	
+	#define ScoutBadgeIcon ItemIcon_First+26
+	#incbin "Other/NoItemIcon.dmp"
+	
+	#define HalfGuardIcon ItemIcon_First+27
+	#incbin "Other/NoItemIcon.dmp"
+	
+	#define KarbaltGemIcon ItemIcon_First+28
+	#incbin "Other/NoItemIcon.dmp"
+	
+	#define SelnaGemIcon ItemIcon_First+29
+	#incbin "Other/NoItemIcon.dmp"
+	
+	#define ThelrimGemIcon ItemIcon_First+30
+	#incbin "Other/NoItemIcon.dmp"
+	
+	#define RookieGemIcon ItemIcon_First+31
+	#incbin "Other/RookieGem.dmp"
+	
+	#define PupilGemIcon ItemIcon_First+32
+	#incbin "Other/PupilGem.dmp"
+	
+	#define RecruitGemIcon ItemIcon_First+33
+	#incbin "Other/RecruitGem.dmp"
+	
+	#define HeavyHoveringBootsIcon ItemIcon_First+34
+	#incbin "Other/HeavyHoveringBoots.dmp"
+
+
+//---------------------------------------------------
+//The end
+//---------------------------------------------------
+
+	#define NoItemIcon ItemIcon_First+35
+	#define _NoItemIcon_ NoItemIcon
+	#incbin "Other/NoItemIcon.dmp"
+	
+POP

@@ -1,0 +1,56 @@
+## ArlettRecruitInfoLine1
+Break her out or end[X]
+
+## ArlettRecruitInfoLine2
+the chapter.[X]
+
+## ThorbekRecruitInfoLine1
+Talk to him with Zoren,[X]
+
+## ThorbekRecruitInfoLine2
+Arlett, or Davis.[X]
+
+## MasonRecruitInfoLine1
+If he survives, he joins[X]
+
+## MasonRecruitInfoLine2
+in a later chapter.[X]
+
+## PercyRecruitInfoLine1
+If he survives, he joins[X]
+
+## PercyRecruitInfoLine2
+in Part 2 of the chapter.[X]
+
+## RylanRecruitInfoLine1
+If he survives, he joins[X]
+
+## RylanRecruitInfoLine2
+after this chapter.[X]
+
+## McVicarRecruitInfoLine1
+Progress: [X]
+
+## McVicarRecruitInfoLine2
+1) Impress him 3 times.[X]
+
+## McVicarRecruitInfoLine2b
+2) Talk to him with Zoren.[X]
+
+## ArtusRecruitInfoLine1
+McVicar: Defeat Artus before[X]
+
+## ArtusRecruitInfoLine2
+McVicar can for 1 impression.[X]
+
+## NevelRecruitInfoLine1
+He must survive or talk with[X]
+
+## NevelRecruitInfoLine2
+Zoren, Jayce, or Hazel.[X]
+
+## AngelRecruitInfoLine1
+She must survive or talk with[X]
+
+## AngelRecruitInfoLine2
+Zoren, Jayce, or Hazel.[X]

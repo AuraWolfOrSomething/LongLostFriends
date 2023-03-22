@@ -1,0 +1,4 @@
+
+MightPenaltyExceptionList:
+BYTE BronzeBow IronBow CopperBow SteelBow SilverBow NoviceBow KillerBow ShortBow BronzeLongbow IronLongbow Greatbow ArcaneGreatbow HuntingGreatbow Ballista Rustbow Rapier Gale Thani 0 
+ALIGN 4

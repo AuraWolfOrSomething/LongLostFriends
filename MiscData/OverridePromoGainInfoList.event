@@ -1,0 +1,25 @@
+
+OverridePromoGainInfoList:
+SHORT Jacob 4 //Character ID; Number of override entries for this character
+
+BYTE Warrior Journeyman_1 Fighter 0
+/*
+First class ID: a class that the unit can promote to
+Second class ID: if this unit is in this class while looking at info about the first class, do not use this class for mov/con calculations
+Third class ID: if unit is in the second class, use this class for calculations instead
+Lastly, a zero is used to make each override word aligned
+
+In this example, if Jacob is currently a Journeyman when the player views the Warrior page, he is treated as if he was a Fighter for calculating the mov/con gains
+
+Note: if you're calculating HP and other stats by comparing class base stats, then you may want to edit PromotionHelpTextValues so that it utilizes this for that portion
+*/
+
+BYTE Hero Journeyman_1 Fighter 0
+BYTE Berserker Journeyman_1 Fighter 0
+BYTE GreatKnight Journeyman_1 Fighter 0
+
+//End of the list (do not need to terminate each character after all of their entries)
+WORD 0
+ALIGN 4
+
+

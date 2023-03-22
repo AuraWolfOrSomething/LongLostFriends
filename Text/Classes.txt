@@ -1,0 +1,406 @@
+
+## LancerName
+Lancer[X]
+
+## LancerDesc
+Infantry with solid offensive[N]
+capabilities. Equip: Lances.[X]
+
+## LordName
+Lord[X]
+
+## LordDesc
+A wandering tactician carrying his[N]
+own plans out. Equip: Swords, anima.[X]
+
+## GreatLordName
+Great Lord[X]
+
+## GreatLordDesc
+Mounted lords whose fine qualities[NL]
+set them apart from their peers.[X]
+
+## CavalierName
+Cavalier[X]
+
+## CavalierDesc
+Mounted knights with swift movement.[NL]
+Equip: Swords, lances, or axes.[X]
+
+## PaladinName
+Paladin[X]
+
+## PaladinDesc
+Mounted knights with superior[NL]
+abilities. Equip: Swords, lances.[X]
+
+## KnightName
+Knight[X]
+
+## KnightDesc
+Heavily armored knights with poor[NL]
+movement. Equip: Swords, lances.[X]
+
+## GeneralName
+General[X]
+
+## GeneralDesc
+Knights with superb defenses.[NL]
+Equip: Swords, lances, axes.[X]
+
+## ThiefName
+Thief[X]
+
+## ThiefDesc
+Multitalented knaves with an[NL]
+eye for riches. Equip: Swords.[X]
+
+## MercenaryName
+Mercenary[X]
+
+## MercenaryDesc
+Well-balanced professional soldiers-[NL]
+for-hire. Equip: Swords.[X]
+
+## HeroName
+Hero[X]
+
+## HeroDesc
+Seasoned veterans with remarkable[NL]
+skill. Equip: Swords, axes.[X]
+
+## MyrmidonName
+Myrmidon[X]
+
+## MyrmidonDesc
+Talented swordsmen skilled in swift[NL]
+killing strokes. Equip: Swords.[X]
+
+## SwordmasterName
+Swordmaster[X]
+
+## SwordmasterDesc
+Lightning-fast swordsmen of peerless[NL]
+and lethal skill. Equip: Swords.[X]
+
+## AssassinName
+Assassin[X]
+
+## AssassinDesc
+Masters of the killing[NL]
+arts. Equip: Swords.[X]
+
+## ArcherName
+Archer[X]
+
+## ArcherDesc
+Warriors who use bows to attack[NL]
+from afar. Equip: Bows.[X]
+
+## SniperName
+Sniper[X]
+
+## SniperDesc
+Archers of unparalleled[NL]
+accuracy. Equip: Bows.[X]
+
+## RangerName
+Ranger[X]
+
+## RangerDesc
+Fighters skilled in both sword and bow.[NL]
+Equip: Swords, bows.[X]
+
+## WyvernRiderName
+Wyvern Rider[X]
+
+## WyvernRiderDesc
+High-flying knights vulnerable only to[NL]
+bows and magic. Equip: Axes.[X]
+
+## WyvernLordName
+Wyvern Lord[X]
+
+## WyvernLordDesc
+Wyvern-mounted knights of superior[NL]
+skill. Equip: Axes, lances.[X]
+
+## WyvernKnightName
+Wyvern Kn.[X]
+
+## WyvernKnightDesc
+Wyvern riders of overwhelming[NL]
+power and speed. Equip: Lances.[X]
+
+## MageName
+Mage[X]
+
+## MageDesc
+Magic wielders with solid skills but low[NL]
+physical strength. Equip: Anima.[X]
+
+## SageName
+Sage[X]
+
+## SageDesc
+Advanced scholars of magical codices.[NL]
+Equip: Anima, staves.[X]
+
+## MageKnightName
+Mage Knight[X]
+
+## MageKnightDesc
+Knights trained in both anima and[NL]
+staves. Equip: Anima, staves.[X]
+
+## BishopName
+Bishop[X]
+
+## BishopDesc
+A wisened adversary of dark magic[NL]
+users. Equip: Light, staves.[X]
+
+## NomadName
+Nomad[X]
+
+## NomadDesc
+Mounted plainsmen with good[NL]
+movement. Armed with bows.[X]
+
+## NomadTrooperName
+Nmd Trooper[X]
+
+## NomadTrooperDesc
+An honorific given to nomads of[NL]
+great skill. Equip: Bows, swords.[X]
+
+## ManaketeName
+Manakete[X]
+
+## ManaketeDesc
+Mysterious tribesmen who can turn[NL]
+into dragons. Equip: Dragonstone.[X]
+
+## JourneymanName
+Journeyman[X]
+
+## JourneymanDesc
+Young fighters with high[NL]
+expectations. Equip: Axes.[X]
+
+## PupilName
+Pupil[X]
+
+## PupilDesc
+Mages in training with lofty[NL]
+aspirations. Equip: Anima.[X]
+
+## RecruitName
+Recruit[X]
+
+## RecruitDesc
+Unproven knights with dreams[NL]
+of glory. Equip: Lances.[X]
+
+## RogueName
+Rogue[X]
+
+## RogueDesc
+Knaves who overcome foes with[NL]
+reflexes and wits. Equip: Swords.[X]
+
+## FighterName
+Fighter[X]
+
+## FighterDesc
+Ruffians with great strength but[NL]
+poor defense. Equip: Axes.[X]
+
+## WarriorName
+Warrior[X]
+
+## WarriorDesc
+Stalwart warriors whose power is[NL]
+their pride. Equip: Axes, bows.[X]
+
+## BrigandName
+Brigand[X]
+
+## BrigandDesc
+Mighty mercenaries who thrive[NL]
+in mountains. Equip: Axes.[X]
+
+## BerserkerName
+Berserker[X]
+
+## BerserkerDesc
+Fighters at home both in mountains[NL]
+and at sea. Equip: Axes.[X]
+
+## GreatKnightName
+Great Knight[X]
+
+## GreatKnightDesc
+Knights with great mobility and[NL]
+defense. Equip: Lances, axes.[X]
+
+## ShamanName
+Shaman[X]
+
+## ShamanDesc
+Wielders of magic who are stronger,[NL]
+but slower, than mages. Equip: Dark.[X]
+
+## DruidName
+Druid[X]
+
+## DruidDesc
+Wielders of deep and ancient magic.[NL]
+Equip: Dark, anima.[X]
+
+## SummonerName
+Summoner[X]
+
+## SummonerDesc
+Master sorcerers who summon fighters.[NL]
+Equip: Dark, staves.[X]
+
+## MonkName
+Monk[X]
+
+## MonkDesc
+Users of light magic with high[NL]
+resistance. Equip: Light.[X]
+
+## DeserterName
+Deserter[X]
+
+## DeserterDesc
+A former soldier who has resorted[NL]
+to banditry. Equip: Lances.[X]
+
+## PriestName
+Priest[X]
+
+## PriestDesc
+Spiritual guides who use sacred[NL]
+staves to heal allies. Equip: Staves.[X]
+
+## PegasusKnightName
+Pegasus Kn.[X]
+
+## PegasusKnightDesc
+Airborne knights who resist magic but[NL]
+are weak against bows. Equip: Lances.[X]
+
+## FalconKnightName
+Falcoknight[X]
+
+## FalconKnightDesc
+Swift sky warriors who shrug off[NL]
+magic attacks. Equip: Swords, lances.[X]
+
+## ClericName
+Cleric[X]
+
+## ClericDesc
+Holy women who use sacred staves to[NL]
+heal their allies. Equip: Staves.[X]
+
+## TroubadourName
+Troubadour[X]
+
+## TroubadourDesc
+Maidens who wield staves from[NL]
+horseback. Equip: Staves.[X]
+
+## ValkyrieName
+Valkyrie[X]
+
+## ValkyrieDesc
+Battle maidens who wield both staves[NL]
+and light magic. Equip: Light, staves.[X]
+
+## DancerName
+Dancer[X]
+
+## DancerDesc
+Dancers whose dances revitalize[NL]
+their allies. They cannot attack.[X]
+
+## SoldierName
+Soldier[X]
+
+## SoldierDesc
+Infantry with a focus on power[N]
+and defense. Equip: Lances.[X]
+
+## PirateName
+Pirate[X]
+
+## PirateDesc
+Tough brawlers who call the[NL]
+sea their home. Equip: Axes.[X]
+
+## HunterName
+Hunter[X]
+
+## HunterDesc
+Archers that are quick on[N]
+their feet. Equip: Bows.[X]
+
+## NecromancerName
+Necromancer[X]
+
+## NecromancerDesc
+Master of a taboo art.[N]
+Equip: Dark, staves.[X]
+
+## PhantomName
+Phantom[X]
+
+## PhantomDesc
+Phantom warriors who possess great[NL]
+strength but vanish when attacked.[X]
+
+## EntombedName
+Entombed[X]
+
+## EntombedDesc
+Reanimated corpses. They're not fast,[NL]
+but their talons rend flesh with ease.[X]
+
+## WightName
+Wight[X]
+
+## WightDesc
+Skeletons resurrected by terrible magic.[NL]
+They can wield many weapons.[X]
+
+## ArchMogallName
+Arch Mogall[X]
+
+## ArchMogallDesc
+Perilous floating orbs with incredible[N]
+mastery over ancient magic.[X]
+
+## DracoZombieName
+Draco Zombie[X]
+
+## DracoZombieDesc
+The revived corpse of a dragon. Its[NL]
+putrid breath decays all it touches.[X]
+
+## CivilianName
+Civilian[X]
+
+## CivilianDesc
+An innocent peasant lacking any[NL]
+combat skills at all.[X]
+
+## PeerName
+Peer[X]
+
+## PeerDesc
+A vulnerable unit that offers[NL]
+morale boosts to allies.[X]

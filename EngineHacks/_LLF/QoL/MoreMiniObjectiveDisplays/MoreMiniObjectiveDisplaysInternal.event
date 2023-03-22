@@ -1,0 +1,31 @@
+
+PUSH
+
+//removes limiting display id range to 0-4
+ORG 0x8D32A
+SHORT 0xE001 //b (0x8D330)
+
+ORG 0x8D33C
+POIN MiniObjectiveDisplayPointers
+
+POP
+
+SlashSymbolLink:
+SHORT 0x0539
+ALIGN 4
+
+#include "asm/MiniObjectiveDisplay_Captives.lyn.event"
+MiniObjectiveDisplay_CaptivesTextLink:
+SHORT MiniObjectiveDisplay_CaptivesText
+ALIGN 4
+
+#include "asm/MiniObjectiveDisplay_Parts.lyn.event"
+MiniObjectiveDisplay_PartsTextLink:
+SHORT MiniObjectiveDisplay_PartsText
+SHORT MiniObjectiveDisplay_PartsOfText
+ALIGN 4
+
+//#include "asm/MiniObjectiveDisplay_Progress.lyn.event"
+MiniObjectiveDisplay_ProgressTextLink:
+SHORT MiniObjectiveDisplay_ProgressText
+ALIGN 4

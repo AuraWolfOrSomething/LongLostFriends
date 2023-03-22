@@ -1,0 +1,3 @@
+
+#define Ch2WestVillageEventID 0x0A
+#define Ch2EastVillageEventID 0x0B

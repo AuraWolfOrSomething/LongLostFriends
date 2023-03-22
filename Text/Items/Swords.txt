@@ -1,0 +1,96 @@
+## IronSwordName
+Iron Sword[X]
+
+## IronSwordDesc
+ [X]
+
+## BronzeSwordName
+Bronze Swrd[X]
+
+## BronzeSwordDesc
++15 Dodge.[X]
+
+## SteelSwordName
+Steel Sword[X]
+
+## SteelSwordDesc
+ [X]
+
+## SilverSwordName
+Silver Sword[X]
+
+## SilverSwordDesc
++3 Spd when equipped.[X]
+
+## IronBladeName
+Iron Blade[X]
+
+## IronBladeDesc
+ [X]
+
+## SteelBladeName
+Steel Blade[X]
+
+## SteelBladeDesc
+ [X]
+
+## SilverBladeName
+Silver Blade[X]
+
+## SilverBladeDesc
++3 Spd.[X]
+
+## NoviceSwordName
+Novice Swrd[X]
+
+## NoviceSwordDesc
++10 EXP if a hit lands. 3 WEXP.[X]
+
+## KillingEdgeName
+Killing Edge[X]
+
+## KillingEdgeDesc
+Hits always crit if 4+ Skl over enemy.[X]
+
+## ArmorslayerName
+Armorslayer[X]
+
+## ArmorslayerDesc
+Mt x2 vs heavy armor, else -9 mt[X]
+
+## LightBrandName
+Light Brand[X]
+
+## LightBrandDesc
+Suffused with light magic.[X]
+
+## LancereaverName
+Lancereaver[X]
+
+## LancereaverDesc
+Reverses weapon triangle and[N]
+doubles its effects.[X]
+
+## ZanbatoName
+Zanbato[X]
+
+## ZanbatoDesc
+Mt x2 vs cavalry, else -9 mt[X]
+
+## CopperSwordName
+Copper Swrd[X]
+
+## CopperSwordDesc
+ [X]
+
+## RubySwordName
+Ruby Sword[X]
+
+## RubySwordDesc
+Doubles weapon triangle effects.[X]
+
+## RapierName
+Rapier[X]
+
+## RapierDesc
+Mt x2 vs cavalry and heavy armor.[X]

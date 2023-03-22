@@ -1,0 +1,27 @@
+#include "TerrainDefinitions.event"
+
+#include "TerrainBonusesNoMount.event"
+#include "TerrainBonusesHorses.event"
+#include "TerrainBonusesWings.event"
+
+PUSH
+
+//Healing
+
+//Gate
+ORG 0x80C74F
+BYTE 20
+
+//Throne
+ORG 0x80C763
+BYTE 20
+
+//Also Gate
+ORG 0x80C767
+BYTE 20
+
+//Church
+ORG 0x80C768
+BYTE 20
+
+POP

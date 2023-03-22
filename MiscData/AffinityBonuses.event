@@ -1,0 +1,58 @@
+
+//Values are divided by 10 instead of 2 to get the final bonus
+
+#define AffinityTable 0x8B05F8
+#define Affinity(index,affinity,atk,def,hit,avoid,crit,dodge) "ORG AffinityTable+0x8*index; BYTE affinity atk def hit avoid crit dodge 0x00"
+#define Affinity(index,affinity) "ORG AffinityTable+0x8*index; BYTE affinity"
+#define AffinityBonuses(atk,def,hit,avoid,crit,dodge) "BYTE atk def hit avoid crit dodge 0x00"
+#define EndAffinityTable(index) "ORG AffinityTable+0x8*index; BYTE 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00"
+
+#define Affinity_Fire 0x01
+#define Affinity_Thunder 0x02
+#define Affinity_Wind 0x03
+#define Affinity_Water 0x04
+#define Affinity_Dark 0x05
+#define Affinity_Light 0x06
+#define Affinity_Anima 0x07
+#define Affinity_Life 0x08
+
+PUSH
+
+Affinity(0x00,Affinity_Fire) 
+AffinityBonuses(5,2,0,0,25,0) //+0.5 Atk, +0.2 Def, +2.5 Crit
+
+Affinity(0x01,Affinity_Thunder)
+AffinityBonuses(2,2,0,0,25,50) //+0.2 Atk, +0.2 Def, +2.5 Crit, +5 Dodge
+
+Affinity(0x02,Affinity_Wind)
+AffinityBonuses(2,2,35,25,0,0) //+0.2 Atk, +0.2 Def, +3.5 Hit, +2.5 Avoid
+
+Affinity(0x03,Affinity_Water)
+AffinityBonuses(2,5,0,0,0,50) //+0.2 Atk, +0.5 Def, +5 Dodge
+
+Affinity(0x04,Affinity_Dark)
+AffinityBonuses(5,2,0,25,0,0) //+0.5 Atk, +0.2 Def, +2.5 Avoid
+
+Affinity(0x05,Affinity_Light)
+AffinityBonuses(2,5,35,0,0,0) //+0.2 Atk, +0.5 Def, +3.5 Hit
+
+Affinity(0x06,Affinity_Anima)
+AffinityBonuses(5,5,0,0,0,0) //+0.5 Atk, +0.5 Def
+
+Affinity(0x07,Affinity_Life)
+AffinityBonuses(5,5,35,25,25,50) //+0.5 Atk, +0.5 Def, +3.5 Hit, +2.5 Avoid, +2.5 Crit, +5 Dodge
+
+EndAffinityTable(0x08)
+
+/*affinities with:
+atk		4 (8 if 0.2 amounts included)
+def		4 (8 if 0.2 amounts included)
+hit		3
+avoid	3
+crit	3
+dodge	3
+
+(life boosts all six stats)
+*/
+
+POP

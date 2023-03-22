@@ -1,0 +1,32 @@
+
+/*
+Other edits:
+Necessary/ItemRangeFix/All_Moveable_Squares
+Necessary/StatGetters/Movement
+
+*/
+
+PUSH
+
+ORG 0x249AC
+jumpToHack(CheckIfUnitCanSelectAttack)
+
+ORG 0x3DCC4
+jumpToHack(CheckIfAICanAttackFromValidTile)
+
+POP
+
+//Called by Stat Getters
+prSkillLastLegs:
+	rIfUnitHasSkill(LastLegsID)
+		rAddConst(1)
+
+#include "asm/CheckIfUnitCanSelectAttack.lyn.event"
+ALIGN 4
+
+#include "asm/CheckIfAICanAttackFromValidTile.lyn.event"
+ALIGN 4
+
+LastLegsLink:
+BYTE LastLegsID
+ALIGN 4

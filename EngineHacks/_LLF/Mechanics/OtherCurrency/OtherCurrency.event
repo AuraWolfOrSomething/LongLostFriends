@@ -1,0 +1,6 @@
+
+#include "asm/StoreOtherCurrency.lyn.event"
+ALIGN 4
+
+OtherCurrencyRamLink:
+WORD 0x02026E30

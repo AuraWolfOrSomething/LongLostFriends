@@ -1,0 +1,13 @@
+IrisSupportList:
+SupportList(Iris,IrisSupportList)
+
+SupportPartner(Kamron,0,30)
+//SupportPartner(Zoren,0,25)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(1)

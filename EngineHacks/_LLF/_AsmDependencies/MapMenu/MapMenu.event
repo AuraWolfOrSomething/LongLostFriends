@@ -1,0 +1,53 @@
+
+#include "MapMenuDefs.event"
+
+PUSH
+
+//Repoint vanilla map menu
+ORG 0x59D21C
+POIN MapMenuList
+
+//Start menu at the top of the screen
+ORG 0x59D215
+BYTE 0x00
+
+//Increase menu width (edit PlayerPhaseMainIdle to adjust x-coords)
+ORG 0x59D216
+BYTE 0x09
+
+POP
+
+#include "asm/ChangeMapMenuCommandColor.lyn.event"
+ALIGN 4
+
+//MESSAGE mappyMenuListy currentOffset
+MapMenuList:
+
+MapMenuCommand(MM_Plan,MM_PlanDesc,NormalText,MM_PlanUsability,MM_PlanEffect)
+
+MapMenuCommand(MM_Future,MM_FutureDesc,GreenText,MM_ActUsability,MM_FutureUsability,MM_FutureEffect)
+
+MapMenuCommand(MM_Act,MM_ActDesc,NormalText,MM_ActUsability,MM_ActEffect)
+
+MapMenuCommand(MM_AiTog,AiTogDesc,OrangeText,0x4F448,MapMenuAiToggleColor,MapMenuAiToggleDisplay)
+
+MM_Unit
+MM_Status
+
+MM_Guide
+
+MM_Records
+
+MM_Options
+
+MapMenuCommand(MM_ReinWarn,ReinWarnDesc,OrangeText,0x4F448,MapMenuReinforcementWarningsColor,MapMenuReinWarnToggle)
+
+MM_Retreat
+
+MM_Suspend
+
+//Should have all new commands before this
+MM_End
+
+//Should DEFINITELY have all new commands before this
+MM_Separator

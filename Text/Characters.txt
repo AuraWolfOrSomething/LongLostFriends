@@ -1,0 +1,333 @@
+
+#0x212 ZorenName
+Zoren[X]
+
+## ZorenDesc
+An Argustian tactician.[N]
+Tries to be a more casual[N]
+sort of leader.[X]
+
+## IrisName
+Iris[X]
+
+## IrisDesc
+A Lor Movan knight that used to[N]
+be Prince Orland's guardian.[N]
+Reasonable, but strict on herself.[X]
+
+## MarceyName
+Marcey[X]
+
+## MarceyDesc
+An Argustian squire traveling[N]
+with Zoren. Has high standards[N]
+for herself and her companions.[X]
+
+## KamronName
+Kamron[X]
+
+## KamronDesc
+A Lor Movan farm boy that serves[N]
+Iris as her squire.[X]
+
+## OrvilleName
+Orville[X]
+
+## OrvilleDesc
+An Argustian civilian from Norrvil.[N]
+Optimistic and forthright.[X]
+
+## NordicaName
+Nordica[X]
+
+## NordicaDesc
+An Argustian civilian from Norrvil.[N]
+Cold, but steadfast.[X]
+
+## FranklinName
+Franklin[X]
+
+## FranklinDesc
+A young, naive Lor Movan noble[N]
+who left home to help others.[X]
+
+## LaricName
+Laric[X]
+
+## LaricDesc
+A Lor Movan monk searching[N]
+for answers. Reserved.[X]
+
+## CurcioName
+Curcio[X]
+
+## CurcioDesc
+Curcio exists. (WIP)[X]
+
+## ArmondName
+Armond[X]
+
+## ArmondDesc
+Armond exists. (WIP)[X]
+
+## LutherName
+Luther[X]
+
+## LutherDesc
+A retired Argustian advisor traveling[N]
+with Zoren. More experienced than[N]
+his jolly demeanor suggests.[X]
+
+## JacobName
+Jacob[X]
+
+## JacobDesc
+An Argustian orphan. Means well,[N]
+but more than a bit stubborn.[X]
+
+## GemmoraName
+Gemmora[X]
+
+## GemmoraDesc
+Gemmora exists. (WIP)[X]
+
+## ThorbekName
+Thorbek[X]
+
+## ThorbekDesc
+A Lor Movan soldier with the utmost[N]
+confidence in his abilities.[X]
+
+## GraceName
+Grace[X]
+
+## GraceDesc
+A courteous Lor Movan mage.[N]
+Fast friends with Ember and Arlett.[X]
+
+## ArlettName
+Arlett[X]
+
+## ArlettDesc
+A Lor Movan cleric that doesn't hold[N]
+her tongue back. Fast friends[N]
+with Ember and Grace.[X]
+
+## EmberName
+Ember[X]
+
+## EmberDesc
+Ember exists. (WIP)[X]
+
+## DavisName
+Davis[X]
+
+## DavisDesc
+A Lor Movan scout that feels more[N]
+comfortable around liquor than people.[X]
+
+## KorsanaName
+Korsana[X]
+
+## KorsanaDesc
+Korsana exists. (WIP)[X]
+
+## RylanName
+Rylan[X]
+
+## RylanDesc
+An Argustian shaman. Empathetic,[N]
+but focused on revenge.[X]
+
+## KingslyName
+Kingsly[X]
+
+## KingslyDesc
+Kingsly exists. (WIP)[X]
+
+## HazelName
+Hazel[X]
+
+## HazelDesc
+Hazel exists. (WIP)[X]
+
+## MasonName
+Mason[X]
+
+## MasonDesc
+A Lor Movan squire of Gert's.[N]
+Tries to be the voice of reason.[X]
+
+## ShanaName
+Shana[X]
+
+## ShanaDesc
+A Selvican priestess.[N]
+Trying to atone for her[N]
+history of bloodshed.[X]
+
+## LorrandName
+Lorrand[X]
+
+## LorrandDesc
+A Tricinian knight. One of[N]
+the last survivors of the[N]
+Order of the Rising Sun.[X]
+
+## RiviaName
+Rivia[X]
+
+## RiviaDesc
+A Selvican swordswoman. Shana is[N]
+both a dear friend and mentor to her.[X]
+ 
+## VivianName
+Vivian[X]
+
+## VivianDesc
+A Tricinian princess in hiding.[X]
+
+## ColetteName
+Colette[X]
+
+## ColetteDesc
+A Tricinian squire of Lorrand's.[N]
+Cheery, but inexperienced.[X]
+ 
+## MyraName
+Myra[X]
+
+## MyraDesc
+Vivian's retainer, despite everything.[X]
+ 
+## PercyName
+Percy[X]
+
+## PercyDesc
+A Tricinian mage that regrets his past.[X]
+
+## JadeName
+Jade[X]
+
+## JadeDesc
+Jade exists. (WIP)[X]
+
+## McVicarName
+McVicar[X]
+
+## McVicarDesc
+An infamous Fosrelian assassin,[N]
+both for his abundance of skill[N]
+and his lack of charm.[X]
+
+## FenrisName
+Fenris[X]
+
+## FenrisDesc
+Fenris exists. (WIP)[X]
+
+## CainName
+Cain[X]
+
+## CainDesc
+Cain exists. (WIP)[X]
+
+## NameName
+Name[X]
+
+## NameDesc
+Name exists. (WIP)[X]
+
+## StanrelName
+Stanrel[X]
+
+## StanrelDesc
+A Lor Movan bandit that serves[N]
+Talon, the Bandit King.[X]
+
+## BruceName
+Bruce[X]
+
+## BruceDesc
+An arrogant mage that serves[N]
+Talon, the Bandit King.[X]
+
+## TalonName
+Talon[X]
+
+## TalonDesc
+The Bandit King. A Lor Movan[N]
+who has gathered many criminals[N]
+thanks to his incredible strength.[X]
+
+## AugustusName
+Augustus[X]
+
+## AugustusDesc
+A Tricinian commander. To keep his[N]
+men happy, he's arranged fights to[N]
+the death for them to watch.[X]
+
+## ArtusName
+Artus[X]
+
+## ArtusDesc
+An Argustian tactician assisting[N]
+the rebels. Arrogant, but not[N]
+without reason.[X]
+
+## CalderName
+Calder[X]
+
+## CalderDesc
+A mercenary with an intense[N]
+passion for combat.[X]
+
+## InformantName
+Informant[X]
+
+## InformantDesc
+An individual with some[N]
+desirable information.[X]
+
+## BanditName
+Bandit[X]
+
+## BanditDesc
+A small-time outlaw causing[N]
+trouble in the region.[X]
+
+## SelnaName
+Rebel[X]
+
+## SelnaDesc
+An Argustian rebelling against[N]
+the royal family.[X]
+
+## SellswordName
+Sellsword[X]
+
+## SellswordDesc
+An individual working for a[N]
+person or group for gold.[X]
+
+## TricinianSoldierName
+Soldier[X]
+
+## TricinianSoldierDesc
+A soldier of the Tricinian military.[N]
+With no supreme leader to keep the peace[N]
+or unify them, they answer to no one.[X]
+
+## PrisonerName
+Prisoner[X]
+
+## PrisonerDesc
+A captive who is fighting[N]
+for their survival.[X]
+
+## WallName
+Wall[X]
+
+## SnagName
+Snag[X]

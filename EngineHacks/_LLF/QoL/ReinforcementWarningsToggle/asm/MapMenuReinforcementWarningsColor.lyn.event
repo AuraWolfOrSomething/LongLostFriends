@@ -1,0 +1,11 @@
+ALIGN 4
+PUSH
+ORG CURRENTOFFSET+$1;MapMenuReinforcementWarningsColor:
+POP
+SHORT $B530 $1C05 $1C0C $4807 $4686
+BYTE $0 $F8
+SHORT $4906 $468E $1C01 $1C20 $3034 $1C22 $1C2B
+BYTE $0 $F8
+SHORT $BC30 $BC02 $4708 $46C0
+POIN ReinforcementWarningsColor
+POIN ChangeMapMenuCommandColor

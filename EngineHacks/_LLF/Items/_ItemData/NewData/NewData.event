@@ -1,0 +1,26 @@
+
+#include "NewDataDefinitions.event"
+
+#include "ItemHealingList.event"
+ALIGN 4
+
+#include "StaffHealingList.event"
+ALIGN 4
+
+#include "StaffHealingEnhancementList.event"
+ALIGN 4
+
+#include "AreaHealList.event"
+ALIGN 4
+
+#include "MightPenaltyExceptionList.event"
+ALIGN 4
+
+#include "ItemDodgeTable.event"
+ALIGN 4
+
+#include "ItemStealExperienceList.event"
+ALIGN 4
+
+#include "BagsOfGoldList.event"
+ALIGN 4

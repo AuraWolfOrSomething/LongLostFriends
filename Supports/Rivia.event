@@ -1,0 +1,12 @@
+RiviaSupportList:
+SupportList(Rivia,RiviaSupportList)
+
+SupportPartner(Shana,20,30)
+SupportPartner(Curcio,0,30)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(2)

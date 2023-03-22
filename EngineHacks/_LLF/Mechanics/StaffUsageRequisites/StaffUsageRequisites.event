@@ -1,0 +1,15 @@
+
+StaffUsageRequisiteList:
+POIN StaffBlockingStatusCheck
+//POIN PrfStaffCheck
+POIN DoesUnitHaveStaffRank
+WORD 0 //end of the list
+
+#include "asm/StaffUsageRequisites.lyn.event"
+ALIGN 4
+
+#include "asm/StaffBlockingStatusCheck.lyn.event"
+ALIGN 4
+
+#include "asm/DoesUnitHaveStaffRank.lyn.event"
+ALIGN 4

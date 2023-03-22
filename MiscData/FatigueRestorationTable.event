@@ -1,0 +1,45 @@
+
+//ExternalHacks/Fatigue
+
+#define FatigueRestoration(char,value) "ORG FatigueRestorationTable+char; BYTE value"
+
+FatigueRestorationTable:
+BYTE 0 //no character has id 0
+FatigueRestoration(Zoren,30)
+FatigueRestoration(Iris,5)
+FatigueRestoration(Marcey,7)
+FatigueRestoration(Kamron,9)
+FatigueRestoration(Orville,8)
+FatigueRestoration(Nordica,7)
+FatigueRestoration(Franklin,8)
+FatigueRestoration(Laric,7)
+FatigueRestoration(Curcio,6)
+FatigueRestoration(Armond,6)
+FatigueRestoration(Luther,6)
+FatigueRestoration(Jacob,10)
+FatigueRestoration(Gemmora,5)
+FatigueRestoration(Thorbek,7)
+FatigueRestoration(Grace,7)
+FatigueRestoration(Arlett,7)
+FatigueRestoration(Ember,8)
+FatigueRestoration(Davis,9)
+FatigueRestoration(Korsana,8)
+FatigueRestoration(Rylan,6)
+FatigueRestoration(Kingsly,5)
+FatigueRestoration(Hazel,5)
+FatigueRestoration(Mason,5)
+FatigueRestoration(Shana,6)
+FatigueRestoration(Lorrand,6)
+FatigueRestoration(Rivia,8)
+FatigueRestoration(Vivian,6)
+FatigueRestoration(Colette,9)
+FatigueRestoration(Myra,7)
+FatigueRestoration(Percy,5)
+FatigueRestoration(Jade,5)
+FatigueRestoration(McVicar,7)
+FatigueRestoration(Jayce,7)
+FatigueRestoration(Nevel,6)
+FatigueRestoration(Angel,6)
+FatigueRestoration(Avery,10)
+FatigueRestoration(Yama,8)
+ALIGN 4

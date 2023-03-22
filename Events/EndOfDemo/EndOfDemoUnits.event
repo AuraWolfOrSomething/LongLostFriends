@@ -1,0 +1,14 @@
+
+/*
+UNIT charID classID leader Level(lvl,faction,autolevel) [x,y] flags 0 number_of_REDAs pointer_to_REDAs [Item1,Item2,Item3,Item4] AI 
+
+REDA_Pointer
+REDA [x,y] Flags Speed *Rescuing character* Delay
+*/
+
+BadUnits:
+UNIT
+
+Units:
+UNIT Zoren ZorenLord 0 Level(1,Ally,False) [4,20] NoUnitFlags 0 0 0 [IronSword,Thunder,Concoction] NoAI
+UNIT

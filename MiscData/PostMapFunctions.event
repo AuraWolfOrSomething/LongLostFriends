@@ -1,0 +1,399 @@
+
+//Mechanics/PostMapFunctions
+
+PostMapFunctions:
+ASMC PostMapFatigueFunctions
+
+	PostMapFunctionsNoFatigue:
+	ASMC ProcessSupportGains
+	ASMC PostMapStoreInventories
+	ASMC PostMapResetCertainItems
+	ENDA
+
+/*
+PostMapFunctions:
+ASMC ProcessSupportGains
+ASMC PostMapFatigueFunctions
+ASMC PostMapStoreInventories
+ASMC PostMapResetCertainItems
+ENDA
+
+PostMapFunctionsNoFatigue:
+ASMC ProcessSupportGains
+ASMC PostMapStoreInventories
+ASMC PostMapResetCertainItems
+ENDA
+*/
+
+PostMapFunctionsPrologue:
+ASMC ProcessSupportGains
+ASMC PostMapStoreInventories
+//ASMC PostMapResetCertainItems //TESTING
+ENDA
+
+PartySwapZorenToShana:
+ASMC PostMapPartySwapGold
+
+//Reveal Shana's party members
+	CHECK_EXISTS Shana
+	IFNE 41 sC s0
+		REVEAL Shana
+	LABEL 41
+
+	CHECK_EXISTS Lorrand
+	IFNE 42 sC s0
+		REVEAL Lorrand
+	LABEL 42
+	
+	CHECK_EXISTS Rivia
+	IFNE 43 sC s0
+		REVEAL Rivia
+	LABEL 43
+	
+	CHECK_EXISTS Vivian
+	IFNE 44 sC s0
+		REVEAL Vivian
+	LABEL 44
+	
+	CHECK_EXISTS Colette
+	IFNE 45 sC s0
+		REVEAL Colette
+	LABEL 45
+	
+	CHECK_EXISTS Myra
+	IFNE 46 sC s0
+		REVEAL Myra
+	LABEL 46
+	
+	CHECK_EXISTS Percy
+	IFNE 47 sC s0
+		REVEAL Percy
+	LABEL 47
+	
+	CHECK_EXISTS Jade
+	IFNE 48 sC s0
+		REVEAL Jade
+	LABEL 48
+
+//Hide Zoren's party members
+	CHECK_EXISTS Zoren
+	IFNE 1 sC s0
+		REMU Zoren
+	LABEL 1
+	
+	CHECK_EXISTS Iris
+	IFNE 2 sC s0
+		REMU Iris
+	LABEL 2
+	
+	CHECK_EXISTS Marcey
+	IFNE 3 sC s0
+		REMU Marcey
+	LABEL 3
+
+	CHECK_EXISTS Kamron
+	IFNE 4 sC s0
+		REMU Kamron
+	LABEL 4
+	
+	CHECK_EXISTS Orville
+	IFNE 5 sC s0
+		REMU Orville
+	LABEL 5
+	
+	CHECK_EXISTS Nordica
+	IFNE 6 sC s0
+		REMU Nordica
+	LABEL 6
+	
+	CHECK_EXISTS Franklin
+	IFNE 7 sC s0
+		REMU Franklin
+	LABEL 7
+	
+	CHECK_EXISTS Laric
+	IFNE 8 sC s0
+		REMU Laric
+	LABEL 8
+	
+	CHECK_EXISTS Curcio
+	IFNE 9 sC s0
+		REMU Curcio
+	LABEL 9
+	
+	CHECK_EXISTS Armond
+	IFNE 10 sC s0
+		REMU Armond
+	LABEL 10
+	
+	CHECK_EXISTS Luther
+	IFNE 11 sC s0
+		REMU Luther
+	LABEL 11
+	
+	CHECK_EXISTS Jacob
+	IFNE 12 sC s0
+		REMU Jacob
+	LABEL 12
+	
+	CHECK_EXISTS Gemmora
+	IFNE 13 sC s0
+		REMU Gemmora
+	LABEL 13
+	
+	CHECK_EXISTS Thorbek
+	IFNE 14 sC s0
+		REMU Thorbek
+	LABEL 14
+	
+	CHECK_EXISTS Grace
+	IFNE 15 sC s0
+		REMU Grace
+	LABEL 15
+	
+	CHECK_EXISTS Arlett
+	IFNE 16 sC s0
+		REMU Arlett
+	LABEL 16
+	
+	CHECK_EXISTS Ember
+	IFNE 17 sC s0
+		REMU Ember
+	LABEL 17
+	
+	CHECK_EXISTS Davis
+	IFNE 18 sC s0
+		REMU Davis
+	LABEL 18
+	
+	CHECK_EXISTS Korsana
+	IFNE 19 sC s0
+		REMU Korsana
+	LABEL 19
+	
+	CHECK_EXISTS Rylan
+	IFNE 20 sC s0
+		REMU Rylan
+	LABEL 20
+	
+	CHECK_EXISTS Kingsly
+	IFNE 21 sC s0
+		REMU Kingsly
+	LABEL 21
+	
+	CHECK_EXISTS Hazel
+	IFNE 22 sC s0
+		REMU Hazel
+	LABEL 22
+	
+	CHECK_EXISTS Mason
+	IFNE 23 sC s0
+		REMU Mason
+	LABEL 23
+	
+	CHECK_EXISTS Jayce
+	IFNE 24 sC s0
+		REMU Jayce
+	LABEL 24
+	
+	CHECK_EXISTS Nevel
+	IFNE 25 sC s0
+		REMU Nevel
+	LABEL 25
+	
+	CHECK_EXISTS Angel
+	IFNE 26 sC s0
+		REMU Angel
+	LABEL 26
+	
+	CHECK_EXISTS Avery
+	IFNE 27 sC s0
+		REMU Avery
+	LABEL 27
+	
+//End ofPartySwapZorenToShana
+ENDA
+
+PartySwapShanaToZoren:
+ASMC PostMapPartySwapGold
+
+//Reveal Zoren's party members
+	CHECK_EXISTS Zoren
+	IFNE 1 sC s0
+		REVEAL Zoren
+	LABEL 1
+	
+	CHECK_EXISTS Iris
+	IFNE 2 sC s0
+		REVEAL Iris
+	LABEL 2
+	
+	CHECK_EXISTS Marcey
+	IFNE 3 sC s0
+		REVEAL Marcey
+	LABEL 3
+
+	CHECK_EXISTS Kamron
+	IFNE 4 sC s0
+		REVEAL Kamron
+	LABEL 4
+	
+	CHECK_EXISTS Orville
+	IFNE 5 sC s0
+		REVEAL Orville
+	LABEL 5
+	
+	CHECK_EXISTS Nordica
+	IFNE 6 sC s0
+		REVEAL Nordica
+	LABEL 6
+	
+	CHECK_EXISTS Franklin
+	IFNE 7 sC s0
+		REVEAL Franklin
+	LABEL 7
+	
+	CHECK_EXISTS Laric
+	IFNE 8 sC s0
+		REVEAL Laric
+	LABEL 8
+	
+	CHECK_EXISTS Curcio
+	IFNE 9 sC s0
+		REVEAL Curcio
+	LABEL 9
+	
+	CHECK_EXISTS Armond
+	IFNE 10 sC s0
+		REVEAL Armond
+	LABEL 10
+	
+	CHECK_EXISTS Luther
+	IFNE 11 sC s0
+		REVEAL Luther
+	LABEL 11
+	
+	CHECK_EXISTS Jacob
+	IFNE 12 sC s0
+		REVEAL Jacob
+	LABEL 12
+	
+	CHECK_EXISTS Gemmora
+	IFNE 13 sC s0
+		REVEAL Gemmora
+	LABEL 13
+	
+	CHECK_EXISTS Thorbek
+	IFNE 14 sC s0
+		REVEAL Thorbek
+	LABEL 14
+	
+	CHECK_EXISTS Grace
+	IFNE 15 sC s0
+		REVEAL Grace
+	LABEL 15
+	
+	CHECK_EXISTS Arlett
+	IFNE 16 sC s0
+		REVEAL Arlett
+	LABEL 16
+	
+	CHECK_EXISTS Ember
+	IFNE 17 sC s0
+		REVEAL Ember
+	LABEL 17
+	
+	CHECK_EXISTS Davis
+	IFNE 18 sC s0
+		REVEAL Davis
+	LABEL 18
+	
+	CHECK_EXISTS Korsana
+	IFNE 19 sC s0
+		REVEAL Korsana
+	LABEL 19
+	
+	CHECK_EXISTS Rylan
+	IFNE 20 sC s0
+		REVEAL Rylan
+	LABEL 20
+	
+	CHECK_EXISTS Kingsly
+	IFNE 21 sC s0
+		REVEAL Kingsly
+	LABEL 21
+	
+	CHECK_EXISTS Hazel
+	IFNE 22 sC s0
+		REVEAL Hazel
+	LABEL 22
+	
+	CHECK_EXISTS Mason
+	IFNE 23 sC s0
+		REVEAL Mason
+	LABEL 23
+	
+	CHECK_EXISTS Jayce
+	IFNE 24 sC s0
+		REVEAL Jayce
+	LABEL 24
+	
+	CHECK_EXISTS Nevel
+	IFNE 25 sC s0
+		REVEAL Nevel
+	LABEL 25
+	
+	CHECK_EXISTS Angel
+	IFNE 26 sC s0
+		REVEAL Angel
+	LABEL 26
+	
+	CHECK_EXISTS Avery
+	IFNE 27 sC s0
+		REVEAL Avery
+	LABEL 27
+
+//Hide Shana's party members
+	CHECK_EXISTS Shana
+	IFNE 41 sC s0
+		REMU Shana
+	LABEL 41
+
+	CHECK_EXISTS Lorrand
+	IFNE 42 sC s0
+		REMU Lorrand
+	LABEL 42
+	
+	CHECK_EXISTS Rivia
+	IFNE 43 sC s0
+		REMU Rivia
+	LABEL 43
+	
+	CHECK_EXISTS Vivian
+	IFNE 44 sC s0
+		REMU Vivian
+	LABEL 44
+	
+	CHECK_EXISTS Colette
+	IFNE 45 sC s0
+		REMU Colette
+	LABEL 45
+	
+	CHECK_EXISTS Myra
+	IFNE 46 sC s0
+		REMU Myra
+	LABEL 46
+	
+	CHECK_EXISTS Percy
+	IFNE 47 sC s0
+		REMU Percy
+	LABEL 47
+	
+	CHECK_EXISTS Jade
+	IFNE 48 sC s0
+		REMU Jade
+	LABEL 48
+	
+//End of PartySwapShanaToZoren
+ENDA
+

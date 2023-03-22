@@ -1,0 +1,7 @@
+
+#include "asm/Acrobat.lyn.event"
+ALIGN 4
+
+AcrobatIDLink:
+BYTE AcrobatID
+ALIGN 4

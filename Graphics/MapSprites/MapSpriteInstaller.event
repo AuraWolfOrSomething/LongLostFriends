@@ -1,0 +1,84 @@
+
+#define LargeMP 2 //32x32 frames
+#define MediumMP 1 //32x16 frames
+#define SmallMP 0 //16x16 frames
+
+PUSH
+//Lord
+ORG 0x8AF888
+SHORT 0
+SHORT SmallMP
+POIN LordMPSt
+
+ORG 0x9A2E08
+POIN LordMPMv
+//keep second pointer the same?
+
+//Deserter
+ORG 0x8AFA40
+SHORT 2
+SHORT SmallMP
+POIN DeserterMPSt
+
+ORG 0x9A3028
+POIN DeserterMPMv
+POIN 0x1EDBC4 //Soldier's AP
+//0x1C3D7C
+
+//Hunter
+ORG 0x8AFAA8
+SHORT 0
+SHORT SmallMP
+POIN HunterMPSt
+
+ORG 0x9A3098
+POIN HunterMPMv
+//keep second pointer the same?
+
+//Wyvern Rider
+ORG 0x8AF948
+SHORT 2
+SHORT MediumMP
+POIN WyvernRiderMPSt
+SHORT 2
+SHORT MediumMP
+POIN WyvernRiderMPSt
+
+ORG 0x9A2EF0
+POIN WyvernRiderMPMv
+//keep second pointer the same?
+
+ORG 0x9A2EF8
+POIN WyvernRiderMPMv
+//keep second pointer the same?
+
+
+POP
+
+LordMPSt:
+#incbin "LordStanding.dmp"
+
+LordMPMv:
+#incbin "LordMoving.dmp"
+
+DeserterMPSt:
+//#incext Png2Dmp "DeserterStanding.png" --lz77
+#incbin "DeserterStanding.dmp"
+
+DeserterMPMv:
+//#incext Png2Dmp "DeserterMoving.png" --lz77
+#incbin "DeserterMoving.dmp"
+
+HunterMPSt:
+#incbin "HunterStanding.dmp"
+
+HunterMPMv:
+#incbin "HunterMoving.dmp"
+
+WyvernRiderMPSt:
+#incbin "WyvernRiderStanding.dmp"
+
+WyvernRiderMPMv:
+#incbin "WyvernRiderMoving.dmp"
+
+

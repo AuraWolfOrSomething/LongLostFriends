@@ -1,0 +1,7 @@
+
+#include "asm/ScoutBadgeCheck.lyn.event"
+ALIGN 4
+
+ScoutBadgeIDLink:
+BYTE ScoutBadge
+ALIGN 4

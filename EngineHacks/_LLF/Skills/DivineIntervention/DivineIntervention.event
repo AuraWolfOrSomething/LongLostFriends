@@ -1,0 +1,5 @@
+
+#include "asm/DivineIntervention.lyn.event"
+DivineInterventionIDLink:
+BYTE DivineInterventionID
+ALIGN 4

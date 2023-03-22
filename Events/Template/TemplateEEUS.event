@@ -1,0 +1,19 @@
+/*
+Label
+POIN ItemUses or WORD 0 if no modifiers
+POIN UnitStats or WORD 0 if no modifiers
+POIN CurrentHPStatus WORD 0 if no modifiers
+*/
+
+UndefineStatBonusLabels
+
+//#define ClassStats "EditStats(HP,Pow,Skl,Spd,Def,Res,Lck,Con)"
+
+BadUnitsEEUS:
+WORD 0
+WORD 0 //POIN BadUnitsEEUSEditStats
+WORD 0
+
+BadUnitsEEUSEditStats:
+//Group 1
+NormStats; ClassStats

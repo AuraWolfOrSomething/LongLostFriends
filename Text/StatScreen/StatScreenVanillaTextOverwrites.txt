@@ -1,0 +1,129 @@
+
+# 0x04FA MightChangeToCndInsteadIdkYet
+Cond[X]
+
+# 0x0518
+Unstbl[X]
+
+# 0x0542 SS_LevelHelpText
+Unit level. The unit becomes[N]
+stronger as they gain levels.[N]
+Promoting doesn't reset this.[X]
+
+# 0x04E9 HitPointsTextID
+HP[X]
+
+# 0x0544 SS_HitPointsHelpText
+Unit hit points. The unit loses[NL]
+consciousness if this reaches 0.[X]
+
+# 0x04EB PowerTextID
+Pow[X]
+
+# 0x04FE
+Pow[X]
+
+# 0x04FF
+Pow[X]
+
+# 0x0522
+Pow/2[X]
+
+# 0x0546
+Power. Each point increases Attack by 1.[N]
+Does not affect healing with staves.[X]
+
+# 0x0547 SS_PowerHelpText
+Power. Each point increases Attack by 1.[N]
+Does not affect healing with staves.[X]
+
+# 0x04EC SkillTextID
+Skl[X]
+
+# 0x0548 SS_SkillHelpText
+Skill. Increases Hit by 2 and Crit by 0.5[N]
+or 1. At 20, item rank requirements are[N]
+1 lower. Each point after 20 reduces Wt.[X]
+
+# 0x04ED SpeedTextID
+Spd[X]
+
+# 0x0549 SS_SpeedHelpText
+Speed. Each point increases Avoid by[N]
+1.5 and Attack Speed by 1.[X]
+
+# 0x04EE LuckTextID
+Lck[X]
+
+# 0x054A SS_LuckHelpText
+Luck. Each point increases Hit by 0.5,[N]
+Avoid by 1, and Dodge by 1.[X]
+
+# 0x04EF DefenseTextID
+Def[X]
+
+# 0x054B SS_DefenseHelpText
+Defense. Reduces damage from physical[NL]
+weapons, such as swords and bows.[X]
+
+# 0x04F0 ResistanceTextID
+Res[X]
+
+# 0x054C SS_ResistanceHelpText
+Resistance. Reduces damage from magic[NL]
+and increases healing with staves.[X]
+
+# 0x04F6 MovementTextID
+Mov[X]
+
+# 0x054D SS_MovementHelpText
+Movement. The normal distance[NL]
+you can cross in 1 turn.[X]
+
+# 0x04F7 ConstitutionTextID
+Con[X]
+
+# 0x054E SS_ConstitutionHelpText
+Constitution. Affects rescues[NL]
+and Wt reduction.[X]
+
+# 0x054F
+Max rescuing constitution. Units[NL]
+with lower Cons can be rescued[NL]
+by allies or captured by enemies.[X]
+
+# 0x0551 AffinityDesc
+Elemental affinity. Determines[NL]
+bonuses in an active support.[X]
+
+# 0x055C
+Amount of damage this unit does.[X]
+
+# 0x055D
+Chance that the attack will hit.[NL]
+In combat, 2RNs are used to decide hits.[X]
+
+# 0x055F
+Chance the weapon will do more damage.[NL]
+Damage multiplier is reliant on net crit.[NL]
+  1% to  9%  = 1.5x  10% to 19% = 2.0x[NL]
+20% to 29% = 2.5x  30+%       = 3.0x[X]
+
+# 0x0560
+Ability to avoid enemy attacks.[X]
+
+# 0x056D
+Wielder and weapon are well[NL]
+suited. +3 Mt and +15 Hit.[X]
+
+# 0x056E
+Wielder and weapon are well[NL]
+suited. +3 Mt and +15 Hit.[X]
+
+# 0x056F
+Wielder and weapon are ill[NL]
+suited. -3 Mt and -15 Hit.[X]
+
+# 0x0570
+Wielder and weapon are ill[NL]
+suited. -3 Mt and -15 Hit.[X]

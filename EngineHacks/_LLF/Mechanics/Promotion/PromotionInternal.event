@@ -1,0 +1,18 @@
+
+PUSH
+
+ORG 0x291A8
+#include "asm/NewCanUsePromotionItem.lyn.event"
+
+//adjusts "test" level while running through CanUsePromotionItem to determine which error message to show
+ORG 0x28E28
+BYTE 20 //Level 20 (0x14) to account for Late Crest
+
+ORG 0x2BD50
+#include "asm/NewPromoBonusRoutine.lyn.event"
+
+//shows the unit's level not being reset from promotion
+ORG 0x736DA
+SHORT 0x7A20 //ldrb r0, [r4,#8]
+
+POP

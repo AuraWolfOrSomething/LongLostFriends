@@ -1,0 +1,14 @@
+ZorenSupportList:
+SupportList(Zoren,ZorenSupportList)
+
+//SupportPartner(Pyrus,80,40)
+//SupportPartner(Iris,0,25)
+SupportPartner(Luther,0,25)
+SupportPartner(Shana,0,25)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(2)

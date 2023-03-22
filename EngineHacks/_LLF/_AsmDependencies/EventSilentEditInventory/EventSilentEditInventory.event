@@ -1,0 +1,6 @@
+
+#include "asm/EventSilentGiveItem.lyn.event"
+ALIGN 4
+
+#include "asm/EventEditUses.lyn.event"
+ALIGN 4

@@ -1,0 +1,62 @@
+
+PUSH
+
+ORG 0x87698
+#include "asmDis/DrawUnitScreenSupportList.lyn.event"
+ALIGN 4
+//should leave 0x87788 alone
+
+ORG 0xA1A02
+SHORT 0x1C31 //mov r1, r6
+SHORT 0x4B01 0x469E //ldr r3, (); mov lr, r3
+SHORT 0xF800 0xE00C //bl lr+0; b (0xA1A26)
+POIN PrepSupportPartyUnitName
+
+ORG 0xA1D4E
+SHORT 0x2634 //mov r6, #0x34
+#include "asmDis/Hook_PrepSupportSetActiveSupportColor.lyn.event"
+ALIGN 4
+
+ORG 0xA1E38
+#include "asmDis/Hook_PrepSupportRankColor.lyn.event"
+ALIGN 4
+
+//Display Paired Ending if in Prep, or remaining supports in Extra
+ORG 0xA1E7C
+SHORT 0xB5F0 //push {r4-r7,r14}
+
+ORG 0xA1EE0
+#include "asmDis/Hook_PrepSupportPairedEnding.lyn.event"
+ALIGN 4
+//should leave 0xA1F68 alone
+
+POP
+
+
+//----------------------------------------
+//Back to free space
+//----------------------------------------
+
+#include "asmDis/PrepSupportSetActiveSupportColor.lyn.event"
+ALIGN 4
+
+#include "asmDis/PrepSupportRankColor.lyn.event"
+ALIGN 4
+
+#include "asmDis/PrepSupportPairedEnding.lyn.event"
+ALIGN 4
+
+#include "asmDis/PrepSupportPartyUnitName.lyn.event"
+ALIGN 4
+
+SupportExtraTextIdLink:
+SHORT 0x5AB // "Remaining"
+SHORT 0x5AC // "x"
+
+ActiveSupportColorLink:
+//BYTE 6 6 //this is green font w/ highlight
+BYTE GreenText GreenText
+
+NormalEndingTextLink:
+SHORT NormalEndingText
+ALIGN 4

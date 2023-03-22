@@ -1,0 +1,414 @@
+## LateCrestName
+Late Crest[X]
+
+## LateCrestDesc
+Can only promote units at Lv. 20,[NL]
+but is infinitely reusable.[X]
+
+## LateCrestUseDesc
+Promote a unit[NL]
+at Lv. 20.[X]
+
+## VulnerableBoltName
+Vulnerable B.[X]
+
+## VulnerableBoltDesc
+Can only promote Bow/Staff wielders[NL]
+and Thieves at Lv. 10 and up.[X]
+
+## VulnerableBoltUseDesc
+Promote a Bow/Staff[NL]
+wielder or Thief at[NL]
+Lv. 10 and up.[X]
+
+## ChestKeyName
+Chest Key[X]
+
+## ChestKeyDesc
+Opens chests.[X]
+
+## ChestKeyUseDesc
+Opens chests.[X]
+
+## DoorKeyName
+Door Key[X]
+
+## DoorKeyDesc
+Opens doors in[NL]
+adjacent spaces.[X]
+
+## DoorKeyUseDesc
+Opens doors.[X]
+
+## LockpickName
+Lockpick[X]
+
+## LockpickDesc
+Opens doors and chests.[NL]
+Usable only by thieves.[X]
+
+## LockpickUseDesc
+Universal lockpicks[NL]
+designed for thieves.[X]
+
+## VulneraryName
+Vulnerary[X]
+
+## VulneraryDesc
+A medicinal solution used[NL]
+for healing 15 HP.[X]
+
+## VulneraryUseDesc
+Restores 15 HP.[X]
+
+## ElixirName
+Elixir[X]
+
+## ElixirDesc
+A powerful solution that[NL]
+restores all HP.[X]
+
+## ElixirUseDesc
+Restores all HP.[X]
+
+## PureWaterName
+Pure Water[X]
+
+## PureWaterDesc
+A draught that boosts Res by[NL]
+7. -1 Res after each turn.[X]
+
+## PureWaterUseDesc
++7 Res. -1 Res[N]
+after each turn.[X]
+
+## SilverCardName
+Silver Card[X]
+
+## SilverCardDesc
+Lowers one item's price by 50%.[NL]
+Becomes a Used Silver Card afterwards.[X]
+
+## SilverCardUseDesc
+Halves one purchase[NL]
+before becoming a[NL]
+Used Silver Card.[X]
+
+## ClericGemName
+Cleric Gem[X]
+
+## ClericGemDesc
++2 Res if in inventory. If unit is[NL]
+promoted, only the top gem applies.[X]
+
+## ClericGemUseDesc
++2 Res.[X]
+
+## ArcherGemName
+Archer Gem[X]
+
+## ArcherGemDesc
++4 Skl if in inventory. If unit is[NL]
+promoted, only the top gem applies.[X]
+
+## ArcherGemUseDesc
++4 Skl.[X]
+
+## FighterGemName
+Fighter Gem[X]
+
+## FighterGemDesc
++2 Pow if in inventory. If unit is[NL]
+promoted, only the top gem applies.[X]
+
+## FighterGemUseDesc
++2 Pow.[X]
+
+## LightRuneName
+Light Rune[X]
+
+## LightRuneDesc
+Summons an impassable hex[NL]
+on a tile for 3 turns.[X]
+
+## LightRuneUseDesc
+Draws an impassable[NL]
+hex on a space for[NL]
+3 turns.[X]
+
+## MasterSealName
+Master Seal[X]
+
+## MasterSealDesc
+Can promote a unit[NL]
+at Lv. 10 and up.[X]
+
+## MasterSealUseDesc
+Promote a unit at[NL]
+Lv. 10 and up.[X]
+
+## ConcoctionName
+Concoction[X]
+
+## ConcoctionDesc
+A medicinal solution[NL]
+that heals for 25 HP.[X]
+
+## ConcoctionUseDesc
+Restores 25 HP.[X]
+
+## ArmsScrollName
+Arms Scroll[X]
+
+## ArmsScrollDesc
+Increases unit's rank (determined by[NL]
+the top item) to the next letter.[X]
+
+## ArmsScrollUseDesc
+Increase rank to[NL]
+next latter.[X]
+
+## KnightGemName
+Knight Gem[X]
+
+## KnightGemDesc
++2 Def if in inventory. If unit is[NL]
+promoted, only the top gem applies.[X]
+
+## KnightGemUseDesc
++2 Def.[X]
+
+## MyrmidonGemName
+Myrm. Gem[X]
+
+## MyrmidonGemDesc
++2 Spd if in inventory. If unit is[NL]
+promoted, only the top gem applies.[X]
+
+## MyrmidonGemUseDesc
++2 Spd.[X]
+
+## MasterKeyName
+Master Key[X]
+
+## MasterKeyDesc
+Opens doors and chests.[X]
+
+## MasterKeyUseDesc
+Can open doors in[NL]
+adjacent tiles[NL]
+and chests.[X]
+
+## LearningRingName
+Learning R.[X]
+
+## LearningRingDesc
+Increases growth by 100%, then[NL]
+changes to the next stat in cycle...[X]
+
+## LearningRingDesc2
+Both uses are restored after[N]
+the chapter. The cycle is...[X]
+
+## LearningRingDesc3
+Pow -> HP -> Skl -> Spd ->[NL]
+Lck -> Pow -> Def -> Skl ->[NL]
+Spd -> Res -> Restart (Pow)[X]
+
+## LearningRingUseDesc
+Pow -) HP -) Skl -) Spd[NL]
+-) Lck -) Pow -) Def[NL]
+-) Skl -) Spd -) Res[X]
+
+## UsedSilverCardName
+U. Silv. Card[X]
+
+## UsedSilverCardDesc
+Reduces the cost of all[NL]
+purchases by 25%.[X]
+
+## UsedSilverCardUseDesc
+Lowers prices by 25%.[NL]
+Doesn't stack with[NL]
+other silver cards.[X]
+
+## CouponName
+Coupon[X]
+
+## CouponDesc
+Lowers one non-coupon price by 50%.[NL]
+Doesn't stack with anything else.[X]
+
+## CouponUseDesc
+Reduces one price[NL]
+by 50%.[X]
+
+## BrigandGemName
+Brigand Gem[X]
+
+## BrigandGemDesc
++4 Aid and -2 Item Wt. Promoted[NL]
+units only benefit from the top gem.[X]
+
+## BrigandGemUseDesc
++4 Aid and[NL]
+-2 Item Wt.[X]
+
+## PerfectusName
+Perfectus[X]
+
+## PerfectusDesc
+Always hit/critical hit if >0.[NL]
+Opponent will always miss if <100 Hit.[NL]
+-2 uses per battle...[X]
+
+## PerfectusDesc2
+Uses are restored after the chapter.[NL]
+If both units have Perfectus, both[NL]
+units will hit/critical hit if >0.[X]
+
+## PerfectusUseDesc
+Always crit/hit if >0.[NL]
+Opponent always[NL]
+misses if <100.[X]
+
+## FocusBeltName
+Focus Belt[X]
+
+## FocusBeltDesc
+Both combatants are guaranteed[NL]
+to hit their respective opponent.[NL]
+Exception: Far Ward.[X]
+
+## FocusBeltUseDesc
+100% hit on[NL]
+both units.[X]
+
+## WhetstoneName
+Whetstone[X]
+
+## WhetstoneDesc
+If unit has A or S Rank in their wielded[NL]
+weapon type, the weapon has +3 mt if[NL]
+at least one other condition is met...[X]
+
+## WhetstoneDesc2
+- The weapon reverses the triangle[NL]
+and is currently effective against[NL]
+their opponent...[X]
+
+## WhetstoneDesc3
+- The weapon is effective against[NL]
+the class their opponent is in.[NL]
+Exception: All flier effective weaponry[X]
+
+## WhetstoneUseDesc
+Enhances effective[NL]
+weapons and reavers.[X]
+
+## ScoutBadgeName
+Scout Badge[X]
+
+## ScoutBadgeDesc
+All traversable tiles require[NL]
+1 less Mov to cross.[NL]
+Minimum Mov cost: 1[X]
+
+## ScoutBadgeUseDesc
+Reduce mov cost[NL]
+of terrain by 1.[X]
+
+## HalfGuardName
+Half Guard[X]
+
+## HalfGuardDesc
+Opponent's effectiveness multiplier is[NL]
+half as impactful. E.g. x3 -> x2[X]
+
+## HalfGuardUseDesc
+Decreases effective[NL]
+damage taken.[X]
+
+## KarbaltGemName
+Karbalt Gem[X]
+
+## KarbaltGemDesc
+[X]
+
+## KarbaltGemUseDesc
+[X]
+
+## SelnaGemName
+Selna Gem[X]
+
+## SelnaGemDesc
+[X]
+
+## SelnaGemUseDesc
+[X]
+
+## ThelrimGemName
+Thelrim Gem[X]
+
+## ThelrimGemDesc
+[X]
+
+## ThelrimGemUseDesc
+[X]
+
+## RookieGemName
+Rookie Gem[X]
+
+## RookieGemDesc
+[X]
+
+## RookieGemUseDesc
+Promoted units only benefit from the top gem.[X]
+
+## PupilGemName
+Pupil Gem[X]
+
+## PupilGemDesc
+Can use weapons, tomes, and staves 1[N]
+rank greater than unit's currect rank...[X]
+
+## PupilGemDesc2
+Their class still limits what they can[N]
+use. Promoted units only benefit from[N]
+the top gem in their inventory.[X]
+
+## PupilGemUseDesc
+Lower rank[N]
+requirements by 1.[X]
+
+## RecruitGemName
+Recruit Gem[X]
+
+## RecruitGemDesc
+Promoted units only benefit from the top gem.[X]
+
+## RecruitGemUseDesc
+[X]
+
+## HeavyHoveringBootsName
+Hvy Hvr Bts[X]
+
+## HeavyHoveringBootsDesc
+Heavy Hovering Boots let this unit fly.[N]
+Newly accessible terrain costs 3 Mov.[N]
+This unit can't rescue or be rescued...[X]
+
+## HeavyHoveringBootsDesc2
+A unit that is rescuing or being[N]
+rescued cannot receive these[N]
+boots with Trade/Supply...[X]
+
+## HeavyHoveringBootsDesc3
+A unit that's on terrain that's only[N]
+accessible because of the boots can't[N]
+give them away with Trade/Supply.[X]
+
+## HeavyHoveringBootsUseDesc
+3 Mov to fly onto[N]
+tiles, but restricts[N]
+rescues.[X]

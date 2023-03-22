@@ -1,0 +1,25 @@
+
+PUSH
+
+ORG 0x18A9C
+jumpToHack(KeysCondition)
+
+ORG 0x29160
+jumpToHack(BothLocksItemsCondition)
+
+POP
+
+#include "asm/KeysCondition.lyn.event"
+ALIGN 4
+
+#include "asm/BothLocksItemsCondition.lyn.event"
+ALIGN 4
+
+CunningLink:
+BYTE CunningID
+MasterKeyLink:
+BYTE MasterKey
+//FragileLockpickLink:
+//BYTE FragileLockpick
+ALIGN 4
+

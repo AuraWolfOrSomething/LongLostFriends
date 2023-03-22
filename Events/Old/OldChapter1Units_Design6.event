@@ -1,0 +1,171 @@
+
+/*
+UNIT charID classID leader Level(lvl,faction,autolevel) [x,y] flags 0 number_of_REDAs pointer_to_REDAs [Item1,Item2,Item3,Item4] AI 
+
+REDA_Pointer
+REDA [x,y] Flags Speed *Rescuing character* Delay
+*/
+
+UndefineStatBonusLables
+
+#define MageStats "EditStats(-1,-1,0,0,-2,0,0,0)"
+#define ArchStats "EditStats(-2,0,0,-1,-1,0,0,0)"
+#define KnitStats "EditStats(-2,0,0,-1,-1,0,0,0)"
+#define Sold2Stats "EditStats(0,-2,0,-1,0,0,0,0)"
+
+BadUnits:
+//UNIT Enemy0 Class 0 Level(5,Enemy,True) [x,y] NoUnitFlags 0 0 0 [inventory] NoAI
+
+//By Inn
+UNIT Breguet Knight 0 Level(9,Enemy,False) [12,2] NoUnitFlags 0 0 0 [HandAxe,SteelLance] StationaryAI
+UNIT Enemy0 Soldier 0 Level(5,Enemy,True) [15,0] NoUnitFlags 0 0 0 [IronLance] NoAI
+UNIT Enemy0 Mercenary 0 Level(5,Enemy,True) [14,0] NoUnitFlags 0 0 0 [CopperSword] NoAI
+
+//By meeting place
+UNIT Enemy2S Soldier 0 Level(8,Enemy,True) [3,3] NoUnitFlags 0 0 0 [SilverLance,ShortSpear] StationaryAI
+UNIT Enemy2 Archer 0 Level(7,Enemy,True) [4,4] NoUnitFlags 0 0 0 [IronLongbow] StationaryAI
+UNIT Enemy1 Fighter 0 Level(6,Enemy,True) [3,5] NoUnitFlags 0 0 0 [HandAxe,SteelAxe] StationaryAI
+UNIT Enemy2 Knight 0 Level(7,Enemy,True) [4,5] NoUnitFlags 0 0 0 [SteelAxe,Javelin] StationaryAI
+UNIT Enemy1 Soldier 0 Level(6,Enemy,True) [5,5] NoUnitFlags 0 0 0 [Javelin,SteelLance] StationaryAI
+UNIT Enemy1 Mage 0 Level(6,Enemy,True) [7,2] NoUnitFlags 0 0 0 [Fire,Elthunder] AttackInRangeAI
+UNIT Enemy0 Soldier 0 Level(5,Enemy,True) [4,7] NoUnitFlags 0 0 0 [CopperLance] NoAI
+
+//By choice vendor
+UNIT Enemy2 Mage 0 Level(7,Enemy,True) [0,2] NoUnitFlags 0 0 0 [Bolganone,Coupon] AttackInRangeAI
+UNIT Enemy2 Myrmidon 0 Level(7,Enemy,True) [0,3] NoUnitFlags 0 0 0 [Zanbato,CopperSword] AttackInRangeAI
+
+//By right armory
+UNIT Enemy1 Knight 0 Level(6,Enemy,True) [12,8] DropItem 0 0 0 [Javelin] StationaryAI
+UNIT Enemy0 Mage 0 Level(5,Enemy,True) [10,5] NoUnitFlags 0 0 0 [Thunder] AttackInRangeAI
+UNIT Enemy2 Mage 0 Level(7,Enemy,True) [11,9] NoUnitFlags 0 0 0 [Elfire] AttackInRangeAI
+UNIT Enemy1 Myrmidon 0 Level(6,Enemy,True) [8,7] DropItem 0 0 0 [SteelSword,Concoction] NoAI
+UNIT Enemy0 Fighter 0 Level(5,Enemy,True) [9,11] NoUnitFlags 0 0 0 [IronAxe,Coupon] AttackInRangeAI
+
+//By south house
+UNIT Enemy0 Mage 0 Level(5,Enemy,True) [12,17] NoUnitFlags 0 0 0 [Thunder] NoAI
+UNIT Enemy0 Fighter 0 Level(5,Enemy,True) [11,17] NoUnitFlags 0 0 0 [IronAxe] NoAI
+UNIT Enemy2S2 Myrmidon 0 Level(7,Enemy,True) [14,17] NoUnitFlags 0 0 0 [CopperSword,Zanbato] AttackInRangeAI
+UNIT Enemy0 Fighter Enemy2S2 Level(5,Enemy,True) [16,14] NoUnitFlags 0 0 0 [SteelAxe] FightWithLeaderAI
+UNIT Enemy0 Mage Enemy2S2 Level(5,Enemy,True) [13,12] NoUnitFlags 0 0 0 [Thunder] FightWithLeaderAI
+
+//First wave
+UNIT Enemy1 Myrmidon 0 Level(6,Enemy,True) [3,11] NoUnitFlags 0 0 0 [CopperSword] NoAI
+UNIT Enemy0 Soldier 0 Level(5,Enemy,True) [5,10] NoUnitFlags 0 0 0 [CopperLance] NoAI
+UNIT Enemy0 Fighter 0 Level(5,Enemy,True) [7,16] NoUnitFlags 0 0 0 [IronAxe] NoAI
+UNIT
+
+BadUnitsEEUS:
+WORD 0 //POIN BadUnitsEEUSItemUses
+POIN BadUnitsEEUSEditStats
+WORD 0
+
+/*
+BadUnitsEEUSItemUses:
+ItemUses(10,0,0,0); ItemUses(10,0,0,0)
+ItemUses(10,0,0,0); ItemUses(10,0,0,0)
+ItemUses(10,0,0,0); ItemUses(10,0,0,0)
+ItemUses(10,0,0,0); ItemUses(10,0,0,0)
+ItemUses(10,0,0,0); ItemUses(10,0,0,0)
+ItemUses(10,0,0,0); ItemUses(10,0,0,0)
+//ItemUses(10,0,0,0); 
+ItemUses(10,0,0,0)
+ItemUses(10,0,0,0); ItemUses(10,0,0,0)
+ItemUses(10,0,0,0); ItemUses(10,0,0,0)
+ItemUses(10,0,0,0); ItemUses(10,0,0,0)
+ItemUses(10,0,0,0); ItemUses(10,0,0,0)
+ItemUses(10,0,0,0); ItemUses(10,0,0,0)
+ItemUses(10,0,0,0); ItemUses(10,0,0,0)
+ItemUses(10,0,0,0); ItemUses(10,0,0,0)
+*/
+
+BadUnitsEEUSEditStats:
+//By Inn
+NormStats; NormStats
+NormStats
+
+//By meeting place
+Sold2Stats; ArchStats
+NormStats; KnitStats
+NormStats; MageStats
+NormStats
+
+//By choice vendor
+MageStats; NormStats
+
+//By right armory
+KnitStats; MageStats
+MageStats; NormStats
+NormStats
+
+//By south house
+MageStats; NormStats
+NormStats; NormStats
+MageStats
+
+//First wave
+NormStats; NormStats
+NormStats
+
+NPCUnits:
+UNIT Rylan Shaman 0 Level(8,NPC,False) [19,6] NoUnitFlags 0 0 0 [Ensnare,ArcherGem] StationaryAI
+UNIT PrologueBandit2 Civilian_3 0 Level(2,NPC,False) [20,7] NoUnitFlags 0 0 0 [Concoction] StationaryAI
+UNIT PrologueBandit Mercenary 0 Level(4,NPC,True) [17,3] NoUnitFlags 0 0 0 [SteelSword] StationaryAI
+UNIT PrologueBandit Fighter 0 Level(4,NPC,True) [17,4] NoUnitFlags 0 0 0 [SteelAxe] StationaryAI
+UNIT
+
+NewUnits:
+UNIT Grace Mage_F 0 Level(6,Ally,False) [6,13] NoUnitFlags 0 0 0 [Elthunder,Thunder,Fire] NoAI
+UNIT Thorbek Lancer 0 Level(5,Ally,False) [7,13] NoUnitFlags 0 0 0 [SteelLance,Javelin,Vulnerary] NoAI
+UNIT Marcey Cavalier_F 0 Level(5,Ally,False) [8,13] NoUnitFlags 0 0 0 [IronLance,CopperLance,Vulnerary] NoAI
+UNIT Jacob Journeyman_1 0 Level(1,Ally,False) [5,13] NoUnitFlags 0 0 0 [Hatchet,BronzeAxe] NoAI
+//UNIT Armond Knight 0 Level(10,Ally,False) [9,13] NoUnitFlags 0 0 0 [SteelAxe,Javelin,Concoction] NoAI
+//UNIT Curcio Mercenary 0 Level(9,Ally,False) [6,13] NoUnitFlags 0 0 0 [CopperSword,IronSword,Vulnerary] NoAI
+UNIT
+
+Units:
+UNIT Zoren ZorenLord 0 Level(1,Ally,False) [2,14] NoUnitFlags 0 0 0 [IronSword,Thunder,Concoction] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [0,14] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [4,14] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [0,15] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [2,15] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [3,15] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [1,16] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [3,16] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [4,16] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [0,17] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [2,17] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [3,17] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT
+
+NorthCorridorReinforcement:
+UNIT Enemy1 Myrmidon 0 Level(5,Enemy,False) [7,0] NoUnitFlags 0 0 0 [CopperSword] NoAI
+UNIT 
+
+NorthReinforcements1:
+UNIT Enemy0 Soldier 0 Level(5,Enemy,True) [15,0] NoUnitFlags 0 0 0 [IronLance] NoAI
+UNIT Enemy0 Fighter 0 Level(5,Enemy,True) [14,0] NoUnitFlags 0 0 0 [IronAxe] NoAI
+UNIT
+
+NorthReinforcements2:
+UNIT Enemy1 Myrmidon 0 Level(6,Enemy,True) [14,0] NoUnitFlags 0 0 0 [CopperSword] NoAI
+UNIT Enemy1 Fighter 0 Level(6,Enemy,True) [15,0] NoUnitFlags 0 0 0 [IronAxe] NoAI
+UNIT
+
+SouthReinforcements:
+UNIT Enemy1 Fighter 0 Level(6,Enemy,True) [14,17] NoUnitFlags 0 1 SouthReinforcementsPosition1 [CopperAxe] NoAI
+UNIT Enemy1 Mage 0 Level(6,Enemy,True) [15,17] NoUnitFlags 0 1 SouthReinforcementsPosition2 [Elfire] NoAI
+UNIT 
+
+SouthReinforcementsPosition1:
+REDA [14,16] 0 0 0 0
+
+SouthReinforcementsPosition2:
+REDA [15,16] 0 0 0 0
+
+OptionalMageBoss:
+UNIT Beran Mage 0 Level(14,Enemy,False) [4,2] DropItem 0 1 OptionalMageBossPosition [Bolganone,FighterGem] NoAI
+UNIT
+
+OptionalMageBossPosition:
+REDA [4,3] 0 0 0 0
+

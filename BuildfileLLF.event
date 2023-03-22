@@ -1,0 +1,74 @@
+#ifdef _FE8_
+    #include "EAstdlib.event"
+	#include "Definitions.event"
+
+	//Weapon Icons (Item Table requires icon definitions)
+	#include "Graphics/WeaponIcons/WeaponIconInstaller.event"
+	
+	ORG FreeSpace
+	
+    #include "repointedTextTable.event"
+
+    //Text first for Text ID definitions
+    #include "Text/Install Text Data.event"
+    //MESSAGE Text ends at currentOffset
+
+    //CSV tables
+    #include "Tables/Table Installer.event"
+    //MESSAGE Tables end at currentOffset
+
+	#include "EngineHacks/_MasterHackInstaller.event"
+    //MESSAGE Haxs end at currentOffset
+	
+	MESSAGE Used WithinBlRange free space ends at continueInBlRange
+	MESSAGE WithinBlRange free space ends at 0x1C33C8
+	MESSAGE
+	MESSAGE Used free space ends at currentOffset
+	MESSAGE Free space ends at 0xC00000
+	MESSAGE
+
+	ORG 0x1000000
+    #include "Events/WMEvents/WorldMapEventInstaller.event"
+	#include "Events/EventInstaller.event"
+	//MESSAGE
+	//MESSAGE Events end at currentOffset
+	
+	#include "MiscData/_MiscInstaller.event"
+	//MESSAGE Misc ends at currentOffset
+
+    #include "Maps/Master Map Installer.event"
+	//MESSAGE Maps end at currentOffset
+	
+	StatusTextOnMinimugBox:
+	#incbin "Graphics/StatusTextOnMinimugBox.dmp"
+	//#incext Png2Dmp "GraphicsStatusTextOnMinimugBox.png"
+	
+	#include "Graphics/MapSprites/MapSpriteInstaller.event"
+	//MESSAGE Map Sprites end at currentOffset
+	
+	#include "Graphics/Portraits/PortraitInstaller.event"
+	//MESSAGE Portraits end at currentOffset
+	
+    #include "Graphics/ClassCards/ClassCardInstaller.event"
+	//MESSAGE Class Cards end at currentOffset
+	
+	#include "Graphics/TitleScreen/titlebackgroundinstaller.event"
+	
+	#include "Graphics/StatScreen/StatScreenInstaller.event"
+	//MESSAGE Graphics end at currentOffset
+	
+	#include "Supports/_SupportsInstaller.event"
+	//MESSAGE Extra support lists end at currentOffset
+	
+	#include "Repointing/RepointingArrays.event"
+	
+	#include "Graphics/ClassAnimations/ClassAnimationInstaller.event"
+	//MESSAGE Animations end at currentOffset
+	
+	//Music and Sounds
+	#include "Music/MusicInstaller.event"
+	MESSAGE Music ends at currentOffset
+	
+#else
+    ERROR You are not assembling FE8 events!
+#endif

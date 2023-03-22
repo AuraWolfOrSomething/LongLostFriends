@@ -1,0 +1,18 @@
+
+Beansy
+  Emerald Axe, Ruby Sword, Rustbow, Sapphire Lance
+
+EldritchA & Indogutsu Tenbuki
+  Heavy Hovering Boots
+
+LordGlenn
+  Anima: Bolganone, Donbettyr, Elthunder, Gale, Wind
+  Light: Fortune, Insight, Lucent, Luster, Ray
+  Dark: Afflict, Devour, Distort, Enigma, Ensnare, Shade, Truth, Worm
+  Staves: Block, Corrosion, Fortify, Physic, Warp, Guardian, Distract
+  Lances: Defender
+  
+SMITHYGCN
+  Focus Belt
+
+The rest is from vanilla FE8, though some of it is modified by Aura Wolf

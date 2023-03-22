@@ -1,0 +1,12 @@
+ZolmaSupportList:
+SupportList(Zolma,ZolmaSupportList)
+
+SupportPartner(Olympia,80,40)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(1)

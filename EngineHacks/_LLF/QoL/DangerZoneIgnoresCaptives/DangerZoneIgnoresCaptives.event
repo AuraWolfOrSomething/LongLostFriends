@@ -1,0 +1,10 @@
+
+PUSH
+
+ORG 0x1B850
+jumpToHack(DangerZoneIgnoresCaptives)
+
+POP
+
+#include "asm/DangerZoneIgnoresCaptives.lyn.event"
+ALIGN 4

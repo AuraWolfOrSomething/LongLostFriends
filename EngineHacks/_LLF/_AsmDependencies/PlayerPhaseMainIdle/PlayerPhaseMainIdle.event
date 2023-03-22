@@ -1,0 +1,8 @@
+
+PUSH
+
+ORG 0x1C940
+#include "asm/PlayerPhaseMainIdle.lyn.event"
+ALIGN 4
+
+POP

@@ -1,0 +1,29 @@
+
+PUSH
+
+ORG 0x28550
+#include "asm/StoreAddedAffinityBonusesForSupportLevel.lyn.event"
+ALIGN 4
+
+ORG 0x285A2 //routine for clearing space for current unit's affinity bonuses
+SHORT 0x6001 0x6041 //str r1, [r0]; str r1, [r0,#4]
+SHORT 0x6081 0x60C1 //str r1, [r0,#8]; str r1, [r0,#0x0C]
+SHORT 0x4770 //bx r14
+
+ORG 0x285B0
+#include "asm/GetUnitSupportBonuses.lyn.event"
+ALIGN 4
+
+ORG 0x2A9D2
+SHORT 0xB084 //add sp, #-0x10
+
+ORG 0x2AA34
+SHORT 0xB004 //add sp, #0x10
+
+POP
+
+#include "asm/CheckIfReceivingSupportBonuses.lyn.event"
+ALIGN 4
+
+#include "asm/CalculateSupportBonusRange.lyn.event"
+ALIGN 4

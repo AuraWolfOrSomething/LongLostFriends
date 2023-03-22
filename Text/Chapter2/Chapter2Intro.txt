@@ -1,0 +1,193 @@
+## Ch2Intro1
+[OpenMidLeft][LoadMason]
+[OpenMidRight][LoadThorbek]
+
+[OpenMidLeft]
+Well?[AN]
+Any news?[A]
+
+[OpenMidRight]
+Nothing to report.[AN]
+And you?[A]
+
+[OpenMidLeft][ToggleSmile]
+So far, nothing out of the ordinary.[AN]
+Looking like another calm day.[A]
+
+[OpenMidRight]
+Heh![A] I'm not surprised.[AN]
+Even with Sir Gert gone, the[N]
+villagers have nothing to fear.[AN]
+As long as I'm here,[AN]
+there's not a fiend out there[N]
+that's dumb enough to cross me.[A]
+
+[OpenMidLeft][ToggleSmile]
+I know I'm asking a bit much, Thorbek,[N]
+but keep your act together, alright? [AN]
+Even if he's supposed to return today,[N]
+don't get too overconfident.[AN]
+Return to your post and keep a[N]
+sharp eye out.[A]
+
+[OpenMidRight]
+Alright, alright.[AN]
+I'll continue to devote my boundless[N]
+attention and skill to this task, Mason.[AN][ToggleSmile]
+One hundred percent of it, for I am[N]
+Thorbek, a champion of justice![A]
+[X]
+
+## Ch2Intro2
+[OpenMidLeft][LoadTalon]
+[OpenMidRight][LoadBandit]
+
+[OpenMidLeft]
+Everyone in position?[A]
+
+[OpenMidRight]
+Yeah, boss.[AN]
+The boys are eager[N]
+to get started.[A]
+
+[OpenMidLeft]
+I don't blame them.[AN]
+We've got a great haul in plain sight,[N]
+but it's always been too risky until now.[AN]
+Who knows when we'll get another[N]
+opportunity like this.[A][CloseSpeechSlow]
+
+[.4][OpenMidLeft]
+Now then, go signal them.[A]
+
+[OpenMidRight]
+Sure thing, boss![A]
+[ClearFace]
+
+[OpenMidLeft]
+Did these foolish knights really[N]
+think this would be enough?[AN]
+Just a handful of them?[AN]
+For me, the Bandit King?[A][ToggleSmile] Ha![AN]
+We'll give them a day to remember![A]
+
+[X]
+
+## Ch2IntroMason
+[OpenMidLeft][LoadMason]
+Where did they all come from?![AN]
+With this many of them, I doubt I[N]
+can safely regroup with Thorbek.[AN]
+I hope he's made it back to the[N]
+fort, at least.[A]
+[X]
+
+## Ch2IntroThorbek
+[OpenMidLeft][LoadThorbek]
+Thorbek the Hearty isn't[N]
+one to be trifled with![AN]
+Engarde!![A]
+[X]
+
+## Ch2IntroTalon
+[OpenMidLeft][LoadTalon][ToggleSmile]
+Ha ha![A] Keep it up, boys![AN]
+Get rid of the stragglers,[AN]
+and we'll finally have the[N]
+whole place to ourselves![A]
+[X]
+
+## Ch2Intro3
+[OpenMidLeft][LoadZoren]
+Looks like their raid just started.[AN]
+We still have time to step in and[N]
+stop them, but not much.[AN]
+[X]
+
+## Ch2IntroMarceyAlive
+[OpenFarLeft][LoadZoren]
+[OpenLeft][LoadMarcey]
+[OpenMidRight][LoadJacob]
+
+[OpenLeft]
+[TMM]...[.4][TMM]Jacob?[AN]
+What are you[N]
+doing here!?[A]
+
+[OpenMidRight]
+I couldn't stop worrying[N]
+about everyone![AN]
+Hours and hours of just[N]
+sitting around,[AN]
+with no news![AN]
+I had to make sure[N]
+nothing bad happened![A]
+
+[OpenLeft]
+Well, we're doing just fine![AN]
+Now get somewhere safe, before[N]
+the enemy spots us.[A]
+
+[OpenMidRight]
+No, I won't.[AN]
+All these bandits[TMM]...[.4][TMM]they[N]
+remind of home.[AN]
+
+[OpenMidRight]
+I have to fight so I can stop[N]
+that from happening again.[A]
+
+[OpenLeft]
+Jacob[TMM]...[TMM][A]
+
+[OpenFarLeft]
+If that's how you feel, then I[N]
+won't force you away.[AN]
+But take care of yourself,[N]
+alright?[AN]
+We might not be able to always[N]
+keep an eye on you.[A]
+
+[OpenMidRight]
+Don't worry, I'll be careful.[A]
+
+[X]
+
+## Ch2IntroMarceyDead
+[OpenMidLeft][LoadZoren]
+[OpenMidRight][LoadJacob]
+
+[OpenMidLeft]
+[TMM]...[.4][TMM]Jacob? What are you doing here?[A]
+
+[OpenMidRight]
+I couldn't stop worrying about you all![AN]
+Hours and hours of just sitting around,[N]
+with no news![AN]
+I had to make sure nothing bad happened![A]
+
+[OpenMidLeft]
+Well, we're[TMM]...[.4][TMM]holding up.[AN]
+I'll explain later, but you'd[N]
+better hide somewhere.[A]
+
+[OpenMidRight]
+No, I won't.[AN]
+All these bandits[TMM]...[.4][TMM]it reminds of home.[AN]
+Please let me help, so I can[N]
+stop that from happening.[A]
+
+[OpenMidLeft]
+If that's how you feel, then[N]
+I won't force you away.[AN]
+But take care of yourself, alright?[AN]
+We might not be able to always[N]
+keep an eye on you.[A]
+
+[OpenMidRight]
+Don't worry, I'll be careful.[A]
+Besides, Orville and Marcey taught[N]
+me some of the basics.[AN]
+I'll show you what I've learned![A]
+
+[X]

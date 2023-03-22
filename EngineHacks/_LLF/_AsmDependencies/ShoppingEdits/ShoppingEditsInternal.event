@@ -1,0 +1,37 @@
+
+PUSH
+
+ORG 0x99E48
+jumpToHack(SetUpBattlePrepShop)
+
+ORG 0xB5220
+jumpToHack(PriceModifiersMainLoop)
+
+ORG 0xB5228 //not needed, but easier to find
+jumpToHack(GetItemWorth)
+
+ORG 0xB526A
+BL(0xB5228)
+
+ORG 0xB5440
+jumpToHack(AfterPurchase)
+
+POP
+
+#include "asm/SetUpBattlePrepShop.lyn.event"
+ALIGN 4
+
+#include "asm/PriceModifiersMainLoop.lyn.event"
+ALIGN 4
+
+#include "asm/GetDiscountPercentage.lyn.event"
+ALIGN 4
+
+#include "asm/PrepScreenMultiplier.lyn.event"
+ALIGN 4
+
+#include "asm/AfterPurchase.lyn.event"
+ALIGN 4
+
+#include "asm/GetItemWorth.lyn.event"
+ALIGN 4

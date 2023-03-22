@@ -1,0 +1,666 @@
+//Event file generated from Sappy .s format.
+	#include "MPlayDef.event"
+
+	#define	sadcutscene_v3_grp  voicegroup000
+	#define	sadcutscene_v3_pri  0
+	#define	sadcutscene_v3_rev  0
+	#define	sadcutscene_v3_mvl  127
+	#define	sadcutscene_v3_key  0
+	#define	sadcutscene_v3_tbs  1
+	#define	sadcutscene_v3_exg  0
+	#define	sadcutscene_v3_cmp  1
+
+	// .rodata
+	//	sadcutscene_v3
+	ALIGN 4
+
+//**************** Track 1 (Midi-Chn.1) ****************//
+
+sadcutscene_v3_1:
+	BYTE		VOL     127*sadcutscene_v3_mvl/mxv
+	BYTE	KEYSH   sadcutscene_v3_key+0
+sadcutscene_v3_1_B1:
+// 000   ----------------------------------------
+	BYTE	TEMPO   180*sadcutscene_v3_tbs/2
+	BYTE		VOICE   46
+	BYTE		TIE     Dn3   v064
+	BYTE	W96
+// 001   ----------------------------------------
+	BYTE	W48
+	BYTE		EOT   
+	BYTE		TIE     Cn3 
+	BYTE	W48
+// 002   ----------------------------------------
+	BYTE	W96
+	BYTE		EOT   
+// 003   ----------------------------------------
+	BYTE		TIE     Gn2 
+	BYTE	W96
+// 004   ----------------------------------------
+	BYTE	W48
+	BYTE		EOT   
+	BYTE		N48     Dn3   v076
+	BYTE	W48
+// 005   ----------------------------------------
+sadcutscene_v3_1_005:
+	BYTE		N48     Cn3   v076
+	BYTE	W48
+	BYTE		N96     Gn2 
+	BYTE	W48
+	BYTE	PEND
+// 006   ----------------------------------------
+sadcutscene_v3_1_006:
+	BYTE	W48
+	BYTE		N24     An2   v076
+	BYTE	W24
+	BYTE		        Gn2 
+	BYTE	W24
+	BYTE	PEND
+// 007   ----------------------------------------
+sadcutscene_v3_1_007:
+	BYTE		N24     An2   v076
+	BYTE	W24
+	BYTE		        As2 
+	BYTE	W24
+	BYTE		N96     An2 
+	BYTE	W48
+	BYTE	PEND
+// 008   ----------------------------------------
+	BYTE	W48
+	BYTE		N48     Dn3 
+	BYTE	W48
+// 009   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_1_005
+// 010   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_1_006
+// 011   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_1_007
+// 012   ----------------------------------------
+	BYTE	W48
+	BYTE		N48     Dn3   v076
+	BYTE	W48
+// 013   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_1_005
+// 014   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_1_006
+// 015   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_1_007
+// 016   ----------------------------------------
+	BYTE	W48
+	BYTE		TIE     Gn2   v064
+	BYTE	W48
+// 017   ----------------------------------------
+	BYTE	W72
+	BYTE		EOT   
+	BYTE		N24   
+	BYTE	W24
+// 018   ----------------------------------------
+	BYTE		TIE     Fn2 
+	BYTE	W96
+// 019   ----------------------------------------
+	BYTE	W24
+	BYTE		EOT   
+	BYTE		N24   
+	BYTE	W24
+	BYTE		TIE     Cn2 
+	BYTE	W48
+// 020   ----------------------------------------
+	BYTE	W72
+	BYTE		EOT   
+	BYTE		N24   
+	BYTE	W24
+// 021   ----------------------------------------
+sadcutscene_v3_1_021:
+	BYTE		N72     Dn3   v064
+	BYTE	W72
+	BYTE		N24     Ds3 
+	BYTE	W24
+	BYTE	PEND
+// 022   ----------------------------------------
+sadcutscene_v3_1_022:
+	BYTE		N24     Dn3   v064
+	BYTE	W24
+	BYTE		        Cn3 
+	BYTE	W24
+	BYTE		N72     As2 
+	BYTE	W48
+	BYTE	PEND
+// 023   ----------------------------------------
+sadcutscene_v3_1_023:
+	BYTE	W24
+	BYTE		N24     Cn3   v064
+	BYTE	W24
+	BYTE		        As2 
+	BYTE	W24
+	BYTE		        An2 
+	BYTE	W24
+	BYTE	PEND
+// 024   ----------------------------------------
+sadcutscene_v3_1_024:
+	BYTE		N48     Dn3   v076
+	BYTE	W48
+	BYTE		        Cn3 
+	BYTE	W48
+	BYTE	PEND
+// 025   ----------------------------------------
+sadcutscene_v3_1_025:
+	BYTE		N72     Gn2   v076
+	BYTE	W72
+	BYTE		N12     Fn2 
+	BYTE	W12
+	BYTE		        Gn2 
+	BYTE	W12
+	BYTE	PEND
+// 026   ----------------------------------------
+sadcutscene_v3_1_026:
+	BYTE		N24     An2   v076
+	BYTE	W24
+	BYTE		        Gn2 
+	BYTE	W24
+	BYTE		N36     An2 
+	BYTE	W36
+	BYTE		N12     As2 
+	BYTE	W12
+	BYTE	PEND
+// 027   ----------------------------------------
+	BYTE		N72     An2 
+	BYTE	W72
+	BYTE		N24   
+	BYTE	W24
+// 028   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_1_024
+// 029   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_1_025
+// 030   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_1_026
+// 031   ----------------------------------------
+	BYTE		N72     An2   v076
+	BYTE	W72
+	BYTE		N24     An2   v052
+	BYTE	W24
+// 032   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_1_021
+// 033   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_1_022
+// 034   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_1_023
+// 035   ----------------------------------------
+	BYTE		TIE     As2   v064
+	BYTE	W96
+// 036   ----------------------------------------
+	BYTE	W24
+	BYTE		EOT   
+	BYTE	GoTo
+	 POIN2	sadcutscene_v3_1_B1
+sadcutscene_v3_1_B2:
+	BYTE	FINE
+
+//**************** Track 2 (Midi-Chn.2) ****************//
+
+sadcutscene_v3_2:
+	BYTE		VOL     127*sadcutscene_v3_mvl/mxv
+	BYTE	KEYSH   sadcutscene_v3_key+0
+sadcutscene_v3_2_B1:
+// 000   ----------------------------------------
+	BYTE		VOICE   13
+	BYTE	W72
+	BYTE		N24     Gn2   v064
+	BYTE	W24
+// 001   ----------------------------------------
+	BYTE		        Fn2   v056
+	BYTE	W24
+	BYTE		        Dn3   v048
+	BYTE	W72
+// 002   ----------------------------------------
+	BYTE	W24
+	BYTE		        Fn2   v064
+	BYTE	W24
+	BYTE		        En2   v056
+	BYTE	W24
+	BYTE		        Cn3   v048
+	BYTE	W24
+// 003   ----------------------------------------
+	BYTE	W72
+	BYTE		        En2   v064
+	BYTE	W24
+// 004   ----------------------------------------
+	BYTE		        Dn2   v056
+	BYTE	W24
+	BYTE		        Gn2   v048
+	BYTE	W24
+	BYTE		N48     Gn2   v064
+	BYTE	W48
+// 005   ----------------------------------------
+sadcutscene_v3_2_005:
+	BYTE		N48     Fn2   v064
+	BYTE	W48
+	BYTE		N96     Cn2 
+	BYTE	W48
+	BYTE	PEND
+// 006   ----------------------------------------
+sadcutscene_v3_2_006:
+	BYTE	W48
+	BYTE		N24     Dn2   v064
+	BYTE	W24
+	BYTE		        Cn2 
+	BYTE	W24
+	BYTE	PEND
+// 007   ----------------------------------------
+sadcutscene_v3_2_007:
+	BYTE		N24     Dn2   v064
+	BYTE	W24
+	BYTE		        Ds2 
+	BYTE	W24
+	BYTE		N96     Dn2 
+	BYTE	W48
+	BYTE	PEND
+// 008   ----------------------------------------
+	BYTE	W48
+	BYTE		N48     Gn2 
+	BYTE	W48
+// 009   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_2_005
+// 010   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_2_006
+// 011   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_2_007
+// 012   ----------------------------------------
+	BYTE	W48
+	BYTE		N48     Gn2   v064
+	BYTE	W48
+// 013   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_2_005
+// 014   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_2_006
+// 015   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_2_007
+// 016   ----------------------------------------
+	BYTE	W96
+// 017   ----------------------------------------
+	BYTE	W24
+	BYTE		N24     Cn2   v064
+	BYTE	W24
+	BYTE		        As1   v056
+	BYTE	W24
+	BYTE		        Gn2   v048
+	BYTE	W24
+// 018   ----------------------------------------
+	BYTE	W72
+	BYTE		        As1   v064
+	BYTE	W24
+// 019   ----------------------------------------
+	BYTE		        An1   v056
+	BYTE	W24
+	BYTE		        Fn2   v048
+	BYTE	W72
+// 020   ----------------------------------------
+	BYTE	W96
+// 021   ----------------------------------------
+	BYTE	W96
+// 022   ----------------------------------------
+	BYTE	W96
+// 023   ----------------------------------------
+	BYTE	W96
+// 024   ----------------------------------------
+	BYTE		N48     Gn2   v064
+	BYTE	W48
+	BYTE		        Fn2 
+	BYTE	W48
+// 025   ----------------------------------------
+	BYTE		N96     Cn2 
+	BYTE	W96
+// 026   ----------------------------------------
+	BYTE		N24     Dn2 
+	BYTE	W24
+	BYTE		        Cn2 
+	BYTE	W24
+	BYTE		N36     Dn2 
+	BYTE	W36
+	BYTE		N12     Ds2 
+	BYTE	W12
+// 027   ----------------------------------------
+	BYTE		N72     Dn2   v048
+	BYTE	W72
+	BYTE		N24     Dn2   v060
+	BYTE	W24
+// 028   ----------------------------------------
+	BYTE		N48     Gn2 
+	BYTE	W48
+	BYTE		        Fn2 
+	BYTE	W48
+// 029   ----------------------------------------
+	BYTE		N96     Cn2 
+	BYTE	W96
+// 030   ----------------------------------------
+	BYTE		N24     Dn2 
+	BYTE	W24
+	BYTE		        Cn2 
+	BYTE	W24
+	BYTE		N36     Dn2 
+	BYTE	W36
+	BYTE		N12     Ds2 
+	BYTE	W12
+// 031   ----------------------------------------
+	BYTE		N72     Dn2 
+	BYTE	W72
+	BYTE		N24     Dn2   v032
+	BYTE	W24
+// 032   ----------------------------------------
+	BYTE	W96
+// 033   ----------------------------------------
+	BYTE	W96
+// 034   ----------------------------------------
+	BYTE	W96
+// 035   ----------------------------------------
+	BYTE	W96
+// 036   ----------------------------------------
+	BYTE	W24
+	BYTE	GoTo
+	 POIN2	sadcutscene_v3_2_B1
+sadcutscene_v3_2_B2:
+	BYTE	FINE
+
+//**************** Track 3 (Midi-Chn.3) ****************//
+
+sadcutscene_v3_3:
+	BYTE		VOL     127*sadcutscene_v3_mvl/mxv
+	BYTE	KEYSH   sadcutscene_v3_key+0
+sadcutscene_v3_3_B1:
+// 000   ----------------------------------------
+	BYTE		VOICE   109
+	BYTE	W96
+// 001   ----------------------------------------
+	BYTE	W96
+// 002   ----------------------------------------
+	BYTE	W96
+// 003   ----------------------------------------
+	BYTE	W96
+// 004   ----------------------------------------
+	BYTE	W96
+// 005   ----------------------------------------
+	BYTE	W96
+// 006   ----------------------------------------
+	BYTE	W96
+// 007   ----------------------------------------
+	BYTE	W96
+// 008   ----------------------------------------
+	BYTE	W48
+	BYTE		N48     As2   v064
+	BYTE	W48
+// 009   ----------------------------------------
+sadcutscene_v3_3_009:
+	BYTE		N48     An2   v064
+	BYTE	W48
+	BYTE		N96     En2 
+	BYTE	W48
+	BYTE	PEND
+// 010   ----------------------------------------
+sadcutscene_v3_3_010:
+	BYTE	W48
+	BYTE		N24     Fn2   v064
+	BYTE	W24
+	BYTE		        Ds2 
+	BYTE	W24
+	BYTE	PEND
+// 011   ----------------------------------------
+sadcutscene_v3_3_011:
+	BYTE		N24     Fn2   v064
+	BYTE	W24
+	BYTE		        Gn2 
+	BYTE	W24
+	BYTE		N96     Fn2 
+	BYTE	W48
+	BYTE	PEND
+// 012   ----------------------------------------
+	BYTE	W48
+	BYTE		N48     As2 
+	BYTE	W48
+// 013   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_3_009
+// 014   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_3_010
+// 015   ----------------------------------------
+	BYTE	PATT
+	 POIN2	sadcutscene_v3_3_011
+// 016   ----------------------------------------
+	BYTE	W48
+	BYTE		TIE     Ds2   v064
+	BYTE	W48
+// 017   ----------------------------------------
+	BYTE	W96
+	BYTE		EOT   
+// 018   ----------------------------------------
+	BYTE		TIE     Dn2 
+	BYTE	W96
+// 019   ----------------------------------------
+	BYTE	W48
+	BYTE		EOT   
+	BYTE		TIE     Cn2 
+	BYTE	W48
+// 020   ----------------------------------------
+	BYTE	W96
+	BYTE		EOT   
+// 021   ----------------------------------------
+	BYTE	W96
+// 022   ----------------------------------------
+	BYTE	W96
+// 023   ----------------------------------------
+	BYTE	W96
+// 024   ----------------------------------------
+	BYTE		N48     As2 
+	BYTE	W48
+	BYTE		        An2 
+	BYTE	W48
+// 025   ----------------------------------------
+	BYTE		N96     En2 
+	BYTE	W96
+// 026   ----------------------------------------
+	BYTE		N24     Fn2 
+	BYTE	W24
+	BYTE		        Ds2 
+	BYTE	W24
+	BYTE		N36     Fn2 
+	BYTE	W36
+	BYTE		N12     Gn2 
+	BYTE	W12
+// 027   ----------------------------------------
+	BYTE		N72     Fn2 
+	BYTE	W72
+	BYTE		N24     Fn2   v076
+	BYTE	W24
+// 028   ----------------------------------------
+	BYTE		N48     As2 
+	BYTE	W48
+	BYTE		        An2 
+	BYTE	W48
+// 029   ----------------------------------------
+	BYTE		N96     En2 
+	BYTE	W96
+// 030   ----------------------------------------
+	BYTE		N24     Fn2 
+	BYTE	W24
+	BYTE		        Ds2 
+	BYTE	W24
+	BYTE		N36     Fn2 
+	BYTE	W36
+	BYTE		N12     Gn2 
+	BYTE	W12
+// 031   ----------------------------------------
+	BYTE		N72     Fn2 
+	BYTE	W72
+	BYTE		N24     Fn2   v052
+	BYTE	W24
+// 032   ----------------------------------------
+	BYTE	W96
+// 033   ----------------------------------------
+	BYTE	W96
+// 034   ----------------------------------------
+	BYTE	W96
+// 035   ----------------------------------------
+	BYTE	W96
+// 036   ----------------------------------------
+	BYTE	W24
+	BYTE	GoTo
+	 POIN2	sadcutscene_v3_3_B1
+sadcutscene_v3_3_B2:
+	BYTE	FINE
+
+//**************** Track 4 (Midi-Chn.4) ****************//
+
+sadcutscene_v3_4:
+	BYTE		VOL     127*sadcutscene_v3_mvl/mxv
+	BYTE	KEYSH   sadcutscene_v3_key+0
+sadcutscene_v3_4_B1:
+// 000   ----------------------------------------
+	BYTE		VOICE   91
+	BYTE	W96
+// 001   ----------------------------------------
+	BYTE	W96
+// 002   ----------------------------------------
+	BYTE	W96
+// 003   ----------------------------------------
+	BYTE	W96
+// 004   ----------------------------------------
+	BYTE	W96
+// 005   ----------------------------------------
+	BYTE	W96
+// 006   ----------------------------------------
+	BYTE	W96
+// 007   ----------------------------------------
+	BYTE	W96
+// 008   ----------------------------------------
+	BYTE	W96
+// 009   ----------------------------------------
+	BYTE	W96
+// 010   ----------------------------------------
+	BYTE	W96
+// 011   ----------------------------------------
+	BYTE	W96
+// 012   ----------------------------------------
+	BYTE	W96
+// 013   ----------------------------------------
+	BYTE	W96
+// 014   ----------------------------------------
+	BYTE	W96
+// 015   ----------------------------------------
+	BYTE	W96
+// 016   ----------------------------------------
+	BYTE	W96
+// 017   ----------------------------------------
+	BYTE	W96
+// 018   ----------------------------------------
+	BYTE	W96
+// 019   ----------------------------------------
+	BYTE	W96
+// 020   ----------------------------------------
+	BYTE	W96
+// 021   ----------------------------------------
+	BYTE	W96
+// 022   ----------------------------------------
+	BYTE	W96
+// 023   ----------------------------------------
+	BYTE	W96
+// 024   ----------------------------------------
+	BYTE		N48     Dn3   v076
+	BYTE	W48
+	BYTE		        Cn3   v064
+	BYTE	W48
+// 025   ----------------------------------------
+	BYTE		N72     Gn2 
+	BYTE	W72
+	BYTE		N12     Fn2 
+	BYTE	W12
+	BYTE		        Gn2 
+	BYTE	W12
+// 026   ----------------------------------------
+	BYTE		N24     An2 
+	BYTE	W24
+	BYTE		        Gn2 
+	BYTE	W24
+	BYTE		N36     An2 
+	BYTE	W36
+	BYTE		N12     As2 
+	BYTE	W12
+// 027   ----------------------------------------
+	BYTE		N72     An2 
+	BYTE	W72
+	BYTE		N24     An2   v076
+	BYTE	W24
+// 028   ----------------------------------------
+	BYTE		N48     Dn3 
+	BYTE	W48
+	BYTE		        Cn3 
+	BYTE	W48
+// 029   ----------------------------------------
+	BYTE		N72     Gn2 
+	BYTE	W72
+	BYTE		N12     Fn2 
+	BYTE	W12
+	BYTE		        Gn2 
+	BYTE	W12
+// 030   ----------------------------------------
+	BYTE		N24     An2 
+	BYTE	W24
+	BYTE		        Gn2 
+	BYTE	W24
+	BYTE		N36     An2 
+	BYTE	W36
+	BYTE		N12     As2 
+	BYTE	W12
+// 031   ----------------------------------------
+	BYTE		N72     An2 
+	BYTE	W72
+	BYTE		N24     An2   v052
+	BYTE	W24
+// 032   ----------------------------------------
+	BYTE	W96
+// 033   ----------------------------------------
+	BYTE	W96
+// 034   ----------------------------------------
+	BYTE	W96
+// 035   ----------------------------------------
+	BYTE	W96
+// 036   ----------------------------------------
+	BYTE	W24
+	BYTE	GoTo
+	 POIN2	sadcutscene_v3_4_B1
+sadcutscene_v3_4_B2:
+	BYTE	FINE
+
+//******************************************************//
+	ALIGN 4
+
+sadcutscene_v3:
+	BYTE	4	// NumTrks
+	BYTE	0	// NumBlks
+	BYTE	sadcutscene_v3_pri	// Priority
+	BYTE	sadcutscene_v3_rev	// Reverb.
+
+	POIN2	sadcutscene_v3_grp
+
+	POIN2	sadcutscene_v3_1
+	POIN2	sadcutscene_v3_2
+	POIN2	sadcutscene_v3_3
+	POIN2	sadcutscene_v3_4
+
+	

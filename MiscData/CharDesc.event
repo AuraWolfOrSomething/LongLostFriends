@@ -1,0 +1,56 @@
+
+#define CharDescEntry(charID,age,pronounsTextID) "BYTE charID age; SHORT pronounsTextID"
+
+CharDescList:
+CharDescEntry(Zoren,23,HeHim)
+CharDescEntry(Iris,28,SheHer)
+CharDescEntry(Kamron,18,HeHim)
+CharDescEntry(Orville,21,HeHim)
+CharDescEntry(Nordica,21,SheHer)
+CharDescEntry(Franklin,18,HeHim)
+CharDescEntry(Laric,22,HeHim)
+CharDescEntry(Luther,59,HeHim)
+
+CharDescEntry(Marcey,20,SheHer)
+CharDescEntry(Davis,21,HeHim)
+CharDescEntry(Arlett,23,SheHer)
+
+CharDescEntry(Jacob,16,HeHim)
+CharDescEntry(Thorbek,21,HeHim)
+CharDescEntry(Mason,21,HeHim)
+
+CharDescEntry(Grace,23,SheHer)
+CharDescEntry(Rylan,25,HeHim)
+
+CharDescEntry(Shana,32,SheHer)
+CharDescEntry(Lorrand,35,HeHim)
+CharDescEntry(Rivia,26,SheHer)
+CharDescEntry(Vivian,19,SheHer)
+CharDescEntry(Colette,18,SheHer)
+CharDescEntry(Myra,22,SheHer)
+CharDescEntry(Percy,32,HeHim)
+
+CharDescEntry(Ember,24,SheHer)
+CharDescEntry(Curcio,25,HeHim)
+CharDescEntry(Armond,20,HeHim)
+CharDescEntry(Hazel,33,SheThem)
+
+CharDescEntry(Jade,0,SheHer)
+
+CharDescEntry(Korsana,0,SheHer)
+CharDescEntry(Gemmora,0,SheHer)
+
+CharDescEntry(Kingsly,0,HeHim)
+
+CharDescEntry(McVicar,0,HeHim)
+
+CharDescEntry(Stanrel,32,HeHim)
+CharDescEntry(Bruce,30,HeHim)
+CharDescEntry(Talon,35,HeHim)
+CharDescEntry(Augustus,37,HeHim)
+CharDescEntry(Artus,41,HeHim)
+CharDescEntry(Calder,28,HeHim)
+
+//End of list
+WORD 0
+ALIGN 4

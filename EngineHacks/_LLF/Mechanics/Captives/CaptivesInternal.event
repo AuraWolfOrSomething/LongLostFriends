@@ -1,0 +1,38 @@
+
+PUSH
+
+ORG 0x3A124
+jumpToHack(CheckIfCaptiveEscaped)
+
+ORG 0x32262
+SHORT 0
+jumpToHack(CheckIfCaptiveDropped)
+
+POP
+
+#include "asm/GetChapterCaptiveListEntry.lyn.event"
+ALIGN 4
+
+#include "asm/GetRequiredCaptiveAmount.lyn.event"
+ALIGN 4
+
+#include "asm/GetCurrentCaptiveAmount.lyn.event"
+ALIGN 4
+
+#include "asm/GetPossibleCaptiveAmount.lyn.event"
+ALIGN 4
+
+#include "asm/CheckIfEnoughCaptives.lyn.event"
+ALIGN 4
+
+#include "asm/CheckIfEnoughCaptivesASMC.lyn.event"
+ALIGN 4
+
+#include "asm/GameOverCaptiveCheckASMC.lyn.event"
+ALIGN 4
+
+#include "asm/CheckIfCaptiveDropped.lyn.event"
+ALIGN 4
+
+#include "asm/CheckIfCaptiveEscaped.lyn.event"
+ALIGN 4

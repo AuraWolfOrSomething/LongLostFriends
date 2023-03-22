@@ -1,0 +1,110 @@
+## UM_Rally
+ Rally[X]
+
+## UM_RallyDesc
+Buff nearby allies.[X]
+
+## UM_Lunge
+ Lunge[X]
+
+## UM_LungeDesc
+Switch places with opponent[N]
+after combat.[X]
+
+## UM_Shove
+ Shove[X]
+
+## UM_ShoveDesc
+Push an adjacent unit one[N]
+tile away.[X]
+
+## UM_Smite
+ Smite[X]
+
+## UM_SmiteDesc
+Push an adjacent unit two[N]
+tiles away.[X]
+
+## UM_Pivot
+ Pivot[X]
+
+## UM_PivotDesc
+Move to opposite side of[N]
+an adjacent ally.[X]
+
+## UM_Reposition
+ Reposition[X]
+
+## UM_RepositionDesc
+Move adjacent ally to this[N]
+unit's opposite side.[X]
+
+## UM_Swap
+ Swap[X]
+
+## UM_SwapDesc
+Swap positions with adjacent[N]
+ally.[X]
+
+## UM_Capture
+ Capture[X]
+
+## UM_CaptureDesc
+Strike a fatal blow with reduced[N]
+stats to capture an enemy.[X]
+
+## UM_DrawBack
+ Draw Back[X]
+ 
+## UM_DrawBackDesc
+Move one tile backwards and pull[N]
+an adjacent ally to unit's old tile.[X]
+
+## UM_SplitUp
+ Split Up[X]
+ 
+## UM_SplitUpDesc
+Move one tile backwards and push[N]
+an adjacent ally one tile away.[X]
+
+## UM_Cross
+ Cross[X]
+ 
+## UM_CrossDesc
+Move this unit and an adjacent[N]
+ally one tile past each other.[X]
+
+## UM_Advance
+ Advance[X]
+ 
+## UM_AdvanceDesc
+Ends turn, but they can move and[N]
+act again. Limit: Once per turn.[X]
+
+## UM_Recapture
+ Recapture[X]
+  
+## UM_RecaptureDesc
+"Rescue" an enemy who[N]
+was once a hostage.[X]
+
+## UM_AoEName
+ AoE[X]
+
+## UM_AoEDesc
+Hit multiple units.[X]
+
+## UM_AoEHelp
+Select an area to Attack. Press L/R to Rotate.[X]
+
+## UM_AoEHealHelp
+Select an area to Heal. Press L/R to Rotate.[X]
+
+## UM_AoEGuardian
+ Guardian[X]
+
+## UM_EditSkill
+ Edit Skills[X]
+
+## UM_EditSkillDesc
+DEBUG: Edit this unit's skill set.[X]

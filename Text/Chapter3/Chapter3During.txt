@@ -1,0 +1,272 @@
+
+## Ch3PercyCharges
+[OpenMidLeft][LoadPercy]
+[OpenMidRight][LoadEnemySoldier]
+Hey![AN]
+What are you standing[N]
+around for?[AN]
+Go get 'em![A]
+
+[OpenMidLeft]
+[Beat][A]
+[X]
+
+## Ch3WallReaction1
+
+[OpenMidLeft][LoadEnemySoldier]
+[OpenMidRight][LoadEnemySoldier]
+
+[OpenMidLeft][MoveMidLeft]
+Ha ha ha![AN]
+Do they really think the[N]
+wall will collapse?![A]
+
+[OpenMidRight]
+Old guard, it's time to crush them[N]
+while they're messing around![A]
+[CloseSpeechSlow]
+
+[OpenMidLeft][ClearFace]
+[OpenMidRight][ClearFace]
+
+[OpenLeft][LoadAugustus]
+[OpenMidRight][LoadEnemySoldier]
+
+[OpenLeft]
+What in the world...[A]
+
+[OpenMidRight]
+Cheer up, Commander.[AN]
+At least the men are[N]
+enjoying this.[A]
+
+[OpenLeft]
+You make a good point.[AN]
+Fine, I won't interfere.[AN]
+For now.[A]
+
+[X]
+
+## Ch3WallReaction2
+[OpenMidLeft][LoadEnemySoldier]
+[OpenMidRight][LoadAugustus]
+
+[OpenMidLeft]
+Commander, can you make them stop[N]
+whacking the wall already?[AN]
+It was funny at first, but now[N]
+it's just wasting our time.[A]
+
+[OpenMidRight]
+Of course, of course.[A]
+[CloseSpeechSlow]
+
+[OpenMidLeft][ClearFace]
+[OpenMidRight][ClearFace]
+
+[OpenLeft][LoadAugustus]
+Newcomers, cease this at once![AN]
+My men are growing weary of this.[AN]
+If you don't stop stalling, they'll[N]
+entertain themselves![A]
+[ClearFace]
+
+[OpenLeft][LoadShana]
+We've almost done it,[N]
+everyone![AN]
+Just keep at it![A]
+[X]
+
+## Ch3PrisonersDefeatedReaction
+[OpenLeft][LoadAugustus]
+We have a winner![AN]
+Congratulations, newcomers![AN]
+Now then, submit your weapons to[N]
+the guards once they reach you.[AN]
+Don't get any funny ideas.[A]
+[ClearFace]
+
+[OpenLeft][LoadShana]
+We're running out of time[Beat][AN]
+Everyone, focus on the wall![A]
+[X]
+
+## Ch3AugustusReaction
+[OpenLeft][LoadAugustus]
+[OpenLeft][MoveLeft]
+To arms, men![AN]
+Kill the dissenting[N]
+prisoners![A]
+[X]
+
+## Ch3TransitionColetteAlive
+[OpenMidLeft][LoadLorrand]
+[OpenMidRight][LoadColette]
+[ToggleSmile]Whew, we made it![A][ToggleSmile]
+
+[OpenMidLeft]
+Don't relax yet, Colette.[AN]
+This isn't over quite yet.[A]
+[X]
+
+## Ch3TransitionPercyAlive1
+[OpenMidLeft][LoadRivia]
+[OpenRight][LoadPercy]
+
+[OpenMidLeft]
+Hey, you.[A]
+
+[OpenRight]
+[Beat][A]
+
+[OpenMidLeft]
+What do you know[N]
+about our surroundings?[AN]
+Is there a good way[N]
+out of here?[A]
+[X]
+
+## Ch3TransitionPercyAlive2
+[OpenMidLeft][LoadRivia]
+[OpenRight][LoadPercy]
+There's a forest south of us.[AN]
+We'll encounter some resistance,[N]
+but not as much as any other route.[A]
+
+[OpenFarRight][LoadShana]
+Then that's our best chance[N]
+of escaping this place.[A]
+
+[OpenMidLeft]
+Agreed.[A][X]
+
+## Ch3TransitionPercyDead1
+[OpenMidLeft][LoadRivia]
+[OpenMidRight][LoadShana]
+
+[OpenMidLeft]
+What now, Shana?[AN]
+Even out here, there's[N]
+still a lot of guards.[A]
+
+[OpenMidRight]
+Hmm[Beat][AN]
+I remember the road they[N]
+brought us on.[AN]
+Getting out that way[N]
+seems unlikely, so[Beat][A]
+[X]
+
+## Ch3TransitionPercyDead2
+[OpenMidLeft][LoadRivia]
+[OpenMidRight][LoadShana]
+[Beat]Let's head for that forest.[AN]
+I don't think they'd post as[N]
+many guards there.[A]
+
+[OpenMidLeft]
+Agreed.[A]
+[X]
+
+## Ch3Part2TransitionSecureStaff
+[OpenMidLeft][LoadShana]
+[OpenMidRight][LoadLorrand]
+
+[OpenMidLeft]
+Did you see something,[N]
+Sir Lorrand?[A]
+
+[OpenMidRight]
+Yes, Mother Shana.[AN]
+This staff has some[N]
+wear on it, but[Beat][A]
+
+[OpenMidLeft]
+We need anything we can get[N]
+our hands on.[AN]
+God has graced us with this[N]
+gift to ensure our success.[AN]
+Now then, if everyone has there[N]
+bearings, we should keep moving.[A]
+
+[OpenMidRight]
+Right behind you,[N]
+Mother Shana.[A]
+[X]
+
+## Ch3Part2SentryReactions
+[OpenMidLeft][LoadEnemySoldier]
+[OpenRight][LoadFace][0x6D][0x1]
+
+[OpenMidLeft]
+Hey, Sergeant?[A]
+
+[OpenRight]
+What?[A]
+
+[OpenMidLeft]
+Weren't, uh, those people over[N]
+there, uh, prisoners?[A]
+
+[OpenRight]
+[Beat]Huh.[AN]
+I believe you're[N]
+right about that.[A]
+
+[OpenMidLeft]
+So, what do we do?[A]
+
+[OpenRight]
+Sit back and[N]
+watch the show.[A]
+
+[OpenMidLeft]
+Huh?[AN]
+Won't the Commander[N]
+punish[TMM]--[TMM][A]
+
+[OpenRight][MoveRight]
+Hey, listen here, pup.[AN]
+Either I can watch the road[N]
+for enemy battalions,[AN]
+or I can help babysit a bunch[N]
+of pathetic prisoners.[AN]
+Augustus can't have it[N]
+both ways.[AN]
+Especially if he keeps cutting[N]
+our rations down.[AN]
+
+[OpenFarRight][LoadEnemySoldier]
+So it wasn't just my imagination![AN]
+Yep, that does it.[AN]
+Screw the Commander.[AN]
+
+[OpenMidLeft]
+What if those[N]
+people escape?[A]
+
+[OpenRight]
+Sounds like Augustus's problem to me.[AN]
+But hey, if they wander over here,[N]
+feel free to go ahead and kill them.[AN]
+Maybe the morons on the other side will[N]
+try to stop them, but that's their call.[A]
+[X]
+
+## Ch3Part2AugustusArrives
+[OpenMidLeft][LoadAugustus]
+How did they get so far?![AN]
+C'mon, men![AN]
+Get a move on![A]
+
+[OpenMidRight][LoadEnemySoldier]
+[OpenMidLeft][MoveLeft]
+[OpenLeft]
+Captain![AN]
+The two of us is enough[N]
+to stop them.[AN]
+Bring me with you![A]
+
+[OpenMidRight]
+Yes, Commander![A]
+[X]

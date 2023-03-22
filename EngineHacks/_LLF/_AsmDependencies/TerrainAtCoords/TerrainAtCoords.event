@@ -1,0 +1,6 @@
+
+#include "asm/ReturnTerrainAtCoord.lyn.event"
+ALIGN 4
+
+#include "asm/CheckIfTerrainAtCoord.lyn.event"
+ALIGN 4

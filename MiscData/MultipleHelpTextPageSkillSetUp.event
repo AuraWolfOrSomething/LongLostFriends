@@ -1,0 +1,16 @@
+
+MultipleHelpTextPageList_Skills:
+//BYTE skillId numberOfPages
+//SHORT textId1 textId2 ...
+
+//TESTING
+/*
+BYTE CantoID 2
+SHORT SD_Canto 0x844
+
+BYTE SupplyID 3
+SHORT SD_Supply SD_SteadyAim 0x843
+*/
+
+BYTE 0 //end of the list
+ALIGN 4

@@ -1,0 +1,62 @@
+
+#include "Escort/Escort.event"
+
+#include "Transmitter/Transmitter.event"
+
+#include "Heroics/Heroics.event"
+
+#include "Uncooperative/Uncooperative.event"
+
+#include "LastLegs/LastLegs.event"
+
+#include "PrimeFive/PrimeFive.event"
+
+#include "BalancedStudy/BalancedStudy.event"
+
+#include "ExploitSpeed/ExploitSpeed.event"
+
+#include "SteadyAim/SteadyAim.event"
+
+#include "FarWard/FarWard.event"
+
+#include "Blitz/Blitz.event"
+
+#include "Advance/Advance.event"
+
+//Acrobat is something that SkillSystems already has, but the way it is hooked in forces other conditions that change terrain cost to be in the same file
+#include "Acrobat/Acrobat.event"
+
+#include "DivineIntervention/DivineIntervention.event"
+
+//This is checked for in the Attack Formula
+ExpertiseIDLink:
+BYTE ExpertiseID
+ALIGN 4
+
+#include "Bargain/Bargain.event"
+ALIGN 4
+
+
+//#include "Recapture/Recapture.event"
+
+//#include "CantoMinus/CantoMinusInstaller.event"
+
+//#include "Escort/EscortInstaller.event"
+
+//#include "Heroics/HeroicsInstaller.event"
+
+//#include "Transmitter/TransmitterInstaller.event"
+
+//#include "Bolster/BolsterInstaller.event"
+
+//#include "Dynamic/DynamicInstaller.event"
+
+//#include "Provoke/ProvokeInstaller.event"
+
+//#include "Transport/TransportInstaller.event"
+
+//#include "VariablePrices/VariablePricesInstaller.event"
+
+//#include "CaptureAid/CaptureAidInstaller.event"
+
+//#include "WarpMaster/WarpMasterInstaller.event"

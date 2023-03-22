@@ -1,0 +1,11 @@
+
+SetChapterBattleQuoteList(Prologue,PrologueBattleQuoteList)
+SetChapterDeathQuoteList(Prologue,PrologueDeathQuoteList)
+
+PrologueBattleQuoteList:
+BattleQuoteEid(Stanrel,GenericBossQuoteEventID,BattleQuoteStanrel)
+BattleQuoteEnd
+
+PrologueDeathQuoteList:
+DeathQuoteEid(Stanrel,DefeatBossEventID,DeathQuoteStanrel)
+DeathQuoteEnd

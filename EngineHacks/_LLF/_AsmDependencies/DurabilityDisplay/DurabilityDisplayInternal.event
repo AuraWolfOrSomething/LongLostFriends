@@ -1,0 +1,89 @@
+PUSH
+
+ORG 0x16848
+SHORT 0xB510 0x4C03 //push {r4,r14}; ldr r4, (NewDrawItemMenuCommand)
+SHORT 0x46A6 0xF800 //mov r14, r4; bl r14+0
+SHORT 0xBC10 0xBC01 //pop {r4}; pop {r0}
+SHORT 0x4700 0 //bx r0; lsl r0, #0
+POIN NewDrawItemMenuCommand
+
+#ifndef DashesForIndestructibleItems
+	ORG 0x1685C //not needed, but easier to find
+	#include "asm/DrawDurabilityIfDestructible.lyn.event"
+	ALIGN 4
+#endif
+
+ORG 0x16A2C
+SHORT 0xB510 0x4C03 //push {r4,r14}; ldr r4, (StatScreenDrawItem)
+SHORT 0x46A6 0xF800 //mov r14, r4; bl r14+0
+SHORT 0xBC10 0xBC01 //pop {r4}; pop {r0}
+SHORT 0x4700 0 //bx r0; lsl r0, #0
+POIN StatScreenDrawItem
+
+ORG 0x16A40 //not needed, but easier to find
+#include "asm/DurabilityDisplay.lyn.event"
+ALIGN 4
+
+/*
+replace branches to:
+- 08004B94 with a branch to DrawDurabilityIfDestructible
+- 080174F4 with a branch to the new GetAndBufferItemName
+- 08017584 with a branch to the new GetCurrentUses
+*/
+
+#ifndef DashesForIndestructibleItems
+
+	ORG 0x34D0C
+	BL(DrawDurabilityIfDestructible)
+	
+	ORG 0x9A05C
+	BL(DrawDurabilityIfDestructible)
+	
+	ORG 0x9AAB2
+	BL(DrawDurabilityIfDestructible)
+	
+	ORG 0x9B7F0
+	BL(DrawDurabilityIfDestructible)
+	
+	ORG 0x9D3E8
+	BL(DrawDurabilityIfDestructible)
+	
+#endif
+
+ORG 0x34CEC
+BL(NewGetItemNameString)
+
+ORG 0x34D02
+BL(NewGetItemUses)
+
+ORG 0x9A022
+BL(NewGetItemNameString)
+
+ORG 0x9A052
+BL(NewGetItemUses)
+
+ORG 0x9AA78
+BL(NewGetItemNameString)
+
+ORG 0x9AAA8
+BL(NewGetItemUses)
+
+ORG 0x9B7B6
+BL(NewGetItemNameString)
+
+ORG 0x9B7E6
+BL(NewGetItemUses)
+
+ORG 0x9D394
+BL(NewGetItemNameString)
+
+ORG 0x9D3DE
+BL(NewGetItemUses)
+
+POP
+
+#include "asm/StatScreenDrawItem.lyn.event"
+ALIGN 4
+
+#include "asm/NewDrawItemMenuCommand.lyn.event"
+ALIGN 4

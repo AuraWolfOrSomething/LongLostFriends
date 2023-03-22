@@ -1,0 +1,7 @@
+
+#include "asm/FocusBeltEffect.lyn.event"
+ALIGN 4
+
+FocusBeltIDLink:
+BYTE FocusBelt
+ALIGN 4

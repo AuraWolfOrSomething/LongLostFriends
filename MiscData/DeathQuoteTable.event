@@ -1,0 +1,164 @@
+
+PUSH
+ORG 0x8472C
+POIN(DeathQuoteTable)
+POP
+
+DeathQuoteTable:
+
+//Player units - deaths on any chapter
+DeathQuoteScene(Zoren,ZorenDeathEvent)
+DeathQuoteEidScene(Iris,IrisDeathEventID,IrisDeathEvent)
+DeathQuote(Marcey,DeathQuoteMarcey)
+DeathQuote(Kamron,DeathQuoteKamron)
+DeathQuote(Orville,DeathQuoteOrville)
+DeathQuote(Nordica,DeathQuoteNordica)
+DeathQuote(Franklin,DeathQuoteFranklin)
+DeathQuote(Laric,DeathQuoteLaric)
+DeathQuote(Luther,DeathQuoteLuther)
+DeathQuote(Jacob,DeathQuoteJacob)
+DeathQuote(Thorbek,DeathQuoteThorbek)
+DeathQuote(Grace,DeathQuoteGrace)
+DeathQuoteEidScene(Arlett,ArlettDeathEventID,ArlettDeathEvent)
+DeathQuote(Davis,DeathQuoteDavis)
+DeathQuoteEidScene(Rylan,RylanDeathEventID,RylanDeathEvent)
+DeathQuote(Mason,DeathQuoteMason)
+DeathQuoteScene(Shana,ShanaDeathEvent)
+DeathQuoteScene(Lorrand,LorrandDeathEvent)
+DeathQuoteScene(Rivia,RiviaDeathEvent)
+DeathQuote(Vivian,DeathQuoteVivian)
+DeathQuote(Colette,DeathQuoteColette)
+DeathQuote(Myra,DeathQuoteMyra)
+DeathQuote(Percy,DeathQuotePercy)
+DeathQuoteSilent(McVicar)
+EndDeathQuoteTable
+
+ZorenDeathEvent:
+TEXTSTART
+TEXTSHOW DeathQuoteZoren
+TEXTEND
+REMA
+
+//check if planning
+  //if so, don't cause game over
+  //if not planning, game over
+CHECK_EVENTID PlanEventID
+
+IFNE 0x1 0xC 0x0
+
+	CALL DoNotLoseIfPlanningEvent
+	GOTO 0x2
+	
+LABEL 0x1
+	
+	ENUT 0x65
+	
+LABEL 0x2
+
+NoFade
+ENDA
+
+IrisDeathEvent:
+TEXTSTART
+TEXTSHOW DeathQuoteIris
+TEXTEND
+REMA
+NoFade
+ENDA
+
+ArlettDeathEvent:
+TEXTSTART
+TEXTSHOW DeathQuoteArlett
+TEXTEND
+REMA
+NoFade
+ENDA
+
+RylanDeathEvent:
+TEXTSTART
+TEXTSHOW DeathQuoteRylan
+TEXTEND
+REMA
+NoFade
+ENDA
+
+ShanaDeathEvent:
+TEXTSTART
+TEXTSHOW DeathQuoteShana
+TEXTEND
+REMA
+
+//check if planning
+  //if so, don't cause game over
+  //if not planning, game over
+CHECK_EVENTID PlanEventID
+
+IFNE 0x1 0xC 0x0
+
+	CALL DoNotLoseIfPlanningEvent
+	GOTO 0x2
+	
+LABEL 0x1
+	
+	ENUT 0x65
+	
+LABEL 0x2
+
+NoFade
+ENDA
+
+
+//-----------------------------------
+//Lorrand and Rivia TODO: only gameover on chapters where their deaths are a gameover condition
+//-----------------------------------
+
+LorrandDeathEvent:
+TEXTSTART
+TEXTSHOW DeathQuoteLorrand
+TEXTEND
+REMA
+
+//check if planning
+  //if so, don't cause game over
+  //if not planning, game over
+CHECK_EVENTID PlanEventID
+
+IFNE 0x1 0xC 0x0
+
+	CALL DoNotLoseIfPlanningEvent
+	GOTO 0x2
+	
+LABEL 0x1
+	
+	ENUT 0x65
+	
+LABEL 0x2
+
+NoFade
+ENDA
+
+RiviaDeathEvent:
+TEXTSTART
+TEXTSHOW DeathQuoteRivia
+TEXTEND
+REMA
+
+//check if planning
+  //if so, don't cause game over
+  //if not planning, game over
+CHECK_EVENTID PlanEventID
+
+IFNE 0x1 0xC 0x0
+
+	CALL DoNotLoseIfPlanningEvent
+	GOTO 0x2
+	
+LABEL 0x1
+	
+	ENUT 0x65
+	
+LABEL 0x2
+
+NoFade
+ENDA
+

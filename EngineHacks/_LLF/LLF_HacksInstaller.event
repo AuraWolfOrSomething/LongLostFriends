@@ -1,0 +1,33 @@
+
+/*
+PUSH
+
+ORG continueInBlRange
+
+MESSAGE inBlRangeHacks end at currentOffset
+
+#undef continueInBlRange
+#define continueInBlRange currentOffset
+
+POP
+*/
+
+#include "_AsmDependencies/AsmDependencies.event"
+
+#include "Ai/Ai.event"
+
+#include "Formulas/Formulas.event"
+
+#include "HelpText/HelpText.event"
+
+#include "Items/Items.event"
+
+#include "Mechanics/Mechanics.event"
+
+#include "Plan/Plan.event"
+
+#include "QoL/QoL.event"
+
+#include "Skills/Skills.event"
+
+#include "Supports/Supports.event"

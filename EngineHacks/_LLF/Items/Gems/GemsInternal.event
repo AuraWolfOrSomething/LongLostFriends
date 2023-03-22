@@ -1,0 +1,48 @@
+
+#include "asm/CheckIfGemIsActive.lyn.event"
+ALIGN 4
+
+//Called from StatGetters
+
+	#include "asm/GetGemStatBoosts.lyn.event"
+	ALIGN 4
+
+	#include "asm/GetGemSpecialStatBoost.lyn.event"
+	ALIGN 4
+
+	#include "asm/prGemPow.lyn.event"
+	ALIGN 4
+
+	#include "asm/prGemSkl.lyn.event"
+	ALIGN 4
+
+	#include "asm/prGemSpd.lyn.event"
+	ALIGN 4
+
+	#include "asm/prGemDef.lyn.event"
+	ALIGN 4
+
+	#include "asm/prGemRes.lyn.event"
+	ALIGN 4
+
+	#include "asm/prGemLck.lyn.event"
+	ALIGN 4
+
+	#include "asm/prGemAid.lyn.event"
+	ALIGN 4
+
+//Called by the AS Formula
+	#include "asm/GemLowerASPenalty.lyn.event"
+	ALIGN 4
+
+//Called by WeaponRankModifiers
+	#include "asm/PupilGemEffect.lyn.event"
+	ALIGN 4
+
+//Called by PreBattleCalcLoop (CheckIfDoubling also stops/forces doubling)
+
+	#include "asm/KarbaltGemEffect.lyn.event"
+	ALIGN 4
+
+	#include "asm/ThelrimGemEffect.lyn.event"
+	ALIGN 4

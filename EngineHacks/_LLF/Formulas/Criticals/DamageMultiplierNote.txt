@@ -1,0 +1,1 @@
+Changing the critical multiplier based on percent can be found in Necessary/CalcLoops/BattleProcCalcLoop/ProcStart/proc_start.s

@@ -1,0 +1,34 @@
+
+PUSH
+
+ORG 0x2B080
+SHORT 0xB510 0x2401 //push {r4,r14}; mov r4, #1
+SHORT 0x4B03 0x469E //ldr r3, (BattleCheckBrave); mov lr, r3
+SHORT 0xF800 0x4084 //bl lr+0; lsl r4, r0
+SHORT 0x1C20 0xBC10 //mov r0, r4; pop {r4}
+SHORT 0xBC02 0x4708 //pop {r1}; bx r1
+POIN BattleCheckBrave
+
+ORG 0x3666C
+SHORT 0xB5F0 0x1C04 //push {r4-r7,r14}; mov r4, r0
+SHORT 0x1C0D 0x6816 //mov r5, r1; ldr r6, [r2]
+SHORT 0x2E00 0xDD0F //cmp r6, #0; ble End
+SHORT 0x7828 0x3001 //ldrb r0, [r5]; add r0, #1
+SHORT 0x7028 0x3E01 //strb r0, [r5]; sub r6, #1
+SHORT 0x6016 0x1C20 //str r6, [r2]; mov r0, r4
+SHORT 0x1C17 //mov r7, r2
+BL(0x2B080)
+SHORT 0x2802 0xD104 //cmp r0, #2; bne End 
+SHORT 0x7828 0x3001 //ldrb r0, [r5]; add r0, #1
+SHORT 0x7028 0x3E01 //strb r0, [r5]; sub r5, #1
+SHORT 0x603E //str r6, [r7]
+//End: 
+SHORT 0xBCF0 0xBC01 //pop {r4-r7}; pop {r0}
+SHORT 0x4700 //bx r0
+SHORT 0
+POP
+
+#include "asm/BattleCheckBrave.lyn.event"
+BlitzLink:
+BYTE BlitzID
+ALIGN 4

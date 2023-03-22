@@ -1,0 +1,11 @@
+
+#include "asm/IsPerfectusActive.lyn.event"
+ALIGN 4
+
+#include "asm/PostCombatPerfectus.lyn.event"
+ALIGN 4
+
+PerfectusIDLink:
+BYTE Perfectus
+
+ALIGN 4

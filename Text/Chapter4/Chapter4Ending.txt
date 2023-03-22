@@ -1,0 +1,121 @@
+
+## Ch4EndingRylanAlive
+
+[OpenMidLeft][LoadZoren]
+[OpenMidRight][LoadRylan][ToggleSmile]
+Ah, the hero of the day.[AN]
+Thanks for the help.[A]
+
+[OpenMidLeft]
+It was no trouble at all.[AN][ToggleSmile]
+Do you know what those men[N]
+had to gain from this attack?[A]
+
+[OpenMidRight]
+Beats me.[AN]
+Seemed too organized to be simple[N]
+pirates, but[Beat][AN]
+Well, now that I think about it,[N]
+what happened to all the guards?[AN]
+
+[OpenMidLeft]
+What do you mean?[A]
+
+[OpenMidRight]
+I've been here a few times already,[N]
+and every time but today,[AN]
+there's at least a handful of[N]
+guards wandering around.[AN]
+
+[OpenMidLeft]
+[Beat]Those men approached from[N]
+the north, no?[AN]
+If this is the edge of town,[AN]
+then maybe they're occupied with[N]
+something further in.[AN]
+Guess I'll find out, soon enough.[A]
+
+[OpenMidRight]
+You're gonna investigate this?[A]
+
+[OpenMidLeft]
+I'm already an enemy to this[N]
+group of mystery men.[AN]
+If they're still in the area,[AN]
+then I'd prefer to deal with[N]
+them now rather later.[A]
+
+[OpenMidRight]
+In that case, would you mind allowing a[N]
+fellow [TR]Argustian[TR] like me tag along?[AN]
+With this contract complete, I'm free[N]
+of any obligations.[A]
+
+[OpenMidLeft]
+What about your men?[AN]
+Or your ship?[AN]
+Can you abandon all of[N]
+them, just like that?[A]
+
+[OpenMidRight]
+I'm not their captain,[N]
+or anything like that.[AN]
+I'm just a crew member.[AN]
+This situation is too[N]
+strange to pass up.[AN]
+Besides, I owe you for[N]
+saving my life.[AN]
+
+[OpenMidLeft]
+Well, if you'd really like to,[N]
+I won't stop you.[AN]
+A friendly user of elder[N]
+magic's hard to come by.[A]
+
+[OpenMidRight]
+Not "dark magic"?[AN][ToggleSmile]
+Heh.[AN]
+We'll get along just fine.[A]
+
+[X]
+
+## Ch4EndingRylanDead
+[OpenMidLeft][LoadZoren]
+Good work, everyone![AN]
+We'll take a short rest before[N]
+heading any further into town..[AN]
+I've got a feeling that this isn't[N]
+the end of this story.[A]
+[X]
+
+## Ch4EndingArtusOtherKill
+[OpenFarLeft][LoadMcVicar]
+[Beat]Guess Artus wasn't as[N]
+tough as he sounded.[AN]
+Time for the next contract.[A]
+[X]
+
+## Ch4EndingArtusMcVicarKill
+[OpenFarLeft][LoadMcVicar]
+That takes care of him.[AN]
+Time for the next contract.[A]
+[X]
+
+## Ch4EndingZorenMcVicar
+[OpenRight][LoadMcVicar][MoveMidLeft]
+[OpenMidRight][LoadZoren]
+Hey![AN]
+Who are you, anyways?[A]
+
+[OpenMidLeft][ClearFace]
+[OpenMidLeft][LoadMcVicar]
+None of your business.[AN]
+Don't even think about[N]
+following me.[A]
+[ClearFace]
+
+[OpenMidRight]
+A cheery one, indeed.[AN]
+Not like it matters, I guess.[AN]
+I doubt I'll see him again.[A]
+[X]

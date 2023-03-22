@@ -1,0 +1,8 @@
+
+//this list has no effect on elixirs, so there's no entry for them
+
+ItemHealingList:
+BYTE Vulnerary 15
+BYTE Concoction 25
+BYTE 0 //end of list
+ALIGN 4

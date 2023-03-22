@@ -1,0 +1,92 @@
+
+#include "asmIsEffectActive/CountActiveEffects.lyn.event"
+ALIGN 4
+
+IsEffectActiveList:
+POIN IsAnyStatusActive
+POIN CountAllDebuffsActive
+POIN CountAllBuffsActive
+WORD 0
+
+
+//-----------------------------------
+//Statuses
+//-----------------------------------
+
+#include "asmIsEffectActive/IsAnyStatusActive.lyn.event"
+ALIGN 4
+
+#include "asmIsEffectActive/IsPoisonStatusActive.lyn.event"
+ALIGN 4
+
+#include "asmIsEffectActive/IsSleepStatusActive.lyn.event"
+ALIGN 4
+
+#include "asmIsEffectActive/IsSilenceStatusActive.lyn.event"
+ALIGN 4
+
+#include "asmIsEffectActive/IsBerserkStatusActive.lyn.event"
+ALIGN 4
+
+
+//-----------------------------------
+//Debuffs
+//-----------------------------------
+
+DebuffCheckingList:
+POIN IsAbsorbDebuffActive
+POIN IsRustbowDebuffActive
+POIN IsIneptDebuffActive
+POIN IsLullDebuffActive
+POIN IsSlowDebuffActive
+POIN IsDistractDebuffActive
+WORD 0
+
+#include "asmIsEffectActive/CountAllDebuffsActive.lyn.event"
+ALIGN 4
+
+#include "asmIsEffectActive/IsRustbowDebuffActive.lyn.event"
+ALIGN 4
+
+#include "asmIsEffectActive/IsIneptDebuffActive.lyn.event"
+ALIGN 4
+
+#include "asmIsEffectActive/IsLullDebuffActive.lyn.event"
+ALIGN 4
+
+#include "asmIsEffectActive/IsSlowDebuffActive.lyn.event"
+ALIGN 4
+
+#include "asmIsEffectActive/IsDistractDebuffActive.lyn.event"
+ALIGN 4
+
+#include "asmIsEffectActive/IsAbsorbDebuffActive.lyn.event"
+ALIGN 4
+
+AbsorbDebuffNameLink:
+SHORT AbsorbDebuffName
+SHORT AbsorbDurationHelpText
+ALIGN 4
+
+
+//-----------------------------------
+//Buffs
+//-----------------------------------
+
+BuffCheckingList:
+//POIN IsGuardianNullifyActive
+POIN IsGuardianDamageActive
+POIN IsDebuffHalfActive
+POIN IsRallyActive
+WORD 0
+
+#include "asmIsEffectActive/CountAllBuffsActive.lyn.event"
+ALIGN 4
+
+#include "asmIsEffectActive/IsGuardianDamageActive.lyn.event"
+ALIGN 4
+
+#include "asmIsEffectActive/IsDebuffHalfActive.lyn.event"
+
+#include "asmIsEffectActive/IsRallyActive.lyn.event"
+ALIGN 4

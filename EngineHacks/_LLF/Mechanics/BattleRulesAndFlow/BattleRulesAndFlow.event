@@ -1,0 +1,7 @@
+
+#include "BattleRulesAndFlowInternal.event"
+ALIGN 4
+
+NeverFollowUpConditionsList:
+POIN NoDoublingVanilla NoDoublingWeaponEffect NoDoublingKarbaltGem NoDoublingThelrimGem NoDoublingBlitz
+WORD 0

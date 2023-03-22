@@ -1,0 +1,26 @@
+
+PUSH
+
+ORG 0x88620
+POIN RemoveGlowy
+
+ORG 0x88638
+POIN NewStatScreen
+
+ORG 0x88640
+POIN NewStatScreenPalette
+
+POP
+
+RemoveGlowy:
+#incbin "RemoveGlowy.dmp"
+ALIGN 4
+
+NewStatScreen:
+#incbin "KirbStatScreen.dmp"
+ALIGN 4
+
+NewStatScreenPalette:
+//#incext Png2Dmp "KirbStatScreen.png" --palette-only
+#incbin "KirbStatScreenPalette.dmp"
+ALIGN 4

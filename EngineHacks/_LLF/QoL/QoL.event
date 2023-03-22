@@ -1,0 +1,46 @@
+
+#ifdef TESTING_EASY_MOVEMENT
+
+	#include "TESTING_EASY_MOVEMENT/TESTING_EASY_MOVEMENT.event"
+	ALIGN 4
+	
+#endif
+
+#include "SingleWeaponCavalierOnLoad/SingleWeaponCavalierOnLoad.event"
+ALIGN 4
+
+#include "EscapeTheEscapeSoftlock/EscapeTheEscapeSoftlock.event"
+ALIGN 4
+
+#include "UpdatedLButtonCycling/UpdatedLButtonCycling.event"
+ALIGN 4
+
+#include "MoreMiniObjectiveDisplays/MoreMiniObjectiveDisplays.event"
+ALIGN 4
+
+#include "DangerZoneIgnoresCaptives/DangerZoneIgnoresCaptives.event"
+ALIGN 4
+
+//#include "RecordPlaythroughStats/RecordPlaythroughStats.event"
+//ALIGN 4
+
+#include "RecruitInfoOnStatScreen\RecruitInfoOnStatScreen.event"
+ALIGN 4
+
+#include "WeaponSelectWindow/WeaponSelectWindow.event"
+ALIGN 4
+
+#include "DisplayAiOnMinimugBox/DisplayAiOnMinimugBox.event"
+ALIGN 4
+
+#include "RallyTileDisplay/RallyTileDisplay.event"
+ALIGN 4
+
+#include "CheckBeforeMiscEvents/CheckBeforeMiscEvents.event"
+ALIGN 4
+
+#include "ReinforcementWarningsToggle/ReinforcementWarningsToggle.event"
+ALIGN 4
+
+#include "ApplyPatchChanges/ApplyPatchChanges.event"
+ALIGN 4

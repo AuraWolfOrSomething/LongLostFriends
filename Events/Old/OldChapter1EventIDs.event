@@ -1,0 +1,8 @@
+
+#define LeftHouseEventID 0x0A
+#define RightHouseEventID 0x0B
+#define ChestEventID 0x0C
+#define BreguetDeathEventID 0x0D
+#define BeranEscapedID 0x0E
+
+#define RylanLastStandQuoteEventID 0x0F

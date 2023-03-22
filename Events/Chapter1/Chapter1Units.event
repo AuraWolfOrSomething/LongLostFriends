@@ -1,0 +1,108 @@
+
+#define Ch1AdditionalBossSkill 0x81
+#define Ch1SlowThief 0x82
+
+/*
+UNIT charID classID leader Level(lvl,faction,autolevel) [x,y] flags 0 number_of_REDAs pointer_to_REDAs [Item1,Item2,Item3,Item4] AI 
+
+REDA_Pointer
+REDA [x,y] Flags Speed *Rescuing character* Delay
+*/
+
+BadUnits:
+//UNIT PrologueBandit Class 0 Level(3,Enemy,True) [x,y] NoUnitFlags 0 0 0 [inventory] NoAI
+
+//Throne room
+	UNIT Bruce Mage 0 Level(8,Enemy,False) [7,0] DropItem Ch1AdditionalBossSkill 0 0 [Elfire,FighterGem] AttackInRangeAI
+	UNIT PrologueBandit Mage 0 Level(5,Enemy,True) [11,2] NoUnitFlags 0 0 0 [Wind] StationaryAI
+	UNIT Stanrel Thief 0 Level(4,Enemy,True) [10,1] NoUnitFlags Ch1SlowThief 0 0 [BronzeSword,ChestKey] LootThenEscape //cutscene unit; disappears
+	UNIT PrologueBandit2 Fighter 0 Level(3,Enemy,True) [1,17] NoUnitFlags 0 0 0 [IronAxe] NoAI //cutscene unit; disappears
+	UNIT PrologueBandit Mage 0 Level(5,Enemy,True) [9,3] NoUnitFlags 0 0 0 [Thunder] NoAI
+	
+
+//Left tile
+	UNIT PrologueBandit Mercenary 0 Level(6,Enemy,True) [3,2] DropItem 0 0 0 [SteelSword,ChestKey] StationaryAI
+
+//Right tile
+	UNIT PrologueBandit Mercenary 0 Level(6,Enemy,True) [8,11] NoUnitFlags 0 0 0 [SteelSword] StationaryAI
+	
+//Entrance tile
+	//UNIT PrologueBandit Mercenary 0 Level(6,Enemy,True) [3,13] NoUnitFlags 0 0 0 [SteelSword] StationaryAI
+
+//Left side
+	UNIT PrologueBandit Deserter 0 Level(4,Enemy,True) [1,6] DropItem 0 0 0 [BronzeLance,DoorKey] AttackInRangeAI
+	UNIT PrologueBandit Mage 0 Level(4,Enemy,True) [2,6] NoUnitFlags 0 0 0 [Thunder] AttackInRangeAI
+	//UNIT PrologueBandit Mercenary 0 Level(4,Enemy,True) [3,5] NoUnitFlags 0 0 0 [BronzeSword] AttackInRangeAI
+	UNIT PrologueBandit Fighter 0 Level(4,Enemy,True) [3,6] DropItem 0 0 0 [BronzeAxe,Heal] AttackInRangeAI
+	//UNIT PrologueBandit Deserter 0 Level(4,Enemy,True) [1,9] NoUnitFlags 0 0 0 [BronzeLance] AttackInDoubleRangeAI
+	UNIT PrologueBandit Mercenary 0 Level(4,Enemy,True) [2,7] NoUnitFlags 0 0 0 [BronzeSword] NoAI
+	UNIT PrologueBandit Mercenary 0 Level(4,Enemy,True) [3,11] NoUnitFlags 0 0 0 [IronSword] AttackInDoubleRangeAI
+
+//Open cell
+	//UNIT PrologueBandit Archer 0 Level(4,Enemy,True) [6,15] NoUnitFlags 0 0 0 [BronzeLongbow,Coupon] StationaryAI
+	UNIT PrologueBandit Mage 0 Level(4,Enemy,True) [6,11] NoUnitFlags 0 0 0 [Wind,Coupon] StationaryAI
+
+//Right side
+	UNIT PrologueBandit Deserter 0 Level(4,Enemy,True) [11,6] NoUnitFlags 0 0 0 [BronzeLance] AttackInRangeAI
+	//UNIT PrologueBandit Mage 0 Level(5,Enemy,True) [12,10] NoUnitFlags 0 0 0 [Wind] StationaryAI
+	UNIT PrologueBandit Deserter 0 Level(4,Enemy,True) [13,6] NoUnitFlags 0 0 0 [BronzeLance] AttackInRangeAI
+	UNIT PrologueBandit Mercenary 0 Level(4,Enemy,True) [9,8] NoUnitFlags 0 0 0 [BronzeSword] NoAI
+	//UNIT PrologueBandit Deserter 0 Level(4,Enemy,True) [9,13] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+	UNIT PrologueBandit Fighter 0 Level(4,Enemy,True) [14,8] NoUnitFlags 0 0 0 [BronzeAxe] NoAI
+	//UNIT PrologueBandit Deserter 0 Level(4,Enemy,True) [12,10] DropItem 0 0 0 [BronzeLance,ChestKey] AttackInRangeAI
+	//UNIT PrologueBandit Mage 0 Level(4,Enemy,True) [10,12] DropItem 0 0 0 [Fire,ChestKey] StationaryAI
+
+//Initial wave - left
+	UNIT PrologueBandit Brigand 0 Level(4,Enemy,True) [1,12] NoUnitFlags 0 0 0 [IronAxe] NoAI
+	//UNIT PrologueBandit Deserter 0 Level(3,Enemy,True) [2,12] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+	UNIT PrologueBandit Deserter 0 Level(3,Enemy,True) [2,13] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+	UNIT PrologueBandit Deserter 0 Level(3,Enemy,True) [0,16] NoUnitFlags 0 0 0 [IronLance] NoAI
+
+//Initial wave - right
+	UNIT PrologueBandit Mage 0 Level(3,Enemy,True) [12,17] NoUnitFlags 0 0 0 [Fire] NoAI
+	UNIT PrologueBandit Brigand 0 Level(4,Enemy,True) [14,13] NoUnitFlags 0 0 0 [BronzeAxe] NoAI
+	UNIT PrologueBandit Mercenary 0 Level(3,Enemy,True) [13,13] DropItem 0 0 0 [BronzeSword,ChestKey] AttackInRangeAI
+	UNIT PrologueBandit Mercenary 0 Level(3,Enemy,True) [14,15] NoUnitFlags 0 0 0 [BronzeSword] NoAI
+
+UNIT
+
+BadUnits2:
+UNIT PrologueBandit Thief 0 Level(4,Enemy,True) [14,2] NoUnitFlags Ch1SlowThief 0 0 [BronzeSword,ChestKey] LootThenEscape
+UNIT PrologueBandit Fighter 0 Level(5,Enemy,True) [5,3] DropItem 0 0 0 [IronAxe] NoAI
+UNIT PrologueBandit Thief 0 Level(3,Enemy,True) [14,7] NoUnitFlags Ch1SlowThief 0 0 [BronzeSword,ChestKey] LootThenEscape
+UNIT
+
+
+UnitsIntro:
+UNIT Zoren ZorenLord 0 Level(1,Ally,False) [7,17] NoUnitFlags 0 1 REDA7R16 [BronzeSword,Thunder,Concoction] NoAI
+UNIT Davis Hunter 0 Level(3,Ally,False) [6,17] NoUnitFlags 0 1 REDA6R16 [BronzeBow] NoAI
+UNIT
+
+NewUnits:
+UNIT Marcey Cavalier_F 0 Level(5,Ally,False) [6,17] NoUnitFlags 0 0 0 [BronzeLance,Vulnerary] NoAI
+UNIT
+
+ArlettPrisoner:
+UNIT Arlett Cleric 0 Level(5,NPC,False) [6,6] NoUnitFlags 0 0 0 [0] NoAI
+UNIT
+
+//MESSAGE ch1Units currentOffset
+
+Units:
+UNIT Zoren ZorenLord 0 Level(1,Ally,False) [7,16] NoUnitFlags 0 0 0 [BronzeSword,Thunder,Concoction] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [6,15] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [8,15] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [5,16] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [9,16] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [4,17] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [6,17] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [7,17] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [8,17] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [9,17] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT
+
+LargeGroup:
+UNIT PrologueBandit Mercenary 0 Level(4,Enemy,True) [9,8] NoUnitFlags 0 0 0 [BronzeSword] NoAI
+UNIT PrologueBandit Brigand 0 Level(4,Enemy,True) [9,9] NoUnitFlags 0 0 0 [BronzeAxe] NoAI
+UNIT PrologueBandit Brigand 0 Level(4,Enemy,True) [14,8] NoUnitFlags 0 0 0 [BronzeAxe] NoAI
+UNIT

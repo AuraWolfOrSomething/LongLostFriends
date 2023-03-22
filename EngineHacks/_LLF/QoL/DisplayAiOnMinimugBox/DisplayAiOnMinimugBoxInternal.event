@@ -1,0 +1,25 @@
+
+#include "asm/ToggleAiDisplay.lyn.event"
+ALIGN 4
+
+#include "asm/MapMenuAiToggleDisplay.lyn.event"
+ALIGN 4
+
+#include "asm/PrepScreenAiToggleDisplay.lyn.event"
+ALIGN 4
+
+#include "asm/FindTextIdForAi.lyn.event"
+ALIGN 4
+
+#include "asm/AiToggleStatus.lyn.event"
+ALIGN 4
+
+#include "asm/AiToggleColor.lyn.event"
+ALIGN 4
+
+#include "asm/MapMenuAiToggleColor.lyn.event"
+ALIGN 4
+
+AiToggleEventIDLink:
+SHORT AiToggleEventID
+ALIGN 4

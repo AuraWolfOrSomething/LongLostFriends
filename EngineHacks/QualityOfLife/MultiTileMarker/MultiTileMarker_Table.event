@@ -1,0 +1,20 @@
+#define csvmacro000(arg000,arg001,arg002,arg003,arg004,arg005) "BYTE arg000 arg001 arg002 arg003; SHORT arg004 arg005; "
+#define MultiTileEntry(chapterID,xCoord,yCoord,enemyClassTrigger,eventID) "BYTE chapterID xCoord yCoord enemyClassTrigger; SHORT eventID 0"
+
+MultiTileMarker_Table:
+//Chapter 1
+	MultiTileEntry(Ch_1,14,1,Thief,0)
+	MultiTileEntry(Ch_1,14,2,Thief,0)
+	MultiTileEntry(Ch_1,14,7,Thief,0)
+	MultiTileEntry(Ch_1,14,8,Thief,0)
+
+//Chapter 3, Part 2
+	MultiTileEntry(Ch_3P2,0,22,0,0)
+	MultiTileEntry(Ch_3P2,1,22,0,0)
+
+//Chapter 4
+	MultiTileEntry(Ch_4,11,0,Thief,0)
+	MultiTileEntry(Ch_4,12,0,Thief,0)
+	MultiTileEntry(Ch_4,13,0,Thief,0)
+
+BYTE 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF    // term

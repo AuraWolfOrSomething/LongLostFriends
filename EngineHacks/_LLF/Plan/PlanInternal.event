@@ -1,0 +1,214 @@
+
+PUSH
+
+// This hooks CheckEventDefinitions at 8082EC4
+// If we're checking for "when player has decided to move" 
+
+ORG $844C8 // on select tile to move to 
+callHack_r1(InsertEventOnTileSelect)
+SHORT $46c0 //noop 
+
+ORG 0x225B0
+jumpToHack(MM_SuspendUsability)
+
+//Can move grayed out units and other factions' units during planning
+ORG 0x1D55C
+jumpToHack(GetUnitSelectionValueThingExtension)
+
+ORG 0x18694
+SHORT 0x6830 0x4902 //ldr r0, (r6); ldr r1, (SetSetUnitStateAsMoving)
+SHORT 0x468E 0xF800 //mov lr, r1; bl lr+0
+SHORT 0x490C 0xE001 //ldr r1, (gMapUnit); b 0x186A4
+POIN SetUnitStateAsMoving
+
+ORG 0x27A70
+SHORT 0x1C20 0x4902 //mov r0, r4; ldr r1, =HandleMapSpriteCursorHoverExtension
+SHORT 0x468E 0xF800 //mov lr, r1; bl lr+0
+SHORT 0xE003 0 //b 0x27A82
+POIN HandleMapSpriteCursorHoverExtension
+
+//Moving an enemy/npc and then backing out will move the cursor back on that unit, rather than keeping the cursor on its last spot
+ORG 0x1CE64
+SHORT 0x4B01 0x469E //ldr r3, =ShouldCursorReturnToUnitLocation; mov lr, r2
+SHORT 0xF800 0xE001
+POIN ShouldCursorReturnToUnitLocation
+
+//Turn doesn't auto-end during planning
+ORG 0x1DBAA
+SHORT 0x4803 //ldr r0, (GetPhaseAbleUnitCount)
+SHORT 0x4A03 //ldr r2, (ShouldPlayerPhaseEnd)
+BL(0xD18C8) //BXR2
+SHORT 0x2800 0xD008 //cmp r0, #0; beq 0x1DBC8
+SHORT 0xE003 //b 0x1DBC0
+POIN 0x24CEC|1
+POIN ShouldPlayerPhaseEnd
+
+POP
+
+
+//--------------------------------
+//Plan Command
+//--------------------------------
+
+#include "asmPlan/PlanSaveUnitPositions.lyn.event"
+ALIGN 4
+
+#include "asmPlan/MM_PlanUsability.lyn.event"
+ALIGN 4
+
+#include "asmPlan/MM_PlanEffect.lyn.event"
+ALIGN 4
+
+
+//--------------------------------
+//Act Command
+//--------------------------------
+
+#include "asmAct/ActResetUnitPositions.lyn.event"
+ALIGN 4
+
+#include "asmAct/MM_ActUsability.lyn.event"
+ALIGN 4
+
+#include "asmAct/MM_ActEffect.lyn.event"
+ALIGN 4
+
+
+//--------------------------------
+//Future Command
+//--------------------------------
+
+#include "asmFuture/FutureIsTurnEventEligible.lyn.event"
+ALIGN 4
+
+#include "asmFuture/FutureCheckForRemainingTurnEvents.lyn.event"
+ALIGN 4
+
+#include "asmFuture/FutureStoreTurnEvents.lyn.event"
+ALIGN 4
+
+#include "asmFuture/FutureExecuteTurnEvents.lyn.event"
+ALIGN 4
+
+#include "asmFuture/MM_FutureUsability.lyn.event"
+ALIGN 4
+
+#include "asmFuture/MM_FutureEffect.lyn.event"
+ALIGN 4
+
+#include "asmFuture/FutureInit.lyn.event"
+ALIGN 4
+
+#include "asmFuture/FutureAreThereAnyRemainingTurnEvents.lyn.event"
+ALIGN 4
+
+#include "asmFuture/FutureNoTurnEvents.lyn.event"
+ALIGN 4
+
+#include "asmFuture/FutureGetNextFaction.lyn.event"
+ALIGN 4
+
+#include "asmFuture/FutureCheckForVisibleEventExecution.lyn.event"
+ALIGN 4
+
+FutureNoMoreTurnEventsEventPointer:
+TurnEventPlayer(0,FutureNoMoreTurnEventsEvent,0) //turn number doesn't matter
+ALIGN 4
+
+FutureNewTurnPopup:
+Popup_SetColor(0)
+Popup_StringId(FutureNewTurnText)
+Popup_Space(1)
+Popup_SetColor(2)
+Popup_Number
+Popup_Space(1)
+Popup_End
+
+FutureNewTurnPauseEvent:
+STAL 35
+NoFade
+ENDA
+
+FutureProcName:
+String("MM_FUTURE")
+BYTE 0
+ALIGN 4
+
+
+/*
+#0x29: Phase
+#0x2A: Number of visible events
+#0x2C: Turn Number of last turn number popup
+#0x2E: Free
+#0x30: event queue
+*/
+
+ProcFutureCommand:
+PROC_SET_NAME(FutureProcName)
+PROC_END_DUPLICATES
+PROC_CALL_ROUTINE(FutureInit)
+PROC_CALL_ROUTINE(FutureAreThereAnyRemainingTurnEvents)
+PROC_SLEEP(0)
+
+//loops until an event "visible" to the player is played; once that's done, PROC_GOTO 0x1
+PROC_LABEL(0x0)
+//PROC_GOTO(0x3)//TESTING
+PROC_CALL_ROUTINE(FutureGetNextFaction)
+PROC_CALL_ROUTINE(FutureStoreTurnEvents)
+//PROC_CALL_ROUTINE(FutureExecuteTurnEvents)
+PROC_WHILE_ROUTINE(FutureExecuteTurnEvents)
+//PROC_SLEEP(0)
+PROC_WHILE_ROUTINE(0xD198|1) //MapEventEngineExists
+PROC_CALL_ROUTINE(FutureCheckForVisibleEventExecution)
+PROC_SLEEP(0)
+PROC_GOTO(0x0)
+
+PROC_LABEL(0x1)
+PROC_CALL_ROUTINE(AsmcResetCursor|1)
+PROC_GOTO(0x3)
+
+//During FutureAreThereAnyRemainingTurnEvents, if no turn events were found, it does PROC_GOTO 0x2
+PROC_LABEL(0x2)
+PROC_CALL_ROUTINE(FutureNoTurnEvents)
+
+PROC_LABEL(0x3)
+PROC_SLEEP(0)
+PROC_END
+ALIGN 4
+
+
+//--------------------------------
+//Other
+//--------------------------------
+
+#include "asm/DebugPlaceUnits.lyn.event"
+ALIGN 4
+
+#include "asm/MM_SuspendUsability.lyn.event"
+ALIGN 4
+
+#include "asm/HandleMapSpriteCursorHoverExtension.lyn.event"
+ALIGN 4
+
+#include "asm/GetUnitSelectionValueThingExtension.lyn.event"
+ALIGN 4
+
+#include "asm/SetUnitStateAsMoving.lyn.event"
+ALIGN 4
+
+#include "asm/ShouldCursorReturnToUnitLocation.lyn.event"
+ALIGN 4
+
+#include "asm/ShouldPlayerPhaseEnd.lyn.event"
+ALIGN 4
+
+PlanEventIDLink:
+SHORT PlanEventID
+ALIGN 4
+
+SetNoActiveUnitEvent:
+SET_ACTIVE 0
+// FEBuilder didn't recognize the code
+WORD 0xFFFF3C21 // SET_CURSOR_SB
+EVBIT_T 7 // FEBuilder didn't recognize NoFade either 
+ENDA

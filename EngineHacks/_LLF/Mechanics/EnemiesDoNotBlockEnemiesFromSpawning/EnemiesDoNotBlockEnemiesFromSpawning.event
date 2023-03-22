@@ -1,0 +1,12 @@
+
+PUSH
+
+ORG 0xF578
+SHORT 0x1C20 0x4902 //mov r0, r4; ldr r1, =UNIT_ShouldBeLoadedExtension
+SHORT 0x468E 0xF800 //mov lr, r1; bl lr+0
+SHORT 0xE007 0 //b 0xF592; lsl r0, #0
+POIN UNIT_ShouldBeLoadedExtension
+POP
+
+#include "asm/UNIT_ShouldBeLoadedExtension.lyn.event"
+ALIGN 4

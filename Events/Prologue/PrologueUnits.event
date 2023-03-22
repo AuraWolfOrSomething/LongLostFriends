@@ -1,0 +1,180 @@
+
+#define ProLv2MercStats 1
+
+/*
+UNIT charID classID leader Level(lvl,faction,autolevel) [x,y] flags 0 number_of_REDAs pointer_to_REDAs [Item1,Item2,Item3,Item4] AI 
+
+REDA_Pointer
+REDA [x,y] Flags Speed *Rescuing character* Delay
+*/
+
+
+BadUnits:
+//River
+#ifdef TESTING_AI
+  UNIT ONeill Brigand 0 Level(6,Enemy,False) [7,1] DropItem 0 0 0 [SteelAxe,BrigandGem] AttackInDoubleRangeExceptionAI
+  
+#else
+UNIT ONeill Brigand 0 Level(6,Enemy,False) [12,0] DropItem 0 0 0 [IronAxe,BrigandGem] AttackInRangeAI
+
+UNIT PrologueBandit Mercenary 0 Level(3,Enemy,True) [9,0] NoUnitFlags 0 1 REDA9R0 [IronSword] AttackInRangeAI
+UNIT PrologueBandit Fighter 0 Level(3,Enemy,True) [10,0] NoUnitFlags 0 1 REDA10R1 [BronzeAxe] AttackInRangeAI
+UNIT PrologueBandit Fighter 0 Level(2,Enemy,True) [9,0] NoUnitFlags 0 1 REDA9R2 [BronzeAxe] AttackInDoubleRangeAI
+
+//Mountain
+UNIT PrologueBandit2 Deserter 0 Level(4,Enemy,True) [7,0] NoUnitFlags 0 1 REDA7R0 [CopperLance] AttackInDoubleRangeAI
+UNIT PrologueBandit Brigand 0 Level(2,Enemy,True) [3,0] NoUnitFlags 0 1 REDA3R2 [BronzeAxe] RaidAndAttack
+UNIT PrologueBandit Deserter 0 Level(2,Enemy,True) [6,0] NoUnitFlags 0 1 REDA6R0 [BronzeLance] NoAI
+
+//Cliff
+UNIT PrologueBandit Mercenary 0 Level(2,Enemy,True) [7,0] NoUnitFlags ProLv2MercStats 1 REDA7R6 [BronzeSword] AttackInDoubleRangeAI
+//MESSAGE probanARCHER currentOffset
+UNIT PrologueBandit Archer 0 Level(2,Enemy,True) [6,0] NoUnitFlags 0 1 REDA6R4 [BronzeBow] AttackInDoubleRangeAI
+
+//TESTING
+//UNIT Informant Archer 0 Level(1,Enemy,True) [9,12] NoUnitFlags 0 0 0 [BronzeLongbow] NoAI
+/*
+UNIT Informant Mage 0 Level(1,Enemy,True) [1,11] NoUnitFlags 0 0 0 [Thunder] StationaryAI
+UNIT Informant Mage 0 Level(1,Enemy,True) [0,12] NoUnitFlags 0 0 0 [Elthunder] StationaryAI
+UNIT Informant Mage 0 Level(1,Enemy,True) [1,13] NoUnitFlags 0 0 0 [Eternity] StationaryAI
+UNIT Informant Monk 0 Level(1,Enemy,True) [4,8] NoUnitFlags 0 0 0 [Ray] StationaryAI
+UNIT Informant Monk 0 Level(1,Enemy,True) [5,9] NoUnitFlags 0 0 0 [Lucent] StationaryAI
+UNIT Informant Monk 0 Level(1,Enemy,True) [6,10] NoUnitFlags 0 0 0 [Soul] StationaryAI
+UNIT Informant Shaman 0 Level(1,Enemy,True) [9,9] NoUnitFlags 0 0 0 [Shade] StationaryAI
+UNIT Informant Shaman 0 Level(1,Enemy,True) [10,10] NoUnitFlags 0 0 0 [Afflict] StationaryAI
+UNIT Informant Shaman 0 Level(1,Enemy,True) [11,11] NoUnitFlags 0 0 0 [Truth] StationaryAI
+*/
+//UNIT Beran Mage 0 Level(14,Enemy,False) [5,10] NoUnitFlags 0 0 0 [Wind] StationaryAI
+
+#endif
+
+UNIT
+
+BadUnits2:
+#ifndef TESTING_AI
+  //Houses
+  UNIT PrologueBandit Deserter 0 Level(2,Enemy,True) [15,11] NoUnitFlags 0 1 REDA12R10 [BronzeLance] NoAI
+  UNIT PrologueBandit Deserter 0 Level(2,Enemy,True) [15,11] NoUnitFlags 0 1 REDA15R11 [BronzeLance] NoAI
+  UNIT PrologueBandit Fighter 0 Level(2,Enemy,True) [15,11] NoUnitFlags 0 1 REDA8R10 [BronzeAxe] NoAI
+  UNIT PrologueBandit Fighter 0 Level(2,Enemy,True) [15,11] NoUnitFlags 0 1 REDA9R12 [BronzeAxe] NoAI
+#endif
+UNIT
+
+Units:
+UNIT Zoren ZorenLord 0 Level(1,Ally,False) [0,12] NoUnitFlags 0 1 REDA2R12 [BronzeSword,Thunder,Concoction] NoAI
+UNIT Iris Paladin_F 0 Level(16,Ally,False) [0,13] NoUnitFlags 0 1 REDA2R13 [SteelSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Orville Fighter 0 Level(3,Ally,False) [0,13] NoUnitFlags 0 1 REDA3R13 [SteelAxe,BronzeAxe,Vulnerary] NoAI
+UNIT Nordica Archer_F 0 Level(3,Ally,False) [0,12] NoUnitFlags 0 1 REDA3R11 [ArcaneGreatbow,BronzeBow,BronzeLongbow] NoAI
+UNIT
+
+UnitKamron:
+UNIT Kamron Cavalier 0 Level(3,Ally,False) [6,0] NoUnitFlags 0 1 REDA5R12 [BronzeSword,Vulnerary] NoAI
+UNIT
+
+UnitLuther:
+UNIT Luther Peer 0 Level(19,Ally,False) [5,12] NoUnitFlags 0 1 REDA5R13 [LightRune,Vulnerary,Coupon] NoAI
+UNIT
+
+UnitMarcey:
+UNIT Marcey Cavalier_F 0 Level(1,Ally,False) [0,13] NoUnitFlags 0 1 REDA1R13 [BronzeLance] NoAI
+UNIT
+
+NorthReinforcement:
+UNIT PrologueBandit Fighter 0 Level(2,Enemy,True) [6,0] NoUnitFlags 0 1 REDA6R0 [BronzeAxe] NoAI
+UNIT
+
+EastReinforcements:
+UNIT PrologueBandit Deserter 0 Level(2,Enemy,True) [15,12] NoUnitFlags 0 1 REDA15R12 [BronzeLance] NoAI
+UNIT PrologueBandit Brigand 0 Level(2,Enemy,True) [15,13] NoUnitFlags 0 1 REDA15R13 [CopperAxe] RaidAndAttack
+UNIT
+
+BanditReinforcement1:
+UNIT PrologueBandit Brigand 0 Level(2,Enemy,True) [10,0] NoUnitFlags 0 1 REDA10R0 [BronzeAxe] RaidAndAttack
+UNIT
+
+LaricUnit:
+UNIT Laric Monk 0 Level(6,Ally,False) [1,5] NoUnitFlags 0 1 REDA1R6 [Lightning,Luster,Vulnerary] NoAI
+UNIT
+
+FranklinUnit:
+UNIT Franklin Priest 0 Level(2,Ally,False) [14,4] NoUnitFlags 0 1 REDA14R5 [Heal,Mend,Rescue] NoAI
+UNIT
+
+TESTING_LessUnits:
+UNIT Zoren ZorenLord 0 Level(20,Ally,False) [0,13] NoUnitFlags 0 0 0 [BronzeSword] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [1,13] NoUnitFlags 0 0 0 [SteelSword,LearningRing] NoAI
+UNIT
+
+TESTING_ExtraBadUnits:
+UNIT Informant Fighter 0 Level(2,Enemy,True) [1,12] NoUnitFlags 0 0 0 [IronAxe] NoAI
+/*
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [0,7] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [1,7] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [2,7] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [3,7] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [4,7] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [5,7] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [6,7] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [7,7] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [8,7] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [9,7] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [10,7] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [11,7] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [12,7] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [13,7] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [14,7] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [15,7] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [0,8] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [1,8] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [2,8] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [3,8] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [4,8] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [5,8] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [6,8] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [7,8] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [8,8] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [9,8] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [10,8] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [11,8] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [12,8] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [13,8] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [14,8] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [15,8] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [0,9] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [1,9] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [2,9] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [3,9] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [4,9] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [5,9] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+UNIT PrologueBandit WyvernRider 0 Level(1,Enemy,False) [6,9] NoUnitFlags 0 0 0 [BronzeLance] NoAI
+*/
+UNIT
+
+UnitsCutscene:
+UNIT Zoren ZorenLord 0 Level(1,Ally,False) [5,5] NoUnitFlags 0 0 0 [BronzeSword,Thunder,Concoction] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [6,8] NoUnitFlags 0 0 0 [SteelSword,SteelLance,BronzeSword,BronzeLance] NoAI
+
+//Guards by the entrance
+UNIT PrologueBandit Soldier 0 Level(1,NPC,False) [6,9] NoUnitFlags 0 0 0 [IronLance] NoAI
+UNIT PrologueBandit Soldier 0 Level(1,NPC,False) [8,9] NoUnitFlags 0 0 0 [IronLance] NoAI
+
+//Wendell by his home
+UNIT PrologueBandit Civilian_2 0 Level(1,NPC,False) [1,2] NoUnitFlags 0 0 0 [Vulnerary] NoAI
+
+//Davis by the tavern
+UNIT Davis Hunter 0 Level(1,NPC,False) [12,2] NoUnitFlags 0 0 0 [BronzeBow] NoAI
+
+//Market stall thing
+UNIT PrologueBandit Civilian_F_2 0 Level(1,NPC,False) [8,1] NoUnitFlags 0 0 0 [Vulnerary] NoAI
+UNIT PrologueBandit Civilian_2 0 Level(1,NPC,False) [7,3] NoUnitFlags 0 0 0 [Vulnerary] NoAI
+UNIT PrologueBandit Civilian_F_2 0 Level(1,NPC,False) [8,3] NoUnitFlags 0 0 0 [Vulnerary] NoAI
+UNIT PrologueBandit Civilian_F_2 0 Level(1,NPC,False) [9,3] NoUnitFlags 0 0 0 [Vulnerary] NoAI
+
+//Kids playing by entrance wall
+UNIT PrologueBandit2 Civilian 0 Level(1,NPC,False) [11,8] NoUnitFlags 0 0 0 [Vulnerary] NoAI
+UNIT Informant Civilian_F 0 Level(1,NPC,False) [12,8] NoUnitFlags 0 0 0 [Vulnerary] NoAI
+UNIT
+
+UNIT
+
+ALIGN 4

@@ -1,0 +1,8 @@
+  
+  PUSH
+  
+  #include "RepointItemTable.event"
+  #include "RepointClassAnimTable.event"
+  
+  POP
+  

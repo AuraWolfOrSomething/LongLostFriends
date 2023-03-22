@@ -1,0 +1,96 @@
+## IronAxeName
+Iron Axe[X]
+
+## IronAxeDesc
+ [X]
+
+## SteelAxeName
+Steel Axe[X]
+
+## SteelAxeDesc
+ [X]
+
+## SilverAxeName
+Silver Axe[X]
+
+## SilverAxeDesc
++3 Spd when equipped.[X]
+
+## NoviceAxeName
+Novice Axe[X]
+
+## NoviceAxeDesc
++10 EXP if a hit lands. 3 WEXP.[X]
+
+## KillerAxeName
+Killer Axe[X]
+
+## KillerAxeDesc
+Hits always crit if 4+ Skl over enemy.[X]
+
+## HalberdName
+Halberd[X]
+
+## HalberdDesc
+Mt x2 vs cavalry, else -9 mt[X]
+
+## HammerName
+Hammer[X]
+
+## HammerDesc
+Mt x2 vs heavy armor, else -9 mt[X]
+
+## BronzeAxeName
+Bronze Axe[X]
+
+## BronzeAxeDesc
++15 Dodge.[X]
+
+## HandAxeName
+Hand Axe[X]
+
+## HandAxeDesc
+ [X]
+
+## TomahawkName
+Tomahawk[X]
+
+## TomahawkDesc
+ [X]
+
+## SwordreaverName
+Swordreaver[X]
+
+## SwordreaverDesc
+Reverses weapon triangle and[N]
+doubles its effects.[X]
+
+## HatchetName
+Hatchet[X]
+
+## HatchetDesc
+Jacob only. +3 Lck and 2 WEXP.[X]
+
+## CopperAxeName
+Copper Axe[X]
+
+## CopperAxeDesc
+ [X]
+
+## BattleAxeName
+Battle Axe[X]
+
+## BattleAxeDesc
+ [X]
+
+## EmeraldAxeName
+Emerald Axe[X]
+
+## EmeraldAxeDesc
+Doubles weapon triangle effects.[X]
+
+## DevilAxeName
+Devil Axe[X]
+
+## DevilAxeDesc
+Can backfire. Chance = (31-Lck)%[X]

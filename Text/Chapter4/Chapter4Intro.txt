@@ -1,0 +1,165 @@
+
+## Ch4Intro1
+
+[OpenMidLeft][LoadZoren]
+[OpenMidRight][LoadIris]
+
+[OpenMidLeft][ToggleSmile]
+Sir Iris.[AN]
+How are you doing today?[A]
+
+[OpenMidRight][ToggleSmile]
+Ah, Zoren.[AN][ToggleSmile]
+I'm fine, but I think I should be[N]
+the one asking that question.[A]
+
+[OpenMidLeft]
+I thought I was finally getting[N]
+used to this, but alas.[AN]
+I might grow gray hair and still[N]
+hate being out here.[A]
+
+[OpenMidRight]
+Even with yesterday's[Beat]events,[N]
+I can see you're making progress.[A]
+
+[OpenMidLeft]
+I'm happy someone thinks[N]
+so, at least.[A]
+
+[OpenMidRight]
+Trust me.[AN]
+In the blink of an eye,[AN]
+you'll be looking for your own[N]
+ship to sail the seas on.[AN]
+
+[OpenMidLeft]
+Now you're just[N]
+being ridiculous.[A]
+
+[OpenMidRight]
+Heh.[AN]
+Perhaps I am.[A]
+
+[OpenMidLeft][ToggleSmile]
+[Beat]Sir Iris?[A]
+
+[OpenMidRight]
+What is it?[A]
+
+[OpenMidLeft]
+Er, never mind.[AN]
+Forget it.[A]
+
+[OpenMidRight]
+[Beat]If you say so.[A]
+
+[OpenMidLeft][ClearFace]
+[OpenMidRight][ClearFace]
+
+[OpenFarLeft][LoadZorenShipCaptain]
+We've reached land, everyone![AN]
+Watch your step, and make sure[N]
+you don't leave anything behind.[A]
+[ClearFace]
+
+[OpenRight][LoadGrace]
+Ah, we're finally here.[AN]
+Hard to believe two weeks[N]
+have already passed by.[A][CloseSpeechSlow][.4]
+[MoveMidLeft]
+Hmm[Beat][A]
+
+[OpenFarFarRight][LoadZoren]
+[MoveMidRight]
+
+[OpenMidLeft][ClearFace]
+[OpenMidLeft][LoadGrace]
+Zoren, there appears to be[N]
+some commotion up ahead,[AN]
+by that ship in front of us.[AN]
+Shall we investigate?[A]
+
+[OpenMidRight]
+I suppose so.[AN]
+I'd rather take the initiative[N]
+than regret it later.[A]
+
+[X]
+
+## Ch4Intro2
+[OpenMidLeft][LoadArtus]
+[OpenMidRight][LoadCalder]
+That takes care of[N]
+half of them.[AN]
+Just a little more work[N]
+to clean up the rest.[A]
+
+[OpenMidLeft]
+We must act fast.[AN]
+Even a Queen as incompetent as Lorelei[N]
+may have already suspected trouble.[AN]
+We need to grab the supplies and leave[N]
+long before the army gets here.[A]
+
+[OpenMidRight]
+Don't worry.[AN]
+Leave the rest of[N]
+the fighting to me.[A]
+
+[OpenMidLeft]
+Good.[A][CloseSpeechSlow]
+
+[OpenMidLeft][MoveMidLeft]
+I have some matters to attend to[N]
+at the inn, then I'll depart.[AN]
+Send an underling over if you[N]
+require further communication.[AN]
+Remember, you and the rest of my men[N]
+are representing me.[AN]
+Don't falter if you want further[N]
+work from me.[A]
+
+[X]
+
+## Ch4Intro3
+[OpenMidLeft][LoadRylan]
+
+[OpenMidRight][LoadCaptain]
+Aye, Rylan![AN]
+What's going on!?[A]
+
+[OpenMidLeft]
+We're under attack.[AN]
+Stay down there until[N]
+we clear them out.[A]
+
+[OpenMidRight]
+We seem a bit outnumbered,[N]
+if you ask me.[A]
+
+[OpenMidLeft]
+Captain, no offense, but this[N]
+isn't the time for amateurs.[AN]
+Keep yourself alive for the[N]
+sake of the crew.[A]
+
+[OpenMidRight]
+Alright, fine.[AN]
+Don't be dying[N]
+on me, Rylan.[A]
+
+[OpenMidLeft][ToggleSmile]
+Heh.[AN]
+You have my word.[A]
+[X]
+
+## Ch4Intro4
+[OpenRight][LoadZoren]
+I don't know who these men are, but[N]
+they're up to no good.[AN]
+[OpenRight][MoveRight]
+Everyone, prepare for combat![AN]
+We're going to take the town back and[N]
+help the sailors as best as we can![A]
+[X]

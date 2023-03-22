@@ -1,0 +1,141 @@
+ALIGN 4
+SkillIcons:
+
+
+//Icon graphics are uncompressed
+#define SkillIcon(skillID) "128*skillID+SkillIcons"
+
+//ORG SkillIcon(SkillID)
+//#incbin "SkillIcons/Skill.dmp"
+
+
+ORG SkillIcon(CantoID)
+#incbin "SkillIcons/Canto.dmp"
+
+ORG SkillIcon(SupplyID)
+#incbin "SkillIcons/Supply.dmp"
+
+ORG SkillIcon(CunningID)
+#incbin "SkillIcons/Cunning.dmp"
+
+ORG SkillIcon(CritUpID)
+#incbin "SkillIcons/CritUp.dmp"
+
+ORG SkillIcon(AcrobatID)
+#incbin "SkillIcons/Acrobat.dmp"
+
+ORG SkillIcon(SlayerID)
+#incbin "SkillIcons/Slayer.dmp"
+
+ORG SkillIcon(SummonID)
+#incbin "SkillIcons/Summon.dmp"
+
+ORG SkillIcon(DanceID)
+#incbin "SkillIcons/Dance.dmp"
+
+ORG SkillIcon(LockTouchID)
+#incbin "SkillIcons/LockTouch.dmp"
+
+ORG SkillIcon(LungeID)
+#incbin "SkillIcons/Lunge.dmp"
+
+ORG SkillIcon(ShoveID)
+#incbin "SkillIcons/Shove.dmp"
+
+ORG SkillIcon(SmiteID)
+#incbin "SkillIcons/Smite.dmp"
+
+ORG SkillIcon(PivotID)
+#incbin "SkillIcons/Pivot.dmp"
+
+ORG SkillIcon(RepositionID)
+#incbin "SkillIcons/Reposition.dmp"
+
+ORG SkillIcon(SwapID)
+#incbin "SkillIcons/Swap.dmp"
+
+ORG SkillIcon(DrawBackID)
+#incbin "SkillIcons/DrawBack.dmp"
+
+ORG SkillIcon(SplitUpID)
+#incbin "SkillIcons/SplitUp.dmp"
+
+ORG SkillIcon(CrossID)
+#incbin "SkillIcons/Cross.dmp"
+
+ORG SkillIcon(EscortID)
+#incbin "SkillIcons/Escort.dmp"
+
+ORG SkillIcon(EscortPlusID)
+#incbin "SkillIcons/EscortPlus.dmp"
+
+ORG SkillIcon(BarricadeID)
+#incbin "SkillIcons/Barricade.dmp"
+
+ORG SkillIcon(LastLegsID)
+#incbin "SkillIcons/LastLegs.dmp"
+
+ORG SkillIcon(PrimeFiveID)
+#incbin "SkillIcons/PrimeFive.dmp"
+
+ORG SkillIcon(BalancedStudyID)
+#incbin "SkillIcons/SwiftStance.dmp"
+
+ORG SkillIcon(ExploitSpeedID)
+#incbin "SkillIcons/Vengeance.dmp"
+
+ORG SkillIcon(InspirationID)
+#incbin "SkillIcons/Inspiration.dmp"
+
+ORG SkillIcon(RallyMovID)
+#incbin "SkillIcons/RallyMov.dmp"
+
+ORG SkillIcon(CharmID)
+#incbin "SkillIcons/Charm.dmp"
+
+ORG SkillIcon(BargainID)
+#incbin "SkillIcons/Bargain.dmp"
+
+ORG SkillIcon(SteadyAimID)
+#incbin "SkillIcons/Boon.dmp"
+
+ORG SkillIcon(FarWardID)
+#incbin "SkillIcons/Aegis.dmp"
+
+ORG SkillIcon(BlitzID)
+#incbin "SkillIcons/Adept.dmp"
+
+ORG SkillIcon(HeroicsID)
+#incbin "SkillIcons/Loyalty.dmp"
+
+ORG SkillIcon(TransmitterID)
+#incbin "SkillIcons/EvenRhythm.dmp"
+
+ORG SkillIcon(TransmitterPlusID)
+#incbin "SkillIcons/TransmitterPlus.dmp"
+
+ORG SkillIcon(AdvanceSkillID)
+#incbin "SkillIcons/IndoorMarch.dmp"
+
+ORG SkillIcon(SaviorID)
+#incbin "SkillIcons/Savior.dmp"
+
+ORG SkillIcon(DivineInterventionID)
+#incbin "SkillIcons/DivineIntervention.dmp"
+
+ORG SkillIcon(UncooperativeID)
+#incbin "SkillIcons/Uncooperative.dmp"
+
+ORG SkillIcon(ExpertiseID)
+#incbin "SkillIcons/Expertise.dmp"
+
+ORG SkillIcon(RecapturableID)
+#incbin "SkillIcons/Capture.dmp"
+
+ORG SkillIcon(SnaillikeID)
+#incbin "SkillIcons/Snaillike.dmp"
+
+ORG SkillIcon(SlowSkillID)
+#incbin "SkillIcons/Slow.dmp"
+
+ORG SkillIcons+0x8000

@@ -1,0 +1,12 @@
+
+#include "asm/DefenderEffect.lyn.event"
+
+DefenderLink:
+BYTE Defender
+ALIGN 4
+
+#include "asm/ThoronEffect.lyn.event"
+
+ThoronLink:
+BYTE Thoron
+ALIGN 4

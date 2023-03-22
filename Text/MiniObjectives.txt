@@ -1,0 +1,13 @@
+
+## MiniObjectiveDisplay_CaptivesText
+Captives[X]
+
+## MiniObjectiveDisplay_PartsText
+Part[X]
+
+## MiniObjectiveDisplay_PartsOfText
+of[X]
+
+## MiniObjectiveDisplay_ProgressText
+Progress:[X]
+

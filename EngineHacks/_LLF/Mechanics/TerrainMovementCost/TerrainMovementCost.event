@@ -1,0 +1,38 @@
+#ifndef TESTING_EASY_MOVEMENT
+
+PUSH
+
+ORG 0x1A4CC
+jumpToHack(TerrainMovementCost)
+
+POP
+
+#include "asm/TerrainMovementCost.lyn.event"
+ALIGN 4
+
+
+/*
+Note: GiveFlightMovementList only allows tiles with 0xFF to not be skipped over (unless specified by AlwaysUntraversableTable)
+
+Use GiveFlightMovementList AND SetTerrainMovementList to give normally inaccessible tiles an "actual" tile cost for a specific condition
+*/
+
+GiveFlightMovementList: 
+//POIN ScoutBadgeCheck //TESTING
+POIN HeavyHoveringBootsCheck
+WORD 0
+
+SetTerrainMovementList:
+POIN Acrobat
+//POIN ScoutBadgeCheck //TESTING
+POIN HeavyHoveringBootsCheck
+WORD 0
+
+SubtractTerrainMovementList:
+POIN ScoutBadgeCheck
+WORD 0
+
+#include "AlwaysUntraversableTable.event"
+ALIGN 4
+
+#endif

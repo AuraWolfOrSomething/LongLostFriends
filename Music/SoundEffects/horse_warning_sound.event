@@ -1,0 +1,63 @@
+//Event file generated from Sappy .s format.
+	#include "MPlayDef.event"
+
+	#define	horse_warning_sound_grp  0x211BEC
+	#define	horse_warning_sound_pri  0
+	#define	horse_warning_sound_rev  0
+	#define	horse_warning_sound_mvl  127
+	#define	horse_warning_sound_key  0
+	#define	horse_warning_sound_tbs  1
+	#define	horse_warning_sound_exg  0
+	#define	horse_warning_sound_cmp  1
+
+	// .rodata
+	//	horse_warning_sound
+	ALIGN 4
+
+//**************** Track 1 (Midi-Chn.1) ****************//
+
+horse_warning_sound_1:
+	BYTE		VOL     127*horse_warning_sound_mvl/mxv
+	BYTE	KEYSH   horse_warning_sound_key+0
+// 000   ----------------------------------------
+	BYTE	TEMPO   200*horse_warning_sound_tbs/2
+	BYTE		VOICE   5
+	BYTE		N12     Cn3   v127
+	BYTE	W24
+	BYTE		N12   
+	BYTE	W24
+	BYTE		N12   
+	BYTE	W24
+	BYTE	FINE
+
+//**************** Track 2 (Midi-Chn.2) ****************//
+
+horse_warning_sound_2:
+	BYTE		VOL     127*horse_warning_sound_mvl/mxv
+	BYTE	KEYSH   horse_warning_sound_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   6
+	BYTE	W12
+	BYTE		N12     Cn3   v127
+	BYTE	W24
+	BYTE		N12   
+	BYTE	W24
+	BYTE		N12   
+	BYTE	W12
+	BYTE	FINE
+
+//******************************************************//
+	ALIGN 4
+
+horse_warning_sound:
+	BYTE	2	// NumTrks
+	BYTE	0	// NumBlks
+	BYTE	horse_warning_sound_pri	// Priority
+	BYTE	horse_warning_sound_rev	// Reverb.
+
+	POIN2	horse_warning_sound_grp
+
+	POIN2	horse_warning_sound_1
+	POIN2	horse_warning_sound_2
+
+	

@@ -1,0 +1,504 @@
+## ZorenPyrusFlashback
+[OpenFarFarRight]
+You're leaving?[A]
+
+[OpenFarFarLeft]
+Yeah, we're going back to [TR]Argustia[TR].[AN]
+My dad said we're gonna live in the capital.[A]
+
+[OpenFarFarRight]
+The [TR]Argustian[TR] capital, huh.[AN]
+How come?[A]
+
+[OpenFarFarLeft]
+He's a[TMM]...[TMM][.4]uh, I forgot the word.[AN]
+He does the thinking for the army.[A]
+
+[OpenFarFarRight]
+A tactician?[A]
+
+[OpenFarFarLeft]
+Yeah, that's it.[A]
+
+[OpenFarFarRight]
+Wait, so he's not a [TR]Lor Movan[TR] tactician?[A]
+
+[OpenFarFarLeft]
+Nah, he's just here to teach.[AN]
+But anyways, last night, he said[N]
+he'll show me a thing or two.[AN]
+That way, I won't get drafted[N]
+onto the frontlines.[A]
+
+[OpenFarFarRight]
+Are you gonna come back?[A]
+
+[OpenFarFarLeft]
+You think I know that?[AN]
+If a war's really gonna[N]
+start, then I[TMM]--[TMM][A]
+
+[OpenFarFarRight]
+No, you bonehead![AN]
+After the war.[A]
+
+[OpenFarFarLeft]
+[TR]Pyrus[TR], I might not[TMM]...[TMM][A]
+
+[OpenFarFarRight]
+You just said you won't be[N]
+on the frontline, so[TMM]...[TMM][AN]
+you'll make it.[AN]
+I know you will.[A]
+
+[OpenFarFarLeft]
+[TMM]...[TMM]Who's the real[N]
+bonehead around here?[AN]
+Fine, I'll come back and see[N]
+you when it's all over.[A]
+
+[OpenFarFarRight]
+You promise?[A]
+
+[OpenFarFarLeft]
+I promise.[AN]
+No matter how[N]
+long it takes.[AN]
+You better be[N]
+here, though![A]
+[X]
+
+## ProIntro1
+[OpenMidLeft][LoadIris]
+[OpenMidRight][LoadZoren]
+
+[OpenMidLeft]
+Maeva's just a few hours[N]
+north of here, Zoren.[A]
+
+[OpenMidRight]
+[ToggleSmile]Ah, this seems more familiar.[AN]
+I'm glad I brought you along, Sir Iris.[AN]
+Somehow, this route seems different[N]
+from when I left Maeva.[AN]
+I'm curious to see how much has[N]
+changed since I left.[A]
+
+[OpenMidRight][ClearFace]
+[ToggleSmile]
+[OpenRight][LoadOrville]
+[OpenFarRight][LoadNordica]
+
+[OpenMidLeft][MoveFarLeft]
+[OpenLeft][LoadZoren]
+
+[OpenLeft][ToggleSmile]
+I'm also grateful that you two[N]
+came as well,[AN]
+even though there was no need.[A]
+
+[OpenRight][ToggleSmile]
+Aw, don't say that yet, sir.[AN]
+It's a little too early to[N]
+celebrate, don't you think?[AN]
+[ToggleSmile]Being able to take it easy[N]
+has been nice, though.[AN]
+Wouldn't you agree, Nordica?[A]
+
+[OpenFarRight][ToggleSmile]
+Ay, Orville.[AN]
+I must admit, it feels[TMM]...[TMM][.4]unreal[N]
+that the war's finally over.[A]
+
+[OpenLeft]
+I can hardly believe it, either.[AN]
+Almost half of our lives have[N]
+revolved around it,[AN]
+and now that it's over,[N]
+what's there to do?[AN]
+
+[OpenFarLeft]
+We can start with looking for[N]
+Kamron and Luther.[AN]
+They should be back by now.[AN]
+Maybe I should go track them down.[A]
+
+[OpenFarRight]
+No need.[AN]
+Up ahead, can you see them?[AN]
+They should be on us any[N]
+moment at that pace.[A]
+
+[X]
+
+## ProIntro2
+[OpenFarLeft][LoadIris]
+[OpenLeft][LoadZoren]
+[OpenMidRight][LoadLuther]
+
+[OpenMidRight]
+That was a close call.[AN]
+[ToggleSmile]
+Nothing new to me[N]
+though, he he![A]
+[ClearFace][ToggleSmile]
+
+[OpenMidRight][LoadKamron]
+Sir Zoren, Sir Iris![AN]
+There are several bandits approaching[N]
+from the north and the east.[AN]
+At least a dozen of them.[AN]
+What are your orders?[A]
+
+[OpenFarLeft]
+Even if these two villages have a militia,[AN]
+I doubt it's something that can easily[N]
+handle twelve men, if at all.[A]
+
+[OpenLeft]
+We'll have to beat the[N]
+brigands to them.[AN]
+Let's go![A]
+
+[OpenFarLeft]
+Kamron, with me![A]
+
+[OpenMidRight]
+Yes, sir![A]
+
+[X]
+
+## ProIntro3
+[OpenFarLeft][LoadJacob]
+[OpenLeft][LoadMarcey]
+[OpenMidRight][LoadZoren]
+Marcey, watch our backs, will you?[AN]
+We should be fine out here,[AN]
+but make sure there aren't any[N]
+bandits that reach this spot.[A]
+
+[OpenLeft]
+Of course.[AN]
+Let's go, Jacob.[A]
+
+[X]
+
+## ProStanrelReaction
+[OpenMidLeft][LoadStanrel]
+Look sharp, boys![AN]
+Some travelers are trying[N]
+to be heroes today.[AN]
+Let's put 'em in their place![A] 
+[X]
+
+## ProLaricVillage
+[OpenMidLeft][LoadLaric]
+[OpenMidRight][LoadActiveUnit]
+
+[OpenMidLeft]
+It sounds like there's trouble nearby.[AN][CloseSpeechSlow]
+
+[.5][OpenMidLeft]
+[TMM]...[TMM][.4]Bandits, huh.[AN]
+I'm Laric, a simple monk.[AN]
+I can assist you with[N]
+my magic.[AN]
+I'll just need a moment to[N]
+get the gates closed,[AN]
+since I won't be standing[N]
+guard anymore.[A]
+
+[X]
+
+## ProFranklinVillage
+[OpenMidLeft][LoadMiddleMan]
+[OpenMidRight][LoadActiveUnit]
+
+[OpenMidLeft][ToggleSmile]
+Greetings, traveler.[AN]
+What's the[TMM]--[TMM][AN][ToggleSmile]
+Bandits?![AN]
+We'll close the gates immediately![N]
+Thanks for the warning.[A]
+[ClearFace]
+
+[OpenMidLeft][LoadFranklin]
+
+[StopForEvents]
+[OpenMidLeft]
+There's bandits about?[AN]
+Let me help you![AN][ToggleSmile]
+My name is Franklin.[AN]
+I'll keep everyone safe[N]
+with my healing![A]
+[X]
+
+## ProLeftHouseText
+[OpenMidLeft][LoadYoungWoman]
+[OpenMidRight][LoadActiveUnit]
+
+[OpenMidLeft]
+With a ten year war ending,[AN]
+you'd think we'd finally have[N]
+some peace and quiet, huh?[AN]
+Especially since [TR]Lor Mova[TR] is so far[N]
+from where the fighting took place.[AN]
+I guess there's always gonna be someone[N]
+that wants more of anything,[AN]
+no matter what[TMM]...[TMM][A]
+
+[X]
+
+## ProMiddleHouseText
+[OpenMidLeft][LoadOldWoman]
+[OpenRight][LoadYoungMan2]
+[OpenFarRight][LoadActiveUnit]
+
+[OpenRight]
+I wonder if [TR]Argustia[TR] and [TR]Tricinia[TR][N]
+have trouble like this all the time.[AN]
+I reckon those two nations were the[N]
+ones hardest hit by the war, right?[A]
+
+[OpenMidLeft][ToggleSmile]
+Well, [TR]Argustia[TR] might[N]
+not be so bad.[AN]
+Prince Quinten's in[N]
+his father's shadow,[AN]
+but he'll get there some[N]
+day, don't you think?[A]
+
+[OpenRight]
+Yeah, I guess that's true.[AN]
+[TR]Tricinia[TR], on the other hand[TMM]...[TMM][A]
+
+[OpenMidLeft]
+[ToggleSmile]Aye, it's strange how[N]
+things have changed.[AN]
+One year, a formidable[N]
+empire against the world.[AN]
+And only five months ago,[AN]
+they were fighting against[N]
+not just invaders,[AN]
+but against each other, too.[A]
+
+[OpenRight]
+I wonder how far the other nations[N]
+got before [TR]Tricinia[TR] surrendered.[AN]
+It must've been a mess if Empress Kirra[N]
+couldn't keep everything together.[AN]
+Her rule's certainly long gone, and[N]
+chaos has taken over in her stead.[A]
+
+[OpenMidLeft]
+Indeed.[AN]
+These days, it must be a[N]
+dangerous place to call home.[A]
+
+[X]
+
+## ProRightHouseText
+[OpenMidLeft][LoadOldMan]
+[OpenMidRight][LoadActiveUnit]
+
+[OpenMidLeft]
+Sometimes, your attacks don't have[N]
+the impact you're expecting.[AN]
+One reason why is your aim.[AN]
+You might suddenly realize you need[N]
+to alter something,[AN]
+or else you won't hit at all.[AN]
+These "glancing blows" are only[N]
+half as strong as clean hits,[AN]
+yet they're better than missing entirely.[AN][CloseSpeechSlow]
+
+[.5][OpenMidLeft]
+Another reason is the opening you exploit.[AN]
+You must be very critical of your[N]
+opponent to land devastating attacks.[AN]
+If you only have a slim chance of doing so[TMM]--[TMM][AN]
+less than three out of ten tries, let's say[TMM]--[TMM][AN]
+then your attack won't be as powerful.[A]
+
+[X]
+
+## ProEnding1
+[OpenMidLeft][LoadZoren]
+Well done, everyone.[AN]
+I think we all deserve[N]
+some rest after that.[AN]
+Once everyone's ready,[N]
+we can pick up the pace.[A]
+
+[X]
+
+## ProEndingLaricFranklin
+[OpenMidLeft][LoadZoren]
+[OpenRight][LoadFranklin]
+[OpenFarRight][LoadLaric]
+
+[OpenMidLeft][ToggleSmile]
+Thanks for the help in[N]
+that fight, you two.[AN]
+Take care.[A]
+
+[OpenRight]
+I-if you don't mind, I'd like to[N]
+join your group.[AN]
+I'm not from here, and I'm not[N]
+settling down just yet.[AN]
+These people have plenty of healers,[N]
+yet you don't seem to have one.[AN]
+I think traveling with you will help[N]
+me help those that need it.[A]
+
+[OpenFarRight][ToggleSmile]
+Well[TMM]...[TMM][.4]I'm also a traveler,[AN]
+and I wasn't planning on[N]
+staying here for too long.[AN]
+Traveling with you sounds a lot[N]
+safer than traveling alone.[A]
+
+[OpenMidLeft][ToggleSmile]
+I don't think this journey will[N]
+go on for much longer,[AN]
+but your talents could[N]
+still be useful.[AN]
+I'd be glad to have[N]
+both of you.[A]
+
+[OpenRight]
+I'll do my best![A]
+
+[OpenFarRight]
+Thank you for allowing me to join.[A]
+[X]
+
+## ProEndingFranklin
+[OpenMidLeft][LoadZoren]
+[OpenMidRight][LoadFranklin]
+
+[OpenMidLeft][ToggleSmile]
+Thank you for your help[N]
+in that fight.[AN]
+Take care.[A]
+
+[OpenMidRight]
+I-if you don't mind, I'd like to[N]
+join your group.[AN]
+I'm not from here, and I'm not[N]
+settling down just yet.[AN]
+These people have plenty of healers,[N]
+yet you don't seem to have one.[AN]
+I think traveling with you will help[N]
+me help those that need it.[A]
+
+[OpenMidLeft]
+I don't think this journey will[N]
+go on for much longer,[AN]
+but your talents could[N]
+still be useful.[AN]
+I'd be glad to have[N]
+you come along.[A]
+
+[OpenMidRight]
+I'll do my best![A]
+[X]
+
+## ProEndingLaric
+[OpenMidLeft][LoadZoren]
+[OpenMidRight][LoadLaric]
+
+[OpenMidLeft][ToggleSmile]
+Thank you for the help[N]
+with fighting them off.[AN]
+Take care.[A]
+
+[OpenMidRight][ToggleSmile]
+If you would, wait a moment.[AN]
+This isn't my home; I'm a traveler.[AN]
+It sounds a lot safer traveling[N]
+with all of you than by myself.[A]
+
+[OpenMidLeft][ToggleSmile]
+I don't think this journey will[N]
+go on for much longer,[AN]
+but your talents could[N]
+still be useful.[AN]
+I'd be glad to have[N]
+you come along.[A]
+
+[OpenMidRight]
+Thank you for allowing me to join.[A]
+[X]
+
+## ProEnding2
+[OpenMidLeft][LoadIris]
+[OpenMidRight][LoadZoren]
+
+[OpenMidLeft]
+What do you think?[A]
+
+[OpenMidRight]
+Honestly?[AN]
+If I look at the buildings,[AN]
+it almost seems exactly how it[N]
+was when I was a boy.[AN]
+But, if I look at the few faces[N]
+that we've passed[TMM]...[TMM][A]
+
+[OpenMidLeft]
+[TMM]...[TMM][.4]Maeva's a fair distance away[N]
+from not just the capital,[AN]
+but any of [TR]Lor Mova's[TR] ports.[AN]
+I suppose that's why the structure[N]
+hasn't changed much.[AN]
+As far as the people go,[AN]
+it'd be hard to not know anyone[N]
+affected by the war.[A]
+
+[OpenFarFarRight]
+Zoren?[AN]
+Is that you?[A]
+
+[OpenMidRight][ClearFace]
+[OpenRight][LoadOldWoman]
+[OpenFarRight][LoadOldMan]
+
+[OpenMidLeft][ClearFace]
+[OpenMidLeft][LoadZoren]
+
+
+[OpenMidLeft][ToggleSmile]
+Mrs. Ruthenseek, Mr. Ruthenseek![A]
+
+[OpenRight]
+Oh, Zoren![AN]
+It is you![AN]
+You're finally back![A]
+
+[OpenFarRight]
+Heh.[AN]
+Good to see you're all[N]
+grown up, boy.[AN]
+We've even heard a few[N]
+tales about you.[A]
+
+[OpenMidLeft]
+Oh, really?[AN]
+Well, it's great to[N]
+see you two.[AN]
+I had to keep my[N]
+promise after all.[A]
+
+[StopForEvents]
+
+[OpenRight][ToggleSmile]
+Promise?[AN]
+What promise?[A]
+
+[OpenMidLeft]
+My promise to [TR]Pyrus[TR].[AN]
+Is he home?[A]
+
+[X]

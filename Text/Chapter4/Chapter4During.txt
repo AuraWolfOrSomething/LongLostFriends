@@ -1,0 +1,128 @@
+
+## Ch4McVicarWarningArtus
+[OpenMidLeft][LoadArtus]
+Where's that blasted[N]
+wyvern rider?[AN]
+I told him how important[N]
+my timeliness is![A]
+[X]
+
+## Ch4McVicarWarningOffscreen
+
+[OpenFarFarRight][LoadEnemySoldier]
+[MoveFarRight]
+[OpenFarRight]
+Artus is gonna kill me.[AN]
+I'm so late[Beat][A]
+[CloseSpeechSlow]
+
+[OpenFarRight][MoveRight]
+
+[StopForEvents]
+
+[OpenRight][ClearFace]
+
+[OpenFarFarLeft][LoadMcVicar][MoveFarLeft]
+[OpenFarLeft]
+Too easy.[AN]
+Better keep moving before[N]
+the target suspects anything.[A]
+[X]
+
+## Ch4McVicarArrivesArtusAlive
+[OpenMidLeft][LoadMcVicar]
+There he is.[AN]
+One clean shot[N]
+should do it.[A]
+[X]
+
+## Ch4McVicarArrivesArtusDead
+[OpenMidLeft][LoadMcVicar]
+Don't tell me he's[N]
+already dead[Beat][AN]
+Pathetic.[A]
+[X]
+
+## Ch4HeavyHoveringBootsHouse
+[OpenMidLeft][LoadOldWoman]
+[OpenMidRight][LoadActiveUnit]
+
+[OpenMidLeft][ToggleSmile]
+Oh, thank you for dealing with that[N]
+dreadful hooded man![AN]
+He wouldn't stop bothering me about[N]
+these boots I found.[AN]
+If these are so much trouble, maybe[N]
+I shouldn't bother keeping them.[AN]
+Here, you take them.[AN]
+Keep them far, far away from me![A]
+[X]
+
+## Ch4ElixirHouse
+
+[OpenMidLeft][LoadYoungMan2]
+[OpenMidRight][LoadActiveUnit]
+
+[OpenMidLeft]
+Think fast![A]
+[OpenMidLeft][MoveMidLeft]
+
+[OpenMidRight]
+[TMM]![TMM][A][MoveRight]
+[OpenRight][MoveRight]
+[OpenRight][MoveMidRight]
+
+[OpenMidLeft][ToggleSmile]
+Wow, you caught it![A][ToggleSmile]
+
+[OpenMidRight]
+[Beat][A]
+
+[OpenMidLeft]
+[Beat]This isn't as exciting as[N]
+I thought it would be.[AN]
+I'm gonna think of a[N]
+new game.[AN]
+You can keep that.[A]
+
+[X]
+
+## Ch4ElixirHouseThorbek
+[OpenMidLeft][LoadYoungMan2]
+[OpenMidRight][LoadThorbek]
+
+[OpenMidLeft]
+Think fast![A]
+[OpenMidLeft][MoveMidLeft]
+
+[OpenMidRight]
+[TMM]![TMM][A][MoveRight]
+[OpenRight][MoveRight]
+[OpenRight][MoveMidRight]
+
+[OpenMidLeft][ToggleSmile]
+Wow, you caught it![A]
+
+[OpenMidRight]
+Ha![AN]
+This is but child's play[N]
+to one such as[TMM]--[TMM][A]
+
+[OpenMidLeft][ToggleSmile]
+I'm gonna think of a[N]
+new game.[AN]
+You can keep that.[A]
+
+[OpenMidRight][ToggleSmile]
+Thank you! I won't forget[TMM]--[TMM][A]
+[ToggleSmile]
+
+[OpenMidLeft][MoveRight]
+[OpenMidRight][MoveFarRight]
+[OpenRight][MoveMidRight]
+[OpenFarRight][MoveFarFarRight]
+
+[OpenFarFarRight]
+Oh.[AN]
+Farewell[Beat][A]
+[X]

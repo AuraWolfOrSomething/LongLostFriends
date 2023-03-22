@@ -1,0 +1,21 @@
+
+CurrentVersionRamLink:
+WORD CurrentVersionRam
+
+CurrentVersionLink:
+BYTE CurrentVersion
+ALIGN 4
+
+/*
+#include "asm/SaveCurrentVersion.lyn.event"
+ALIGN 4
+
+#include "asm/LoadCurrentVersion.lyn.event"
+ALIGN 4
+
+#include "asm/AsmcUpdateCurrentVersion.lyn.event"
+ALIGN 4
+
+#include "asm/AsmcClearVersionInRAM.lyn.event"
+ALIGN 4
+*/

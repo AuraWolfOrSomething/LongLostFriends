@@ -1,0 +1,67 @@
+/*
+Minor space optimizing; could probably do more above this, but I am lazy and just need some room for Venno's StatOffsetter :)
+
+Vanilla FE8 first checks if the easy mode byte is set. For both possible outcomes (true/false), it will then check if the hard mode byte is set. Once the mode is determined in this manner, THEN the chapter's autolevel difficulty setting is checked  (this is only done once, regardless of the mode shenanigans above, but this section of code is in three different places). Finally, the relevant amount of autolevels is received.
+
+This rewrite will first get the chapter's autolevel difficulty. Then, check for easy mode. If it's not easy mode, then check for normal/hard mode. Once the mode has been determined, get the relevant amount of autolevels.
+*/
+
+PUSH
+
+ORG 0xF812
+SHORT 0xD124 //bne GoToStat_Offsetter
+
+ORG 0xF81A
+SHORT 0xD920 //bls GoToStat_Offsetter
+SHORT 0x4F0C //ldr r7, =gChapterData
+SHORT 0x200E //mov r0, #0x0E
+SHORT 0x5638 //ldsb r0, [r7,r0]
+BL(0x34618) //GetChapterDefinition
+SHORT 0x2142 //mov r1, #0x42
+SHORT 0x5C79 //ldrb r1, [r7,r1]
+SHORT 0x0689 //lsl r1, #0x1A
+SHORT 0x2900 //cmp r1, #0
+SHORT 0xDB01 //blt NormalOrHardMode
+
+//(Easy Mode)
+SHORT 0x7D01 //ldrb r1, [r0,#0x14]
+SHORT 0xE004 //b GetAutolevelsForEasyOrNormal
+
+//NormalOrHardMode:
+SHORT 0x7D39 //ldrb r1, [r7,#0x14]
+SHORT 0x2240 //mov r2, #0x40
+SHORT 0x4211 //tst r1, r2
+SHORT 0xD10B //bne HardModeAutoLevels
+
+//(Normal Mode)
+SHORT 0x7D41 //ldrb r1, [r0,#0x15]
+
+//GetAutolevelsForEasyOrNormal:
+SHORT 0x0709 //lsl r1, #0x1C
+SHORT 0x0F09 //lsr r1, #0x1C
+SHORT 0x4249 //neg r1, r1
+SHORT 0xE008 //b GoToApplyBonusLevels
+
+
+ORG 0xF854
+//HardModeAutoLevels:
+SHORT 0x7D01 //ldrb r1, [r0,#0x14]
+SHORT 0x0909 //lsr r1, #4
+
+//GoToApplyBonusLevels:
+SHORT 0x1C28 //mov r0, r5
+BL(0x180CC) //ApplyBonusLevels
+//SHORT 0xE013 //b (0xF888)
+
+//GoToStat_Offsetter:
+SHORT 0x1C28 //mov r0, r5
+SHORT 0x1C31 //mov r1, r6
+SHORT 0x4A03 //ldr r2, =Stat_Offsetter
+SHORT 0x4696 //mov lr, r2
+SHORT 0xF800 //bl lr+0
+SHORT 0x1C28 //mov r0, r5
+BL(0x181C8) //EnsureNoUnitStatCapOverflow
+SHORT 0xE00B //b (0xF888)
+POIN Stat_Offsetter
+
+POP

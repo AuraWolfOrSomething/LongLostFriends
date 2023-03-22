@@ -1,0 +1,715 @@
+#ifndef HAX_HEROES_MOVEMENT_INTERNAL_EVENT
+#define HAX_HEROES_MOVEMENT_INTERNAL_EVENT
+
+// The following need to be defined:
+/*
+ * ACTION_MOVETARGET (free action index)
+ * ACTION_MOVEACTIVE (free action index)
+ * ACTION_MOVEBOTH   (free action index) (formerly ACTION_SWAP)
+ * ACTION_PUSH       (free action index)
+ 
+ * prPivotCommand_Availability      (routine offset)
+ * prRepositionCommand_Availability (routine offset)
+ * prSwapCommand_Availability       (routine offset)
+ * prShoveCommand_Availability      (routine offset)
+ * prDrawBackCommand_Availability   (routine offset)
+ * prSplitUpCommand_Availability    (routine offset)
+ * prCrossCommand_Availability      (routine offset)
+ 
+ * prPivot_TargetLegality      (routine offset)
+ * prReposition_TargetLegality (routine offset)
+ * prSwap_TargetLegality       (routine offset)
+ * prShove_TargetLegality      (routine offset)
+ * prDrawBack_TargetLegality   (routine offset)
+ * prSplitUp_TargetLegality    (routine offset)
+ * prCross_TargetLegality      (routine offset)
+ 
+ * TEXT_BOTTOMHELP_PIVOT      (text id)
+ * TEXT_BOTTOMHELP_REPOSITION (text id)
+ * TEXT_BOTTOMHELP_SWAP       (text id)
+ * TEXT_BOTTOMHELP_SHOVE      (text id)
+ * TEXT_BOTTOMHELP_DRAWBACK   (text id)
+ * TEXT_BOTTOMHELP_SPLITUP    (text id)
+ * TEXT_BOTTOMHELP_CROSS      (text id)
+ */
+
+/// ==================================================================================================
+/// WARNING: WIZARD-ONLY ZONE, PLEASE DO NOT MESS WITH THIS FILE IF YOU DO NOT KNOW WHAT YOU ARE DOING
+/// ==================================================================================================
+
+#include "../_StanHaxCommon/StanCommonASM.event"
+
+#include "_6CDefinitions.event"
+
+// PUBLIC ASM
+// ----------
+
+ALIGN 4
+prSmiteCommand_Usability:
+	#incbin "asm/TargetCommandUsability.bin"
+	POIN (_prSmite_MakeTargetList+1)
+	POIN (prSmiteCommand_Availability+1) // Availability
+
+ALIGN 4
+prSmiteCommand_Effect:
+	#incbin "asm/TargetCommandEffect.bin"
+	POIN (_prSmite_MakeTargetList+1)
+	POIN _pSmiteSelectorDefinition
+
+ALIGN 4
+prShoveCommand_Usability:
+	#incbin "asm/TargetCommandUsability.bin"
+	POIN (_prShove_MakeTargetList+1)
+	POIN (prShoveCommand_Availability+1) // Availability
+
+ALIGN 4
+prShoveCommand_Effect:
+	#incbin "asm/TargetCommandEffect.bin"
+	POIN (_prShove_MakeTargetList+1)
+	POIN _pShoveSelectorDefinition
+
+ALIGN 4
+prPivotCommand_Usability:
+	#incbin "asm/TargetCommandUsability.bin"
+	POIN (_prPivot_MakeTargetList+1)
+	POIN (prPivotCommand_Availability+1) // Availability
+
+ALIGN 4
+prPivotCommand_Effect:
+	#incbin "asm/TargetCommandEffect.bin"
+	POIN (_prPivot_MakeTargetList+1)
+	POIN _pPivotSelectorDefinition
+
+ALIGN 4
+prRepositionCommand_Usability:
+	#incbin "asm/TargetCommandUsability.bin"
+	POIN (_prReposition_MakeTargetList+1)
+	POIN (prRepositionCommand_Availability+1)
+
+ALIGN 4
+prRepositionCommand_Effect:
+	#incbin "asm/TargetCommandEffect.bin"
+	POIN (_prReposition_MakeTargetList+1)
+	POIN _pRepositionSelectorDefinition
+
+ALIGN 4
+prSwapCommand_Usability:
+	#incbin "asm/TargetCommandUsability.bin"
+	POIN (_prSwap_MakeTargetList+1)
+	POIN (prSwapCommand_Availability+1)
+
+ALIGN 4
+prSwapCommand_Effect:
+	#incbin "asm/TargetCommandEffect.bin"
+	POIN (_prSwap_MakeTargetList+1)
+	POIN _pSwapSelectorDefinition
+
+ALIGN 4
+prDrawBackCommand_Usability:
+	#incbin "asm/TargetCommandUsability.bin"
+	POIN (_prDrawBack_MakeTargetList+1)
+	POIN (prDrawBackCommand_Availability+1)
+
+ALIGN 4
+prDrawBackCommand_Effect:
+	#incbin "asm/TargetCommandEffect.bin"
+	POIN (_prDrawBack_MakeTargetList+1)
+	POIN _pDrawBackSelectorDefinition
+	
+ALIGN 4
+prSplitUpCommand_Usability:
+	#incbin "asm/TargetCommandUsability.bin"
+	POIN (_prSplitUp_MakeTargetList+1)
+	POIN (prSplitUpCommand_Availability+1)
+
+ALIGN 4
+prSplitUpCommand_Effect:
+	#incbin "asm/TargetCommandEffect.bin"
+	POIN (_prSplitUp_MakeTargetList+1)
+	POIN _pSplitUpSelectorDefinition
+	
+ALIGN 4
+prCrossCommand_Usability:
+	#incbin "asm/TargetCommandUsability.bin"
+	POIN (_prCross_MakeTargetList+1)
+	POIN (prCrossCommand_Availability+1)
+
+ALIGN 4
+prCrossCommand_Effect:
+	#incbin "asm/TargetCommandEffect.bin"
+	POIN (_prCross_MakeTargetList+1)
+	POIN _pCrossSelectorDefinition
+	
+/*
+ALIGN 4
+prSpreadOutCommand_Usability:
+	#incbin "asm/TargetCommandUsability.bin"
+	POIN (_prSpreadOut_MakeTargetList+1)
+	POIN (prSpreadOutCommand_Availability+1)
+
+ALIGN 4
+prSpreadOutCommand_Effect:
+	#incbin "asm/TargetCommandEffect.bin"
+	POIN (_prSpreadOut_MakeTargetList+1)
+	POIN _pSpreadOutSelectorDefinition
+*/
+	
+// DRAW BACK STUFF
+// ---------------
+
+ALIGN 4
+_prDrawBackSelection_OnConstruction:
+	#incbin "asm/TargetSelection_OnConstruction.bin"
+	WORD TEXT_BOTTOMHELP_DRAWBACK
+
+ALIGN 4
+_prDrawBackSelection_OnSelection:
+	#incbin "asm/DrawBackSelection_OnSelection.bin"
+	POIN (_prGetOppositePosition+1)
+	WORD ACTION_MOVEBOTH
+
+ALIGN 4
+_prDrawBackSelection_OnChange:
+	#incbin "asm/DrawBackSelection_OnChange.bin"
+	POIN (_prGetOppositePosition+1)
+
+ALIGN 4
+_prDrawBack_MakeTargetList:
+	#incbin "asm/MakeAdjacentTargetList.bin"
+	POIN (prClearRangeMap+1)
+	POIN (_prDrawBack_TargetCheck+1)
+
+ALIGN 4
+_prDrawBack_TargetCheck:
+	#incbin "asm/DrawBack_TargetCheck.bin"
+	POIN (_prGetOppositePosition+1)
+	POIN (prUnit_CanBeOnPosition+1)
+	POIN (prDrawBack_TargetLegality+1)
+
+ALIGN 4
+_pDrawBackSelectorDefinition:
+	POIN (_prDrawBackSelection_OnConstruction+1) // Constructor
+	POIN (_prSelection_DestructMoveDisplay+1) // Destructor
+	WORD 0 // idk (actually ik kinda, see my notes)
+	POIN (_prDrawBackSelection_OnChange+1) // target change
+	WORD 0 // idk (same)
+	POIN (_prDrawBackSelection_OnSelection+1) // A Press
+	POIN 0x22749 // B Press (Generic Vanilla One that calls the unit menu back)
+	WORD 0 // idk (same)
+
+// SPLIT UP STUFF
+// --------------
+
+ALIGN 4
+_prSplitUpSelection_OnConstruction:
+	#incbin "asm/TargetSelection_OnConstruction.bin"
+	WORD TEXT_BOTTOMHELP_SPLITUP
+
+ALIGN 4
+_prSplitUpSelection_OnSelection:
+	#incbin "asm/SplitUpSelection_OnSelection.bin"
+	POIN (_prGetOppositePosition+1)
+	WORD ACTION_MOVEBOTH
+
+ALIGN 4
+_prSplitUpSelection_OnChange:
+	#incbin "asm/SplitUpSelection_OnChange.bin"
+	POIN (_prGetOppositePosition+1)
+
+ALIGN 4
+_prSplitUp_MakeTargetList:
+	#incbin "asm/MakeAdjacentTargetList.bin"
+	POIN (prClearRangeMap+1)
+	POIN (_prSplitUp_TargetCheck+1)
+
+ALIGN 4
+_prSplitUp_TargetCheck:
+	#incbin "asm/SplitUp_TargetCheck.bin"
+	POIN (_prGetOppositePosition+1)
+	POIN (prUnit_CanBeOnPosition+1)
+	POIN (prSplitUp_TargetLegality+1)
+
+ALIGN 4
+_pSplitUpSelectorDefinition:
+	POIN (_prSplitUpSelection_OnConstruction+1) // Constructor
+	POIN (_prSelection_DestructMoveDisplay+1) // Destructor
+	WORD 0 // idk (actually ik kinda, see my notes)
+	POIN (_prSplitUpSelection_OnChange+1) // target change
+	WORD 0 // idk (same)
+	POIN (_prSplitUpSelection_OnSelection+1) // A Press
+	POIN 0x22749 // B Press (Generic Vanilla One that calls the unit menu back)
+	WORD 0 // idk (same)
+
+// CROSS STUFF
+// --------------
+
+ALIGN 4
+_prCrossSelection_OnConstruction:
+	#incbin "asm/TargetSelection_OnConstruction.bin"
+	WORD TEXT_BOTTOMHELP_CROSS
+
+ALIGN 4
+_prCrossSelection_OnSelection:
+	#incbin "asm/CrossSelection_OnSelection.bin"
+	POIN (_prGetOppositePosition+1)
+	WORD ACTION_MOVEBOTH
+
+ALIGN 4
+_prCrossSelection_OnChange:
+	#incbin "asm/SplitUpSelection_OnChange.bin" //can be lazy since both display the same blue squares
+	POIN (_prGetOppositePosition+1)
+
+ALIGN 4
+_prCross_MakeTargetList: //done?
+	#incbin "asm/MakeAdjacentTargetList.bin"
+	POIN (prClearRangeMap+1)
+	POIN (_prCross_TargetCheck+1)
+
+ALIGN 4
+_prCross_TargetCheck:
+	#incbin "asm/Cross_TargetCheck.bin"
+	POIN (_prGetOppositePosition+1)
+	POIN (prUnit_CanBeOnPosition+1)
+	POIN (prCross_TargetLegality+1)
+
+ALIGN 4
+_pCrossSelectorDefinition:
+	POIN (_prCrossSelection_OnConstruction+1) // Constructor
+	POIN (_prSelection_DestructMoveDisplay+1) // Destructor
+	WORD 0 // idk (actually ik kinda, see my notes)
+	POIN (_prCrossSelection_OnChange+1) // target change
+	WORD 0 // idk (same)
+	POIN (_prCrossSelection_OnSelection+1) // A Press
+	POIN 0x22749 // B Press (Generic Vanilla One that calls the unit menu back)
+	WORD 0 // idk (same)
+	
+// PIVOT STUFF
+// -----------
+
+ALIGN 4
+_prPivotSelection_OnConstruction:
+	#incbin "asm/TargetSelection_OnConstruction.bin"
+	WORD TEXT_BOTTOMHELP_PIVOT
+
+ALIGN 4
+_prPivotSelection_OnSelection:
+	#incbin "asm/PivotSelection_OnSelection.bin"
+	POIN (_prGetOppositePosition+1)
+	WORD ACTION_MOVEACTIVE
+
+ALIGN 4
+_prPivotSelection_OnChange:
+	#incbin "asm/ActiveMoverSelection_OnChange.bin"
+	POIN (_prGetOppositePosition+1)
+
+ALIGN 4
+_prPivot_MakeTargetList:
+	#incbin "asm/MakeAdjacentTargetList.bin"
+	POIN (prClearRangeMap+1)
+	POIN (_prPivot_TargetCheck+1)
+
+ALIGN 4
+_prPivot_TargetCheck:
+	#incbin "asm/Pivot_TargetCheck.bin"
+	POIN (_prGetOppositePosition+1)
+	POIN (prUnit_CanBeOnPosition+1)
+	POIN (prPivot_TargetLegality+1)
+
+ALIGN 4
+_pPivotSelectorDefinition:
+	POIN (_prPivotSelection_OnConstruction+1) // Constructor
+	POIN (_prSelection_DestructMoveDisplay+1) // Destructor
+	WORD 0 // idk (actually ik kinda, see my notes)
+	POIN (_prPivotSelection_OnChange+1) // target change
+	WORD 0 // idk (same)
+	POIN (_prPivotSelection_OnSelection+1) // A Press
+	POIN 0x22749 // B Press (Generic Vanilla One that calls the unit menu back)
+	WORD 0 // idk (same)
+
+// REPOSITION STUFF
+// ----------------
+
+ALIGN 4
+_prRepositionSelection_OnConstruction:
+	#incbin "asm/TargetSelection_OnConstruction.bin"
+	WORD TEXT_BOTTOMHELP_REPOSITION
+
+ALIGN 4
+_prRepositionSelection_OnSelection:
+	#incbin "asm/RepositionSelection_OnSelection.bin"
+	POIN (_prGetOppositePosition+1)
+	WORD ACTION_MOVETARGET
+
+ALIGN 4
+_prRepositionSelection_OnChange:
+	#incbin "asm/TargetMoverSelection_OnChange.bin"
+	POIN (_prGetOppositePosition+1)
+
+ALIGN 4
+_prReposition_MakeTargetList:
+	#incbin "asm/MakeAdjacentTargetList.bin"
+	POIN (prClearRangeMap+1)
+	POIN (_prReposition_TargetCheck+1)
+
+ALIGN 4
+_prReposition_TargetCheck:
+	#incbin "asm/Reposition_TargetCheck.bin"
+	POIN (_prGetOppositePosition+1)
+	POIN (prUnit_CanBeOnPosition+1)
+	POIN (prReposition_TargetLegality+1)
+
+ALIGN 4
+_pRepositionSelectorDefinition:
+	POIN (_prRepositionSelection_OnConstruction+1) // Constructor
+	POIN (_prSelection_DestructMoveDisplay+1) // Destructor
+	WORD 0 // idk (actually ik kinda, see my notes)
+	POIN (_prRepositionSelection_OnChange+1) // target change
+	WORD 0 // idk (same)
+	POIN (_prRepositionSelection_OnSelection+1) // A Press
+	POIN 0x22749 // B Press (Generic Vanilla One that calls the unit menu back)
+	WORD 0 // idk (same)
+
+// SWAP STUFF
+// ----------
+
+ALIGN 4
+_prSwapSelection_OnConstruction:
+	#incbin "asm/TargetSelection_OnConstruction.bin"
+	WORD TEXT_BOTTOMHELP_SWAP
+
+ALIGN 4
+_prSwapSelection_OnChange:
+	#incbin "asm/SwapSelection_OnChange.bin"
+
+ALIGN 4
+_prSwapSelection_OnSelection:
+	#incbin "asm/SwapSelection_OnSelection.bin"
+	WORD ACTION_MOVEBOTH
+
+ALIGN 4
+_prSwap_MakeTargetList:
+	#incbin "asm/MakeAdjacentTargetList.bin"
+	POIN (prClearRangeMap+1)
+	POIN (_prSwap_TargetCheck+1)
+
+ALIGN 4
+_prSwap_TargetCheck:
+	#incbin "asm/Swap_TargetCheck.bin"
+	POIN (prUnit_CanStandOnPosition+1)
+	POIN (prSwap_TargetLegality+1)
+
+ALIGN 4
+_pSwapSelectorDefinition:
+	POIN (_prSwapSelection_OnConstruction+1) // Constructor
+	WORD 0 // Destructor
+	WORD 0 // idk (actually ik kinda, see my notes)
+	POIN (_prSwapSelection_OnChange+1) // target change
+	WORD 0 // idk (same)
+	POIN (_prSwapSelection_OnSelection+1) // A Press
+	POIN 0x22749 // B Press (Generic Vanilla One that calls the unit menu back)
+	WORD 0 // idk (same)
+
+// SHOVE STUFF
+// ----------
+
+ALIGN 4
+_prShoveSelection_OnConstruction:
+	#incbin "asm/TargetSelection_OnConstruction.bin"
+	WORD TEXT_BOTTOMHELP_SHOVE
+
+ALIGN 4
+_prShoveSelection_OnChange:
+	#incbin "asm/TargetMoverSelection_OnChange.bin"
+	POIN (_prGetShovePosition+1)
+
+ALIGN 4
+_prShoveSelection_OnSelection:
+	#incbin "asm/ShoveSelection_OnSelection.bin"
+	POIN (_prGetShovePosition+1)
+	POIN (prClearRangeAndMoveMap+1)
+	WORD ACTION_PUSH
+
+ALIGN 4
+_prShove_MakeTargetList:
+	#incbin "asm/MakeAdjacentTargetList.bin"
+	POIN (prClearRangeMap+1)
+	POIN (_prShove_TargetCheck+1)
+
+ALIGN 4
+_prShove_TargetCheck:
+	#incbin "asm/Shove_TargetCheck.bin"
+	POIN (_prGetShovePosition+1)
+	POIN (prShove_TargetLegality+1)
+
+ALIGN 4
+_prGetShovePosition:
+	#incbin "asm/GetPushPosition.bin"
+	POIN (prUnit_CanBeOnPosition+1)
+	WORD 1 // Max number of tiles you can be pushed
+
+ALIGN 4
+_pShoveSelectorDefinition:
+	POIN (_prShoveSelection_OnConstruction+1) // Constructor
+	WORD 0 // Destructor
+	WORD 0 // idk (actually ik kinda, see my notes)
+	POIN (_prShoveSelection_OnChange+1) // target change
+	WORD 0 // idk (same)
+	POIN (_prShoveSelection_OnSelection+1) // A Press
+	POIN 0x22749 // B Press (Generic Vanilla One that calls the unit menu back)
+	WORD 0 // idk (same)
+
+// SMITE STUFF
+// -----------
+// This is exacly the same stuff as shove but the max push distance is bumped up one
+
+ALIGN 4
+_prSmiteSelection_OnConstruction:
+	#incbin "asm/TargetSelection_OnConstruction.bin"
+	WORD TEXT_BOTTOMHELP_SMITE
+
+ALIGN 4
+_prSmiteSelection_OnChange:
+	#incbin "asm/TargetMoverSelection_OnChange.bin"
+	POIN (_prGetSmitePosition+1)
+
+ALIGN 4
+_prSmiteSelection_OnSelection:
+	#incbin "asm/ShoveSelection_OnSelection.bin"
+	POIN (_prGetSmitePosition+1)
+	POIN (prClearRangeAndMoveMap+1)
+	WORD ACTION_PUSH
+
+ALIGN 4
+_prSmite_MakeTargetList:
+	#incbin "asm/MakeAdjacentTargetList.bin"
+	POIN (prClearRangeMap+1)
+	POIN (_prSmite_TargetCheck+1)
+
+ALIGN 4
+_prSmite_TargetCheck:
+	#incbin "asm/Shove_TargetCheck.bin"
+	POIN (_prGetSmitePosition+1)
+	POIN (prSmite_TargetLegality+1)
+
+ALIGN 4
+_prGetSmitePosition:
+	#incbin "asm/GetPushPosition.bin"
+	POIN (prUnit_CanBeOnPosition+1)
+	WORD 2 // Max number of tiles you can be pushed
+
+ALIGN 4
+_pSmiteSelectorDefinition:
+	POIN (_prSmiteSelection_OnConstruction+1) // Constructor
+	WORD 0 // Destructor
+	WORD 0 // idk (actually ik kinda, see my notes)
+	POIN (_prSmiteSelection_OnChange+1) // target change
+	WORD 0 // idk (same)
+	POIN (_prSmiteSelection_OnSelection+1) // A Press
+	POIN 0x22749 // B Press (Generic Vanilla One that calls the unit menu back)
+	WORD 0 // idk (same)
+
+// SPREAD OUT STUFF
+// ----------------
+
+/*
+ALIGN 4
+_prSpreadOutSelection_OnConstruction:
+	#incbin "asm/TargetSelection_OnConstruction.bin"
+	WORD TEXT_BOTTOMHELP_SPREADOUT
+
+ALIGN 4
+_prSpreadOutSelection_OnChange:
+	#incbin "asm/TargetMoverSelection_OnChange.bin"
+	POIN (_prGetSpreadOutPosition+1)
+
+ALIGN 4
+_prSpreadOutSelection_OnSelection:
+	#incbin "asm/ShoveSelection_OnSelection.bin"
+	POIN (_prGetSpreadOutPosition+1)
+	POIN (prClearRangeAndMoveMap+1)
+	WORD ACTION_PUSHMULTIPLE
+
+ALIGN 4
+_prSpreadOut_MakeTargetList:
+	#incbin "asm/MakeAdjacentTargetList.bin"
+	POIN (prClearRangeMap+1)
+	POIN (_prSpreadOut_TargetCheck+1)
+
+ALIGN 4
+_prSpreadOut_TargetCheck:
+	#incbin "asm/Shove_TargetCheck.bin"
+	POIN (_prGetSpreadOutPosition+1)
+	POIN (prSpreadOut_TargetLegality+1)
+
+ALIGN 4
+_prGetSpreadOutPosition:
+	#incbin "asm/GetPushPosition.bin"
+	POIN (prUnit_CanBeOnPosition+1)
+	WORD 1 // Max number of tiles you can be pushed
+
+ALIGN 4
+_pSpreadOutSelectorDefinition:
+	POIN (_prSpreadOutSelection_OnConstruction+1) // Constructor
+	WORD 0 // Destructor
+	WORD 0 // idk (actually ik kinda, see my notes)
+	POIN (_prSpreadOutSelection_OnChange+1) // target change
+	WORD 0 // idk (same)
+	POIN (_prSpreadOutSelection_OnSelection+1) // A Press
+	POIN 0x22749 // B Press (Generic Vanilla One that calls the unit menu back)
+	WORD 0 // idk (same)
+*/
+
+// COMMON STUFF
+// ------------
+
+ALIGN 4
+_prGetOppositePosition:
+	#incbin "asm/GetOppositePosition.bin"
+
+ALIGN 4
+_prSelection_DestructMoveDisplay:
+	#incbin "asm/KillRangeDisplay.bin"
+
+ALIGN 4
+_prMoveActiveUnitAction:
+	#incbin "asm/MoveActiveUnitAction.bin"
+	POIN (_p6CUnitMoveAnim_rConstruct+1)
+
+ALIGN 4
+_prMoveTargetUnitAction:
+	#incbin "asm/MoveTargetUnitAction.bin"
+	POIN (_p6CUnitMoveAnim_rConstruct+1)
+
+/*
+ALIGN 4
+_prSwapAction:
+	#incbin "asm/SwapAction.bin"
+	POIN (_p6CUnitMoveAnim_rConstruct+1)
+*/
+
+ALIGN 4
+_prMoveBothUnitsAction:
+	#incbin "asm/MoveBothUnitsAction.bin"
+	POIN (_p6CUnitMoveAnim_rConstruct+1)
+	
+ALIGN 4
+_prPushAction:
+	#incbin "asm/PushAction.bin"
+	POIN (_p6CUnitPushAnim_rConstruct+1)
+	POIN (_prPushAnim_BeginTargetPush+1)
+	
+/*ALIGN 4
+_prPushMultipleAction:
+	#incbin "asm/PushMultipleAction.bin"
+	POIN (_p6CUnitPushAnim_rConstruct+1)
+	POIN (_prPushAnim_BeginTargetPush+1)
+*/
+
+ALIGN 4
+_prPushAnim_BeginTargetPush:
+	#incbin "asm/PushAnim_BeginTargetPush.bin"
+	POIN (_p6CUnitMoveAnim_rConstruct+1)
+
+ALIGN 4
+_p6CUnitMoveAnim_rConstruct:
+	#incbin "asm/6CUnitMoveAnim/Constructor.bin"
+	POIN _p6CSingleUnitMovementAnim
+
+ALIGN 4
+_p6CUnitMoveAnim_rDestruct:
+	#incbin "asm/6CUnitMoveAnim/Destructor.bin"
+
+ALIGN 4
+_p6CUnitMoveAnim_rLoop:
+	#incbin "asm/6CUnitMoveAnim/Loopor.bin"
+	POIN (prMOVEUNIT_MoveTowards+1)
+	WORD 5 // Speed (don't try to put that to 8 or more because if you do you'll have a good chance of softlocking the game when using the movement commands)
+
+ALIGN 4
+_p6CUnitPushAnim_rConstruct:
+	#incbin "asm/6CUnitPushAnim/Constructor.bin"
+	POIN _p6CSingleUnitPushAnim
+
+ALIGN 4
+_p6CUnitPushAnim_rDestruct:
+	#incbin "asm/6CUnitPushAnim/Destructor.bin"
+
+ALIGN 4
+_p6CUnitPushAnim_rPushLoop:
+	#incbin "asm/6CUnitPushAnim/PushLoopor.bin"
+	POIN (prMOVEUNIT_MoveTowards+1)
+	WORD 5 // Speed (don't try to put that to 8 or more because if you do you'll have a good chance of softlocking the game when using the movement commands)
+
+ALIGN 4
+_p6CUnitPushAnim_rReturnLoop:
+	#incbin "asm/6CUnitPushAnim/ReturnLoopor.bin"
+	POIN (prMOVEUNIT_MoveTowards+1)
+	WORD 4 // Speed (don't try to put that to 8 or more because if you do you'll have a good chance of softlocking the game when using the movement commands)
+
+ALIGN 4
+_p6CSingleUnitMovementAnim:
+{
+
+#ifndef NDEBUG
+	_6C_SET_NAME(__psName)
+#endif
+
+	_6C_SET_DESTRUCTOR(_p6CUnitMoveAnim_rDestruct+1)
+	_6C_CALL_ROUTINE(0x15361) // Block 6C Thread 2
+	
+	// Start Animation on Next frame only (ensuring the 6C is properly constructed)
+	_6C_YIELD
+	
+	// Actual animation
+	_6C_LOOP_ROUTINE(_p6CUnitMoveAnim_rLoop+1)
+	
+	_6C_CALL_ROUTINE(0x15371) // Unblock 6C Thread 2
+	_6C_END
+	
+#ifndef NDEBUG
+__psName:
+	String(UnitMoveAnim)
+	BYTE 0
+#endif
+
+}
+
+ALIGN 4
+_p6CSingleUnitPushAnim:
+{
+
+#ifndef NDEBUG
+	_6C_SET_NAME(__psName)
+#endif
+
+	_6C_SET_DESTRUCTOR(_p6CUnitPushAnim_rDestruct+1)
+	_6C_CALL_ROUTINE(0x15361) // Block 6C Thread 2
+	
+	// Start Animation on Next frame only (ensuring the 6C is properly constructed)
+	_6C_YIELD
+	
+	// Actual animation
+	_6C_LOOP_ROUTINE(_p6CUnitPushAnim_rPushLoop+1)
+	_6C_LOOP_ROUTINE(_p6CUnitPushAnim_rReturnLoop+1)
+	
+	_6C_CALL_ROUTINE(0x15371) // Unblock 6C Thread 2
+	_6C_END
+	
+#ifndef NDEBUG
+__psName:
+	String(UnitPushAnim)
+	BYTE 0
+#endif
+
+}
+
+SetUnitAction(ACTION_MOVETARGET, ActionRoutine(_prMoveTargetUnitAction+1))
+SetUnitAction(ACTION_MOVEACTIVE, ActionRoutine(_prMoveActiveUnitAction+1))
+//SetUnitAction(ACTION_SWAP,       ActionRoutine(_prSwapAction+1))
+SetUnitAction(ACTION_MOVEBOTH,   ActionRoutine(_prMoveBothUnitsAction+1))
+SetUnitAction(ACTION_PUSH,       ActionRoutine(_prPushAction+1))
+//SetUnitAction(ACTION_PUSHMULTIPLE,       ActionRoutine(_prPushMultipleAction+1))
+
+ALIGN 4 // For good measure
+
+#endif // HAX_HEROES_MOVEMENT_INTERNAL_EVENT

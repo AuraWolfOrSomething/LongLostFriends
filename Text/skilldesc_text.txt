@@ -1,0 +1,183 @@
+
+## SD_Canto
+Canto: Can move again[N]
+after certain actions.[X]
+
+## SD_Supply
+Supply: This unit has[N]
+access to the convoy.[X]
+
+## SD_Cunning
+Cunning: Can steal items and use[N]
+lockpicks. Player units with Cunning[N]
+can freely open locks.[X]
+
+## SD_CritUp
+Crit Boost: +15 critical rate.[X]
+
+## SD_Slayer
+Slayer: Deal effective damage[N]
+to monster units.[X]
+
+## SD_Acrobat
+Acrobat: All traversable[N]
+terrain costs 1 movement.[X]
+
+## SD_Summon
+Summon: Can conjure a phantom[N]
+soldier to fight alongside you.[X]
+
+## SD_Dance
+Dance: Refresh an ally unit[N]
+to let them act again.[X]
+
+## SD_LockTouch
+Locktouch: Can open locks[N]
+without keys or picks.[X]
+
+## SD_Lunge
+Lunge: Swap places with the[N]
+opponent after combat.[N]
+(No effect if Move is --)[X]
+
+## SD_Shove
+Shove: Allows unit to push[N]
+other units one tile away.[X]
+
+## SD_Smite
+Smite: Allows unit to push[N]
+other units two tiles away.[X]
+
+## SD_Pivot
+Pivot: Allows unit to move to the[N]
+opposite side of an adjacent ally.[X]
+
+## SD_Reposition
+Reposition: Allows unit to pull an[N]
+adjacent ally to its opposite side.[X]
+
+## SD_Swap
+Swap: Allows unit to swap positions[N]
+with an adjacent ally.[X]
+
+## SD_DrawBack
+Draw Back: Allows unit to move one[NL]
+tile backwards, and pull an adjacent[NL]
+ally to this unit's old position.[X]
+
+## SD_SplitUp
+Split Up: Allows unit to move one[NL]
+tile backwards and push an[NL]
+adjacent ally one tile forwards.[X]
+
+## SD_Cross
+Cross: Allows unit and an adjacent ally[N]
+to move one tile past each other.[X]
+
+## SD_Escort
+Escort: Aid +1. This unit can move[N]
+again (Canto) after rescuing an ally.[N]
+Afterwards, they can Give.[X]
+
+## SD_EscortPlus
+Escort+: Aid +2. This unit can move[N]
+again (Canto) after rescuing an ally.[N]
+Afterwards, they can Give/Take/Drop.[X]
+
+## SD_Heroics
+Heroics: This unit can rescue[N]
+allies as a free action.[X]
+
+## SD_Transmitter
+Transmitter: If this unit uses[N]
+"Give" and nothing else, they[N]
+reset to their previous position.[X]
+
+## SD_TransmitterPlus
+Transmitter+: After using[N]
+"Give", this unit resets to[N]
+their previous position.[X]
+
+## SD_Advance
+Advance: Mov +1. If this unit moves[N]
+2 mov and uses "Advance", they can go[N]
+again with Mov -1. Only once per turn.[X]
+
+## SD_Savior
+Savior: Can rescue[N]
+without penalties.[X]
+
+## SD_Barricade
+Barricade: Damage taken is[N]
+halved after first being struck.[X]
+
+## SD_LastLegs
+Last Legs: Mov +1. This unit can't[NL]
+start combat on turns that they[NL]
+have no movement remaining.[X]
+
+## SD_PrimeFive
+Prime Five: If on Turn 5 or if unit[N]
+is Lv 5, use Lck for other stats[N]
+(Pow, Def, etc.) in battle.[X]
+
+## SD_BalancedStudy
+Balanced Study: +5 damage dealt if[N]
+WEXP difference between Sword and[N]
+Anima is no more than 5.[X]
+
+## SD_ExploitSpeed
+Exploit Speed: +3 AS while wielding a[N]
+sword and not experiencing WTD.[X]
+
+## SD_Inspiration
+Inspiration: Adjacent allies[N]
+deal +3 damage.[X]
+
+## SD_RallyMov
+Rally Movement: +2 Move[N]
+to allies within 2 tiles.[X]
+
+## SD_Charm
+Charm: Allies within 3[N]
+tiles receive +15 Hit.[X]
+
+## SD_Bargain
+Bargain: During the chapter, this unit[N]
+gets 25% off of all purchases.[X]
+
+## SD_SteadyAim
+Steady Aim: +15 Hit.[X]
+
+## SD_FarWard
+Far Ward: Attacks from a range of[N]
+3+ will always miss this unit.[X]
+
+## SD_Blitz
+Blitz: Always has Brave effect, but[N]
+can't double from having more AS.[N]
+Consecutive hits do half damage.[X]
+
+## SD_Recapturable
+Recapturable: If captor dies, this unit is[N]
+set to 1 HP. Can be recaptured if at[N]
+1 HP or has nothing in their inventory.[X]
+
+## SD_Snaillike
+Snaillike: -2 Move.[X]
+
+## SD_Slow
+Slow: -1 Move.[X]
+
+## SD_DivineIntervention
+Divine Intervention: Once per chapter,[N]
+stop an ally from dying in combat by[N]
+keeping their HP at 1.[X]
+
+## SD_Uncooperative
+Uncooperative: Cannot be rescued.[X]
+
+## SD_Expertise
+Expertise: Opponent's effectiveness[N]
+multiplier is half as impactful.[N]
+E.g. x3 -> x2[X]

@@ -1,0 +1,10 @@
+
+#define Ch2BottomLeftVillageEventID 0x0A
+#define Ch2CenterVillageEventID 0x0B
+#define Ch2TopRightVillageEventID 0x0C
+#define Ch2TopLeftVillageEventID 0x0D
+#define RecruitThorbekEventID 0x0E
+#define Ch2MasonDeathEventID 0x0F
+#define Ch2KamronFranklinEventID 0x10
+#define Ch2NordicaDavisEventID 0x11
+#define TalonMasonQuoteEventID 0x12

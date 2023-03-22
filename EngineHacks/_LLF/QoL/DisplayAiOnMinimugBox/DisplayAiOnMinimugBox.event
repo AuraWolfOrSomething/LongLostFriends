@@ -1,0 +1,22 @@
+//Requires edited name module in ModularMinimugBox
+
+#include "DisplayAiOnMinimugBoxInternal.event"
+
+
+#define AiOneTwoTextIdEntry(aiShort,textID) "SHORT aiShort textID"
+
+AiOneTwoTextIdList:
+AiOneTwoTextIdEntry(0x0000,MM_AiNoAi)
+AiOneTwoTextIdEntry(0x0003,MM_AiAttackWithinRange)
+AiOneTwoTextIdEntry(0x0006,MM_AiAttackWithinDoubleRange)
+AiOneTwoTextIdEntry(0x0007,MM_AiAttackWithinDoubleRange)
+AiOneTwoTextIdEntry(0x0303,MM_AiStationary)
+AiOneTwoTextIdEntry(0x000E,MM_AiDestroyTerrain)
+AiOneTwoTextIdEntry(0x0004,MM_AiBrigand)
+AiOneTwoTextIdEntry(0x0605,MM_AiThief)
+AiOneTwoTextIdEntry(0x060C,MM_AiEscape)
+
+//End of list
+SHORT 0xFFFF
+//SHORT 0x05D3 //Text that simply says "Other" 
+SHORT GuideOtherHeader //Text that simply says "Other" 

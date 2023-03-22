@@ -1,0 +1,46 @@
+//MiscData/EEUS
+
+#ifndef _FE8_
+	ERROR Wrong ROM. Only FE8 is compatible.
+#endif
+
+#include "Extensions/Hack Installation.txt"
+
+#ifndef FreeSpace
+	#define FreeSpace 0xB2B000
+	ORG FreeSpace
+#endif
+
+//#define StatOffsTable 0xB50000
+
+
+/*
+ORG $17D34
+jumpToHack(Stat_Offsetter)
+*/
+
+/*
+ORG 0x180F6
+SHORT 0x1C20 0x1C33 //mov r0, r4; mov r3, r6
+BL(Stat_Offsetter)
+
+ORG continueInBlRange
+#include "Source/StatOffset.lyn.event"
+ALIGN 4
+
+#undef continueInBlRange
+#define continueInBlRange currentOffset
+*/
+
+#include UNIT_Load_800F704.event
+ALIGN 4
+
+
+#include "Source/StatOffset.lyn.event"
+ALIGN 4
+
+/*
+Stat_Offsetter:
+#incbin "Source/StatOffset.dmp"
+POIN StatOffsTable
+*/

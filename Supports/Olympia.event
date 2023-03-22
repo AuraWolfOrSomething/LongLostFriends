@@ -1,0 +1,12 @@
+OlympiaSupportList:
+SupportList(Olympia,OlympiaSupportList)
+
+SupportPartner(Zolma,80,40)
+SupportPartner(Pyrus,80,40)
+SupportPartner(Cain,80,40)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(3)

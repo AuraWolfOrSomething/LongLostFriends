@@ -1,0 +1,343 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+/*Thoughts on chapter
+
+*/
+
+/*Items gained:
+Starting/Allies' Items: 
+Village/House/Chest Items:
+Enemy Drops:
+Enemy Stealables:
+Enemy Valuables:
+*/
+
+EventPointerTable(0x0A,Pointers)
+
+//Hayden Skip stuff; more in the Ending Scene
+PUSH
+ORG $2060ba
+BYTE 02 02
+
+ORG $9FF354 //$A3C860
+CHECK_EVENTID 0x88
+IFEQUAL 0x1 0xC 0x0
+CALL TestingNewHaydenSkip
+ENDB
+
+POP
+
+Pointers:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+#include "Chapter1Units.event"
+#include "Chapter1EventIDs.event"
+
+TurnBasedEvents:
+TurnEventPlayer(0,BeforeBattleBegins,1)
+
+TurnEventPlayer(0,NorthCorridorReinforcementWarning,3)
+TurnEventPlayer(0,NorthCorridorReinforcementArrives,4,3)
+
+TurnEventPlayer(0,NorthReinforcements1Warning,4)
+TurnEventPlayer(0,NorthReinforcements1Arrive,5)
+
+TurnEventPlayer(0,SouthReinforcementsWarning,5)
+TurnEventPlayer(0,SouthReinforcementsArrive,6)
+
+TurnEventPlayer(0,MageBossWarning,6)
+TurnEventPlayer(0,MageBossExitsHouse,7)
+
+TurnEventPlayer(0,NorthReinforcements2Warning,7)
+TurnEventPlayer(0,NorthReinforcements2Arrive,8)
+
+TurnEventNPC(MerchantRunsBelowID,CheckGuardsStatus,2,99)
+
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Seize(12,2)
+Armory(LeftArmory,1,10)
+Armory(RightArmory,12,7)
+Vendor(RegularVendor,6,15)
+Vendor(ChoiceVendor,0,1)
+House(TopHouseEventID,TopHouse,9,2)
+House(MiddleHouseEventID,MiddleHouse,7,10)
+House(BottomHouseEventID,BottomHouse,12,15)
+
+#ifdef TESTING_PURPOSES
+	Seize(1,14)
+#endif
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+//AFEV 0 CheckIfAllMagesDefeated MageDefeatedID
+AFEV HorseFledID HorseScaredAway HorseGuardianDefeatedID
+AFEV 0 AdvanceGuardCounter GuardDefeatedID
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+
+
+BeginningScene:
+Load(NewUnits)
+Load(BadUnits,BadUnitsEEUS)
+Load(NPCUnits)
+//Load(OptionalMageBoss)
+LoadPrepUnits(Units)
+GotoPrepScreen
+ENDA
+
+BeforeBattleBegins:
+//Reset purchased bargain item IDs for next chapter
+ENUF 0x66
+ENUF 0x67
+NoFade
+ENDA
+
+NorthCorridorReinforcementWarning:
+MUSI 
+Camera(7,5,10)
+Notice(7,0,30)
+InfantryWarning
+MUNO
+NoFade
+ENDA
+
+NorthCorridorReinforcementArrives:
+Camera(7,5,10)
+Load(NorthCorridorReinforcement)
+NoFade
+ENDA
+
+NorthReinforcements1Warning:
+MUSI 
+Camera(14,5,10)
+Notice(14,0,30)
+Notice(15,0,30)
+InfantryWarning
+MUNO
+NoFade
+ENDA
+
+NorthReinforcements1Arrive:
+Camera(14,5,10)
+Load(NorthReinforcements1)
+NoFade
+ENDA
+
+SouthReinforcementsWarning:
+MUSI 
+Camera(14,13,10)
+Notice(14,16,30)
+InfantryWarning
+Notice(15,16,30)
+MageWarning
+MUNO
+NoFade
+ENDA
+
+SouthReinforcementsArrive:
+Camera(14,13,10)
+Load(SouthReinforcements)
+NoFade
+ENDA
+
+MageBossWarning:
+MUSI
+Camera(7,5,10)
+Notice(4,3,30)
+MageWarning
+MUNO
+NoFade
+ENDA
+
+MageBossExitsHouse:
+Camera(7,5,10)
+Load(OptionalMageBoss)
+CHECK_EVENTID HorseGuardianDefeatedID
+IFEQ 0x1 0xC 0x0 //if soldier not defeated, mage boss and soldier leave
+	DISA Beran
+	DISA Enemy2S
+	ENUN
+GOTO 0x2
+LABEL 0x1
+//else, mage boss will chase down player units
+LABEL 0x2
+NoFade
+ENDA
+
+NorthReinforcements2Warning:
+MUSI 
+Camera(14,5,10)
+Notice(14,0,30)
+Notice(15,0,30)
+InfantryWarning
+MUNO
+NoFade
+ENDA
+
+NorthReinforcements2Arrive:
+Camera(14,5,10)
+Load(NorthReinforcements2)
+NoFade
+ENDA
+
+CheckGuardsStatus:
+//Check if merchant should leave the map or not
+CHECK_EVENTID GuardCounter2ID 
+IFEQ 0x1 0xC 0x0 //if at least one of the non-Rylan guards is alive, then he stays
+	ENUF MerchantRunsBelowID //reset so we can check next turn
+GOTO 0x2
+LABEL 0x1
+	//otherwise, he retreats
+	DISA PrologueBandit2
+	ENUN
+LABEL 0x2
+NoFade
+ENDA
+
+LeftArmory:
+SHLI CopperSword SteelSword CopperLance SteelLance Javelin CopperAxe SteelAxe HandAxe CopperBow SteelBow BronzeLongbow IronLongbow
+ALIGN 4
+
+RightArmory:
+SHLI BronzeSword IronSword Zanbato Armorslayer BronzeLance IronLance Horseslayer HeavySpear BronzeAxe IronAxe Halberd Hammer BronzeBow IronBow
+ALIGN 4
+
+RegularVendor:
+SHLI Fire Thunder Elfire Elthunder Lightning Shine Divine Redeem Flux Ensnare Luna Stalk Heal Aid Mend Vulnerary Concoction PureWater
+ALIGN 4
+
+ChoiceVendor:
+SHLI SilverSword SilverLance SilverAxe SilverBow Greatbow Wind Bolganone Bolting Fimbulvetr Donbettyr Nosferatu Fenrir Lucent Aura Warp Rescue Recover Secure Physic Elixir
+ALIGN 4
+
+TopHouse:
+VillageReward(MyrmidonGem)
+TILECHANGE 0x02
+NoFade
+ENDA
+
+MiddleHouse:
+VillageReward(Barrier)
+TILECHANGE 0x03
+NoFade
+ENDA
+
+BottomHouse:
+VillageReward(ArmsScroll)
+TILECHANGE 0x04
+NoFade
+ENDA
+
+/*
+CheckIfAllMagesDefeated:
+ENUF MageDefeatedID //Reset so we can run this event after the next mage is defeated
+
+//"Increase counter" (turn another event ID "on") based on how many mages have been defeated before this one
+CHECK_EVENTID MageCounter6ID
+IFEQ 0x1 0xC 0x0
+	CHECK_EVENTID MageCounter5ID
+	IFEQ 0x3 0xC 0x0 
+		CHECK_EVENTID MageCounter4ID
+		IFEQ 0x5 0xC 0x0
+			CHECK_EVENTID MageCounter3ID
+			IFEQ 0x7 0xC 0x0
+				CHECK_EVENTID MageCounter2ID
+				IFEQ 0x9 0xC 0x0
+					CHECK_EVENTID MageCounter1ID
+					IFEQ 0xB 0xC 0x0
+						ENUT MageCounter1ID
+					GOTO 0xC
+					LABEL 0xB
+						ENUT MageCounter2ID
+					LABEL 0xC
+				GOTO 0xA
+				LABEL 0x9
+					ENUT MageCounter3ID
+				LABEL 0xA
+			GOTO 0x8
+			LABEL 0x7
+				ENUT MageCounter4ID
+			LABEL 0x8
+		GOTO 0x6
+		LABEL 0x5
+			ENUT MageCounter5ID
+		LABEL 0x6
+	GOTO 0x4
+	LABEL 0x3
+		ENUT MageCounter6ID
+	LABEL 0x4
+GOTO 0x2
+LABEL 0x1
+	CHECK_EVENTID MageBossGoneID
+	IFNE 0xD 0xC 0x0
+		CALL EndingScene
+		ENDB
+	LABEL 0xD
+LABEL 0x2
+NoFade
+ENDA
+*/
+
+HorseScaredAway:
+NoFade
+ENDA
+
+AdvanceGuardCounter:
+ENUF GuardDefeatedID //reset so this event can be run again
+CHECK_EVENTID GuardCounter1ID
+IFEQ 0x1 0xC 0x0
+	ENUT GuardCounter1ID
+GOTO 0x2
+LABEL 0x1
+	ENUT GuardCounter2ID
+LABEL 0x2
+NoFade
+ENDA
+
+EndingScene:
+
+TestingNewHaydenSkip: //still in EndingScene
+WM_LOADLOCATION2 0x0 0x0 0x0 //Might as well load Border Mulan here (optional)
+WM_LOADLOCATION2 0x0 0x1 0x0 //Like CREATENEXTDESTINATION except silent and instant
+WM_SETDESTINATION 0x0 0x1 0x0
+_0xA640 0x0 0x0 0x01       //like MOVESPRITETO except silent and instant
+SKIPWN
+
+ASMC PostMapFatigueFunctions
+
+#ifdef TESTING_CHAPTER_TRANSITION
+	MNC2 Ch_1
+#else
+	MoveToChapter(Ch_2)
+#endif
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

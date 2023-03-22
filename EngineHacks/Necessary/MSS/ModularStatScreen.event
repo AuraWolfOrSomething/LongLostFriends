@@ -1,0 +1,755 @@
+#ifndef MODULAR_STAT_SCREEN
+#define MODULAR_STAT_SCREEN
+
+// Modular Stat Screen.
+// hack by circleseverywhere
+
+// Skill System Stat Screen by circleseverywhere with additions by Tequila, and probably more people too
+
+#ifdef _FE8_
+
+  #define Skl_Arrow_X 0x78
+  #define Skl_Arrow_Y 0x38
+  #define Spd_Arrow_X 0x78
+  #define Spd_Arrow_Y 0x48
+  #define Trv_Icon_X 0xB8
+  #define Trv_Icon_Y 0x6E
+  
+  #include "DisplayGrowthsOptions/DisplayGrowthsOptions.event"
+ 
+  PUSH
+    ORG 0x205b24 //24 for stat screen
+      POIN MSS_page1|1 MSS_page2|1 MSS_page3|1 //MSS_page4|1
+
+    ORG $88690
+      BYTE 3 //make 4 pages
+
+    /*
+	ORG $88650
+      POIN NewPageNameGraphic
+
+    ORG $87f38
+      POIN NewPageNameLayout
+
+    ORG $87f3c
+      POIN NewPageNameTiles
+
+    ORG $87f40
+      POIN NewPageNamePalette
+	  */
+
+    ORG $889d0
+      SHORT $e010 //Temporary r-text fix to prevent freezing
+
+	ORG $889f2  
+      //SHORT $BD30
+      //BL(RText_Page4_ladder) //this has to be in bl range somewhere
+
+    // Make all the arrows line up with the stats and stuff
+
+    ORG $883C0
+      BYTE Skl_Arrow_X 0x20 Skl_Arrow_Y
+ 
+    ORG $883CA
+      BYTE Spd_Arrow_X 0x20 Spd_Arrow_Y
+
+    ORG $883F6
+      BYTE Trv_Icon_X 0x21 Trv_Icon_Y
+
+    ORG $883B4
+      jumpToHack(Rescue_Arrows)
+
+    // Display growths hack
+
+    #ifdef Display_Growths_Toggle
+      ORG $8888C
+        BYTE 0x82
+    #endif
+  
+    ORG $88896
+      SHORT 0x46C0
+      jumpToHack(Button_Branch)
+  
+    // Remember whether we were looking at growths or stats
+
+    ORG $8895C //Loads byte to store 1 before stat screen struct
+      callHack_r1(Load_Page)
+
+    ORG $888BC //Stores byte to store 1 before stat screen struct
+      callHack_r3(Store_Page)
+
+    // Display an R-button text about pressing Select, since I can't seem to fit it nicely, and make that the default
+
+    ORG $889D8
+      POIN PersonalDataRText
+
+    // HP name color
+
+    ORG $86ED4
+      callHack_r3(HP_Name_Color)
+
+    /*
+	ORG $2BA28
+      jumpToHack(Write_Growths_To_Battle_Struct)
+	*/
+
+    ORG $2B9C4
+      jumpToHack(Enemy_Autolevel)
+
+    ORG $17E98
+      callHack_r3(New_Unit_Exp)
+      SHORT 0xE005
+	  
+	#ifdef ENABLE_PERSONAL_INFO
+	
+	  ORG $88690
+        jumpToHack(PageNumberCheck)	  
+		
+	#endif // ENABLE_PERSONAL_INFO
+
+    ORG $087184
+
+      // This is Vanilla Stat Screen Page
+      // This is now free (because unused) space
+      // We'll use this for stuff that needs to
+      // be in BL range
+
+	/*RText_Page4_ladder:
+      // page 4 helptext hook
+      #incbin "asm/rtext_page4.dmp"
+      POIN RText_Page4 //first help text that will appear on page 4
+	  */
+
+  POP
+  
+  ALIGN 4
+  MSS_page1:
+    #ifdef LEADERSHIP_STARS
+        #incbin "asm/mss_page1_skills_leadership.dmp"
+		POIN SkillIcons
+		POIN Skill_Getter
+		POIN SkillTester
+		WORD SaviorID
+		WORD CelerityID
+		WORD SS_SkillsText
+		WORD SS_TalkText
+		WORD Growth_Options
+		POIN Growth_Getter_Table
+		POIN Get_Palette_Index
+		POIN GetLeadershipStarCount
+	#endif //LEADERSHIP_STARS
+	
+	#ifdef BIORHYTHM
+		#incbin "asm/mss_page1_skills_biorhythm.dmp"
+		POIN SkillIcons
+		POIN Skill_Getter
+		POIN SkillTester
+		WORD SaviorID
+		WORD CelerityID
+		WORD SS_SkillsText
+		WORD SS_TalkText
+		WORD Growth_Options
+		POIN Growth_Getter_Table
+		POIN Get_Palette_Index		
+		WORD SS_BiorhythmText
+		POIN BiorhythmNameGetter
+	#endif //BIORHYTHM
+    #incbin "asm/mss_page1_LLF.dmp"
+    POIN SkillIcons
+    POIN Skill_Getter
+    POIN SkillTester
+    WORD SaviorID
+    WORD CelerityID
+    WORD SS_SkillsText
+    WORD SS_TalkText
+    WORD Growth_Options
+    POIN Growth_Getter_Table
+    POIN Get_Palette_Index
+	POIN CharacterCapModifierTable
+
+	
+  
+  ALIGN 4
+  MSS_page2:
+    #incbin "asm/mss_page2_LLF.dmp"
+	POIN Page2StatBoxSetup
+	
+		AttackSpeedTextLabelLink:
+		SHORT 0x0504
+		SHORT 0
+	
+		Page2StatBoxSetup:
+		//AS
+		WORD 0x02003CDC 0x02003FF0 //where the text will be
+		BYTE 3 6 0 0
+		POIN AttackSpeedTextLabelLink //pointer to text id
+		
+		//Atk
+		WORD 0x02003CBC 0x02004070 //where the text will be
+		BYTE 3 6 0 0
+		POIN 0xA01198 //pointer to text id
+		
+		//Hit
+		WORD 0x02003CC4 0x020040F0 //where the text will be
+		BYTE 3 6 0 0
+		POIN 0xA0119C //pointer to text id
+		
+		//Range
+		WORD 0x02003CB4 0x02003FFE //where the text will be
+		BYTE 3 6 0 0
+		POIN 0xA01194 //pointer to text id
+		
+		//Crit
+		WORD 0x02003CCC 0x0200407E //where the text will be
+		BYTE 3 6 0 0
+		POIN 0xA011A0 //pointer to text id
+		
+		//Avoid
+		WORD 0x02003CD4 0x020040FE //where the text will be
+		BYTE 3 6 0 0
+		POIN 0xA011A4 //pointer to text id
+		
+		//Seperator
+		WORD 0 0 0 0
+	
+
+  ALIGN 4
+  MSS_page3:
+    //#incbin "asm/mss_page3_original.dmp"
+	#incbin "asm/mss_page3_LLF.dmp"
+	POIN CheckIfRecruitOrFatigue
+	WORD SS_FatigueText
+	POIN MSSFatigueGetter
+	WORD SS_RestedBonusThresholdText
+	POIN MSSRestedBonusThresholdGetter
+	WORD SS_FatigueRestoredText
+	POIN MSSFatigueRestoredGetter
+	WORD SS_FatigueUndeployedChapterText
+	POIN MSSFatigueUndeployedChapterGetter
+	WORD McVicar
+	POIN McVicarProgressTracking
+	WORD 0x02003D4C
+	POIN 0x4B0C
+
+  #ifdef ENABLE_PERSONAL_INFO
+  
+	ALIGN 4
+	//this isn't used anymore
+	MSS_page4:
+      #incbin "asm/mss_page4_LLF.dmp"
+	  POIN PersonalDataTable
+	  WORD SS_FatigueText
+	  POIN MSSFatigueGetter
+	  WORD SS_RestedBonusThresholdText
+	  POIN MSSRestedBonusThresholdGetter
+	  WORD SS_FatigueRestoredText
+	  POIN MSSFatigueRestoredGetter
+	  WORD SS_FatigueUndeployedChapterText
+	  POIN MSSFatigueUndeployedChapterGetter
+	  
+	ALIGN 4
+    PageNumberCheck:
+      #include "asm/mss_threepageconditional.lyn.event"
+	  POIN PersonalDataTable
+  
+  #else // ENABLE_PERSONAL_INFO
+  
+    /*
+	ALIGN 4
+    MSS_page4:
+      #incbin "asm/mss_page4.dmp"
+	
+    ALIGN 4
+    TxtData0x0D4B:
+      String("Donate to Circles")
+      BYTE 0
+
+    setText(0x0D4B,TxtData0x0D4B)
+	*/
+  
+  #endif // ENABLE_PERSONAL_INFO
+
+/*
+  ALIGN 4
+  NewPageNameGraphic:
+    //#incext Png2Dmp "asm/pagenamegraphic.png" --lz77
+    #incbin "asm/pagenamegraphic.dmp"
+
+  ALIGN 4
+  NewPageNameLayout:
+    POIN $a008bc $a008d0 $a008de $a008bc
+
+  ALIGN 4
+  NewPageNameTiles:
+    SHORT 0 $40 $e $80
+
+  ALIGN 4
+  NewPageNamePalette:
+    #incbin "asm/palettecycler.dmp"
+	*/
+
+  ALIGN 4
+  Button_Branch:
+    #incbin "asm/ButtonBranch.dmp"
+
+  ALIGN 4
+  Load_Page:
+    #incbin "asm/LoadPage.dmp"
+    WORD Stat_Page_Ram_Loc
+
+  ALIGN 4
+  Store_Page:
+    #incbin "asm/StorePage.dmp"
+    WORD Stat_Page_Ram_Loc
+
+  ALIGN 4
+  Rescue_Arrows:
+    #incbin "asm/CheckRescueArrows.dmp"
+    POIN SkillTester
+    WORD SaviorID
+
+  ALIGN 4
+  Get_Palette_Index:
+    #incbin "asm/Get_Palette_Index.dmp"
+    POIN Growth_Color_Table
+
+  ALIGN 4
+  HP_Name_Color:
+    #incbin "asm/HPNameColor.dmp"
+    POIN New_Palettes
+    WORD Growth_Options
+    POIN Get_Hp_Growth
+    POIN Get_Palette_Index
+
+  /*
+  ALIGN 4
+  Write_Growths_To_Battle_Struct:
+    #incbin "asm/Write_Growths_To_Battle_Struct.dmp"
+    POIN Class_Level_Cap_Table Get_Hp_Growth Get_Str_Growth Get_Skl_Growth Get_Spd_Growth Get_Def_Growth Get_Res_Growth Get_Luk_Growth
+    WORD Growth_Options
+	POIN Growth_Getter_Table Get_Stat_Average
+  */
+  
+  
+
+/*
+  This has been moved to a CSV
+  Class_Level_Cap_Table:
+    #incbin "Display Growths Options/Class_Level_Cap_Table.dmp"
+*/
+  ALIGN 4
+  Enemy_Autolevel:
+    #incbin "asm/Enemy_Autolevel.dmp"
+    WORD Growth_Options
+
+  ALIGN 4
+  New_Unit_Exp:
+    #incbin "asm/New_Unit_Exp.dmp"
+    POIN Class_Level_Cap_Table
+
+  ALIGN 4
+  Growth_Color_Table:
+    #include "DisplayGrowthsOptions/GrowthColorsTable.event"
+
+  ALIGN 4
+  New_Palettes:
+    #include "DisplayGrowthsOptions/NewPalette.event"
+
+  /*
+
+  stat screen R menu is at 8a00b38
+  find by breaking on key press while R menu open
+
+  Each entry is 6 words
+  Pointer 1 (up)
+  POinter 2 (down)
+  POinter 3 (left)
+  Pointer 4 (right)
+  x,y,Txtid
+  Zero
+  (Optional Pointer for alternate text routine)
+
+  ST_Name:
+  WORD 0
+  POIN ST_Class
+  WORD 0
+  POIN ST_Luck
+  BYTE 0x18
+  BYTE 0x50
+  SHORT 0
+  WORD 0
+
+  */
+
+  //#include "EAstdlib.event"
+
+  #define RMenu(up,down,left,right,xcoord,ycoord,TID) "POIN up down left right;BYTE xcoord ycoord; SHORT TID; WORD 0 0;"
+  #define RMenu(up,down,left,right,xcoord,ycoord,TID,Getter) "POIN up down left right; BYTE xcoord ycoord; SHORT TID; POIN 0 Getter|1"
+  #define RMenu(up,down,left,right,xcoord,ycoord,SlotID,Looper,Getter) "POIN up down left right; BYTE xcoord ycoord; SHORT SlotID; POIN Looper|1 Getter|1"
+  
+  #define StatRMenu(up,down,left,right,xcoord,ycoord,SlotID,Getter) "POIN up down left right; BYTE xcoord ycoord; SHORT SlotID; POIN StatCapLooper|1 Getter|1"
+  #define CalcRMenu(up,down,left,right,xcoord,ycoord,SlotID) "POIN up down left right; BYTE xcoord ycoord; SHORT SlotID; POIN CalcLooper|1 CalcGetter|1"
+  
+  #define ST_Str ST_Pow
+
+  //#define NameDescGetter 0x88bd5
+  #define ClassDescGetter 0x88c01
+  //#define ConditionGetter 0x88a2d
+  #define StrMagGetter 0x88b09
+
+
+//----------------------------------
+//Page 1
+//----------------------------------
+  
+  PUSH // R menu
+    ORG 0xa00b38
+
+    ST_Name:
+      //RMenu(0,ST_Class,0,ST_Luck,0x18,0x50,0x0,NameDescGetter)
+      RMenu(0,ST_Class,0,ST_Spd,0x18,0x50,0x0,HelpBoxCurrentCharInfo)
+
+    ST_Class:
+      RMenu(ST_Name,ST_Level,0,ST_Def,0x6,0x68,0x6E8,ClassDescGetter)
+
+    ST_Level:
+      StatRMenu(ST_Class,ST_HP,0,ST_Exp,0x6,0x78,0,ClassCapGetter)
+
+    ST_Exp:
+      RMenu(ST_Class,ST_HP,ST_Level,ST_Res,0x26,0x78,0x543)
+
+    ST_HP:
+      StatRMenu(ST_Level,0,0,ST_Mov,0x6,0x88,0,UniversalCapGetter)
+
+    ST_Pow:
+      StatRMenu(ST_Cond,ST_Skl,ST_Name,ST_Skill1,0x66,0x28,1,ClassCapGetter)
+
+    ST_Skl:
+      StatRMenu(ST_Pow,ST_Spd,ST_Name,ST_Skill4,0x66,0x38,2,ClassCapGetter)
+
+    ST_Spd:
+      StatRMenu(ST_Skl,ST_Luck,ST_Name,ST_Con,0x66,0x48,3,ClassCapGetter)
+
+    ST_Luck:
+      StatRMenu(ST_Spd,ST_Def,ST_Class,ST_Aid,0x66,0x58,1,UniversalCapGetter)
+
+    ST_Def:
+      StatRMenu(ST_Luck,ST_Res,ST_Class,ST_Trv,0x66,0x68,4,ClassCapGetter)
+
+    ST_Res:
+      StatRMenu(ST_Def,ST_Mov,ST_Exp,ST_Affin,0x66,0x78,5,ClassCapGetter)
+
+    ST_Mov:
+      StatRMenu(ST_Res,0,ST_HP,ST_Talk,0x66,0x88,2,UniversalCapGetter)
+
+    ST_Affin:
+    #ifdef LEADERSHIP_STARS
+       RMenu(ST_Trv,ST_Cond,ST_Spd,0,0xa6,0x38,LeadRText)
+    #endif //LEADERSHIP_STARS
+	#ifdef BIORHYTHM
+	   RMenu(ST_Trv,ST_Cond,ST_Spd,0,0xa6,0x38,SS_BiorhythmRText)
+	#endif //BIORHYTHM
+	
+	//one that is currently used
+	   //RMenu(ST_Mov,0,ST_HP,ST_Talk,0x66,0x88,0x551,AffinityDescGetter)
+	   RMenu(ST_Trv,ST_Talk,ST_Res,0,0xA6,0x78,0x551,AffinityDescGetter)
+	
+	   
+  POP
+  
+  //the rest of these are here because space
+  
+  ALIGN 4
+  
+  ST_Skills:
+    RMenu(PersonalDataRText,ST_Skill1,ST_Cond,0,0xb6,0x18,SS_SkillsRText)
+
+  ST_Skill1:
+    RMenu(ST_Skills,ST_Skill4,ST_Pow,ST_Skill2,0xa6,0x28,0,RTextLoop,SkillDescGetter)
+
+  ST_Skill2:
+    RMenu(ST_Skills,ST_Skill5,ST_Skill1,ST_Skill3,0xbe,0x28,1,RTextLoop,SkillDescGetter)
+
+  ST_Skill3:
+    RMenu(ST_Skills,ST_Skill6,ST_Skill2,0,0xd6,0x28,2,RTextLoop,SkillDescGetter)
+
+  ST_Skill4:
+    RMenu(ST_Skill1,ST_Con,ST_Skl,ST_Skill5,0xa6,0x38,3,RTextLoop,SkillDescGetter)
+
+  ST_Skill5:
+    RMenu(ST_Skill2,ST_Con,ST_Skill4,ST_Skill6,0xbe,0x38,4,RTextLoop,SkillDescGetter)
+
+  ST_Skill6:
+    RMenu(ST_Skill3,ST_Con,ST_Skill5,0,0xd6,0x38,5,RTextLoop,SkillDescGetter)
+  
+  ST_Con:
+    StatRMenu(ST_Skill4,ST_Aid,ST_Spd,0,0xA6,0x48,3,UniversalCapGetter)
+  
+  ST_Aid:
+    RMenu(ST_Con,ST_Trv,ST_Luck,0,0xA6,0x58,0x54f)
+  
+  ST_Trv:
+    RMenu(ST_Aid,ST_Affin,ST_Def,0,0xA6,0x68,0x550)
+
+  ST_Cond:
+    //RMenu(ST_Trv,ST_Talk,ST_Mov,0,0xA6,0x78,0x552,ConditionGetter)
+    RMenu(PersonalDataRText,ST_Pow,ST_Name,ST_Skills,0x66,0x18,0,HelpBoxCurrentCondition)
+
+  ST_Talk:
+    RMenu(ST_Affin,0,ST_Mov,0,0xA6,0x88,SS_TalkRText)
+
+
+  #ifdef Display_Growths_Toggle
+    PersonalDataRText:
+      RMenu(0,ST_Cond,ST_Name,0,0x76,0x4,PersonalDataDesc1)
+  #else
+    PersonalDataRText:
+      RMenu(0,ST_Cond,ST_Name,0,0x76,0x4,PersonalDataDesc2)
+  #endif
+  
+  
+//----------------------------------
+//Page 2
+//----------------------------------
+
+  PUSH
+  
+  ORG 0xA00D14
+  ST_NamePg2:
+  //RMenu(0,ST_ClassPg2,0,ST_InventoryItem4,0x18,0x50,0x0,NameDescGetter)
+  RMenu(0,ST_ClassPg2,0,ST_InventoryItem4,0x18,0x50,0x0,HelpBoxCurrentCharInfo)
+	
+  ST_ClassPg2:
+  RMenu(ST_NamePg2,ST_LevelPg2,0,ST_AS,0x6,0x68,0x6E8,ClassDescGetter)
+
+  ST_LevelPg2:
+  StatRMenu(ST_ClassPg2,ST_HPPg2,0,ST_ExpPg2,0x6,0x78,0,ClassCapGetter)
+
+  ST_ExpPg2:
+  RMenu(ST_ClassPg2,ST_HPPg2,ST_LevelPg2,ST_Atk,0x26,0x78,0x543)
+  
+  //at 0xA00D84
+  ST_HPPg2:
+  StatRMenu(ST_LevelPg2,0,0,ST_Hit,0x6,0x88,0,UniversalCapGetter)
+  
+  //at 0xA00DA0
+  ST_InventoryItem1:
+  RMenu(0,ST_InventoryItem2,ST_NamePg2,0,0x68,0x18,0,0x88B40,StatScreen_HelpBoxCurrentItem)
+  
+  //at 0xA00DBC
+  ST_InventoryItem2:
+  RMenu(ST_InventoryItem1,ST_InventoryItem3,ST_NamePg2,0,0x68,0x28,1,0x88B40,StatScreen_HelpBoxCurrentItem)
+  
+  //at 0xA00DD8
+  ST_InventoryItem3:
+  RMenu(ST_InventoryItem2,ST_InventoryItem4,ST_NamePg2,0,0x68,0x38,2,0x88B40,StatScreen_HelpBoxCurrentItem)
+  
+  //at 0xA00DF4
+  ST_InventoryItem4:
+  RMenu(ST_InventoryItem3,ST_InventoryItem5,ST_NamePg2,0,0x68,0x48,3,0x88B40,StatScreen_HelpBoxCurrentItem)
+  
+  //at 0xA00E10
+  ST_InventoryItem5:
+  RMenu(ST_InventoryItem4,ST_AS,ST_NamePg2,0,0x68,0x58,4,0x88B40,StatScreen_HelpBoxCurrentItem)
+  
+  //at 0xA00E2C
+  ST_Atk:
+  CalcRMenu(ST_AS,ST_Hit,ST_ExpPg2,ST_Crit,0x76,0x78,3)
+  
+  //at 0xA00E48
+  ST_Hit:
+  CalcRMenu(ST_Atk,0,ST_HPPg2,ST_Avoid,0x76,0x88,4)
+  
+  //at 0xA00E64
+  ST_Range:
+  CalcRMenu(ST_InventoryItem5,ST_Crit,ST_AS,0,0xAE,0x68,5)
+  
+  //at 0xA00E80
+  ST_Crit:
+  CalcRMenu(ST_Range,ST_Avoid,ST_Atk,0,0xAE,0x78,6)
+  
+  //at 0xA00E9C
+  ST_Avoid:
+  CalcRMenu(ST_Crit,0,ST_Hit,0,0xAE,0x88,7)
+  
+  POP
+  
+  ST_AS:
+  CalcRMenu(ST_InventoryItem5,ST_Atk,ST_ClassPg2,ST_Range,0x76,0x68,2)
+  
+  
+
+//----------------------------------
+//Page 3
+//----------------------------------
+
+PUSH
+  
+  //Weapon Rank Changes
+  ORG 0xA00EB8
+  ST_NamePg3:
+    //RMenu(0,ST_ClassPg3,0,ST_Rank2,0x18,0x50,0x0,NameDescGetter)
+    RMenu(0,ST_ClassPg3,0,ST_Rank2,0x18,0x50,0x0,HelpBoxCurrentCharInfo)
+	
+  ST_ClassPg3:
+    RMenu(ST_NamePg3,ST_LevelPg3,0,ST_Rank4,0x6,0x68,0x6E8,ClassDescGetter)
+
+  ST_LevelPg3:
+  StatRMenu(ST_ClassPg3,ST_HPPg3,0,ST_ExpPg3,0x6,0x78,0,ClassCapGetter)
+
+  ST_ExpPg3:
+  RMenu(ST_ClassPg3,ST_HPPg3,ST_LevelPg3,ST_Rank5,0x26,0x78,0x543)
+
+  ST_HPPg3:
+  StatRMenu(ST_LevelPg3,0,0,ST_Rank6,0x6,0x88,0,UniversalCapGetter)
+  
+  ST_Fatigue:
+	RMenu(0,ST_FatigueRestored,ST_NamePg3,ST_RestedBonusThreshold,0x66,0x18,4,StatCapLooper,RecruitOrUniCapGetter)
+	
+  ST_RestedBonusThreshold:
+	RMenu(0,ST_UndeployedChapterCount,ST_Fatigue,0,0xA6,0x18,0,RecruitOrFatigueRelatedLooper,CalcGetter)
+
+  ST_FatigueRestored:
+	RMenu(ST_Fatigue,ST_Rank1,ST_NamePg3,ST_UndeployedChapterCount,0x66,0x28,1,RecruitOrFatigueRelatedLooper,CalcGetter)
+
+  ST_UndeployedChapterCount: 
+	RMenu(ST_RestedBonusThreshold,ST_Support1,ST_FatigueRestored,0,0xA6,0x28,5,RecruitOrFatigueRelatedLooper,UniversalCapGetter)
+	
+  ST_Rank1:
+	RMenu(ST_FatigueRestored,ST_Rank2,ST_NamePg3,ST_Support1,0x68,0x38,0,CheckIfMoreRanks,NewRankGetter)
+	
+  POP
+  
+  ALIGN 4
+  
+  ST_Rank2:
+	RMenu(ST_Rank1,ST_Rank3,ST_NamePg3,ST_Support2,0x68,0x48,1,CheckIfMoreRanks,NewRankGetter)
+	
+  ST_Rank3:
+    RMenu(ST_Rank2,ST_Rank4,ST_NamePg3,ST_Support3,0x68,0x58,2,CheckIfMoreRanks,NewRankGetter)
+  
+  ST_Rank4:
+	RMenu(ST_Rank3,ST_Rank5,ST_ClassPg3,ST_Support4,0x68,0x68,3,CheckIfMoreRanks,NewRankGetter)
+	
+  ST_Rank5:
+    RMenu(ST_Rank4,ST_Rank6,ST_ExpPg3,ST_Support5,0x68,0x78,4,CheckIfMoreRanks,NewRankGetter)
+  
+  ST_Rank6:
+	RMenu(ST_Rank5,0,ST_HPPg3,ST_Support6,0x68,0x88,5,CheckIfMoreRanks,NewRankGetter)
+	
+  ST_Support1:
+    RMenu(ST_UndeployedChapterCount,ST_Support2,ST_Rank1,0,0xA0,0x38,0,CheckIfMoreSupports,NewSupportGetter)
+	
+  ST_Support2:
+    RMenu(ST_Support1,ST_Support3,ST_Rank2,0,0xA0,0x48,1,CheckIfMoreSupports,NewSupportGetter)
+	
+  ST_Support3:
+    RMenu(ST_Support2,ST_Support4,ST_Rank3,0,0xA0,0x58,2,CheckIfMoreSupports,NewSupportGetter)
+	
+  ST_Support4:
+    RMenu(ST_Support3,ST_Support5,ST_Rank4,0,0xA0,0x68,3,CheckIfMoreSupports,NewSupportGetter)
+	
+  ST_Support5:
+    RMenu(ST_Support4,ST_Support6,ST_Rank5,0,0xA0,0x78,4,CheckIfMoreSupports,NewSupportGetter)
+	
+  ST_Support6:
+    RMenu(ST_Support5,0,ST_Rank6,0,0xA0,0x88,4,CheckIfMoreSupports,NewSupportGetter)
+	
+  /*
+  ST_Rank7:
+    RMenu(ST_Rank6,ST_Rank8,ST_NamePg3,ST_Support7,0x68,0x98,6,CheckIfMoreRanks,NewRankGetter)
+  
+  ST_Rank8:
+	RMenu(ST_Rank7,0,ST_NamePg3,ST_Support5,0x68,0xA8,7,CheckIfMoreRanks,NewRankGetter)
+	
+  ST_Support7:
+    RMenu(ST_Support6,ST_Rank8,ST_Rank7,0,0xA0,0x98,4,CheckIfMoreSupports,NewSupportGetter)
+  */
+  ALIGN 4
+
+
+
+
+//----------------------------------
+//Page 4
+//----------------------------------
+  
+/*
+#ifdef ENABLE_PERSONAL_INFO
+  
+  ST_Name4:
+    RMenu(0,ST_Class4,0,ST_FatigueRestored,0x18,0x50,0x0,NameDescGetter)
+
+  ST_Class4:
+    RMenu(ST_Name4,ST_Level4,0,ST_FatigueRestored,0x6,0x68,0x6E8,ClassDescGetter)
+
+  ST_Level4:
+    StatRMenu(ST_Class4,ST_HP4,0,ST_Exp4,0x6,0x78,0,ClassCapGetter)
+
+  ST_Exp4:
+    RMenu(ST_Class4,ST_HP4,ST_Level4,ST_FatigueRestored,0x26,0x78,0x543)
+
+  ST_HP4:
+    StatRMenu(ST_Level4,0,0,ST_FatigueRestored,0x6,0x88,0,UniversalCapGetter)
+
+  RText_Page4:
+  ST_Fatigue:
+	StatRMenu(0,ST_FatigueRestored,0,ST_RestedBonusThreshold,0x66,0x18,2,UniversalCapGetter)
+	//RMenu(0,ST_FatigueRestored,0,ST_RestedBonusThreshold,0x66,0x18,SS_FatigueHelpText)
+	
+	
+  ST_RestedBonusThreshold:
+    CalcRMenu(0,ST_UndeployedChapterCount,ST_Fatigue,0,0xA6,0x18,0)
+	//RMenu(0,ST_UndeployedChapterCount,ST_Fatigue,0,0xA6,0x18,SS_RestedBonusThresholdHelpText)
+	
+  ST_FatigueRestored:
+    CalcRMenu(ST_Fatigue,ST_Name4,0,ST_UndeployedChapterCount,0x66,0x28,1)
+	//RMenu(ST_Fatigue,ST_Name4,0,ST_UndeployedChapterCount,0x66,0x28,SS_FatigueRestoredHelpText)
+
+  ST_UndeployedChapterCount: 
+    StatRMenu(ST_RestedBonusThreshold,ST_Name4,ST_FatigueRestored,0,0xA6,0x28,3,UniversalCapGetter)
+    //RMenu(ST_RestedBonusThreshold,ST_Name4,ST_FatigueRestored,0,0xA6,0x28,SS_FatigueUndeployedChapterHelpText)
+	
+  ST_Likes:
+    RMenu(0,ST_Dislikes,ST_Name4,ST_Height,0x66,0x18,LikesDesc)
+	
+  ST_Dislikes:
+    RMenu(ST_Likes,ST_Age,ST_Name4,ST_Height,0x66,0x38,DislikesDesc)
+	
+  ST_Age:
+    RMenu(ST_Dislikes,0,ST_Class4,ST_Height,0x66,0x58,AgeDesc)
+	
+  ST_Height:
+    RMenu(ST_Dislikes,0,ST_Age,0,0xa6,0x58,HeightDesc)
+	
+
+#else // ENABLE_PERSONAL_INFO
+
+  RText_Page4:
+
+  ST_Name4:
+    RMenu(0,ST_Class4,0,ST_Donate,0x18,0x50,0x0,NameDescGetter)
+
+  ST_Class4:
+    RMenu(ST_Name4,ST_Level4,0,ST_Donate,0x6,0x68,0x6E8,ClassDescGetter)
+
+  ST_Level4:
+    RMenu(ST_Class4,ST_HP4,0,ST_Exp4,0x6,0x78,0x542)
+
+  ST_Exp4:
+    RMenu(ST_Class4,ST_HP4,ST_Level4,ST_Donate,0x26,0x78,0x543)
+
+  ST_HP4:
+    RMenu(ST_Level4,0,0,ST_Donate,0x6,0x88,0x544)
+
+  ST_Donate:
+    RMenu(0,0,ST_Name4,0,0x86,0x48,DonateURL)
+	
+#endif // ENABLE_PERSONAL_INFO
+*/
+
+#else // _FE8_
+  ERROR Modular Stat Screen hack is for FE8
+#endif // _FE8_
+
+#endif // MODULAR_STAT_SCREEN

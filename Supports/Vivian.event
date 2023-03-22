@@ -1,0 +1,13 @@
+VivianSupportList:
+SupportList(Vivian,VivianSupportList)
+
+SupportPartner(Myra,10,30)
+SupportPartner(Lorrand,10,20)
+//SupportPartner(Pyrus,80,40)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(2)

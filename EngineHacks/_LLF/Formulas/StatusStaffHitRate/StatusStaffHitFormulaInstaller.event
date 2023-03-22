@@ -1,0 +1,6 @@
+PUSH
+
+ORG 0x2CCDC
+SHORT 0x2064 0x4770 //mov r0, #100; bx r14
+
+POP

@@ -1,0 +1,264 @@
+
+## BattleQuoteStanrel
+[OpenMidLeft][LoadStanrel]
+Think you're tough, taking[N]
+my boys out?[AN]
+I won't even break a sweat[N]
+sweat crushing you![A][ClearFace]
+[X]
+
+## DeathQuoteStanrel
+[OpenMidLeft][LoadStanrel]
+Just my[Beat] luck[Beat][AN]
+Gah[Beat][A][ClearFace]
+[X]
+
+## BattleQuoteBruce
+[OpenMidLeft][LoadBruce]
+The Bandit King may be away,[AN]
+but even that won't[N]
+guarantee your victory.[AN]
+My Elfire tome will see to that![A][ClearFace]
+[X]
+
+## BattleQuoteBruceZoren
+[OpenMidLeft][LoadBruce]
+Ah, another mage![AN]
+I forgot I wasn't the only[N]
+intelligent person alive.[AN]
+Well, just be glad that some[N]
+imbecile isn't killing you.[A][ClearFace]
+
+[OpenMidRight][LoadZoren]
+I didn't think I'd find someone[N]
+so stuck up leading bandits.[AN]
+Now I've got a great target[N]
+for my pent-up frustration.[A][ClearFace]
+[X]
+
+## BattleQuoteBruceDavis
+[OpenMidLeft][LoadBruce]
+So, this is where you wound up.[AN]
+Thought you lost your nerve.[A][ClearFace]
+
+[OpenMidRight][LoadDavis]
+I never intended on helping you[N]
+commit your little crimes.[AN]
+Just needed to do some[N]
+scouting, you know?[AN]
+Get a good look at the place[N]
+and all that.[A][ClearFace]
+
+[OpenMidLeft][LoadBruce]
+Well, I hope you like our[N]
+fortress,[AN]
+because this is where you'll[N]
+be buried![A][ClearFace]
+[X]
+
+## BattleQuoteBruceArlett
+[OpenMidLeft][LoadBruce]
+Think you're free now, huh?[AN]
+Since you couldn't sit still,[N]
+it's time for me to punish you![A][ClearFace]
+
+[OpenMidLeft][LoadArlett]
+Good luck with that, buddy.[A][ClearFace]
+[X]
+
+## DeathQuoteBruce
+[OpenMidLeft][LoadBruce]
+No[Beat][AN]
+This can't be happen[TMM]--[TMM][A][ClearFace]
+[X]
+
+
+## BattleQuoteTalon
+[OpenMidLeft][LoadTalon]
+I am the Bandit King![AN]
+I won't be backing back[N]
+so easily![A][ClearFace]
+[X]
+
+## BattleQuoteTalonMason
+[OpenMidLeft][LoadTalon]
+A survivor?[AN]
+Impressive.[AN]
+Should've escaped when you[N]
+had the chance, though.[A][ClearFace]
+
+[OpenMidRight][LoadMason]
+No proper knight would leave[N]
+vulnerable civilians behind![AN]
+And no proper knight shall[N]
+lose to common criminals![A][ClearFace]
+
+[OpenMidLeft][LoadTalon]
+I'm no mere "common criminal",[N]
+fool![AN]
+You're about to learn just[N]
+how sharp my axe is![A][ClearFace]
+[X]
+
+## DeathQuoteTalon
+[OpenMidLeft][LoadTalon]
+So[Beat]this is the end[Beat]of the line[Beat][AN][ToggleSmile]
+Ha ha[Beat]ha[Beat][A][ClearFace]
+[X]
+
+## BattleQuoteAugustus
+[OpenMidLeft][LoadAugustus]
+No one has ever escaped[N]
+under my watch.[AN]
+That record shall be kept[N]
+in one piece![A][ClearFace]
+[X]
+
+## BattleQuoteAugustusVivian
+[OpenMidLeft][LoadAugustus]
+[Beat]I've seen you before.[AN]
+Who are you[Beat]or where[N]
+were we?[AN]
+Why won't my head cooperate[N]
+with me?[A][ClearFace]
+
+[OpenMidRight][LoadVivian]
+This seems very[N]
+straightforward to me.[AN]
+Whatever you're trying to[N]
+remember doesn't exist.[AN]
+I am no one special.[A][ClearFace]
+
+[OpenMidLeft][LoadAugustus]
+[HalfCloseEyes]Now I know you're[N]
+hiding something.[A][ClearFace]
+
+[OpenMidRight][LoadVivian]
+[Beat]It's time to move on.[AN]
+You're an obstacle to my[N]
+new future.[A][ClearFace]
+[X]
+
+## DeathQuoteAugustus
+[OpenMidLeft][LoadAugustus]
+Ugh[Beat] I've been[Beat]bested[Beat][A][ClearFace]
+[X]
+
+## BattleQuoteRylan
+[OpenMidRight][LoadRylan]
+It's either you or me.[AN]
+And I don't intend on[N]
+falling here![A][ClearFace]
+[X]
+
+## BattleQuoteCalder
+[OpenMidLeft][LoadCalder]
+Artus didn't think we'd have[N]
+this much trouble so soon.[AN]
+Regardless, I don't intend[N]
+on surrendering.[AN][MoveMidLeft]
+En garde![A][ClearFace]
+[X]
+
+## BattleQuoteCalderZoren
+[OpenMidLeft][LoadCalder]
+You look like a tactician,[AN]
+and yet you're trying to[N]
+cross blades with me.[AN][AN]
+Can you truly fight?[A][ClearFace]
+
+[OpenMidRight][LoadZoren]
+Why don't you find out[N]
+for yourself?[A][ClearFace]
+
+[OpenMidLeft][LoadCalder][ToggleSmile][MoveMidLeft]
+Gladly![A][ClearFace]
+[X]
+
+## BattleQuoteCalderIris
+[OpenMidLeft][LoadCalder]
+Ah, an experienced sword[N]
+fighter.[AN]
+This is exactly the kind of[N]
+duel I was hoping for.[A][ClearFace]
+
+[OpenMidRight][LoadIris]
+How fortunate for you.[AN]
+Very few look forward to[N]
+being cut down.[A][ClearFace]
+
+[OpenMidLeft][LoadCalder][MoveMidLeft]
+Ouch![AN]
+Your words are sharp, ma'am.[AN]
+Don't worry, my blade will[N]
+match their ferocity![A][ClearFace]
+[X]
+
+## DeathQuoteCalder
+[OpenMidLeft][LoadCalder][ToggleSmile]
+Impressive[Beat] A well-fought[N]
+battle[Beat] in my prime[Beat][AN][HalfCloseEyes]
+What's not[Beat]to love[Beat]?[A][ClearFace]
+[X]
+
+## BattleQuoteArtus
+[OpenMidLeft][LoadArtus]
+Look who's here to save[N]
+the day.[AN]
+Fancy yourself a hero,[N]
+don't you?[AN]
+Imbecile.[AN]
+I may be Artus "the Devious",[AN]
+but I know of no trick that'll[N]
+save you from my inferno![A][ClearFace]
+[X]
+
+## BattleQuoteArtusZoren
+[OpenMidLeft][LoadArtus]
+Wasn't expecting to see an[N]
+Argustian strategist out here.[AN]
+Even so, that hardly changes[N]
+my plan.[AN]
+Are you ready to die?[A][ClearFace]
+
+[OpenMidRight][LoadZoren]
+Not today.[AN]
+What does your plan think[N]
+of that?[A][ClearFace]
+
+[OpenMidLeft][LoadArtus]
+Cheeky.[AN]
+However, you're still hopelessly[N]
+outmatched.[AN]
+And my magic doesn't care for[N]
+your words![A][ClearFace]
+[X]
+
+## BattleQuoteArtusMcVicar
+[OpenMidLeft][LoadArtus]
+You can't be[Beat][AN][MoveMidLeft]
+W-where did you come from?![AN]
+Why me?![AN]
+Don't you have better[TMM]--[TMM][A][ClearFace]
+
+[OpenMidRight][LoadMcVicar]
+Awfully chatty for a corpse.[AN]
+You need to get used to[N]
+talking less.[A][ClearFace]
+[X]
+
+## DeathQuoteArtus
+[OpenMidLeft][LoadArtus]
+But[Beat] I planned[Beat] everything[Beat][N]
+perfectly[Beat][A][ClearFace]
+[X]
+
+## DeathQuoteArtusMcVicar
+[OpenMidLeft][LoadArtus]
+But[Beat] I planned[Beat] everything[Beat][N]
+perfectly[Beat][A][ClearFace]
+
+[OpenMidRight][LoadMcVicar]
+Sturdier than I expected.[AN]
+Nevertheless, a feeble effort.[A][ClearFace]
+[X]

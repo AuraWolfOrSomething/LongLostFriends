@@ -1,0 +1,6 @@
+## ReorganizeName
+Reorg[X]
+
+## ReorganizeDescription
+Move an item to[N]
+the top of inventory.[X]

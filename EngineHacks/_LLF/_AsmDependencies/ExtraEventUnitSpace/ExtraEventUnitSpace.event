@@ -1,0 +1,48 @@
+
+PUSH
+
+ORG 0x16540
+#include "asm/NewMakeItem.lyn.event"
+ALIGN 4
+
+ORG 0x17D3C
+#include "asm/NewPopulateUnitFromDefinition.lyn.event"
+ALIGN 4
+
+ORG 0x17E34
+SHORT 0xB5F0 //push {r4-r7,r14}
+
+ORG 0x17E44
+#include "asm/LoadUnitStatsRewrite.lyn.event"
+ALIGN 4
+
+ORG 0x17EB4
+SHORT 0xBCF0 //pop {r4-r7}
+
+
+
+POP
+
+NewPopulateUnitFunctionList:
+POIN NewPopulateUnitLevelAndPosition|1
+POIN NewPopulateUnitGorgonEgg|1
+POIN NewPopulateUnitInventory|1
+POIN 0x3C258|1 //SetUnitAiFromDefinition
+POIN DebuffInitialization|1
+POIN StoreGenericSkill|1
+WORD 0 //End of the list
+
+#include "asm/NewPopulateUnitInventory.lyn.event"
+ALIGN 4
+
+#include "asm/GenerateInventoryForUnit.lyn.event"
+ALIGN 4
+
+#include "asm/EventUnitItemUses.lyn.event"
+ALIGN 4
+
+#include "asm/StoreGenericSkill.lyn.event"
+ALIGN 4
+
+NoExpandedEventUnitEffect:
+WORD 0 0

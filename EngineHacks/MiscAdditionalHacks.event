@@ -1,0 +1,216 @@
+PUSH
+
+//Monster Weapon stat display (credit Brendor, circles for buildfile version)
+
+//currently, this will use text id 0x026B as the weapon type for monster weapons
+ORG 0x16E20
+BYTE 0x30 0xB5 0x0B 0x28 0x04 0xD0 0x09 0x49 0x80 0x00 0x08 0x18 0x00 0x68 0x06 0xE0 0x80 0x20 0x80 0x00 0x6B 0x30 0x02 0xE0 0x80 0x00 0x68 0x44 0x00 0x68 0xF3 0xF7 0xFF 0xF9 0xC0 0x46
+
+ORG 0x1E7FC
+BYTE 0x0C
+
+/* Not needed since CheckTypeOfHelpText handles this
+ORG 0x892F2
+BYTE 0x06
+*/
+
+ORG 0x24670
+jumpToHack(ShowHealAmount)
+
+ORG 0x2AD68
+jumpToHack(WeaponRankHack)
+
+ORG 0xA20164
+POIN (prFixedDifficulty+1)
+
+//Autolevel units with a weapon that has a lock and a rank (credit Datagne)
+ORG 0x17F88
+BYTE 0x00 0x21
+
+//Snag hp is the same as chapter's damaged wall hp
+ORG 0x2E3D8
+SHORT 0xD004 //beq (0x2E3E4)
+
+//Thracia Item Trading (credit aera)
+ORG 0x22F50
+SHORT 0x46C0
+
+//Trading can be canceled out of (credit area)
+//ORG 0x22F50
+//SHORT 0x1C3F 0x1C
+//ORG 0x2D772
+//BYTE 0x1D
+
+
+/*
+start of trading usability check is 08022F50
+target checking is 08022F88?
+080252d0 MakeTradeTargetList
+0802521c TryAddUnitToTradeTargetList
+
+messing with trade for a possible skill
+ORG 0x252F0
+
+080252d0 MakeTradeTargetList
+- ClearMapWith
+- ForEachAdjacentUnit
+- GetTargetListSize
+- GetUnit
+- BXR7
+- GetTargetListSize
+- GetTarget
+- GetTarget
+
+08024f70 ForEachAdjacentUnit
+- InitTargets
+- MapAddInRange
+- MapAddInRange
+- mov r0, r6 -> ForEachUnitInRange
+
+0802506c ForEachUnitInMagBy2Range
+- InitTargets
+- GetUnitMagBy2Range -> mov r2, r0
+- MapAddInRange
+- MapAddInRange
+- mov r0, r8 -> ForEachUnitInRange
+
+08025eb0 MakeTargetListForRangedHeal
+- InitTargets
+- ClearMapWith
+- GetUnitMagBy2Range
+- MapAddInRange
+- ldr r0 -> ForEachUnitInRange
+*/
+
+/*
+//Thracia Rescue Trading (credit MintX)
+ORG 0x229A8
+SHORT 0x1C00
+
+ORG 0x22A10
+SHORT 0x1C00
+*/
+
+//Extra -> Support Conversations option is always available (credit 7743)
+ORG 0xAB93A
+SHORT 0
+
+//Melee and Magic fix (credit Hextator, Tequila, and 7743)
+ORG 0x18A58
+#incbin "Necessary/MeleeAndMagicFix/MeleeAndMagicFix_FE8U.dmp"
+
+//Speed up cursor on AI's target (credit Vesly)
+ORG 0x39EAE
+BYTE 30 //vanilla is 45
+
+//Speed up "got item/gold" popup (credit Vesly)
+ORG 0x114FA
+BYTE 75 //vanilla is 96
+ORG 0x1166C
+BYTE 75 //vanilla is 96
+
+//Faster battle map anim rounds (credit Vesly)
+ORG 0x9A4A06
+BYTE 20 //vanilla is 30
+ORG 0x9A4A16
+BYTE 20 //vanilla is 30
+ORG 0x9A4A26
+BYTE 20 //vanilla is 30
+ORG 0x9A4A36
+BYTE 7 //vanilla is 10
+ORG 0x9A4A46
+BYTE 20 //vanilla is 30
+
+//Double speed of vulnerary animation (credit 7743)
+ORG 0x7BCE2 
+BYTE 0x08 0x34 0x24 0x04 0x24 0x0C 0x00 0x00 0x00 0x00 0x8c 0x42 0x09 0xDA
+
+//Start anims off battle faster
+ORG 0x9A356A
+BYTE 10 //vanilla is 15
+
+
+POP
+
+
+#include "ExternalHacks/RandomizeRNs/RandomizeRNs.event" //credit TR143
+ALIGN 4
+
+GetAdjacentUnit: //credit Kirb
+#incbin "ExternalHacks/GetAdjacentUnit/GetAdjacentUnit.dmp"
+ALIGN 4
+
+ShowHealAmount: //credit Tequila
+#incbin "QualityOfLife/ShowHealAmount/ShowHealAmount.dmp"
+WORD ArrowTextID
+
+WeaponRankHack: //credit Crazy & Venno
+#incbin "ExternalHacks/WeaponRankBonus/Weapon Rank Hack.dmp"
+POIN WeaponRankBonusTable
+WeaponRankBonusTable:
+#include "ExternalHacks/WeaponRankBonus/Weapon Rank Bonus Table.event"
+ALIGN 4
+
+prFixedDifficulty: //Removes difficulty selection (credit nat/Stan)
+SHORT (0x2200 | 1) // Difficulty: 0 for easy, 1 for normal, 2 for hard
+SHORT 0x2300
+SHORT 0x212A
+SHORT 0x5442
+SHORT 0x213D
+SHORT 0x5443
+SHORT 0x4770
+ALIGN 4
+
+#include "QualityOfLife/ModularMinimugBox/Installers/MMBInstallerLLF.event" //credit Zane
+ALIGN 4
+
+prEventMenuCommandEffect: //credit nat/Stan
+SHORT 0xB500 0x203C 0x5C08 0x4B03 0x469E 0xF800 0x2017 0xBC02 0x4708 0x0000 0xD1F8 0x0800
+ALIGN 4
+
+#include "ExternalHacks/LeadAiFix/LeadAiFix.event" //credit nat/Stan
+ALIGN 4
+
+#include "ExternalHacks/FE8-New_CHAI/FE8-New_CHAI_EA.event" //credit Tequila
+ALIGN 4
+
+#include "ExternalHacks/Fatigue/Fatigue.event" //credit Sme
+ALIGN 4
+
+#include "ExternalHacks/ArmsScroll/EA_Installer.event" //credit Snek
+
+#include "ExternalHacks/UnitStatOffsets/StatOffset.event" //credit Venno
+
+#include "ExternalHacks/FixedAutolevels/FixedAutolevels.event" //credit Stan
+
+//#include "ExternalHacks/TrapRework/TrapRework.event" //credit Sme
+ALIGN 4
+
+#include "QualityOfLife/FillAIRangeMapFix/FillAIDangerMap.event" //credit HyperGammaSpace
+ALIGN 4
+
+// AI heatmap caching/optimization (7743) - reduces AI lag by ~66%
+/*
+ORG $3E320
+BYTE $F0 $B5 $5F $46 $56 $46 $4D $46 $44 $46 $F0 $B4 $33 $4C $A2 $46 $33 $48 $00 $68 $83 $46 $54 $46 $20 $68 $00 $28 $52 $D0 $C2 $68 $30 $4B $1A $42 $4E $D1 $58 $46 $C0 $7A $E1 $7A $E6 $F7 $1E $FD $00 $28 $47 $D1 $00 $20 $81 $46 $1E $21 $65 $18 $0A $21 $6E $18 $07 $1C $80 $46 $29 $88 $00 $29 $10 $D0 $88 $46 $20 $1C $D8 $F7 $01 $F9 $01 $28 $06 $D1 $40 $46 $D9 $F7 $30 $F9 $B8 $42 $01 $DB $07 $1C $C1 $46 $B5 $42 $01 $DA $02 $35 $EB $E7 $48 $46 $00 $28 $28 $D0 $58 $46 $21 $1C $4A $46 $FC $F7 $7A $FC $01 $28 $21 $D1 $20 $1C $49 $46 $FD $F7 $D8 $F8 $20 $1C $DA $F7 $01 $FF $3F $18 $7F $10 $15 $48 $04 $68 $15 $48 $05 $68 $15 $4B $18 $88 $80 $46 $5E $88 $00 $2E $0E $D0 $01 $3E $43 $46 $00 $2B $F9 $D0 $01 $3B $B2 $00 $A0 $58 $C0 $5C $00 $28 $F7 $D0 $A8 $58 $C1 $5C $C9 $19 $C1 $54 $F2 $E7 $48 $20 $82 $44 $0A $48 $82 $45 $A3 $DB $FF $BC $80 $46 $89 $46 $92 $46 $9B $46 $01 $BC $00 $47 $4C $BE $02 $02 $50 $4E $00 $03 $0D $10 $00 $00 $E4 $E4 $02 $02 $F0 $E4 $02 $02 $D4 $E4 $02 $02 $B4 $E3 $02 $02
+*/
+
+#include "QualityOfLife/PerChapterBattleQuotes/PerChapterBattleQuotes.event" //credit nat/Stan
+
+#include "ExternalHacks/AoE/Installer.event" //credit Vesly
+
+#include "ExternalHacks/EmotionBubble/Show_map_emotion_Install.event" //credit 7743 & Kenpuku
+
+#include "ExternalHacks/StealRequirements/StealRequirementsInstaller.event" //credit Vesly for StealWithFullInv
+
+#include "ExternalHacks/FE8-SetCondition/FE8-SetCondition.event" //credit Tequila
+
+#include "QualityOfLife/WalkingSoundsFix/WalkingSoundsFix.event" //credit Tequila
+
+#include "QualityOfLife/MultiTileMarker/MultiTileMarker_Install.event" //credit 7743
+
+#include "ExternalHacks/PreventTrade/Installer.event" //credit Vesly and circles
+
+#include "QualityOfLife/Reorganize/Installer.event" //credit Pikmin1211
+
+#include "Necessary/Antihuffman/Antihuffman.event" //credit Snakey

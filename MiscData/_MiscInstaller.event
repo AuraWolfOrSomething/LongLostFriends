@@ -1,0 +1,60 @@
+
+#define LastPlayableUnitID 0x2C
+LastPlayableUnitIDLink:
+BYTE LastPlayableUnitID
+ALIGN 4
+
+#include "EEUS.event"
+ALIGN 4
+
+#include "CharacterCapModifierTable.event"
+ALIGN 4
+
+#include "FatigueRestorationTable.event"
+ALIGN 4
+
+#include "DeathQuoteTable.event"
+ALIGN 4
+
+#include "BattlePrepShops.event"
+ALIGN 4
+
+#include "ChapterSettings.event"
+ALIGN 4
+
+#include "PostMapFunctions.event"
+ALIGN 4
+
+#include "GuideSetup.event"
+ALIGN 4
+
+#include "AffinityBonuses.event"
+ALIGN 4
+
+#include "MultipleHelpTextPageItemsSetUp.event"
+ALIGN 4
+
+#include "StatScreenRecruitText.event"
+ALIGN 4
+
+#include "CharDesc.event"
+ALIGN 4
+
+#include "MultipleHelpTextPageCharSetUp.event"
+ALIGN 4
+
+#include "OverridePromoGainInfoList.event"
+ALIGN 4
+
+#include "StatScreenStatusDebuffSetUp.event"
+ALIGN 4
+
+#include "MultipleHelpTextPageSkillSetUp.event"
+ALIGN 4
+
+#include "PortraitHeight.event" //credit 2WB
+ALIGN 4
+
+#include "BattleQuoteTable.event"
+ALIGN 4
+

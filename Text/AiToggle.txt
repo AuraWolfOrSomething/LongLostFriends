@@ -1,0 +1,33 @@
+## MM_AiTog
+ AI Toggle[X]
+ 
+## PS_AiTog
+AI Toggle[X]
+ 
+## AiTogDesc
+Toggle the minimug box's[NL]
+AI display on enemies/NPCs.[X]
+
+## MM_AiNoAi
+Pursue[X]
+
+## MM_AiAttackWithinRange
+Vigil[X]
+
+## MM_AiAttackWithinDoubleRange
+Vigil mov x2[X]
+
+## MM_AiStationary
+Immobile[X]
+
+## MM_AiDestroyTerrain
+Destroy[X]
+
+## MM_AiBrigand
+Attack/Raid[X]
+
+## MM_AiThief
+Loot/Escape[X]
+
+## MM_AiEscape
+Escape[X]

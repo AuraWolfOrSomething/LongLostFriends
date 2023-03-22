@@ -1,0 +1,35 @@
+
+ItemStealExperienceList:
+BYTE _5000G 30
+BYTE Elixir 30
+
+BYTE SeraphRobe 30
+BYTE EnergyRing 30
+BYTE SecretBook 30
+BYTE Speedwings 30
+BYTE GoddessIcon 30
+BYTE Dragonshield 30
+BYTE Talisman 30
+BYTE BodyRing 30
+BYTE Swiftsole 30
+
+BYTE ClericGem 30
+BYTE ArcherGem 30
+BYTE FighterGem 30
+BYTE KnightGem 30
+BYTE MyrmidonGem 30
+BYTE BrigandGem 30
+BYTE RookieGem 30
+BYTE PupilGem 30
+BYTE RecruitGem 30
+BYTE KarbaltGem 30
+BYTE SelnaGem 30
+BYTE ThelrimGem 30
+
+BYTE MasterSeal 30
+BYTE VulnerableBolt 30
+
+BYTE Perfectus 30
+
+BYTE 0 0
+ALIGN 4

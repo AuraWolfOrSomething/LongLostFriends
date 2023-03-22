@@ -1,0 +1,281 @@
+
+#define ProtectSpace_PortraitTable(index) "ORG PortraitTable+(index*0x1C); WORD 0 0 0 0 0 0 0"
+
+PUSH
+ORG $5524
+POIN PortraitTable
+POP
+
+ALIGN 4
+PortraitTable:
+#incbin "ForInsertion/FE8VanillaPortraitTable.dmp"
+ProtectSpace_PortraitTable(0xAD) //change to last portrait/class card id
+ALIGN 4
+
+//For Capture's compatibility
+Blank_Portrait:
+#incbin "ForInsertion/Blank_Portrait_mug.dmp"
+#incbin "ForInsertion/Blank_Portrait_frames.dmp"
+#incbin "ForInsertion/Blank_Portrait_palette.dmp"
+#incbin "ForInsertion/Blank_Portrait_minimug.dmp"
+setMugEntry(0x1, Blank_Portrait, 3, 5, 3, 3)
+ALIGN 4
+
+/*
+Portrait:
+#incbin "ForInsertion/_mug.dmp"
+#incbin "ForInsertion/_frames.dmp"
+#incbin "ForInsertion/_palette.dmp"
+#incbin "ForInsertion/_minimug.dmp"
+setMugEntry(mugEntry, mugLocation, mouthX, mouthY, eyeX, eyeY)
+ALIGN 4
+*/
+
+ZorenPortrait:
+#incbin "ForInsertion/Zoren_mug.dmp"
+#incbin "ForInsertion/Zoren_frames.dmp"
+#incbin "ForInsertion/Zoren_palette.dmp"
+#incbin "ForInsertion/Zoren_minimug.dmp"
+setMugEntry(0x2, ZorenPortrait, 2, 5, 3, 3)
+ALIGN 4
+
+IrisPortrait:
+#incbin "ForInsertion/Iris_mug.dmp"
+#incbin "ForInsertion/Iris_frames.dmp"
+#incbin "ForInsertion/Iris_palette.dmp"
+#incbin "ForInsertion/Iris_minimug.dmp"
+setMugEntry(0x4, IrisPortrait, 3, 5, 3, 4)
+ALIGN 4
+
+MarceyPortrait:
+#incbin "ForInsertion/Marcey_mug.dmp"
+#incbin "ForInsertion/Marcey_frames.dmp"
+#incbin "ForInsertion/Marcey_palette.dmp"
+#incbin "ForInsertion/Marcey_minimug.dmp"
+setMugEntry(0x5, MarceyPortrait, 4, 5, 4, 3)
+ALIGN 4
+
+KamronPortrait:
+#incbin "ForInsertion/Kamron_mug.dmp"
+#incbin "ForInsertion/Kamron_frames.dmp"
+#incbin "ForInsertion/Kamron_palette.dmp"
+#incbin "ForInsertion/Kamron_minimug.dmp"
+setMugEntry(0x6, KamronPortrait, 3, 5, 3, 3)
+ALIGN 4
+
+OrvillePortrait:
+#incbin "ForInsertion/Orville_mug.dmp"
+#incbin "ForInsertion/Orville_frames.dmp"
+#incbin "ForInsertion/Orville_palette.dmp"
+#incbin "ForInsertion/Orville_minimug.dmp"
+setMugEntry(0x7, OrvillePortrait, 3, 5, 3, 3)
+ALIGN 4
+
+NordicaPortrait:
+#incbin "ForInsertion/Nordica_mug.dmp"
+#incbin "ForInsertion/Nordica_frames.dmp"
+#incbin "ForInsertion/Nordica_palette.dmp"
+#incbin "ForInsertion/Nordica_minimug.dmp"
+setMugEntry(0x8, NordicaPortrait, 3, 6, 3, 4)
+ALIGN 4
+
+FranklinPortrait:
+#incbin "ForInsertion/Franklin_mug.dmp"
+#incbin "ForInsertion/Franklin_frames.dmp"
+#incbin "ForInsertion/Franklin_palette.dmp"
+#incbin "ForInsertion/Franklin_minimug.dmp"
+setMugEntry(0x9, FranklinPortrait, 3, 5, 4, 3)
+ALIGN 4
+
+LaricPortrait:
+#incbin "ForInsertion/Laric_mug.dmp"
+#incbin "ForInsertion/Laric_frames.dmp"
+#incbin "ForInsertion/Laric_palette.dmp"
+#incbin "ForInsertion/Laric_minimug.dmp"
+setMugEntry(0xA, LaricPortrait, 2, 6, 3, 4)
+ALIGN 4
+
+LutherPortrait:
+#incbin "ForInsertion/Luther_mug.dmp"
+#incbin "ForInsertion/Luther_frames.dmp"
+#incbin "ForInsertion/Luther_palette.dmp"
+#incbin "ForInsertion/Luther_minimug.dmp"
+setMugEntry(0xF, LutherPortrait, 3, 5, 3, 3)
+ALIGN 4
+
+JacobPortrait:
+#incbin "ForInsertion/Jacob_mug.dmp"
+#incbin "ForInsertion/Jacob_frames.dmp"
+#incbin "ForInsertion/Jacob_palette.dmp"
+#incbin "ForInsertion/Jacob_minimug.dmp"
+setMugEntry(0x10, JacobPortrait, 3, 5, 4, 4)
+
+ThorbekPortrait:
+#incbin "ForInsertion/Thorbek_mug.dmp"
+#incbin "ForInsertion/Thorbek_frames.dmp"
+#incbin "ForInsertion/Thorbek_palette.dmp"
+#incbin "ForInsertion/Thorbek_minimug.dmp"
+setMugEntry(0x13, ThorbekPortrait, 3, 5, 3, 3)
+ALIGN 4
+
+GracePortrait:
+#incbin "ForInsertion/Grace_mug.dmp"
+#incbin "ForInsertion/Grace_frames.dmp"
+#incbin "ForInsertion/Grace_palette.dmp"
+#incbin "ForInsertion/Grace_minimug.dmp"
+setMugEntry(0x14, GracePortrait, 2, 6, 3, 4)
+ALIGN 4
+
+ArlettPortrait:
+#incbin "ForInsertion/Arlett_mug.dmp"
+#incbin "ForInsertion/Arlett_frames.dmp"
+#incbin "ForInsertion/Arlett_palette.dmp"
+#incbin "ForInsertion/Arlett_minimug.dmp"
+setMugEntry(0x16, ArlettPortrait, 3, 6, 3, 4)
+ALIGN 4
+
+EmberPortrait:
+#incbin "ForInsertion/Ember_mug.dmp"
+#incbin "ForInsertion/Ember_frames.dmp"
+#incbin "ForInsertion/Ember_palette.dmp"
+#incbin "ForInsertion/Ember_minimug.dmp"
+setMugEntry(0x18, EmberPortrait, 3, 6, 3, 4)
+ALIGN 4
+
+DavisPortrait:
+#incbin "ForInsertion/Davis_mug.dmp"
+#incbin "ForInsertion/Davis_frames.dmp"
+#incbin "ForInsertion/Davis_palette.dmp"
+#incbin "ForInsertion/Davis_minimug.dmp"
+setMugEntry(0x19, DavisPortrait, 3, 5, 3, 3)
+
+RylanPortrait:
+#incbin "ForInsertion/Rylan_mug.dmp"
+#incbin "ForInsertion/Rylan_frames.dmp"
+#incbin "ForInsertion/Rylan_palette.dmp"
+#incbin "ForInsertion/Rylan_minimug.dmp"
+setMugEntry(0x1B, RylanPortrait, 4, 6, 4, 4)
+ALIGN 4
+
+MasonPortrait:
+#incbin "ForInsertion/Mason_mug.dmp"
+#incbin "ForInsertion/Mason_frames.dmp"
+#incbin "ForInsertion/Mason_palette.dmp"
+#incbin "ForInsertion/Mason_minimug.dmp"
+setMugEntry(0x20, MasonPortrait, 3, 6, 3, 4)
+ALIGN 4
+
+ShanaPortrait:
+#incbin "ForInsertion/Shana_mug.dmp"
+#incbin "ForInsertion/Shana_frames.dmp"
+#incbin "ForInsertion/Shana_palette.dmp"
+#incbin "ForInsertion/Shana_minimug.dmp"
+setMugEntry(0x21, ShanaPortrait, 3, 5, 3, 3)
+
+LorrandPortrait:
+#incbin "ForInsertion/Lorrand_mug.dmp"
+#incbin "ForInsertion/Lorrand_frames.dmp"
+#incbin "ForInsertion/Lorrand_palette.dmp"
+#incbin "ForInsertion/Lorrand_minimug.dmp"
+setMugEntry(0x22, LorrandPortrait, 3, 5, 3, 3)
+
+RiviaPortrait:
+#incbin "ForInsertion/Rivia_mug.dmp"
+#incbin "ForInsertion/Rivia_frames.dmp"
+#incbin "ForInsertion/Rivia_palette.dmp"
+#incbin "ForInsertion/Rivia_minimug.dmp"
+setMugEntry(0x23, RiviaPortrait, 3, 6, 3, 4)
+
+VivianPortrait:
+#incbin "ForInsertion/Vivian_mug.dmp"
+#incbin "ForInsertion/Vivian_frames.dmp"
+#incbin "ForInsertion/Vivian_palette.dmp"
+#incbin "ForInsertion/Vivian_minimug.dmp"
+setMugEntry(0x27, VivianPortrait, 2, 6, 3, 4)
+
+ColettePortrait:
+#incbin "ForInsertion/Colette_mug.dmp"
+#incbin "ForInsertion/Colette_frames.dmp"
+#incbin "ForInsertion/Colette_palette.dmp"
+#incbin "ForInsertion/Colette_minimug.dmp"
+setMugEntry(0x24, ColettePortrait, 4, 5, 4, 3)
+
+MyraPortrait:
+#incbin "ForInsertion/Myra_mug.dmp"
+#incbin "ForInsertion/Myra_frames.dmp"
+#incbin "ForInsertion/Myra_palette.dmp"
+#incbin "ForInsertion/Myra_minimug.dmp"
+setMugEntry(0x25, MyraPortrait, 2, 6, 3, 4)
+
+PercyPortrait:
+#incbin "ForInsertion/Percy_mug.dmp"
+#incbin "ForInsertion/Percy_frames.dmp"
+#incbin "ForInsertion/Percy_palette.dmp"
+#incbin "ForInsertion/Percy_minimug.dmp"
+setMugEntry(0x26, PercyPortrait, 2, 5, 2, 3)
+
+McVicarPortrait:
+#incbin "ForInsertion/McVicar_mug.dmp"
+#incbin "ForInsertion/McVicar_frames.dmp"
+#incbin "ForInsertion/McVicar_palette.dmp"
+#incbin "ForInsertion/McVicar_minimug.dmp"
+setMugEntry(0x2A, McVicarPortrait, 3, 5, 3, 3)
+ALIGN 4
+
+GertPortrait:
+#incbin "ForInsertion/Gert_mug.dmp"
+#incbin "ForInsertion/Gert_frames.dmp"
+#incbin "ForInsertion/Gert_palette.dmp"
+#incbin "ForInsertion/Gert_minimug.dmp"
+setMugEntry(0x42, GertPortrait, 3, 5, 3, 3)
+ALIGN 4
+
+
+
+StanrelPortrait:
+#incbin "ForInsertion/Stanrel_mug.dmp"
+#incbin "ForInsertion/Stanrel_frames.dmp"
+#incbin "ForInsertion/Stanrel_palette.dmp"
+#incbin "ForInsertion/Stanrel_minimug.dmp"
+setMugEntry(0x30, StanrelPortrait, 2, 5, 2, 3)
+ALIGN 4
+
+BrucePortrait:
+#incbin "ForInsertion/Bruce_mug.dmp"
+#incbin "ForInsertion/Bruce_frames.dmp"
+#incbin "ForInsertion/Bruce_palette.dmp"
+#incbin "ForInsertion/Bruce_minimug.dmp"
+setMugEntry(0x31, BrucePortrait, 3, 4, 3, 2)
+ALIGN 4
+
+TalonPortrait:
+#incbin "ForInsertion/Talon_mug.dmp"
+#incbin "ForInsertion/Talon_frames.dmp"
+#incbin "ForInsertion/Talon_palette.dmp"
+#incbin "ForInsertion/Talon_minimug.dmp"
+setMugEntry(0x32, TalonPortrait, 2, 5, 3, 3)
+ALIGN 4
+
+AugustusPortrait:
+#incbin "ForInsertion/Augustus_mug.dmp"
+#incbin "ForInsertion/Augustus_frames.dmp"
+#incbin "ForInsertion/Augustus_palette.dmp"
+#incbin "ForInsertion/Augustus_minimug.dmp"
+setMugEntry(0x40, AugustusPortrait, 3, 5, 3, 3)
+ALIGN 4
+
+ArtusPortrait:
+#incbin "ForInsertion/Artus_mug.dmp"
+#incbin "ForInsertion/Artus_frames.dmp"
+#incbin "ForInsertion/Artus_palette.dmp"
+#incbin "ForInsertion/Artus_minimug.dmp"
+setMugEntry(0x3E, ArtusPortrait, 3, 5, 3, 3)
+ALIGN 4
+
+CalderPortrait:
+#incbin "ForInsertion/Calder_mug.dmp"
+#incbin "ForInsertion/Calder_frames.dmp"
+#incbin "ForInsertion/Calder_palette.dmp"
+#incbin "ForInsertion/Calder_minimug.dmp"
+setMugEntry(0x33, CalderPortrait, 3, 6, 3, 4)
+ALIGN 4

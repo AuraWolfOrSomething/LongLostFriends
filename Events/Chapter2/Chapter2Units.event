@@ -1,0 +1,162 @@
+
+#define Ch2HandAxeBrigandStats 2
+#define Ch2SnailBrigand 0x81
+#define Ch2MasonStats 3
+#define Ch2NPCSoldierStats 4
+
+
+/*
+UNIT charID classID leader Level(lvl,faction,autolevel) [x,y] flags 0 number_of_REDAs pointer_to_REDAs [Item1,Item2,Item3,Item4] AI 
+
+REDA_Pointer
+REDA [x,y] Flags Speed *Rescuing character* Delay
+*/
+
+BadUnitBoss:
+UNIT Talon Brigand 0 Level(10,Enemy,False) [0,0] DropItem 0 1 REDA0R0 [SteelAxe,Swordreaver,ClericGem] RaidAndAttack
+UNIT
+
+BadUnits1:
+//Above Thorbek
+	UNIT PrologueBandit Brigand 0 Level(7,Enemy,True) [1,6] NoUnitFlags Ch2HandAxeBrigandStats 1 REDA6R9 [HandAxe] RaidAndAttack
+	UNIT PrologueBandit Deserter 0 Level(5,Enemy,True) [1,6] NoUnitFlags 0 1 REDA4R9 [BronzeLance] AttackInDoubleRangeExceptionNoHealAI
+UNIT
+
+BadUnits2:
+//Top-right village
+	UNIT PrologueBandit2 Deserter 0 Level(5,Enemy,True) [13,5] NoUnitFlags 0 1 REDA11R4 [NoviceLance] AttackInRangeNoHealAI //Dies in scripted battle
+	UNIT PrologueBandit Deserter 0 Level(5,Enemy,True) [13,5] NoUnitFlags 0 1 REDA13R3 [IronLance] AttackInDoubleRangeExceptionNoHealAI
+	UNIT PrologueBandit Deserter 0 Level(5,Enemy,True) [13,5] NoUnitFlags 0 1 REDA14R5 [BronzeLance] AttackInRangeNoHealAI
+	
+//Top-right mountain (offscreen spawning)
+	//UNIT PrologueBandit Brigand 0 Level(6,Enemy,True) [17,1] NoUnitFlags 0 1 REDA17R1 [IronAxe] RaidAndAttackNoHeal
+	UNIT PrologueBandit Archer 0 Level(5,Enemy,True) [17,1] NoUnitFlags 0 1 REDA18R3 [BronzeBow] AttackInRangeNoHealAI
+	UNIT PrologueBandit Fighter 0 Level(5,Enemy,True) [17,1] NoUnitFlags 0 1 REDA18R4 [BronzeAxe] AttackInRangeNoHealAI
+	UNIT PrologueBandit Mercenary 0 Level(5,Enemy,True) [17,1] NoUnitFlags 0 1 REDA19R5 [BronzeSword] AttackInRangeNoHealAI
+	UNIT PrologueBandit Archer 0 Level(5,Enemy,True) [17,1] NoUnitFlags 0 1 REDA17R7 [BronzeBow] AttackInRangeNoHealAI
+	
+UNIT
+
+
+BadUnits3:
+//Center village
+	UNIT PrologueBandit Deserter 0 Level(7,Enemy,True) [14,7] NoUnitFlags 0 1 REDA11R7 [CopperLance,Coupon] AttackInRangeNoHealAI
+	UNIT PrologueBandit Mercenary 0 Level(7,Enemy,True) [1,6] DropItem 0 1 REDA7R7 [IronSword] AttackInRangeAI
+
+UNIT PrologueBandit Deserter 0 Level(5,Enemy,True) [1,4] NoUnitFlags 0 1 REDA6R4 [BronzeLance] PursueWithoutHeedAI //By Mason
+UNIT PrologueBandit Mercenary 0 Level(5,Enemy,True) [17,1] NoUnitFlags 0 1 REDA11R4 [IronSword] AttackInRangeNoHealAI //Top-right village
+UNIT
+
+BadUnits4:
+//Bottom of the map
+	UNIT PrologueBandit2 Mercenary 0 Level(5,Enemy,True) [5,15] NoUnitFlags 0 1 REDA5R14 [SteelSword] AttackInRangeNoHealAI //Dies in scripted battle
+	UNIT PrologueBandit Mercenary 0 Level(5,Enemy,True) [7,15] NoUnitFlags 0 1 REDA7R15 [BronzeSword] NoAI
+	UNIT PrologueBandit Archer 0 Level(5,Enemy,True) [5,15] NoUnitFlags 0 1 REDA5R15 [BronzeBow] PursueWithoutHeedAI
+UNIT
+
+BadUnit5:
+//Left mountain
+	UNIT PrologueBandit Brigand 0 Level(6,Enemy,True) [1,6] NoUnitFlags 0 1 REDA1R6 [IronAxe] RaidAndAttack
+	//UNIT PrologueBandit Deserter 0 Level(5,Enemy,True) [1,6] NoUnitFlags 0 1 REDA1R6 [IronLance] NoAI
+
+//Bottom of the map
+	UNIT PrologueBandit Brigand 0 Level(6,Enemy,True) [0,15] NoUnitFlags Ch2SnailBrigand 1 REDA2R15 [IronAxe] RaidAndAttackNoHeal
+	UNIT PrologueBandit Deserter 0 Level(5,Enemy,True) [6,15] NoUnitFlags 0 1 REDA9R13 [BronzeLance] NoAI
+	UNIT PrologueBandit Deserter 0 Level(5,Enemy,True) [5,15] NoUnitFlags 0 1 REDA9R14 [BronzeLance] NoAI
+
+//Center village
+	UNIT PrologueBandit2 Mercenary 0 Level(7,Enemy,True) [14,7] NoUnitFlags 0 1 REDA8R8 [CopperSword] AttackInRangeAI
+	UNIT PrologueBandit Archer 0 Level(7,Enemy,True) [14,7] DropItem 0 1 REDA9R8 [IronBow] AttackInRangeNoHealAI
+	
+UNIT PrologueBandit Fighter 0 Level(5,Enemy,True) [0,3] NoUnitFlags 0 1 REDA0R3 [SteelAxe] PursueWithoutHeedAI //Top-left village
+UNIT
+
+BadUnit6:
+//Next to bottom village //offscreen spawning
+	//UNIT PrologueBandit Fighter 0 Level(6,Enemy,True) [0,11] NoUnitFlags 0 0 0 [BronzeAxe] AttackInDoubleRangeExceptionNoHealAI
+UNIT
+
+NPCUnits:
+UNIT Mason Cavalier 0 Level(6,NPC,False) [8,3] NoUnitFlags Ch2MasonStats 0 0 [IronAxe,Elixir,FocusBelt] StationaryAI
+UNIT Thorbek Soldier 0 Level(4,NPC,False) [5,13] NoUnitFlags 0 0 0 [IronLance,Vulnerary] StationaryAI
+UNIT Ch2NPCSoldier Soldier 0 Level(1,NPC,True) [10,4] NoUnitFlags Ch2NPCSoldierStats 0 0 [SteelLance] StationaryAI //scripted battle
+UNIT Enemy0 Archer_F 0 Level(1,NPC,True) [12,3] NoUnitFlags 0 0 0 [SteelBow] StationaryAI
+UNIT Stanrel Cavalier 0 Level(1,NPC,True) [7,4] NoUnitFlags 0 0 0 [SteelSword] StationaryAI
+UNIT Ch1NPCMerc Myrmidon 0 Level(1,NPC,True) [10,13] NoUnitFlags 0 0 0 [SteelSword] StationaryAI
+UNIT Bruce Fighter 0 Level(1,NPC,True) [4,14] NoUnitFlags 0 0 0 [SteelAxe] StationaryAI
+UNIT
+
+UnitsIntroMarcey:
+UNIT Zoren ZorenLord 0 Level(1,Ally,False) [18,15] NoUnitFlags 0 1 REDA15R13 [IronSword,Thunder,Concoction] NoAI
+UNIT Marcey Cavalier_F 0 Level(5,Ally,False) [19,15] NoUnitFlags 0 1 REDA15R14 [BronzeLance,Vulnerary] NoAI
+UNIT
+
+UnitsIntro:
+UNIT Zoren ZorenLord 0 Level(1,Ally,False) [18,15] NoUnitFlags 0 1 REDA15R13 [IronSword,Thunder,Concoction] NoAI
+UNIT
+
+UnitIris:
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [18,15] NoUnitFlags 0 1 REDA14R15 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT
+
+NewUnits:
+UNIT Jacob Journeyman_1 0 Level(1,Ally,False) [19,15] NoUnitFlags 0 1 REDA16R14 [Hatchet,BronzeAxe] NoAI
+UNIT
+
+Units:
+UNIT Zoren ZorenLord 0 Level(1,Ally,False) [15,12] NoUnitFlags 0 0 0 [IronSword,Thunder,Concoction] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [16,12] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [13,13] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [14,13] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [15,13] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [13,14] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [16,14] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [17,14] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [12,15] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [14,15] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [15,15] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [16,15] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT
+
+BanditReinforcements1:
+//UNIT PrologueBandit Brigand 0 Level(5,Enemy,True) [0,6] NoUnitFlags 0 0 0 [IronAxe] RaidAndAttackNoHeal
+UNIT PrologueBandit Brigand 0 Level(6,Enemy,True) [17,1] NoUnitFlags 0 0 0 [IronAxe] RaidAndAttackNoHeal
+//UNIT PrologueBandit Brigand 0 Level(5,Enemy,True) [13,7] NoUnitFlags 0 0 0 [IronAxe] RaidAndAttackNoHeal
+UNIT
+
+BanditReinforcements1_2:
+UNIT PrologueBandit Mercenary 0 Level(6,Enemy,True) [1,6] NoUnitFlags 0 0 0 [IronSword] PursueWithoutHeedAI
+UNIT PrologueBandit Mercenary 0 Level(6,Enemy,True) [14,7] NoUnitFlags 0 0 0 [IronSword] PursueWithoutHeedAI
+UNIT
+
+BanditReinforcements2:
+UNIT PrologueBandit Brigand 0 Level(8,Enemy,True) [0,3] NoUnitFlags 0 0 0 [BronzeAxe] RaidAndAttack
+UNIT
+
+BanditReinforcements2_2:
+UNIT PrologueBandit Brigand 0 Level(8,Enemy,True) [17,1] NoUnitFlags 0 0 0 [BronzeAxe] RaidAndAttack
+UNIT PrologueBandit Brigand 0 Level(8,Enemy,True) [14,7] NoUnitFlags 0 0 0 [BronzeAxe] RaidAndAttack
+UNIT
+
+TopReinforcements1:
+UNIT PrologueBandit Mercenary 0 Level(9,Enemy,True) [7,0] NoUnitFlags 0 1 REDA7R0 [IronSword] PursueWithoutHeedAI
+UNIT PrologueBandit Deserter 0 Level(9,Enemy,True) [9,0] NoUnitFlags 0 1 REDA9R0 [IronLance] PursueWithoutHeedAI
+UNIT
+
+TopLeftReinforcement1:
+UNIT PrologueBandit Fighter 0 Level(5,Enemy,True) [0,3] NoUnitFlags 0 0 0 [SteelAxe] PursueWithoutHeedAI
+UNIT
+
+TopLeftReinforcement2:
+UNIT PrologueBandit Fighter 0 Level(5,Enemy,True) [0,3] NoUnitFlags 0 0 0 [SteelAxe] PursueWithoutHeedAI
+UNIT
+
+BottomReinforcements1:
+UNIT PrologueBandit Deserter 0 Level(6,Enemy,True) [5,15] NoUnitFlags 0 1 REDA6R15 [BronzeLance] PursueWithoutHeedAI
+UNIT
+
+BottomReinforcements2:
+UNIT PrologueBandit Mercenary 0 Level(9,Enemy,True) [4,15] NoUnitFlags 0 1 REDA4R15 [IronSword] PursueWithoutHeedAI
+UNIT PrologueBandit Deserter 0 Level(9,Enemy,True) [5,15] NoUnitFlags 0 1 REDA5R15 [IronLance] PursueWithoutHeedAI
+UNIT PrologueBandit Fighter 0 Level(9,Enemy,True) [6,15] NoUnitFlags 0 1 REDA6R15 [IronAxe] PursueWithoutHeedAI
+UNIT

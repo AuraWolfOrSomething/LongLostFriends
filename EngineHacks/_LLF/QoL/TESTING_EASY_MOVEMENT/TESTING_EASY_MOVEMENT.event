@@ -1,0 +1,46 @@
+//disable by commenting "TESTING_EASY_MOVEMENT" in Definitions.event
+//disable the sole insertion of infinite refresh by commenting "TESTING_EASY_MOVEMENT_REFRESH" in Definitions.event
+
+#ifdef TESTING_EASY_MOVEMENT
+
+	PUSH
+	
+	ORG $1A4CC
+	jumpToHack(EasyMovementAcrobat)
+	
+	ORG $800 //modifies movement ARM code
+	WORD 0xE59FC000 0xE12FFF1C //ldr r12,EasyMovementPass; bx r12
+	POIN EasyMovementPass|1
+	
+	POP
+
+	//PostBattleCalcLoop
+	#include "asm/EasyMovementRefresh.lyn.event"
+	ALIGN 4
+	
+	//StatGetters/Movement
+	prEasyMovementCapMov:
+	rIfUnitHasAllegience(UA_BLUE)
+		rConstant(15)
+		
+	//SkillSystem/MovementSkills
+	//MESSAGE easyAcrobat currentOffset
+	#include "asm/EasyMovementAcrobat.lyn.event"
+	ALIGN 4
+	
+	//SkillSystem/MovementSkills
+	//MESSAGE easyPass currentOffset
+	#include "asm/EasyMovementPass.lyn.event"
+	ALIGN 4
+	
+#else
+
+	#ifdef TESTING_EASY_MOVEMENT_REFRESH
+	
+		//PostBattleCalcLoop
+		#include "asm/EasyMovementRefresh.lyn.event"
+		ALIGN 4
+		
+	#endif
+	
+#endif

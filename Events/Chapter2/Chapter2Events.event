@@ -1,0 +1,677 @@
+﻿//I could definitely get rid of these, but nah
+//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+EventPointerTable(0x0D,Pointers)
+
+Pointers:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+#include "Chapter2Units.event"
+#include "Chapter2EventIDs.event"
+#include "Chapter2QuoteTable.event"
+
+#define Ch2GoldRewardCounter 0
+
+TurnBasedEvents:
+TurnEventPlayer(0,BeforeBattleBegins,1)
+
+TurnEventPlayer(0,BanditsWarning1,2)
+TurnEventPlayer(0,BanditsArrive1,3)
+
+/*
+TurnEventPlayer(0,TopLeftReinforcementWarning1,2)
+TurnEventPlayer(0,TopLeftReinforcementArrives1,3)
+
+TurnEventPlayer(0,TopLeftReinforcementWarning2,3)
+TurnEventPlayer(0,TopLeftReinforcementArrives2,4)
+*/
+
+TurnEventPlayer(0,BottomReinforcementsWarning1,3)
+TurnEventPlayer(0,BottomReinforcementsArrive1,4)
+
+TurnEventPlayer(0,BanditsWarning2,5)
+TurnEventPlayer(0,BanditsArrive2,6)
+
+TurnEventPlayer(0,BottomReinforcementsWarning2,6)
+TurnEventPlayer(0,BottomReinforcementsArrive2,7)
+
+TurnEventPlayer(0,TopReinforcementsWarning1,7)
+TurnEventPlayer(0,TopReinforcementsArrive1,8)
+
+
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEvent(RecruitThorbekEventID,RecruitThorbekZoren,Zoren,Thorbek)
+CharacterEvent(RecruitThorbekEventID,RecruitThorbekArlett,Arlett,Thorbek)
+CharacterEvent(RecruitThorbekEventID,RecruitThorbekDavis,Davis,Thorbek)
+//CharacterEventBothWays(Ch2KamronFranklinEventID,KamronFranklinTalk,Kamron,Franklin)
+//CharacterEventBothWays(Ch2KamronFranklinEventID,KamronFranklinTalk,Kamron,Zoren) //TESTING
+//CharacterEventBothWays(Ch2NordicaDavisEventID,NordicaDavisTalk,Nordica,Davis)
+END_MAIN
+
+LocationBasedEvents:
+Armory(Ch2Armory,7,8)
+Vendor(Ch2Vendor,11,6)
+
+Village(Ch2TopLeftVillageEventID,TopLeftVillage,4,3)
+Village(Ch2TopRightVillageEventID,TopRightVillage,11,2)
+Village(Ch2CenterVillageEventID,CenterVillage,9,7)
+Village(Ch2BottomLeftVillageEventID,BottomLeftVillage,2,12)
+#ifdef TESTING_EASY_CLEAR
+	Seize(17,12)
+#endif
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+DefeatBoss(EndingScene)
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+BeginningScene:
+Load(NPCUnits)
+Camera(7,5,10)
+
+//Mason and Thorbek talk
+SetBackground(Plain_2)
+MUSC Advance
+TEXTSTART
+TEXTSHOW Ch2Intro1
+TEXTEND
+REMA
+SetBackground(BlackBG)
+MUSCSLOW 0x7FFF
+STAL 10
+
+//Boss talks to henchman
+SetBackground(Fort_Ruins)
+MUSC Raid
+TEXTSTART
+TEXTSHOW Ch2Intro2
+TEXTEND
+ClearBackground
+REMA
+
+//Signal to begin the raid
+Load(BadUnits1)
+MUSI
+STAL 20
+SOUN BrigandBattleCry
+STAL 40
+MUNO
+Load(BadUnits2)
+
+//NPC Soldier dies, then NPC archer dies
+STAL 20
+Notice(Ch2NPCSoldier,30)
+STAL 20
+	StartBattle
+	NormalDamage(0,14)
+	NormalDamage(1,20)
+	CriticalHit(0,42)
+	EndAttack
+FIGHT_MAP PrologueBandit2 Ch2NPCSoldier NoviceLance 0
+ENUN
+AWAIT_KILL Ch2NPCSoldier
+STAL 20
+Kill(Enemy0)
+
+//Mason kills Deserter
+MoveAndWait(Mason,10,4)
+STAL 20
+Notice(PrologueBandit2,30)
+STAL 20
+	StartBattle
+	NormalDamage(0,60)
+	EndAttack
+FIGHT_MAP Mason PrologueBandit2 BronzeAxe 0
+ENUN
+AWAIT_KILL PrologueBandit2
+
+//More bandits appear, other Cavalier dies, and Mason retreats
+Load(BadUnits3)
+STAL 20
+Kill(Stanrel)
+MoveAndWait(Mason,8,0)
+STAL 20
+TEXTSTART
+TEXTSHOW Ch2IntroMason
+TEXTEND
+REMA
+STAL 20
+
+//Meanwhile, on the southern side of the map...
+Camera(7,11,10)
+Load(BadUnits4)
+
+//Thorbek kills Mercenary
+STAL 20
+Notice(Thorbek,30)
+STAL 20
+	StartBattle
+	MissedAttack(0,0)
+	CriticalHit(1,60)
+	EndAttack
+FIGHT_MAP PrologueBandit2 Thorbek SteelSword 0
+ENUN
+AWAIT_KILL PrologueBandit2
+
+//NPC Fighter dies
+STAL 20
+Kill(Bruce)
+
+//More enemies appears; NPC Myrmidon dies
+Load(BadUnit5)
+STAL 20
+Kill(Ch1NPCMerc)
+
+//Thorbek retreats
+Move(Thorbek,5,12,0)
+STAL 20
+TEXTSTART
+TEXTSHOW Ch2IntroThorbek
+TEXTEND
+REMA
+STAL 20
+
+//Talon appears and enjoys what he's seeing
+Camera(7,5,20)
+Load(BadUnitBoss)
+STAL 20
+Notice(Talon,30)
+STAL 20
+TEXTSTART
+TEXTSHOW Ch2IntroTalon
+TEXTEND
+REMA
+STAL 20
+
+//Zoren appears
+Camera(12,11,10)
+CHECK_ALIVE Marcey
+IFNE 0x1 sC s0
+	//If Marcey is alive, load her with Zoren
+	Load(UnitsIntroMarcey)
+GOTO 0x2
+LABEL 0x1
+	//If Marcey isn't alive, only load Zoren
+	Load(UnitsIntro)
+LABEL 0x2
+
+CHECK_EVENTID Ch1ArlettDavisDiedCutscene
+IFNE 0x5 sC s0
+	Load(UnitIris)
+LABEL 0x5
+
+STAL 20
+TEXTSTART
+TEXTSHOW Ch2Intro3
+TEXTEND
+REMA
+STAL 20
+
+Load(NewUnits)
+STAL 20
+//Load(BadUnit6)
+SetBackground(Woodland)
+
+
+
+CHECK_ALIVE Marcey
+IFNE 0x3 sC s0
+	//If Marcey is alive, play her conversation
+	TEXTSTART
+	TEXTSHOW Ch2IntroMarceyAlive
+	TEXTEND
+	REMA
+GOTO 0x4
+LABEL 0x3
+	//If Marcey isn't alive, play alternative conversation
+	TEXTSTART
+	TEXTSHOW Ch2IntroMarceyDead
+	TEXTEND
+	REMA
+LABEL 0x4
+
+//Done with cutscene stuff
+FADI 10
+STAL 20
+CLEA 0
+LoadPrepUnits(Units)
+GotoPrepScreen
+ENDA
+
+
+//-------------------------------
+//Turn Events
+//-------------------------------
+
+BeforeBattleBegins:
+//Reset chapter bargain item IDs for next chapter
+ENUF ChapterBargain1EventID
+ENUF ChapterBargain2EventID
+ENUF ChapterBargain3EventID
+ENUF Ch1ArlettDavisDiedCutscene //using this event ID for something else
+TUTORIALTEXTBOXSTART 
+SETVAL 0xB 0xFFFFFFFF
+TEXTSHOW Ch2GoldNotice
+TEXTEND
+REMA
+NoFade
+ENDA
+
+BanditsWarning1:
+ReinforcementWarningEventHeader(0x1)
+	MUSI
+	Camera(11,5,10)
+	Notice(17,1,30)
+	BanditWarning
+	Camera(7,7,10)
+	Notice(1,6,30)
+	Notice(14,7,30)
+	InfantryWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+BanditsArrive1:
+Camera(11,5,10)
+Load(BanditReinforcements1)
+Camera(7,7,10)
+Load(BanditReinforcements1_2)
+NoFade
+ENDA
+
+TopLeftReinforcementWarning1:
+ReinforcementWarningEventHeader(0x1)
+	MUSI
+	Camera(7,5,10)
+	Notice(0,3,30)
+	InfantryWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+TopLeftReinforcementArrives1:
+Camera(7,5,10)
+Load(TopLeftReinforcement1)
+NoFade
+ENDA
+
+TopLeftReinforcementWarning2:
+ReinforcementWarningEventHeader(0x1)
+	MUSI
+	Camera(7,5,10)
+	Notice(0,3,30)
+	InfantryWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+TopLeftReinforcementArrives2:
+Camera(7,5,10)
+Load(TopLeftReinforcement2)
+NoFade
+ENDA
+
+BottomReinforcementsWarning1:
+ReinforcementWarningEventHeader(0x1)
+	MUSI
+	Camera(7,11,10)
+	Notice(5,15,30)
+	InfantryWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+BottomReinforcementsArrive1:
+Camera(7,11,10)
+Load(BottomReinforcements1)
+NoFade
+ENDA
+
+BanditsWarning2:
+ReinforcementWarningEventHeader(0x1)
+	MUSI
+	Camera(7,5,10)
+	Notice(0,3,30)
+	Camera(11,5,10)
+	Notice(16,1,30)
+	Notice(13,7,30)
+	BanditWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+BanditsArrive2:
+Camera(7,5,10)
+Load(BanditReinforcements2)
+Camera(11,5,10)
+Load(BanditReinforcements2_2)
+NoFade
+ENDA
+
+BottomReinforcementsWarning2:
+ReinforcementWarningEventHeader(0x1)
+	MUSI
+	Camera(7,11,10)
+	Notice(4,15,30)
+	Notice(5,15,30)
+	Notice(6,15,30)
+	InfantryWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+BottomReinforcementsArrive2:
+Camera(7,11,10)
+Load(BottomReinforcements2)
+NoFade
+ENDA
+
+TopReinforcementsWarning1:
+ReinforcementWarningEventHeader(0x1)
+	MUSI
+	Camera(7,5,10)
+	Notice(7,0,30)
+	Notice(9,0,30)
+	InfantryWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+TopReinforcementsArrive1:
+Camera(7,5,10)
+Load(TopReinforcements1)
+NoFade
+ENDA
+
+
+//-------------------------------
+//Character Events
+//-------------------------------
+
+RecruitThorbekZoren:
+MUSS Comrades
+TEXTSTART
+TEXTSHOW Ch2ThorbekRecruitByZoren
+TEXTEND
+REMA
+TurnAlly(Thorbek)
+MURE 6
+NoFade
+ENDA
+
+RecruitThorbekArlett:
+MUSS Laughter
+TEXTSTART
+TEXTSHOW Ch2ThorbekRecruitByArlett
+TEXTEND
+REMA
+TurnAlly(Thorbek)
+MURE 6
+NoFade
+ENDA
+
+RecruitThorbekDavis:
+MUSS Comrades
+TEXTSTART
+TEXTSHOW Ch2ThorbekRecruitByDavis
+TEXTEND
+REMA
+TurnAlly(Thorbek)
+MURE 6
+NoFade
+ENDA
+
+KamronFranklinTalk:
+MUSI
+TEXTSTART
+TEXTSHOW Ch2KamronFranklinTalk
+TEXTEND
+REMA
+MUNO
+NoFade
+ENDA
+
+NordicaDavisTalk:
+MUSI
+TEXTSTART
+TEXTSHOW Ch2NordicaDavisTalk
+TEXTEND
+REMA
+MUNO
+NoFade
+ENDA
+
+//-------------------------------
+//Location Events
+//-------------------------------
+
+Ch2Armory:
+SHLI BronzeSword IronSword BronzeLance IronLance BronzeAxe IronAxe BronzeBow IronBow
+ALIGN 4
+
+Ch2Vendor:
+SHLI Fire Thunder Lightning Ray Flux Ensnare Heal Mend Guardian Vulnerary
+ALIGN 4
+
+TopLeftVillage:
+MUSI
+SetBackground(Outside_Village_Day)
+TEXTSTART
+TEXTSHOW Ch2NWvillage
+TEXTEND
+ClearBackground
+REMA
+MUNO
+VillageReward(NoviceSword)
+NoFade
+ENDA
+
+TopRightVillage:
+MUSI
+SetBackground(Outside_Village_Day)
+TEXTSTART
+TEXTSHOW Ch2NEvillage
+TEXTEND
+ClearBackground
+REMA
+MUNO
+VillageReward(Concoction)
+NoFade
+ENDA
+
+CenterVillage:
+MUSI
+SetBackground(Outside_Village_Day)
+TEXTSTART
+TEXTSHOW Ch2CenterVillage
+TEXTEND
+ClearBackground
+REMA
+MUNO
+VillageReward(Rustbow)
+NoFade
+ENDA
+
+BottomLeftVillage:
+MUSI
+SetBackground(Outside_Village_Day)
+TEXTSTART
+TEXTSHOW Ch2SWvillage
+TEXTEND
+ClearBackground
+REMA
+MUNO
+VillageReward(Elthunder)
+NoFade
+ENDA
+
+
+//-------------------------------
+//Ending Event
+//-------------------------------
+
+EndingScene:
+
+DoNotWinIfPlanning(0x1,0x2)
+ENUF GuideChapterAdvice
+
+#ifdef TESTING_EASY_CLEAR
+	#ifdef TESTING_EASY_RECRUITMENT
+		TurnAlly(Thorbek)
+	#endif
+#endif
+
+CALL PostMapFunctions
+
+MUSC Victory
+SetBackground(Plain_2)
+CHECK_EVENTID Ch2MasonDeathEventID
+IFEQ 0x3 sC s0
+//If Mason is alive
+	ENUT MasonSavedEventID
+	TEXTSTART
+	TEXTSHOW Ch2EndingMasonAlive
+	TEXTEND
+GOTO 0x4
+LABEL 0x3
+//If Mason is dead
+	TEXTSTART
+	TEXTSHOW Ch2EndingMasonDead
+	TEXTEND
+LABEL 0x4
+REMA
+
+//If Thorbek is alive, he's formally a part of Zoren's team
+CHECK_ALIVE Thorbek
+IFNE 0x5 sC s0
+	STAL 20
+	CHECK_EVENTID Ch2MasonDeathEventID
+	IFEQ 0x6 sC s0
+	//If Mason is alive
+		TEXTSTART
+		TEXTSHOW Ch2EndingThorbekMason
+		TEXTEND
+		REMA
+	GOTO 0x7
+	LABEL 0x6
+	//If Mason is dead
+		TEXTSTART
+		TEXTSHOW Ch2EndingThorbekNoMason
+		TEXTEND
+		REMA
+	LABEL 0x7
+LABEL 0x5
+
+//Check if villages were destroyed
+//Each village that was destroyed lowers gold reward by 1000
+COUNTER_SET Ch2GoldRewardCounter 4
+
+	CheckIfTerrainAtCoord(Terrain_VillageRuins,4,3)
+	IFNE 0xA sC s0
+		COUNTER_DEC Ch2GoldRewardCounter
+	LABEL 0xA
+
+	CheckIfTerrainAtCoord(Terrain_VillageRuins,11,2)
+	IFNE 0xB sC s0
+		COUNTER_DEC Ch2GoldRewardCounter
+	LABEL 0xB
+
+	CheckIfTerrainAtCoord(Terrain_VillageRuins,9,7)
+	IFNE 0xC sC s0
+		COUNTER_DEC Ch2GoldRewardCounter
+	LABEL 0xC
+
+	CheckIfTerrainAtCoord(Terrain_VillageRuins,2,12)
+	IFNE 0xD sC s0
+		COUNTER_DEC Ch2GoldRewardCounter
+	LABEL 0xD
+
+COUNTER_CHECK Ch2GoldRewardCounter
+IFNE 0xE sC s0
+//If at least one village was saved, do this stuff
+
+	//Cutscene
+	STAL 20
+	TEXTSTART
+	TEXTSHOW Ch2EndingVillageReward
+	TEXTEND
+	REMA
+	
+	//For every village that was saved, gain 1000 gold
+	COUNTER_CHECK Ch2GoldRewardCounter //(yes, I tested it without repeating this; need to reobtain the value of the counter)
+	SVAL s1 1000
+	SMUL s3 sC s1 //villages * 1000 = gold reward
+	GIVEITEMTOMAIN 0
+	
+LABEL 0xE
+
+//If Arlett is alive, she's formally a part of the team
+CHECK_ALIVE Arlett
+IFNE 0x8 sC s0
+	STAL 20
+	TEXTSTART
+	TEXTSHOW Ch2EndingArlett
+	TEXTEND
+	REMA
+LABEL 0x8
+
+//If Mason is alive, him and Gert have a one-on-one
+CHECK_EVENTID Ch2MasonDeathEventID
+IFEQ 0x9 sC s0
+	STAL 20
+	TEXTSTART
+	TEXTSHOW Ch2EndingGertMason
+	TEXTEND
+	REMA
+LABEL 0x9
+
+//Two conditions must be met to see one of the next conversations
+	//1: Davis and Orville are alive
+	//2: Nordica and Davis had their talk during the chapter
+
+COUNTER_SET Ch2GoldRewardCounter 0
+	
+#ifdef TESTING_CHAPTER_TRANSITION
+	MNC2 Ch_2
+#else
+	//CALL PartySwapZorenToShana
+	//MoveToChapter(Ch_3)
+	MNC2 Ch_3
+#endif
+
+LABEL 0x2 //use DoNotWinIfPlanning condID2
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

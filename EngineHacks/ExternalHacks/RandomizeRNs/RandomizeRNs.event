@@ -1,0 +1,38 @@
+
+PUSH
+
+ORG 0x1336
+BYTE 0x08 0xB4 // push r3
+jumpToHack(RNGBodyFE8)
+
+ORG 0x0A4C
+jumpToHack(bootHackBodyFE8)
+
+ORG 0xC36
+BYTE 0x08 0xB4 // push r3
+jumpToHack(resumeHackBodyFE8)
+
+POP
+
+AfterPlaythroughStatsRAMPointer:
+#ifndef AfterPlaythroughStatsRAM
+	#define AfterPlaythroughStatsRAM 0x02026E78
+#endif
+WORD AfterPlaythroughStatsRAM
+
+#include "asm/rngbodyFE8.lyn.event"
+ALIGN 4
+
+bootHackBodyFE8:
+#incbin "asm/BootHackFE8.dmp"
+ALIGN 4
+
+resumeHackBodyFE8:
+#incbin "asm/ResumeHackFE8.dmp"
+ALIGN 4
+
+#include "asm/RnBurnAmount.lyn.event"
+ALIGN 4
+
+#include "asm/Proc_BurnConsistentRns.lyn.event"
+ALIGN 4

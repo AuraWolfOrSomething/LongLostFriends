@@ -1,0 +1,35 @@
+
+//MiscData/AffinityBonuses
+
+/*
+- TODO Polish: In Support Prep, have highlight underneath unit map sprite and name (currently, using it covers part of the sprite, so I just disabled it)
+*/
+
+PUSH
+
+//keep prep music going instead of playing support music
+ORG 0x951F6
+SHORT 0xE003 //b (0x95200)
+
+//make the process of getting affinity icons on prep/extra support use icon rework
+ORG 0xA1D94
+SHORT 0x4370 0 //mul r0, r6; lsl r0, #0
+callHack_r3(UnitPrepExtraSupportAffinityDraw)
+
+POP
+
+#include "asm/UnitPrepExtraSupportAffinityDraw.lyn.event"
+ALIGN 4
+
+#include "asm/IsSupportActive.lyn.event"
+ALIGN 4
+
+#include "asm/GetUnitBySupportPartyId.lyn.event"
+ALIGN 4
+
+#include "ActiveSupport/ActiveSupportFunctionality.event"
+#include "ActiveSupport/ActiveSupportDisplay.event"
+
+#include "SupportBonuses/SupportBonuses.event"
+
+#include "SupportPointEarning/SupportPointEarning.event"

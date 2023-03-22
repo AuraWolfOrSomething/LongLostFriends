@@ -1,0 +1,29 @@
+## ESpecDElse
+E/D[X]
+
+## DSpecCElse
+D/C[X]
+
+## ESpecCElse
+E/C[X]
+
+## CSpecBElse
+C/B[X]
+
+## DSpecBElse
+D/B[X]
+
+## BSpecAElse
+B/A[X]
+
+## CSpecAElse
+C/A[X]
+
+## ASpecSElse
+A/S[X]
+
+## BSpecSElse
+B/S[X]
+
+## ASpecOnly
+A/--[X]

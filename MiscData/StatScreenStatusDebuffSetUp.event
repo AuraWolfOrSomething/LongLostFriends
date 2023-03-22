@@ -1,0 +1,56 @@
+
+//Mechanics/StatusDebuffs
+
+ConditionNormalHelpTextLink:
+SHORT ConditionNormalHelpText
+SHORT 0x536 //---
+ALIGN 4
+
+StatScreenStatusDebuffSetUp:
+//first entry is unique
+SHORT ConditionMultipleHelpText MultipleEffectsName //helpTextId nameTextID
+SHORT 14 5 //number of entries (including this one); how many effects the unit must have for this page to appear
+
+//SHORT helpTextID nameTextID
+//POIN checkIfActiveOrTrue
+
+SHORT ConditionGuardianDamageHelpText GuardianDamageName
+POIN IsGuardianDamageActive
+
+SHORT ConditionGuardianHalfHelpText GuardianHalfName
+POIN IsDebuffHalfActive
+
+SHORT ConditionPoisonHelpText PoisonStatusName
+POIN IsPoisonStatusActive
+
+SHORT ConditionSleepHelpText SleepStatusName
+POIN IsSleepStatusActive
+
+SHORT ConditionSilenceHelpText SilenceStatusName
+POIN IsSilenceStatusActive
+
+SHORT ConditionBerserkHelpText BerserkStatusName
+POIN IsBerserkStatusActive
+
+SHORT ConditionAbsorbHelpText AbsorbDebuffName
+POIN IsAbsorbDebuffActive
+
+SHORT ConditionRustbowHelpText RustbowDebuffName
+POIN IsRustbowDebuffActive
+
+SHORT ConditionIneptHelpText IneptDebuffName
+POIN IsIneptDebuffActive
+
+SHORT ConditionLullHelpText LullDebuffName
+POIN IsLullDebuffActive
+
+SHORT ConditionSlowHelpText SlowDebuffName
+POIN IsSlowDebuffActive
+
+SHORT ConditionDistractHelpText DistractDebuffName
+POIN IsDistractDebuffActive
+
+SHORT ConditionRallyHelpText RallyBuffName
+POIN IsRallyActive
+
+WORD 0

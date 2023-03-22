@@ -1,0 +1,45 @@
+
+#define AreaHealingStaff(EntryNumber,ItemID) "ORG 4*EntryNumber+AreaHealList; BYTE ItemID"
+#define AreaHealingStaff(BaseRange,PowPercent,UseStaffSavant) "BYTE BaseRange PowPercent UseStaffSavant"
+#define ExcludeStaffSavant 0
+#define IncludeStaffSavant 1
+#define EndAreaHealList "WORD 0"
+
+#define StatusItem(EntryNumber,ItemID,StatusEffect,Duration) "ORG 4*EntryNumber+StatusEffectItemTable; BYTE ItemID StatusEffect Duration 0"
+#define EndStatusEffectItemList(EntryNumber) "ORG 4*EntryNumber+StatusEffectItemList; WORD 0"
+
+//no entryNumber needed other than for this first definition, but it has to be in order to use these properly
+#define StatusStaff(EntryNumber) "ORG 16*EntryNumber+StatusStaffAccuracyTable"
+#define StatusStaff(ItemID,BaseAccuracy) "BYTE ItemID BaseAccuracy"
+#define StatusStaffMag(Multiplier,Percent) "BYTE Multiplier Percent"
+#define StatusStaffSkl(Multiplier,Percent) "BYTE Multiplier Percent"
+#define StatusStaffRes(Multiplier,Percent) "BYTE Multiplier Percent"
+#define StatusStaffLck(Multiplier,Percent) "BYTE Multiplier Percent"
+#define StatusStaffWeaponRankBonus(DRank,CRank,BRank,ARank,SRank) "BYTE DRank CRank BRank ARank SRank"
+#define StatusStaffDistancePenalty(Penalty) "BYTE Penalty"
+
+//Percent of Magic
+#define NoMag 0
+#define HalfMag 50
+#define AllMag 100
+#define NoMagic 0
+#define HalfMagic 50
+#define AllMagic 100
+
+
+//Percent of Skill
+#define NoSkl 0
+#define HalfSkl 50
+#define AllSkl 100
+#define NoSkill 0
+#define HalfSkill 50
+#define AllSkill 100
+
+
+//Percent of Resistance
+#define NoRes 0
+#define HalfRes 50
+#define AllRes 100
+#define NoResistance 0
+#define HalfResistance 50
+#define AllResistance 100

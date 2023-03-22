@@ -1,0 +1,12 @@
+NordicaSupportList:
+SupportList(Nordica,NordicaSupportList)
+
+SupportPartner(Orville,0,30)
+SupportPartner(Jacob,30,25)
+SupportPartner(Gemmora,0,20)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(3)

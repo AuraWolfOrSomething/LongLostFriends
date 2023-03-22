@@ -1,0 +1,28 @@
+
+#define CouponDiscountAmount 50
+
+#include "asm/RemoveCoupon.lyn.event"
+ALIGN 4
+
+#include "asm/ConvertSilverCard.lyn.event"
+ALIGN 4
+
+#include "asm/SilverCardDiscount.lyn.event"
+ALIGN 4
+
+#include "asm/CouponDiscount.lyn.event"
+ALIGN 4
+
+NewSilverCardParameterLink:
+BYTE SilverCard 50
+
+UsedSilverCardParameterLink:
+BYTE UsedSilverCard 25
+
+CouponInfoLink:
+BYTE Coupon CouponDiscountAmount
+
+PriceDiscountIncludeIgnoreLink:
+BYTE 0 CouponDiscountAmount 0-CouponDiscountAmount
+
+ALIGN 4

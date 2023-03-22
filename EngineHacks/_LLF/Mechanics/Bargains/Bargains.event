@@ -1,0 +1,33 @@
+//ASM Dependency: ShoppingEdits
+//Look at MiscData/BattlePrepShops.event to see examples on how to set items to be bargains in the preparations shop
+//Without further edits/new code, you can only have items with a quantity of 1 in stock
+
+PUSH
+
+ORG 0x99E50 //free space made by jumpToHack in ShoppingEdits 
+SHORT 0xB500 0x2800 //push {r14}; cmp r0, #0
+SHORT 0xD100 0x3202 //bne (0x99E58); add r2, #2
+SHORT 0x4678 0x5A80 //mov r0, r15; ldrh r0, [r0,r2]
+BL(0xB4168)
+SHORT 0xBC01 0x4700 //pop {r0}; bx r0
+SHORT 0x08B2 //Text: You don't have the money!
+SHORT BargainItemSoldOut //New text
+
+ORG 0xB45C8
+SHORT 0x2C00 0xD003 //cmp r4, #0; beq (0xB45D4)
+BL(0x24DE8)
+SHORT 0x4284 0xDD09 //cmp r4, r0; ble (0xB45E8)
+SHORT 0x1C20 0x1C29 //mov r0, r4; mov r1, r5
+SHORT 0x2208 //mov r2, #8
+BL(0x99E50)
+SHORT 0x1C28 0x2101 //mov r0, r5; mov r1, #1
+BL(0x2F24)
+SHORT 0xE01E //b (0xB4626)
+
+POP
+
+#include "asm/SetPurchasedBargainItem.lyn.event"
+ALIGN 4
+
+#include "asm/BargainPriceZeroIfPurchased.lyn.event"
+ALIGN 4

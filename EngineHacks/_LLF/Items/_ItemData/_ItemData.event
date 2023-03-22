@@ -1,0 +1,28 @@
+
+PUSH
+
+//Item Usability/Condition entry reader
+ORG 0x167A4
+#include "asm/CanUnitWieldStaff.lyn.event"
+
+ORG 0x28870
+#include "asm/CanUnitUseItem.lyn.event"
+ALIGN 4
+
+//Item Target/On Selection entry reader
+ORG 0x28E60
+#include "asm/ItemEffect_Call.lyn.event"
+ALIGN 4
+
+//Item Effect entry reader
+ORG 0x2FC48
+#include "asm/ActionStaffDoorChestUseItem.lyn.event"
+ALIGN 4
+
+POP
+
+#include "ItemEffect/ItemEffect.event"
+
+#include "NewData/NewData.event"
+
+#include "QualityOfLifeData/QualityOfLifeData.event"

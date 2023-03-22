@@ -1,0 +1,61 @@
+//Event file generated from Sappy .s format.
+	#include "MPlayDef.event"
+
+	#define	thief_warning_sound_grp  0x211BEC
+	#define	thief_warning_sound_pri  0
+	#define	thief_warning_sound_rev  0
+	#define	thief_warning_sound_mvl  127
+	#define	thief_warning_sound_key  0
+	#define	thief_warning_sound_tbs  1
+	#define	thief_warning_sound_exg  0
+	#define	thief_warning_sound_cmp  1
+
+	// .rodata
+	//	thief_warning_sound
+	ALIGN 4
+
+//**************** Track 1 (Midi-Chn.1) ****************//
+
+thief_warning_sound_1:
+	BYTE		VOL     127*thief_warning_sound_mvl/mxv
+	BYTE	KEYSH   thief_warning_sound_key+0
+// 000   ----------------------------------------
+	BYTE	TEMPO   200*thief_warning_sound_tbs/2
+	BYTE		VOICE   0
+	BYTE		N12     Cn3   v127
+	BYTE	W12
+	BYTE		N12   
+	BYTE	W12
+	BYTE		N12   
+	BYTE	W12
+	BYTE		N12   
+	BYTE	W36
+	BYTE	FINE
+
+//**************** Track 2 (Midi-Chn.2) ****************//
+
+thief_warning_sound_2:
+	BYTE		VOL     127*thief_warning_sound_mvl/mxv
+	BYTE	KEYSH   thief_warning_sound_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   70
+	BYTE	W48
+	BYTE		N24     Cn3   v127
+	BYTE	W24
+	BYTE	FINE
+
+//******************************************************//
+	ALIGN 4
+
+thief_warning_sound:
+	BYTE	2	// NumTrks
+	BYTE	0	// NumBlks
+	BYTE	thief_warning_sound_pri	// Priority
+	BYTE	thief_warning_sound_rev	// Reverb.
+
+	POIN2	thief_warning_sound_grp
+
+	POIN2	thief_warning_sound_1
+	POIN2	thief_warning_sound_2
+
+	

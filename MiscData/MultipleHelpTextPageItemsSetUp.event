@@ -1,0 +1,37 @@
+MultipleHelpTextPageList_Items:
+
+//TESTING
+/*
+BYTE BronzeSword 2 //item id; number of pages
+SHORT 0x0405 0x026E //text id for each page
+
+BYTE IronSword 3 //item id; number of pages
+SHORT 0x0404 0x0474 0x0316 //text id for each page
+*/
+
+BYTE LearningRing 3 //item id; number of pages
+SHORT LearningRingDesc LearningRingDesc2 LearningRingDesc3 //text id for each page
+
+BYTE Perfectus 2
+SHORT PerfectusDesc PerfectusDesc2
+
+BYTE Whetstone 3
+SHORT WhetstoneDesc WhetstoneDesc2 WhetstoneDesc3
+
+BYTE Wind 2
+SHORT WindDesc WindDesc2
+
+BYTE Guardian 3
+SHORT GuardianDesc GuardianDesc2 GuardianDesc3
+
+BYTE PupilGem 2
+SHORT PupilGemDesc PupilGemDesc2
+
+BYTE Rustbow 2
+SHORT RustbowDesc RustbowDesc2
+
+BYTE HeavyHoveringBoots 3
+SHORT HeavyHoveringBootsDesc HeavyHoveringBootsDesc2 HeavyHoveringBootsDesc3
+
+BYTE 0 //end list with this
+ALIGN 4

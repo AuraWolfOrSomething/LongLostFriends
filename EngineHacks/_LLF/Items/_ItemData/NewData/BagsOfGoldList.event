@@ -1,0 +1,6 @@
+
+BagsOfGoldList:
+BYTE _150G _200G _1000G _5000G
+BYTE 0
+ALIGN 4
+

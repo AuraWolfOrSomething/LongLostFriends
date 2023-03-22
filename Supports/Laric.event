@@ -1,0 +1,12 @@
+LaricSupportList:
+SupportList(Laric,LaricSupportList)
+
+SupportPartner(Franklin,0,25)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(1)

@@ -1,0 +1,564 @@
+﻿//I could definitely get rid of these, but nah
+//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+EventPointerTable(0x17,Pointers)
+
+Pointers:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+#include "Chapter4Units.event"
+#include "Chapter4EventIDs.event"
+#include "Chapter4QuoteTable.event"
+
+EscapePointPointerTable(Ch_4,Chapter4EscapePoints)
+
+Chapter4EscapePoints:
+EscapePoint(11,0,MoveUp)
+EscapePoint(12,0,MoveUp)
+EscapePoint(13,0,MoveUp)
+EscapePointEnd
+
+TurnBasedEvents:
+TurnEventPlayer(0,BeforeBattleBegins,1)
+
+TurnEventPlayer(0,SouthReinforcement0Warning,2)
+TurnEventPlayer(0,SouthReinforcement0Arrives,3)
+
+TurnEventPlayer(0,ThiefReinforcementsWarning,3)
+TurnEventPlayer(0,ThiefReinforcementsArrive,4)
+
+TurnEventPlayer(0,NorthReinforcements1Warning,5)
+TurnEventPlayer(0,NorthReinforcements1Arrive,6)
+
+TurnEventPlayer(0,SouthReinforcementsWarning,5)
+TurnEventPlayer(0,SouthReinforcements1Arrive,6)
+
+//TurnEventPlayer(0,TownReinforcementsWarning,4)
+//TurnEventPlayer(0,TownReinforcementsArrive,5)
+
+TurnEventPlayer(0,SouthReinforcementsWarning,7)
+TurnEventPlayer(0,SouthReinforcements2Arrive,8)
+
+TurnEventPlayer(0,McVicarWarning1,6)
+TurnEventPlayer(0,McVicarWarning2,7)
+TurnEventPlayer(0,McVicarArrives,8)
+
+TurnEventPlayer(McVicarLeavesEventID,McVicarLeaves,2,99)
+TurnEventNPC(McVicarLeavesEventID,McVicarLeaves,2,99)
+
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Armory(Ch4Armory,8,2)
+Vendor(Ch4Vendor,8,7)
+Chest(ChestEventID,Warp,17,5)
+Chest(ChestEventID,Rapier,17,9)
+//House(BottomHouseEventID,BottomHouse,8,6)
+Village(BottomHouseEventID,BottomHouse,6,13)
+//House(TopHouseEventID,TopHouse,4,6)
+Village(TopHouseEventID,TopHouse,1,7)
+#ifdef TESTING_EASY_CLEAR
+	Seize(8,19)
+	Seize(12,19)
+#endif
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+//AREA 0 CheckIfAllBossesDefeated [3,0] [5,0]
+AFEV 0 CheckIfAllBossesDefeated CalderDeathEventID
+AFEV 0 CheckIfAllBossesDefeated ArtusDeathEventID
+AFEV 0 ChangeMonkAI ChestEventID
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+
+
+BeginningScene:
+//Load(NewUnits)
+
+SetBackground(Ship)
+MUSC Advance
+TEXTSTART
+TEXTSHOW Ch4Intro1
+TEXTEND
+FADI 10
+Load(BadUnits)
+Load(NPCUnits)
+Camera(7,15,10)
+TILECHANGE 0x1
+TILECHANGE 0x5
+ClearBackground
+REMA
+STAL 20
+MUSCSLOW 0x7FFF
+
+Load(UnitsCutscene)
+STAL 20
+Camera(13,8,30)
+Notice(Artus,30)
+//Notice(Calder,30)
+SetBackground(Harbor)
+MUSC Tension
+TEXTSTART
+TEXTSHOW Ch4Intro2
+TEXTEND
+ClearBackground
+REMA
+Move(Artus,3,2)
+STAL 30
+
+Notice(Rylan,45)
+ENUN
+TEXTSTART
+TEXTSHOW Ch4Intro3
+TEXTEND
+REMA
+STAL 20
+
+Camera(7,15,20)
+TEXTSTART
+TEXTSHOW Ch4Intro4
+TEXTEND
+REMA
+FADI 10
+STAL 20
+CLEA 0
+
+//TESTING
+//Load(McVicarUnit)
+//MoveAndWait(McVicar,0,3)
+
+ENUT McVicarLeavesEventID
+
+LoadPrepUnits(Units)
+GotoPrepScreen
+
+BeforeBattleBegins:
+//Reset chapter bargain item IDs for next chapter
+ENUF ChapterBargain1EventID
+ENUF ChapterBargain2EventID
+ENUF ChapterBargain3EventID
+NoFade
+ENDA
+
+
+//-------------------------------------------
+//Turn Events
+//-------------------------------------------
+
+/*
+EntranceReinforcementsWarning:
+MUSI
+Camera(7,5,10)
+Notice(4,0,30)
+InfantryWarning
+Notice(6,0,30)
+MageWarning
+MUNO
+NoFade
+ENDA
+
+EntranceReinforcementsArrive:
+Camera(7,5,10)
+Load(EntranceReinforcements)
+NoFade
+ENDA
+*/
+
+SouthReinforcement0Warning:
+ReinforcementWarningEventHeader(0x1)
+	MUSI 
+	Camera(13,15,10)
+	Notice(20,16,30)
+	InfantryWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+SouthReinforcement0Arrives:
+Camera(13,15,10)
+Load(SouthReinforcement0)
+NoFade
+ENDA
+
+
+
+ThiefReinforcementsWarning:
+ReinforcementWarningEventHeader(0x1)
+	MUSI 
+	/*
+	Camera(11,5,10)
+	Notice(11,0,30)
+	Notice(12,0,30)
+	*/
+	Camera(13,5,10)
+	Notice(20,5,30)
+	Notice(20,6,30)
+	ThiefWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+ThiefReinforcementsArrive:
+Camera(13,5,10)
+Load(ThiefReinforcements)
+NoFade
+ENDA
+
+NorthReinforcements1Warning:
+ReinforcementWarningEventHeader(0x1)
+	MUSI 
+	Camera(13,5,10)
+	Notice(20,5,30)
+	Notice(20,6,30)
+	InfantryWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+NorthReinforcements1Arrive:
+Camera(13,5,10)
+Load(NorthReinforcements1)
+NoFade
+ENDA
+
+SouthReinforcementsWarning:
+ReinforcementWarningEventHeader(0x1)
+	MUSI 
+	Camera(13,15,10)
+	//Notice(20,16,30)
+	//InfantryWarning
+	Notice(20,17,30)
+	MageWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+SouthReinforcements1Arrive:
+Camera(13,15,10)
+Load(SouthReinforcements1)
+NoFade
+ENDA
+
+SouthReinforcements2Arrive:
+Camera(13,15,10)
+Load(SouthReinforcements2)
+NoFade
+ENDA
+
+TownReinforcementsWarning:
+ReinforcementWarningEventHeader(0x1)
+	MUSI 
+	Camera(7,15,10)
+	Notice(0,18,30)
+	Notice(0,19,30)
+	InfantryWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+TownReinforcementsArrive:
+Camera(7,15,10)
+Load(TownReinforcements)
+NoFade
+ENDA
+
+McVicarWarning1:
+ReinforcementWarningEventHeader(0x1)
+
+	//Check if Artus is alive
+	CHECK_EVENTID ArtusDeathEventID
+	IFEQ 0x2 0xC 0x0
+	
+		//If so, play event
+		MUSI
+		Camera(Artus,20)
+		TEXTSTART
+		TEXTSHOW Ch4McVicarWarningArtus
+		TEXTEND
+		REMA
+		STAL 10
+		MUNO
+	LABEL 0x2
+	
+	
+LABEL 0x1
+NoFade
+ENDA
+
+McVicarWarning2:
+ReinforcementWarningEventHeader(0x1)
+	MUSI
+	Camera(Artus,10)
+	SetBackground(Plain)
+	TEXTSTART
+	TEXTSHOW Ch4McVicarWarningOffscreen
+	TEXTEND
+	SOUN 0x00D0
+	STAL 25
+	SOUN 0x00D5
+	STAL 20
+	TEXTCONT
+	TEXTEND
+	ClearBackground
+	REMA
+	MUNO
+LABEL 0x1
+	
+NoFade
+ENDA
+
+McVicarArrives:
+MUSI
+Camera(7,5,10)
+Load(McVicarUnit)
+STAL 20
+//Notice(McVicar,30)
+//STAL 20
+
+//Check if Artus is alive
+CHECK_EVENTID ArtusDeathEventID
+IFEQ 0x1 0xC 0x0
+
+	//If so, McVicar sticks around
+	TEXTSTART
+	TEXTSHOW Ch4McVicarArrivesArtusAlive
+	TEXTEND
+	REMA
+	STAL 10
+	MoveAndWait(McVicar,0,3)
+	
+GOTO 0x2
+LABEL 0x1
+
+	//If he's dead, McVicar leaves
+	TEXTSTART
+	TEXTSHOW Ch4McVicarArrivesArtusDead
+	TEXTEND
+	REMA
+	STAL 10
+	DISA McVicar
+	ENUN
+	
+LABEL 0x2
+MUNO
+NoFade
+ENDA
+
+McVicarLeaves:
+CHECK_EXISTS McVicar
+IFNE 0x1 sC s0
+	MoveAndWait(McVicar,0,3)
+	DISA McVicar
+	ENUN
+LABEL 0x1
+NoFade
+ENDA
+
+
+//-------------------------------------------
+//Location Events
+//-------------------------------------------
+
+Ch4Armory:
+SHLI CopperSword SteelSword Zanbato Armorslayer CopperLance SteelLance Javelin Horseslayer HeavySpear CopperAxe SteelAxe HandAxe Halberd Hammer CopperBow SteelBow BronzeLongbow IronLongbow
+ALIGN 4
+
+Ch4Vendor:
+SHLI Fire Thunder Wind Elfire Elthunder Lightning Ray Insight Shine Lucent Flux Shade Ensnare Worm Afflict Heal Mend Guardian Vulnerary PureWater
+ALIGN 4
+
+BottomHouse:
+MUSI
+CHECK_ACTIVE 
+SVAL s1 Thorbek
+
+IFNE 0x1 sC s1
+
+	//if not Thorbek
+	SetBackground(HouseBG)
+	TEXTSTART
+	TEXTSHOW Ch4ElixirHouse
+	TEXTEND
+	ClearBackground
+	REMA
+	
+GOTO 0x2
+LABEL 0x1
+
+	//else if Thorbek
+	SetBackground(HouseBG)
+	TEXTSTART
+	TEXTSHOW Ch4ElixirHouseThorbek
+	TEXTEND
+	ClearBackground
+	REMA
+	
+LABEL 0x2
+VillageReward(Elixir)
+MUNO
+NoFade
+ENDA
+
+TopHouse:
+MUSI
+SetBackground(HouseBG)
+TEXTSTART
+TEXTSHOW Ch4HeavyHoveringBootsHouse
+TEXTEND
+ClearBackground
+REMA
+VillageReward(HeavyHoveringBoots)
+MUNO
+NoFade
+ENDA
+
+
+//-------------------------------------------
+//Misc Events
+//-------------------------------------------
+
+CheckIfAllBossesDefeated:
+//Check if Artus is dead
+CHECK_EVENTID ArtusDeathEventID
+IFNE 0x1 0xC 0x0
+	
+	//If so, check if Calder is dead
+	CHECK_EVENTID CalderDeathEventID
+	IFNE 0x2 0xC 0x0
+		//If both bosses are dead, chapter's over
+		ENUT 0x3
+		CALL EndingScene
+		ENDB
+	LABEL 0x2
+LABEL 0x1
+NoFade
+ENDA
+
+ChangeMonkAI:
+ENUF ChestEventID //both chests use this event ID
+
+SETVAL 0x1 0x00040C06 //"EscapeAvoidCombat" AI (otherwise, the monks usually try to destroy the houses afterwards)
+
+//If both chests are opened, set both monks to escape
+COUNTER_INC 0
+COUNTER_CHECK 0
+SETVAL 0x2 2
+IFEQ 0x1 0xC 0x2
+	CHAI Enemy0S
+	CHAI Enemy1S
+GOTO 0x2
+LABEL 0x1
+
+//Otherwise, if a monk opened the chest, change the AI of that monk
+	CHECK_ACTIVE
+	SETVAL 0x2 Enemy0S
+	IFEQ 0x3 0xC 0x2 
+		CHAI Enemy0S
+	GOTO 0x4
+	LABEL 0x3
+		SETVAL 0x2 Enemy1S
+		IFEQ 0x4 0xC 0x2
+			CHAI Enemy1S
+		LABEL 0x4
+LABEL 0x2
+NoFade
+ENDA
+
+EndingScene:
+//DoNotWinIfPlanning(0x1,0x2)
+ENUF GuideChapterAdvice
+
+MUSC Victory
+
+//recruit Rylan if he's alive
+CHECK_EVENTID RylanDeathEventID
+IFEQ 0x3 sC s0
+
+	TurnAlly(Rylan)
+	SetBackground(Harbor)
+	TEXTSTART
+	TEXTSHOW Ch4EndingRylanAlive
+	TEXTEND
+	REMA
+
+GOTO 0x4
+LABEL 0x3
+
+	SetBackground(Harbor)
+	TEXTSTART
+	TEXTSHOW Ch4EndingRylanDead
+	TEXTEND
+	REMA
+
+LABEL 0x4
+
+CHECK_EVENTID McVicarFirstImpressionEventID
+IFNE 0x5 sC s0
+	
+	//play this if McVicar didn't kill Artus
+	TEXTSTART
+	TEXTSHOW Ch4EndingArtusOtherKill
+	TEXTEND
+	REMA
+
+GOTO 0x6
+LABEL 0x5
+
+	TEXTSTART
+	TEXTSHOW Ch4EndingArtusMcVicarKill
+	TEXTEND
+	REMA
+
+LABEL 0x6
+
+TEXTSTART
+TEXTSHOW Ch4EndingZorenMcVicar
+TEXTEND
+SetBackground(Black)
+STAL 30
+NoFade
+
+CALL PostMapFunctions
+
+#ifdef TESTING_CHAPTER_TRANSITION
+	MNC2 Ch_4
+#else
+	//MoveToChapter(Ch_5)
+	MNC2 Ch_5
+#endif
+
+//LABEL 0x2 //use DoNotWinIfPlanning condID2
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

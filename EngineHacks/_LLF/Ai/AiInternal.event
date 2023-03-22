@@ -1,0 +1,49 @@
+
+PUSH
+
+//Ai2, move towards enemy
+ORG 0x3C870
+SHORT 0x1C20 //mov r0, r4
+
+ORG 0x3ACF8
+#include "asm/OverwriteAiIsUnitExceptionFunction.lyn.event"
+ALIGN 4
+
+//Ai2, attack within double range
+ORG 0x3EFE0 
+jumpToHack(NewAiUnitAtPosDifFac)
+ALIGN 4
+
+//Whether unit should consider unit as potential target to attack or not 
+ORG 0x3AC3C
+SHORT 0xB5F0 //push {r4-r7,r14}
+
+ORG 0x3AC66
+SHORT 0x181F //add r7, r3, r0
+
+ORG 0x3AC76 //InjectMovGetters from MSG also writes here; this will overwrite that
+SHORT 0xBC02 //pop {r1}
+SHORT 0x1809 //add r1, r0
+SHORT 0x1C28 //mov r0, r5
+SHORT 0x1C3A //mov r2, r7
+SHORT 0x4B03 //ldr r3, =CouldStatUnitBeInRangeExt
+SHORT 0x469E //mov lr, r3
+SHORT 0xF800 //bl lr+0
+SHORT 0xBCF0 //pop {r4-r7}
+SHORT 0xBC02 //pop {r1}
+SHORT 0x4708 //bx r1
+SHORT 0
+POIN CouldStatUnitBeInRangeExt
+
+POP
+
+
+#include "asm/AiTargetExceptionCheck.lyn.event"
+ALIGN 4
+
+#include "asm/NewAiUnitAtPosDifFac.lyn.event"
+ALIGN 4
+
+#include "asm/CouldStatUnitBeInRangeExt.lyn.event"
+ALIGN 4
+

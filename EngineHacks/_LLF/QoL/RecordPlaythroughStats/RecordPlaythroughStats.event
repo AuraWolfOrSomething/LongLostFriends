@@ -1,0 +1,25 @@
+
+PUSH
+
+ORG 0x2C1F2
+SHORT 0x68EE //ldr r6, [r5,#0x0C]
+SHORT 0x4B01 0x469E //ldr r3, (RecordDamage); mov lr, r3
+SHORT 0xF800 0xE001 //bl lr+0; b 0x2C200
+POIN RecordDamage
+SHORT 0x60E6 0x4A33 //str r6, [r4,#0x0C]
+SHORT 0x0C70 //lsr r0, r6, #0x11
+
+POP
+
+
+//MESSAGE peekAtPlaythroughStats currentOffset
+#include "asm/RecordPlaythroughStats.lyn.event"
+ALIGN 4
+
+//MESSAGE recordingDamage currentOffset
+#include "asm/RecordDamage.lyn.event"
+ALIGN 4
+
+//MESSAGE recordingHealing currentOffset
+#include "asm/AddToAccumulatedHealing.lyn.event"
+ALIGN 4

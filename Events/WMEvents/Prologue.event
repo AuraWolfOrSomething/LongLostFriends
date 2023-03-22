@@ -1,0 +1,22 @@
+
+////////////////////////////////////////////////////
+//                                                //
+// Disassembled with Nintenlord's Event Assembler //
+// Version: 11.0.0.0                              //
+// Game: FE8                                      //
+// File: v0.3.gba                                 //
+// Offset: $A39768                                //
+//                                                //
+////////////////////////////////////////////////////
+
+
+WorldMapPointerTable(0,WM_Events)
+
+WM_Events:
+EVBIT_MODIFY 0x1
+SKIPWN
+ENDA
+
+//The next line is to ensure that new events do not overwrite other data.
+//Do not delete unless you are SURE you know what you are doing!
+//ASSERT $A39D00 - currentOffset

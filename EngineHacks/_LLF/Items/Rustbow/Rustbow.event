@@ -1,0 +1,13 @@
+
+RustbowIDLink:
+BYTE Rustbow
+
+RustbowDebuffDurationOnHitLink:
+BYTE 3
+ALIGN 4
+
+#include "asm/RustbowProc.lyn.event"
+ALIGN 4
+
+#include "asm/RustbowDamage.lyn.event"
+ALIGN 4

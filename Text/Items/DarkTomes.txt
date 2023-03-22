@@ -1,0 +1,77 @@
+## FluxName
+Flux[X]
+
+## FluxDesc
++15 Dodge.[X]
+
+## LunaName
+Luna[X]
+
+## LunaDesc
+Negates enemy Res. +3 Res to wielder.[X]
+
+## NosferatuName
+Nosferatu[X]
+
+## NosferatuDesc
+Steals enemy HP. -3 Spd.[X]
+
+## FenrirName
+Fenrir[X]
+
+## FenrirDesc
++3 Spd when equipped.[X]
+
+## EnsnareName
+Ensnare[X]
+
+## EnsnareDesc
++3 Def.[X]
+
+## DevourName
+Devour[X]
+
+## DevourDesc
+Long-range magic attack.[X]
+
+## TruthName
+Truth[X]
+
+## TruthDesc
+Reverses magic triangle.[X]
+
+## DistortName
+Distort[X]
+
+## DistortDesc
+Reverses followup threshold (-4 or less).[X]
+
+## WormName
+Worm[X]
+
+## WormDesc
+ [X]
+
+## EnigmaName
+Enigma[X]
+
+## EnigmaDesc
+ [X]
+
+## RuinName
+Ruin[X]
+
+## RuinDesc
+Hits always crit if 4+ Skl over enemy.[X]
+
+## ShadeName
+Shade[X]
+
+## ShadeDesc
+2 WEXP. +5 staff healing dealt.[X]
+
+## AfflictName
+Afflict[X]
+
+## AfflictDesc
+Doubles magic triangle effects.[X]

@@ -1,0 +1,537 @@
+
+## Ch1Intro1
+[OpenMidLeft][LoadZoren]
+[OpenRight][LoadOldWoman]
+[OpenFarRight][LoadOldMan]
+
+[OpenMidLeft]
+My promise to [TR]Pyrus[TR].[AN]
+Is he home?[A]
+
+[OpenFarRight]
+I'm afraid not.[AN]
+You haven't heard from him?[A]
+
+[OpenMidLeft]
+Not in a long time, no.[A]
+
+[OpenRight]
+Oh dear.[AN][ToggleSmile]
+Why don't we have a[N]
+chat inside?[AN]
+My tea's just about done.[A]
+[ToggleSmile]
+[X]
+
+## Ch1Intro2
+[OpenFarLeft][LoadOldMan]
+[OpenLeft][LoadOldWoman]
+[OpenMidRight][LoadZoren]
+So, what has he been up to?[A]
+
+[OpenFarLeft]
+When we last heard from him,[N]
+he was doing mercenary work.[AN]
+
+[OpenMidRight]
+Huh.[A][N]
+Wasn't quite what I[N]
+was expecting.[A]
+
+[OpenLeft]
+Well, a few years after your[N]
+family left town,[AN]
+he started exercising and[N]
+training for combat.[AN]
+He caught someone's eye, and[N]
+he's been with him ever since.[AN]
+At least, that's what I assuming.[AN]
+For a long time, he'd write about[N]
+his travels and how he was doing.[AN]
+He'd even sent us some of the[N]
+money he made.[AN]
+But now[TMM]...[TMM]well, ever since last year,[AN]
+he just sends the gold with[N]
+his signature attached.[AN]
+
+[OpenMidRight]
+What's the group[N]
+he's with called?[A]
+
+[OpenFarLeft]
+The Ruthless Remnants.[AN]
+They used to live around here,[AN]
+but they moved to [TR]Argustia[TR][N]
+shortly after he joined.[AN]
+Have you heard of them?[A]
+
+[OpenMidRight]
+Hmm[TMM]...[TMM]sounds vaguely familiar,[N]
+but I can't say for sure.[AN]
+Too many mercenary bands to keep[N]
+them all straight, these days.[AN]
+Anyways, I'll see what I can dig up[N]
+in [TR]Argustia[TR], and go from there.[AN]
+Even if they're not in the area,[N]
+I'll have to learn something useful.[A]
+
+[OpenLeft]
+Would you do that for us?[AN]
+That would be marvelous.[A]
+
+[OpenMidRight][ToggleSmile]
+It's no trouble at all.[AN]
+Well, I'd best be off.[A][ToggleSmile]
+
+[OpenFarLeft]
+Wait![A]
+
+[OpenMidRight]
+Huh?[A]
+
+[OpenFarLeft]
+We, ah, we need something[N]
+else from you.[AN]
+A favor, if you will.[A]
+
+[OpenMidRight]
+A favor?[AN][ToggleSmile]
+Sure, anything[N]
+for you two.[AN]
+What's up?[A]
+
+[OpenLeft][ToggleSmile]
+Well, there's been a lot of talk about[N]
+bandits these days.[AN]
+People have been whispering about[N]
+a "Bandit King".[AN][ToggleSmile]
+You remember Gert, don't you, dear?[A]
+
+[OpenMidRight]
+Of course.[AN]
+Apparently he's well known[N]
+in [TR]Argustia[TR], too.[A]
+
+[OpenLeft][ToggleSmile]
+Really?[AN]
+I didn't think he'd[N]
+be so famous.[A]
+
+[OpenFarLeft][ToggleSmile]
+See, Laura, I told you[N]
+he's the real deal![AN]
+Why, back when[TMM]--[TMM][A]
+
+[OpenLeft]
+Dear, another time.[AN]
+Let's get back to the bandits.[A]
+
+[OpenFarLeft][ToggleSmile]
+See, Zoren, this is why[N]
+she's so surprised![AN]
+Only I know the stories![AN]
+Fine, fine.[A]
+
+[OpenLeft]
+Normally, Gert would take care of[N]
+trouble like this Bandit King,[AN]
+but Gert hasn't been around in[N]
+a long while.[AN]
+Probably a week or so, wouldn't[N]
+you say, Wendell?[A]
+
+[OpenFarLeft]
+Sounds about right.[AN]
+There's another young man[N]
+looking into them,[AN]
+but he hasn't gotten[N]
+too far yet.[AN]
+Some extra hands would[N]
+speed this up.[A]
+
+[OpenMidRight]
+Very well, I'll take care[N]
+of the bandits.[A]
+
+[OpenMidRight][ClearFace]
+[OpenRight][LoadMarcey]
+[OpenFarRight][LoadJacob]
+
+[OpenFarLeft][ClearFace]
+[OpenLeft][MoveFarLeft]
+[OpenLeft][LoadZoren]
+
+
+[OpenRight]
+I apologize for the interruption,[AN]
+but I've something to ask of[N]
+you folks, in return.[A]
+
+[OpenFarLeft][ToggleSmile]
+Why, hello there![AN]
+I didn't know you had[N]
+a squire, Zoren![A][ToggleSmile]
+
+[OpenLeft]
+She's not mine, but she's[N]
+with us, regardless.[AN]
+What is it, Marcey?[A]
+
+[OpenRight]
+While we go after the criminals,[N]
+could you two look after Jacob?[AN]
+He's a nice lad, he just needs[TMM]--[TMM][A]
+
+[OpenFarRight]
+What?[A] No![AN]
+I wanna go with[N]
+you guys![A]
+
+[OpenRight]
+Don't be silly.[AN]
+Once we arrive, I must[N]
+help with the fighting.[AN]
+I can't stay back and[N]
+look over you.[A]
+
+[OpenFarLeft][ToggleSmile]
+Don't worry, we'll take[N]
+good care of him.[AN]
+He can even use [TR]Pyrus's[TR][N]
+room, for now.[AN]
+I'll show you where it is.[A]
+
+[OpenRight]
+Thank you.[A][ToggleSmile]
+
+[OpenFarLeft][ClearFace]
+[OpenRight][ClearFace]
+[OpenFarRight][ClearFace]
+
+[OpenLeft][ClearFace]
+[OpenMidLeft][LoadOldMan]
+
+[OpenMidRight][LoadZoren]
+Where can we meet the[N]
+man you mentioned?[A]
+
+[OpenMidLeft]
+He hangs around the[N]
+tavern, I think.[AN]
+Goes by Davis.[A]
+
+[OpenMidRight]
+Alright, if that's really all,[N]
+I'd better go meet him.[A]
+
+[X]
+
+## Ch1Intro3
+[OpenMidLeft][LoadDavis]
+[OpenMidRight][LoadZoren]
+
+Hm, not as big[N]
+as I expected.[A]
+
+[OpenMidLeft]
+Well, it's like I said.[AN]
+We can take them down together,[N]
+as long as we've got a good plan.[AN]
+Based on your reputation, I'll leave[N]
+that part to you.[A]
+[X]
+
+## Ch1Intro4
+[OpenMidRight][LoadBruce]
+[OpenFarFarLeft][LoadBandit][MoveMidLeft]
+
+[OpenMidLeft]
+Bruce, we've got trouble![AN]
+Some intruders just waltzed[N]
+right into the entrance![A]
+
+[OpenMidRight]
+Well, what are you waiting for!?[AN]
+Close the walls up![A]
+[X]
+
+## Ch1Intro5
+[OpenMidRight][LoadBandit2]
+Things are gonna get[N]
+messy real soon.[AN][ToggleSmile]
+Just what Billy and I[N]
+were waiting for.[A][ToggleSmile]
+[X]
+
+## Ch1Intro6
+[OpenMidLeft][LoadDavis]
+[OpenMidRight][LoadZoren]
+
+[OpenMidLeft]
+Sounds like they closed off the[N]
+pathways through the fort.[AN]
+We'll have to get access to[N]
+[TR]the tiles[TR] to reopen them.[A]
+[X]
+
+## Ch1Intro7
+[OpenMidLeft][LoadDavis]
+[OpenMidRight][LoadZoren]
+
+[OpenMidLeft]
+Standing on this tile on the[N]
+left will reopen this entrance.[A]
+[X]
+
+## Ch1Intro8
+[OpenMidLeft][LoadDavis]
+[OpenMidRight][LoadZoren]
+
+[OpenMidLeft]
+This tile on the right will reveal[N]
+the passage on the left.[A]
+[X]
+
+## Ch1Intro9
+[OpenMidLeft][LoadDavis]
+[OpenMidRight][LoadZoren]
+
+[OpenMidLeft]
+Finally, this tile further in will open[N]
+the second wall on the right.[AN]
+I [TR]wrote all of this down[TR],[N]
+just as a precaution.[A]
+
+[OpenMidRight]
+Good thinking.[AN]
+Alright, let's get started.[A]
+[X]
+
+
+## Ch1ArlettRecruit
+[OpenMidLeft][LoadArlett]
+[OpenMidRight][LoadActiveUnit]
+
+[OpenMidLeft][LoadArlett][ToggleSmile]
+Whew, thanks for the rescue![AN]
+If you've got a spare staff, I can[N]
+help keep everyone in fighting shape.[A]
+[X]
+
+## Ch1EndingArlettSaved
+[OpenMidLeft][LoadZoren]
+[OpenMidRight][LoadIris]
+
+The remaining bandits have[N]
+surrendered, Zoren.[A]
+
+[OpenMidLeft]
+Is the Bandit King among[N]
+them, Sir Iris?[A]
+
+[OpenMidRight]
+Not that I know of, no.[AN]
+None of them stood out to me.[AN]
+I'll take a look around the perimeter,[N]
+in case he fled in the aftermath.[A]
+[ClearFace]
+
+[OpenMidRight][LoadArlett]
+Earlier, I overheard the bandits talking.[AN]
+He took a lot of his men with him to[N]
+start moving to another location.[AN]
+Normally, the area's well guarded,[N]
+but it's undermanned right now.[AN]
+That place is where I'm supposed to be.[A]
+
+[OpenMidLeft]
+That doesn't sound good.[AN]
+We'd better hurry.[A]
+
+[X]
+
+## Ch1EndingArlettAlive
+[OpenMidLeft][LoadZoren]
+[OpenMidRight][LoadIris]
+
+The remaining bandits have[N]
+surrendered, Zoren.[A]
+
+[OpenMidLeft]
+Is the Bandit King among[N]
+them, Sir Iris?[A]
+
+[OpenMidRight]
+Not that I know of, no.[AN]
+None of them stood out to me.[AN]
+I'll take a look around the perimeter,[N]
+in case he fled in the aftermath.[A]
+[ClearFace]
+
+[OpenMidRight][LoadDavis]
+Give me a moment.[A]
+[ClearFace]
+
+[StopForEvents]
+
+[OpenMidRight][LoadDavis]
+I found this woman in[N]
+one of the cells.[A]
+
+[OpenMidRight][MoveFarRight]
+[OpenRight][LoadArlett]
+
+You're looking for the[N]
+"Bandit King", right?[A][CloseSpeechSlow]
+
+[.4][OpenRight]
+He took a lot of his men with him to[N]
+start moving to another location.[AN]
+Normally, the area's well guarded,[N]
+but it's undermanned right now.[AN]
+That place is where I'm supposed to be.[A]
+
+[OpenMidLeft]
+That doesn't sound good.[AN]
+We'd better hurry.[A]
+
+[X]
+
+## Ch1EndingArlettDied
+[OpenMidLeft][LoadZoren]
+[OpenMidRight][LoadIris]
+
+The remaining bandits have[N]
+surrendered, Zoren.[A]
+
+[OpenMidLeft]
+Is the Bandit King among[N]
+them, Sir Iris?[A]
+
+[OpenMidRight]
+Not that I know of, no.[AN]
+None of them stood out to me.[AN]
+I'll take a look around the perimeter,[N]
+in case he fled in the aftermath.[A]
+[ClearFace]
+
+[OpenMidRight][LoadDavis]
+Give me a moment.[A]
+[ClearFace]
+
+[StopForEvents]
+
+[OpenMidRight][LoadDavis]
+I interrogated one of our prisoners.[AN]
+Apparently, he took a bunch of his men with[N]
+him to start moving to another location.[AN]
+Normally, that area's well guarded,[N]
+but it's undermanned right now.[A]
+
+[OpenMidLeft]
+That doesn't sound good.[AN]
+We'd better hurry.[A]
+
+[X]
+
+## Ch1EndingArlettAndDavisDied
+[OpenMidLeft][LoadZoren]
+[OpenMidRight][LoadIris]
+
+The remaining bandits have[N]
+surrendered, Zoren.[A]
+
+[OpenMidLeft]
+Is the Bandit King among[N]
+them, Sir Iris?[A]
+
+[OpenMidRight]
+Not that I know of, no.[AN]
+None of them stood out to me.[AN]
+I'll take a look around the perimeter,[N]
+in case he fled in the aftermath.[A]
+[ClearFace]
+
+[OpenMidLeft]
+Davis was sure that their[N]
+leader would be here.[AN]
+This is a bit concerning[Beat][A]
+
+[StopForEvents]
+
+[OpenFarFarRight][LoadBandit][MoveFarRight]
+[OpenFarFarRight][LoadIris]
+[OpenFarRight][MoveMidRight]
+[OpenFarFarRight][MoveFarRight]
+[OpenMidRight][MoveRight]
+[OpenFarRight][MoveMidRight]
+He's no King, but his lacky[N]
+can lead us to him.[AN]
+Won't you, now?[A]
+
+[OpenRight]
+Y-you promise to keep me alive?[A]
+
+[OpenMidRight]
+We'll drop you off at a town nearby.[AN]
+Your fate will lie with them.[A]
+[MoveFarRight]
+[OpenFarRight]
+Now then, what do you know?[A]
+
+[OpenRight]
+[Beat]The boss-, er, the Bandit King,[N]
+wanted to treat everyone.[AN]
+S-so he's been sending s-scouts to[N]
+a bunch of places nearby.[AN]
+There was a village southeast of[N]
+here that was tempting,[AN]
+if it weren't for all the guards.[AN]
+But[Beat][A]
+
+[OpenMidLeft]
+But?[A]
+
+[OpenRight]
+B-but all of a sudden, there's barely[N]
+even a third of the guards around![AN]
+So the Bandit King rounded up some[N]
+of us to go do some r-raiding.[AN]
+T-that's gotta be where he is![A]
+
+[OpenFarRight]
+What's the village called?[A]
+
+[OpenRight]
+I[Beat]I d-don't know![AN]
+He never said what it[N]
+was called![AN]
+Said it wasn't important![A]
+
+[OpenFarRight]
+Are you lying?[A]
+
+[OpenRight]
+No![AN]
+I p-promise![AN]
+
+[OpenFarRight]
+[Beat]I think I know the place[N]
+he's talking about, Zoren.[AN]
+I'll show you on my map.[AN]
+You and everyone else should[N]
+start moving.[AN]
+I'll catch up with you once[N]
+I drop him off.[A]
+
+[OpenMidLeft]
+Alright.[AN]
+You better make it back,[N]
+in one piece, though.[A]
+
+[OpenFarRight]
+Don't worry.[AN]
+I'll be back before[N]
+you know it.[A]
+
+[X]

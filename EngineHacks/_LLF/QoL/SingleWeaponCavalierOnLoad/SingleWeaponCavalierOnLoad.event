@@ -1,0 +1,18 @@
+
+PUSH
+
+ORG 0x17E72
+SHORT 0x1C20 //mov r0, r4
+SHORT 0x4B01 //ldr r3, (LoadCharacterAndClassRanks)
+BL(0xD18CC)
+SHORT 0xE00D //b (0x17E98)
+POIN LoadCharacterAndClassRanks|1
+
+POP
+
+#include "LoadCharacterAndClassRanks.lyn.event"
+ALIGN 4
+
+LimitToSingleWeaponClassList:
+BYTE Cavalier Cavalier_F 0
+ALIGN 4

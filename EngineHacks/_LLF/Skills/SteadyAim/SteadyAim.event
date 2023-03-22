@@ -1,0 +1,6 @@
+
+#include "asm/SteadyAim.lyn.event"
+SteadyAimLink:
+BYTE SteadyAimID
+ALIGN 4
+

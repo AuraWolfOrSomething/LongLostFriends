@@ -1,0 +1,22 @@
+
+#include "asm/ReinforcementWarningsStatus.lyn.event"
+ALIGN 4
+
+#include "asm/ReinforcementWarningsColor.lyn.event"
+ALIGN 4
+
+#include "asm/ReinforcementWarningsToggle.lyn.event"
+ALIGN 4
+
+#include "asm/MapMenuReinWarnToggle.lyn.event"
+ALIGN 4
+
+#include "asm/PrepScreenReinWarnToggle.lyn.event"
+ALIGN 4
+
+#include "asm/MapMenuReinforcementWarningsColor.lyn.event"
+ALIGN 4
+
+ReinforcementWarningsToggleEventIDLink:
+SHORT ReinforcementWarningsToggleEventID
+ALIGN 4

@@ -1,0 +1,10 @@
+PUSH
+
+ORG 0x2ABE4
+#include "AvoidFormulaParameters.lyn.event"
+ALIGN 4
+
+POP
+
+#include "AvoidFormula.lyn.event"
+ALIGN 4

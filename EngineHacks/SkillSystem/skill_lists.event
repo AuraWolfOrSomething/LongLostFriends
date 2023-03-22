@@ -1,0 +1,125 @@
+ZorenLordSkillList:
+BYTE 1 SupplyID
+BYTE 1 BalancedStudyID
+BYTE 1 ExploitSpeedID
+BYTE 0 0
+ALIGN 4
+
+GeneralSkillList:
+//BYTE 1 BarricadeID
+BYTE 0 0
+ALIGN 4
+
+AssassinSkillList:
+BYTE 255 CunningID
+//BYTE 1 AcrobatID
+BYTE 0 0
+ALIGN 4
+
+GreatKnightSkillList:
+BYTE 255 ExpertiseID
+BYTE 0 0
+ALIGN 4
+
+RogueSkillList:
+BYTE 1 CunningID
+//BYTE 1 LockTouchID
+BYTE 0 0
+ALIGN 4
+
+JourneymanSkillList:
+BYTE 1 PrimeFiveID
+BYTE 1 BargainID
+BYTE 0 0
+ALIGN 4
+
+HunterSkillList:
+BYTE 1 CunningID
+BYTE 0 0
+ALIGN 4
+
+PeerSkillList:
+BYTE 1 InspirationID
+BYTE 1 RallyMovID
+BYTE 1 CharmID
+BYTE 0 0
+ALIGN 4
+
+//TESTING
+
+/*
+PaladinSkillList:
+BYTE 1 EscortPlusID
+BYTE 0 0
+ALIGN 4
+*/
+
+/*
+CavalierSkillList:
+BYTE 1 TransmitterID
+BYTE 1 TransmitterPlusID
+BYTE 1 AdvanceSkillID
+BYTE 0 0
+ALIGN 4
+*/
+
+/*
+FighterSkillList:
+BYTE 1 EscortID
+BYTE 1 HeroicsID
+BYTE 0 0
+ALIGN 4
+*/
+
+KnightSkillList:
+ThiefSkillList:
+BishopSkillList:
+
+DeserterSkillList:
+EphraimLordSkillList:
+EphraimGreatLordSkillList:
+EirikaGreatLordSkillList:
+CavalierSkillList:
+PaladinSkillList:
+MercenarySkillList:
+HeroSkillList:
+MyrmidonSkillList:
+SwordmasterSkillList:
+ArcherSkillList:
+SniperSkillList:
+RangerSkillList:
+WyvernRiderSkillList:
+WyvernLordSkillList:
+WyvernKnightSkillList:
+MageSkillList:
+SageSkillList:
+MageKnightSkillList:
+ShamanSkillList:
+DruidSkillList:
+SummonerSkillList:
+ManaketeFSkillList:
+FighterSkillList:
+WarriorSkillList:
+BrigandSkillList:
+PirateSkillList:
+BerserkerSkillList:
+MonkSkillList:
+PriestSkillList:
+PegKnightSkillList:
+FalcoknightSkillList:
+ClericSkillList:
+TroubadourSkillList:
+ValkyrieSkillList:
+DancerSkillList:
+SoldierSkillList:
+NecromancerSkillList:
+FleetSkillList:
+PhantomSkillList:
+SuperJourneymanSkillList:
+SuperPupilSkillList:
+SuperRecruitSkillList:
+ManaketeMSkillList:
+DemonKingSkillList:
+//BYTE Lv SkillID
+BYTE 0 0
+ALIGN 4

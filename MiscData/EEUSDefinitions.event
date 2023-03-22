@@ -1,0 +1,33 @@
+
+//Not sure if I'll use this
+#define EditExtendedUnitSpaceItemUses(id,pointerToItemUsesGroup,statsDefinition) "PUSH; ORG pointerToStatsGroup+10*id; statsDefinition; POP"
+
+//Item Uses
+#define ItemUses(uses1,uses2,uses3,uses4) "BYTE uses1; BYTE uses2; BYTE uses3; BYTE uses4"
+#define FullUses "WORD 0"
+
+#define NormalStatsHpStatus "WORD 0; WORD 0; SHORT 0"
+
+//Stat Bonuses in Event Unit Loading
+//#include "UndefineStatBonusLabels.event"
+
+#define NormalStats "WORD 0; WORD 0"
+#define NormStats "WORD 0; WORD 0"
+#define EditStats(hp,pow,skl,spd,def,res,lck,con) "BYTE hp; BYTE pow; BYTE skl; BYTE spd; BYTE def; BYTE res; BYTE lck; BYTE con"
+
+//HP Starting Amount
+#define StartFullHP "BYTE 0"
+#define StartFullHp "BYTE 0"
+#define StartHP(StartingHP) "BYTE StartingHP+0"
+
+//Starting with a Status Effect
+#define StartNormalStatus "BYTE 0"
+#define StartStatus(Normal) "BYTE 0"
+#define StartStatus(Status,Turns) "BYTE Turns*0x10+Status"
+
+#define PoisonStatus 1
+#define SleepStatus 2
+#define SilenceStatus 3
+#define BerserkStatus 4
+#define UnstableStatus 9
+#define PetrifyStatus 11

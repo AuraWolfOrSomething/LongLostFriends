@@ -1,0 +1,40 @@
+
+InfantryWarningEvent:
+//TUTORIALTEXTBOXSTART; SETVAL 0xB 0xFFFFFFFF; TEXTSHOW 0xB02; TEXTEND; REMA; //SOUN Footsteps1; STAL 8; SOUN Footsteps2; STAL 8; SOUN Footsteps1; STAL 8; SOUN Footsteps2; STAL 8; 
+NOTIFY InfantryWarningText InfantryWarningSoundID 0x00
+ENDA
+
+MageWarningEvent:
+//TUTORIALTEXTBOXSTART; SETVAL 0xB 0xFFFFFFFF; TEXTSHOW 0xB03; TEXTEND; REMA //SOUN BoltingSparks; STAL 48; 
+NOTIFY MageWarningText BoltingSparks 0x00
+ENDA
+
+ArmorWarningEvent:
+//TUTORIALTEXTBOXSTART; SETVAL 0xB 0xFFFFFFFF; TEXTSHOW 0xB04; TEXTEND; REMA //SOUN ArmorWalk1; STAL 16; SOUN ArmorWalk2; STAL 16; SOUN ArmorWalk1; STAL 16; SOUN ArmorWalk2; STAL 16; 
+NOTIFY ArmorWarningText ArmorWarningSoundID 0x00
+ENDA
+
+HorseWarningEvent:
+//TUTORIALTEXTBOXSTART; SETVAL 0xB 0xFFFFFFFF; TEXTSHOW 0xB05; TEXTEND; REMA //SOUN HorseTrot1; STAL 8; SOUN HorseTrot2; STAL 8; SOUN HorseTrot1; STAL 8; SOUN HorseTrot2; STAL 8; 
+NOTIFY HorseWarningText HorseWarningSoundID 0x00
+ENDA
+
+PegasusWarningEvent:
+//TUTORIALTEXTBOXSTART; SETVAL 0xB 0xFFFFFFFF; TEXTSHOW 0xB06; TEXTEND; REMA //SOUN PegasusFlying1; STAL 24; SOUN PegasusFlying2; STAL 24; SOUN PegasusFlying1; STAL 24; SOUN PegasusFlying2; STAL 24; 
+NOTIFY PegasusWarningText PegasusWarningSoundID 0x00
+ENDA
+
+WyvernWarningEvent:
+//TUTORIALTEXTBOXSTART; SETVAL 0xB 0xFFFFFFFF; TEXTSHOW 0xB07; TEXTEND; REMA //SOUN WyvernFlying1; STAL 24; SOUN WyvernFlying2; STAL 24; SOUN WyvernFlying1; STAL 24; SOUN WyvernFlying2; STAL 24; 
+NOTIFY WyvernWarningText WyvernWarningSoundID 0x00
+ENDA
+
+BanditWarningEvent:
+//TUTORIALTEXTBOXSTART; SETVAL 0xB 0xFFFFFFFF; TEXTSHOW 0xB08; TEXTEND; REMA //SOUN BrigandBattleCry; STAL 32; 
+NOTIFY BanditWarningText BrigandBattleCry 0x00
+ENDA
+
+ThiefWarningEvent:
+//TUTORIALTEXTBOXSTART; SETVAL 0xB 0xFFFFFFFF; TEXTSHOW 0xB09; TEXTEND; REMA //SOUN Footsteps1; STAL 8; SOUN Footsteps2; STAL 8; SOUN Footsteps1; STAL 8; SOUN Footsteps2; STAL 8; SOUN UnlockingDoor; STAL 16; 
+NOTIFY ThiefWarningText ThiefWarningSoundID 0x00
+ENDA

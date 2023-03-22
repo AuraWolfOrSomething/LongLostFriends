@@ -1,0 +1,64 @@
+Supports: Extra and Prep
+  - Both use 080AD43C (calls UpdateHandCursor), but only Extra uses it once a unit is selected
+  
+  Routines that read [rX,#0x38] upon selecting a unit
+  - 080A1F68: 080A1F76
+  - 080A207C: 080A208A
+  - 080A2274: 080A22DA
+  
+  - Whenever L/R is used to change to another unit, 080A2AAC is run before 080AD43C
+    - 080A2B12
+  
+  - Total supports unit has unlocked
+    - In extra, it's [rX,#0x3B]
+	- In prep, there doesn't seem to be one byte dedicated to this
+	  - Instead, the level with first partner is at [rX,#0x46], level with second partner is at [rX,#0x47], etc.
+  
+  
+  - Both use 080A2448 (reads player input), but only checks up/down/a if in extra
+    
+	- 080A24BA: beq 080A24BE if extra, b 080A25EA if prep
+	  - 080A24C6: bne 080A24CA if at least one support unlocked, b 080A25D0 if not
+	- 080A24CA: checks if player input "A"
+	
+	
+  - 080A1918: Loads [r0,#0x42]; if r0 = 1, in prep; if = 0, in extra
+  
+  - Beginning of support partner list drawing routine: 080A1C8C
+    - 080A1D46: if support partner is recruited, finds support partner name to draw on screen
+	  - 080A1D7E: color of name (if I want active support to be blue, r2 should be 2, green would be 4, etc.)
+	  
+  - If in prep, I don't want the "tile cursor" to be there, only the hand cursor (also increase the highlighted text if possible)
+    - 080AD45C: checks if unit has been selected (rX,#0x34) and calls 08015B88 if so
+	
+  - If in prep, I don't want the same highlight that extra has (either goes over map sprite and name, or no highlight at all)
+    - 080AD458: noping the call to 080AD364 removes highlight
+	  - 080AD51C: sets highlight width based on r2
+	- 08005428?
+	  - nope
+	  
+	  
+
+
+- Once an active support is created, I want to update the screen
+  - re-run a routine
+    - 080A1C8C
+	- 080A20FC
+	- 080A2274
+	  - Just take only what I need from 080A2274 (text related stuff)
+
+  - When you trade items, and confirm the item's final location with A, it has to update the inventories
+    - 0809BBAE: true when player presses A on this confirmation
+	  (I ended up not doing anything with this)
+  
+
+- On the support selection screen, I don't want the ranks to be green if at A, but instead, a different color if an active support
+  - 080A1CB0 checks if the character has been unlocked in the savefile
+  - 080A1E5C handles drawing unlocked ranks
+    - Start of that part of routine: 080A1E24
+  - If a unit with no active partners gets an active partner, the rank colors update, but at least one other rank will also incorrectly update?
+    - 08004B0C
+	- 08004ACC
+	- 08004A90
+	- 08004A34
+	- 08004208

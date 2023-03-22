@@ -1,0 +1,26 @@
+  
+  PUSH
+  
+  ORG 0x8AEEC4
+  BYTE 0 0 0 0 0 3 0 //luna's +3 res
+  
+  ORG 0x8AEED0
+  BYTE 0 0 0 0 4 4 0 //defender's +4 def and +4 res
+  
+  ORG 0x8AEF60
+  BYTE 0 0 0 0 3 0 0 //ensnare's +3 def
+  
+  ORG 0x8AEF78
+  BYTE 0 0 0 0 0 0xFD 0 //lucent's -3 res
+  
+  ORG 0x8AEF84
+  BYTE 0 0 0 0xFD 0 0 0 //nosferatu's -3 spd
+  
+  ORG 0x8AEF90
+  BYTE 0 0 0 3 0 0 0 //silver weapons' +3 spd
+  
+  ORG 0x8AEFA8
+  BYTE 0 0 0 0 0 0 3 //hatchet's +3 lck
+  
+  POP
+  

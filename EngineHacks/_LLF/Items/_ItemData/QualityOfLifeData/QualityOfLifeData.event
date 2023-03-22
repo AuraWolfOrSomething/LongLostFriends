@@ -1,0 +1,29 @@
+
+#include "QualityOfLifeDataDefinitions.event"
+
+PUSH
+
+//------ItemMusicTable------
+
+ORG 0x7257E
+BYTE 0xB4 //allows items from 0x8D to 0xFF to not default to phase battle music (vanilla byte is 0x41)
+
+ORG 0x72590
+POIN ItemMusicTable
+
+//------ItemErrorMessageTable------
+
+ORG 0x28C16
+BYTE FirstItemWithErrorMessage
+
+ORG 0x28C18
+BYTE 0xC1-FirstItemWithErrorMessage //range of items
+
+ORG 0x28C28
+POIN ItemErrorMessageTable
+
+POP
+
+#include "ItemMusicTable.event"
+
+#include "ItemErrorMessageTable.event"

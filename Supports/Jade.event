@@ -1,0 +1,12 @@
+JadeSupportList:
+SupportList(Jade,JadeSupportList)
+
+SupportPartner(Colette,0,40)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(1)

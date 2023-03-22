@@ -1,0 +1,75 @@
+
+/*
+These effects don't actually exist yet, but they have space set aside:
+- Slow
+- Serpent Bow
+- Absorb
+
+These exist, but there isn't an ingame way to set them (e.g. a staff):
+- Inept
+- Lull
+- Debuff block
+*/
+
+/*
+Long-Lost Friends Debuff Mapping
+First byte: Rustbow (low nibble), Inept (high nibble)
+Second: Lull (low nibble)
+Third: Slow (first bit), Distract (second bit), Serpent Bow (fifth bit)
+Fourth: Absorbed Debuffs (first bit)
+
+Fifth: Debuff half (low nibble), Debuff block (high nibble)
+Sixth: Rally (first bit-fourth bit), Guardian Def/Res (fifth bit)
+
+Seventh: Tracking Personal Skills with limited usage per chapter (low nibble)
+Eighth:
+
+*/
+
+//MiscData/StatScreenStatusDebuffSetUp & HelpText
+
+
+PUSH
+
+ORG 0x18858
+#include "asm/MapMain_UpdateUnitStatus.lyn.event"
+ALIGN 4
+
+ORG 0x19414
+SHORT 0xB510 0x4C03 //push {r4,r14}; ldr r4, =GetUnitStatusString
+SHORT 0x46A6 0xF800 //mov lr, r14; bl lr+0
+SHORT 0xBC10 0xBC01 //pop {r4}; pop {r0}
+SHORT 0x4700 0 //bx r0; lsl r0, #0 (alignment)
+POIN GetUnitStatusString
+
+ORG 0x8C388
+jumpToHack(MMB_DrawStatusText)
+
+//shouldn't be needed (handled by MSS), but just in case
+ORG 0x88A2C
+jumpToHack(HelpBoxCurrentCondition)
+
+POP
+
+#include "asm/MMB_DrawStatusText.lyn.event"
+ALIGN 4
+
+#include "asm/GetUnitStatusString.lyn.event"
+ALIGN 4
+
+LastStatusInUseLink:
+BYTE 4 //Berserk
+ALIGN 4
+
+AnyBuffsBitfieldLink:
+WORD AnyBuffs
+
+AnyDebuffsBitfieldLink:
+WORD AnyDebuffs
+
+#include "AilmentCounterplayInstall.event"
+
+#include "IsEffectActiveInstall.event"
+
+#include "SkillUsageCounterInstall.event"
+

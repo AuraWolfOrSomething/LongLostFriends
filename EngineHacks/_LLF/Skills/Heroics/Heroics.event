@@ -1,0 +1,16 @@
+
+PUSH
+
+ORG 0x321AC
+jumpToHack(Heroics) //comment if using Recapturing
+//jumpToHack(AfterActionRescue) //required for Recapturing
+
+POP
+
+#include "asm/Heroics.lyn.event"
+//#include "asm/AfterActionRescue.lyn.event"
+
+HeroicsLink:
+BYTE HeroicsID 
+
+ALIGN 4

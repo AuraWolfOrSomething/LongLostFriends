@@ -1,0 +1,12 @@
+LorrandSupportList:
+SupportList(Lorrand,LorrandSupportList)
+
+SupportPartner(Shana,10,25)
+SupportPartner(Vivian,10,20)
+SupportPartner(Colette,10,20)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(3)

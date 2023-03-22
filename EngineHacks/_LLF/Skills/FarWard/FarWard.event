@@ -1,0 +1,6 @@
+
+#include "asm/FarWard.lyn.event"
+FarWardLink:
+BYTE FarWardID
+ALIGN 4
+

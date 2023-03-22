@@ -1,0 +1,24 @@
+
+PUSH
+
+ORG 0x16B04 //hooking into GetItemAfterUse (0x16AEC)
+SHORT 0x4905 //ldr r1, (0x0FFFFF00)
+SHORT 0x4B02 //ldr r3, =GetItemAfterUseExtension
+SHORT 0x469E //mov lr, r3
+SHORT 0xF800 //bl lr+0
+SHORT 0xE009 //b (0x16B22)
+SHORT 0
+POIN GetItemAfterUseExtension
+
+POP
+
+#include "asm/GetItemAfterUseExtension.lyn.event"
+ALIGN 4
+
+CooldownDurabilityLink:
+SHORT CooldownDurabilityLabelID
+
+CooldownHelptextLink:
+SHORT CooldownHelptextLabelID
+
+ALIGN 4

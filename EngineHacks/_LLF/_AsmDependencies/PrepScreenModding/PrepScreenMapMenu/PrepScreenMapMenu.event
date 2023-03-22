@@ -1,0 +1,68 @@
+
+#include "PrepScreenMapMenuDefs.event"
+
+#include "PrepScreenMapInternal.event"
+
+PrepScreenMapMenuList:
+
+PS_ViewMap
+
+//AI Toggle
+WORD 0 //Usability check (no pointer = always usable)
+POIN PrepScreenAiToggleDisplay|1 //After selecting
+SHORT PS_AiTog AiTogDesc //Text ID; help text ID
+PrepScreenAiToggleDisplayIDLink:
+BYTE 3 0 //Option ID
+SHORT 0 //Text color if no color conditional routine
+
+PS_Formation
+
+#ifdef USE_PREP_SCREEN_GUIDE
+WORD 0 //Usability check (no pointer = always usable)
+POIN PrepScreenGuide|1 //After selecting
+SHORT PrepScreenGuideText 0x06E5 //Text ID; help text ID
+PrepScreenGuideIDLink:
+BYTE 0xA //Option ID
+PrepScreenGuideProcLabelLink:
+BYTE PrepScreenGuideProcLabel
+SHORT 0 //Text color if no color conditional routine
+#endif
+
+PS_Options
+
+//Reinforcement Warning Toggle
+WORD 0 //Usability check (no pointer = always usable)
+POIN PrepScreenReinWarnToggle|1 //After selecting
+SHORT PS_ReinWarn ReinWarnDesc //Text ID; help text ID
+PrepScreenReinWarnToggleIDLink:
+BYTE 4 0 //Option ID
+SHORT 0 //Text color if no color conditional routine
+
+PS_Save
+
+//Have all new commands before this
+PS_Separator
+
+
+PrepScreenMapMenuColorConditionalList:
+WORD PS_AiTog //text ID
+POIN AiToggleColor //routine to check if color should be different
+
+WORD PS_ReinWarn //text ID
+POIN ReinforcementWarningsColor //routine to check if color should be different
+
+//end of the list
+WORD 0 
+
+/*
+//TESTING
+ReturnGrayColor:
+SHORT 0x2001 0x4770
+ALIGN 4
+*/
+
+/*
+//TESTING
+PrepScreenNeverUsable:
+SHORT 0x2000 0x4770
+*/

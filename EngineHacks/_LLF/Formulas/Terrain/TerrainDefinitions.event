@@ -1,0 +1,84 @@
+//ORG 0x80C479: Ground Avoid
+//ORG 0x80C4BA: Ground Def
+//ORG 0x80C4FB: Ground Res
+//ORG 0x80C53C: Air Avoid
+//ORG 0x80C57D: Air Def
+//ORG 0x80C5BE: Air Res
+
+#define GroundTerrainBonuses(tile,avoid,def,res) "PUSH; ORG 0x80C479+tile; BYTE avoid; ORG 0x80C4BA+tile; BYTE def; ORG 0x80C4FB+tile; BYTE res; POP"
+
+#define HorseTerrainBonuses(tile,avoid,def,res) "ORG HorseTerrainBonusTable+tile; BYTE avoid; ORG HorseTerrainBonusTable+0x41+tile; BYTE def; ORG HorseTerrainBonusTable+0x82+tile; BYTE res"
+
+#define RepointHorseClassTerrainBonuses(class) "PUSH; ORG ClassTable+0x44+(0x54*class); POIN 0x80C479; POIN 0x80C4BA; POIN 0x80C4FB; POP"
+
+/*
+#define RepointHorseClassTerrainBonuses(class) "PUSH; ORG ClassTable+0x44+(0x54*class); POIN HorseTerrainBonusTable; POIN HorseTerrainBonusTable+0x41; POIN HorseTerrainBonusTable+0x82; POP"
+*/
+
+#define WingTerrainBonuses(tile,avoid,def,res) "PUSH; ORG 0x80C53C+tile; BYTE avoid; ORG 0x80C57D+tile; BYTE def; ORG 0x80C5BE+tile; BYTE res; POP"
+
+#define Terrain_Tile1 0
+#define Terrain_Plains 1
+#define Terrain_Road 2
+#define Terrain_Village 3
+#define Terrain_VillageClosed 4
+#define Terrain_House 5
+#define Terrain_Armory 6
+#define Terrain_Vendor 7
+#define Terrain_Arena1 8
+#define Terrain_CRoom 9
+#define Terrain_Fort 10
+#define Terrain_Gate1 11
+#define Terrain_Forest 12
+#define Terrain_Thicket 13
+#define Terrain_Sand 14
+#define Terrain_Desert 15
+#define Terrain_River 16
+#define Terrain_Mountain 17
+#define Terrain_Peak 18
+#define Terrain_Bridge 19
+#define Terrain_DrawBridge 20
+#define Terrain_Sea 21
+#define Terrain_Lake 22
+#define Terrain_CastleFloor 23
+#define Terrain_Floor 24
+#define Terrain_Fence1 25
+#define Terrain_Wall 26
+#define Terrain_DamagedWall 27
+#define Terrain_Rubble 28
+#define Terrain_Pillar 29
+#define Terrain_Door 30
+#define Terrain_Throne 31
+#define Terrain_EmptyChest 32
+#define Terrain_Chest 33
+#define Terrain_Roof 34
+#define Terrain_Gate2 35
+#define Terrain_Church 36
+#define Terrain_VillageRuins 37
+#define Terrain_Cliff 38
+#define Terrain_Ballista 39
+#define Terrain_LongBallista 40
+#define Terrain_KillerBallista 41
+#define Terrain_FlatShip 42
+#define Terrain_WreckShip 43
+#define Terrain_Tile2 44
+#define Terrain_Stairs 45
+#define Terrain_Tile3 46
+#define Terrain_Glacier 47
+#define Terrain_Arena2 48
+#define Terrain_Valley 49
+#define Terrain_Fence2 50
+#define Terrain_Snag 51
+#define Terrain_LogBridge 52
+#define Terrain_Sky 53
+#define Terrain_Deeps 54
+#define Terrain_Ruins 55
+#define Terrain_Inn 56
+#define Terrain_Barrel 57
+#define Terrain_Bone 58
+#define Terrain_Dark 59
+#define Terrain_Water 60
+#define Terrain_Gunnel 61
+#define Terrain_Deck 62
+#define Terrain_Brace 63
+#define Terrain_Mast 64

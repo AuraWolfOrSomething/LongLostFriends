@@ -1,0 +1,127 @@
+
+/*
+UNIT charID classID leader Level(lvl,faction,autolevel) [x,y] flags 0 number_of_REDAs pointer_to_REDAs [Item1,Item2,Item3,Item4] AI 
+
+REDA_Pointer
+REDA [x,y] Flags Speed *Rescuing character* Delay
+*/
+
+BadUnits:
+//UNIT Enemy0 Class 0 Level(5,Enemy,True) [x,y] NoUnitFlags 0 0 0 [inventory] NoAI
+
+//North Entrance
+UNIT Beran Mage 0 Level(14,Enemy,False) [1,2] NoUnitFlags 0 0 0 [Bolganone] StationaryAI
+UNIT Enemy0S Monk 0 Level(1,Enemy,True) [4,2] DropItem 1 0 0 [Lightning,ChestKey] LootThenEscape
+UNIT Enemy1S Monk 0 Level(1,Enemy,True) [5,2] DropItem 2 0 0 [Lightning,ChestKey] LootThenEscape
+UNIT Enemy2 Myrmidon 0 Level(7,Enemy,True) [3,3] NoUnitFlags 0 0 0 [CopperSword,Zanbato] AttackInDoubleRange
+UNIT Enemy2 Mage 0 Level(7,Enemy,True) [5,0] NoUnitFlags 3 0 0 [Elfire,Wind] AttackInDoubleRange
+
+//Boat - Upper
+UNIT Enemy0 Soldier 0 Level(5,Enemy,True) [13,4] NoUnitFlags 0 0 0 [IronLance] NoAI
+UNIT Enemy0 Mercenary 0 Level(5,Enemy,True) [12,5] NoUnitFlags 0 0 0 [CopperSword] NoAI
+
+//Boat - Lower
+UNIT Enemy1 Mage 0 Level(6,Enemy,True) [15,17] NoUnitFlags 3 0 0 [Fire] NoAI
+UNIT Enemy2 Knight 0 Level(8,Enemy,True) [14,16] NoUnitFlags 6 0 0 [HandAxe] StationaryAI
+UNIT Enemy2 Knight 0 Level(8,Enemy,True) [15,16] NoUnitFlags 6 0 0 [ShortSpear,Coupon] StationaryAI
+
+//Left house
+UNIT Enemy2 Knight 0 Level(8,Enemy,True) [0,5] NoUnitFlags 6 0 0 [HandAxe,SteelAxe] StationaryAI
+UNIT Enemy2 Knight 0 Level(8,Enemy,True) [1,5] NoUnitFlags 6 0 0 [Javelin,SteelLance] StationaryAI
+UNIT Enemy2 Mage 0 Level(8,Enemy,True) [1,4] NoUnitFlags 4 0 0 [Elthunder,Wind,Coupon] StationaryAI
+
+//Right house
+UNIT Breguet Mercenary 0 Level(9,Enemy,False) [9,3] DropItem 0 0 0 [SteelSword,Zanbato,FighterGem] AttackInRangeAI
+UNIT Enemy1 Knight 0 Level(6,Enemy,True) [9,5] DropItem 5 0 0 [IronLance,Javelin] StationaryAI
+UNIT Enemy1 Knight 0 Level(6,Enemy,True) [10,5] NoUnitFlags 5 0 0 [IronAxe,HandAxe] StationaryAI
+UNIT Enemy1 Fighter 0 Level(6,Enemy,True) [7,4] NoUnitFlags 0 0 0 [HandAxe] AttackInRangeAI
+
+//Wave 1
+UNIT Enemy0 Myrmidon 0 Level(5,Enemy,True) [4,11] NoUnitFlags 0 0 0 [IronSword] NoAI
+UNIT Enemy0 Mage 0 Level(5,Enemy,True) [5,7] NoUnitFlags 3 0 0 [Thunder] NoAI
+UNIT Enemy0 Soldier 0 Level(5,Enemy,True) [7,8] NoUnitFlags 0 0 0 [IronLance] NoAI
+
+UNIT Enemy0 Myrmidon 0 Level(5,Enemy,True) [10,12] NoUnitFlags 0 0 0 [IronSword] AttackInRangeAI
+UNIT Enemy0 Soldier 0 Level(5,Enemy,True) [9,17] NoUnitFlags 0 0 0 [IronLance] NoAI
+UNIT Enemy0 Mage 0 Level(5,Enemy,True) [10,15] NoUnitFlags 3 0 0 [Thunder] NoAI
+UNIT Enemy0 Fighter 0 Level(5,Enemy,True) [0,8] NoUnitFlags 0 0 0 [IronAxe] NoAI
+UNIT Enemy1 Myrmidon 0 Level(6,Enemy,True) [2,7] NoUnitFlags 0 0 0 [CopperSword] AttackInRangeAI
+
+UNIT
+
+NPCUnits:
+//Boat - Upper
+UNIT Rylan Shaman 0 Level(7,NPC,False) [16,8] NoUnitFlags 0 0 0 [Ensnare,ArcherGem] StationaryAI
+UNIT Ch1NPCMerc Mercenary 0 Level(4,NPC,True) [14,5] NoUnitFlags 0 0 0 [SteelSword] NoAI
+UNIT Ch1NPCMerc Fighter 0 Level(4,NPC,True) [13,6] NoUnitFlags 0 0 0 [BronzeAxe] NoAI
+
+//Boat - Lower
+UNIT Ch1NPCMerc Soldier 0 Level(4,NPC,True) [16,13] NoUnitFlags 0 0 0 [SteelLance] NoAI
+UNIT
+
+NewUnits:
+UNIT Grace Mage_F 0 Level(6,Ally,False) [6,13] NoUnitFlags 0 0 0 [Elthunder,Thunder,Fire] NoAI
+UNIT Thorbek Lancer 0 Level(4,Ally,False) [7,13] NoUnitFlags 0 0 0 [SteelLance,Javelin,Vulnerary] NoAI
+UNIT Marcey Cavalier_F 0 Level(5,Ally,False) [8,13] NoUnitFlags 0 0 0 [IronLance,CopperLance,Vulnerary] NoAI
+UNIT Jacob Journeyman_1 0 Level(1,Ally,False) [5,13] NoUnitFlags 0 0 0 [Hatchet,BronzeAxe] NoAI
+//UNIT Armond Knight 0 Level(8,Ally,False) [9,13] NoUnitFlags 0 0 0 [SteelAxe,Javelin,Concoction] NoAI
+//UNIT Curcio Mercenary 0 Level(7,Ally,False) [6,13] NoUnitFlags 0 0 0 [CopperSword,IronSword,Vulnerary] NoAI
+UNIT
+
+//MESSAGE ch1Units currentOffset
+
+Units:
+UNIT Zoren ZorenLord 0 Level(1,Ally,False) [2,14] NoUnitFlags 0 0 0 [IronSword,Thunder,Concoction] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [0,14] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [4,14] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [0,15] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [2,15] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [3,15] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [1,16] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [3,16] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+//UNIT Iris Paladin_F 0 Level(1,Ally,False) [4,16] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+//UNIT Iris Paladin_F 0 Level(1,Ally,False) [2,17] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+//UNIT Iris Paladin_F 0 Level(1,Ally,False) [3,17] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+//UNIT Iris Paladin_F 0 Level(1,Ally,False) [5,17] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT
+//MESSAGE ch1Units end at currentOffset
+
+NorthReinforcements1:
+UNIT Enemy0 Soldier 0 Level(6,Enemy,True) [10,0] NoUnitFlags 0 0 0 [IronLance] NoAI
+UNIT Enemy0 Fighter 0 Level(6,Enemy,True) [9,0] NoUnitFlags 0 0 0 [IronAxe] NoAI
+UNIT
+
+NorthReinforcements2:
+UNIT Enemy1 Myrmidon 0 Level(6,Enemy,True) [9,0] NoUnitFlags 0 0 0 [CopperSword] NoAI
+UNIT Enemy1 Fighter 0 Level(6,Enemy,True) [10,0] NoUnitFlags 0 0 0 [IronAxe] NoAI
+UNIT
+
+SouthReinforcements1:
+UNIT Enemy1 Myrmidon 0 Level(6,Enemy,True) [14,17] NoUnitFlags 0 0 0 [IronSword] NoAI
+UNIT Enemy1 Mage 0 Level(6,Enemy,True) [15,17] NoUnitFlags 3 0 0 [Thunder] NoAI
+UNIT 
+
+SouthReinforcements2:
+UNIT Enemy1 Fighter 0 Level(6,Enemy,True) [14,17] NoUnitFlags 0 0 0 [SteelAxe] NoAI
+UNIT Enemy1 Mage 0 Level(6,Enemy,True) [15,17] NoUnitFlags 3 0 0 [Elthunder] NoAI
+UNIT 
+
+SouthReinforcements3:
+UNIT Enemy1 Soldier 0 Level(6,Enemy,True) [14,17] NoUnitFlags 0 0 0 [Horseslayer,Javelin] NoAI
+UNIT Enemy1 Mage 0 Level(6,Enemy,True) [15,17] NoUnitFlags 3 0 0 [Elfire] NoAI
+UNIT 
+
+ArlettJoiningUnit:
+UNIT Arlett Cleric 0 Level(7,Ally,False) [0,0] NoUnitFlags 0 0 0 [Heal,Silence,Vulnerary] NoAI
+UNIT
+
+GemmoraJoiningUnit:
+UNIT Gemmora Thief 0 Level(14,Ally,False) [1,0] NoUnitFlags 0 0 0 [IronSword,KillingEdge,Lockpick] NoAI
+UNIT
+
+/*SouthReinforcementsPosition1:
+REDA [14,17] 0 0 0 0
+
+SouthReinforcementsPosition2:
+REDA [15,17] 0 0 0 0
+*/

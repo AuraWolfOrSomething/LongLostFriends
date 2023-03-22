@@ -1,0 +1,184 @@
+
+  ORG 0x16410
+  POIN ItemTable
+  
+  ORG 0x16440
+  POIN ItemTable
+  
+  ORG 0x16470
+  POIN ItemTable
+  
+  ORG 0x164A0
+  POIN ItemTable
+  
+  ORG 0x164D0
+  POIN ItemTable
+  
+  ORG 0x16500
+  POIN ItemTable
+  
+  ORG 0x16530
+  POIN ItemTable
+  
+  //ORG 0x16570 //used by CheckEventUnitItemUses
+  //POIN ItemTable
+  
+  ORG 0x166D0
+  POIN ItemTable
+  
+  ORG 0x1671C
+  POIN ItemTable
+  
+  ORG 0x1678C
+  POIN ItemTable
+  
+  ORG 0x167E0
+  POIN ItemTable
+  
+  ORG 0x1683C
+  POIN ItemTable
+  
+  ORG 0x168C4
+  POIN ItemTable
+  
+  ORG 0x1698C
+  POIN ItemTable
+  
+  ORG 0x16A10
+  POIN ItemTable
+  
+  //ORG 0x16AD0 //used by DurabilityDisplay
+  //POIN ItemTable
+  
+  ORG 0x16B18
+  POIN ItemTable
+  
+  ORG 0x16BB4
+  POIN ItemTable
+  
+  ORG 0x16C14
+  POIN ItemTable
+  
+  ORG 0x16C7C
+  POIN ItemTable
+  
+  //ORG 0x16D04 //used by FE8-Item Range hacks
+  //POIN ItemTable
+  
+  ORG 0x16DD4
+  POIN ItemTable
+  
+  ORG 0x16F0C
+  POIN ItemTable
+  
+  ORG 0x16FA4
+  POIN ItemTable
+  
+  ORG 0x17028
+  POIN ItemTable
+  
+  ORG 0x1707C
+  POIN ItemTable
+  
+  ORG 0x170C8
+  POIN ItemTable
+  
+  ORG 0x170F8
+  POIN ItemTable
+  
+  ORG 0x1727C
+  POIN ItemTable
+  
+  ORG 0x172D8
+  POIN ItemTable
+  
+  ORG 0x1735C
+  POIN ItemTable
+  
+  ORG 0x173AC
+  POIN ItemTable
+  
+  ORG 0x17420
+  POIN ItemTable
+  
+  ORG 0x174A4
+  POIN ItemTable
+  
+  ORG 0x174E4
+  POIN ItemTable
+  
+  ORG 0x17514
+  POIN ItemTable
+  
+  ORG 0x1752C
+  POIN ItemTable
+  
+  ORG 0x17544
+  POIN ItemTable
+  
+  ORG 0x17560
+  POIN ItemTable
+  
+  ORG 0x17580
+  POIN ItemTable
+  
+  ORG 0x175A4
+  POIN ItemTable
+  
+  ORG 0x175D0
+  POIN ItemTable
+  
+  ORG 0x175F0
+  POIN ItemTable
+  
+  ORG 0x17608
+  POIN ItemTable
+  
+  ORG 0x17620
+  POIN ItemTable
+  
+  ORG 0x17638
+  POIN ItemTable
+  
+  ORG 0x1765C
+  POIN ItemTable
+  
+  ORG 0x17680
+  POIN ItemTable
+  
+  ORG 0x1769C
+  POIN ItemTable
+  
+  ORG 0x176B4
+  POIN ItemTable
+  
+  ORG 0x176CC
+  POIN ItemTable
+  
+  ORG 0x176E4
+  POIN ItemTable
+  
+  ORG 0x176FC
+  POIN ItemTable
+  
+  ORG 0x17718
+  POIN ItemTable
+  
+  ORG 0x17738
+  POIN ItemTable
+  
+  ORG 0x17750
+  POIN ItemTable
+  
+  ORG 0x17768
+  POIN ItemTable
+  
+  ORG 0x17794
+  POIN ItemTable
+  
+  ORG 0x177AC
+  POIN ItemTable
+  
+  ORG 0x177C0
+  POIN ItemTable
+

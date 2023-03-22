@@ -1,0 +1,59 @@
+/*
+Label
+POIN ItemUses or WORD 0 if no modifiers
+POIN UnitStats or WORD 0 if no modifiers
+POIN CurrentHPStatus WORD 0 if no modifiers
+*/
+
+UndefineStatBonusLabels
+
+#define Ch2PegKStats "EditStats(-6,-4,2,2,-4,0,-2,0)"
+#define Ch2MageStats "EditStats(-1,-1,0,0,-2,-2,0,0)"
+#define Ch2Mage2Stats "EditStats(-1,1,0,0,-2,-2,0,0)"
+#define Ch2ShamStats "EditStats(0,2,-2,-1,-2,-1,0,0)"
+#define Ch2KnitStats "EditStats(-1,0,2,-1,-1,3,0,0)"
+
+#define Ch2NPCStats "EditStats(5,2,5,2,2,3,5,0)"
+
+//#define ClassStats "EditStats(HP,Pow,Skl,Spd,Def,Res,Lck,Con)"
+
+BadUnitsEEUS:
+WORD 0
+POIN BadUnitsEEUSEditStats
+WORD 0
+
+//MESSAGE currentEEUS currentOffset
+BadUnitsEEUSEditStats:
+//Below Cliff
+NormStats; Ch2Mage2Stats; Ch2ShamStats; Ch2ShamStats; NormStats; NormStats
+
+//High Ground
+Ch2Mage2Stats; NormStats; Ch2KnitStats; Ch2KnitStats
+
+//Left Side
+NormStats; NormStats
+
+//MESSAGE firstPeg currentOffset
+Ch2PegKStats; Ch2ShamStats; NormStats; NormStats
+
+//Left Side - Arena
+Ch2MageStats; Ch2MageStats; NormStats; Ch2ShamStats
+//MESSAGE secondPeg currentOffset
+Ch2PegKStats
+
+//Right Side
+Ch2ShamStats; NormStats; NormStats
+//MESSAGE thirdPeg currentOffset
+Ch2PegKStats; Ch2ShamStats
+
+//Top Cliff
+NormStats; NormStats; NormStats
+
+
+NPCUnitsEEUS:
+WORD 0
+POIN NPCUnitsEEUSEditStats
+WORD 0
+
+NPCUnitsEEUSEditStats:
+Ch2NPCStats; Ch2NPCStats; Ch2NPCStats

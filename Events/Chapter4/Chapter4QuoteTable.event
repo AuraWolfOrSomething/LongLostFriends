@@ -1,0 +1,47 @@
+
+SetChapterBattleQuoteList(Ch_4,Ch4BattleQuoteList)
+SetChapterDeathQuoteList(Ch_4,Ch4DeathQuoteList)
+
+Ch4BattleQuoteList:
+BattleQuoteEid(Rylan,RylanLastStandQuoteEventID,BattleQuoteRylan)
+BattleQuoteEid(Calder,Zoren,CalderZorenQuoteEventID,BattleQuoteCalderZoren)
+BattleQuoteEid(Calder,Iris,CalderIrisQuoteEventID,BattleQuoteCalderIris)
+BattleQuoteEid(Calder,GenericBossQuoteEventID,BattleQuoteCalder)
+BattleQuoteEid(Artus,Zoren,ArtusZorenQuoteEventID,BattleQuoteArtusZoren)
+BattleQuoteEid(Artus,McVicar,ArtusMcVicarQuoteEventID,BattleQuoteArtusMcVicar)
+BattleQuoteEid(Artus,ArtusQuoteEventID,BattleQuoteArtus)
+BattleQuoteEnd
+
+Ch4DeathQuoteList:
+DeathQuoteEid(Calder,CalderDeathEventID,DeathQuoteCalder)
+DeathQuoteEidScene(Artus,ArtusDeathEventID,ArtusDeathScene)
+DeathQuoteEnd
+
+ArtusDeathScene:
+
+//If player unit killed Artus, gain progress towards recruiting McVicar
+ReturnOpponentID(Artus)
+SVAL s1 McVicar
+IFNE 0x1 sC s1
+
+	//Non-McVicar unit got the kill
+	ENUT McVicarFirstImpressionEventID
+	TEXTSTART
+	TEXTSHOW DeathQuoteArtus
+	TEXTEND
+	REMA
+
+GOTO 0x2
+LABEL 0x1
+
+	//McVicar got the kill
+	ENUF McVicarLeavesEventID
+	TEXTSTART
+	TEXTSHOW DeathQuoteArtusMcVicar
+	TEXTEND
+	REMA
+
+LABEL 0x2
+
+NoFade
+ENDA

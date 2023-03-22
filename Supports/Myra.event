@@ -1,0 +1,12 @@
+MyraSupportList:
+SupportList(Myra,MyraSupportList)
+
+SupportPartner(Vivian,10,30)
+SupportPartner(Colette,10,20)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(2)

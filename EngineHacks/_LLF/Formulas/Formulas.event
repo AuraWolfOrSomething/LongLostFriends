@@ -1,0 +1,28 @@
+
+#include "DefensiveStat/DefensiveStatFormulaInstaller.event"
+
+#include "Attack/AttackFormulaInstaller.event"
+
+#include "AttackSpeed/AttackSpeedFormulaInstaller.event"
+
+#include "Hit/HitFormulaInstaller.event"
+
+#include "Avoid/AvoidFormulaInstaller.event"
+
+//critical hit damage multiplier can be found at Necessary/CalcLoops/BattleProcCalcLoop/ProcStart/proc_start.s
+#include "Criticals/CriticalsAndDodgeFormulaInstaller.event"
+
+//moved to BattleRulesAndFlow in Mechanics
+//#include "MultipleFormulas/Fortune/FortuneInstaller.event"
+
+#include "WeaponTriangleStats/WeaponTriangleStats.event"
+
+#include "Experience/Experience.event"
+
+#include "WEXP/WEXPInstaller.event"
+
+#include "Healing/HealingFormulaInstaller.event"
+
+#include "StatusStaffHitRate/StatusStaffHitFormulaInstaller.event"
+
+#include "Terrain/TerrainChangesInstaller.event"

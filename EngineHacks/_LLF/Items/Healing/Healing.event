@@ -1,0 +1,27 @@
+
+PUSH
+
+ORG 0x193A4
+#include "asm/NewUnitTryHeal.lyn.event"
+ALIGN 4
+
+ORG 0x2EB98
+#include "asm/NewExecStandardHeal.lyn.event"
+ALIGN 4
+
+ORG 0x2FEC6
+SHORT 0
+
+ORG 0x2F380
+jumpToHack(HealingItemEffect)
+
+POP
+
+#include "asm/HealingItemEffect.lyn.event"
+ALIGN 4
+
+#include "asm/ItemHealingRoutine.lyn.event"
+ALIGN 4
+
+#include "asm/CheckStaffHealingEnhancement.lyn.event"
+ALIGN 4

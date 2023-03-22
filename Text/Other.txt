@@ -1,0 +1,95 @@
+
+## DefaultItemDescPage2
+No additional information.[X]
+
+## PrologueTenYearsLater
+Ten years later...[X]
+
+## LocMaeva
+Maeva[X]
+
+## BeginningNotice
+Help text has been edited to show[N]
+formulas and other values.[A][N]
+The Guide has been updated to[N]
+state changes to vanilla GBAFE.[A][N]
+By default, entries are sorted by[N]
+chapter rather than by topic.[A][N]
+If you'd prefer to learn about changes[N]
+as they become more relevant,[A][N]
+this is the better of the two.[A][N]
+In the Guide's Advice section,[A][N]
+you can find hints and specific[N]
+information about the current chapter.[A]
+[X]
+
+## Ch2GoldNotice
+At the end of the chapter,[N]
+you will get [TR]1000 gold[TR] for each[N]
+village that isn't destroyed.[AN]
+A village doesn't have to be visited[N]
+for it to count towards this reward.[A]
+[X]
+
+## LocPortAtelier
+Port Atelier[X]
+
+## Ch3Meanwhile
+Meanwhile, in Tricinia...[A][X]
+
+## ShanaPartyGameOverNotice
+Whenever [ToggleRed]Zoren[ToggleRed] is not on[NL]
+the battlefield, but [ToggleRed]Shana[ToggleRed] is,[A][NL]
+the following [ToggleRed]Game Over[ToggleRed][NL]
+condition is in effect:[A][NL]
+[TR]Shana[TR], [TR]Lorrand[TR], or [TR]Rivia[TR] dies[A]
+[X]
+
+## Chapter7ItemNotice
+[ToggleRed]Shana's party will get new[NL]
+inventories after this chapter.[ToggleRed][A][NL]
+Use your resources as you please.[A]
+[X]
+
+## Chapter7ShanaPercyNotice
+A [ToggleRed]Talk[ToggleRed] between Shana[NL]
+and Percy is now available.[A][X]
+
+## Chapter10NewGameOverNotice
+In addition to [ToggleRed]Shana, Lorrand[NL]
+and Rivia[ToggleRed] staying alive,[A][NL]
+at least one of [ToggleRed]Olympia/Zolma[ToggleRed] must[NL]
+stay alive to avoid a [ToggleRed]Game Over[ToggleRed].[A]
+[X]
+
+## Chapter10PartyNotice_Colette
+[ToggleRed]Shana's party will not have Rivia[NL]
+and Colette after this chapter.[ToggleRed][A][NL]
+Feel free to do any final inventory[NL]
+management before talking to [ToggleRed]Olympia[ToggleRed].[A]
+[X]
+
+## Chapter10PartyNotice_Jade
+[ToggleRed]Shana's party will not have Rivia[NL]
+and Jade after this chapter.[ToggleRed][A][NL]
+Feel free to do any final inventory[NL]
+management before talking to [ToggleRed]Olympia[ToggleRed].[A]
+[X]
+
+## Chapter10PartyNotice_Rivia
+[ToggleRed]Shana's party will not have[NL]
+Rivia after this chapter.[ToggleRed][A][NL]
+Feel free to do any final inventory[NL]
+management before talking to [ToggleRed]Olympia[ToggleRed].[A]
+[X]
+
+## Chapter13NewGameOverNotice
+[ToggleRed]From this point onward,[A][NL]
+Zoren and Shana are the only units[NL]
+that will trigger a Game Over upon death.[ToggleRed][A]
+[X]
+
+## EndOfCurrentDemo
+This is the end of the demo.[AN]
+Thank you for playing![A]
+[X]

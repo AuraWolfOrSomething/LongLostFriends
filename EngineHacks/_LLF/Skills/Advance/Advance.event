@@ -1,0 +1,20 @@
+
+//Called by PostBattleCalcLoop  (Necessary/CalcLoops/PostBattleCalcLoop/PostBattleCalcLoop)
+#include "asm/AdvanceSkill.lyn.event"
+ALIGN 4
+
+//Called by StatGetters
+#include "asm/prSkillAdvance.lyn.event"
+AdvanceSkillLink:
+BYTE AdvanceSkillID
+ALIGN 4
+
+//Unit Menu
+#include "asm/WaitUsability.lyn.event"
+ALIGN 4
+
+#include "asm/AdvanceSkillUsability.lyn.event"
+ALIGN 4
+
+#include "AdvanceEvent.event"
+ALIGN 4

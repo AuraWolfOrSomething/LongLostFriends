@@ -1,0 +1,32 @@
+
+PUSH
+
+ORG 0x1538C
+#include "asm/SwitchGameplayPhase.lyn.event"
+ALIGN 4
+
+POP
+
+#include "asm/GetNextFactionPhase.lyn.event"
+ALIGN 4
+
+#include "asm/GetPreviousFactionPhase.lyn.event"
+ALIGN 4
+
+/*
+#include "asm/NextPhase_Player.lyn.event"
+ALIGN 4
+
+#include "asm/NextPhase_Enemy.lyn.event"
+ALIGN 4
+*/
+
+#include "asm/NextPhase_NPC.lyn.event"
+ALIGN 4
+
+PhaseOrder:
+WORD 0; WORD 0 //POIN NextPhase_Player
+WORD 0x80; WORD 0 //POIN NextPhase_Enemy
+WORD 0x40; POIN NextPhase_NPC
+WORD 0xFFFFFFFF
+ALIGN 4 //shouldn't be needed, but just in case

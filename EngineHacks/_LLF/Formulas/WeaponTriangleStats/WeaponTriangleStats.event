@@ -1,0 +1,50 @@
+
+#define TriangleAdvantage(ItemType1,ItemType2,Might,Hit) "BYTE ItemType1; BYTE ItemType2; BYTE Hit; BYTE Might"
+#define TriangleDisadvantage(ItemType1,ItemType2,Might,Hit) "BYTE ItemType1; BYTE ItemType2; BYTE Hit; BYTE Might"
+
+#ifndef Swords
+  #define Swords 0x0
+#endif
+
+#ifndef Lances
+  #define Lances 0x01
+#endif
+
+#ifndef Axes
+  #define Axes 0x2
+#endif
+
+#ifndef Bows
+  #define Bows 0x3
+#endif
+
+#ifndef Anima
+  #define Anima 0x05
+#endif
+
+#ifndef Light
+  #define Light 0x06
+#endif
+  
+#ifndef Dark
+  #define Dark 0x07
+#endif
+
+PUSH
+
+ORG 0x59BA90
+WeaponAndMagicTriangles:
+TriangleDisadvantage(Swords,Lances,-3,-15)
+TriangleAdvantage(Swords,Axes,3,15)
+TriangleDisadvantage(Lances,Axes,-3,-15)
+TriangleAdvantage(Lances,Swords,3,15)
+TriangleDisadvantage(Axes,Swords,-3,-15)
+TriangleAdvantage(Axes,Lances,3,15)
+TriangleDisadvantage(Anima,Dark,-3,-15)
+TriangleAdvantage(Anima,Light,3,15)
+TriangleDisadvantage(Light,Anima,-3,-15)
+TriangleAdvantage(Light,Dark,3,15)
+TriangleDisadvantage(Dark,Light,-3,-15)
+TriangleAdvantage(Dark,Anima,3,15)
+
+POP

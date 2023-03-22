@@ -1,0 +1,43 @@
+
+#define SupportConversations(char1,char2,cConvo,bConvo,aConvo) "SHORT char1 char2 cConvo bConvo aConvo 0 0 0"
+
+PUSH
+
+ORG 0x9ED10C
+SupportConversations(Zoren,Luther,0,0,0)
+SupportConversations(Zoren,Shana,0,0,0)
+SupportConversations(Shana,Rivia,0,0,0)
+SupportConversations(Shana,Lorrand,0,0,0)
+SupportConversations(Iris,Kamron,0,0,0)
+SupportConversations(Orville,Nordica,0,0,0)
+SupportConversations(Orville,Jacob,0,0,0)
+SupportConversations(Orville,Davis,0,0,0)
+SupportConversations(Nordica,Jacob,0,0,0)
+SupportConversations(Nordica,Gemmora,0,0,0)
+SupportConversations(Luther,Fenris,0,0,0)
+SupportConversations(Luther,Rylan,0,0,0)
+SupportConversations(Franklin,Laric,0,0,0)
+SupportConversations(Franklin,Armond,0,0,0)
+SupportConversations(Marcey,Jacob,0,0,0)
+SupportConversations(Marcey,Hazel,0,0,0)
+SupportConversations(Arlett,Ember,0,0,0)
+SupportConversations(Arlett,Grace,0,0,0)
+SupportConversations(Arlett,Kingsly,0,0,0)
+SupportConversations(Jacob,Kingsly,0,0,0)
+SupportConversations(Thorbek,Armond,0,0,0)
+SupportConversations(Thorbek,Mason,0,0,0)
+SupportConversations(Thorbek,Ember,0,0,0)
+SupportConversations(Lorrand,Vivian,0,0,0)
+SupportConversations(Lorrand,Colette,0,0,0)
+SupportConversations(Rivia,Curcio,0,0,0)
+SupportConversations(Vivian,Myra,0,0,0)
+SupportConversations(Colette,Jade,0,0,0)
+SupportConversations(Colette,Myra,0,0,0)
+SupportConversations(Percy,McVicar,0,0,0)
+SupportConversations(Grace,Ember,0,0,0)
+SupportConversations(Ember,Armond,0,0,0)
+
+//0x9ED30C (vanilla last pairing is 0x9ED62C
+SupportConversations(0,0,0,0,0) //end of the list
+
+POP

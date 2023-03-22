@@ -1,0 +1,44 @@
+
+//Use permanent event ids/flags of 0xFF and lower for bargains
+
+//AsmDependencies/ShoppingEdits
+
+ChapterBattlePrepShopTable: //by chapter id
+WORD 0 
+POIN Chapter1BattlePrepShop
+POIN Chapter2BattlePrepShop
+WORD 0
+POIN Chapter4BattlePrepShop
+POIN Chapter5BattlePrepShop
+WORD 0
+
+/*
+//max amount of items that will display is 21?
+//currently at 16
+
+SHLI BronzeSword IronSword BronzeLance IronLance BronzeAxe IronAxe BronzeBow IronBow Fire Thunder Lightning Ray Flux Shade Heal Vulnerary
+*/
+
+/*
+Bargain Item format
+BYTE ItemID PermanentEventID
+*/
+
+Chapter1BattlePrepShop:
+BYTE CopperSword ChapterBargain1EventID PureWater ChapterBargain2EventID MasterKey ChapterBargain3EventID
+SHLI BronzeSword BronzeLance BronzeAxe BronzeBow Fire Thunder Lightning Ray Heal Vulnerary
+ALIGN 4
+
+Chapter2BattlePrepShop:
+BYTE CopperLance ChapterBargain1EventID NoviceAxe ChapterBargain2EventID Purge ChapterBargain3EventID
+SHLI BronzeSword BronzeLance BronzeAxe BronzeBow Fire Thunder Lightning Ray Heal Vulnerary
+ALIGN 4
+
+Chapter4BattlePrepShop:
+BYTE NoviceLance ChapterBargain1EventID SapphireLance ChapterBargain2EventID FocusBelt ChapterBargain3EventID
+SHLI BronzeSword IronSword BronzeLance IronLance BronzeAxe IronAxe BronzeBow IronBow Fire Thunder Lightning Ray Flux Shade Heal Vulnerary
+ALIGN 4
+
+Chapter5BattlePrepShop:
+SHLI BronzeSword IronSword BronzeLance IronLance BronzeAxe IronAxe BronzeBow IronBow Fire Thunder Lightning Ray Flux Shade Heal Vulnerary
+ALIGN 4

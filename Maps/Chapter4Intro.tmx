@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="15" height="10" tilewidth="16" tileheight="16" nextobjectid="1">
+ <tileset firstgid="1" name="0E007210" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
+  <image source="../../../Tilesets/FE8/0E007210.png" width="512" height="512"/>
+ </tileset>
+ <layer name="MainMapLayer" width="15" height="10">
+  <data encoding="csv">
+1,1,1,1,1,1,219,1,1,1,1,1,1,1,0,
+1,1,1,1,1,1,221,1,1,1,1,1,1,1,0,
+1,1,1,1,1,1,221,1,1,1,1,1,1,1,0,
+1,1,1,1,1,1,219,1,1,1,1,1,1,1,0,
+1,1,1,1,1,1,221,1,1,1,1,1,1,1,0,
+1,1,1,1,1,1,221,1,1,1,1,1,1,1,0,
+1,1,1,1,1,1,219,1,1,1,1,1,1,1,0,
+1,1,1,1,1,1,221,1,1,1,1,1,1,1,0,
+1,1,1,1,1,1,221,1,1,1,1,1,1,1,0,
+1,1,1,1,1,1,219,1,1,1,1,1,1,1,0
+</data>
+ </layer>
+</map>

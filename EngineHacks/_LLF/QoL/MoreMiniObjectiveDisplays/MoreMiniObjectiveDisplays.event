@@ -1,0 +1,33 @@
+
+#include "MoreMiniObjectiveDisplaysInternal.event"
+
+
+#define MiniObjectiveCaptiveID 5
+#define MiniObjectivePartID 6
+#define MiniObjectiveProgressID 7
+
+
+MiniObjectiveDisplayPointers:
+POIN 0x8D354
+POIN 0x8D35C
+POIN 0x8D3B0
+POIN 0x8D354
+POIN 0x8D354
+
+//End of vanilla FE8; add new ones here
+POIN MiniObjectiveDisplay_Captives
+POIN MiniObjectiveDisplay_Parts
+//POIN MiniObjectiveDisplay_Progress
+
+ConvertChapterToPartList:
+BYTE Ch_3 1 2
+BYTE Ch_3P2 2 2
+BYTE 0xFF 1 1 //end of the list
+ALIGN 4
+
+ProgressInChapterList:
+SHORT Ch_4 2 
+//POIN 0
+//POIN 0
+
+WORD 0 //end of the list

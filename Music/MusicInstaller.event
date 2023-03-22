@@ -1,0 +1,66 @@
+
+#include "Install_Instrument_Map.event"
+
+
+#define SongTable(index,SongPointer,Group) "PUSH; ORG SongTableOffset+(8*index); POIN SongPointer; SHORT Group Group; POP"
+#define BattleMusicGroup 0
+#define MapMusicGroup 1
+#define SFXGroup 6
+
+//Example song
+//SongTable(99,My_song,MapMusicGroup)
+//#include "My_song.event"
+
+//credit Alusq
+SongTable(MapTheme_OgreBattle_Thunder,OgreBattle_Thunder,MapMusicGroup)
+#include "Songs/OgreBattle_Thunder.event"
+
+//credit Pikmin1211
+SongTable(MapTheme_Riviera_BattleAgainstDemons,Riviera_BattleAgainstDemons,MapMusicGroup)
+#include "Songs/Riviera_BattleAgainstDemons.event"
+
+//credit Scraiza
+SongTable(MapTheme_FE5_Adversity,FE5_Adversity,MapMusicGroup)
+#include "Songs/FE5_Adversity.event"
+
+//credit Alusq
+SongTable(MapTheme_FFT_DecisiveBattle,FFT_DecisiveBattle,MapMusicGroup)
+#include "Songs/FFT_DecisiveBattle.event"
+
+//credit Alusq
+SongTable(MapTheme_TRS_KnightsOfLazeria,TRS_KnightsOfLazeria,MapMusicGroup)
+#include "Songs/TRS_KnightsOfLazeria.event"
+
+//original
+SongTable(0x29,sadcutscene_v3,BattleMusicGroup)
+#include "Songs/sadcutscene_v3.event"
+
+//credit Alusq
+SongTable(CutsceneTheme_FFT_Anxiety,FFT_Anxiety,BattleMusicGroup)
+#include "Songs/FFT_Anxiety.event"
+
+//credit Pikmin 1211
+SongTable(PrepTheme_OrangeJuice_KaiTheme,OrangeJuice_KaiTheme,BattleMusicGroup)
+#include "Songs/OrangeJuice_KaiTheme.event"
+
+
+SongTable(InfantryWarningSoundID,infantry_warning_sound,SFXGroup)
+SongTable(ArmorWarningSoundID,armor_warning_sound,SFXGroup)
+SongTable(HorseWarningSoundID,horse_warning_sound,SFXGroup)
+SongTable(PegasusWarningSoundID,pegasus_warning_sound,SFXGroup)
+SongTable(WyvernWarningSoundID,wyvern_warning_sound,SFXGroup)
+SongTable(ThiefWarningSoundID,thief_warning_sound,SFXGroup)
+//Instrument map at 0x211BEC
+#include "SoundEffects/infantry_warning_sound.event"
+#include "SoundEffects/armor_warning_sound.event"
+#include "SoundEffects/horse_warning_sound.event"
+#include "SoundEffects/pegasus_warning_sound.event"
+#include "SoundEffects/wyvern_warning_sound.event"
+#include "SoundEffects/thief_warning_sound.event"
+
+//#include "BossMusicTable.event"
+
+
+//InfantryWarning_Music:
+//#incbin "InfantryWarning_Music.dmp"
+//#include "InfantryWarning_Music.event"

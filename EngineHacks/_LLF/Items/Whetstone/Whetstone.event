@@ -1,0 +1,10 @@
+
+//MESSAGE whetstoneDamageIs currentOffset
+#include "asm/WhetstoneDamage.lyn.event"
+ALIGN 4
+
+WhetstoneIDLink:
+BYTE Whetstone
+WhetstoneDamageBoostLink:
+BYTE 3
+ALIGN 4

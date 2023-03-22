@@ -1,0 +1,93 @@
+## NoviceBowName
+Novice Bow[X]
+
+## NoviceBowDesc
++10 EXP if a hit lands. 3 WEXP.[X]
+
+## IronBowName
+Iron Bow[X]
+
+## IronBowDesc
+ [X]
+
+## SteelBowName
+Steel Bow[X]
+
+## SteelBowDesc
+ [X]
+ 
+## SilverBowName
+Silver Bow[X]
+
+## SilverBowDesc
++3 Spd when equipped.[X]
+
+## ShortBowName
+Short Bow[X]
+
+## ShortBowDesc
+Immediate followup attack.[X]
+
+## KillerBowName
+Killer Bow[X]
+
+## KillerBowDesc
+Hits always crit if 4+ Skl over enemy.[X]
+
+## BronzeBowName
+Bronze Bow[X]
+
+## BronzeBowDesc
++15 Dodge.[X]
+
+## BronzeLongbowName
+B. Longbow[X]
+
+## BronzeLongbowDesc
++15 Dodge.[X]
+
+## IronLongbowName
+I. Longbow[X]
+
+## IronLongbowDesc
+ [X]
+
+## GreatbowName
+Greatbow[X]
+
+## GreatbowDesc
+Archers & Snipers only.[X]
+
+## CopperBowName
+Copper Bow[X]
+
+## CopperBowDesc
+ [X]
+ 
+## ArcaneGreatbowName
+A. Greatbow[X]
+
+## ArcaneGreatbowDesc
+Nordica only. +3 Res. Mt x3 vs magic.[X]
+
+## HuntingGreatbowName
+H. Greatbow[X]
+
+## HuntingGreatbowDesc
+Jayce only. +3 Def. Mt x3 vs cavalry.[X]
+
+## BallistaName
+Ballista[X]
+
+## BallistaDesc
+Archers & Snipers only. Mt x7 vs fliers.[X]
+
+## RustbowName
+Rustbow[X]
+
+## RustbowDesc
+Damage dealt ignores user's Pow...[X]
+
+## RustbowDesc2
+Debuffs enemy by -3 to all stats.[N]
+Use is restored after the chapter.[X]

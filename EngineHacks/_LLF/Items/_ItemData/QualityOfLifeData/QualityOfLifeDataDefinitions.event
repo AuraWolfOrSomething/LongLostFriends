@@ -1,0 +1,21 @@
+#define FirstItemWithChangedMusic Heal
+#define FirstItemWithErrorMessage TorchStaff
+
+#define ItemMusic(itemID,routineOffset) "ORG 4*(itemID-FirstItemWithChangedMusic)+ItemMusicTable; POIN routineOffset"
+#define ItemErrorMessage(itemID,messageConditionOffset) "ORG 4*(itemID-FirstItemWithErrorMessage)+ItemErrorMessageTable; POIN messageConditionOffset"
+
+
+//Item Music Priority/Music Routines/or something
+#define Healing_Music_Routine 0x7269C
+#define Status_Music_Routine 0x726A0
+#define Default_Music_Routine 0x726A4
+
+
+//Item Error Messages
+#define Default_Error 0x28E54
+#define Stat_Booster_Healing_Error 0x28DDC
+#define Promotion_Item_Error 0x28E20
+#define Chest_Key_Error 0x28DE4
+#define Door_Key_Error 0x28DEC
+#define Lockpick_Error 0x28DF4
+#define Juna_Fruit_Error 0x28E4C

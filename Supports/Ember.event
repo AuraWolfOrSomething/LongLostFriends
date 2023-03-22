@@ -1,0 +1,12 @@
+EmberSupportList:
+SupportList(Ember,EmberSupportList)
+
+SupportPartner(Grace,40,30)
+SupportPartner(Arlett,40,30)
+SupportPartner(Armond,40,30)
+SupportPartner(Thorbek,15,25)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(4)

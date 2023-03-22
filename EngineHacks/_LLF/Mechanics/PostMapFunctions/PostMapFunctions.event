@@ -1,0 +1,15 @@
+
+//MiscData/PostMapFunctions
+
+#include "PostMapFunctionsInternal.event"
+
+#define ItemResetListEntry(itemID,usesToResetTo,shouldTopNibbleBeChanged,newTopNibble) "BYTE itemID usesToResetTo shouldTopNibbleBeChanged newTopNibble"
+
+//shouldTopNibbleBeChanged: 0 = no; 1 = yes
+//newTopNibble: this value will be added to usesToResetTo, so make sure value is divisable by 16/ends in 0 in hexadecimal (0x10,0x20,etc.)
+
+ItemResetList:
+ItemResetListEntry(LearningRing,2,0,0)
+ItemResetListEntry(Perfectus,2,0,0)
+ItemResetListEntry(Rustbow,1,0,0)
+WORD 0 //end of the list

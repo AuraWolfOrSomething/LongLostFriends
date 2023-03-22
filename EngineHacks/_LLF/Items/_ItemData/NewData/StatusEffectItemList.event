@@ -1,0 +1,10 @@
+
+StatusEffectItemList:
+StatusItem(0,Silence,SilenceStatus,3)
+StatusItem(1,Sleep,SleepStatus,5)
+StatusItem(2,Berserk,BerserkStatus,6)
+StatusItem(3,Stone,PetrifyStatus,3) //duration isn't affected; done through something different from Status Staff Effect
+//StatusItem(4,Hush,SilenceStatus,1)
+
+//End of table
+EndStatusEffectItemTable(4)

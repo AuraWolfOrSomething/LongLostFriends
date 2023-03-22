@@ -1,0 +1,13 @@
+
+SetChapterBattleQuoteList(Ch_2,Ch2BattleQuoteList)
+SetChapterDeathQuoteList(Ch_2,Ch2DeathQuoteList)
+
+Ch2BattleQuoteList:
+BattleQuoteEid(Talon,Mason,TalonMasonQuoteEventID,BattleQuoteTalonMason)
+BattleQuoteEid(Talon,GenericBossQuoteEventID,BattleQuoteTalon)
+BattleQuoteEnd
+
+Ch2DeathQuoteList:
+DeathQuoteEid(Talon,DefeatBossEventID,DeathQuoteTalon)
+DeathQuoteEid(Mason,Ch2MasonDeathEventID,DeathQuoteMason)
+DeathQuoteEnd

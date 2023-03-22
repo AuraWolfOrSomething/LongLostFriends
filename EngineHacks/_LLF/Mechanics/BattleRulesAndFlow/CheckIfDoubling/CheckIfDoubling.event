@@ -1,0 +1,21 @@
+
+#include "asm/CheckIfDoubling.lyn.event"
+ALIGN 4
+
+#include "asm/CheckIfEnoughAS.lyn.event"
+ALIGN 4
+
+#include "asm/NoDoublingVanilla.lyn.event"
+ALIGN 4
+
+#include "asmModules/NoDoublingWeaponEffect.lyn.event"
+ALIGN 4
+
+#include "asmModules/NoDoublingKarbaltGem.lyn.event"
+ALIGN 4
+
+#include "asmModules/NoDoublingThelrimGem.lyn.event"
+ALIGN 4
+
+#include "asmModules/NoDoublingBlitz.lyn.event"
+ALIGN 4

@@ -1,0 +1,12 @@
+CurcioSupportList:
+SupportList(Curcio,CurcioSupportList)
+
+SupportPartner(Rivia,0,30)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(1)

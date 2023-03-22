@@ -1,0 +1,237 @@
+
+#define SlowPrisoner 0x81
+#define BishopPrisoner 0x82
+#define SniperStats 3
+#define SleepingGuard 0x84
+
+/*
+UNIT charID classID leader Level(lvl,faction,autolevel) [x,y] flags 0 number_of_REDAs pointer_to_REDAs [Item1,Item2,Item3,Item4] AI 
+
+REDA_Pointer
+REDA [x,y] Flags Speed *Rescuing character* Delay
+*/
+
+BadUnits:
+
+//The boss
+UNIT Augustus Soldier 0 Level(17,Enemy,False) [7,0] NoUnitFlags 0 0 0 [SilverLance] NoAI
+
+//Prisoners
+	UNIT Percy Mage 0 Level(14,Enemy,False) [12,8] NoUnitFlags 0 0 0 [Elfire] StationaryAI
+	UNIT Ch3Prisoner1 Myrmidon 0 Level(13,Enemy,True) [9,6] DropItem SlowPrisoner 0 0 [Lancereaver] NoAI
+	UNIT Ch3Prisoner2 Fighter 0 Level(14,Enemy,True) [11,8] DropItem SlowPrisoner 0 0 [BattleAxe] NoAI
+	UNIT Ch3Prisoner3 Bishop 0 Level(11,Enemy,True) [10,11] DropItem BishopPrisoner 0 0 [Divine] NoAI
+	UNIT Ch3Prisoner4 Fighter 0 Level(12,Enemy,True) [7,8] DropItem SlowPrisoner 0 0 [IronAxe] NoAI
+	UNIT Ch3Prisoner5 Soldier 0 Level(12,Enemy,True) [8,8] DropItem SlowPrisoner 0 0 [Javelin] NoAI
+	UNIT Ch3Prisoner6 Myrmidon 0 Level(12,Enemy,True) [7,10] DropItem SlowPrisoner 0 0 [RubySword] NoAI
+	
+	/*
+	UNIT Percy Mage 0 Level(14,Enemy,False) [12,8] NoUnitFlags 0 0 0 [0] StationaryAI
+	UNIT Ch3Prisoner1 Myrmidon 0 Level(13,Enemy,True) [9,6] DropItem SlowPrisoner 0 0 [0] StationaryAI
+	UNIT Ch3Prisoner2 Fighter 0 Level(14,Enemy,True) [11,8] DropItem SlowPrisoner 0 0 [0] StationaryAI
+	UNIT Ch3Prisoner3 Bishop 0 Level(11,Enemy,True) [10,11] DropItem BishopPrisoner 0 0 [0] StationaryAI
+	UNIT Ch3Prisoner4 Fighter 0 Level(12,Enemy,True) [7,8] DropItem SlowPrisoner 0 0 [0] StationaryAI
+	UNIT Ch3Prisoner5 Soldier 0 Level(12,Enemy,True) [8,8] DropItem SlowPrisoner 0 0 [0] StationaryAI
+	UNIT Ch3Prisoner6 Myrmidon 0 Level(12,Enemy,True) [7,10] DropItem SlowPrisoner 0 0 [0] StationaryAI
+	*/
+
+//UNIT Ch3Prisoner7 Soldier 0 Level(12,Enemy,True) [9,11] DropItem SlowPrisoner 0 0 [Horseslayer] NoAI
+
+//Stairway guards
+	UNIT Tricinian0 Knight 0 Level(16,Enemy,True) [14,7] NoUnitFlags 0 0 0 [ShortSpear] StationaryAI
+	UNIT Tricinian0 Knight 0 Level(16,Enemy,True) [13,7] NoUnitFlags 0 0 0 [ShortSpear] StationaryAI
+	UNIT Tricinian0 Knight 0 Level(16,Enemy,True) [11,10] NoUnitFlags 0 0 0 [ShortSpear] StationaryAI
+	
+//North spectators
+	UNIT Tricinian0 Shaman 0 Level(14,Enemy,True) [3,1] NoUnitFlags 0 0 0 [Ensnare] AttackInRangeAI
+	UNIT Tricinian0 Myrmidon 0 Level(14,Enemy,True) [5,2] NoUnitFlags 0 0 0 [SteelSword] AttackInRangeAI
+	UNIT Tricinian1 WyvernRider 0 Level(15,Enemy,True) [8,2] NoUnitFlags 0 0 0 [SilverAxe] NoAI
+	UNIT Tricinian0 Soldier 0 Level(14,Enemy,True) [10,1] NoUnitFlags 0 0 0 [SteelLance] AttackInRangeAI
+	UNIT Tricinian0 Soldier 0 Level(14,Enemy,True) [11,1] NoUnitFlags 0 0 0 [SteelLance] AttackInRangeAI
+
+//South spectators
+	UNIT Tricinian0 Soldier 0 Level(14,Enemy,True) [4,13] NoUnitFlags 0 0 0 [SteelLance] AttackInRangeAI
+	UNIT Tricinian0 Myrmidon 0 Level(14,Enemy,True) [6,13] NoUnitFlags 0 0 0 [SteelSword] NoAINoHeal
+	UNIT Tricinian0 Shaman 0 Level(14,Enemy,True) [8,13] NoUnitFlags 0 0 0 [Ensnare] NoAINoHeal
+	UNIT Tricinian0 Knight 0 Level(16,Enemy,True) [11,13] NoUnitFlags 0 0 0 [SteelLance] StationaryAI
+
+UNIT
+
+Units:
+UNIT Shana Bishop_F 0 Level(18,Ally,False) [14,10] NoUnitFlags 0 1 REDA4R8 [Lightning] NoAI 
+UNIT Lorrand GreatKnight 0 Level(18,Ally,False) [14,10] NoUnitFlags 0 1 REDA5R8 [BronzeAxe] NoAI 
+UNIT Rivia Myrmidon_F 0 Level(13,Ally,False) [14,10] NoUnitFlags 0 1 REDA4R7 [IronSword] NoAI 
+UNIT Vivian Knight_F 0 Level(11,Ally,False) [14,10] NoUnitFlags 0 1 REDA4R9 [SteelLance] NoAI 
+UNIT Colette PegasusKnight 0 Level(9,Ally,False) [14,10] NoUnitFlags 0 1 REDA3R9 [Defender] NoAI 
+UNIT Myra Troubadour 0 Level(11,Ally,False) [14,10] NoUnitFlags 0 1 REDA2R8 [BronzeLance] NoAI 
+UNIT
+
+BadUnits3:
+//Slackers
+	UNIT Tricinian0 Bishop 0 Level(13,Enemy,True) [8,2] DropItem SleepingGuard 0 0 [Shine,Guardian] StationaryAI
+	UNIT Tricinian0 Bishop_F 0 Level(13,Enemy,True) [2,1] DropItem 0 0 0 [Shine,Distract] AttackInRangeNoHealAI
+	UNIT Tricinian0 Soldier 0 Level(13,Enemy,True) [3,1] NoUnitFlags 0 0 0 [IronLance,Javelin] AttackInRangeNoHealAI
+
+//Lake
+	UNIT Tricinian0 General 0 Level(18,Enemy,True) [6,13] NoUnitFlags 0 0 0 [Spear,Tomahawk] StationaryAI
+	UNIT Tricinian0 Warrior 0 Level(18,Enemy,True) [7,13] NoUnitFlags 0 0 0 [Tomahawk,IronLongbow] StationaryAI
+	UNIT Tricinian0 General 0 Level(18,Enemy,True) [8,13] NoUnitFlags 0 0 0 [Spear,Tomahawk] StationaryAI
+	UNIT Tricinian0 Sniper 0 Level(16,Enemy,True) [7,15] NoUnitFlags SniperStats 0 0 [Ballista,SteelBow] StationaryAI
+
+//Right side
+	UNIT Tricinian0 Knight 0 Level(16,Enemy,True) [12,9] NoUnitFlags 0 0 0 [Spear] StationaryAI
+	UNIT Tricinian0 Knight 0 Level(16,Enemy,True) [14,6] NoUnitFlags 0 0 0 [Spear] StationaryAI
+	UNIT Tricinian0 Hero 0 Level(18,Enemy,True) [14,8] NoUnitFlags 0 0 0 [SilverSword,SteelAxe] AttackInRangeNoHealAI
+	UNIT Tricinian0 Warrior 0 Level(18,Enemy,True) [14,9] NoUnitFlags 0 0 0 [SilverAxe,SteelBow] AttackInRangeNoHealAI
+	UNIT Tricinian0 Archer 0 Level(14,Enemy,True) [14,10] NoUnitFlags 0 0 0 [Ballista,SteelBow] StationaryAI
+	UNIT Tricinian0 Knight 0 Level(16,Enemy,True) [13,12] NoUnitFlags 0 0 0 [Spear] StationaryAI
+	UNIT Tricinian0 Knight 0 Level(16,Enemy,True) [14,12] NoUnitFlags 0 0 0 [Spear] StationaryAI
+	UNIT Tricinian0 Archer 0 Level(14,Enemy,True) [13,13] NoUnitFlags 0 0 0 [Ballista,SteelBow] StationaryAI
+	UNIT Tricinian0 Bishop 0 Level(17,Enemy,True) [14,14] NoUnitFlags 0 0 0 [Divine,Physic] StationaryAI //[0x0E,0x03,0x00,0x20]
+	UNIT Tricinian0 Archer 0 Level(14,Enemy,True) [12,17] NoUnitFlags 0 0 0 [Ballista,SteelBow] StationaryAI
+	UNIT Tricinian0 Warrior 0 Level(18,Enemy,True) [13,18] NoUnitFlags 0 0 0 [SilverAxe,SteelBow] AttackInRangeNoHealAI
+
+//Left side
+	UNIT Tricinian0 Monk 0 Level(13,Enemy,True) [1,7] NoUnitFlags 0 0 0 [Luster] AttackInRangeNoHealAI
+	UNIT Tricinian0 Fighter 0 Level(13,Enemy,True) [2,8] NoUnitFlags 0 0 0 [CopperAxe] AttackInRangeNoHealAI
+	UNIT Tricinian0 Mage 0 Level(11,Enemy,True) [1,14] DropItem 0 0 0 [Elthunder] AttackInDoubleRangeNoHealAI
+	UNIT Tricinian0 Soldier 0 Level(13,Enemy,True) [2,14] NoUnitFlags 0 0 0 [SteelLance] AttackInDoubleRangeNoHealAI
+	UNIT Tricinian0 Fighter 0 Level(14,Enemy,True) [0,16] NoUnitFlags 0 0 0 [HandAxe] StationaryAI
+	//UNIT Tricinian0 Monk 0 Level(13,Enemy,True) [1,16] NoUnitFlags 0 0 0 [Luster] AttackInRangeNoHealAI
+	//UNIT Tricinian0 Mercenary 0 Level(13,Enemy,True) [1,16] NoUnitFlags 0 0 0 [CopperSword] AttackInRangeNoHealAI
+	UNIT Tricinian0 Myrmidon 0 Level(14,Enemy,True) [1,16] NoUnitFlags 0 0 0 [SteelSword] AttackInRangeNoHealAI
+	UNIT Tricinian0 Shaman 0 Level(14,Enemy,True) [3,17] NoUnitFlags 0 0 0 [Enigma] StationaryAI
+	UNIT Tricinian0 Cavalier 0 Level(14,Enemy,True) [2,20] NoUnitFlags 0 0 0 [SteelLance] AttackInDoubleRangeNoHealAI
+	//UNIT Tricinian0 WyvernRider 0 Level(13,Enemy,True) [1,21] NoUnitFlags 0 0 0 [SteelAxe] AttackInRangeNoHealAI
+	//UNIT Tricinian0 WyvernRider 0 Level(13,Enemy,True) [8,21] NoUnitFlags 0 0 0 [IronAxe] AttackInDoubleRangeNoHealAI
+	UNIT Tricinian0 Shaman 0 Level(14,Enemy,True) [0,22] NoUnitFlags 0 0 0 [Enigma] StationaryAI
+	UNIT Tricinian0 Knight 0 Level(14,Enemy,True) [1,22] NoUnitFlags 0 0 0 [ShortSpear] StationaryAI
+	//UNIT Tricinian0 Fighter 0 Level(16,Enemy,True) [2,22] NoUnitFlags 0 0 0 [HandAxe] StationaryAI
+
+UNIT
+
+Units2:
+UNIT Shana Bishop_F 0 Level(4,Ally,False) [7,5] NoUnitFlags 0 1 REDA7R7 [Lightning] NoAI 
+UNIT Lorrand GreatKnight 0 Level(4,Ally,False) [7,5] NoUnitFlags 0 1 REDA8R7 [BronzeAxe] NoAI 
+UNIT Rivia Myrmidon_F 0 Level(13,Ally,False) [7,5] NoUnitFlags 0 1 REDA6R6 [IronSword] NoAI 
+UNIT Vivian Knight_F 0 Level(11,Ally,False) [7,5] NoUnitFlags 0 1 REDA7R8 [SteelLance] NoAI 
+UNIT Colette PegasusKnight 0 Level(9,Ally,False) [7,5] NoUnitFlags 0 1 REDA8R6 [IronLance] NoAI 
+UNIT Myra Troubadour 0 Level(11,Ally,False) [7,5] NoUnitFlags 0 1 REDA6R8 [BronzeLance] NoAI
+
+/*
+UNIT Shana Bishop_F 0 Level(4,Ally,False) [7,5] NoUnitFlags 0 1 REDA7R11 [Lightning] NoAI 
+UNIT Lorrand GreatKnight 0 Level(4,Ally,False) [7,5] NoUnitFlags 0 1 REDA8R11 [BronzeAxe] NoAI 
+UNIT Rivia Myrmidon_F 0 Level(13,Ally,False) [7,5] NoUnitFlags 0 1 REDA6R10 [IronSword] NoAI 
+UNIT Vivian Knight_F 0 Level(11,Ally,False) [7,5] NoUnitFlags 0 1 REDA7R12 [SteelLance] NoAI 
+UNIT Colette PegasusKnight 0 Level(9,Ally,False) [7,5] NoUnitFlags 0 1 REDA8R10 [IronLance] NoAI 
+UNIT Myra Troubadour 0 Level(11,Ally,False) [7,5] NoUnitFlags 0 1 REDA6R12 [BronzeLance] NoAI
+*/
+UNIT
+
+UnitPart2Percy:
+UNIT Percy Mage 0 Level(14,Ally,False) [7,5] NoUnitFlags 0 1 REDA6R7 [Elfire] NoAI
+
+/*
+UNIT Percy Mage 0 Level(14,Ally,False) [7,5] NoUnitFlags 0 1 REDA6R11 [Elfire] NoAI
+*/
+
+UNIT
+
+Reinforcements0:
+UNIT Tricinian0 Cavalier 0 Level(14,Enemy,True) [13,16] NoUnitFlags 0 0 0 [SteelSword] Working_AttackWallAI
+UNIT Tricinian0 Cavalier 0 Level(14,Enemy,True) [14,16] NoUnitFlags 0 0 0 [SteelLance] Working_AttackWallAI
+UNIT
+
+Reinforcements1:
+UNIT Tricinian0 Myrmidon 0 Level(14,Enemy,True) [7,5] NoUnitFlags 0 1 REDA7R6 [SteelSword] NoAINoHeal
+UNIT Tricinian0 Shaman 0 Level(14,Enemy,True) [7,5] NoUnitFlags 0 1 REDA7R7 [Ensnare] NoAINoHeal
+UNIT
+
+Reinforcements2:
+UNIT Augustus Soldier 0 Level(17,Enemy,False) [7,5] NoUnitFlags 0 1 REDA7R6 [SilverLance] NoAINoHeal
+UNIT Tricinian1 WyvernRider 0 Level(15,Enemy,True) [7,5] NoUnitFlags 0 1 REDA7R7 [SilverAxe] NoAINoHeal
+UNIT
+
+Reinforcements3:
+UNIT Tricinian0 WyvernRider 0 Level(16,Enemy,True) [7,5] NoUnitFlags 0 1 REDA6R6 [SteelAxe] NoAINoHeal
+UNIT Tricinian1 WyvernRider 0 Level(16,Enemy,True) [7,5] NoUnitFlags 0 1 REDA7R7 [SteelAxe] NoAINoHeal
+UNIT Tricinian0 WyvernRider 0 Level(16,Enemy,True) [7,5] NoUnitFlags 0 1 REDA8R6 [SteelAxe] NoAINoHeal
+UNIT
+
+Reinforcements3b:
+UNIT Tricinian0 Cavalier 0 Level(16,Enemy,True) [13,16] NoUnitFlags 0 0 0 [SteelSword] NoAINoHeal
+UNIT Tricinian0 Cavalier 0 Level(16,Enemy,True) [14,16] NoUnitFlags 0 0 0 [SteelLance] NoAINoHeal
+UNIT
+
+Part1EndlessReinforcements1a:
+UNIT Tricinian0 WyvernRider 0 Level(16,Enemy,True) [14,7] NoUnitFlags 0 1 REDA14R7 [SteelAxe] NoAINoHeal
+UNIT Tricinian0 WyvernRider 0 Level(16,Enemy,True) [14,8] NoUnitFlags 0 1 REDA14R8 [SteelAxe] NoAINoHeal
+UNIT Tricinian0 WyvernRider 0 Level(16,Enemy,True) [14,9] NoUnitFlags 0 1 REDA14R9 [SteelAxe] NoAINoHeal
+UNIT
+
+Part1EndlessReinforcements1b:
+UNIT Tricinian0 Bishop 0 Level(16,Enemy,True) [0,3] NoUnitFlags 0 1 REDA0R3 [Purge] NoAINoHeal
+UNIT
+
+Part1EndlessReinforcements1c:
+UNIT Tricinian0 Archer 0 Level(16,Enemy,True) [14,13] NoUnitFlags 0 1 REDA14R13 [Ballista] NoAINoHeal
+UNIT
+
+UnitsMaeva:
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [7,5] NoUnitFlags 0 0 0 [SteelSword,SteelLance,BronzeSword,BronzeLance] NoAI
+
+//Guards by the entrance
+UNIT PrologueBandit Soldier 0 Level(1,NPC,False) [6,9] NoUnitFlags 0 0 0 [IronLance] NoAI
+UNIT PrologueBandit Knight 0 Level(1,NPC,False) [8,9] NoUnitFlags 0 0 0 [IronSword] NoAI
+
+//Market stall thing
+UNIT PrologueBandit Civilian_2 0 Level(1,NPC,False) [8,1] NoUnitFlags 0 0 0 [Vulnerary] NoAI
+UNIT PrologueBandit Civilian_2 0 Level(1,NPC,False) [9,2] NoUnitFlags 0 0 0 [Vulnerary] NoAI
+
+//Kids playing by entrance wall
+UNIT PrologueBandit2 Civilian 0 Level(1,NPC,False) [11,8] NoUnitFlags 0 0 0 [Vulnerary] NoAI
+UNIT Informant Civilian_F 0 Level(1,NPC,False) [12,8] NoUnitFlags 0 0 0 [Vulnerary] NoAI
+UNIT
+
+UnitZoren:
+UNIT Zoren ZorenLord 0 Level(1,Ally,False) [0,1] NoUnitFlags 0 0 0 [BronzeSword,Thunder,Concoction] NoAI
+UNIT
+
+UnitDavis:
+UNIT Davis Hunter 0 Level(1,Ally,False) [13,1] NoUnitFlags 0 0 0 [BronzeBow] NoAI
+UNIT
+
+UnitsAtelier:
+UNIT Grace Mage_F 0 Level(6,NPC,False) [12,7] NoUnitFlags 0 0 0 [Thunder,Fire] NoAI
+
+//Neighbors
+UNIT PrologueBandit Civilian_F_2 0 Level(1,NPC,False) [1,7] NoUnitFlags 0 0 0 [Vulnerary] NoAI
+UNIT PrologueBandit Civilian_2 0 Level(1,NPC,False) [3,7] NoUnitFlags 0 0 0 [Vulnerary] NoAI
+
+//Guard
+UNIT PrologueBandit Knight 0 Level(1,NPC,False) [7,9] NoUnitFlags 0 0 0 [IronLance] NoAI
+
+//Sailors
+UNIT PrologueBandit Pirate 0 Level(1,NPC,False) [8,0] NoUnitFlags 0 0 0 [Vulnerary] NoAI
+UNIT PrologueBandit Pirate 0 Level(1,NPC,False) [9,0] NoUnitFlags 0 0 0 [Vulnerary] NoAI
+UNIT PrologueBandit Pirate 0 Level(1,NPC,False) [6,2] NoUnitFlags 0 0 0 [Vulnerary] NoAI
+UNIT PrologueBandit Pirate 0 Level(1,NPC,False) [10,3] NoUnitFlags 0 0 0 [Vulnerary] NoAI
+
+//Curious kid or something
+UNIT PrologueBandit2 Civilian_F 0 Level(1,NPC,False) [10,5] NoUnitFlags 0 0 0 [Vulnerary] NoAI
+UNIT
+
+UnitZoren2:
+UNIT Zoren ZorenLord 0 Level(1,Ally,False) [8,9] NoUnitFlags 0 1 REDA8R7 [BronzeSword,Thunder,Concoction] NoAI
+UNIT
+
+Ch3EndingUnits:
+UNIT Shana Bishop_F 0 Level(4,Ally,False) [0,5] NoUnitFlags 0 0 0 [Lightning] NoAI 
+UNIT Lorrand GreatKnight 0 Level(4,Ally,False) [1,2] NoUnitFlags 0 0 0 [BronzeAxe] NoAI 
+UNIT Rivia Myrmidon_F 0 Level(13,Ally,False) [0,7] NoUnitFlags 0 0 0 [IronSword] NoAI 
+UNIT Colette PegasusKnight 0 Level(9,Ally,False) [2,2] NoUnitFlags 0 0 0 [IronLance] NoAI 
+UNIT
+
+Ch3EndingBallista:
+UNIT Tricinian0 Sniper 0 Level(21,Enemy,True) [10,5] NoUnitFlags 0 0 0 [Ballista] NoAINoHeal
+UNIT

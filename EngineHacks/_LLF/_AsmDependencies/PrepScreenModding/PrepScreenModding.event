@@ -1,0 +1,22 @@
+
+#ifdef gProc_PrepScreen
+  WARNING "gProc_PrepScreen" has already been defined. PrepScreenModding should come before being used elsewhere.
+  #undef gProc_PrepScreen
+#endif //gProc_PrepScreen
+
+#define gProc_PrepScreen gProc_NewPrepScreen
+
+
+#ifdef USE_PREP_SCREEN_GUIDE
+
+  #include "PrepScreenGuide/PrepScreenGuide.event"
+  ALIGN 4
+  
+#endif //USE_PREP_SCREEN_GUIDE
+
+
+#include "gProc_PrepScreen/gProc_PrepScreen.event"
+ALIGN 4
+
+#include "PrepScreenMapMenu/PrepScreenMapMenu.event"
+ALIGN 4

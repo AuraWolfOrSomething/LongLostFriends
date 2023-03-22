@@ -1,0 +1,20 @@
+
+#include "ToggleDeploymentSwappingInternal.event"
+
+#define LockedPosition 0
+#define UnlockedPosition 1
+#define ForcedDeployment(char,lockedPosition,mode,chapter) "BYTE char lockedPosition mode chapter"
+#define EndForcedDeploymentList "SHORT 0xFFFF 0"
+
+#define DeploymentGroupChapterEntry(chapterId,pointingToGroupsPointer) "BYTE chapterId 0 0 0; POIN pointingToGroupsPointer"
+#define EndDeploymentGroupChapterList "WORD 0 0"
+
+#define AllModes 0xFF
+
+ForcedDeploymentList: //Vanilla list at 0x9ED64C
+ForcedDeployment(Zoren,UnlockedPosition,AllModes,0xFF)
+ForcedDeployment(Ember,UnlockedPosition,AllModes,Ch_2)
+EndForcedDeploymentList
+
+DeploymentGroupChapterList:
+EndDeploymentGroupChapterList

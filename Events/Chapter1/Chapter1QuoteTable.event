@@ -1,0 +1,15 @@
+
+
+SetChapterBattleQuoteList(Ch_1,Ch1BattleQuoteList)
+SetChapterDeathQuoteList(Ch_1,Ch1DeathQuoteList)
+
+Ch1BattleQuoteList:
+BattleQuoteEid(Bruce,Zoren,BruceZorenQuoteEventID,BattleQuoteBruceZoren)
+BattleQuoteEid(Bruce,Davis,BruceDavisQuoteEventID,BattleQuoteBruceDavis)
+BattleQuoteEid(Bruce,Arlett,BruceArlettQuoteEventID,BattleQuoteBruceArlett)
+BattleQuoteEid(Bruce,GenericBossQuoteEventID,BattleQuoteBruce)
+BattleQuoteEnd
+
+Ch1DeathQuoteList:
+DeathQuoteEid(Bruce,DefeatBossEventID,DeathQuoteBruce)
+DeathQuoteEnd

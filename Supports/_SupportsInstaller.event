@@ -1,0 +1,95 @@
+
+#define SupportList(char,offset) "PUSH; ORG CharacterTable+char*0x34+0x2C; POIN offset; POP"
+#define NoSupportList(char) "PUSH; ORG CharacterTable+char*0x34+0x2C; WORD 0; POP"
+#define SupportPartner(char,basePoints,gainedPoints) "BYTE char; PUSH; ORG currentOffset+6; BYTE basePoints; ORG currentOffset+6; BYTE gainedPoints; POP"
+#define SupportPartnerEmptyEntry "BYTE 0; PUSH; ORG currentOffset+6; BYTE 0; ORG currentOffset+6; BYTE 0; POP"
+#define TotalSupportPartners(value) "ORG currentOffset+0xE; BYTE value 0 0"
+
+PUSH
+
+ORG 0x8AEBAC
+
+//#include ".event"
+
+#include "Zoren.event"
+#include "Iris.event"
+#include "Kamron.event"
+#include "Orville.event"
+#include "Nordica.event"
+#include "Luther.event"
+#include "Franklin.event"
+#include "Laric.event"
+
+#include "Davis.event"
+#include "Marcey.event"
+#include "Arlett.event"
+#include "Jacob.event"
+#include "Thorbek.event"
+#include "Grace.event"
+#include "Rylan.event"
+
+#include "Shana.event"
+#include "Lorrand.event"
+#include "Rivia.event"
+#include "Vivian.event"
+#include "Colette.event"
+#include "Myra.event"
+#include "Percy.event"
+
+#include "Ember.event"
+#include "Armond.event"
+#include "Curcio.event"
+#include "Hazel.event"
+//#include "Jayce.event"
+#include "Mason.event"
+//#include "Nevel.event"
+//#include "Angel.event"
+
+#include "Jade.event"
+
+#include "Gemmora.event"
+#include "Korsana.event"
+//#include "Avery.event"
+#include "Kingsly.event"
+//#include "Sergio.event"
+//#include "Zazrec.event"
+
+/*
+#include "Jill.event"
+#include "Wolfram.event"
+#include "Xenore.event"
+*/
+#include "McVicar.event"
+/*
+#include "Yama.event"
+#include "Ulric.event"
+#include "William.event"
+#include "Bayley.event"
+*/
+
+/*
+#include "Pyrus.event"
+#include "Cain.event"
+#include "Fenris.event"
+#include "Cain.event"
+#include "Quinten.event"
+#include "Olympia.event"
+#include "Zolma.event"
+*/
+
+//NoSupportList(0x21)
+//NoSupportList(0x22)
+//NoSupportList(0x23)
+//NoSupportList(0x24)
+//NoSupportList(0x25)
+//NoSupportList(0x26)
+//NoSupportList(0x27)
+//NoSupportList(0x29)
+//NoSupportList(0x2A)
+//NoSupportList(0x2B)
+//NoSupportList(0x2C)
+//NoSupportList(0x2D)
+
+POP
+
+#include "SupportConvoList.event"

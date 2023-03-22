@@ -1,0 +1,21 @@
+//If you're using HP bars, but don't have any weapons that increase the user's max hp by having them equipped, it is recommended that you disable that posibility (equipping weapons can change the user's max hp) in StatGetters before utilizing this. Otherwise, some lag may occur.
+
+#include "asm/WeaponRankModifierLoop.lyn.event"
+ALIGN 4
+
+WeaponRankModifierList:
+POIN SklBonusToWeaponRank
+POIN IneptDebuff
+POIN PupilGemEffect
+WORD 0 //end of the list
+
+#include "asm/SklBonusToWeaponRank.lyn.event"
+ALIGN 4
+
+SklBonusToWeaponRankSklModifierList:
+POIN prGemSkl
+POIN prNocStatBoost
+WORD 0 //end of the list
+
+#include "asm/IneptDebuff.lyn.event"
+ALIGN 4

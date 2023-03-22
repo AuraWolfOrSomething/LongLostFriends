@@ -1,0 +1,50 @@
+Based on r13 after adjusting stack pointer
+
+New
+0x00-0x06: Level up results
+0x07 Unused
+0x08-0x0E: Deviation
+0x0F: Total deviation (not an absolute value; positive and negative cancel each other out)
+
+0x10-0x16: 0xFF if stat should be ignored when increasing most negative deviated stat
+0x17: Unused
+0x18-0x1E: Growths, then stats tied for most negative deviation (0xFF at offset marks the end)
+0x1F: Functionally unused
+
+0x20-0x26: Lowest amount stat can increase by
+0x27: Unused
+0x28-0x29: Sum of growths
+0x2A: Sum of growths/100 (Minimum number of "expected" stat increases)
+0x2B: Unused
+
+0x2C-0x2F: r13+0x08 (Deviation)
+0x30-0x33: r13+0x10 (If stat should be ignored)
+0x34-0x37: r13+0x18 (Growths/Stats tied)
+0x38-0x3B: r13+0x20 (Lowest amount stats can increase by)
+
+0x3C-0x3F: Offset to battle struct of unit gaining exp/leveling up (Attacker/Defender)
+0x40-0x43: Offset of unit in ram
+
+Instead of storing CalcLevelUp in this area, just directly load it
+
+
+
+
+
+Old
+0x00-0x06: Level up results
+0x07 Unused
+0x08-0x0E: Deviation
+0x0F: Total deviation (not an absolute value; positive and negative cancel each other out)
+0x10-0x16: Growths
+0x18-0x19: Sum of growths
+0x1A: Sum of growths/100 (Minimum number of "expected" stat increases)
+
+0x1C-0x1F: Offset of r13+8
+0x20-0x23: Offset to battle struct of unit gaining exp/leveling up (Attacker/Defender)
+0x24-0x27: Offset to CalcLevelUp
+0x28-0x2B: Offset of unit in ram
+
+0x2C-0x32: 0xFF if stat should be ignored when increasing most negative deviated stat
+0x33: Unused
+0x34-0x3B: Stats tied for most negative deviation (0xFF at offset marks the end)

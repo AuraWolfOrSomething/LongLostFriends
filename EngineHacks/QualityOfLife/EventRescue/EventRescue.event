@@ -1,0 +1,20 @@
+#ifdef EVENT_RESCUE
+
+
+// Force enemies to rescue via ASMC
+// Hack by circleseverywhere
+
+#ifdef _FE8_
+
+  //#define Rescue(frontx,fronty,backx,backy) "SVAL 0x1 (fronty*0x10000 + frontx); SVAL 0x2 (backy*0x10000 + backx); ASMC RescueASMC|1"
+  #define Rescue(frontx,fronty,backx,backy) "SVAL 0x1 (fronty*0x10000 + frontx); SVAL 0x2 (backy*0x10000 + backx); ASMC RescueASMC|1; ASMC 0x1A1F4|1; ASMC 0x271A0|1"
+
+  ALIGN 4
+  RescueASMC:
+    #incbin "asm/RescueEvent.dmp"
+
+#else // _FE8_
+  ERROR Rescue ASMC hack is for FE8
+#endif // _FE8_
+
+#endif // EVENT_RESCUE

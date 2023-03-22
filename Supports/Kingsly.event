@@ -1,0 +1,12 @@
+KingslySupportList:
+SupportList(Kingsly,KingslySupportList)
+
+SupportPartner(Jacob,0,25)
+SupportPartner(Arlett,0,25)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(2)

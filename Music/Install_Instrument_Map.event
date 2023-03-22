@@ -1,0 +1,6 @@
+
+#define SongTableOffset  0x224470
+#include "drumfix_fe8.event"
+
+voicegroup000:
+#incbin "FE8NativeInstrumentMap_Revised.bin"

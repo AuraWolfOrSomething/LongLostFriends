@@ -1,0 +1,113 @@
+
+//MiscData/GuideSetup
+
+
+PUSH
+
+ORG 0x22660 //"Guide" command availability check is normally here
+#include "asm/CheckIfGuideEntryIsAvailable.lyn.event"
+ALIGN 4
+
+
+//-------------------------------------------
+//New guide availablility check
+//-------------------------------------------
+
+ORG 0xCE43E
+SHORT 0x79A0 //ldrb r0, [r4,#6]
+BL(CheckIfGuideEntryIsAvailable)
+
+ORG 0xCEB10
+SHORT 0x79A8 //ldrb r0, [r5,#6]
+BL(CheckIfGuideEntryIsAvailable)
+
+ORG 0xCEBD2
+SHORT 0x79A0 //ldrb r0, [r4,#6]
+BL(CheckIfGuideEntryIsAvailable)
+
+//Have Advice/Info not count towards Guide command being white/green
+ORG 0xCF48C
+SHORT 0x8920 0x2800 //ldrh r0, [r4,#8]; cmp r0, #0
+SHORT 0xD00A 0xE002 //beq (0xCF4A8); b (0xCF49A)
+
+
+//-------------------------------------------
+//Repointing to new guide entry list
+//-------------------------------------------
+
+ORG 0xCDF5C
+POIN GuideEntryList
+
+ORG 0xCE380
+POIN GuideEntryList
+
+ORG 0xCE40C
+POIN GuideEntryList
+
+ORG 0xCE480
+POIN GuideEntryList
+
+ORG 0xCE57C
+POIN GuideEntryList
+
+ORG 0xCE618
+POIN GuideEntryList
+
+ORG 0xCE6C4
+POIN GuideEntryList
+
+ORG 0xCE998
+POIN GuideEntryList
+
+ORG 0xCEB5C
+POIN GuideEntryList
+
+ORG 0xCEC20
+POIN GuideEntryList
+
+ORG 0xCF090
+POIN GuideEntryList
+
+ORG 0xCF468
+POIN GuideEntryList
+
+ORG 0xCF488
+POIN GuideEntryList
+
+
+//-------------------------------------------
+//Repointing to new list of chapter headers
+//-------------------------------------------
+
+ORG 0xCE1FC
+POIN GuideChapterHeaderList
+
+
+//-------------------------------------------
+//Repointing to new list of topics
+//-------------------------------------------
+
+ORG 0xCE1BC
+POIN GuideTopicList
+
+ORG 0xCE23C
+POIN GuideTopicList
+
+
+//-------------------------------------------
+//New text id for "About" if sorted by topic
+//-------------------------------------------
+
+ORG 0xCE1B4
+SHORT GuideAboutTopic
+
+POP
+
+
+//-------------------------------------------
+//Back to free space
+//-------------------------------------------
+
+#include "asm/NewGuideEntryAvailability.lyn.event"
+ALIGN 4
+

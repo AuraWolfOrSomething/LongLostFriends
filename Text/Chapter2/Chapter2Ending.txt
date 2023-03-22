@@ -1,0 +1,356 @@
+## Ch2EndingMasonAlive
+[OpenMidLeft][LoadMason]
+[OpenMidRight][LoadZoren]
+
+[OpenMidLeft]
+Whew, that was a close call.[AN]
+If it weren't for you and your[N]
+group, I wouldn't have made it.[A]
+
+[OpenMidRight]
+I'm just glad that we were[N]
+able to make it in time.[AN]
+We got to finally confront[N]
+the "Bandit King", too.[AN]
+
+[OpenMidLeft]
+You were tracking him down?[A]
+
+[OpenMidRight]
+We took control of his fortress, but once[N]
+we realized he wasn't home,[AN]
+we rushed over here as fast as we could.[A]
+
+[OpenMidLeft]
+Is that so?[AN]
+If you're not sticking around, I'll pass[N]
+the good news to my mentor, Sir Gert.[A]
+
+[OpenFarFarLeft]
+No need.[AN]
+He has recently found[N]
+out for himself.[AN]
+
+[OpenMidLeft][ClearFace]
+[OpenMidLeft][LoadGert]
+
+[OpenMidRight][MoveFarRight]
+[OpenRight][LoadMason][ToggleSmile]
+Sir Gert![AN]
+Welcome back![A]
+
+[OpenMidLeft]
+Thank you, Mason.[A]
+
+[OpenRight][ClearFace]
+[OpenFarRight][MoveMidRight]
+[OpenMidRight]
+Hey there.[A]
+
+[OpenMidLeft]
+Ah, Zoren.[AN]
+It's been many years[N]
+since we've talked, no?[A]
+
+[OpenMidRight]
+Yes, it has.[AN]
+Excluding the preparations for[N]
+the Battle of Loftenberg,[AN]
+it must have been before I[N]
+moved away for the war.[A]
+
+[OpenMidLeft]
+So, what brings you to [TR]Lor Mova[TR]?[A]
+
+[OpenMidRight][ToggleSmile]
+I thought [TR]Pyrus[TR] would return here since the[N]
+war's over, but he's apparently not here.[AN]
+I'll be continuing my search in [TR]Argustia[TR] now[N]
+that these bandits are taken care of.[AN]
+So, it's back to Port Atelier for me.[A]
+
+[OpenMidLeft]
+I see.[AN]
+I haven't seen him or heard any news,[N]
+but I hope your search is fruitful.[AN]
+If fate deems it so, our paths will cross[N]
+again in [TR]Argustia[TR].[A]
+
+[OpenMidRight]
+What makes you say that?[A]
+
+[OpenMidLeft]
+Once my reinforcements arrive,[N]
+I will continue my own search.[AN]
+Princess Korsana's made an abrupt[N]
+disappearance, you see.[AN]
+The King refused her request to[N]
+have an escort to [TR]Argustia[TR],[AN]
+but it seems that didn't dissuade[N]
+her from leaving altogether.[AN]
+It'd be foolish to even think of[N]
+flying there from [TR]Lor Mova[TR],[AN]
+so we're trying to discover what[N]
+port she's headed for,[AN]
+if she's not already gone.[A]
+
+[OpenMidRight][ToggleSmile]
+Well, best of luck on[N]
+your search, too.[AN]
+I'll try to keep my eyes[N]
+and ears open.[A]
+
+[OpenMidLeft]
+Thank you.[A]
+[X]
+
+## Ch2EndingMasonDead
+[OpenMidLeft][LoadZoren]
+
+[OpenMidRight][LoadIris]
+It looks like they're[N]
+clearing out, Zoren.[A]
+
+[OpenMidLeft]
+Good.[AN]
+We were too late to[N]
+save everyone, but[TMM]...[TMM][A]
+we took out the main[N]
+threat, I suppose.[A]
+
+[OpenMidRight]
+If you don't mind some advice, Zoren,[N]
+I'd say to not dwell on it too much.[AN]
+This young knight died doing his duty.[AN]
+I can certainly say that's better[N]
+than[TMM]...[.4][TMM]surviving as a failure.[A]
+
+[OpenMidLeft][MoveLeft]
+
+[OpenLeft]
+Sir Iris[TMM]...[TMM][A]
+
+[OpenMidRight]
+[TMM]...[.4][TMM]Anyways, I'll go check up on the villagers.[A][ClearFace]
+
+[OpenFarLeft][LoadGert]
+It's sad to see one so young[N]
+troubled with such pain.[A]
+
+[OpenLeft][ClearFace]
+[OpenFarLeft][MoveMidLeft]
+
+[OpenMidRight][LoadZoren]
+Gert![AN][ToggleSmile]
+You must have just arrived.[A]
+
+[OpenMidLeft]
+Ah, Zoren.[AN]
+It's been many years[N]
+since we've talked, no?[A]
+
+[OpenMidRight]
+Yes, it has.[AN]
+Excluding the preparations for[N]
+the Battle of Loftenberg,[AN]
+it must have been before I[N]
+moved away for the war.[A]
+
+[OpenMidLeft]
+So, what brings you to [TR]Lor Mova[TR]?[A]
+
+[OpenMidRight][ToggleSmile]
+I thought [TR]Pyrus[TR] would return here since the[N]
+war's over, but he's apparently not here.[AN]
+I'll be continuing my search in [TR]Argustia[TR] now[N]
+that these bandits are taken care of.[AN]
+So, it's back to Port Atelier for me.[A]
+
+[OpenMidLeft]
+I see.[AN]
+I haven't seen him or heard any news,[N]
+but I hope your search is fruitful.[AN]
+If fate deems it so, our paths will cross[N]
+again in [TR]Argustia[TR].[A]
+
+[OpenMidRight]
+What makes you say that?[A]
+
+[OpenMidLeft]
+Once my reinforcements arrive,[N]
+I will continue my own search.[AN]
+Princess Korsana's made an abrupt[N]
+disappearance, you see.[AN]
+The King refused her request to[N]
+have an escort to [TR]Argustia[TR],[AN]
+but it seems that didn't dissuade[N]
+her from leaving altogether.[AN]
+It'd be foolish to even think of[N]
+flying there from [TR]Lor Mova[TR],[AN]
+so we're trying to discover what[N]
+port she's headed for,[AN]
+if she's not already gone.[A]
+
+[OpenMidRight][ToggleSmile]
+Well, best of luck on[N]
+your search, too.[AN]
+I'll try to keep my eyes[N]
+and ears open.[A]
+
+[OpenMidLeft]
+Thank you.[A]
+[X]
+
+## Ch2EndingThorbekMason
+[OpenMidLeft][LoadMason]
+[OpenMidRight][LoadThorbek][ToggleSmile]
+Ah, Mason![AN]
+It's good to see you made it[N]
+through that battle.[AN]
+I'm not surprised, though.[A]
+
+[OpenMidLeft]
+I'm glad that you survived[N]
+as well, Thorbek.[AN][ToggleSmile]
+I was worried about you.[A]
+
+[OpenMidRight][ToggleSmile]
+That fear is unfounded, but[N]
+I'm touched, regardless.[A]
+
+[OpenMidLeft][ClearFace]
+[OpenMidRight][ClearFace]
+
+[OpenMidLeft][LoadThorbek]
+
+[OpenMidRight][LoadGert][ToggleSmile]
+Thorbek, I'm sending you with Zoren.[AN]
+Continue to give it your all.[A]
+
+[OpenMidLeft][MoveMidLeft]
+
+[OpenMidLeft]
+Yes, Sir Gert![AN]
+I won't let you down![A]
+
+[OpenMidRight][MoveRight]
+
+[OpenFarRight][LoadZoren]
+Is this alright, Gert?[A]
+
+[OpenRight]
+The capital will be sending many guards[N]
+here for my upcoming absence.[AN]
+One less shouldn't make a huge difference.[AN]
+Besides, you've been a great help here.[AN]
+While I can't join you, I can at least offer[N]
+some assistance in my stead.[A]
+
+[OpenFarRight]
+I see.[AN][ToggleSmile]
+Well, welcome to the[N]
+team, Thorbek.[A]
+
+[OpenMidLeft]
+You can count on me![AN]
+No matter the danger, I shall[N]
+rise to the challenge![A]
+[X]
+
+## Ch2EndingThorbekNoMason
+[OpenMidRight][LoadGert]
+[OpenMidLeft][LoadThorbek]
+
+[OpenMidRight]
+Thorbek, I'm sending you with Zoren.[AN]
+Continue to give it your all.[A]
+
+[OpenMidLeft][MoveMidLeft]
+
+[OpenMidLeft]
+Yes, Sir Gert![AN]
+I won't let you down![A]
+
+[OpenMidRight][MoveRight]
+
+[OpenFarRight][LoadZoren]
+Is this alright, Gert?[A]
+
+[OpenRight]
+The capital will be sending many guards[N]
+here for my upcoming absence.[AN]
+One man short shouldn't make a[N]
+huge difference.[AN]
+Besides, you've been a great help here.[AN]
+While I can't join you, I can at least offer[N]
+some assistance in my stead.[A]
+
+[OpenFarRight]
+I see.[AN][ToggleSmile]
+Well, welcome to the[N]
+team, Thorbek.[A]
+
+[OpenMidLeft]
+You can count on me![AN]
+No matter the danger, I shall[N]
+rise to the challenge![A]
+[X]
+
+## Ch2EndingVillageReward
+[OpenMidLeft][LoadGert]
+[OpenMidRight][LoadZoren]
+
+[OpenMidLeft][ToggleSmile]
+Before you go, I'd also like to thank you[N]
+for protecting the civilians in my stead.[AN]
+I hope these funds will prove to be[N]
+quite useful.[A]
+[X]
+
+## Ch2EndingArlett
+[OpenMidLeft][LoadGert]
+[OpenMidRight][LoadArlett]
+Sir Gert, I'd like to repay my debt[N]
+to Zoren and his comrades.[AN]
+I shall travel with them and[N]
+support them on their journey.[AN]
+
+[OpenMidLeft][ToggleSmile]
+We'll miss losing a healer[N]
+as useful as you,[AN]
+but I don't wish to shackle[N]
+you down here.[AN]
+Safe travels, Arlett.[A]
+
+[OpenMidRight]
+Thank you.[AN]
+Don't wear yourself[N]
+out, either.[A]
+[X]
+
+## Ch2EndingGertMason
+[OpenMidLeft][LoadMason]
+[OpenMidRight][LoadGert]
+Mason, you and I have much to discuss.[AN]
+And much to practice.[AN]
+It seems that you aren't ready to be[N]
+a full-fledged knight yet.[AN]
+Not to worry, I'll get you in shape.[A]
+
+[OpenMidLeft][HalfCloseEyes]
+Fantastic[TMM]...[TMM][A]
+
+[OpenMidRight]
+Something to say, Mason?[AN][ToggleSmile]
+Something to add onto my[N]
+list of drills, perhaps?[A]
+
+[OpenMidLeft][OpenEyes][ToggleSmile][MoveMidLeft]
+[OpenMidLeft]
+E-er, nothing, Sir Gert![A]
+
+[OpenMidRight][ToggleSmile]
+Good.[AN][ToggleSmile]
+Let's begin.[A]
+
+[X]

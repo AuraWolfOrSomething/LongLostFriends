@@ -1,0 +1,93 @@
+MultipleHelpTextPageList_Chars:
+
+BYTE Marcey 1 //char id; number of promotions (unlike items, don't need to list the text ID of the first page, the character description)
+SHORT Paladin PaladinBenefitsLanceCav //each promotion should list the classID and the textID for its additional benefits
+
+BYTE Kamron 1 
+SHORT Paladin PaladinBenefitsSwordCav 
+
+BYTE Orville 1
+SHORT Warrior WarriorBenefits 
+
+BYTE Nordica 1
+SHORT Sniper SniperBenefits
+
+BYTE Franklin 1
+SHORT MageKnight MageKnightBenefits
+
+BYTE Laric 1
+SHORT Bishop BishopBenefitsMonk
+
+BYTE Curcio 1
+SHORT Hero HeroBenefits
+
+BYTE Armond 1
+SHORT Armond GeneralBenefits
+
+BYTE Jacob 5
+SHORT Fighter FighterBenefits
+SHORT Warrior WarriorBenefits
+SHORT Hero HeroBenefits
+SHORT Berserker BerserkerBenefits
+SHORT GreatKnight GreatKnightBenefitsJacob
+
+BYTE Gemmora 1
+SHORT Assassin AssassinBenefits
+
+/*
+BYTE Thorbek 1
+SHORT Halberdier HalberdierBenefits
+*/
+
+BYTE Grace 1
+SHORT Sage SageBenefits
+
+BYTE Arlett 1
+SHORT Bishop BishopBenefitsCleric
+
+/*
+BYTE Ember 1
+SHORT Vanguard VanguardBenefits
+*/
+
+BYTE Davis 1
+SHORT Ranger RangerBenefits
+
+BYTE Korsana 1
+SHORT FalconKnight FalconKnightBenefits
+
+BYTE Rylan 1
+SHORT Druid DruidBenefits
+
+BYTE Kingsly 1
+SHORT Berserker BerserkerBenefits
+
+BYTE Mason 1
+SHORT GreatKnight GreatKnightBenefits
+
+BYTE Rivia 1
+SHORT Swordmaster SwordmasterBenefits
+
+BYTE Vivian 1
+SHORT General GeneralBenefits
+
+BYTE Colette 1
+SHORT FalconKnight FalconKnightBenefits
+
+BYTE Myra 1
+SHORT Valkyrie ValkyrieBenefits
+
+BYTE Percy 1
+SHORT Sage SageBenefits
+
+BYTE Jayce 1
+SHORT Sniper SniperBenefits
+
+BYTE Nevel 1
+SHORT Bishop BishopBenefitsMonk
+
+BYTE Angel 1
+SHORT Druid DruidBenefits
+
+BYTE 0 //end list with this
+ALIGN 4

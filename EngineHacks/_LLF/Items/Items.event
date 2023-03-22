@@ -1,0 +1,61 @@
+
+#include "_ItemData/_ItemData.event"
+ALIGN 4
+
+//Warp and Elwarp can have different warp ranges
+#include "WarpRange/WarpRange.event"
+ALIGN 4
+
+//Weak Lockpick
+#include "Keys/Keys.event"
+ALIGN 4
+
+//Concoction
+#include "Healing/Healing.event"
+ALIGN 4
+
+//Coupons and New/Used Silver Cards
+#include "PriceModifyingItems/PriceModifyingItems.event"
+ALIGN 4
+
+#include "LearningRing/LearningRing.event"
+ALIGN 4
+
+#include "Gems/Gems.event"
+ALIGN 4
+
+#include "Perfectus/Perfectus.event"
+ALIGN 4
+
+#include "FocusBelt/FocusBelt.event"
+ALIGN 4
+
+#include "Whetstone/Whetstone.event"
+ALIGN 4
+
+#include "ScoutBadge/ScoutBadge.event"
+ALIGN 4
+
+//Half Guard's effect is handled by Attack Formula
+HalfGuardIDLink:
+BYTE HalfGuard
+ALIGN 4
+
+//Defender/Thoron
+#include "DamageTakenReduction/DamageTakenReduction.event"
+ALIGN 4
+
+#include "Guardian/Guardian.event"
+ALIGN 4
+
+#include "Distract/Distract.event"
+ALIGN 4
+
+#include "Rustbow/Rustbow.event"
+ALIGN 4
+
+#include "HeavyHoveringBoots/HeavyHoveringBoots.event"
+ALIGN 4
+
+#include "StatBoosterChanges.event"
+#include "WeaponStatBonuses.event"

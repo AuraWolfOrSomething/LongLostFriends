@@ -1,0 +1,14 @@
+
+//MiscData/CharacterCapModifierTable
+
+PUSH
+
+ORG 0x181C8
+#include "asm/EnsureNoUnitStatCapOverflow.lyn.event"
+ALIGN 4
+
+ORG 0x2BF24
+#include "asm/CheckForLevelUpCaps.lyn.event"
+ALIGN 4
+
+POP

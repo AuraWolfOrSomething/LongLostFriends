@@ -1,0 +1,21 @@
+
+PUSH
+ORG 0x2BA28
+jumpToHack(CheckIfLevelingUp)
+
+POP
+
+#ifndef TESTING_WORST_OUTCOME
+	#include "asm/CheckIfLevelingUp.lyn.event"
+	ALIGN 4
+#else
+	#include "asm/CheckIfLevelingUp_RoundDownv2.lyn.event"
+	ALIGN 4
+#endif
+
+#include "asm/GetStatAverage.lyn.event"
+ALIGN 4
+
+RandomNumberTieDividerLink:
+BYTE 50 33 25 20 16 14 //2-7
+ALIGN 4 

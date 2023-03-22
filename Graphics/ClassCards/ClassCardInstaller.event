@@ -1,0 +1,24 @@
+
+#define setCardEntry(cardEntry,cardLocation,cardPaletteLocation) "PUSH; ORG PortraitTable+cardEntry*0x1C; POIN 0 0 cardPaletteLocation 0 cardLocation; POP"
+
+DeserterCC:
+//#incext png2dmp "Deserter.png" --lz77
+#incbin "Deserter.dmp"
+ALIGN 4
+
+DeserterCCPalette:
+//MESSAGE deserterPalette starts at currentOffset
+//#incext png2dmp "Deserter.png" --palette-only
+//MESSAGE deserterPalette ends at currentOffset
+#incbin "DeserterPalette.dmp"
+ALIGN 4
+
+setCardEntry(0xAD,DeserterCC,DeserterCCPalette)
+
+WyvernRiderCC:
+#incbin "WyvernRider.dmp"
+
+WyvernRiderCCPalette:
+#incbin "WyvernRiderPalette.dmp"
+
+setCardEntry(0x88,WyvernRiderCC,WyvernRiderCCPalette)

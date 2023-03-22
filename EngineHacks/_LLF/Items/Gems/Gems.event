@@ -1,0 +1,46 @@
+
+#include "GemsInternal.event"
+
+#define GemBoost(ItemID,PowBoost,SklBoost,SpdBoost,DefBoost,ResBoost,LckBoost) "BYTE ItemID; BYTE PowBoost+SklBoost*0x10; BYTE SpdBoost+DefBoost*0x10; BYTE ResBoost+LckBoost*0x10"
+#define EndPassiveGemBoostList "WORD 0"
+
+PassiveGemBoostList:
+GemBoost(FighterGem,2,0,0,0,0,0)
+GemBoost(ArcherGem,0,4,0,0,0,0)
+GemBoost(MyrmidonGem,0,0,2,0,0,0)
+GemBoost(KnightGem,0,0,0,2,0,0)
+GemBoost(ClericGem,0,0,0,0,2,0)
+GemBoost(SelnaGem,1,1,1,1,1,1)
+EndPassiveGemBoostList
+
+PassiveGemAidBoostList:
+BYTE BrigandGem 4
+SHORT 0 //end of list
+ALIGN 4
+
+PassiveGemLowerASPenaltyList:
+BYTE BrigandGem 2
+SHORT 0 //end of list
+ALIGN 4
+
+PromotedLimitGemList: //same as ClassGemList except for the following items; intentionally not terminated before setting up another label
+BYTE KarbaltGem ThelrimGem SelnaGem
+
+	ClassGemList:
+	BYTE FighterGem ArcherGem MyrmidonGem KnightGem ClericGem BrigandGem RookieGem PupilGem RecruitGem 0
+
+OverdriveBandLink:
+BYTE 0xFF
+
+PupilGemLink:
+BYTE PupilGem
+
+SelnaGemLink:
+BYTE SelnaGem
+
+KarbaltGemLink:
+BYTE KarbaltGem
+
+ThelrimGemLink:
+BYTE ThelrimGem
+ALIGN 4

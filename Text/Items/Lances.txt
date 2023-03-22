@@ -1,0 +1,91 @@
+## IronLanceName
+Iron Lance[X]
+
+## IronLanceDesc
+ [X]
+
+## BronzeLanceName
+Bronze Lnc[X]
+
+## BronzeLanceDesc
++15 Dodge.[X]
+
+## SteelLanceName
+Steel Lance[X]
+
+## SteelLanceDesc
+ [X]
+
+## SilverLanceName
+Silver Lance[X]
+
+## SilverLanceDesc
++3 Spd when equipped.[X]
+
+## NoviceLanceName
+Novice Lnc[X]
+
+## NoviceLanceDesc
++10 EXP if a hit lands. 3 WEXP.[X]
+
+## KillerLanceName
+Killer Lance[X]
+
+## KillerLanceDesc
+Hits always crit if 4+ Skl over enemy.[X]
+
+## HorseslayerName
+Horseslayer[X]
+
+## HorseslayerDesc
+Mt x2 vs cavalry, else -9 mt[X]
+
+## JavelinName
+Javelin[X]
+
+## JavelinDesc
+ [X]
+
+## SpearName
+Spear[X]
+
+## SpearDesc
+ [X]
+
+## AxereaverName
+Axereaver[X]
+
+## AxereaverDesc
+Reverses weapon triangle and[N]
+doubles its effects.[X]
+
+## CopperLanceName
+Copper Lnc[X]
+
+## CopperLanceDesc
+ [X]
+
+## HeavySpearName
+Heavy Spear[X]
+
+## HeavySpearDesc
+Mt x2 vs heavy armor, else -9 mt[X]
+
+## ShortSpearName
+Short Spear[X]
+
+## ShortSpearDesc
+ [X]
+
+## SapphireLanceName
+Sapphire Lnc[X]
+
+## SapphireLanceDesc
+Doubles weapon triangle effects.[X]
+
+## DefenderName
+Defender[X]
+
+## DefenderDesc
+Cannot perform followup attacks.[N]
+-6 damage taken when initiating.[X]

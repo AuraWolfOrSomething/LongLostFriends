@@ -1,0 +1,77 @@
+## LightningName
+Lightning[X]
+
+## LightningDesc
++15 Dodge.[X]
+
+## ShineName
+Shine[X]
+
+## ShineDesc
+ [X]
+
+## DivineName
+Divine[X]
+
+## DivineDesc
+ [X]
+
+## PurgeName
+Purge[X]
+
+## PurgeDesc
+Long-range magic attack.[X]
+
+## AuraName
+Aura[X]
+
+## AuraDesc
++3 Spd when equipped.[X]
+
+## LucentName
+Lucent[X]
+
+## LucentDesc
+Doubles magic triangle effects.[X]
+
+## FortuneName
+Fortune[X]
+
+## FortuneDesc
+Attack with Lck. Enemy defends with Lck.[X]
+
+## RayName
+Ray[X]
+
+## RayDesc
+2 WEXP. +5 staff healing dealt.[X]
+
+## LusterName
+Luster[X]
+
+## LusterDesc
+Immediate followup attack. +3 Spd.[X]
+
+## InsightName
+Insight[X]
+
+## InsightDesc
+Doubles EXP gained.[X]
+
+## SoulName
+Soul[X]
+
+## SoulDesc
+Reverses magic triangle.[X]
+
+## ThaniName
+Thani[X]
+
+## ThaniDesc
+Mt x3 vs cavalry and heavy armor.[X]
+
+## SwiftName
+Swift[X]
+
+## SwiftDesc
+Brave effect (doubles number of attacks).[X]

@@ -1,0 +1,26 @@
+
+//if canceling out of a command from PlanUnitMenu brings up the regular UnitMenu, put breakpoints on:
+//0804F64C
+
+
+PUSH
+
+ORG 0x1D4EC
+#include "asm/DecideUnitMenu_Hook.lyn.event"
+ALIGN 4
+
+ORG 0x22808 //canceling out of Staff, possibly other stuff?
+#include "asm/DecideUnitMenu_Hook2.lyn.event"
+ALIGN 4
+
+ORG 0x22874 //commented out Cancel_Capture
+#include "asm/CancelCommandDecideUnitMenu_Hook.lyn.event"
+ALIGN 4
+
+POP
+
+#include "asm/DecideUnitMenu.lyn.event"
+ALIGN 4
+
+#include "asm/CancelCommandDecideUnitMenu.lyn.event"
+ALIGN 4

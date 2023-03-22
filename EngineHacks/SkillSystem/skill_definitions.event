@@ -1,0 +1,246 @@
+//Here you can choose which skills to install. You can only install up to 254, ranging from IDs 1 - 254. Make sure you don't use the same ID more than once.
+//To disable a skill, define it as 255.
+
+
+//#define SkillID ID
+
+//Canto: Can move again after certain actions.
+//By Tequila
+#define CantoID 1
+
+//Canto+: Can move again after attacking and other actions.
+//By Tequila
+//#define CantoPlusID 2
+
+//Supply: This unit has access to the convoy.
+//By Sme
+#define SupplyID 2
+
+//Dance: Refresh an ally unit to let them act again.
+//By Sme
+#define DanceID 3
+
+//Summon: Can conjure a phantom soldier to fight alongside you.
+//By Sme
+#define SummonID 4
+
+//Locktouch: Can open locks without keys or picks.
+//By Kao
+#define LockTouchID 5
+#define LocktouchID LockTouchID //Alias
+
+//Acrobat: All traversable terrain costs 1 movement.
+//By Tequila
+#define AcrobatID 6
+
+//Slayer: Deal effective damage to monster units.
+//By Tequila
+#define SlayerID 7
+
+//Crit Boost: +15 critical rate.
+//Author Unknown (Initial Commit)
+#define CritUpID 8
+#define CritBoostID CritUpID //Alias
+
+//Barricade: Damage taken is halved after first being struck.
+//By Snakey1
+#define BarricadeID 9
+
+//Last Legs: Mov +1. This unit can't start combat on turns that they completely use their Mov.
+//By Aura Wolf
+#define LastLegsID 10
+
+//Prime Five: If Lv 5 and/or on Turn 5, use Lck for Pow/Skl/Spd/Def/Res/Res in combat. Increases exp gain by up to 5.
+//By Aura Wolf
+#define PrimeFiveID 11
+
+//Balanced Study: Increased damage dealt by |6 - WEXP difference between Sword and Anima
+//By Aura Wolf
+#define BalancedStudyID 12
+
+//Exploit Speed: If WTA, increase attack speed by 3.
+//By Aura Wolf
+#define ExploitSpeedID 13
+
+#define InspirationID 14
+
+#define RallyMovID 15
+
+#define CharmID 16
+
+#define BargainID 17
+
+//Hit +15
+#define SteadyAimID 18
+
+//If battle's range is 3+, set other unit's hit to 0
+#define FarWardID 19
+
+//Always has brave effect, but can't double from outspeeding opponent. Consecutive hits do half damage.
+#define BlitzID 20
+
+//Lunge: Swap places with the opponent after combat. (No effect if Move is --)
+//By Tequila
+#define LungeID 21
+
+//Shove: Allows unit to push other units one tile away.
+//By StanH
+#define ShoveID 22
+
+//Smite: Allows unit to push other units two tiles away.
+//By StanH
+#define SmiteID 23
+
+//Reposition: Allows unit to pull an adjacent ally to its opposite side.
+//By StanH
+#define RepositionID 24
+
+//Swap: Allows unit to swap positions with an adjacent ally.
+//By StanH
+#define SwapID 25
+
+//Draw Back: Allows unit to move one tile backwards, and pull an adjacent ally to this unit's old position.
+//By Aura Wolf
+#define DrawBackID 26
+
+//Split Up: Allows unit to move one tile backwards, and push an adjacent ally one tile forwards.
+//By Aura Wolf
+#define SplitUpID 27
+
+//Cross: Allows unit and an adjacent ally to move one tile past each other.
+//By Aura Wolf
+#define CrossID 28
+
+//Escort: When this unit rescues an ally, they can move again. Immediately after, Give can be used.
+//By Aura Wolf
+#define EscortID 29
+
+//Escort+: When this unit rescues an ally, they can move again. Immediately after, Give/Take/Drop can be used.
+//By Aura Wolf
+#define EscortPlusID 30
+
+//Heroics: Unit can select "Rescue" as a free action.
+//By Aura Wolf
+#define HeroicsID 31
+
+//Transmitter: After selecting "Give" and no other option beforehand, this unit resets to their previous position.
+//By Aura Wolf
+#define TransmitterID 32
+
+//Transmitter+: After selecting "Give", this unit resets to their previous position.
+//By Aura Wolf
+#define TransmitterPlusID 33
+
+//Advance: After moving 2 mov and selecting "Advance", this unit can move and act again. Can only happen once per turn.
+//By Aura Wolf
+#define AdvanceSkillID 34
+
+//Savior: Can rescue without penalties.
+//Author Unknown (Initial Commit)
+#define SaviorID 35
+
+//Pivot: Allows unit to move to the opposite side of an adjacent ally.
+//By StanH
+#define PivotID 36
+
+//Divine Intervention: Once per chapter, save an ally from dying in combat.
+//By Aura Wolf
+#define DivineInterventionID 37
+
+//Uncooperative: Cannot be rescued or be targeted by utility skills for friendly units.
+//By AuraWolf
+#define UncooperativeID 38
+
+//Expertise: Reduce opponent's effectiveness multiplier by 50%.
+#define ExpertiseID 39
+
+//Cunning: Description pending
+#define CunningID 100
+
+//Snaillike: Mov-2
+#define SnaillikeID 101
+
+//Slow: Mov-1
+#define SlowSkillID 102
+
+//Recapturable: If captor dies, this unit gets 1 current hp back. Player units can use "Recapture" as long as this unit's inventory is empty or this unit is at 1 hp.
+#define RecapturableID 255
+
+
+//------------------------------------------------------
+//for compatability
+
+//Celerity: Movement +2.
+//Author Unknown (Initial Commit)
+#define CelerityID 255
+
+//Nihil: Cancels the opponent's skills in combat.
+//Author Unknown (Initial Commit)
+#define NihilID 255
+
+#define CatchEmAllID 255
+
+//Nullify: Unit is protected from all effective attacks.
+//By Tequila
+#define NullifyID 255
+
+//Skybreaker: Deal effective damage to flying units.
+//By Sme
+#define SkybreakerID 255
+
+//Resourceful: Double effectiveness multiplier.
+//By Sme
+#define ResourcefulID 255
+
+//Steal+: Unit can steal unequipped weapons and staves if con>weight.
+//By Tequila
+#define StealPlusID 255
+
+//Capture: Capture an enemy after defeating it with reduced stats.
+//By Tequila
+#define CaptureID 255
+
+//Watchful: This unit cannot be captured or stolen from.
+//By Sme
+#define WatchfulID 255
+
+//Expertise: Reduce bonus damage from critical hits by 50%.
+//Author Unknown (Initial Commit)
+//#define ExpertiseID 255
+
+//Barricade+: In combat, damage recieved equals half of the damage when struck last.
+//By Snakey1
+#define BarricadePlusID 255
+
+//Blossom: 2x growth rates, but 1/2 exp gain.
+//By Sme
+#define BlossomID 255
+
+//Aptitude: +20% to all growth rates.
+//By Sme
+#define AptitudeID 255
+
+//Bow Range +1: Maximum range of equipped bows is increased.
+//By Teraspark
+#define BowRangeUpID 255
+
+//Point Blank: Minimum range of equipped bows is set to 1.
+//By Teraspark
+#define PointBlankID 255
+
+//Staff Savant: Maximum range of staves is increased by 1.
+//By Teraspark
+#define StaffSavantID 255
+
+//Tome Range +1: Maximum range of equipped tome is increased.
+//By Kirb
+#define TomeRangeUpID 255
+
+//Shadowgift: Allows the user to use Dark Magic. (Uses highest Magic Rank)
+//By Leonarth
+#define ShadowgiftID 255
+
+//Lumina: Allows the user to use Light Magic. (Uses highest Magic Rank)
+//By Leonarth
+#define LuminaID 255
+

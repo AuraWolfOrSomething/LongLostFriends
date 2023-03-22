@@ -1,0 +1,71 @@
+#0x0160 PrologueName
+Prologue - A Promise[X]
+
+## Ch1Name
+Ch.1 - Local Bandit Fort[X]
+
+## Ch2Name
+Ch.2 - The Bandit King[X]
+
+## Ch3Name
+Ch.3 - Shana: Imprisoned[X]
+
+## Ch4Name
+Ch.4 - Hostile Welcome[X]
+
+## Vanilla5xName
+Ch.5 - The Supplies[X]
+
+## Ch5Name
+End of Demo[X]
+
+## Ch6Name
+Ch.6 - Intelligence[X]
+
+## Ch7Name
+Ch.7 - Shana: Bold Offense[X]
+
+## Ch8Name
+Ch.8 - Rescue Mission[X]
+
+## Ch9Name
+Ch.9 - Last Stand[X]
+
+## Ch10Name
+Ch.10 - Shana: Price of Insight[X]
+
+## Ch11Name
+Ch.11 - Uneasy Alliance[X]
+
+## Ch12Name
+Ch.12 - The Hunt Begins[X]
+
+## Ch13Name
+Ch.13 - Endless Torrent[X]
+
+## Ch14Name
+Ch.14 - The Wyvern's Peak[X]
+
+## Ch15Name
+Ch.15 - Determination[X]
+
+## Ch16Name
+Ch.16 - Awaited Reunion[X]
+
+## Ch17Name
+Ch.17 - Dark Tidings[X]
+
+## Ch18Name
+Ch.18 - Idk Part 1[X]
+
+## Ch19Name
+Ch.19 - Idk Part 2[X]
+
+## Ch20Name
+Ch.20 - Idk Part 3[X]
+
+## FinaleName
+Finale - gg[X]
+
+## Ch3Part2Name
+Ch.3 - Shana: Imprisoned[X]

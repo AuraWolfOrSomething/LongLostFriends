@@ -1,0 +1,31 @@
+#include EAstdlib.event
+
+#include "ReinforcementWarnings.event"
+
+#include "REDAs.event" //credit to Snek
+
+#include "Transitions.event"
+
+{
+#include "Prologue/PrologueEvents.event"
+}
+
+{
+#include "Chapter1/Chapter1Events.event"
+}
+
+{
+#include "Chapter2/Chapter2Events.event"
+}
+
+{
+#include "Chapter3/Chapter3Events.event"
+}
+
+{
+#include "Chapter4/Chapter4Events.event"
+}
+
+{
+#include "EndOfDemo/EndOfDemoEvents.event"
+}

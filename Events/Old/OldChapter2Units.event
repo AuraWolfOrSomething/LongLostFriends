@@ -1,0 +1,114 @@
+
+/*
+UNIT charID classID leader Level(lvl,faction,autolevel) [x,y] flags 0 number_of_REDAs pointer_to_REDAs [Item1,Item2,Item3,Item4] AI 
+
+REDA_Pointer
+REDA [x,y] Flags Speed *Rescuing character* Delay
+*/
+
+BadUnits:
+//Below Cliff
+UNIT Zino Lancer 0 Level(12,Enemy,False) [10,19] DropItem 0 0 0 [Spear] StationaryAI
+UNIT Enemy2 Mage 0 Level(10,Enemy,True) [13,18] NoUnitFlags 3 0 0 [Bolting,Elfire] StationaryAI
+UNIT Enemy2 Shaman 0 Level(8,Enemy,True) [9,18] NoUnitFlags 4 0 0 [Flux] AttackInRangeAI
+UNIT Enemy2 Shaman 0 Level(8,Enemy,True) [8,19] NoUnitFlags 4 0 0 [Flux] AttackInRangeAI
+UNIT Enemy1 Cavalier 0 Level(8,Enemy,True) [9,16] NoUnitFlags 0 0 0 [CopperLance,Coupon] NoAI
+UNIT Enemy1 Cavalier 0 Level(8,Enemy,True) [7,16] NoUnitFlags 0 0 0 [CopperSword] NoAI
+
+//High Ground
+UNIT Enemy2 Mage 0 Level(10,Enemy,True) [9,11] NoUnitFlags 3 0 0 [Bolting,Elfire] StationaryAI
+UNIT Enemy2 Cavalier 0 Level(9,Enemy,True) [10,12] NoUnitFlags 0 0 0 [SteelLance] NoAI
+UNIT Enemy2 Knight 0 Level(8,Enemy,True) [8,10] NoUnitFlags 5 0 0 [ShortSpear] StationaryAI
+UNIT Enemy2 Knight 0 Level(8,Enemy,True) [7,11] NoUnitFlags 5 0 0 [SteelAxe,HandAxe] StationaryAI
+
+//Left Side
+UNIT Enemy1 Mercenary 0 Level(7,Enemy,True) [3,8] NoUnitFlags 0 0 0 [CopperSword] NoAI
+UNIT Enemy1 Soldier 0 Level(7,Enemy,True) [4,9] NoUnitFlags 0 0 0 [SteelLance] NoAI
+UNIT Enemy2 PegasusKnight 0 Level(9,Enemy,True) [5,9] NoUnitFlags 1 0 0 [IronLance] EscapeAvoidCombat
+UNIT Enemy2 Shaman 0 Level(8,Enemy,True) [3,12] NoUnitFlags 4 0 0 [Ensnare,Coupon] AttackInRangeAI
+UNIT Enemy1 Cavalier 0 Level(8,Enemy,True) [3,13] NoUnitFlags 0 0 0 [SteelSword] NoAI
+UNIT Enemy1 Cavalier 0 Level(8,Enemy,True) [2,12] NoUnitFlags 0 0 0 [CopperSword] NoAI
+
+//Left Side - Arena
+UNIT Enemy2 Mage 0 Level(7,Enemy,True) [0,14] NoUnitFlags 2 0 0 [Elfire] NoAI
+UNIT Enemy2 Mage 0 Level(7,Enemy,True) [1,14] NoUnitFlags 2 0 0 [Elthunder] NoAI
+UNIT Enemy1 Mercenary 0 Level(7,Enemy,True) [0,18] NoUnitFlags 0 0 0 [CopperSword,SecretBook] AttackInDoubleRange
+UNIT Enemy1 Shaman 0 Level(7,Enemy,True) [2,19] NoUnitFlags 4 0 0 [Ensnare] AttackInDoubleRange
+UNIT Enemy2 PegasusKnight 0 Level(9,Enemy,True) [4,15] NoUnitFlags 1 0 0 [CopperLance,DoorKey] EscapeAvoidCombat
+
+//Right Side
+UNIT Enemy2 Shaman 0 Level(8,Enemy,True) [13,11] NoUnitFlags 4 0 0 [Ensnare,Flux] StationaryAI
+UNIT Enemy1 Fighter 0 Level(7,Enemy,True) [16,10] DropItem 0 0 0 [SteelAxe,RaiderGem] Working_AttackWallAI
+UNIT Enemy1 Fighter 0 Level(7,Enemy,True) [15,10] NoUnitFlags 0 0 0 [SteelAxe] Working_AttackWallAI
+UNIT Enemy2 PegasusKnight 0 Level(9,Enemy,True) [14,15] NoUnitFlags 1 0 0 [CopperLance] EscapeAvoidCombat
+UNIT Enemy2 Shaman 0 Level(8,Enemy,True) [15,16] NoUnitFlags 4 0 0 [Ensnare,Luna,Coupon] AttackInRangeAI
+
+//Top Cliff
+UNIT Enemy1 Mercenary 0 Level(7,Enemy,True) [7,9] NoUnitFlags 0 0 0 [CopperSword] NoAI
+UNIT Enemy1 Mercenary 0 Level(7,Enemy,True) [12,8] NoUnitFlags 0 0 0 [CopperSword] NoAI
+UNIT Enemy1 Soldier 0 Level(7,Enemy,True) [9,8] NoUnitFlags 0 0 0 [Horseslayer,CopperLance] NoAI
+
+UNIT
+
+NPCUnits:
+UNIT Ch1NPCMerc Knight 0 Level(8,NPC,True) [6,5] NoUnitFlags 6 0 0 [Javelin,HandAxe] StationaryAI
+UNIT Ch1NPCMerc Knight 0 Level(8,NPC,True) [8,5] NoUnitFlags 6 0 0 [Javelin,HandAxe] StationaryAI
+UNIT Ch1NPCMerc Knight 0 Level(8,NPC,True) [10,4] NoUnitFlags 6 0 0 [Javelin,HandAxe] StationaryAI
+UNIT
+
+NewUnits:
+UNIT Ember Soldier 0 Level(10,Ally,False) [8,4] NoUnitFlags 0 0 0 [SilverLance,IronLance,Concoction] NoAI
+UNIT Hazel Valkyrie 0 Level(3,Ally,False) [14,2] NoUnitFlags 0 0 0 [Fortune,Ray,Aid] NoAI
+UNIT
+
+Units:
+UNIT Zoren ZorenLord 0 Level(1,Ally,False) [7,4] NoUnitFlags 0 0 0 [IronSword,Thunder,Concoction] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [8,4] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [6,3] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [8,3] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [9,3] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [11,3] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [7,2] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [8,2] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [10,2] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [11,2] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [7,1] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [9,1] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT
+
+RylanUnit:
+UNIT Rylan Shaman 0 Level(7,Ally,False) [0,0] NoUnitFlags 0 1 RylanPosition [Ensnare,Luna,ArcherGem] NoAI
+UNIT
+
+RylanPosition:
+REDA [1,3] 0 0 0 0
+
+MasonUnit:
+UNIT Mason Cavalier 0 Level(5,NPC,False) [3,17] NoUnitFlags 0 1 MasonPosition [IronLance] NoAI
+UNIT
+
+MasonPosition:
+REDA [3,17] 0 0 0 0
+
+FenrisGroup:
+UNIT Fenris MageKnight 0 Level(5,NPC,False) [0,14] NoUnitFlags 0 1 FenrisPosition [Bolganone] NoAI
+UNIT Ch1NPCMerc Cavalier 0 Level(10,NPC,True) [0,12] NoUnitFlags 0 1 NPCCavPosition1 [SteelSword] NoAI
+UNIT Ch1NPCMerc Cavalier 0 Level(10,NPC,True) [0,13] NoUnitFlags 0 1 NPCCavPosition2 [SteelLance] NoAI
+UNIT Ch1NPCMerc Cavalier 0 Level(10,NPC,True) [0,15] NoUnitFlags 0 1 NPCCavPosition3 [SteelLance] NoAI
+UNIT Ch1NPCMerc Cavalier 0 Level(10,NPC,True) [0,16] NoUnitFlags 0 1 NPCCavPosition4 [SteelSword] NoAI
+UNIT
+
+FenrisPosition:
+REDA [1,14] 0 0 0 0
+
+NPCCavPosition1:
+REDA [1,12] 0 0 0 0
+
+NPCCavPosition2:
+REDA [0,13] 0 0 0 0
+
+NPCCavPosition3:
+REDA [0,15] 0 0 0 0
+
+NPCCavPosition4:
+REDA [1,16] 0 0 0 0

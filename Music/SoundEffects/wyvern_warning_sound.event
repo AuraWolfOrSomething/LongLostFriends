@@ -1,0 +1,53 @@
+//Event file generated from Sappy .s format.
+	#include "MPlayDef.event"
+
+	#define	wyvern_warning_sound_grp  0x211BEC
+	#define	wyvern_warning_sound_pri  0
+	#define	wyvern_warning_sound_rev  0
+	#define	wyvern_warning_sound_mvl  127
+	#define	wyvern_warning_sound_key  0
+	#define	wyvern_warning_sound_tbs  1
+	#define	wyvern_warning_sound_exg  0
+	#define	wyvern_warning_sound_cmp  1
+
+	// .rodata
+	//	wyvern_warning_sound
+	ALIGN 4
+
+//**************** Track 1 (Midi-Chn.1) ****************//
+
+wyvern_warning_sound_1:
+	BYTE		VOL     127*wyvern_warning_sound_mvl/mxv
+	BYTE	KEYSH   wyvern_warning_sound_key+0
+// 000   ----------------------------------------
+	BYTE	TEMPO   64*wyvern_warning_sound_tbs/2
+	BYTE		VOICE   8
+	BYTE		N09     Cn3   v127
+	BYTE	W09
+	BYTE		        Cn3 
+	BYTE	W09
+	BYTE		        Cn3 
+	BYTE	W09
+	BYTE		        Cn3
+	BYTE	W09
+	BYTE		        Cn3 
+	BYTE	W09
+	BYTE		        Cn3 
+	BYTE	W32
+	BYTE	W01
+	BYTE	FINE
+
+//******************************************************//
+	ALIGN 4
+
+wyvern_warning_sound:
+	BYTE	1	// NumTrks
+	BYTE	0	// NumBlks
+	BYTE	wyvern_warning_sound_pri	// Priority
+	BYTE	wyvern_warning_sound_rev	// Reverb.
+
+	POIN2	wyvern_warning_sound_grp
+
+	POIN2	wyvern_warning_sound_1
+
+	

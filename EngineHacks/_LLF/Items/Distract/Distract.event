@@ -1,0 +1,12 @@
+//Requires EmotionBubble by 7743 and Kenpuku
+
+#include "DistractInternal.event"
+
+//Hit/Avoid penalty
+#include "asm/DistractDebuff.lyn.event"
+ALIGN 4
+
+//Movement from Distract Staff is limited to 4 in here
+#include "asm/FillDistractTargetPosRangeMap.lyn.event"
+ALIGN 4
+

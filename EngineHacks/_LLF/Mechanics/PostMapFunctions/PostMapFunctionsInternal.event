@@ -1,0 +1,19 @@
+
+PUSH
+
+//Disables clearing the traveling unit when Event ID 3 is called?
+ORG 0x1912E
+SHORT 0
+
+POP
+
+#include "asm/PostMapStoreInventories.lyn.event"
+ALIGN 4
+
+#include "asm/PostMapResetCertainItems.lyn.event"
+ALIGN 4
+
+#include "asm/PostMapPartySwapGold.lyn.event"
+ALIGN 4
+
+//Support point gains are also processed at the end of the chapter (see Supports\SupportPointEarning\asm\ProcessSupportGains.asm)

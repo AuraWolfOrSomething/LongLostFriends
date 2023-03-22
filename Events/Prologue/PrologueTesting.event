@@ -1,0 +1,65 @@
+//PU1 = Player Unit 1
+
+//Write_Short(0x0090,0x0202BE72) //PU1 has WretchedAir in item slot 5 
+//Write_Short(0x046C,0x0202BE72) //PU1 has Vulnerary in item slot 5 
+//Write_Byte(1,0x0202BE5F) //PU1 has 1 current hp
+//Write_Byte(20,0x0202BE61) //PU1 has 20 Skl
+//Write_Byte(71,0x0202BE74) //PU1 has C Sword rank
+//Write_Byte(71,0x0202BE79) //PU1 has C Anima rank
+//Write_Byte(99,0x0202BE9D) //PU2 has 99 exp
+
+//Write_Byte(1,0x0202BEBE) //PU2 has E Axe rank
+
+/*
+Write_Byte(1,0x0202BE75) //PU1 has E Lance rank
+Write_Byte(1,0x0202BE76) //PU1 has E Axe rank
+Write_Byte(1,0x0202BE77) //PU1 has E Bow rank
+*/
+
+Write_Byte(1,0x0202BEA7) //PU2 has 1 current hp
+Write_Byte(1,0x0202BE78) //PU1 has E Staff rank
+//Write_Byte(181,0x0202BE78) //PU1 has A Staff rank
+//Write_Byte(1,0x0202D29F) //EU11 has 1 current hp
+//Write_Byte(1,0x0202D2E7) //EU12 has 1 current hp
+
+
+/*
+Write_Byte(99,0x0202BF75) //PU5 has 99 exp
+Write_Byte(20,0x0202BF80) //PU5 has 20 Pow
+Write_Byte(10,0x0202BF86) //PU5 has +10 Con
+Write_Byte(11,0x0202BF89) //PU5 has +11 Mov
+*/
+
+//Write_Byte(99,0x0202BE55) //PU1 has 99 exp
+
+/*
+Write_Byte(9,0x0202BE54) //PU1 is lv 9
+Write_Byte(25,0x0202BE5E) //PU1 has 25 max hp
+Write_Byte(25,0x0202BE5F) //PU1 has 25 current hp
+Write_Byte(12,0x0202BE60) //PU1 has 12 pow
+*/
+
+/*
+SetFatigue(Zoren,255)
+SetFatigue(Iris,0x42)
+*/
+
+//Fills convoy with 99 Iron Bows
+/*
+SETVAL 0x1 0x08000000|PrologueTestingConvoy
+ASMC SendToConvoy+
+*/
+
+
+//--------------------------------------------
+//End of testing modules
+//--------------------------------------------
+NoFade
+ENDA
+
+
+/*
+PrologueTestingConvoy:
+BYTE IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow IronBow 0
+ALIGN 4
+*/

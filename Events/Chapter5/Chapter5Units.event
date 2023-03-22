@@ -1,0 +1,20 @@
+
+/*
+UNIT charID classID leader Level(lvl,faction,autolevel) [x,y] flags 0 number_of_REDAs pointer_to_REDAs [Item1,Item2,Item3,Item4] AI 
+
+REDA_Pointer
+REDA [x,y] Flags Speed *Rescuing character* Delay
+*/
+
+BadUnits:
+UNIT
+
+Units:
+UNIT Ember Soldier_F 0 Level(10,Ally,False) [1,7] NoUnitFlags 0 0 0 [SilverLance,IronLance,Javelin,Vulnerary] NoAI 
+UNIT Armond Knight 0 Level(7,Ally,False) [2,5] NoUnitFlags 0 0 0 [SteelAxe,SteelLance,Vulnerary] NoAI 
+UNIT Curcio Mercenary 0 Level(7,Ally,False) [2,8] NoUnitFlags 0 0 0 [IronBlade,FighterGem,SarhalaMedal] NoAI 
+UNIT npcDude Crate 0 Level(7,NPC,True) [1,6] NoUnitFlags 0 0 0 [0] StationaryAI 
+UNIT npcDude Knight 0 Level(7,NPC,True) [3,6] NoUnitFlags 0 0 0 [HandAxe,Javelin] StationaryAI 
+UNIT npcDude Knight 0 Level(7,NPC,True) [2,3] NoUnitFlags 0 0 0 [HandAxe,Javelin] StationaryAI 
+UNIT npcDude Knight 0 Level(7,NPC,True) [2,10] NoUnitFlags 0 0 0 [HandAxe,Javelin] StationaryAI 
+UNIT

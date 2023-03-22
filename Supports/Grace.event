@@ -1,0 +1,13 @@
+GraceSupportList:
+SupportList(Grace,GraceSupportList)
+
+SupportPartner(Ember,40,30)
+SupportPartner(Arlett,40,30)
+//SupportPartner(Rylan,0,25)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(2)

@@ -1,0 +1,33 @@
+
+#include "AiInternal.event"
+
+
+#define AiTargetExceptionEntry(unitID,chapterID,pointer) "BYTE unitID; BYTE chapterID; SHORT 0; POIN pointer|1"
+#define AiWhatResultIsValidTargetEntry(pointer,resultID) "POIN pointer|1; BYTE resultID; BYTE 0 0 0"
+
+
+AiTargetExceptionList:
+#ifdef TESTING_AI
+	AiTargetExceptionEntry(Franklin,Prologue,AiTargetExceptionAlwaysFalse)
+#endif
+AiTargetExceptionEntry(Mason,Ch_2,AiIgnoreIfOutOfRange)
+AiTargetExceptionEntry(Shana,Ch_3,AiCh3Spectate)
+AiTargetExceptionEntry(Lorrand,Ch_3,AiCh3Spectate)
+AiTargetExceptionEntry(Rivia,Ch_3,AiCh3Spectate)
+AiTargetExceptionEntry(Vivian,Ch_3,AiCh3Spectate)
+AiTargetExceptionEntry(Colette,Ch_3,AiCh3Spectate)
+AiTargetExceptionEntry(Myra,Ch_3,AiCh3Spectate)
+AiTargetExceptionEntry(Rylan,Ch_4,AiIgnoreIfOutOfRange)
+AiTargetExceptionEntry(Ch1NPCMerc,Ch_4,AiIgnoreIfOutOfRange)
+AiTargetExceptionEntry(Enemy0,Ch_4,AiMcVicarFocusOnContract)
+AiTargetExceptionEntry(Enemy0S,Ch_4,AiMcVicarFocusOnContract)
+AiTargetExceptionEntry(Enemy1S,Ch_4,AiMcVicarFocusOnContract)
+WORD 0
+
+AiWhatResultIsValidTargetList:
+AiWhatResultIsValidTargetEntry(OverwriteAiIsUnitExceptionFunction,0)
+AiWhatResultIsValidTargetEntry(NewAiUnitAtPosDifFac,1)
+AiWhatResultIsValidTargetEntry(CouldStatUnitBeInRangeExt,1)
+WORD 0
+
+#include "AiExceptionModules.event"

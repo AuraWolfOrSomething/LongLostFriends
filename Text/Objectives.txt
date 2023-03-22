@@ -1,0 +1,27 @@
+
+## DefeatAllBossesObjectiveText
+Defeat Bosses[X]
+
+## DestroyWallObjectiveText
+Destroy Wall[X]
+
+## EscapeObjectiveText
+Escape[X]
+
+#0x01A2 PrologueObjectiveText
+Defeat Stanrel[X]
+
+#0x01A3 Ch1ObjectiveText
+Defeat Bruce[X]
+
+#0x01A4 Ch2ObjectiveText
+Defeat Talon, the[N]
+Bandit King[X]
+
+#0x01A5 Ch3ObjectiveText
+Escape courtyard,[N]
+then the grounds[X]
+
+#0x01A6 Ch4ObjectiveText
+Defeat Artus[N]
+and Calder[X]

@@ -1,0 +1,208 @@
+## HealName
+Heal[X]
+
+## HealDesc
+Restores (Res + 5) HP to a nearby ally.[X]
+
+## HealUseDesc
+Amount = Res + 5[X]
+
+## MendName
+Mend[X]
+
+## MendDesc
+Restores (Res + 15) HP to an[N]
+adjacent ally.[X]
+
+## MendUseDesc
+Amount = Res + 15[X]
+
+## RecoverName
+Recover[X]
+
+## RecoverDesc
+Restores all HP to an adjacent ally.[X]
+
+## RecoverUseDesc
+Restores all HP.[X]
+
+## PhysicName
+Physic[X]
+
+## PhysicDesc
+Restores (Res + 10) HP to a distant ally.[X]
+
+## PhysicUseDesc
+Restores many HP[NL]
+to distant allies.[NL]
+Amount = Res + 10[X]
+
+## FortifyName
+Fortify[X]
+
+## FortifyDesc
+Restores (Res + 10) HP to all allies nearby.[X]
+
+## FortifyUseDesc
+Restores HP to all[NL]
+allies in one area.[NL]
+Amount = Res + 10[X]
+
+## RestoreName
+Restore[X]
+
+## RestoreDesc
+Returns an ally to normal condition by curing[N]
+them of negative statuses and debuffs.[X]
+
+## RestoreUseDesc
+Restores allies to[NL]
+normal status.[X]
+
+## WarpName
+Warp[X]
+
+## WarpDesc
+Can teleport an adjacent ally to a tile[N]
+up to 5 spaces away.[X]
+
+## WarpUseDesc
+Teleports allies up to[NL]
+5 spaces away.[X]
+
+## RescueStaffName
+Rescue[X]
+
+## RescueStaffDesc
+Teleport an ally from a distant space[N]
+to an adjacent tile.[X]
+
+## RescueStaffUseDesc
+Move an ally to a[NL]
+space adjacent to[NL]
+the staff wielder.[X]
+
+## HammerneName
+Hammerne[X]
+
+## HammerneDesc
+Fully restore the durability on an adjacent[N]
+ally's weapon, magic, or staff.[X]
+
+## HammerneUseDesc
+Restores items to[NL]
+new condition.[X]
+
+## BarrierName
+Barrier[X]
+
+## BarrierDesc
++7 Res to an adjacent ally. -1 Res[N]
+after each turn.[X]
+
+## BarrierUseDesc
++7 Res. -1 Res[N]
+after each turn.[X]
+
+## AidStaffName
+Aid[X]
+
+## AidStaffDesc
+Restores (Res) HP to a distant ally.[X]
+
+## AidStaffUseDesc
+Amount = Res[X]
+
+## BlockStaffName
+Block[X]
+
+## BlockStaffDesc
+Summons an impassable hex on a tile[N]
+for 3 turns.[X]
+
+## BlockStaffUseDesc
+Draws an impassable[NL]
+hex on a space for[NL]
+3 turns.[X]
+
+## EmpowerName
+Empower[X]
+
+## EmpowerDesc
+ [X]
+
+## EmpowerUseDesc
+ [X]
+
+## CorrosionStaffName
+Corrosion[X]
+
+## CorrosionStaffDesc
+Removes 10 uses from an enemy's first item.[X]
+
+## CorrosionStaffUseDesc
+Reduces the enemy's[NL]
+first item by 10 uses.[X]
+
+## ElwarpName
+Elwarp[X]
+
+## ElwarpDesc
+Teleport an adjacent ally elsewhere.[X]
+
+## ElwarpUseDesc
+Warps allies to[NL]
+other spaces.[X]
+
+## SecureStaffName
+Secure[X]
+
+## SecureStaffDesc
+Restores 12 HP to all allies nearby.[X]
+
+## SecureStaffUseDesc
+Amount = 12[X]
+
+## GuardianName
+Guardian[X]
+
+## GuardianDesc
+Allies within 2 tiles of the target can[N]
+receive up to 2 benefits. Neither benefit[N]
+can stack on itself...[X]
+
+## GuardianDesc2
+Benefit 1: For the rest of this phase,[N]
++5 Def and +5 Res...[X]
+
+## GuardianDesc3
+Benefit 2: For 5 turns, debuffs are[N]
+half as effective (rounding goes[N]
+towards a harsher penalty).[X]
+
+## GuardianUseDesc
+Reduce damage taken[N]
+and nullify debuffs[N]
+for multiple allies.[X]
+
+## GuardianTargetBottomText
+Select an area with allies to buff.[X]
+
+## DistractName
+Distract[X]
+
+## DistractDesc
+Target can move to a tile up to 4 Mov[N]
+away (unless their Mov is less than 4).[N]
+They have -20 Hit and Avoid for 1 turn.[X]
+
+## DistractUseDesc
+Move target and[N]
+inflict -20 Hit[N]
+and Avoid.[X]
+
+## DistractTargetBottomText
+Select a unit to distract.[X]
+
+## DistractTargetBottomText2
+Select their destination.[X]

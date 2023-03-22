@@ -1,0 +1,235 @@
+
+PUSH
+
+//-------------------------------------------
+//Prologue
+//-------------------------------------------
+
+ORG 0x8B08BC
+//BYTE 15 //Set snag hp
+
+//Music
+	ORG 0x8B08A8
+	SHORT MapTheme_OgreBattle_Thunder
+
+	ORG 0x8B08AA
+	SHORT MapTheme_OgreBattle_Thunder
+
+	ORG 0x8B08AE
+	SHORT MapTheme_OgreBattle_Thunder
+
+	ORG 0x8B08B0
+	SHORT MapTheme_OgreBattle_Thunder
+
+
+//-------------------------------------------
+//Chapter 1
+//-------------------------------------------
+
+ORG 0x8B09AB
+BYTE 1 //Beginning of chapter will fade to black
+
+ORG 0x8B09AE
+//SHORT 0x01A1 //Minibox text: Seize Throne
+SHORT 0x019D //Minibox text: Defeat Boss
+
+ORG 0x8B09B0
+//BYTE 5 //Display captives
+
+ORG 0x8B09B2
+//BYTE Informant //Make diamond icon appear on this unit ID
+
+ORG 0xD853C
+BYTE 6 //Disable Door Keys, Enable Lockpicks and Antitoxin
+
+ORG 0x8B0950
+BYTE 40 //Set wall hp
+
+//Music
+	ORG 0x8B093C
+	SHORT MapTheme_OgreBattle_Thunder
+
+	ORG 0x8B093E
+	SHORT MapTheme_OgreBattle_Thunder
+
+	ORG 0x8B0942
+	SHORT MapTheme_OgreBattle_Thunder
+
+	ORG 0x8B0944
+	SHORT MapTheme_OgreBattle_Thunder
+
+//Battle background for anims on
+ORG 0x8B0937
+BYTE 5
+
+
+//-------------------------------------------
+//Chapter 2
+//-------------------------------------------
+
+ORG 0x8B0A42
+SHORT 0x019D //Minibox text: Defeat Boss
+SHORT 0 //no mini-objective display
+
+ORG 0x8B09CC
+SHORT 0x0010 //Autolevels from difficulty
+
+ORG 0x8B09E4
+BYTE 30 //Set snag hp
+
+//Music
+
+	ORG 0x8B09CE
+	SHORT MapTheme_Riviera_BattleAgainstDemons
+
+	ORG 0x8B09D0
+	SHORT MapTheme_Riviera_BattleAgainstDemons
+
+	ORG 0x8B09D2
+	SHORT MapTheme_Riviera_BattleAgainstDemons
+
+	ORG 0x8B09D4
+	SHORT MapTheme_Riviera_BattleAgainstDemons
+
+	ORG 0x8B09D6
+	SHORT MapTheme_Riviera_BattleAgainstDemons
+
+	ORG 0x8B09D8
+	SHORT MapTheme_Riviera_BattleAgainstDemons
+
+
+//-------------------------------------------
+//Chapter 3
+//-------------------------------------------
+
+POP
+
+Ch3Part2ShanaPosition:
+BYTE 7 7
+ALIGN 4
+
+PUSH
+
+//-----------------
+//Part 1
+//-----------------
+
+ORG 0x8B0AD3
+BYTE 1 //Beginning of chapter will fade to black
+
+ORG 0x8B0AD6
+SHORT DestroyWallObjectiveText
+SHORT MiniObjectivePartID
+
+ORG 0x8B0A60
+SHORT 0x0000 //Autolevels from difficulty
+
+ORG 0x8B0A78
+BYTE 99 //Wall health
+//BYTE 1 //Wall health
+
+//Music
+	ORG 0x8B0A62
+	SHORT MapTheme_FE5_Adversity
+
+	ORG 0x8B0A64
+	SHORT MapTheme_FE5_Adversity
+
+	ORG 0x8B0A66
+	SHORT MapTheme_FE5_Adversity
+
+	ORG 0x8B0A68
+	SHORT MapTheme_FE5_Adversity
+
+	ORG 0x8B0A6A
+	SHORT MapTheme_FE5_Adversity
+
+	ORG 0x8B0A6C
+	SHORT MapTheme_FE5_Adversity
+
+//Battle background for anims on
+ORG 0x8B0A5F
+BYTE 0x10
+
+
+//-----------------
+//Part 2
+//-----------------
+
+ORG 0x8B165C
+BYTE 6 //make Eph 9B display as Chapter 3
+
+ORG 0x8B1664
+SHORT Ch3ObjectiveText 
+SHORT EscapeObjectiveText
+SHORT MiniObjectivePartID
+
+ORG 0x8B15F0
+SHORT 0x0010 //Autolevels from difficulty 
+
+ORG 0x8B1608
+BYTE 20 //Snag health
+
+//Music
+	ORG 0x8B15F2
+	SHORT MapTheme_FE5_Adversity
+
+	ORG 0x8B15F4
+	SHORT MapTheme_FE5_Adversity
+
+	ORG 0x8B15F6
+	SHORT MapTheme_FE5_Adversity
+
+	ORG 0x8B15F8
+	SHORT MapTheme_FE5_Adversity
+
+	ORG 0x8B15FA
+	SHORT MapTheme_FE5_Adversity
+
+	ORG 0x8B15FC
+	SHORT MapTheme_FE5_Adversity
+
+//Battle background for anims on
+ORG 0x8B15EF
+BYTE 0
+
+
+//-------------------------------------------
+//Chapter 4
+//-------------------------------------------
+
+ORG 0x8B0B67
+BYTE 1 //Beginning of chapter will fade to black
+
+ORG 0x8B0B6A
+SHORT DefeatAllBossesObjectiveText
+SHORT 0 //no mini-objective display
+
+ORG 0x8B0AF4
+SHORT 0x0010 //Autolevels from difficulty
+
+//Music
+	ORG 0x8B0AF6
+	SHORT MapTheme_Riviera_BattleAgainstDemons
+	
+	ORG 0x8B0AF8
+	SHORT MapTheme_Riviera_BattleAgainstDemons
+	
+	ORG 0x8B0AFA
+	SHORT MapTheme_Riviera_BattleAgainstDemons
+	
+	ORG 0x8B0AFC
+	SHORT MapTheme_Riviera_BattleAgainstDemons
+	
+	ORG 0x8B0AFE
+	SHORT MapTheme_Riviera_BattleAgainstDemons
+	
+	ORG 0x8B0B00
+	SHORT MapTheme_Riviera_BattleAgainstDemons
+
+//Battle background for anims on
+ORG 0x8B0AF3
+BYTE 7
+
+
+POP

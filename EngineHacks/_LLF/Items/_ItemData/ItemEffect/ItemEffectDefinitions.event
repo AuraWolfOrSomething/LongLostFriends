@@ -1,0 +1,86 @@
+#define FirstItemWithEffect Heal //this should match what asm/CoreTableReaderDefinitions has
+
+#define ItemUsability(itemID,conditionOffset) "ORG 4*(itemID-FirstItemWithEffect)+ItemUsabilityTable; POIN conditionOffset"
+#define ItemTarget(itemID,targetOffset) "ORG 4*(itemID-FirstItemWithEffect)+ItemTargetTable; POIN targetOffset"
+#define ItemEffect(itemID,effectOffset) "ORG 4*(itemID-FirstItemWithEffect)+ItemEffectTable; POIN effectOffset"
+
+
+//Item Conditions
+#define Not_Usable_Condition 0x28C04
+#define Healing_Adjacent_Condition 0x28A8C
+#define Healing_Range_Condition 0x28A9C
+#define Healing_Fortify_Condition 0x28AAC
+#define Restore_Condition 0x28ABC
+#define Silence_Condition 0x28AEC
+#define Sleep_Condition 0x28AFC
+#define Berserk_Condition 0x28B0C
+#define Warp_Condition 0x28B1C
+#define Rescue_Condition 0x28ACC
+#define Torch_Staff_Condition 0x28BC8
+#define Hammerne_Condition 0x28B2C
+#define Unlock_Condition 0x28B3C
+#define Barrier_Condition 0x28ADC
+#define Stat_Booster_Condition 0x28B4C
+#define Promotion_Item_Condition 0x28B56
+#define Chest_Key_Condition 0x28B80
+#define Door_Key_Condition 0x28B88
+#define Lockpick_Condition 0x28B90 //branches to 0x29160
+#define Healing_Item_Condition 0x28B60
+#define Pure_Water_Condition 0x28B68
+#define Antitoxin_Condition 0x28B78
+#define Torch_Item_Condition 0x28B70
+#define Mine_Condition 0x28BA8
+#define Light_Rune_Condition 0x28BB8
+#define Dancer_Ring_Condition 0x28BD8
+#define Metis_Tome_Condition 0x28BE8
+#define Latona_Condition 0x28B98
+#define Juna_Fruit_Condition 0x28BF8
+
+
+//Item Targets
+#define Default_Self_Target 0x2905C
+#define Healing_Adjacent_Target 0x28F94
+#define Healing_Range_Target 0x28F9C
+#define Healing_Fortify_Target 0x29014 //branches to 0x2951C
+#define Restore_Target 0x28FBC
+#define Silence_Target 0x28FCC
+#define Sleep_Target 0x28FD4
+#define Berserk_Target 0x28FDC
+#define Warp_Target 0x29004
+#define Rescue_Target 0x28FAC
+#define Torch_Staff_Target 0x29040
+#define Hammerne_Target 0x2900C
+#define Unlock_Target 0x28FF4
+#define Barrier_Target 0x28FEC
+#define Mine_Target 0x2901C
+#define Light_Rune_Target 0x2902C
+#define Dancer_Ring_Target 0x29048
+
+
+//Item Effects
+#define Not_Usable_Effect 0x2FF76
+#define Healing_Single_Effect 0x2FE6C
+#define Healing_Fortify_Effect 0x2FE84 //branches to 0x2F154
+#define Restore_Effect 0x2FE8C
+#define Inflict_Status_Effect 0x2FE74
+#define Warp_Effect 0x2FEA4
+#define Rescue_Effect 0x2FE94
+#define Torch_Staff_Effect 0x2FF60
+#define Hammerne_Effect 0x2FEB4
+#define Unlock_Effect 0x2FEAC
+#define Barrier_Effect 0x2FE9C
+#define Stat_Booster_Effect 0x2FF40
+#define Promotion_Item_Effect 0x2FEEC
+#define Item_Key_Effect 0x2FEE6 //branches to 0x2F510
+#define Vulnerary_Effect 0x2FEC4
+#define Elixir_Effect 0x2FECE
+#define Pure_Water_Effect 0x2FED6
+#define Antitoxin_Effect 0x2FEDE
+#define Torch_Item_Effect 0x2FEBC
+#define Mine_Effect 0x2FF50
+#define Light_Rune_Effect 0x2FF58
+#define Dancer_Ring_Effect 0x2FF68
+#define Latona_Effect 0x2FF48
+#define Nightmare_Effect 0x2FE7C
+#define Juna_Fruit_Effect 0x2FF70
+

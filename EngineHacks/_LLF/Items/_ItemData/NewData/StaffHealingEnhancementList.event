@@ -1,0 +1,9 @@
+
+StaffHealingEnhancementList:
+BYTE Thunder 5
+BYTE Ray 5
+BYTE Shade 5
+
+//end of list
+SHORT 0
+ALIGN 4

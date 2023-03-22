@@ -1,0 +1,12 @@
+LutherSupportList:
+SupportList(Luther,LutherSupportList)
+
+SupportPartner(Fenris,80,40)
+SupportPartner(Zoren,0,25)
+SupportPartner(Rylan,40,20)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(3)

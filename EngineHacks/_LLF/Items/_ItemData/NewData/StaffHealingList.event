@@ -1,0 +1,27 @@
+
+StaffHealingList:
+
+//BYTE itemId baseAmount formulaId (see StaffHealingFormulaList)
+
+//Adjacent/nearby healing
+BYTE Heal 5 0
+BYTE Mend 15 0
+//BYTE Mend 0 1 //testing Favor
+BYTE Recover 80 2
+
+//Distance healing
+BYTE Aid 0 0
+BYTE Physic 10 0
+
+//AOE healing
+BYTE Secure 12 2
+BYTE Fortify 10 0
+
+//End of the list
+BYTE 0
+ALIGN 4
+
+StaffHealingFormulaList:
+POIN prGotoResGetter
+POIN StaffHealingFavor
+POIN StaffHealingNoStats

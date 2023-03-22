@@ -1,0 +1,13 @@
+RylanSupportList:
+SupportList(Rylan,RylanSupportList)
+
+SupportPartner(Luther,40,20)
+//SupportPartner(Grace,0,25)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(1)

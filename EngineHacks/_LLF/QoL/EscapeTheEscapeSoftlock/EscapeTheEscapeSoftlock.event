@@ -1,0 +1,40 @@
+//Note: Commented out edits by EscapeArrive.event to the routines that start at 0x2EA28 and 0x843C0 
+
+PUSH
+
+//rewrite gives free space until 0x2EA58
+ORG 0x2EA2A
+BL(0x84EE8) //IsAnyEnemyUnitAlive
+SHORT 0x2800 0xD102 //cmp r0, #0; bne End
+SHORT 0x2006 //mov r0, #6
+BL(0x83D80) //SetEventID
+//End:
+SHORT 0xBC01 0x4700 //pop {r0}; bx r0
+	
+ORG 0x2EA3C
+EscapeTheEscapeSoftlock:
+//check if escape id is set
+    //if set, set victory id and return 1 
+	//if not, return 0
+	
+SHORT 0xB500 //push {r14}
+SHORT 0x2023 //mov r0, #0x23
+BL(0x83DA8)
+SHORT 0x2800 0xD003 //cmp r0, #0; beq End
+SHORT 0x2003 //mov r0, #3
+BL(0x83D80)
+SHORT 0x2001 //mov r0, #1
+//End:
+SHORT 0xBC02 0x4708 //pop {r1}; bx r1
+
+ORG 0x843E6
+BL(0x18FF0) //GetDeployedPlayerUnitCount
+SHORT 0x2800 0xD109 //cmp r0, #0; bne 0x84402
+BL(EscapeTheEscapeSoftlock)
+SHORT 0x2800 0xD105 //cmp r0, #0; bne 0x84402
+BL(0x837B0)
+SHORT 0xE028 //b 0x8444E
+
+POP
+
+  

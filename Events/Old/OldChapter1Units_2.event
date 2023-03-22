@@ -1,0 +1,83 @@
+
+/*
+UNIT charID classID leader Level(lvl,faction,autolevel) [x,y] flags 0 number_of_REDAs pointer_to_REDAs [Item1,Item2,Item3,Item4] AI 
+
+REDA_Pointer
+REDA [x,y] Flags Speed *Rescuing character* Delay
+*/
+
+BadUnits:
+//UNIT PrologueBandit Class 0 Level(3,Enemy,True) [x,y] NoUnitFlags 0 0 0 [inventory] NoAI
+
+//Throne room
+UNIT Breguet Mage 0 Level(7,Enemy,False) [12,1] DropItem 0 0 0 [Elfire,FighterGem] StationaryAI
+UNIT PrologueBandit Thief 0 Level(2,Enemy,True) [10,3] NoUnitFlags 0x82 0 0 [BronzeSword,Lockpick] LootThenEscape
+UNIT PrologueBandit Deserter 0 Level(3,Enemy,True) [13,4] NoUnitFlags 9 0 0 [BronzeLance] AttackInRangeAI
+UNIT Informant Mercenary 0 Level(4,Enemy,True) [11,7] NoUnitFlags 5 0 0 [IronSword] AttackInRangeAI
+UNIT PrologueBandit Brigand 0 Level(4,Enemy,True) [10,5] DropItem 3 0 0 [IronAxe,DoorKey] AttackInRangeAI
+UNIT Informant Thief 0 Level(2,Enemy,True) [15,5] NoUnitFlags 0x82 0 0 [BronzeSword,Coupon] EscapeAvoidCombat
+
+//Archer rooms
+UNIT Informant Archer 0 Level(4,Enemy,True) [7,9] NoUnitFlags 8 0 0 [IronBow] AttackInRangeAI
+UNIT PrologueBandit Archer 0 Level(3,Enemy,True) [7,11] NoUnitFlags 8 0 0 [BronzeBow] AttackInRangeAI
+
+//Escape point
+UNIT PrologueBandit Thief 0 Level(3,Enemy,True) [4,0] NoUnitFlags 0x82 0 0 [BronzeSword,Lockpick] LootThenEscape
+UNIT PrologueBandit Deserter 0 Level(3,Enemy,True) [3,2] NoUnitFlags 9 0 0 [BronzeLance] AttackInDoubleRangeAI
+UNIT PrologueBandit Brigand 0 Level(3,Enemy,True) [2,4] NoUnitFlags 3 0 0 [BronzeAxe] AttackInDoubleRangeAI
+UNIT PrologueBandit Mage 0 Level(4,Enemy,True) [5,5] NoUnitFlags 6 0 0 [Fire] AttackInRangeAI
+UNIT PrologueBandit Deserter 0 Level(3,Enemy,True) [5,6] NoUnitFlags 9 0 0 [BronzeLance] AttackInRangeAI
+UNIT PrologueBandit2 Mercenary 0 Level(5,Enemy,True) [1,7] NoUnitFlags 4 0 0 [BronzeSword,Coupon] AttackInRangeAI
+UNIT PrologueBandit Mage 0 Level(4,Enemy,True) [2,7] NoUnitFlags 6 0 0 [Fire] AttackInDoubleRangeAI
+
+//Left of archers
+UNIT Informant Deserter 0 Level(3,Enemy,True) [0,9] NoUnitFlags 9 0 0 [IronLance] AttackInDoubleRangeAI
+UNIT PrologueBandit Brigand 0 Level(3,Enemy,True) [0,11] NoUnitFlags 3 0 0 [BronzeAxe] AttackInDoubleRangeAI
+UNIT PrologueBandit Mercenary 0 Level(3,Enemy,True) [2,12] NoUnitFlags 5 0 0 [BronzeSword] AttackInDoubleRangeAI
+
+//Below bottom chest
+UNIT PrologueBandit Brigand 0 Level(3,Enemy,True) [15,11] NoUnitFlags 3 0 0 [BronzeAxe] NoAI
+UNIT PrologueBandit Mercenary 0 Level(3,Enemy,True) [13,12] NoUnitFlags 5 0 0 [BronzeSword] NoAI
+UNIT PrologueBandit Brigand 0 Level(3,Enemy,True) [10,10] NoUnitFlags 3 0 0 [BronzeAxe] NoAI
+
+//Bottom left stairs
+UNIT Informant Thief 0 Level(4,Enemy,True) [0,16] NoUnitFlags 0x81 0 0 [BronzeSword,ArcherGem] EscapeAvoidCombat
+UNIT PrologueBandit Mage 0 Level(3,Enemy,True) [3,15] DropItem 7 0 0 [Fire,DoorKey] NoAI
+UNIT PrologueBandit Mercenary 0 Level(3,Enemy,True) [4,16] NoUnitFlags 5 0 0 [BronzeSword] NoAI
+UNIT
+
+NewUnits:
+UNIT Marcey Cavalier_F 0 Level(5,Ally,False) [15,15] NoUnitFlags 0 0 0 [BronzeLance,Vulnerary] NoAI
+UNIT Davis Thief 0 Level(3,Ally,False) [15,16] NoUnitFlags 0 0 0 [BronzeSword] NoAI
+UNIT
+
+//MESSAGE ch1Units currentOffset
+
+Units:
+UNIT Zoren ZorenLord 0 Level(1,Ally,False) [10,14] NoUnitFlags 0 0 0 [BronzeSword,Thunder,Concoction] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [11,14] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [12,14] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [9,15] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [11,15] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [13,15] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [9,16] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [10,16] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [12,16] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT Iris Paladin_F 0 Level(1,Ally,False) [13,16] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+//TESTING
+//UNIT Iris Paladin_F 0 Level(1,Ally,False) [14,10] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+//UNIT Iris Paladin_F 0 Level(1,Ally,False) [15,7] NoUnitFlags 0 0 0 [SilverSword,SteelLance,BronzeSword,BronzeLance] NoAI
+UNIT
+//MESSAGE ch1Units end at currentOffset
+
+/*ThiefReinforcement:
+UNIT PrologueBandit Thief 0 Level(2,Enemy,True) [14,3] NoUnitFlags 2 0 0 [BronzeSword,Lockpick] LootThenEscape
+UNIT
+*/
+
+/*SouthReinforcementsPosition1:
+REDA [14,17] 0 0 0 0
+
+SouthReinforcementsPosition2:
+REDA [15,17] 0 0 0 0
+*/

@@ -1,0 +1,47 @@
+
+//MiscData/FatigueRestorationTable
+
+#ifdef USE_FATIGUE
+
+#ifdef _FE8_
+#ifndef FE8_FATIGUE
+#define FE8_FATIGUE
+
+#define ClearFatigue(charID) "SVAL 1 charID; SVAL 2 0; ASMC SetFatigueASMC"
+#define SetFatigue(charID,ftgValue) "SVAL 1 charID; SVAL 2 ftgValue; ASMC SetFatigueASMC"
+
+//Contains routine for clearing fatigue on undeployed units
+//MESSAGE fatigueMain currentOffset
+#include "Fatigue.lyn.event"
+ALIGN 4
+
+#include "prNocStatBoost.lyn.event"
+ALIGN 4
+
+//Contains ASMC for setting fatigue
+#include "FatigueASMC.lyn.event"
+ALIGN 4
+
+//Contains denying deployment if fatigued
+//#include "FatiguePrepScreen.lyn.event"
+
+
+//Contains fatigue getter for MSS, call before draw_number_at
+//MESSAGE fatigue mss currentOffset 
+#include "FatigueMSS.lyn.event"
+ALIGN 4
+
+FatigueExemptCharList:
+BYTE 0
+
+FatigueStartingChapter:
+BYTE 0
+
+ALIGN 4
+
+#endif // FE8_FATIGUE
+#else // _FE8_
+ERROR Fatigue is only for FE8!
+#endif // _FE8_
+
+#endif // USE_FATIGUE

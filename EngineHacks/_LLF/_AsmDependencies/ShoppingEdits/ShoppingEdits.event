@@ -1,0 +1,29 @@
+
+//MiscData/BattlePrepShops
+
+#include "ShoppingEditsInternal.event"
+
+PriceMultiplierFunctions:
+//POIN PrepScreenMultiplier
+WORD 0 //Terminator
+
+PriceDiscountFunctions:
+POIN SilverCardDiscount CouponDiscount BargainSkillDiscount //MainLordDiscount
+WORD 0 //Terminator
+
+PriceFinalModifierFunctions:
+POIN BargainPriceZeroIfPurchased
+WORD 0 //Terminator
+
+PriceMultiplierCapLink:
+WORD 150
+
+PriceDiscountCapLink:
+BYTE 50
+ALIGN 4
+
+PriceMaximumLink:
+WORD 65535
+
+PriceMinimumLink:
+WORD 0

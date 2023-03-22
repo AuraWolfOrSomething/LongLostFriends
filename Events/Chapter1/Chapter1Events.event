@@ -1,0 +1,380 @@
+﻿//I could definitely get rid of these, but nah
+//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+EventPointerTable(0x0A,Pointers)
+
+Pointers:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+#include "Chapter1Units.event"
+#include "Chapter1EventIDs.event"
+#include "Chapter1QuoteTable.event"
+
+EscapePointPointerTable(Ch_1,Chapter1EscapePoints)
+
+Chapter1EscapePoints:
+EscapePoint(14,1,MoveRight)
+EscapePoint(14,2,MoveRight)
+EscapePoint(14,7,MoveRight)
+EscapePoint(14,8,MoveRight)
+EscapePointEnd
+
+TurnBasedEvents:
+TurnEventPlayer(0,BeforeBattleBegins,1)
+
+//TurnEventPlayer(0,ThiefReinforcementWarning,2)
+//TurnEventPlayer(0,ThiefReinforcementArrives,3)
+
+TurnEventPlayer(0,LargeGroupWarning,6)
+TurnEventPlayer(0,LargeGroupArrives,7)
+
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Door(ArlettCellDoorEventID,4,6)
+Chest(0,PupilGem,1,2)
+Chest(0,Aid,8,6)
+Chest(0,LearningRing,11,13)
+//Seize(0,EndingScene,7,1)
+#ifdef TESTING_EASY_CLEAR
+	Seize(0,EndingScene,7,15)
+#endif
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+DefeatBoss(EndingScene)
+AFEV ArlettRemarkEventID RecruitArlett ArlettFreedEventID
+AFEV ArlettRemarkEventID RecruitArlett ArlettCellDoorEventID
+AREA LeftTileEventID LeftTileOpensRightWall [3,1] [3,1]
+AREA RightTileEventID RightTileOpensLeftWall [8,10] [8,10]
+AREA EntranceTileEventID EntranceTileOpensEntranceWall [4,13] [4,13]
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+
+
+BeginningScene:
+//Set up some gameplay stuff before the party arrives
+Camera(7,17,10)
+Load(BadUnits)
+Load(ArlettPrisoner)
+Load(NewUnits)
+CLEA 0
+
+//First cutscene
+SetBackground(Town_Day)
+MUSC Treasured_Memories
+TEXTSTART
+TEXTSHOW Ch1Intro1
+TEXTEND
+REMA
+
+SetBackground(BlackBG)
+STAL 30
+
+SetBackground(HouseBG)
+TEXTSTART
+TEXTSHOW Ch1Intro2
+TEXTEND
+REMA
+
+SetBackground(BlackBG)
+STAL 30
+
+ClearBackground
+MUSC 0x7FFF
+STAL 20
+Load(UnitsIntro)
+STAL 50
+
+//Zoren and Davis have a quick chat
+MUSC Tension
+TEXTSTART
+TEXTSHOW Ch1Intro3
+TEXTEND
+REMA
+
+//Move fighter
+STAL 40
+FollowUnit_T
+MoveAndWait(PrologueBandit2,6,1)
+FollowUnit_F
+STAL 10
+TEXTSTART
+TEXTSHOW Ch1Intro4
+TEXTEND
+REMA
+STAL 10
+
+MoveAndWait(PrologueBandit2,6,0)
+DISA PrologueBandit2
+STAL 40
+
+EARTHQUAKE_START 0x100
+STAL 60
+
+TILECHANGE 0x01 //left wall
+TILECHANGE 0x04 //right wall
+TILECHANGE 0x08 //entrance
+STAL 30
+
+EARTHQUAKE_END
+STAL 30
+
+//Thief monologue
+STAL 20
+Notice(Stanrel,30)
+STAL 20
+TEXTSTART
+TEXTSHOW Ch1Intro5
+TEXTEND
+REMA
+MoveAndWait(Stanrel,14,1)
+DISA Stanrel
+
+STAL 10
+Camera(7,17,10)
+STAL 20
+TEXTSTART
+TEXTSHOW Ch1Intro6
+TEXTEND
+REMA
+STAL 10
+
+//Tile explanation part 1
+Notice(4,13,55)
+Notice(13,12,40)
+Notice(14,12,40)
+TEXTSTART
+TEXTSHOW Ch1Intro7
+TEXTEND
+REMA
+
+//Tile explanation part 2
+Camera(7,8,30)
+Notice(8,10,55)
+Notice(1,4,40)
+Notice(2,4,40)
+TEXTSTART
+TEXTSHOW Ch1Intro8
+TEXTEND
+REMA
+
+//Tile explanation part 3
+Camera(7,5,30)
+Notice(3,1,55)
+Notice(12,4,40)
+Notice(13,4,40)
+TEXTSTART
+TEXTSHOW Ch1Intro9
+TEXTEND
+REMA
+
+//Done with cutscene stuff
+FADI 10
+STAL 20
+Load(BadUnits2)
+CLEA 0
+LoadPrepUnits(Units)
+GotoPrepScreen
+//ENDA
+
+BeforeBattleBegins:
+//Reset chapter bargain item IDs for next chapter
+ENUF ChapterBargain1EventID
+ENUF ChapterBargain2EventID
+ENUF ChapterBargain3EventID
+NoFade
+ENDA
+
+LargeGroupWarning:
+ReinforcementWarningEventHeader(0x1)
+	MUSI 
+	Camera(7,8,10)
+	Notice(9,8,30)
+	InfantryWarning
+	Notice(9,9,30)
+	Notice(14,8,30)
+	BanditWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+LargeGroupArrives:
+Camera(7,8,10)
+Load(LargeGroup)
+NoFade
+ENDA
+
+RecruitArlett:
+ENUT ArlettFreedEventID //this is only relevant if cell door is opened first
+MUSS Comrades
+TEXTSTART
+TEXTSHOW Ch1ArlettRecruit
+TEXTEND
+REMA
+TurnAlly(Arlett)
+MURE 6
+NoFade
+ENDA
+
+LeftTileOpensRightWall:
+Camera(7,5,20)
+TILECHANGE 0x05
+STAL 20
+CAM1 0xFFFF
+NoFade
+ENDA
+
+RightTileOpensLeftWall:
+Camera(7,5,20)
+TILECHANGE 0x02
+STAL 20
+CAM1 0xFFFF
+NoFade
+ENDA
+
+EntranceTileOpensEntranceWall:
+Camera(7,12,20)
+TILECHANGE 0x09
+STAL 20
+CAM1 0xFFFF
+NoFade
+ENDA
+
+//Some Hayden Skip stuff; more in the Ending Scene
+PUSH
+ORG $2060ba
+BYTE 02 02
+
+ORG $9FF354 //$A3C860
+CHECK_EVENTID 0x88
+IFEQUAL 0x1 0xC 0x0
+CALL TestingNewHaydenSkip
+ENDB
+
+POP
+
+EndingScene:
+DoNotWinIfPlanning(0x1,0x2)
+ENUF GuideChapterAdvice
+
+#ifdef TESTING_PARTY_SWAP
+	CALL PartySwapShanaToZoren
+#endif
+
+//Check if Arlett is alive
+CHECK_EVENTID ArlettDeathEventID
+IFEQ 0x3 sC s0
+	//If Arlett's alive, check if her cell was unlocked
+	CHECK_EVENTID ArlettFreedEventID
+	IFNE 0x5 sC s0
+	
+		//Outcome 1 (Arlett alive and freed)
+		MUSC Into_the_Shadow_of_Victory
+		SetBackground(Fort)
+		TEXTSTART
+		TEXTSHOW Ch1EndingArlettSaved
+		TEXTEND
+		
+	GOTO 0x6
+	LABEL 0x5
+	
+		//Outcome 2 (Arlett alive, but not freed)
+		TurnAlly(Arlett)
+		MUSC Into_the_Shadow_of_Victory
+		SetBackground(Fort)
+		TEXTSTART
+		TEXTSHOW Ch1EndingArlettAlive
+		TEXTEND
+		FADI 8
+		FADU 8
+		TEXTCONT
+		TEXTEND
+		
+	LABEL 0x6
+	
+GOTO 0x4
+LABEL 0x3
+
+	CHECK_ALIVE Davis
+	IFNE 0x7 sC s0
+	
+		//Outcome 3 (Arlett is dead, but not Davis)
+		MUSC Into_the_Shadow_of_Victory
+		SetBackground(Fort)
+		TEXTSTART
+		TEXTSHOW Ch1EndingArlettDied
+		TEXTEND
+		FADI 8
+		FADU 8
+		TEXTCONT
+		TEXTEND
+		
+	GOTO 0x8
+	LABEL 0x7
+	
+		//Outcome 4 (Arlett and Davis are both dead)
+		ENUT Ch1ArlettDavisDiedCutscene
+		MUSC Into_the_Shadow_of_Victory
+		SetBackground(Fort)
+		TEXTSTART
+		TEXTSHOW Ch1EndingArlettAndDavisDied
+		TEXTEND
+		FADI 8
+		FADU 8
+		TEXTCONT
+		TEXTEND
+		
+	LABEL 0x8
+	
+LABEL 0x4
+
+SetBackground(Black)
+STAL 30
+CALL PostMapFunctions
+
+TestingNewHaydenSkip: //still in EndingScene
+WM_LOADLOCATION2 0x0 0x0 0x0 //Might as well load Border Mulan here (optional)
+WM_LOADLOCATION2 0x0 0x1 0x0 //Like CREATENEXTDESTINATION except silent and instant
+WM_SETDESTINATION 0x0 0x1 0x0
+_0xA640 0x0 0x0 0x01       //like MOVESPRITETO except silent and instant
+SKIPWN
+ENUT 3
+#ifdef TESTING_CHAPTER_TRANSITION
+	MNC2 Ch_1
+#else
+	//MoveToChapter(Ch_2)
+	MNC2 Ch_2
+#endif
+
+LABEL 0x2 //use DoNotWinIfPlanning condID2
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

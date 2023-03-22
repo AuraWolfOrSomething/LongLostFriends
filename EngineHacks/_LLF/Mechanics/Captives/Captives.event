@@ -1,0 +1,28 @@
+/*
+This assembly doesn't change the functionality of the Capture mechanic. Instead, this adds routines related to it. It can be used for things like chapter objectives and optional rewards.
+*/
+
+#include "CaptivesInternal.event"
+
+
+#define GlobalCapUnitEntry(unitID,chapterID,eventID,conditionRoutine) "BYTE unitID; BYTE chapterID; SHORT eventID; POIN conditionRoutine"
+#define GlobalCapUnitEntry(unitID,chapterID,eventID) "BYTE unitID; BYTE chapterID; SHORT eventID; WORD 0"
+
+#define ChapterCaptiveEntry(chapterID,neededThreshold,pointerToAcceptableUnitIds) "SHORT chapterID neededThreshold; POIN pointerToAcceptableUnitIds"
+
+#define UnitCaptiveEntry(unitID,worth,eventIdIfDropped,eventIdIfEscaped) "BYTE unitID; BYTE worth; SHORT eventIdIfDropped; SHORT eventIdIfEscaped"
+
+
+GlobalCapturableUnitList:
+//GlobalCapUnitEntry(Informant,Ch_1,0)
+WORD 0
+
+ChapterCaptiveList:
+//ChapterCaptiveEntry(Ch_1,2,Chapter1Captives)
+WORD 0 0
+
+/*
+Chapter1Captives:
+UnitCaptiveEntry(Informant,1,Ch1PotentialCaptiveGoneID,Ch1PotentialCaptiveGoneID)
+WORD 0
+*/

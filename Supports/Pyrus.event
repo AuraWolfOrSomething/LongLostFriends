@@ -1,0 +1,12 @@
+PyrusSupportList:
+SupportList(Pyrus,PyrusSupportList)
+
+SupportPartner(Zoren,80,40)
+SupportPartner(Vivian,80,40)
+SupportPartner(Olympia,80,40)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(3)

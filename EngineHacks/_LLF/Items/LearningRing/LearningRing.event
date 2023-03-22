@@ -1,0 +1,40 @@
+
+//Increased growth is handled by GrowthGetters/Extra_Growth_Boosts
+//Changing item display is handled by ASM_Dependencies/DurabilityDisplay
+//Lowering item use after a level up is handled by Mechanics/LevelingUp
+
+
+#define HpCycle 0
+#define PowCycle 1
+#define SklCycle 2
+#define SpdCycle 3
+#define DefCycle 4
+#define ResCycle 5
+#define LckCycle 6
+
+LearningRingIDLink:
+BYTE LearningRing
+
+LearningRingCycle:
+BYTE PowCycle
+BYTE HpCycle
+BYTE SklCycle
+BYTE SpdCycle
+BYTE LckCycle
+BYTE PowCycle
+BYTE DefCycle
+BYTE SklCycle
+BYTE SpdCycle
+BYTE ResCycle
+BYTE 0xFF //end of cycle
+ALIGN 4
+
+StatTextIDLink:
+SHORT HitPointsTextID
+SHORT PowerTextID
+SHORT SkillTextID
+SHORT SpeedTextID
+SHORT DefenseTextID
+SHORT ResistanceTextID
+SHORT LuckTextID
+ALIGN 4

@@ -1,0 +1,83 @@
+
+#define ERankWEXP 1
+#define DRankWEXP 31
+#define CRankWEXP 71
+#define BRankWEXP 121
+#define ARankWEXP 181
+#define SRankWEXP 251
+
+
+WEXPRankRequirementsTable:
+BYTE ERankWEXP
+BYTE DRankWEXP
+BYTE CRankWEXP
+BYTE BRankWEXP
+BYTE ARankWEXP
+BYTE SRankWEXP
+
+BYTE 255 //For displaying --
+BYTE 0 //Shouldn't be needed as a failsafe, but just in case
+ALIGN 4
+
+
+PUSH
+
+//no extra WEXP from followup attacks
+ORG 0x2B60C
+SHORT 0x2001 //mov r0, #1
+
+//no double WEXP from defeating enemies
+ORG 0x2C142
+SHORT 0x2901 0xDC00 //cmp r1, #1; bgt (0x2C148)
+
+//unpromoted units can reach S rank
+ORG 0x2C176
+SHORT 0xE007 //b 0x2C188
+
+//Weapon level modifications
+ORG 0x16d66 // D rank WEXP
+BYTE DRankWEXP-1
+
+ORG 0x16d6e // C rank WEXP
+BYTE CRankWEXP-1
+
+ORG 0x16d76 // B rank WEXP
+BYTE BRankWEXP-1
+
+ORG 0x16d7e // A rank WEXP
+BYTE ARankWEXP-1
+
+ORG 0x16d86 // S rank WEXP
+BYTE SRankWEXP-1
+
+ORG 0x2AD74 // S rank WEXP for in battle bonus
+BYTE SRankWEXP-1
+
+ORG 0x16e90 // bar to D rank WEXP
+BYTE DRankWEXP-1
+
+ORG 0x16e96 // D rank WEXP
+BYTE DRankWEXP
+
+ORG 0x16e9a // bar to C rank WEXP
+BYTE CRankWEXP-DRankWEXP
+
+ORG 0x16ea0 // C rank WEXP
+BYTE CRankWEXP
+
+ORG 0x16ea4 // bar to B rank WEXP
+BYTE BRankWEXP-CRankWEXP
+
+ORG 0x16eaa // B rank WEXP
+BYTE BRankWEXP
+
+ORG 0x16eae // bar to A rank WEXP
+BYTE ARankWEXP-BRankWEXP
+
+ORG 0x16eb4 // A rank WEXP
+BYTE ARankWEXP
+
+ORG 0x16eb8 // bar to S rank WEXP
+BYTE SRankWEXP-ARankWEXP
+
+POP

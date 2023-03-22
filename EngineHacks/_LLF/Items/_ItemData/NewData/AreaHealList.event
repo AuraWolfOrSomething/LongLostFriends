@@ -1,0 +1,9 @@
+
+AreaHealList:
+AreaHealingStaff(0x0,Secure)
+AreaHealingStaff(2,0,ExcludeStaffSavant)
+
+AreaHealingStaff(0x1,Fortify)
+AreaHealingStaff(0,50,IncludeStaffSavant)
+
+EndAreaHealList

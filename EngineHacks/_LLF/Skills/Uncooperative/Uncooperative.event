@@ -1,0 +1,6 @@
+
+#include "asm/UncooperativeSkill.lyn.event"
+
+UncooperativeSkillLink:
+BYTE UncooperativeID
+ALIGN 4

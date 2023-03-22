@@ -1,0 +1,35 @@
+
+PUSH
+
+ORG 0x22AE0
+SHORT 0xB5F0 0x4C0F //push {r4-r7,r14}; ldr r4, =0x0203A958
+SHORT 0x7888 0x7360 //ldrb r0, [r1,#2]; strb r0, [r4,#0x0D]
+SHORT 0x7B20 //ldrb r0, [r4,#0x0C]
+BL(0x19430)
+SHORT 0x1C05 0x1C22 //mov r5, r0; mov r2, r4
+SHORT 0x4B0C 0x469E //ldr r3, (Transmitter) ; mov lr, r3;
+SHORT 0xF800 0x1C28 //bl lr+0; mov r0, r5
+BL(0x1849C)
+SHORT 0x7B60 //ldrb r0, [r4,#0x0D]
+BL(0x19430)
+SHORT 0x1C06 0x1C01 //mov r6, r0; mov r1, r0; 
+SHORT 0x1C28 // mov r0, r5
+BL(0x22A5C)
+SHORT 0x1C28 0x1C31 //mov r0, r5; mov r1, r7
+BL(0x183C8)
+SHORT 0x2017 0xBCF0 //mov r0, #0x17; pop {r4-r7}
+SHORT 0xBC02 0x4708 //pop {r1}; bx r1
+SHORT 0
+WORD 0x0203A958
+POIN Transmitter
+
+POP
+
+#include "asm/Transmitter.lyn.event"
+
+TransmitterLink:
+BYTE TransmitterID
+
+TransmitterPlusLink:
+BYTE TransmitterPlusID
+ALIGN 4

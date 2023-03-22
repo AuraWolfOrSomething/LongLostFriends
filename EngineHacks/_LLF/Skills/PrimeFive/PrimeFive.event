@@ -1,0 +1,8 @@
+
+#include "asm/CheckIfPrimeFiveIsActive.lyn.event"
+PrimeFiveLink:
+BYTE PrimeFiveID
+ALIGN 4
+
+#include "asm/PrimeFive.lyn.event"
+ALIGN 4

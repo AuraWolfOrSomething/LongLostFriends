@@ -1,0 +1,107 @@
+## ConditionNormalHelpText
+Normal.[NL]
+Feeling healthy.[X]
+
+## MultipleEffectsName
+Multiple[X]
+
+## ConditionMultipleHelpText
+This unit has many active effects.[X]
+
+## GuardianDamageName
+Guardian[X]
+
+## ConditionGuardianDamageHelpText
+(+5 Def and +5 Res for 1 phase)[NL]
+Look out, world! Nothing's stopping them![X]
+
+## GuardianHalfName
+Guardian[X]
+
+## ConditionGuardianHalfHelpText
+(Debuffs are half as effective)[NL]
+Their mind is at ease.[NL]
+Debuffs aren't as impactful.[X]
+
+## PoisonStatusName
+Poison[X]
+
+## ConditionPoisonHelpText
+Ooooog...[NL]
+Poison slowly steals HP.[X]
+
+## SleepStatusName
+Sleep[X]
+
+## ConditionSleepHelpText
+(Cannot move or act; 0 Avoid)[NL]
+Zzzz... Zzzzz...[NL]
+Sleeping now... Can't move...[X]
+
+## SilenceStatusName
+Silence[X]
+
+## ConditionSilenceHelpText
+......[NL]
+Magic and staves are unusable.[X]
+
+## BerserkStatusName
+Berserk[X]
+
+## ConditionBerserkHelpText
+Rarrrrr! Attack the nearest[NL]
+unit, be it friend or foe![X]
+
+## RustbowDebuffName
+Rustbow[X]
+
+## ConditionRustbowHelpText
+(Lowers stats by duration)[NL]
+Ouch! Their performance is hindered.[X]
+
+## IneptDebuffName
+Inept[X]
+
+## ConditionIneptHelpText
+(Lowers weapon ranks by 3 letters)[NL]
+Huh. How does this work again?[X]
+
+## LullDebuffName
+Lull[X]
+
+## ConditionLullHelpText
+(-5 Def and -5 Res)[NL]
+Someone's a little too relaxed.[NL]
+Incoming attacks are gonna sting.[X]
+
+## SlowDebuffName
+Slow[X]
+
+## ConditionSlowHelpText
+(Mov reduced by 5 - Res / 5)[NL]
+Hey...wait...for...me![X]
+
+## DistractDebuffName
+Distract[X]
+
+## ConditionDistractHelpText
+(-20 Hit and -20 Avoid)[NL]
+What was that? Better go investigate...[X]
+
+## AbsorbDebuffName
+Absorb[X]
+
+## AbsorbDurationHelpText
+Chapter[X]
+
+## ConditionAbsorbHelpText
+(This unit cannot use Absorb, be[N]
+restored, or benefit from buffs)[N]
+Whew! All tuckered out.[X]
+
+## RallyBuffName
+Rally[X]
+
+## ConditionRallyHelpText
+(1 phase stat boost)[NL]
+Woah! They're really pepped up![X]

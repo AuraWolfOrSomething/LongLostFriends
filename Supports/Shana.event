@@ -1,0 +1,12 @@
+ShanaSupportList:
+SupportList(Shana,ShanaSupportList)
+
+SupportPartner(Rivia,20,30)
+SupportPartner(Lorrand,10,25)
+SupportPartner(Zoren,0,25)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(3)

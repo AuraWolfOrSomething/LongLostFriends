@@ -1,0 +1,380 @@
+## Ch2ThorbekRecruitByZoren
+[OpenMidLeft][LoadThorbek]
+[OpenMidRight][LoadZoren]
+
+[OpenMidLeft]
+Halt![AN]
+Who goes there?[A]
+
+[OpenMidRight]
+Hey there, I'm Zoren.[AN]
+We're after the bandits.[A]
+
+[OpenMidLeft]
+Oh, a comrade?[A][ToggleSmile] Perfect![AN]
+I'm Thorbek, more commonly known[N]
+as Thorbek the Hearty![AN]
+Follow me, and we'll make short[N]
+work of these villains![A]
+[X]
+
+## Ch2ThorbekRecruitByArlett
+[OpenMidLeft][LoadThorbek]
+[OpenMidRight][LoadArlett]
+
+[OpenMidLeft]
+Halt![AN]
+Who goes there?[A]
+
+[OpenMidRight]
+It's me, Arlett![AN]
+Remember me?[A]
+
+[OpenMidLeft][ToggleSmile]
+Ah, Arlett![AN]
+How did your extensive[N]
+training session go?[A]
+
+[OpenMidRight][ToggleSmile]
+What are you talking about?[A]
+
+[OpenMidLeft]
+Isn't that the reason for[N]
+your two day absence?[A]
+
+[OpenMidRight]
+I was kidnapped, you moron![AN]
+If it wasn't for the folks I'm helping[N]
+now, I'd still be in that cell![A]
+
+[OpenMidLeft]
+Oh.[A] My mistake.[AN][ToggleSmile]
+Well, it's time for[N]
+revenge, then?[A]
+
+[OpenMidRight][ToggleSmile]
+[TMM]...[.4][TMM]Yes, exactly.[A]
+
+[OpenMidLeft][ToggleSmile]
+In that case, I'd better move[N]
+to the frontlines.[AN]
+With you at my back, I'll be known[N]
+as Thorbek the Invincible![A]
+[ClearFace]
+
+[.7]
+[OpenFarFarLeft][ToggleSmile]
+ARGH![A] A dastardly arrow, indeed.[AN]
+Arlett, I need your assistance![A]
+
+[OpenMidRight][HalfCloseEyes]
+To help him or not to[N]
+help him[TMM]...[TMM][AN]
+Hmm[TMM]...[TMM][A]
+
+[X]
+
+## Ch2ThorbekRecruitByDavis
+[OpenMidLeft][LoadThorbek]
+[OpenMidRight][LoadDavis]
+
+[OpenMidLeft]
+Halt![AN]
+Who goes there?[A]
+
+[OpenMidRight]
+Err, I'm Davis.[AN]
+I talked with you the other[N]
+day about the bandits.[A]
+
+[OpenMidLeft]
+Ah, you![AN][ToggleSmile]
+Yes, now I remember.[A]
+
+[OpenMidRight][ToggleSmile]
+Yeah.[AN]
+Well, now that they've[N]
+come out of hiding,[AN]
+I'm here to exterminate[N]
+them, once and for all.[AN]
+Coming?[A]
+
+[OpenMidLeft][ToggleSmile]
+Of course![AN]
+The two of us shall prevail[N]
+against these villains![A]
+[X]
+
+## Ch2KamronFranklinTalk
+[OpenMidLeft][LoadKamron]
+[OpenMidRight][LoadFranklin]
+
+[OpenMidLeft]
+Watch yourself out[N]
+here, Franklin![AN]
+Who knows when another[N]
+brigand will appear.[A]
+
+[OpenMidRight][ToggleSmile]
+You'll protect me, right?[A]
+
+[OpenMidLeft][ToggleSmile]
+All I can say for sure[N]
+is that I'll do my best.[AN]
+But Gunther and I have[N]
+our limits.[AN]
+Just[TMM]--[TMM][A]
+
+[OpenMidRight][ToggleSmile]
+That's all I needed[N]
+to hear.[AN]
+I know you'll keep[N]
+me safe, Kamron.[AN]
+Carry on, then.[A]
+[ClearFace]
+
+[OpenMidLeft][HalfCloseEyes][ToggleSmile]
+[TMM]...[.4][TMM]Was he actually listening,[N]
+or is he just that naive?[A]
+
+[X]
+
+## Ch2NordicaDavisTalk
+[OpenMidLeft][LoadNordica]
+[OpenMidRight][LoadDavis]
+
+[OpenMidRight]
+Hey, you're a fellow archer.[AN]
+What's your secret to[N]
+success, Nordica?[A]
+
+[OpenMidLeft]
+What?[A]
+
+[OpenMidRight]
+I mean, how are you so[N]
+good at using bows?[AN]
+I don't think I've gotten[N]
+the hang of it yet.[A]
+
+[OpenMidLeft]
+Supposedly, bows are difficult[N]
+for most people.[AN]
+Have you used projectiles like[N]
+them before?[AN]
+Like throwing darts?[AN]
+Maybe there's a lesson you can[N]
+carry over to shooting arrows.[A]
+
+[OpenMidRight]
+Not really.[AN]
+In my hometown, I was the[N]
+only archer around.[AN]
+People were pretty easy[N]
+to impress,[AN]
+but there was no one[N]
+to learn from.[A]
+
+[OpenMidLeft]
+Someone managed to find a[N]
+way to make it even harder.[AN]
+Okay, why did you decide to pick[N]
+one up in the first place?[A]
+
+[OpenMidRight]
+Like I said, it was easy to,[N]
+uh, impress my neighbors.[AN]
+I only started to get[N]
+free drinks.[A]
+
+[OpenMidLeft]
+[TMM]...[.4][TMM]And why are you still using them?[A]
+
+[OpenMidRight]
+[TMM]...[.4][TMM][A]
+
+[OpenMidLeft][HalfCloseEyes]
+[TMM]...[.4][TMM]Your name's Davis,[N]
+right?[AN]
+I don't think I can[N]
+help you, Davis.[AN]
+Good luck.[A]
+[ClearFace]
+
+[OpenMidRight][OpenEyes]
+Wait![A] Please![AN]
+Even a nibble of advice[N]
+could do the trick![A]
+
+[OpenFarLeft][LoadNordica]
+
+[OpenFarLeft]
+[TMM]...[.4][TMM][A]
+
+[OpenMidRight]
+[TMM]...[.4][TMM][A]
+
+[OpenFarLeft]
+[TMM]...[.4][TMM][A]
+
+[OpenMidRight]
+[TMM]...[.4][TMM] Okay, let's try a[N]
+different angle.[AN]
+What about you?[AN]
+What made you pick[N]
+up a bow?[A]
+
+[OpenFarLeft]
+[TMM]...[.4][TMM]Hunting, mostly.[AN]
+The better I got,[AN]
+the better my family's[N]
+dinner was.[A]
+
+[OpenMidRight]
+Is that why you're still[N]
+practicing your bowmanship?[A]
+
+[OpenFarLeft]
+No.[A]
+
+[OpenMidRight]
+So, uh, what other reason is there?[A]
+
+[OpenFarLeft]
+[TMM]...[.4][TMM][A]
+
+[OpenFarLeft][MoveMidLeft]
+
+[OpenMidLeft]
+You want advice?[A]
+
+[OpenMidRight]
+Yeah.[A]
+
+[OpenMidLeft]
+Imagine your worst enemy.[AN]
+Someone you hate so much[TMM]...[.4][TMM][AN]
+you never even knew it was possible[N]
+to feel this way about anyone.[A]
+
+[OpenMidRight]
+[TMM]...[.4][TMM][A]
+
+[OpenMidLeft]
+If you fail, they won't stop after killing you.[AN]
+They'll kill your family and friends next.[AN]
+Your home isn't your home anymore; it's a[N]
+pathetic pile of rubble once they're done.[AN]
+Everyone and everything that you ever[N]
+treasured[TMM]...[.4][TMM]is gone.[A]
+
+[OpenMidRight]
+[TMM]...[.4][TMM][A]
+
+[OpenMidLeft]
+See that man over there?[AN]
+That's him.[A] Aim, then release.[AN]
+If you don't think you can defeat him[N]
+now, practice until your next encounter.[AN]
+An accurate archer can't survive[N]
+without good positioning, either.[AN]
+If you let them get close[TMM]...[TMM][AN]
+well, we rarely get second chances[N]
+in those situations.[AN]
+Improve until it never happens again.[A]
+
+[OpenMidRight]
+[TMM]...[.4][TMM][A]
+
+[OpenMidLeft]
+[TMM]...[.4][TMM]That's my secret.[AN][CloseEyes]
+Excuse me[TMM]...[TMM][A]
+[ClearFace]
+
+[OpenMidRight]
+[TMM]...[.4][TMM]The world definitely has its favorites[TMM]...[TMM][A]
+
+[X]
+
+## Ch2SWvillage
+[OpenMidLeft][LoadGirl]
+[OpenMidRight][LoadActiveUnit]
+
+[OpenMidLeft]
+My mommy got this book for me,[N]
+but I don't like it.[AN]
+It's really boring.[AN]
+[CloseSpeechSlow]
+[OpenMidLeft][MoveMidLeft]
+[OpenMidLeft][MoveMidLeft]
+[OpenMidLeft][ToggleSmile]
+Here, you take it![AN]
+Then I can say I lost it, and she'll[N]
+get another one for me![A]
+[X]
+
+## Ch2CenterVillage
+
+[OpenMidLeft][LoadYoungMan2]
+[OpenMidRight][LoadActiveUnit]
+
+[OpenMidLeft][MoveMidLeft][ToggleSmile]
+And[TMM]...[TMM] there![AN]
+It's all set now.[AN]
+[CloseSpeechSlow]
+[OpenMidLeft][MoveMidLeft]
+Ah, hail, traveler![AN]
+You must be fighting the[N]
+oncoming bandits, no?[AN]
+Try this out on one of them![AN]
+I'm trying to make a bow that[N]
+suits weaker archers, but[TMM]...[TMM][AN]
+actually, I won't bore you with[N]
+the details.[AN]
+There's brigands about, after all.[AN]
+Just don't try to shoot with this[N]
+twice in the same fight, okay?[AN]
+It's quite a hassle to set everything[N]
+up again for another shot.[A]
+[X]
+
+## Ch2NEvillage
+
+[OpenMidLeft][LoadMiddleWoman]
+[OpenMidRight][LoadActiveUnit]
+
+[OpenMidLeft][ToggleSmile]
+Welcome, stranger![AN]
+You've come at the perfect time.[AN]
+I need someone to try this medicine[N]
+I just made.[AN]
+I'm pretty sure it works, but I'm not[N]
+gonna hurt myself just to test it.[AN]
+Now then, get out there and put it[N]
+to good use![AN]
+Let me know if it's any good![A]
+[X]
+
+## Ch2NWvillage
+
+[OpenMidLeft][LoadYoungWoman2]
+[OpenMidRight][LoadActiveUnit]
+
+[OpenMidLeft][ToggleSmile]
+Heh.[AN]
+You'd better stand back.[AN]
+This place is about to be a[N]
+bloodbath for those bandits.[A][CloseSpeechSlow][ToggleSmile]
+
+[.4][OpenMidLeft]
+[TMM]...[.4][TMM]What's that?[AN]
+You're here to help?[AN][ToggleSmile]
+Heh, don't be ridiculous.[AN]
+Take this and improve your[N]
+swordsmanship with it.[AN]
+You might stand a better[N]
+chance next time.[AN][ToggleSmile]
+Close the gates on your way out,[N]
+so no one else gets in my way.[A]
+
+[X]

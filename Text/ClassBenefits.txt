@@ -1,0 +1,85 @@
+
+## ClassTextID
+Class[X]
+
+## GeneralBenefits
++30 Sword & Lance WEXP, D Axe[X]
+
+## PaladinBenefitsSwordCav
++30 Sword WEXP, D Lance[X]
+
+## PaladinBenefitsLanceCav
++30 Lance WEXP, D Sword[X]
+
+## GreatKnightBenefits
++30 Axe WEXP, D Lance, Expertise[N]
+(Reduce effectiveness damage by 50%)[X]
+
+## GreatKnightBenefitsJacob
++30 Axe WEXP, D Lance, Expertise[N]
+(Reduce effectiveness damage by 50%),[N]
+Canto replaces Cross[X]
+
+## SniperBenefits
++50 Bow WEXP, Mid-Range Master[N]
+(WTA at 2 range & opponent has WTD)[X]
+
+## RangerBenefits
++30 Bow WEXP, D Sword,[N]
+Canto replaces Shove[X]
+
+## AssassinBenefits
++30 Sword WEXP, E Dark, Galeforce[N]
+(Once per turn refresh after defeating[N]
+an enemy), Covert (Walls cost 3 Mov)[X]
+
+## SwordmasterBenefits
++50 Sword WEXP, Weapon Unlock[X]
+
+## HeroBenefits
++30 Sword WEXP, D Axe[X]
+
+## HalberdierBenefits
++50 Lance WEXP, Weapon Unlock[X]
+
+## VanguardBenefits
++30 Lance WEXP, D Bow[X]
+
+## BerserkerBenefits
++50 Axe WEXP, Weapon Unlock[X]
+
+## WarriorBenefits
++30 Axe WEXP, D Bow[X]
+
+## SageBenefits
++30 Anima WEXP, E Staff,[N]
+D Light or Dark[X]
+
+## BishopBenefitsMonk
++30 Light WEXP, E Staff,[N]
+D Anima or Dark[X]
+
+## BishopBenefitsCleric
++30 Staff WEXP, D Light,[N]
+E Anima or Dark[X]
+
+## DruidBenefits
++30 Dark WEXP, E Staff,[N]
+D Anima or Light[X]
+
+## MageKnightBenefits
++30 Staff WEXP, D Anima,[N]
+Canto replaces Shove[X]
+
+## ValkyrieBenefits
++30 Staff WEXP, D Light[X]
+
+## FalconKnightBenefits
++30 Lance WEXP, D Sword[X]
+
+## WyvernLordBenefits
++30 Axe WEXP, D Axe[X]
+
+## FighterBenefits
++30 Axe WEXP, Lv 1, Promotion options:[N]
+Warrior, Hero, Berserker, & Great Knight[X]

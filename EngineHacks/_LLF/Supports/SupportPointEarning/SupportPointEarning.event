@@ -1,0 +1,26 @@
+
+PUSH
+
+//new SwitchGameplayPhase routine, so this isn't needed
+//stops ProcessSupportGains being called at the beginning of each player phase
+/*
+ORG 0x153C6
+SHORT 0xBC01 0x4700 //pop {r0}; bx {r0}
+*/
+
+ORG 0x28290
+#include "asm/AddSupportPoints.lyn.event"
+ALIGN 4
+
+ORG 0x28434
+#include "asm/ProcessSupportGains.lyn.event"
+ALIGN 4
+
+POP
+
+ChapterExceptionList:
+
+//End of list
+BYTE 0xFF
+ALIGN 4
+

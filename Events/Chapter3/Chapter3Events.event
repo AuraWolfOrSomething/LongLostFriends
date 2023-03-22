@@ -1,0 +1,848 @@
+﻿//I could definitely get rid of these, but nah
+//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+EventPointerTable(0x14,Pointers)
+EventPointerTable(0x6B,Pointers)
+
+Pointers:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+#include "Chapter3Units.event"
+#include "Chapter3EventIDs.event"
+#include "Chapter3QuoteTable.event"
+
+#define Ch3ReinforcementCounter 0
+#define Ch3PrisonerDefeatedCounter 1
+
+TurnBasedEvents:
+TurnEventPlayer(0,NewGameOverConditions,1)
+TurnEventPlayer(0,PercyCharges,2)
+
+//The first group of reinforcements (Reinforcements0) spawns 2 turns after the player is in Part 2
+
+EndlessTurnEventPlayer(Ch3Part1EndlessReinforcementsEventID,Part1ReinforcementsArrive,2)
+
+EndlessTurnEventPlayer(Ch3Reinforcements3EventID,ReinforcementsArrive3,8)
+
+TurnEventPlayer(Ch3Warning3EventID,ReinforcementsWarning3,7,99)
+
+TurnEventPlayer(Ch3Reinforcements2EventID,ReinforcementsArrive2,6,99)
+
+TurnEventPlayer(Ch3Reinforcements1EventID,ReinforcementsArrive1,5,99)
+TurnEventPlayer(Ch3Warning2EventID,ReinforcementsWarning2,5,99)
+
+TurnEventPlayer(Ch3Reinforcements0EventID,ReinforcementsArrive0,4,99)
+TurnEventPlayer(Ch3Warning1EventID,ReinforcementsWarning1,4,99)
+
+TurnEventPlayer(Ch3Warning0EventID,ReinforcementsWarning0,3,99)
+
+TurnEventPlayer(Ch3AllowReinforcementsEventID,AllowReinforcements,3,99)
+
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+#ifdef TESTING_EASY_CLEAR
+	CharacterEvent(3,EndingScene,Shana,Myra)
+#endif
+END_MAIN
+
+LocationBasedEvents:
+Escape(0,22)
+Escape(1,22)
+#ifdef TESTING_EASY_CLEAR
+	Seize(1,9)
+	Seize(1,10)
+#endif
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+AFEV Ch3InPart2EventID GoToPart2 Ch3WallDestroyedEventID
+//AFEV 0 GoToPart2 Ch3WallDestroyedEventID
+AFEV Ch3GuardsAttackedReactionEventID GuardsWereAttackedInPart1 Ch3GuardsAttackedEventID
+
+AFEV Ch3WallReaction1EventID FirstWallReaction Ch3WallAttackedEventID
+AFEV Ch3WallReaction2EventID SecondWallReaction Ch3WallReached35HPEventID
+
+AFEV Ch3TrackPrisonersDefeatedEventID TrackPrisonersDefeated Ch3Part1PercyDeathEventID
+AFEV 0 TrackPrisonersDefeated Ch3PrisonerDeathEventID
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+
+
+BeginningScene:
+SetBackground(HouseBG)
+MUSC Treasured_Memories
+TEXTSTART
+TEXTSHOW Ch3ZorenIntro1
+TEXTEND
+FADI 10
+LOMA MaevaCutsceneMap
+Load(UnitsMaeva)
+FADU 10
+STAL 10
+Load(UnitZoren)
+STAL 10
+MoveAndWait(Zoren,3,3)
+STAL 20
+
+CHECK_ALIVE Davis
+IFNE 0x1 sC s0
+	
+	Load(UnitDavis)
+	STAL 20
+	MoveAndWait(Davis,13,2)
+	STAL 20
+	MUSS Laughter
+	//MUSS 0x7FFF
+	TEXTSTART
+	TEXTSHOW Ch3DavisIntro1
+	TEXTEND
+	REMA
+	STAL 15
+	MoveAndWait(Davis,4,3)
+	STAL 15
+	//MUSS Laughter
+	SetBackground(Town_Day)
+	TEXTSTART
+	TEXTSHOW Ch3DavisIntro2
+	TEXTEND
+	ClearBackground
+	REMA
+	STAL 10
+	MoveAndWait(Davis,13,1)
+	REMU Davis
+	STAL 40
+	MURE 6
+	
+LABEL 0x1
+
+MoveAndWait(Zoren,6,5)
+STAL 10
+SetBackground(Town_Day)
+TEXTSTART
+TEXTSHOW Ch3ZorenIntro2
+TEXTEND
+
+CHECK_ALIVE Davis
+IFNE 0x2 sC s0
+
+	ClearBackground
+	REMA
+	STAL 10
+	MoveAndWait(Zoren,5,4,5)
+	STAL 25
+	MoveAndWait(Zoren,5,5,5)
+	STAL 10
+	TEXTSTART
+	TEXTSHOW Ch3DavisIntro3
+	TEXTEND
+	REMA
+	Move(Iris,13,2,5)
+
+LABEL 0x2
+
+Move(Zoren,5,0,5)
+FADI 4
+MUSCSLOW 0x7FFF
+ENUN
+STAL 20
+CLEA 0
+CLEN 0
+LOMA Ch3IntroMap
+Load(UnitsAtelier)
+FADU 4
+
+MUSC Advance
+BROWNBOXTEXT LocPortAtelier [0,0]
+STAL 20
+
+Load(UnitZoren2)
+STAL 20
+MoveAndWait(Grace,9,7)
+STAL 20
+SetBackground(Harbor)
+TEXTSTART
+TEXTSHOW Ch3ZorenIntro3
+TEXTEND
+ClearBackground
+REMA
+STAL 10
+TurnAlly(Grace)
+STAL 10
+Move(Zoren,8,1,5)
+Move(Grace,9,1,5)
+FADI 4
+ENUN
+MUSCSLOW 0x7FFF
+CLEA 0
+CLEN 0
+CALL PartySwapZorenToShana
+LOMA Ch_3
+
+//Setup opening view of the map
+Load(BadUnits)
+Camera(7,8,10)
+
+//Augustus talks to Captain & another soldier
+SetBackground(BlackBG)
+
+TUTORIALTEXTBOXSTART
+SETVAL 0xB 0xFFFFFFFF
+TEXTSHOW Ch3Meanwhile
+TEXTEND
+REMA
+SetBackground(Castle_Hall_Night)
+STAL 40
+MUSC Solve_the_Riddle
+TEXTSTART
+TEXTSHOW Ch3Intro1
+TEXTEND
+REMA
+
+SetBackground(BlackBG)
+STAL 15
+
+//Introduction to new party
+SetBackground(Prison_Cell)
+TEXTSTART
+TEXTSHOW Ch3Intro2
+TEXTEND
+STAL 10
+MUSC Grim_Journey
+TEXTCONT
+TEXTEND
+SOUN 0x00CC //Percy throws something to Colette
+//SOUN 0x00CD //Percy throws something to Colette
+TEXTCONT
+TEXTEND
+REMA
+
+SetBackground(BlackBG)
+STAL 30
+
+//Party members grab a weapon
+SetBackground(Castle_Hall_4)
+STAL 10
+MUSC CutsceneTheme_FFT_Anxiety
+TEXTSTART
+TEXTSHOW Ch3Intro3
+TEXTEND
+FADI 10
+ClearBackground
+REMA
+STAL 20
+
+//Map reveal; party gets into position, then knights block off the stairway
+Load(Units)
+MoveAtCoords(13,7,14,8)
+MoveAtCoordsAndWait(11,10,14,9)
+ENUN
+STAL 10
+TEXTSTART
+TEXTSHOW Ch3Intro4
+TEXTEND
+REMA
+
+//Augustus greets prisoners
+STAL 10
+Camera(7,5,20)
+MoveAndWait(Augustus,7,2)
+STAL 10
+TEXTSTART
+TEXTSHOW Ch3Intro5
+TEXTEND
+REMA
+STAL 20
+//MoveAndWait(Augustus,7,0)
+//STAL 10
+
+//Enemy prisoners do a group huddle and then move into position
+Camera(7,8,20)
+Move(Ch3Prisoner5,10,8)
+Move(Ch3Prisoner4,10,7)
+MoveAndWait(Ch3Prisoner6,10,9)
+Move(Ch3Prisoner1,11,7)
+MoveAndWait(Ch3Prisoner3,11,9)
+//Move(Percy,12,7)
+//MoveAndWait(Ch3Prisoner2,12,8)
+STAL 30
+Move(Ch3Prisoner4,7,7)
+Move(Ch3Prisoner6,7,9)
+MoveAndWait(Ch3Prisoner5,8,8)
+Move(Ch3Prisoner1,11,6)
+MoveAndWait(Ch3Prisoner3,11,10)
+//Move(Ch3Prisoner2,11,8)
+//MoveAndWait(Percy,12,8)
+
+//First look at Percy for the player
+STAL 20
+Notice(Percy,30)
+STAL 20
+TEXTSTART
+TEXTSHOW Ch3Intro6
+TEXTEND
+REMA
+
+//Colette and Myra
+STAL 10
+TEXTSTART
+TEXTSHOW Ch3Intro7
+TEXTEND
+REMA
+
+//Discussion about dealing with this part
+STAL 20
+Notice(0,8,30)
+Notice(0,9,30)
+STAL 20
+TEXTSTART
+TEXTSHOW Ch3Intro8
+TEXTEND
+REMA
+
+ENUT Ch3Part1EndlessReinforcementsEventID
+
+//If the player leaves later than Turn 2, I want the reinforcement timings to adjust to that
+ENUT Ch3AllowReinforcementsEventID
+ENUT Ch3Warning0EventID
+ENUT Ch3Reinforcements0EventID
+ENUT Ch3Warning1EventID
+ENUT Ch3Reinforcements1EventID
+ENUT Ch3Warning2EventID
+ENUT Ch3Reinforcements2EventID
+ENUT Ch3Warning3EventID
+ENUT Ch3Reinforcements3EventID
+
+//TESTING
+//CALL GoToPart2
+//ENDB
+
+NoFade
+ENDA
+
+
+NewGameOverConditions:
+EVBIT_T 4
+TUTORIALTEXTBOXSTART
+SETVAL 0xB 0xFFFFFFFF
+TEXTSHOW ShanaPartyGameOverNotice
+TEXTEND
+REMA
+NoFade
+ENDA
+
+
+//---------------------------------------
+//Turn Events
+//---------------------------------------
+
+PercyCharges:
+CHECK_EVENTID Ch3Part1PercyDeathEventID
+IFEQ 0x1 sC s0
+	Camera(Percy,20)
+	
+	/*
+	STAL 20
+	Notice(Percy,30)
+	STAL 20
+	*/
+	
+	TEXTSTART
+	TEXTSHOW Ch3PercyCharges
+	TEXTEND
+	REMA
+	STAL 20
+	
+	SETVAL 0x1 0
+	CHAI Percy
+LABEL 0x1
+NoFade
+ENDA
+
+Part1ReinforcementsArrive:
+ENUF Ch3Part1EndlessReinforcementsEventID //repeat this event
+Camera(7,7,10)
+Load(Part1EndlessReinforcements1a)
+Camera(7,5,10)
+Load(Part1EndlessReinforcements1b)
+Camera(7,9,10)
+Load(Part1EndlessReinforcements1c)
+NoFade
+ENDA
+
+AllowReinforcements:
+SVAL s0 1
+COUNTER_CHECK Ch3ReinforcementCounter
+
+	SVAL s1 4
+	IFEQ 0x1 sC s1
+		COUNTER_INC Ch3ReinforcementCounter
+		ENUF Ch3Reinforcements3EventID
+	LABEL 0x1
+	
+	SVAL s1 3
+	IFEQ 0x2 sC s1
+		COUNTER_INC Ch3ReinforcementCounter
+		ENUF Ch3Warning3EventID
+	LABEL 0x2
+
+	SVAL s1 2
+	IFEQ 0x3 sC s1
+		COUNTER_INC Ch3ReinforcementCounter
+		ENUF Ch3Reinforcements2EventID
+	LABEL 0x3
+	
+	SVAL s1 1
+	IFEQ 0x4 sC s1
+		COUNTER_INC Ch3ReinforcementCounter
+		ENUF Ch3Reinforcements1EventID
+		ENUF Ch3Warning2EventID
+	LABEL 0x4
+
+	SVAL s1 0
+	IFEQ 0x5 sC s1
+		COUNTER_INC Ch3ReinforcementCounter
+		ENUF Ch3Reinforcements0EventID
+		ENUF Ch3Warning1EventID
+		
+	LABEL 0x5
+	
+	SVAL s1 5
+	IFLT 0x6 sC s1
+		ENUF Ch3AllowReinforcementsEventID //repeat this event
+	LABEL 0x6
+
+NoFade
+ENDA
+
+ReinforcementsWarning0:
+ReinforcementWarningEventHeader(0x1)
+	MUSI
+	Camera(7,16,10)
+	Notice(13,16,30)
+	Notice(14,16,30)
+	HorseWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+ReinforcementsArrive0:
+Camera(7,16,10)
+Load(Reinforcements0)
+NoFade
+ENDA
+
+ReinforcementsWarning1:
+ReinforcementWarningEventHeader(0x1)
+	MUSI
+	Camera(7,5,10)
+	Notice(7,6,30)
+	InfantryWarning
+	Notice(7,7,30)
+	MageWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+ReinforcementsArrive1:
+Camera(7,5,10)
+Load(Reinforcements1)
+NoFade
+ENDA
+
+ReinforcementsWarning2:
+ReinforcementWarningEventHeader(0x1)
+	MUSI
+	Camera(7,5,10)
+	Notice(7,6,30)
+	InfantryWarning
+	Notice(7,7,30)
+	WyvernWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+ReinforcementsArrive2:
+Camera(7,5,10)
+Load(Reinforcements2)
+STAL 15
+TEXTSTART
+TEXTSHOW Ch3Part2AugustusArrives
+TEXTEND
+REMA
+STAL 15
+Rescue(7,7,7,6) //Wyvern Rider [7,7] rescues Augustus [7,6]
+NoFade
+ENDA
+
+ReinforcementsWarning3:
+ReinforcementWarningEventHeader(0x1)
+	MUSI
+	Camera(7,5,10)
+	Notice(6,6,30)
+	Notice(7,7,30)
+	Notice(8,6,30)
+	WyvernWarning
+	Camera(7,16,10)
+	Notice(13,16,30)
+	Notice(14,16,30)
+	HorseWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+ReinforcementsArrive3:
+ENUF Ch3Reinforcements3EventID //repeat this event
+
+CHECK_EVENTID PlanEventID
+IFNE 0x1 sC s0
+	CHECK_EVENTID Ch3EndlessReinforcementWarningEventID
+	IFEQ 0x2 sC s0
+		TUTORIALTEXTBOXSTART
+		SETVAL 0xB 0xFFFFFFFF
+		TEXTSHOW EndlessTurnEventText
+		TEXTEND
+		REMA
+		ENUT Ch3EndlessReinforcementWarningEventID
+	LABEL 0x2
+LABEL 0x1
+
+Camera(7,5,10)
+Load(Reinforcements3)
+Camera(7,16,10)
+Load(Reinforcements3b)
+
+NoFade
+ENDA
+
+
+//---------------------------------------
+//Misc Events
+//---------------------------------------
+
+GoToPart2:
+//CHECK_EVENTID Ch3InPart2EventID
+//IFEQ 0x2 sC 0
+	//ENUT Ch3InPart2EventID
+
+MUSC Raid
+
+//If this dialogue hasn't been seen yet, play it
+CHECK_EVENTID Ch3GuardsAttackedReactionEventID
+IFEQ 0x6 sC s0
+	Camera(Augustus,20)
+	TEXTSTART
+	TEXTSHOW Ch3AugustusReaction
+	TEXTEND
+	REMA
+LABEL 0x6
+
+//Setup Part 2
+FADI 10
+
+CHECK_EVENTID Ch3Part1PercyDeathEventID
+IFEQ 0x1 sC s0
+	TurnAlly(Percy)
+LABEL 0x1
+
+Camera(7,5,10)
+CLEA 0
+CLEE 0
+CLEN 0
+LOMA Ch_3P2
+Load(BadUnits3)
+STAL 20
+FADU 10
+LOAD1 0 Units2
+CHECK_EVENTID Ch3Part1PercyDeathEventID
+IFEQ 0x2 sC s0
+	LOAD1 0 UnitPart2Percy
+LABEL 0x2
+ENUN
+STAL 30
+
+//Colette cutscene
+CHECK_ALIVE Colette
+IFNE 0x3 sC s0
+	TEXTSTART
+	TEXTSHOW Ch3TransitionColetteAlive
+	TEXTEND
+	REMA
+	STAL 30
+LABEL 0x3
+
+//Pointing out forest escape tiles
+CHECK_EVENTID Ch3Part1PercyDeathEventID
+IFEQ 0x4 sC s0
+
+	TEXTSTART
+	TEXTSHOW Ch3TransitionPercyAlive1
+	TEXTEND
+	REMA
+	STAL 10
+	Camera(7,18,25)
+	Notice(0,22,40)
+	Notice(1,22,40)
+	STAL 10
+	TEXTSTART
+	TEXTSHOW Ch3TransitionPercyAlive2
+	TEXTEND
+	REMA
+
+GOTO 0x5
+LABEL 0x4
+
+	TEXTSTART
+	TEXTSHOW Ch3TransitionPercyDead1
+	TEXTEND
+	REMA
+	STAL 10
+	Camera(7,18,25)
+	Notice(0,22,40)
+	Notice(1,22,40)
+	STAL 10
+	TEXTSTART
+	TEXTSHOW Ch3TransitionPercyDead2
+	TEXTEND
+	REMA
+
+LABEL 0x5
+
+//Right side generics talk
+Camera(7,9,20)
+Notice(12,9,30)
+Notice(14,9,30)
+STAL 10
+TEXTSTART
+TEXTSHOW Ch3Part2SentryReactions
+TEXTEND
+REMA
+STAL 10
+
+//Lorrand finds a Secure staff and gives it to Shana
+Camera(7,5,30)
+MoveAndWait(Lorrand,9,5)
+STAL 20
+MoveAndWait(Lorrand,8,7)
+STAL 10
+TEXTSTART
+TEXTSHOW Ch3Part2TransitionSecureStaff
+TEXTEND
+REMA
+STAL 30
+
+/*
+SVAL s1 Shana
+SVAL s2 Secure|0x0200
+ASMC EventSilentGiveItem|1
+*/
+
+StartSkipCheckpoint
+SVAL s3 Secure
+GIVEITEMTO Shana
+SVAL s1 Shana
+SVAL s2 Secure|0x0200
+ASMC EventEditUses|1
+
+ASMC Ch3AsmcResetCursor|1
+ENUF Ch3AllowReinforcementsEventID
+ENUF Ch3Warning0EventID
+
+//LABEL 0x2
+NoFade
+ENDA
+
+GuardsWereAttackedInPart1:
+Camera(Augustus,20)
+MUSS Raid
+TEXTSTART
+TEXTSHOW Ch3AugustusReaction
+TEXTEND
+REMA
+CAM1 0xFFFF
+SETVAL s1 0
+CHAI [14,7]
+CHAI [14,8]
+CHAI [14,9]
+ENUF Ch3Part1EndlessReinforcementsEventID
+ReinforcementWarningEventHeader(0x1)
+	MUSI
+	Camera(7,7,10)
+	Notice(14,7,30)
+	Notice(14,8,30)
+	Notice(14,9,30)
+	WyvernWarning
+	Camera(7,5,10)
+	Notice(0,3,30)
+	MageWarning
+	Camera(7,9,10)
+	Notice(14,13,30)
+	InfantryWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+FirstWallReaction:
+TEXTSTART
+TEXTSHOW Ch3WallReaction1
+TEXTEND
+REMA
+NoFade
+ENDA
+
+SecondWallReaction:
+TEXTSTART
+TEXTSHOW Ch3WallReaction2
+TEXTEND
+REMA
+NoFade
+ENDA
+
+TrackPrisonersDefeated:
+//ENUF Ch3TrackPrisonersDefeatedEventID //allow this event to happen again
+ENUF Ch3PrisonerDeathEventID //allow generic prisoners to turn this id on again
+COUNTER_INC Ch3PrisonerDefeatedCounter
+COUNTER_CHECK Ch3PrisonerDefeatedCounter
+SVAL s1 7
+IFEQ 0x1 sC s1
+
+	SETVAL s1 0
+	CHAI [14,7]
+	CHAI [14,8]
+	CHAI [14,9]
+	TEXTSTART
+	TEXTSHOW Ch3PrisonersDefeatedReaction
+	TEXTEND
+	REMA
+	
+	//TODO actually make the game react to player units cooperating/refusing with weapon submission
+	//ENUT Ch3SubmitWeaponsRequestEventID //knights will begin chasing player units, but won't attack
+
+LABEL 0x1
+NoFade
+ENDA
+
+
+//---------------------------------------
+//Ending Event
+//---------------------------------------
+
+EndingScene:
+//Instead of escaping twice, simply require the player to break the wall down in order to reach the second part of the chapter
+
+DoNotWinIfPlanning(0x1,0x2)
+ENUF GuideChapterAdvice
+
+#ifdef TESTING_EASY_CLEAR
+	//stuff
+#endif
+
+//CALL PostMapFunctions
+ASMC ProcessSupportGains
+
+COUNTER_SET Ch3ReinforcementCounter 0
+COUNTER_SET Ch3PrisonerDefeatedCounter 0
+
+SetBackground(Forest_2)
+MUSC Raid
+
+CHECK_ALIVE Colette
+IFNE 0x3 sC s0
+
+	TEXTSTART
+	TEXTSHOW Ch3Ending1ColetteAlive
+	TEXTEND
+
+GOTO 0x4
+LABEL 0x3
+
+	TEXTSTART
+	TEXTSHOW Ch3Ending1ColetteDead
+	TEXTEND
+
+LABEL 0x4
+
+FADI 10
+ENUT 0x84 //hide hp bars
+CLEA 0
+CLEE 0
+CLEN 0
+LOMA Ch3EndingMap
+Camera(7,5,10)
+LOAD1 0 Ch3EndingUnits
+ENUN
+Load(Ch3EndingBallista)
+ClearBackground
+REMA
+
+STAL 30
+MoveAndWait(Tricinian0,8,5)
+STAL 30
+MoveAndWait(Lorrand,1,5)
+TEXTSTART
+TEXTSHOW Ch3Ending2
+TEXTEND
+REMA
+
+Notice(Lorrand,30)
+STAL 20
+	StartBattle
+	CriticalHit(0,60)
+	EndAttack
+FIGHT_MAP Tricinian0 Lorrand Ballista 0
+ENUN
+SetBackground(Forest_2)
+TEXTSTART
+TEXTSHOW Ch3Ending3
+TEXTEND
+FADI 4
+STAL 40
+
+//Don't have Lorrand actually be dead
+SETVAL s1 0x5
+UNSET_CONDITION Lorrand
+
+ENUF 0x84
+NoFade
+
+#ifdef TESTING_CHAPTER_TRANSITION
+	MNC2 Ch_3
+#else
+	
+	CALL PartySwapShanaToZoren
+	MNC2 Ch_4
+	
+#endif
+
+LABEL 0x2 //use DoNotWinIfPlanning condID2
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

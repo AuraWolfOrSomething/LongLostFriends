@@ -1,0 +1,28 @@
+
+PUSH
+
+ORG 0x2AF0A
+SHORT 0
+jumpToHack(ImmediateFollowupAttack)
+
+ORG 0x2AF90
+jumpToHack(CheckIfDoubling)
+
+POP
+
+#include "Fortune/FortuneDamage.lyn.event"
+FortuneLink:
+BYTE Fortune
+ALIGN 4
+
+#include "Fortune/CheckIfThisUnitUsingFortune.lyn.event"
+ALIGN 4
+
+#include "BattleRoundModifier/ImmediateFollowupAttack.lyn.event"
+ALIGN 4
+
+#include "NullifyAvoidIfSleeping/NullifyAvoidIfSleeping.lyn.event"
+ALIGN 4
+
+#include "CheckIfDoubling/CheckIfDoubling.event"
+ALIGN 4

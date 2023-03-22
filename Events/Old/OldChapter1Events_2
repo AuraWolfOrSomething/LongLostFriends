@@ -1,0 +1,166 @@
+﻿//I could definitely get rid of these, but nah
+//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+EventPointerTable(0x0A,Pointers)
+
+Pointers:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+#include "Chapter1Units.event"
+#include "Chapter1EventIDs.event"
+#include "Chapter1QuoteTable.event"
+
+EscapePointPointerTable(Ch_1,Chapter1EscapePoints)
+
+Chapter1EscapePoints:
+EscapePoint(0,2,MoveLeft)
+EscapePoint(0,3,MoveLeft)
+EscapePointEnd
+
+TurnBasedEvents:
+TurnEventPlayer(0,BeforeBattleBegins,1)
+
+/*
+TurnEventPlayer(0,ThiefReinforcementWarning,1)
+TurnEventPlayer(0,ThiefReinforcementArrives,2)
+*/
+
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Door(7,4)
+Door(7,7)
+Door(7,13)
+Door(14,7)
+Chest(0,Aid,7,2)
+Chest(0,LearningRing,14,9)
+Seize(0,CheckIfChapterComplete,12,1)
+#ifdef TESTING_EASY_CLEAR
+	//Seize(12,15)
+	Seize(0,EndingScene,14,15)
+#endif
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+AFEV 0 CheckIfImpossibleToWin Ch1PotentialCaptiveGoneID
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+
+
+BeginningScene:
+Load(NewUnits)
+Load(BadUnits)
+LoadPrepUnits(Units)
+GotoPrepScreen
+ENDA
+
+BeforeBattleBegins:
+//Reset chapter bargain item IDs for next chapter
+ENUF ChapterBargain1EventID
+ENUF ChapterBargain2EventID
+ENUF ChapterBargain3EventID
+NoFade
+ENDA
+
+/*
+ThiefReinforcementWarning:
+MUSI 
+Camera(8,5,10)
+Notice(14,3,30)
+Notice(14,3,30)
+ThiefWarning
+MUNO
+NoFade
+ENDA
+
+ThiefReinforcementArrives:
+Camera(8,5,10)
+Load(ThiefReinforcement)
+NoFade
+ENDA
+*/
+
+/*
+Event is called when:
+- Informant is killed/captured
+- Informant escaped
+- Informant is dropped
+*/
+
+CheckIfImpossibleToWin:
+ENUF Ch1PotentialCaptiveGoneID
+ASMC GameOverCaptiveCheckASMC
+NoFade
+ENDA
+
+CheckIfChapterComplete:
+ASMC CheckIfEnoughCaptivesASMC
+IFNE 0x1 0xC 0
+//If player meets captive requirement, end chapter
+	CALL EndingScene
+	ENDB
+LABEL 0x1
+NoFade
+ENDA
+
+//Some Hayden Skip stuff; more in the Ending Scene
+PUSH
+ORG $2060ba
+BYTE 02 02
+
+ORG $9FF354 //$A3C860
+CHECK_EVENTID 0x88
+IFEQUAL 0x1 0xC 0x0
+CALL TestingNewHaydenSkip
+ENDB
+
+POP
+
+EndingScene:
+DoNotWinIfPlanning(0x1,0x2)
+
+CALL PostMapFunctions
+
+TestingNewHaydenSkip: //still in EndingScene
+WM_LOADLOCATION2 0x0 0x0 0x0 //Might as well load Border Mulan here (optional)
+WM_LOADLOCATION2 0x0 0x1 0x0 //Like CREATENEXTDESTINATION except silent and instant
+WM_SETDESTINATION 0x0 0x1 0x0
+_0xA640 0x0 0x0 0x01       //like MOVESPRITETO except silent and instant
+SKIPWN
+ENUT 3
+#ifdef TESTING_CHAPTER_TRANSITION
+	MNC2 Ch_1
+#else
+	MoveToChapter(Ch_2)
+#endif
+
+LABEL 0x2 //use DoNotWinIfPlanning condID2
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

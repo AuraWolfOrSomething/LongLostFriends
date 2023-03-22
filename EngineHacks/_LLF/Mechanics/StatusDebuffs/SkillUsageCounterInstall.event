@@ -1,0 +1,6 @@
+
+#include "asmSkillUsage/GetSkillUsageByte.lyn.event"
+ALIGN 4
+
+#include "asmSkillUsage/IncrementSkillUsage.lyn.event"
+ALIGN 4

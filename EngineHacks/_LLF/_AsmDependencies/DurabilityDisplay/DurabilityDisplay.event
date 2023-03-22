@@ -1,0 +1,37 @@
+
+#include "DurabilityDisplayInternal.event"
+
+//In vanilla, if an item has unlimited uses, dashes will appear instead of a number. Installing this will make nothing appear for such items. If you want to keep this vanilla functionality, simply uncomment the definition below.
+//#define DashesForIndestructibleItems
+
+DurabilityDisplayExceptionList:
+/*
+WORD Rapier
+POIN RapierStatScreenExample //how the item should display on stat screen (name, current uses, max uses, and icon)
+WORD 0 //when looking for the item's name, go to this routine (except on stat screen)
+WORD 0 //when looking for the item's current uses, go to this routine (except on stat screen)
+*/
+
+WORD LearningRing
+POIN LearningRingStatScreenDisplay
+POIN LearningRingNameDisplay
+POIN LearningRingDurabilityDisplay
+
+WORD 0 //end of the list
+
+/*
+Known exception(s) that override displaying stat instead of item name:
+  - Buying from shop (0xB519F, which is handled in during DisplayItemNameAndCurrentUses)
+*/
+
+ExceptionWhenBuying:
+POIN 0xB519F
+
+#include "asmModules/LearningRingDisplay.lyn.event"
+ALIGN 4
+
+/*
+#include "asmModules/RapierStatScreenExample.lyn.event"
+ALIGN 4
+*/
+

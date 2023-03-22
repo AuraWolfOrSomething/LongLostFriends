@@ -1,0 +1,12 @@
+McVicarSupportList:
+SupportList(McVicar,McVicarSupportList)
+
+SupportPartner(Percy,0,20)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(1)

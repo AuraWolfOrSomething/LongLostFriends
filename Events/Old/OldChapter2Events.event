@@ -1,0 +1,206 @@
+﻿//I could definitely get rid of these, but nah
+//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+EventPointerTable(0x0D,Pointers)
+
+Pointers:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+#include "Chapter2Units.event"
+#include "Chapter2EEUS.event"
+#include "Chapter2EventIDs.event"
+
+EscapePointPointerTable(Ch_2,Chapter2EscapePoints)
+
+Chapter2EscapePoints:
+EscapePoint(2,0,MoveUp)
+EscapePoint(3,0,MoveUp)
+EscapePoint(4,0,MoveUp)
+EscapePoint(5,0,MoveUp)
+EscapePoint(6,0,MoveUp)
+EscapePoint(7,0,MoveUp)
+EscapePoint(8,0,MoveUp)
+EscapePoint(9,0,MoveUp)
+EscapePoint(10,0,MoveUp)
+EscapePoint(11,0,MoveUp)
+EscapePoint(12,0,MoveUp)
+EscapePoint(13,0,MoveUp)
+EscapePointEnd
+
+TurnBasedEvents:
+TurnEventPlayer(0,BeforeBattleBegins,1)
+
+TurnEventPlayer(0,RylanArrives,3)
+
+TurnEventPlayer(0,MasonWarning,4)
+TurnEventPlayer(0,MasonArrives,5)
+
+TurnEventPlayer(0,FenrisWarning,7)
+TurnEventPlayer(0,FenrisArrives,8)
+
+TurnEventPlayer(0,EndingScene,9)
+
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEvent(MasonSavedEventID,EmberMasonTalk,Ember,Mason)
+END_MAIN
+
+LocationBasedEvents:
+Vendor(TopVendor,9,7)
+Vendor(BottomVendor,2,16)
+Armory(BottomArmory,10,16)
+Village(Ch2WestVillageEventID,WestVillage,1,11)
+Village(Ch2EastVillageEventID,EastVillage,13,15)
+House(0,Ch2House,4,4)
+#ifdef TESTING_EASY_CLEAR
+	Seize(4,4)
+#endif
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+
+
+BeginningScene:
+Load(NewUnits)
+Load(BadUnits,BadUnitsEEUS)
+Load(NPCUnits,NPCUnitsEEUS)
+LoadPrepUnits(Units)
+GotoPrepScreen
+ENDA
+
+BeforeBattleBegins:
+//Reset chapter bargain item IDs for next chapter
+ENUF ChapterBargain1EventID
+ENUF ChapterBargain2EventID
+NoFade
+ENDA
+
+RylanArrives:
+//Check if Rylan's alive
+CHECK_EVENTID RylanDeathEventID
+IFEQ 0x1 0xC 0x0
+	//If so, he joins
+	Camera(7,5,30)
+	Load(RylanUnit)
+LABEL 0x1
+NoFade
+ENDA
+
+MasonWarning:
+MUSI
+Camera(7,15,30)
+Notice(3,17,30)
+HorseWarning
+MUNO
+NoFade
+ENDA
+
+MasonArrives:
+Camera(7,15,30)
+Load(MasonUnit)
+NoFade
+ENDA
+
+FenrisWarning:
+MUSI
+Camera(7,15,30)
+Notice(1,14,30)
+MageWarning
+Notice(1,12,30)
+Notice(0,13,30)
+Notice(0,15,30)
+Notice(1,16,30)
+HorseWarning
+MUNO
+NoFade
+ENDA
+
+FenrisArrives:
+Camera(7,15,30)
+Load(FenrisGroup)
+NoFade
+ENDA
+
+EmberMasonTalk:
+DISA Mason
+ENUN
+NoFade
+ENDA
+
+TopVendor:
+SHLI Heal Aid Mend Vulnerary Concoction PureWater
+ALIGN 4
+
+BottomVendor:
+SHLI Elixir Fire Thunder Wind Elfire Elthunder Bolganone Lightning Shine Divine Redeem Flux Ensnare Luna
+ALIGN 4
+
+BottomArmory:
+SHLI IronSword CopperSword IronBlade Zanbato Armorslayer IronLance CopperLance Javelin Horseslayer HeavySpear IronAxe CopperAxe HandAxe Halberd Hammer IronBow CopperBow BronzeLongbow IronLongbow QuickBow
+ALIGN 4
+
+WestVillage:
+VillageReward(DevilAxe)
+NoFade
+ENDA
+
+EastVillage:
+VillageReward(Physic)
+NoFade
+ENDA
+
+Ch2House:
+/*
+Escort: When this unit rescues an ally,[N]
+they can move again. Immediately after,[N]
+Give and Drop can be used.[X]
+
+MUSI
+SetBackground(HouseBG)
+TEXTSTART
+TEXTSHOW ProMiddleHouseText
+TEXTEND
+ClearBackground
+REMA
+MUNO
+*/
+NoFade
+ENDA
+
+EndingScene:
+CALL PostMapFunctions
+
+#ifdef TESTING_CHAPTER_TRANSITION
+	MNC2 Ch_2
+#else
+	MoveToChapter(Ch_3)
+#endif
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

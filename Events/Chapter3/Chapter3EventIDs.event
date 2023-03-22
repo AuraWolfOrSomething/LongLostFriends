@@ -1,0 +1,36 @@
+#ifndef Ch3WallDestroyedEventID
+  #define Ch3WallDestroyedEventID 0x0A
+#endif
+
+#ifndef Ch3GuardsAttackedEventID
+  #define Ch3GuardsAttackedEventID 0x16
+#endif
+
+#ifndef Ch3WallReached35HPEventID
+	#define Ch3WallReached35HPEventID 0x1D
+#endif
+
+#ifndef Ch3SubmitWeaponsRequestEventID
+	#define Ch3SubmitWeaponsRequestEventID 0x20
+#endif
+
+#define Ch3InPart2EventID 0x0B
+#define Ch3AllowReinforcementsEventID 0x0C
+#define Ch3Warning0EventID 0x0D
+#define Ch3Reinforcements0EventID 0x0E
+#define Ch3Warning1EventID 0x0F
+#define Ch3Reinforcements1EventID 0x10
+#define Ch3Warning2EventID 0x11
+#define Ch3Reinforcements2EventID 0x12
+#define Ch3Warning3EventID 0x13
+#define Ch3Reinforcements3EventID 0x14
+#define Ch3EndlessReinforcementWarningEventID 0x15
+#define Ch3GuardsAttackedReactionEventID 0x17
+#define Ch3Part1EndlessReinforcementsEventID 0x18
+#define Ch3Part1PercyDeathEventID 0x19
+#define Ch3WallAttackedEventID 0x1A
+#define Ch3WallReaction1EventID 0x1B
+#define Ch3WallReaction2EventID 0x1C
+#define Ch3PrisonerDeathEventID 0x1E
+#define Ch3TrackPrisonersDefeatedEventID 0x1F
+#define AugustusVivianQuoteEventID 0x20

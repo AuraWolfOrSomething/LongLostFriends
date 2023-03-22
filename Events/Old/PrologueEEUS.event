@@ -1,0 +1,24 @@
+UndefineStatBonusLabels
+
+#define MercStats "EditStats(-1,0,-2,-1,-2,0,0,0)"
+#define Merc2Stats "EditStats(0,1,-2,-1,-1,0,1,0)"
+#define ArchStats "EditStats(-2,0,0,-2,-2,0,0,0)"
+#define FiteStats "EditStats(2,1,0,0,1,1,2,0)"
+
+BadUnitsEEUS:
+WORD 0
+POIN BadUnitsEEUSEditStats
+WORD 0
+
+BadUnitsEEUSEditStats:
+//River
+NormStats; Merc2Stats; FiteStats
+
+//Mountain
+NormStats; NormStats; NormStats
+
+//Cliff
+MercStats; ArchStats
+
+//Houses
+NormStats; NormStats; NormStats

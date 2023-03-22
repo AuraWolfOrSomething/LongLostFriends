@@ -1,0 +1,34 @@
+
+## InfantryWarningText
+Footsteps[X]
+
+## MageWarningText
+Spell casting[X]
+
+## ArmorWarningText
+Armor clunking[X]
+
+## HorseWarningText
+Horse trots[X]
+
+## PegasusWarningText
+Light wing flaps[X]
+
+## WyvernWarningText
+Heavy wing flaps[X]
+
+## BanditWarningText
+Bandit scream[X]
+
+## ThiefWarningText
+Footsteps, lock opens[X]
+
+## MM_ReinWarn
+ RW Toggle[X]
+
+## PS_ReinWarn
+RW Toggle[X]
+
+## ReinWarnDesc
+Toggle playing events that warn[N]
+of incoming reinforcements.[X]

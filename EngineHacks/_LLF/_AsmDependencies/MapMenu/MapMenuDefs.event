@@ -1,0 +1,45 @@
+
+#define MapMenuCommand(name,description,colour,usability,effect) "WORD $80d7d94; SHORT name description; BYTE colour $4e; SHORT 0; POIN usability|1; WORD 0; POIN effect|1; WORD 0 0 0"
+#define MapMenuCommand(name,description,colour,usability,colourConditional,effect) "WORD $80d7d94; SHORT name description; BYTE colour $4e; SHORT 0; POIN usability|1; POIN colourConditional; POIN effect|1; WORD 0 0 0"
+
+#ifndef NormalText
+	#define NormalText 0x0
+#endif
+
+#ifndef GrayText
+	#define GrayText 0x1
+#endif
+
+#ifndef BlueText
+	#define BlueText 0x2
+#endif
+
+#ifndef OrangeText
+	#define OrangeText 0x3
+#endif
+
+#ifndef GreenText
+	#define GreenText 0x4
+#endif
+
+#ifndef BlackText
+	#define BlackText 0x5
+#endif
+
+#define MM_Unit "POIN 0xD7EDC; SHORT 0x069A 0x06DF; BYTE 0 0x6E; SHORT 0; POIN 0x4F448|1; WORD 0; POIN 0x2260C|1; WORD 0 0 0"
+#define MM_Status "POIN 0xD7ED4; SHORT 0x0690 0x06E0; BYTE 0 0x6F; SHORT 0; POIN 0x4F448|1; WORD 0; POIN 0x22650|1; WORD 0 0 0"
+
+//#define MM_Guide "POIN 0xD7ECC; SHORT 0x069C 0x06E5; BYTE 0x04 0x74; SHORT 0; POIN 0x22660|1; POIN 0x22678|1; POIN 0x226E4|1; WORD 0 0 0"
+//Sets command to always be usable
+#define MM_Guide "POIN 0xD7ECC; SHORT 0x069C 0x06E5; BYTE 0x04 0x74; SHORT 0; POIN 0x4F448|1; POIN 0x22678|1; POIN 0x226E4|1; WORD 0 0 0"
+
+#define MM_Records "POIN 0xD7EC4; SHORT 0x069E 0x06E3; BYTE 0 0x70; SHORT 0; POIN 0x24C40|1; WORD 0; POIN 0x24CBC|1; WORD 0 0 0"
+//Sets command to always be usuable
+//#define MM_Records "POIN 0xD7EC4; SHORT 0x069E 0x06E3; BYTE 0 0x70; SHORT 0; POIN 0x4F448|1; WORD 0; POIN 0x24CBC|1; WORD 0 0 0" 
+
+#define MM_Options "POIN 0xD7EBC; SHORT 0x069B 0x06E1; BYTE 0 0x71; SHORT 0; POIN 0x4F448|1; WORD 0; POIN 0x22628|1; WORD 0 0 0"
+#define MM_Retreat "POIN 0xD7EB4; SHORT 0x069D 0x06E2; BYTE 0 0x72; SHORT 0; POIN 0x24CCC|1; WORD 0; POIN 0x24CE0|1; WORD 0 0 0"
+#define MM_Suspend "POIN 0xD7EAC; SHORT 0x069F 0x06E4; BYTE 0 0x73; SHORT 0; POIN 0x225B0|1; WORD 0; POIN 0x225D0|1; WORD 0 0 0"
+#define MM_End "POIN 0xD7EA4; SHORT 0x06A0 0x06E6; BYTE 0 0x78; SHORT 0; POIN 0x4F448|1; WORD 0; POIN 0x225F8|1; WORD 0 0 0"
+
+#define MM_Separator  "WORD 0 0 0 0 0 0 0 0 0"

@@ -1,0 +1,43 @@
+## MM_Plan
+ Plan[X]
+
+## MM_PlanDesc
+Can move ALL units, but no[NL]
+permanent progress can be made.[X]
+
+## MM_Act
+ Act[X]
+
+## MM_ActDesc
+Turns planning off.[NL]
+Resets unit positions.[X]
+
+## MM_Future
+ Future[X]
+ 
+## MM_FutureDesc
+Advance to the next turn with[N]
+dialogue and/or units loading.[X]
+
+## WinWhilePlanningText
+A win condition has been met.[N]
+However, the chapter cannot be[N]
+cleared during planning.[A][X]
+
+## LoseWhilePlanningText
+A gameover condition has been met.[N]
+However, the chapter cannot be[N]
+lost during planning.[A][X]
+
+## FutureNoMoreTurnEventsText
+There are no more turn events.[A][X]
+
+## FutureCurrentlyNoMoreTurnEventsText
+Progress must be made before any[N]
+more turn events can occur.[A][X]
+
+## FutureNewTurnText
+Turn  [X]
+
+## EndlessTurnEventText
+This turn event doesn't stop.[A][X]

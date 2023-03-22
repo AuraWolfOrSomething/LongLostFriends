@@ -1,0 +1,13 @@
+
+#define BottomHouseEventID 0x0A
+#define TopHouseEventID 0x0B
+#define ChestEventID 0x0C
+#define CalderDeathEventID 0x0D
+#define ArtusDeathEventID 0x0E
+#define RylanLastStandQuoteEventID 0x0F
+#define McVicarLeavesEventID 0x10
+#define CalderZorenQuoteEventID 0x11
+#define CalderIrisQuoteEventID 0x12
+#define ArtusQuoteEventID 0x13
+#define ArtusZorenQuoteEventID 0x14
+#define ArtusMcVicarQuoteEventID 0x15

@@ -1,0 +1,140 @@
+Long-Lost Friends uses the SkillSystem as a base. The following credits are found with its download, in the file Readme.txt:
+
+"Circleseverywhere
+Colorz for debuffs, freeze, and dragon veins 
+Monkeybard & Black Mage for most of the skill icons; Blaze for Stances skill icons; vlak for Drive skill icons; Pikmin1211 for miscellaneous icons; Zaim for Indoor March icon
+Tequila, Rossendale, StanH, Leonarth, 2WB, Teraspark, Darrman, SD9k, Kao, blademaster, Snakey1, Zeta, Kirb, Sme, Ganzap for skills, 7743 for various bugfixes
+Primefusion for the test map
+Str/Mag Split based off of Kirb's FE8 version which is based off of Tequila's FE7 version. RobertFPY, Pikmin1211, and Snakey1 for finalization"
+
+Creator
+  Aura Wolf
+
+Engine Hacks (organized by hack name rather than by contributor)
+  
+  12 Tracks/16 Sounds Fix: Agro, Brendor
+  Always access main menu support conversations: 7743
+  Animation Hacks: Hextator
+  Anti-Huffman Patch: Hextator, Nintenlord, Snek
+  AoE: Vesly
+  Arms Scroll: Snek
+  Autocursor fix: Vennobennu
+  Autoleveling for weapons with lock & rank: Datagne
+  Battle stats with anims off: Tequila
+  CAM1/2 fix: nat
+  Cannot Crit: Sme
+  CHAI fix: Tequila
+  Chapter Names as Text: circleseverywhere
+  Debuffs: circleseverywhere, Colorz, Kirb
+  DebugPlaceUnits: Vesly
+  Decompression in no$gba fix: Tequila
+  Disable generic portrait on item select: hypergammaspaces
+  DisplayWRankOnLevelUp: nat, Tequila
+  Double Vulnerary Animation speed: 7743
+  Emotion Bubble: 7743, Kenpuku
+  EscapeArrive: Sme
+  EventRescue: circleseverywhere
+  EventMenuCommand: nat
+  EventSendToConvoy: circleseverywhere
+  ExpandedModularSave: Colorz, nat
+  ExtendWeaponDescBox: Vesly
+  Fatigue: Sme
+  FillAIRangeMapFix: hypergammaspaces
+  Fixed Autolevels: nat
+  Fixed Difficulty: nat
+  Get Adajcent Unit: Kirb
+  Hold A to speed up movement: Gryz
+  Item Range Fix: Lord Reyson, Teraspark, Tequila
+  Lead AI fix: nat
+  Melee and Magic fix: 7743, Hextator, Tequila
+  Mode Coefficient EXP fix: Vennobennu
+  Modular Minimug Box: Zane
+  Monster Weapon stat display: Brendor, circleseverywhere
+  MultiTileMarker: 7743
+  Per chapter quotes: nat
+  Portrait height fix: 2WB
+  PopupRework: nat
+  Proc name fix: nat
+  Prologue supply: circleseverywhere
+  Randomize RNs: TR143
+  ReaverSplit: Colorz, Sme
+  Reorganize: Pikmin1211
+  Semitransparent menus: circleseverywhere
+  Set Condition: Tequila
+  Show Heal Ammount: Tequila
+  Speed up during AI targeting/item popup/map anim rounds: Vesly
+  StatGetters: nat
+  Steal with Full Inventory: Vesly
+  Thracia Item Trading: aera
+  Uncounterable flag for long-range animations: Sme
+  Unit Stat Offsets: vennobennu
+  Untradeable Items: circleseverywhere, Vesly
+  Walking Sounds fix: Tequila
+  Weak prmoted enemies fix: Gryz
+  Weapon Rank Bonuses: Colorz, Vennobennu
+  Weapon Rank Gain fix: nat
+
+Portraits
+  Alusq: Grace, Laric
+  
+  Aura Wolf: Bruce, Colette, Curcio, Franklin, Gert, Iris, Jacob, Lorrand, Luther, Mason, McVicar, Nordica, Orville, Rivia (base by LaurentLacroic and Levin), Rylan, Shana (base by WAve), Talon, Thorbek, Zoren
+  
+  CapibaraInSpace: Stanrel
+  
+  LaurentLacroix: Arlett, Artus, Augustus, Marcey, Kamron, Rivia
+  
+  Levin64: Davis, Rivia
+  
+  SSHX: Myra
+  
+  Sterling_Glovner: Calder
+  
+  WAve: Shana
+
+Weapon Icons
+  Beansy: Emerald Axe, Ruby Sword, Rustbow, Sapphire Lance
+  
+  EldritchA: Heavy Hovering Boots
+  Indogutsu Tenbuki: Heavy Hovering Boots
+  
+  Lord Glenn: [Anima- Bolganone, Donbettyr, Elthunder, Gale, Wind], [Dark- Afflict, Devour, Distort, Enigma, Ensnare, Shade, Truth, Worm], [Lances- Defender], [Light- Fortune, Insight, Lucent Luster, Ray],  [Staves- Block, Corrosion, Fortify, Physic, Warp, Guardian, Distract]
+  
+  SMITHYGCN: Focus Belt
+
+Map Sprites
+  Alusq: Deserter
+  Aura Wolf: Lord
+  flasuban: Wyvern Rider
+  MeatOfJustice: Hunter
+  
+Class Cards
+  flasuban: Wyvern Rider
+  Rasdel: Deserter
+
+Animations
+  Alfred Kamon: Wyvern Rider
+  Alusq: Deserter
+  Asael: Lord
+  Leo_link: Hunter
+  Marlon0024: Lord
+  MeatOfJustice: Hunter
+  Mikey Seregon: WyvernRider
+  Primefusion: Axe!Cavalier
+  Spud: Hunter
+  TheBlindArcher: Sword!Knight
+
+Other Graphics
+  Alusq: Battle Stat w/ Anims off, HP Bars & Warnings
+  Black Mage: Skill Icons
+  Blaze: Balanced Study Skill Icon
+  Kirb: Stat Screen
+  Monkeybard: Skill Icons
+  Pikmin1211: Skill Icons
+  Zaim: Advance Skill Icon
+
+Music
+  Alusq: Final Fantasy Tactics - Anxiety, Ogre Battle - Thunder, Tearing Ring Saga - Knights of Lazeria
+  
+  Pikmin1211: Orange Juice - Kai's Theme, Riviera - Battle Against Demons
+  
+  Scraiza: Fire Emblem 5 - Adversity

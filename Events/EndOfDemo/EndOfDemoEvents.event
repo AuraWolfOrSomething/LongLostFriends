@@ -1,0 +1,79 @@
+﻿//I could definitely get rid of these, but nah
+//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+EventPointerTable(0x21,Pointers)
+
+Pointers:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+#include "EndOfDemoUnits.event"
+//#include "EndOfDemoEventIDs.event"
+
+TurnBasedEvents:
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+BeginningScene:
+SetBackground(Black)
+TUTORIALTEXTBOXSTART
+SETVAL 0xB 0xFFFFFFFF
+TEXTSHOW EndOfCurrentDemo
+TEXTEND
+REMA
+STAL 20
+Load(BadUnits)
+LoadPrepUnits(Units)
+GotoPrepScreen
+ENDA
+
+EndingScene:
+ENUF GuideChapterAdvice
+DoNotWinIfPlanning(0x1,0x2)
+
+#ifdef TESTING_EASY_CLEAR
+	//stuff
+#endif
+
+//CALL PostMapFunctions
+
+#ifdef TESTING_CHAPTER_TRANSITION
+	//MNC2 Ch_5
+#else
+	//MoveToChapter(Ch_5)
+#endif
+
+LABEL 0x2 //use DoNotWinIfPlanning condID2
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

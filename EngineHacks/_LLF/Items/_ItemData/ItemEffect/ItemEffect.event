@@ -1,0 +1,8 @@
+
+#include "ItemEffectDefinitions.event"
+
+#include "ItemUsabilityTable.event"
+
+#include "ItemTargetTable.event"
+
+#include "ItemEffectTable.event"

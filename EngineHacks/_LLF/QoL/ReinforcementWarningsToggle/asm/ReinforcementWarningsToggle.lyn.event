@@ -1,0 +1,12 @@
+ALIGN 4
+PUSH
+ORG CURRENTOFFSET+$1;ReinforcementWarningsToggle:
+POP
+SHORT $B510 $4C07 $4807 $4686
+BYTE $0 $F8
+SHORT $2801 $D001 $4906 $E000 $4906 $7820 $468E
+BYTE $0 $F8
+SHORT $BC10 $BC01 $4700
+POIN ReinforcementWarningsToggleEventIDLink
+POIN ReinforcementWarningsStatus
+BYTE $80 $3D $8 $8 $94 $3D $8 $8

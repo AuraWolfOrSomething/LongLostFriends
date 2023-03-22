@@ -1,0 +1,13 @@
+KamronSupportList:
+SupportList(Kamron,KamronSupportList)
+
+SupportPartner(Iris,0,30)
+//SupportPartner(Marcey,0,15)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(1)

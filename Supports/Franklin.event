@@ -1,0 +1,12 @@
+FranklinSupportList:
+SupportList(Franklin,FranklinSupportList)
+
+SupportPartner(Laric,0,25)
+SupportPartner(Armond,0,20)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(2)

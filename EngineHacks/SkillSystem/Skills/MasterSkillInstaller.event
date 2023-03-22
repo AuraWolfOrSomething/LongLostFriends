@@ -1,0 +1,37 @@
+
+//There is no place better to put these
+
+PUSH
+
+//LethalitySkill
+ORG $2ACF8  //ignore the vanilla lethality routine
+SHORT 0x4770
+
+//Remove critup ability (for critup skill)
+ORG $2AC4A
+SHORT 0x46C0
+
+POP
+
+//#include "AISkills/AISkills.event"
+#include "AuraSkills/AuraSkills.event" //Inspiration and Charm
+//#include "DebuffSkills/DebuffSkills.event"
+#include "EffectivenessSkills/EffectivenessSkills.event"
+//#include "EXPSkills/EXPSkills.event"
+//#include "HPRestorationSkills/HPRestorationSkills.event"
+//#include "MovementSkills/MovementSkills.event"
+//#include "MugLoadingSkills/MugLoadingSkills.event"
+#include "UnitMenuSkills/UnitMenuSkills.event" //Dance, Summon, Attack, Lunge, Cunning, and Shove and its counterparts
+#include "PostActionSkills/PostActionSkills.event" //Lunge
+#include "PostBattleSkills/PostBattleSkills.event" //Canto
+#include "PreBattleSkills/PreBattleSkills.event" //CritUp
+#include "ProcSkills/ProcSkills.event" //Barricade
+#include "RallySkills/RallySkills.event"
+#include "RangeSkills/RangeSkills.event" //for compatibility with ItemRangeFix
+//#include "RoundsSkills/RoundsSkills.event"
+#include "StandaloneSkills/StandaloneSkills.event" //Locktouch and Lunge
+//#include "StatModifierSkills/StatModifierSkills.event"
+//#include "WeaponUsabilitySkills/WeaponUsabilitySkills.event"
+//#include "WTASkills/WTASkills.event"
+
+//#include "charge_table.event"

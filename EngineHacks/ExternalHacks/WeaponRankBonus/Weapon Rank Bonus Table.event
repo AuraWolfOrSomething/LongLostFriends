@@ -1,0 +1,81 @@
+#define defWeaponRankBonus(mt, hit) "BYTE mt hit"
+
+//Weapon type 0x0 (swords)
+//S rank bonus
+defWeaponRankBonus(3,15)
+//A rank bonus
+defWeaponRankBonus(0,0)
+//B rank bonus
+defWeaponRankBonus(0,0)
+//C rank bonus
+defWeaponRankBonus(0,0)
+
+//Weapon type 0x1 (lances)
+//S rank bonus
+defWeaponRankBonus(3,15)
+//A rank bonus
+defWeaponRankBonus(0,0)
+//B rank bonus
+defWeaponRankBonus(0,0)
+//C rank bonus
+defWeaponRankBonus(0,0)
+
+//Weapon type 0x2 (axes)
+//S rank bonus
+defWeaponRankBonus(3,15)
+//A rank bonus
+defWeaponRankBonus(0,0)
+//B rank bonus
+defWeaponRankBonus(0,0)
+//C rank bonus
+defWeaponRankBonus(0,0)
+
+//Weapon type 0x3 (bows)
+//S rank bonus
+defWeaponRankBonus(3,15)
+//A rank bonus
+defWeaponRankBonus(0,0)
+//B rank bonus
+defWeaponRankBonus(0,0)
+//C rank bonus
+defWeaponRankBonus(0,0)
+
+//Weapon type 0x4 (staves)
+//S rank bonus
+defWeaponRankBonus(0,0)
+//A rank bonus
+defWeaponRankBonus(0,0)
+//B rank bonus
+defWeaponRankBonus(0,0)
+//C rank bonus
+defWeaponRankBonus(0,0)
+
+//Weapon type 0x5 (anima)
+//S rank bonus
+defWeaponRankBonus(3,15)
+//A rank bonus
+defWeaponRankBonus(0,0)
+//B rank bonus
+defWeaponRankBonus(0,0)
+//C rank bonus
+defWeaponRankBonus(0,0)
+
+//Weapon type 0x6 (light)
+//S rank bonus
+defWeaponRankBonus(3,15)
+//A rank bonus
+defWeaponRankBonus(0,0)
+//B rank bonus
+defWeaponRankBonus(0,0)
+//C rank bonus
+defWeaponRankBonus(0,0)
+
+//Weapon type 0x7 (dark)
+//S rank bonus
+defWeaponRankBonus(3,15)
+//A rank bonus
+defWeaponRankBonus(0,0)
+//B rank bonus
+defWeaponRankBonus(0,0)
+//C rank bonus
+defWeaponRankBonus(0,0)

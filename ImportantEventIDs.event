@@ -1,0 +1,58 @@
+
+#define GenericBossQuoteEventID 1
+#define DefeatBossEventID 2
+
+#define SetSeizeAsArriveID 0x21
+#define SetSeizeAsEscapeID 0x22
+#define PlayerUnitEscapingID 0x23
+
+#define EveryOtherBargain1EventID 0x66
+#define ArcBargain1EventID 0x66
+#define EveryOtherBargain2EventID 0x67
+#define ArcBargain2EventID 0x67
+#define ChapterBargain1EventID 0x68
+#define ChapterBargain2EventID 0x69
+#define ChapterBargain3EventID 0x6A
+
+#define AiToggleEventID 0xB4
+#define ReinforcementWarningsToggleEventID 0xB5
+#define PlanEventID 0xB6
+#define WinWhilePlanningEventID 0x24
+#define LoseWhilePlanningEventID 0x25
+
+//Guide IDs for if player has read entry
+#define GuideChapterAdvice 0xF0
+#define GuideCredits_First 0xF1
+#define GuideUI_First GuideCredits_First+1
+#define GuideStats_First GuideUI_First+5
+#define GuideCombat_First GuideStats_First+8
+#define GuideGold_First GuideCombat_First+7
+#define GuideOther_First GuideGold_First+3
+
+//Multiple Arcs
+#define Ch1ArlettDavisDiedCutscene 0x6B
+#define McVicarFirstImpressionEventID 0x6B
+#define McVicarSecondImpressionEventID 0x6C
+#define McVicarThirdImpressionEventID 0x6D
+#define McVicarRecruitedEventID 0x6E
+#define IrisDeathEventID 0x6F
+#define ArlettDeathEventID 0x70
+#define RylanDeathEventID 0x71
+
+//Multiple Arcs - Reusable at some point
+#define MasonSavedEventID 0x72
+
+//Arc 1
+
+//Temporary event IDs used outside of their chapter's events
+
+//Chapter 1
+	#define ArlettFreedEventID 0x0A
+	//#define Ch1PotentialCaptiveGoneID 0x0A
+
+//Chapter 3
+	#define Ch3WallDestroyedEventID 0x0A
+	#define Ch3GuardsAttackedEventID 0x16
+	#define Ch3WallReached35HPEventID 0x1D
+	#define Ch3SubmitWeaponsRequestEventID 0x20
+

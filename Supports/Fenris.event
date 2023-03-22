@@ -1,0 +1,12 @@
+FenrisSupportList:
+SupportList(Fenris,FenrisSupportList)
+
+SupportPartner(Luther,80,40)
+SupportPartner(Cain,80,40)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(2)

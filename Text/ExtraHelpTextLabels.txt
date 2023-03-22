@@ -1,0 +1,59 @@
+## SupportTotal
+Nxt[X]
+
+## SupportPointsPerTurnOrChapter
+Chp[X]
+
+## SupportAvoid
+Avd[X]
+
+## SupportDodge
+Ddg[X]
+
+## UnitCapLabel
+Cap[X]
+
+## ClassCapLabel
+Class Cap[X]
+
+## ClassCapModLabel
+Mod[X]
+
+## UniversalCapLabel
+Universal Cap[X]
+
+## RankCurrentLabel
+WEXP[X]
+
+## RankNextLabel
+Rank Up[X]
+
+## CalcLabel
+Calc[X]
+
+## AgeLabel
+Age[X]
+
+## PronounLabel
+Pronouns[X]
+
+## PromotionLabel
+Promotion[X]
+
+## StaffExpLabel
+EXP[X]
+
+## StaffWexpLabel
+WEXP[X]
+
+## ConditionNameLabel
+Name[X]
+
+## ConditionDurationLabel
+Duration[X]
+
+## SkillActiveLabel
+Active[X]
+
+## SkillUsesLabel
+Uses Left[X]

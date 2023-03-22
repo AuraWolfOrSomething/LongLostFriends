@@ -1,0 +1,30 @@
+
+PUSH
+
+//cannot take boots from convoy if unit is currently rescuing someone
+
+ORG 0x9E322
+SHORT 0x6AFA //ldr r2, [r7,#0x2C]
+BL(CannotRetrieveHhbWhileRescuing)
+SHORT 0x2800 //cmp r0,#0
+SHORT 0xD0DB //beq 0x9E2E4
+
+ORG continueInBlRange
+#include "asm/CannotRetrieveHhbWhileRescuing.lyn.event"
+ALIGN 4
+
+#undef continueInBlRange
+#define continueInBlRange currentOffset
+
+POP
+
+#include "asm/HeavyHoveringBootsCheck.lyn.event"
+HeavyHoveringBootsIDLink:
+BYTE HeavyHoveringBoots
+ALIGN 4
+
+#include "asm/HeavyHoveringBootsOnEitherUnit.lyn.event"
+ALIGN 4
+
+#include "asm/DoesUnitNeedHhbForCurrentTerrain.lyn.event"
+ALIGN 4

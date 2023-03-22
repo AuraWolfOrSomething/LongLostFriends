@@ -1,0 +1,48 @@
+/*
+Label
+POIN ItemUses or WORD 0 if no modifiers
+POIN UnitStats or WORD 0 if no modifiers
+POIN CurrentHPStatus WORD 0 if no modifiers
+*/
+
+UndefineStatBonusLabels
+
+#define Ch1Monk0SStats "EditStats(-11,-4,1,1,-2,-2,2,0)"
+#define Ch1Monk1SStats "EditStats(-12,-5,0,0,-2,-2,2,0)"
+#define Ch1MageStats "EditStats(-1,-1,0,0,-2,-2,0,0)"
+#define Ch1Mage2Stats "EditStats(-1,1,0,0,-2,-2,0,0)"
+#define Ch1KnitStats "EditStats(-2,0,0,-1,-1,0,0,0)"
+#define Ch1Knit2Stats "EditStats(-1,0,2,-1,-1,3,0,0)"
+
+BadUnitsEEUS:
+WORD 0 //POIN BadUnits2EEUSItemUses
+POIN BadUnitsEEUSEditStats
+WORD 0
+
+BadUnitsEEUSEditStats:
+//North Entrance
+NormStats; Ch1Monk0SStats; Ch1Monk1SStats; NormStats; Ch1MageStats
+
+//Boat - Upper
+NormStats; NormStats
+
+//Boat - Lower
+Ch1MageStats; Ch1Knit2Stats; Ch1Knit2Stats
+
+//Left house
+Ch1Knit2Stats; Ch1Knit2Stats; Ch1Mage2Stats
+
+//Right house
+NormStats; Ch1KnitStats; Ch1KnitStats; NormStats
+
+//Wave 1
+NormStats; Ch1MageStats; NormStats
+NormStats; NormStats; Ch1MageStats; NormStats; NormStats
+
+MageReinforcementEEUS:
+WORD 0 //POIN BadUnits2EEUSItemUses
+POIN MageReinforcementEEUSEditStats
+WORD 0
+
+MageReinforcementEEUSEditStats:
+NormStats; Ch1MageStats

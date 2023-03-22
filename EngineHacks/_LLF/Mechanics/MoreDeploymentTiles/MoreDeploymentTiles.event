@@ -1,0 +1,21 @@
+
+PUSH
+
+ORG 0x95AFA
+SHORT 0x4B0A 0x469E //ldr r3 (GetChapterAllyUnitCount_2); mov lr, r3
+SHORT 0xF800 0x1C21 //bl lr+0; mov r1, r4
+SHORT 0x312A 0x7008 //add r1, #0x2A; strb r0, [r1]
+SHORT 0x1C20 0x3030 //mov r0, r4; add r0, #0x30
+SHORT 0x2100 0x6001 //mov r1, #0; str r1, [r0]
+SHORT 0x3004 0x7001 //add r0, #4; strb r1, [r0]
+SHORT 0x3002 0x7001 //add r0, #2; strb r1, [r0]
+SHORT 0x3809 0x7001 //sub r0, #9; strb r1, [r0]
+SHORT 0x3001 0x7001 //add r0, #1; strb r1, [r0]
+SHORT 0xBC10 0xBC01 //pop {r4}; pop {r0}
+SHORT 0x4700 //bx r0
+POIN GetChapterAllyUnitCount_2
+
+POP
+
+#include "asm/GetChapterAllyUnitCount_2.lyn.event"
+ALIGN 4

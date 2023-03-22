@@ -1,0 +1,12 @@
+ArlettSupportList:
+SupportList(Arlett,ArlettSupportList)
+
+SupportPartner(Ember,40,30)
+SupportPartner(Grace,40,30)
+SupportPartner(Kingsly,0,25)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(3)

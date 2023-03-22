@@ -1,0 +1,426 @@
+﻿//I could definitely get rid of these, but nah
+//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+EventPointerTable(0x07,Pointers)
+
+Pointers:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+#include "PrologueUnits.event"
+#include "PrologueEventIDs.event"
+#include "PrologueQuoteTable.event"
+
+TurnBasedEvents:
+TurnEventEnemy(0,StanrelReacts,1)
+
+TurnEventPlayer(0,NorthReinforcementWarning,2)
+TurnEventPlayer(0,NorthReinforcementArrives,3)
+
+TurnEventPlayer(0,BanditReinforcement1Warning,2)
+TurnEventPlayer(0,BanditReinforcement1Arrives,3)
+
+TurnEventPlayer(0,EastReinforcementsWarning,3)
+TurnEventPlayer(0,EastReinforcementsArrive,4)
+
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+//CharacterEventBothWays(0,TestingTalkFix,Zoren,Iris)
+END_MAIN
+
+LocationBasedEvents:
+Village(WestVillageEventID,WestVillage,1,5)
+Village(EastVillageEventID,EastVillage,14,4)
+House(0,LeftHouse,7,10)
+House(0,MiddleHouse,10,8)
+House(0,RightHouse,12,9)
+#ifdef TESTING_EASY_CLEAR
+	Seize(0,13)
+	//Escape(1,13)
+#endif
+#ifdef TESTING_TEXT
+	House(0,LeftHouse,2,13)
+	House(0,MiddleHouse,4,12)
+	House(0,RightHouse,5,13)
+#endif
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+DefeatBoss(EndingScene)
+//AREA 0 AreaEventPlanningTest [0,0] [15,13]
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+
+
+BeginningScene:
+
+//set current patch version
+
+//tell player about help text/guide before story
+SetBackground(BlackBG)
+Camera(7,10,10)
+TUTORIALTEXTBOXSTART
+SETVAL 0xB 0xFFFFFFFF
+TEXTSHOW BeginningNotice
+TEXTEND
+REMA
+STAL 20
+
+//flashback
+TEXTSTART
+TEXTSHOW ZorenPyrusFlashback
+TEXTEND
+REMA
+STAL 20
+ClearBackground
+REMA
+BROWNBOXTEXT PrologueTenYearsLater [0,0]
+
+//player gets a quick glimpse at the map before Zoren and his comrades appear for a conversation
+//STAL 20
+STAL 40
+Load(Units)
+SetBackground(Plain)
+TEXTSTART
+MUSC Advance
+TEXTSHOW ProIntro1
+TEXTEND
+FADI 10
+ClearBackground
+REMA
+
+//Kamron comes offscreen, drops Luther, and then moves into his starting position for gameplay
+Load(UnitKamron)
+Load(UnitLuther)
+MoveAndWait(Kamron,4,12)
+SetBackground(Plain)
+MUSC Tension
+TEXTSTART
+TEXTSHOW ProIntro2
+TEXTEND
+FADI 10
+ClearBackground
+REMA
+
+STAL 20
+//Marcey appears
+Load(UnitMarcey)
+STAL 20
+TEXTSTART
+TEXTSHOW ProIntro3
+TEXTEND
+REMA
+STAL 20
+DISA Marcey
+STAL 20
+
+/*
+Load(BadUnits)
+//Load(TESTING_ExtraBadUnits)
+SetBackground(BlackBG)
+ClearBackground
+REMA
+STAL 20
+Camera(7,10,10)
+Load(Units)
+//Load(TESTING_LessUnits)
+*/
+
+
+//Allow camera to follow moving units, which would be the incoming bandits
+EVBIT_T 0x9
+Load(BadUnits)
+Load(BadUnits2)
+
+#ifdef TESTING_EASY_RECRUITMENT
+	Load(LaricUnit)
+	Load(FranklinUnit)
+	#else
+		#ifdef TESTING_AI
+			Load(FranklinUnit)
+		#endif
+#endif
+
+Write_Word(15000,0x0202BCF8) //player starts with 15000 gold
+
+//ASMC 0xCF461 //unlocks guide entries by setting event IDs on
+ENUT 0xB3 //set guide's default to sort by chapter rather than group
+ENUT ReinforcementWarningsToggleEventID //by default, reinforcement warning events will play
+
+#ifdef TESTING_PURPOSES
+	#include "PrologueTesting.event"
+#else
+	NoFade
+	ENDA
+#endif
+
+/*
+TestingTalkFix:
+NoFade
+ENDA
+*/
+
+/*
+AreaEventPlanningTest:
+ENUT 0x10
+ENDA
+*/
+
+StanrelReacts:
+SVAL s0 0 //Future command ignores this entire event
+MUSI
+Camera(Stanrel,20)
+Notice(Stanrel,30)
+TEXTSTART
+TEXTSHOW ProStanrelReaction
+TEXTEND
+REMA
+STAL 10
+MUNO
+NoFade
+ENDA
+
+NorthReinforcementWarning:
+ReinforcementWarningEventHeader(0x1)
+	MUSI
+	Camera(7,5,10)
+	Notice(6,0,30)
+	InfantryWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+NorthReinforcementArrives:
+Camera(7,5,10)
+Load(NorthReinforcement)
+//SETVAL 0x1 0
+//CHAI PrologueBandit2
+NoFade
+ENDA
+
+BanditReinforcement1Warning:
+ReinforcementWarningEventHeader(0x1)
+	MUSI
+	Camera(7,5,10)
+	Notice(10,0,30)
+	BanditWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+BanditReinforcement1Arrives:
+Camera(7,5,10)
+Load(BanditReinforcement1)
+NoFade
+ENDA
+
+EastReinforcementsWarning:
+ReinforcementWarningEventHeader(0x1)
+	MUSI
+	Camera(8,10,10)
+	Notice(15,12,30)
+	InfantryWarning
+	Notice(15,13,30)
+	BanditWarning
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+EastReinforcementsArrive:
+Camera(8,10,10)
+Load(EastReinforcements)
+NoFade
+ENDA
+
+WestVillage:
+MUSI
+SetBackground(Outside_Village_Day)
+TEXTSTART
+MUSS Comrades
+TEXTSHOW ProLaricVillage
+TEXTEND
+ClearBackground
+REMA
+MUNO
+Load(LaricUnit)
+MURE 6
+NoFade
+ENDA
+
+EastVillage:
+MUSI
+SetBackground(Outside_Village_Day)
+TEXTSTART
+TEXTSHOW ProFranklinVillage
+TEXTEND
+STAL 16
+MUSS Comrades
+TEXTCONT
+TEXTEND
+ClearBackground
+REMA
+MUNO
+Load(FranklinUnit)
+MURE 6
+NoFade
+ENDA
+
+LeftHouse: //Lore
+MUSI
+SetBackground(HouseBG)
+TEXTSTART
+TEXTSHOW ProLeftHouseText
+TEXTEND
+ClearBackground
+REMA
+MUNO
+NoFade
+ENDA
+
+MiddleHouse: //Lore
+MUSI
+SetBackground(HouseBG)
+TEXTSTART
+TEXTSHOW ProMiddleHouseText
+TEXTEND
+ClearBackground
+REMA
+MUNO
+NoFade
+ENDA
+
+RightHouse: //Glancing blow and crit
+MUSI
+SetBackground(HouseBG)
+TEXTSTART
+TEXTSHOW ProRightHouseText
+TEXTEND
+ClearBackground
+REMA
+MUNO
+NoFade
+ENDA
+
+EndingScene:
+DoNotWinIfPlanning(0x1,0x2)
+ENUF GuideChapterAdvice
+
+CALL PostMapFunctionsPrologue
+
+#ifdef TESTING_PARTY_SWAP
+	CALL PartySwapZorenToShana
+#endif
+
+//MoveToChapter(Ch_1)
+
+//Zoren says good job or something
+MUSC Victory
+TEXTSTART
+TEXTSHOW ProEnding1
+TEXTEND
+REMA
+
+//Conditional based on if Laric and Franklin are still alive (in order to be present on the map, they must be recruited)
+CHECK_ALIVE Laric
+IFNE 0x3 sC s0
+	//If Laric is alive, check on Franklin
+	SetBackground(Plain)
+	CHECK_ALIVE Franklin
+	IFNE 0x5 sC s0
+    //If both are alive, do this conversation
+		TEXTSTART
+		TEXTSHOW ProEndingLaricFranklin
+		TEXTEND
+	GOTO 0x6
+	LABEL 0x5
+	//If only Laric is alive, do this conversation
+		TEXTSTART
+		TEXTSHOW ProEndingLaric
+		TEXTEND
+	LABEL 0x6
+GOTO 0x4
+LABEL 0x3
+	//If Laric is dead, check on Franklin
+	CHECK_ALIVE Franklin
+	IFNE 0x7 sC s0
+	//If only Franklin is alive, do this conversation
+		SetBackground(Plain)
+		TEXTSTART
+		TEXTSHOW ProEndingFranklin
+		TEXTEND
+	LABEL 0x7
+	//If both are dead, nothing happens
+LABEL 0x4
+
+//Transition to Maeva
+FADI 4
+ENUT 0x84 //hide hp bars
+MUSCSLOW 0x7FFF
+CLEA 0
+CLEE 0
+REMA
+LOMA MaevaCutsceneMap
+Load(UnitsCutscene)
+FADU 4
+BROWNBOXTEXT LocMaeva [0,0]
+STAL 20
+
+//Iris goes up to Zoren (also some kids run offscreen lol)
+Move(Informant,12,7)
+MoveAndWait(PrologueBandit2,11,7)
+Move(Iris,6,5)
+Move(Informant,15,7)
+MoveAndWait(PrologueBandit2,14,7)
+DISA Informant
+DISA PrologueBandit2
+STAL 10
+
+//Iris and Zoren talk before Pyrus's parents join them
+SetBackground(Town_Day)
+MUSC Treasured_Memories
+TEXTSTART
+TEXTSHOW ProEnding2
+TEXTEND
+
+//Eventually, stop the music during the conversation
+MUSCSLOW 0x7FFF
+TEXTCONT
+TEXTEND
+
+//Time to save
+SetBackground(Black)
+STAL 30
+NoFade
+ENUF 0x84
+MNC2 Ch_1
+
+LABEL 0x2 //use DoNotWinIfPlanning condID2
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

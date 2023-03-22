@@ -1,0 +1,12 @@
+DavisSupportList:
+SupportList(Davis,DavisSupportList)
+
+SupportPartner(Orville,0,15)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(1)

@@ -1,0 +1,20 @@
+Before calling the routine:
+substract 16(decimal) from sp.
+move sp into r0.
+
+Calling the routine:
+ldr reg, GetAdjacentUnit
+mov lr, reg
+.short 0xF800
+then, at the end of the asm:
+GetAdjacentUnit:
+(After #incbinning your asm, add A POIN GetAdjacentUnits(or whatever the label you incbinned this asm with))
+
+After calling the routine:
+load the content inside of sp. 
+sp = up
+sp+4 = right
+sp+8 = down
+sp+12 = left
+
+then, after loading the values inside of these, add 16 to sp to clear it.

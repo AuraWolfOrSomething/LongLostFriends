@@ -1,0 +1,350 @@
+﻿//I could definitely get rid of these, but nah
+//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+EventPointerTable(0x0A,Pointers)
+
+Pointers:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+#include "Chapter1Units.event"
+#include "Chapter1EEUS.event"
+#include "Chapter1EventIDs.event"
+#include "Chapter1QuoteTable.event"
+
+EscapePointPointerTable(Ch_1,Chapter1EscapePoints)
+
+Chapter1EscapePoints:
+EscapePoint(3,0,MoveUp)
+EscapePoint(4,0,MoveUp)
+EscapePoint(5,0,MoveUp)
+EscapePointEnd
+
+TurnBasedEvents:
+TurnEventPlayer(0,BeforeBattleBegins,1)
+
+//TurnEventPlayer(0,EntranceReinforcementsWarning,3)
+//TurnEventPlayer(0,EntranceReinforcementsArrive,4)
+
+TurnEventPlayer(0,NorthReinforcements1Warning,2)
+TurnEventPlayer(0,NorthReinforcements1Arrive,3)
+
+TurnEventPlayer(0,NorthReinforcements2Warning,5)
+TurnEventPlayer(0,NorthReinforcements2Arrive,6)
+
+TurnEventPlayer(0,SouthReinforcementsWarning,2)
+TurnEventPlayer(0,SouthReinforcements1Arrive,3)
+
+TurnEventPlayer(0,SouthReinforcementsWarning,4)
+TurnEventPlayer(0,SouthReinforcements2Arrive,5)
+
+TurnEventPlayer(0,SouthReinforcementsWarning,6)
+TurnEventPlayer(0,SouthReinforcements3Arrive,7)
+
+TurnEventPlayer(0,MageBossWarning1,6)
+TurnEventPlayer(0,MageBossWarning2,7)
+TurnEventPlayer(0,MageBossLeaves,8)
+
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Armory(LeftArmory,1,11)
+Armory(RightArmory,7,2)
+Vendor(RegularVendor,6,15)
+Chest(ChestEventID,Warp,14,4)
+Chest(ChestEventID,BodyRing,14,8)
+House(LeftHouseEventID,LeftHouse,3,6)
+House(RightHouseEventID,RightHouse,7,6)
+#ifdef TESTING_EASY_CLEAR
+	Seize(1,14)
+#endif
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+//AREA 0 CheckIfAllBossesDefeated [3,0] [5,0]
+AFEV 0 CheckIfAllBossesDefeated BreguetDeathEventID
+AFEV 0 CheckIfAllBossesDefeated BeranDeathEventID
+AFEV 0 CheckIfAllBossesDefeated BeranEscapedID
+AFEV 0 ChangeMonkAI ChestEventID
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+
+
+BeginningScene:
+Load(NewUnits)
+Load(BadUnits,BadUnitsEEUS)
+Load(NPCUnits)
+//Load(OptionalMageBoss)
+LoadPrepUnits(Units)
+GotoPrepScreen
+ENDA
+
+BeforeBattleBegins:
+//Reset chapter bargain item IDs for next chapter
+ENUF ChapterBargain1EventID
+ENUF ChapterBargain2EventID
+NoFade
+ENDA
+
+EntranceReinforcementsWarning:
+MUSI
+Camera(7,5,10)
+Notice(3,0,30)
+InfantryWarning
+Notice(5,0,30)
+MageWarning
+MUNO
+NoFade
+ENDA
+
+EntranceReinforcementsArrive:
+Camera(7,5,10)
+//Load(EntranceReinforcements,MageReinforcementEEUS)
+NoFade
+ENDA
+
+NorthReinforcements1Warning:
+MUSI 
+Camera(9,5,10)
+Notice(9,0,30)
+Notice(10,0,30)
+InfantryWarning
+MUNO
+NoFade
+ENDA
+
+NorthReinforcements1Arrive:
+Camera(9,5,10)
+Load(NorthReinforcements1)
+NoFade
+ENDA
+
+SouthReinforcementsWarning:
+MUSI 
+Camera(10,13,10)
+Notice(14,17,30)
+InfantryWarning
+Notice(15,17,30)
+MageWarning
+MUNO
+NoFade
+ENDA
+
+SouthReinforcements1Arrive:
+Camera(10,13,10)
+Load(SouthReinforcements1,MageReinforcementEEUS)
+NoFade
+ENDA
+
+SouthReinforcements2Arrive:
+Camera(10,13,10)
+Load(SouthReinforcements2,MageReinforcementEEUS)
+NoFade
+ENDA
+
+SouthReinforcements3Arrive:
+Camera(10,13,10)
+Load(SouthReinforcements2,MageReinforcementEEUS)
+NoFade
+ENDA
+
+MageBossWarning1:
+//Check if Beran's alive
+CHECK_EVENTID BeranDeathEventID
+IFEQ 0x1 0xC 0x0
+	//If so, play event
+	MUSI
+	Camera(7,5,10)
+	Notice(1,2,30)
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+MageBossWarning2:
+//Check if Beran's alive
+CHECK_EVENTID BeranDeathEventID
+IFEQ 0x1 0xC 0x0
+	//If so, play event
+	MUSI
+	Camera(7,5,10)
+	Notice(1,2,30)
+	MUNO
+LABEL 0x1
+NoFade
+ENDA
+
+MageBossLeaves:
+//Check if Beran's alive
+CHECK_EVENTID BeranDeathEventID
+IFEQ 0x1 0xC 0x0
+	//If so, he escapes
+	MUSI
+	Camera(7,5,10)
+	ENUT BeranEscapedID
+	DISA Beran
+	ENUN
+	GOTO 0x2
+LABEL 0x1
+	//If he's dead, a different event plays
+	
+LABEL 0x2
+MUNO
+NoFade
+ENDA
+
+NorthReinforcements2Warning:
+MUSI 
+Camera(9,5,10)
+Notice(9,0,30)
+Notice(10,0,30)
+InfantryWarning
+MUNO
+NoFade
+ENDA
+
+NorthReinforcements2Arrive:
+Camera(9,5,10)
+Load(NorthReinforcements2)
+NoFade
+ENDA
+
+LeftArmory:
+SHLI BronzeSword IronSword CopperSword NoviceSword SteelSword BronzeLance IronLance CopperLance NoviceLance SteelLance BronzeAxe IronAxe CopperAxe NoviceAxe SteelAxe BronzeBow IronBow CopperBow NoviceBow SteelBow
+ALIGN 4
+
+RightArmory:
+SHLI IronBlade Zanbato Armorslayer SilverSword Javelin Horseslayer HeavySpear SilverLance HandAxe Halberd Hammer SilverAxe BronzeLongbow IronLongbow QuickBow SilverBow
+ALIGN 4
+
+RegularVendor:
+SHLI Fire Thunder Wind Elfire Elthunder Lightning Shine Divine Redeem Flux Ensnare Luna Heal Aid Mend Vulnerary Concoction PureWater
+ALIGN 4
+
+LeftHouse:
+VillageReward(Barrier)
+TILECHANGE 0x01
+NoFade
+ENDA
+
+RightHouse:
+VillageReward(Elixir)
+TILECHANGE 0x02
+NoFade
+ENDA
+
+CheckIfAllBossesDefeated:
+//Check if Breguet's dead
+CHECK_EVENTID BreguetDeathEventID
+IFNE 0x1 0xC 0x0
+	//If Breguet's dead, check if Beran's dead
+	CHECK_EVENTID BeranDeathEventID
+	IFNE 0x2 0xC 0x0
+		//If Beran's dead, chapter's over
+		CALL EndingScene
+		ENDB
+	GOTO 0x3
+	LABEL 0x2
+	//If Beran wasn't killed, check if he's still on the map
+		CHECK_EXISTS Beran
+		IFEQ 0x3 0xC 0x0
+			//If he escaped, chapter's over
+			CALL EndingScene
+			ENDB
+	LABEL 0x3
+LABEL 0x1
+NoFade
+ENDA
+
+ChangeMonkAI:
+ENUF ChestEventID //both chests use this event ID
+
+SETVAL 0x1 0x00040C06 //"EscapeAvoidCombat" AI (otherwise, the monks usually try to destroy the houses afterwards)
+
+//If both chests are opened, set both monks to escape
+COUNTER_INC 0
+COUNTER_CHECK 0
+SETVAL 0x2 2
+IFEQ 0x1 0xC 0x2
+	CHAI Enemy0S
+	CHAI Enemy1S
+GOTO 0x2
+LABEL 0x1
+
+//Otherwise, if a monk opened the chest, change the AI of that monk
+	CHECK_ACTIVE
+	SETVAL 0x2 Enemy0S
+	IFEQ 0x3 0xC 0x2 
+		CHAI Enemy0S
+	GOTO 0x4
+	LABEL 0x3
+		SETVAL 0x2 Enemy1S
+		IFEQ 0x4 0xC 0x2
+			CHAI Enemy1S
+		LABEL 0x4
+LABEL 0x2
+NoFade
+ENDA
+
+//Some Hayden Skip stuff; more in the Ending Scene
+PUSH
+ORG $2060ba
+BYTE 02 02
+
+ORG $9FF354 //$A3C860
+CHECK_EVENTID 0x88
+IFEQUAL 0x1 0xC 0x0
+CALL TestingNewHaydenSkip
+ENDB
+
+POP
+
+EndingScene:
+
+CALL PostMapFunctions
+
+Load(ArlettJoiningUnit)
+
+//conditional stuff for Gemmora
+//Load(GemmoraJoiningUnit)
+
+TestingNewHaydenSkip: //still in EndingScene
+WM_LOADLOCATION2 0x0 0x0 0x0 //Might as well load Border Mulan here (optional)
+WM_LOADLOCATION2 0x0 0x1 0x0 //Like CREATENEXTDESTINATION except silent and instant
+WM_SETDESTINATION 0x0 0x1 0x0
+_0xA640 0x0 0x0 0x01       //like MOVESPRITETO except silent and instant
+SKIPWN
+
+#ifdef TESTING_CHAPTER_TRANSITION
+	MNC2 Ch_1
+#else
+	MoveToChapter(Ch_2)
+#endif
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

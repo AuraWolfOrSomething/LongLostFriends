@@ -1,0 +1,12 @@
+CainSupportList:
+SupportList(Cain,CainSupportList)
+
+SupportPartner(Hazel,80,40)
+SupportPartner(Fenris,80,40)
+SupportPartner(Olympia,80,40)
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+SupportPartnerEmptyEntry
+
+TotalSupportPartners(3)

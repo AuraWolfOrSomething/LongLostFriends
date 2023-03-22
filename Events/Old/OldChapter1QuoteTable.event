@@ -1,0 +1,6 @@
+
+SetChapterDeathQuoteList(Ch_1,Ch1DeathQuoteList)
+
+Ch1DeathQuoteList:
+DeathQuoteEidSilent(Breguet,BreguetDeathEventID)
+DeathQuoteEnd

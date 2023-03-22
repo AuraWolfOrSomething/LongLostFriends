@@ -1,0 +1,58 @@
+
+## Ch3Ending1ColetteAlive
+[OpenLeft][LoadShana]
+[OpenFarLeft][LoadRivia]
+
+[OpenLeft]
+Keep moving, everyone![AN]
+We shouldn't stop yet.[A]
+
+[OpenFarLeft]
+And keep watch for archers![AN]
+There may be more of them![A]
+
+[OpenMidRight][LoadColette]
+Eep![AN]
+You don't have to[N]
+tell me twice![A]
+[X]
+
+## Ch3Ending1ColetteDead
+[OpenLeft][LoadShana]
+[OpenFarLeft][LoadRivia]
+
+[OpenLeft]
+Keep moving, everyone![AN]
+We shouldn't stop yet.[A]
+
+[OpenFarLeft]
+And keep watch for archers![AN]
+There may be more of them![A]
+[X]
+
+## Ch3Ending2
+[OpenMidLeft][LoadShana]
+[OpenMidRight][LoadLorrand][MoveRight]
+[OpenRight]
+Shana, watch out![A]
+[X]
+
+## Ch3Ending3
+[OpenMidRight][LoadLorrand]
+Gah[Beat][CloseEyes][A]
+
+[OpenLeft][LoadShana]
+Sir Lorrand![A]
+
+[OpenFarLeft][LoadRivia]
+Follow your own advice, Shana![AN]
+We can't stop here![A]
+
+[OpenLeft]
+[Beat]You're right.[AN]
+
+[OpenFarLeft][ClearFace]
+[OpenLeft]
+Hold on for a little[NL]
+longer, Lorrand[Beat][A]
+[X]

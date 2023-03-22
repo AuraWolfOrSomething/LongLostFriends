@@ -1,0 +1,9 @@
+
+#define PrepScreenMapMenuCommand(name,desc,effect,id) "WORD 0; POIN effect|1; SHORT name desc; BYTE id 0; SHORT 0"
+#define PrepScreenMapMenuCommand(name,desc,usability,effect,id) "POIN usability|1; POIN effect|1; SHORT name desc; BYTE id 0; SHORT 0"
+
+#define PS_ViewMap "WORD 0; POIN 0x33358|1; SHORT 0x0590 0x05BB; BYTE 1 0; SHORT 0"
+#define PS_Formation "POIN 0x95970|1 0x3336C|1; SHORT 0x0591 0x05BC; BYTE 2 0; SHORT 0"
+#define PS_Options "WORD 0; POIN 0x3341C|1; SHORT 0x0592 0x05BD; BYTE 8 0; SHORT 0"
+#define PS_Save "POIN 0x94FF4|1 0x33458|1; SHORT 0x0579 0x05BE; BYTE 9 0; SHORT 0"
+#define PS_Separator "WORD 0 0"

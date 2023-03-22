@@ -1,0 +1,3 @@
+
+#define WestVillageEventID 0x0A
+#define EastVillageEventID 0x0B
