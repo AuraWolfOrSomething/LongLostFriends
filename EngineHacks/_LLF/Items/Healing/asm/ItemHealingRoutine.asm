@@ -17,16 +17,16 @@
 		lsr		r3, #0x18
 		ldr		r5, =ItemHealingList
 		
-		GoThroughItemHealingTable:
+		LoopThroughList:
 		ldrb	r0, [r5]
 		cmp		r0, #0
-		beq		End @if end of table reached, default to 0 hp restored
+		beq		End @if end of list reached, default to 0 hp restored
 		
 			cmp		r0, r3
 			beq		EntryFound
 		
-				add		r5, #3
-				b		GoThroughItemHealingTable
+				add		r5, #2
+				b		LoopThroughList
 		
 		EntryFound:
 		ldrb	r4, [r5,#1]
