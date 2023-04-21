@@ -3,6 +3,7 @@
   
   #include "RepointItemTable.event"
   #include "RepointClassAnimTable.event"
+  #include "RepointStandMapAnimTable.event"
   
   POP
   

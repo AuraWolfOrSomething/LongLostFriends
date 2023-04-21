@@ -4,9 +4,11 @@ PUSH
 //removes limiting display id range to 0-4
 ORG 0x8D32A
 SHORT 0xE001 //b (0x8D330)
+PROTECT 0x8D32A CURRENTOFFSET-1
 
 ORG 0x8D33C
 POIN MiniObjectiveDisplayPointers
+PROTECT 0x8D33C CURRENTOFFSET-1
 
 POP
 

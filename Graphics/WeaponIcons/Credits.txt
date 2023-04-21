@@ -9,7 +9,8 @@ LordGlenn
   Anima: Bolganone, Donbettyr, Elthunder, Gale, Wind
   Light: Fortune, Insight, Lucent, Luster, Ray
   Dark: Afflict, Devour, Distort, Enigma, Ensnare, Shade, Truth, Worm
-  Staves: Block, Corrosion, Fortify, Physic, Warp, Guardian, Distract
+  Staves: Block, Corrosion, Fortify, Physic, Warp, Guardian, Distract, Inept
+  Swords: Agile Edge
   Lances: Defender
   
 SMITHYGCN

@@ -1,0 +1,37 @@
+
+#include "TryAddUnitToTargetListInternal.event"
+
+RescueCommandTargetConditionsList:
+POIN TargetCheckAreAllegiancesAllied
+POIN EitherUnitCheckPhantom
+POIN TargetCheckBerserk
+POIN TargetCheckAlreadyTraveling
+POIN 0x1831C //CanUnitRescue
+POIN UncooperativeSkill
+POIN HeavyHoveringBootsOnEitherUnit
+WORD 0
+
+TradeTargetConditionsList:
+POIN EitherUnitCheckPhantom
+POIN TargetCheckBerserk
+POIN BothUnitsCheckEmptyInventory
+POIN TargetCheckSupplyBit
+WORD 0
+
+TradeTargetExceptionsList:
+//SHORT chapterID unitID
+//POIN routineForMoreConditions OR WORD 0 if no other conditions
+
+SHORT 0 0xA7
+WORD 0
+
+SHORT 0 0xA8
+WORD 0
+
+//end of list
+WORD 0
+
+TradeTargetRescueeConditionsList:
+POIN TargetCheckTradeRescueeAllegiance
+POIN BothUnitsCheckEmptyInventory
+WORD 0

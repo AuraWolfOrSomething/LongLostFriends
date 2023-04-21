@@ -9,22 +9,25 @@
 
 
 		GetMultipleHelpTextEntry:
-		mov		r2, #0xFF
-		and		r0, r2 @if this is an item, we just want item id, not item short (id & durability)
+		cmp		r0, #0
+		beq		NotFound
 		
-		LoopThroughList:
-		ldrb	r3, [r1]
-		cmp		r3, r0
-		beq		End
-		
-			ldrb	r2, [r1,#1]
-			lsl		r2, #1
-			add		r1, r2 @space taken by text ids in entry
-			add		r1, #2 @space taken by id + number of pages
-			cmp		r3, #0
-			bne		LoopThroughList
+			mov		r2, #0xFF
+			and		r0, r2 @if this is an item, we just want item id, not item short (id & durability)
 			
-		@Return 0 if not found
+			LoopThroughList:
+			ldrb	r3, [r1]
+			cmp		r3, r0
+			beq		End
+			
+				ldrb	r2, [r1,#1]
+				lsl		r2, #1
+				add		r1, r2 @space taken by text ids in entry
+				add		r1, #2 @space taken by id + number of pages
+				cmp		r3, #0
+				bne		LoopThroughList
+			
+		NotFound:
 		mov		r1, #0
 		
 		End:

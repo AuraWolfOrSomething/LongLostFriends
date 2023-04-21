@@ -11,10 +11,12 @@ SHORT 0xBC01 0x4700 //pop {r0}; bx {r0}
 ORG 0x28290
 #include "asm/AddSupportPoints.lyn.event"
 ALIGN 4
+PROTECT 0x28290 CURRENTOFFSET-1
 
 ORG 0x28434
 #include "asm/ProcessSupportGains.lyn.event"
 ALIGN 4
+PROTECT 0x28434 CURRENTOFFSET-1
 
 POP
 

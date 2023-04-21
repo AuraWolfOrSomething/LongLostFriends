@@ -24,7 +24,10 @@
 		cmp		r2, #1
 		beq		GetTextIdForNextPage
 		
-			mov		r3, #0
+			@mov		r3, #0
+			mov		r3, #0xFF
+			lsl		r3, #8
+			add		r3, #1
 			strh	r3, [r1]
 		
 		GetTextIdForNextPage:

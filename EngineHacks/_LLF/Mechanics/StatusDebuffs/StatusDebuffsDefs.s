@@ -27,3 +27,6 @@
 .equ Text_InsertString, 0x8004480
 .equ DrawUiSmallNumber, 0x08004BE4
 .equ DrawUiNumberOrDoubleDashes, 0x08004B94
+
+.equ Text_Clear, 0x08003DC8
+.equ Text_InsertNumberOr2Dashes, 0x080044A4 

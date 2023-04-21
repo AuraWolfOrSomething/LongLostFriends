@@ -12,3 +12,6 @@
 .equ Text_InsertNumberOr2Dashes, 0x080044A4
 .equ GetClassData, 0x08019444
 .equ Text_GetStringTextWidth, 0x08003EDC
+
+.equ gChapterData, 0x0202BCF0
+.equ CheckEventId, 0x08083DA8

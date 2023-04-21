@@ -7,6 +7,7 @@ PUSH
 ORG 0x22660 //"Guide" command availability check is normally here
 #include "asm/CheckIfGuideEntryIsAvailable.lyn.event"
 ALIGN 4
+PROTECT 0x22660 CURRENTOFFSET-1
 
 
 //-------------------------------------------
@@ -16,19 +17,23 @@ ALIGN 4
 ORG 0xCE43E
 SHORT 0x79A0 //ldrb r0, [r4,#6]
 BL(CheckIfGuideEntryIsAvailable)
+PROTECT 0xCE43E CURRENTOFFSET-1
 
 ORG 0xCEB10
 SHORT 0x79A8 //ldrb r0, [r5,#6]
 BL(CheckIfGuideEntryIsAvailable)
+PROTECT 0xCEB10 CURRENTOFFSET-1
 
 ORG 0xCEBD2
 SHORT 0x79A0 //ldrb r0, [r4,#6]
 BL(CheckIfGuideEntryIsAvailable)
+PROTECT 0xCEBD2 CURRENTOFFSET-1
 
 //Have Advice/Info not count towards Guide command being white/green
 ORG 0xCF48C
 SHORT 0x8920 0x2800 //ldrh r0, [r4,#8]; cmp r0, #0
 SHORT 0xD00A 0xE002 //beq (0xCF4A8); b (0xCF49A)
+PROTECT 0xCF48C CURRENTOFFSET-1
 
 
 //-------------------------------------------
@@ -37,42 +42,55 @@ SHORT 0xD00A 0xE002 //beq (0xCF4A8); b (0xCF49A)
 
 ORG 0xCDF5C
 POIN GuideEntryList
+PROTECT 0xCDF5C CURRENTOFFSET-1
 
 ORG 0xCE380
 POIN GuideEntryList
+PROTECT 0xCE380 CURRENTOFFSET-1
 
 ORG 0xCE40C
 POIN GuideEntryList
+PROTECT 0xCE40C CURRENTOFFSET-1
 
 ORG 0xCE480
 POIN GuideEntryList
+PROTECT 0xCE480 CURRENTOFFSET-1
 
 ORG 0xCE57C
 POIN GuideEntryList
+PROTECT 0xCE57C CURRENTOFFSET-1
 
 ORG 0xCE618
 POIN GuideEntryList
+PROTECT 0xCE618 CURRENTOFFSET-1
 
 ORG 0xCE6C4
 POIN GuideEntryList
+PROTECT 0xCE6C4 CURRENTOFFSET-1
 
 ORG 0xCE998
 POIN GuideEntryList
+PROTECT 0xCE998 CURRENTOFFSET-1
 
 ORG 0xCEB5C
 POIN GuideEntryList
+PROTECT 0xCEB5C CURRENTOFFSET-1
 
 ORG 0xCEC20
 POIN GuideEntryList
+PROTECT 0xCEC20 CURRENTOFFSET-1
 
 ORG 0xCF090
 POIN GuideEntryList
+PROTECT 0xCF090 CURRENTOFFSET-1
 
 ORG 0xCF468
 POIN GuideEntryList
+PROTECT 0xCF468 CURRENTOFFSET-1
 
 ORG 0xCF488
 POIN GuideEntryList
+PROTECT 0xCF488 CURRENTOFFSET-1
 
 
 //-------------------------------------------
@@ -81,7 +99,7 @@ POIN GuideEntryList
 
 ORG 0xCE1FC
 POIN GuideChapterHeaderList
-
+PROTECT 0xCE1FC CURRENTOFFSET-1
 
 //-------------------------------------------
 //Repointing to new list of topics
@@ -89,10 +107,11 @@ POIN GuideChapterHeaderList
 
 ORG 0xCE1BC
 POIN GuideTopicList
+PROTECT 0xCE1BC CURRENTOFFSET-1
 
 ORG 0xCE23C
 POIN GuideTopicList
-
+PROTECT 0xCE23C CURRENTOFFSET-1
 
 //-------------------------------------------
 //New text id for "About" if sorted by topic
@@ -100,6 +119,7 @@ POIN GuideTopicList
 
 ORG 0xCE1B4
 SHORT GuideAboutTopic
+PROTECT 0xCE1B4 CURRENTOFFSET-1
 
 POP
 

@@ -6,9 +6,11 @@ PUSH
 ORG 0x181C8
 #include "asm/EnsureNoUnitStatCapOverflow.lyn.event"
 ALIGN 4
+PROTECT 0x181C8 CURRENTOFFSET-1
 
 ORG 0x2BF24
 #include "asm/CheckForLevelUpCaps.lyn.event"
 ALIGN 4
+PROTECT 0x2BF24 CURRENTOFFSET-1
 
 POP

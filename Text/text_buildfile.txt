@@ -41,6 +41,9 @@ C[X]
 ## NormalEndingText
 Normal Ending[X]
 
+## RankLabel
+Rank[X]
+
 #include "MiniObjectives.txt"
 
 #include "MiscSkillSystemStuff.txt"

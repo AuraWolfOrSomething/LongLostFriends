@@ -43,6 +43,7 @@ Engine Hacks (organized by hack name rather than by contributor)
   Fixed Autolevels: nat
   Fixed Difficulty: nat
   Get Adajcent Unit: Kirb
+  HelpTextMultiplePageFlashIcon: Vesly
   Hold A to speed up movement: Gryz
   Item Range Fix: Lord Reyson, Teraspark, Tequila
   Lead AI fix: nat
@@ -97,7 +98,7 @@ Weapon Icons
   EldritchA: Heavy Hovering Boots
   Indogutsu Tenbuki: Heavy Hovering Boots
   
-  Lord Glenn: [Anima- Bolganone, Donbettyr, Elthunder, Gale, Wind], [Dark- Afflict, Devour, Distort, Enigma, Ensnare, Shade, Truth, Worm], [Lances- Defender], [Light- Fortune, Insight, Lucent Luster, Ray],  [Staves- Block, Corrosion, Fortify, Physic, Warp, Guardian, Distract]
+  Lord Glenn: [Anima- Bolganone, Donbettyr, Elthunder, Gale, Wind], [Dark- Afflict, Devour, Distort, Enigma, Ensnare, Shade, Truth, Worm], [Lances- Defender], [Light- Fortune, Insight, Lucent Luster, Ray],  [Staves- Block, Corrosion, Fortify, Physic, Warp, Guardian, Distract, Inept], [Swords- Agile Edge]
   
   SMITHYGCN: Focus Belt
 

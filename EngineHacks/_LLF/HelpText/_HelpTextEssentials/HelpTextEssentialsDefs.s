@@ -5,6 +5,7 @@
 .equ gOtherTextRelatedStuffIGuess, 0x0203E788
 .equ gSomeMoreTextRelatedStuffIGuess, 0x0203E794
 
+.equ ProcFind, 0x08002E9C
 .equ BreakProcLoop, 0x08002E94
 .equ ProcGoto, 0x08002F24
 .equ Text_SetFontStandardGlyphSet, 0x08003CF4

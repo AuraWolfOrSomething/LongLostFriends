@@ -1,0 +1,95 @@
+
+#include "asm/CannotIfPhantom.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfCantoing.lyn.event"
+ALIGN 4
+
+#include "asm/GrayCommandIfSilenced.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfNoEventSeize.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfNoEventVisit.lyn.event"
+ALIGN 4
+
+#include "asm/VisitEligibleTerrain.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfEmptyTargetListTalk.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfEmptyTargetListSupport.lyn.event"
+ALIGN 4
+
+#include "asm/IsUnitCapableOfUnlockingChest.lyn.event"
+ALIGN 4
+
+#include "asm/IsUnitCapableOfUnlockingDoor.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfEmptyTargetListDoor.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfNoEventArmory.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfNoEventVendor.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfCarryingUnit.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfInsideBallista.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfEmptyTargetListRescue.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfNotCarryingUnit.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfEmptyTargetListDrop.lyn.event"
+ALIGN 4
+
+#include "asm/CannotUseMoreThanOnceTakeGive.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfEmptyTargetListTake.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfEmptyTargetListGive.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfEmptyInventory.lyn.event"
+ALIGN 4
+
+#include "asm/CannotUseMoreThanOnceTrade.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfSupply.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfEmptyTargetListTrade.lyn.event"
+ALIGN 4
+
+
+
+
+#include "asm/CannotIfCantoingExceptEscortPlus.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfCantoingExceptEscort.lyn.event"
+ALIGN 4
+
+/*
+#include "asm/CannotIfCantoingExceptDeathsMarch.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfCantoingExceptDeathsMarchEscortPlus.lyn.event"
+ALIGN 4
+
+#include "asm/CannotIfCantoingExceptDeathsMarchEscort.lyn.event"
+ALIGN 4
+*/

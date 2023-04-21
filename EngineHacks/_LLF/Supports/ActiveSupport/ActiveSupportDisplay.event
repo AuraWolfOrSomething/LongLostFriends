@@ -4,31 +4,37 @@ PUSH
 ORG 0x87698
 #include "asmDis/DrawUnitScreenSupportList.lyn.event"
 ALIGN 4
-//should leave 0x87788 alone
+PROTECT 0x87698 CURRENTOFFSET-1
+
+//commented IconRework_Internal jumpToHack(SupportSSAffinityDraw)
 
 ORG 0xA1A02
 SHORT 0x1C31 //mov r1, r6
 SHORT 0x4B01 0x469E //ldr r3, (); mov lr, r3
 SHORT 0xF800 0xE00C //bl lr+0; b (0xA1A26)
 POIN PrepSupportPartyUnitName
+PROTECT 0xA1A02 CURRENTOFFSET-1
 
 ORG 0xA1D4E
 SHORT 0x2634 //mov r6, #0x34
 #include "asmDis/Hook_PrepSupportSetActiveSupportColor.lyn.event"
 ALIGN 4
+PROTECT 0xA1D4E CURRENTOFFSET-1
 
 ORG 0xA1E38
 #include "asmDis/Hook_PrepSupportRankColor.lyn.event"
 ALIGN 4
+PROTECT 0xA1E38 CURRENTOFFSET-1
 
 //Display Paired Ending if in Prep, or remaining supports in Extra
 ORG 0xA1E7C
 SHORT 0xB5F0 //push {r4-r7,r14}
+PROTECT 0xA1E7C CURRENTOFFSET-1
 
 ORG 0xA1EE0
 #include "asmDis/Hook_PrepSupportPairedEnding.lyn.event"
 ALIGN 4
-//should leave 0xA1F68 alone
+PROTECT 0xA1EE0 CURRENTOFFSET-1
 
 POP
 

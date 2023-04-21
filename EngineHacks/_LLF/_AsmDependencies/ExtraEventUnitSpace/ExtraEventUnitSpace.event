@@ -4,22 +4,25 @@ PUSH
 ORG 0x16540
 #include "asm/NewMakeItem.lyn.event"
 ALIGN 4
+PROTECT 0x16540 CURRENTOFFSET-1
 
 ORG 0x17D3C
 #include "asm/NewPopulateUnitFromDefinition.lyn.event"
 ALIGN 4
+PROTECT 0x17D3C CURRENTOFFSET-1
 
 ORG 0x17E34
 SHORT 0xB5F0 //push {r4-r7,r14}
+PROTECT 0x17E34 CURRENTOFFSET-1
 
 ORG 0x17E44
 #include "asm/LoadUnitStatsRewrite.lyn.event"
 ALIGN 4
+PROTECT 0x17E44 CURRENTOFFSET-1
 
 ORG 0x17EB4
 SHORT 0xBCF0 //pop {r4-r7}
-
-
+PROTECT 0x17EB4 CURRENTOFFSET-1
 
 POP
 

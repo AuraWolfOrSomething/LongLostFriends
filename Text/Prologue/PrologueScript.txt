@@ -308,7 +308,7 @@ One reason why is your aim.[AN]
 You might suddenly realize you need[N]
 to alter something,[AN]
 or else you won't hit at all.[AN]
-These "glancing blows" are only[N]
+These [f"]glancing blows[b"] are only[N]
 half as strong as clean hits,[AN]
 yet they're better than missing entirely.[AN][CloseSpeechSlow]
 

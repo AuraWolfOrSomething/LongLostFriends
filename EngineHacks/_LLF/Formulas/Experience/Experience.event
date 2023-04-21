@@ -3,6 +3,7 @@ PUSH
 //Combat Experience
 ORG 0x2C35E
 BYTE 4 //bonus levels for a promoted unit when calculating experience; default value is 20
+PROTECT 0x2C35E
 
 ORG 0x2C368
 jumpToHack(ExperienceForDamage)
@@ -12,20 +13,21 @@ SHORT 0x1C20 0x4B02 //mov r0, r4; ldr r3 (ExperienceForSurvival)
 SHORT 0x469E 0xF800 //mov lr, r3; bl lr+0
 SHORT 0xE119 0 //b 0x2C5AE
 POIN ExperienceForSurvival
+PROTECT 0x2C370 CURRENTOFFSET-1
 
 ORG 0x2C398
-//jumpToHack(ClassPowerDefeatExp)
 #include "asm/ClassPowerDefeatExp.lyn.event"
 ALIGN 4
+PROTECT 0x2C398 CURRENTOFFSET-1
 
 ORG 0x2C450
-//jumpToHack(ExperienceForDefeat)
 #include "asm/ExperienceForDefeat.lyn.event"
 ALIGN 4
+PROTECT 0x2C450 CURRENTOFFSET-1
 
 ORG 0x2C574
 SHORT 0xE6FC 0 //b 0x2C370
-//BL(0x2C370)
+PROTECT 0x2C574 CURRENTOFFSET-1
 
 /*
 ORG 0x2C5AE
@@ -44,6 +46,7 @@ SHORT 0x1C20 //mov r0, r4
 BL(0x2BA28)
 SHORT 0xE001 //b (0x2C6DC)
 POIN (ExperienceForOtherActions)
+PROTECT 0x2C6C8 CURRENTOFFSET-1
 
 POP
 

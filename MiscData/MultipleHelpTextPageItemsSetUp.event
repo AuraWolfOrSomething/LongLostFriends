@@ -30,8 +30,8 @@ SHORT PupilGemDesc PupilGemDesc2
 BYTE Rustbow 2
 SHORT RustbowDesc RustbowDesc2
 
-BYTE HeavyHoveringBoots 3
-SHORT HeavyHoveringBootsDesc HeavyHoveringBootsDesc2 HeavyHoveringBootsDesc3
+BYTE HeavyHoveringBoots 4
+SHORT HeavyHoveringBootsDesc HeavyHoveringBootsDesc2 HeavyHoveringBootsDesc3 HeavyHoveringBootsDesc4
 
 BYTE 0 //end list with this
 ALIGN 4

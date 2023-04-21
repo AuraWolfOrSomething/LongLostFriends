@@ -4,6 +4,7 @@ PUSH
 //Disables clearing the traveling unit when Event ID 3 is called?
 ORG 0x1912E
 SHORT 0
+PROTECT 0x1912E CURRENTOFFSET-1
 
 POP
 

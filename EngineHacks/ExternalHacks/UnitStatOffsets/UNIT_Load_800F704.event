@@ -63,5 +63,6 @@ SHORT 0x1C28 //mov r0, r5
 BL(0x181C8) //EnsureNoUnitStatCapOverflow
 SHORT 0xE00B //b (0xF888)
 POIN Stat_Offsetter
+PROTECT 0xF812 CURRENTOFFSET-1
 
 POP

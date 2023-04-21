@@ -19,3 +19,6 @@ ALIGN 4
 
 #include "asmModules/NoDoublingBlitz.lyn.event"
 ALIGN 4
+
+#include "asmModules/NoDoublingCapture.lyn.event"
+ALIGN 4

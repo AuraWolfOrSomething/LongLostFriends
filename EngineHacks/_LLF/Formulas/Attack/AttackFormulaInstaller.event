@@ -3,6 +3,7 @@ PUSH
 ORG 0x2AABC
 #include "AttackFormulaParameters.lyn.event"
 ALIGN 4
+PROTECT 0x2AABC CURRENTOFFSET-1
 
 POP
 

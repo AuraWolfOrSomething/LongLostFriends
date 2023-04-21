@@ -10,6 +10,7 @@ SHORT 0x2006 //mov r0, #6
 BL(0x83D80) //SetEventID
 //End:
 SHORT 0xBC01 0x4700 //pop {r0}; bx r0
+PROTECT 0x2EA2A CURRENTOFFSET-1
 	
 ORG 0x2EA3C
 EscapeTheEscapeSoftlock:
@@ -26,6 +27,7 @@ BL(0x83D80)
 SHORT 0x2001 //mov r0, #1
 //End:
 SHORT 0xBC02 0x4708 //pop {r1}; bx r1
+PROTECT 0x2EA3C CURRENTOFFSET-1
 
 ORG 0x843E6
 BL(0x18FF0) //GetDeployedPlayerUnitCount
@@ -34,6 +36,7 @@ BL(EscapeTheEscapeSoftlock)
 SHORT 0x2800 0xD105 //cmp r0, #0; bne 0x84402
 BL(0x837B0)
 SHORT 0xE028 //b 0x8444E
+PROTECT 0x843E6 CURRENTOFFSET-1
 
 POP
 

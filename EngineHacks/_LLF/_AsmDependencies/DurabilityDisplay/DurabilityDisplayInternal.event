@@ -13,6 +13,8 @@ POIN NewDrawItemMenuCommand
 	ALIGN 4
 #endif
 
+PROTECT 0x16848 CURRENTOFFSET-1
+
 ORG 0x16A2C
 SHORT 0xB510 0x4C03 //push {r4,r14}; ldr r4, (StatScreenDrawItem)
 SHORT 0x46A6 0xF800 //mov r14, r4; bl r14+0
@@ -23,6 +25,8 @@ POIN StatScreenDrawItem
 ORG 0x16A40 //not needed, but easier to find
 #include "asm/DurabilityDisplay.lyn.event"
 ALIGN 4
+
+PROTECT 0x16A2C CURRENTOFFSET-1
 
 /*
 replace branches to:
@@ -35,50 +39,65 @@ replace branches to:
 
 	ORG 0x34D0C
 	BL(DrawDurabilityIfDestructible)
+	PROTECT 0x34D0C CURRENTOFFSET-1
 	
 	ORG 0x9A05C
 	BL(DrawDurabilityIfDestructible)
+	PROTECT 0x9A05C CURRENTOFFSET-1
 	
 	ORG 0x9AAB2
 	BL(DrawDurabilityIfDestructible)
+	PROTECT 0x9AAB2 CURRENTOFFSET-1
 	
 	ORG 0x9B7F0
 	BL(DrawDurabilityIfDestructible)
+	PROTECT 0x9B7F0 CURRENTOFFSET-1
 	
 	ORG 0x9D3E8
 	BL(DrawDurabilityIfDestructible)
+	PROTECT 0x9D3E8 CURRENTOFFSET-1
 	
 #endif
 
 ORG 0x34CEC
 BL(NewGetItemNameString)
+PROTECT 0x34CEC CURRENTOFFSET-1
 
 ORG 0x34D02
 BL(NewGetItemUses)
+PROTECT 0x34D02 CURRENTOFFSET-1
 
 ORG 0x9A022
 BL(NewGetItemNameString)
+PROTECT 0x9A022 CURRENTOFFSET-1
 
 ORG 0x9A052
 BL(NewGetItemUses)
+PROTECT 0x9A052 CURRENTOFFSET-1
 
 ORG 0x9AA78
 BL(NewGetItemNameString)
+PROTECT 0x9AA78 CURRENTOFFSET-1
 
 ORG 0x9AAA8
 BL(NewGetItemUses)
+PROTECT 0x9AAA8 CURRENTOFFSET-1
 
 ORG 0x9B7B6
 BL(NewGetItemNameString)
+PROTECT 0x9B7B6 CURRENTOFFSET-1
 
 ORG 0x9B7E6
 BL(NewGetItemUses)
+PROTECT 0x9B7E6 CURRENTOFFSET-1
 
 ORG 0x9D394
 BL(NewGetItemNameString)
+PROTECT 0x9D394 CURRENTOFFSET-1
 
 ORG 0x9D3DE
 BL(NewGetItemUses)
+PROTECT 0x9D3DE CURRENTOFFSET-1
 
 POP
 

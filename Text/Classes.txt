@@ -256,7 +256,7 @@ Druid[X]
 
 ## DruidDesc
 Wielders of deep and ancient magic.[NL]
-Equip: Dark, anima.[X]
+Equip: Dark, staves.[X]
 
 ## SummonerName
 Summoner[X]

@@ -1,5 +1,6 @@
 
-#define CharDescEntry(charID,age,pronounsTextID) "BYTE charID age; SHORT pronounsTextID"
+#define CharDescEntry(charID,age,pronounsTextID) "BYTE charID age; SHORT pronounsTextID; WORD 0"
+#define DynamicCharDescEntry(charID,age,pronounsTextID,routinePointer) "BYTE charID age; SHORT pronounsTextID; POIN routinePointer"
 
 CharDescList:
 CharDescEntry(Zoren,23,HeHim)
@@ -35,7 +36,8 @@ CharDescEntry(Curcio,25,HeHim)
 CharDescEntry(Armond,20,HeHim)
 CharDescEntry(Hazel,33,SheThem)
 
-CharDescEntry(Jade,0,SheHer)
+CharDescEntry(Jade,26,SheHer)
+//DynamicCharDescEntry(0x1F,0,HeHim,CheckForAgeRevelation)
 
 CharDescEntry(Korsana,0,SheHer)
 CharDescEntry(Gemmora,0,SheHer)

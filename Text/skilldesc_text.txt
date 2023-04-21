@@ -90,17 +90,17 @@ allies as a free action.[X]
 
 ## SD_Transmitter
 Transmitter: If this unit uses[N]
-"Give" and nothing else, they[N]
+[f"]Give[b"] and nothing else, they[N]
 reset to their previous position.[X]
 
 ## SD_TransmitterPlus
 Transmitter+: After using[N]
-"Give", this unit resets to[N]
+[f"]Give[b"], this unit resets to[N]
 their previous position.[X]
 
 ## SD_Advance
 Advance: Mov +1. If this unit moves[N]
-2 mov and uses "Advance", they can go[N]
+2 mov and uses [f"]Advance[b"], they can go[N]
 again with Mov -1. Only once per turn.[X]
 
 ## SD_Savior

@@ -57,13 +57,16 @@ ORG 0x5926F4
 	
 	#define RapierIcon SwordIcon_First+15
 	#incbin "Swords/Rapier.dmp"
+	
+	#define AgileEdgeIcon SwordIcon_First+16
+	#incbin "Swords/AgileEdge.dmp"
 
 
 //---------------------------------------------------
 //Lances
 //---------------------------------------------------
 
-#define LanceIcon_First SwordIcon_First+16
+#define LanceIcon_First SwordIcon_First+17
 
 	#define IronLanceIcon LanceIcon_First
 	#incbin "Lances/IronLance.dmp"
@@ -426,13 +429,16 @@ ORG 0x5926F4
 	
 	#define DistractIcon StaffIcon_First+16
 	#incbin "Staves/Distract.dmp"
+	
+	#define IneptIcon StaffIcon_First+17
+	#incbin "Staves/Inept.dmp"
 
 
 //---------------------------------------------------
 //Other
 //---------------------------------------------------
 
-#define ItemIcon_First StaffIcon_First+17
+#define ItemIcon_First StaffIcon_First+18
 
 	#define LateCrestIcon ItemIcon_First
 	#incbin "Other/LateCrest.dmp"

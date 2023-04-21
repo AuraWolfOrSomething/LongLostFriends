@@ -86,7 +86,7 @@ Archers & Snipers only. Mt x7 vs fliers.[X]
 Rustbow[X]
 
 ## RustbowDesc
-Damage dealt ignores user's Pow...[X]
+Damage dealt ignores user's Pow.[X]
 
 ## RustbowDesc2
 Debuffs enemy by -3 to all stats.[N]

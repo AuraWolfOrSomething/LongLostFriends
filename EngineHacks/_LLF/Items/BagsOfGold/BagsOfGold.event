@@ -1,0 +1,14 @@
+
+PUSH
+
+ORG 0x115A4
+#include "asm/BagsOfGoldDrop.lyn.event"
+ALIGN 4
+PROTECT 0x115A4 CURRENTOFFSET-1
+
+ORG 0x324CC
+#include "asm/BagsOfGoldSteal.lyn.event"
+ALIGN 4
+PROTECT 0x324CC CURRENTOFFSET-1
+
+POP

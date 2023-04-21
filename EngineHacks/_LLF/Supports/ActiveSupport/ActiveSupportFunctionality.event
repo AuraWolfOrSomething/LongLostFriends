@@ -4,26 +4,28 @@ PUSH
 //remove 5 support max
 ORG 0x28338
 SHORT 0xE00B //b (0x28352)
+PROTECT 0x28338 CURRENTOFFSET-1
 
 ORG 0x283E0
 #include "asmFun/ClearUnitSupports.lyn.event"
 ALIGN 4
-//should leave 0x28434 alone
+PROTECT 0x283E0 CURRENTOFFSET-1
 
 //set active support if none on either unit
 ORG 0x323D4
 #include "asmFun/ActionSupport.lyn.event"
 ALIGN 4
-//should leave 0x3247C alone
+PROTECT 0x323D4 CURRENTOFFSET-1
 
 ORG 0xA2448
 #include "asmFun/New_0xA2448.lyn.event"
 ALIGN 4
-//should leave 0xA25F8 alone
+PROTECT 0xA2448 CURRENTOFFSET-1
 
 ORG 0xA22D6
 SHORT 0x4A51 //ldr r2, (0x0202BCF0)
 #include "asmFun/Hook_SupportListShouldCursorAppear_Init.lyn.event"
+PROTECT 0xA22D6 CURRENTOFFSET-1
 
 ORG 0xA2B10
 SHORT 0x4902 //ldr r1, (SupportListShouldCursorAppear)
@@ -31,10 +33,12 @@ BL(0xD18C4) //(BXR1)
 SHORT 0x2800 0xD01A //cmp r0, #0; beq 0x2AB50
 SHORT 0xE015 //b 0x2AB48
 POIN SupportListShouldCursorAppear
+PROTECT 0xA2B10 CURRENTOFFSET-1
 
 ORG 0xAD45C
 SHORT 0x6AE0 0x28C4 //ldr r0, [r4,#0x2C]; cmp r0, #0xC4
 SHORT 0xDB08 0xE003 //blt 0xAD474; b 0xAD46C
+PROTECT 0xAD45C CURRENTOFFSET-1
 
 POP
 

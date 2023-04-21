@@ -12,6 +12,7 @@ jumpToHack(GetItemWorth)
 
 ORG 0xB526A
 BL(0xB5228)
+PROTECT 0xB526A CURRENTOFFSET-1
 
 ORG 0xB5440
 jumpToHack(AfterPurchase)

@@ -9,6 +9,7 @@ BL(0x3374C)
 SHORT 0x0600 0x2800 //lsl r0, #0x18; cmp r0, #0
 SHORT 0xD105 0x2004 //bne (0x0801D550); mov r0, #4
 SHORT 0xE02B //b (0x0801D5A0)
+PROTECT 0x1D538 CURRENTOFFSET-1
 
 ORG 0x332F0
 SHORT 0x466D 0x3501 //mov r5, r13; add r5, #1
@@ -17,22 +18,27 @@ SHORT 0xD01C //beq (0x08033334)
 BL(0x9541C)
 SHORT 0x2800 //cmp r0, #0
 SHORT 0xD014 0xE000 //beq (0x0803332C); b (0x08033306)
+PROTECT 0x332F0 CURRENTOFFSET-1
 
 ORG 0x3332E
 SHORT 0xE7E1 //b (0x080332F4)
+PROTECT 0x3332E CURRENTOFFSET-1
 
 ORG 0x3374C
 jumpToHack(CheckIfLockedOrInSameGroup)
 
 ORG 0x84830
 SHORT 0x7810 //ldrb r0, [r2]
+PROTECT 0x84830 CURRENTOFFSET-1
 
 ORG 0x8483C //Repointing to ForcedDeploymentList when selecting units to deploy for the chapter (if not needed, then can be commented)
 POIN ForcedDeploymentList
+PROTECT 0x8483C CURRENTOFFSET-1
 
 ORG 0x9541C
 #include "asm/CheckIfUnitAtLockedPosition.lyn.event"
 ALIGN 4
+PROTECT 0x9541C CURRENTOFFSET-1
 
 POP
 

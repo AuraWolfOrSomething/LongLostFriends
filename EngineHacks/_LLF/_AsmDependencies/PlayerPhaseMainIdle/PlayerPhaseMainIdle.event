@@ -4,5 +4,6 @@ PUSH
 ORG 0x1C940
 #include "asm/PlayerPhaseMainIdle.lyn.event"
 ALIGN 4
+PROTECT 0x1C940 CURRENTOFFSET-1
 
 POP

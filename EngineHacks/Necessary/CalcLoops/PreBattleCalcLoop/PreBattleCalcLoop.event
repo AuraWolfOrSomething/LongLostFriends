@@ -36,10 +36,10 @@ POIN CritUpSkill BC_Support BC_WRank BC_Status //these are the existing battle c
 //POIN DriveStr DriveMag DriveSpd DriveDef DriveRes
 //POIN LuckySeven OddRhythm EvenRhythm QuickBurn SlowBurn
 POIN /*Demoiselle Gentilhomme MaleficAura Intimidate Tantivy Focus*/ Inspiration Charm //Solidarity VoiceOfPeace Anathema LilysPoise Charisma Hex Loyalty Infiltrator
-POIN BalancedStudy ExploitSpeed SteadyAim KarbaltGemEffect DefenderEffect ThoronEffect 
+POIN BalancedStudy ExploitSpeed SteadyAim KarbaltGemEffect DefenderEffect ThoronEffect AvoidFromEquippedWeapon
 
 //This lowers battle stats, so this should come next 
-POIN DistractDebuff
+POIN DistractDebuff CaptureCombatPenalty
 //POIN ElbowRoom NaturalCover Gamble FieryBlood LifeAndDeath WindDisciple Perfectionist Puissance Hawkeye LightWeight Trample Opportunist BattleVeteran SilentPride Thunderstorm Outrider HeavyStrikes Charge Vanity KnightAspirant AssassinateDamageBonus ArcaneBlade
 //POIN Daunt BloodTide WhitePool NightTide Insight Prescience Vigilance DefiantAvo DefiantCrit TowerShield ShortShield IndoorFighter OutdoorFighter Deadeye Fortune
 //POIN BlueFlame BlueFlameAura DoubleLion Cultured Thighdeology Thotslayer KeepUp Armorboost Horseguard Skyguard
@@ -61,6 +61,8 @@ POIN ThelrimGemEffect NullifyAvoidIfSleeping FocusBeltEffect
 
 //Can override Focus Belt
 POIN FarWard
+
+POIN AgileEdgePreventCounterattack
 
 //tower shield plus needs to go after every other skill that may affect defender's attack
 //POIN TowerShieldPlus

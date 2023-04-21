@@ -50,7 +50,7 @@ Donbettyr[X]
 Wind[X]
 
 ## WindDesc
-Consecutive hits do half damage...[X]
+Consecutive hits do half damage.[X]
 
 ## WindDesc2
 E.g. Unit's Dmg is 10 and they double:[N]

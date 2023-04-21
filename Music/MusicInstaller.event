@@ -31,10 +31,6 @@ SongTable(MapTheme_FFT_DecisiveBattle,FFT_DecisiveBattle,MapMusicGroup)
 SongTable(MapTheme_TRS_KnightsOfLazeria,TRS_KnightsOfLazeria,MapMusicGroup)
 #include "Songs/TRS_KnightsOfLazeria.event"
 
-//original
-SongTable(0x29,sadcutscene_v3,BattleMusicGroup)
-#include "Songs/sadcutscene_v3.event"
-
 //credit Alusq
 SongTable(CutsceneTheme_FFT_Anxiety,FFT_Anxiety,BattleMusicGroup)
 #include "Songs/FFT_Anxiety.event"

@@ -35,9 +35,6 @@ ALIGN 4
 #include "TerrainMovementCost/TerrainMovementCost.event"
 ALIGN 4
 
-#include "BagsOfGold/BagsOfGold.event"
-ALIGN 4
-
 #include "StatusDebuffs/StatusDebuffs.event"
 ALIGN 4
 

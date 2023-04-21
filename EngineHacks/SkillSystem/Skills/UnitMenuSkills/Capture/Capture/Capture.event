@@ -41,12 +41,17 @@
 	jumpToHack(Drop_Dead_Enemy)
 	
 	//Modify the trade check to be able to trade captured enemies
+	
+	/*
+	Now handled by TryAddUnitToTradeTargetList (_AsmDependencies/ModularUnitMenuCommandUsability/TryAddUnitToTargetList)
+	
 	ORG $25224
 	callHack_r3(Trade_Captured_Enemy1)
 	SHORT 0x46C0
 	ORG $25298
 	callHack_r3(Trade_Captured_Enemy2)
 	SHORT 0xD00E
+	*/
 	
 	//Fix the portraits when trading
 	ORG $2D7D4

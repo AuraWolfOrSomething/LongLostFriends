@@ -363,6 +363,8 @@
 #define RecruitGem 0xEB
 #define Rustbow 0xEC
 #define HeavyHoveringBoots 0xED
+#define Inept 0xEE
+#define AgileEdge 0xEF
 
 #define Empower 0x7D //0xBE
 //#define WeakLockpick 0x79

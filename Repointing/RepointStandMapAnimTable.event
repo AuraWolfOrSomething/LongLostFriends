@@ -1,0 +1,40 @@
+
+PUSH
+
+ORG 0x26730
+POIN NewStandMapAnimTable
+
+ORG 0x267B0
+POIN NewStandMapAnimTable
+
+ORG 0x26838
+POIN NewStandMapAnimTable
+
+ORG 0x26C88
+POIN NewStandMapAnimTable
+
+ORG 0x272D0
+POIN NewStandMapAnimTable
+
+ORG 0x27BB0
+POIN NewStandMapAnimTable
+
+ORG 0x27C9C
+POIN NewStandMapAnimTable
+
+ORG 0x27D48
+POIN NewStandMapAnimTable
+
+ORG 0x27E0C
+POIN NewStandMapAnimTable
+
+ORG 0x27E9C
+POIN NewStandMapAnimTable
+
+ORG 0x27F74
+POIN NewStandMapAnimTable
+
+ORG 0x28064
+POIN NewStandMapAnimTable
+
+POP

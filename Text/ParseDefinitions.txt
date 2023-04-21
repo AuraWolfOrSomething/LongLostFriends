@@ -46,6 +46,11 @@
 [......v.] = [FarRight]
 [.......v] = [FarFarRight]
 
+[f"] = [0x93]
+[f] = [0x93]
+[b"] = [0x94]
+[b] = [0x94]
+
 [CurrentPortrait] = [0xFF][0xFF]
 [LoadActiveUnit] = [LoadFace][0xFF][0xFF]
 [Pause] = [ToggleMouthMove]...[ToggleMouthMove]

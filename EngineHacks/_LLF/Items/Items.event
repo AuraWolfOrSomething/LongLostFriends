@@ -57,5 +57,11 @@ ALIGN 4
 #include "HeavyHoveringBoots/HeavyHoveringBoots.event"
 ALIGN 4
 
+#include "Inept/Inept.event"
+ALIGN 4
+
+#include "BagsOfGold/BagsOfGold.event"
+ALIGN 4
+
 #include "StatBoosterChanges.event"
 #include "WeaponStatBonuses.event"

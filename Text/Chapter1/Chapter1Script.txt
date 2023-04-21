@@ -104,7 +104,7 @@ What's up?[A]
 Well, there's been a lot of talk about[N]
 bandits these days.[AN]
 People have been whispering about[N]
-a "Bandit King".[AN][ToggleSmile]
+a [f"]Bandit King[b"].[AN][ToggleSmile]
 You remember Gert, don't you, dear?[A]
 
 [OpenMidRight]
@@ -382,7 +382,7 @@ one of the cells.[A]
 [OpenRight][LoadArlett]
 
 You're looking for the[N]
-"Bandit King", right?[A][CloseSpeechSlow]
+[f"]Bandit King[b"], right?[A][CloseSpeechSlow]
 
 [.4][OpenRight]
 He took a lot of his men with him to[N]

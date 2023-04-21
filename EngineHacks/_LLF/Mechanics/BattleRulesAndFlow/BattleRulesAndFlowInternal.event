@@ -3,6 +3,7 @@ PUSH
 
 ORG 0x2AF0A
 SHORT 0
+PROTECT 0x2AF0A CURRENTOFFSET-1
 jumpToHack(ImmediateFollowupAttack)
 
 ORG 0x2AF90
@@ -25,4 +26,20 @@ ALIGN 4
 ALIGN 4
 
 #include "CheckIfDoubling/CheckIfDoubling.event"
+ALIGN 4
+
+#include "CaptureCombatPenalty/CaptureCombatPenalty.lyn.event"
+ALIGN 4
+
+#include "AvoidFromEquippedWeapon/AvoidFromEquippedWeapon.lyn.event"
+ALIGN 4
+
+#include "WillUnitDouble/WillUnitDouble.lyn.event"
+ALIGN 4
+
+#include "AgileEdgePreventCounterattack/AgileEdgePreventCounterattack.lyn.event"
+ALIGN 4
+
+AgileEdgeIdLink:
+BYTE AgileEdge
 ALIGN 4

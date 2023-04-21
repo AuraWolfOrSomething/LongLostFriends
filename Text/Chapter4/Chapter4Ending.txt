@@ -73,7 +73,7 @@ A friendly user of elder[N]
 magic's hard to come by.[A]
 
 [OpenMidRight]
-Not "dark magic"?[AN][ToggleSmile]
+Not [f"]dark magic[b"]?[AN][ToggleSmile]
 Heh.[AN]
 We'll get along just fine.[A]
 

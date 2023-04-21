@@ -8,6 +8,7 @@ SHORT 0xF800 0x4084 //bl lr+0; lsl r4, r0
 SHORT 0x1C20 0xBC10 //mov r0, r4; pop {r4}
 SHORT 0xBC02 0x4708 //pop {r1}; bx r1
 POIN BattleCheckBrave
+PROTECT 0x2B080 CURRENTOFFSET-1
 
 ORG 0x3666C
 SHORT 0xB5F0 0x1C04 //push {r4-r7,r14}; mov r4, r0
@@ -26,6 +27,8 @@ SHORT 0x603E //str r6, [r7]
 SHORT 0xBCF0 0xBC01 //pop {r4-r7}; pop {r0}
 SHORT 0x4700 //bx r0
 SHORT 0
+PROTECT 0x3666C CURRENTOFFSET-1
+
 POP
 
 #include "asm/BattleCheckBrave.lyn.event"

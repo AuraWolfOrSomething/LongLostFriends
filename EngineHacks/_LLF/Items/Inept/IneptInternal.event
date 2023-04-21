@@ -1,0 +1,94 @@
+
+//Called by Mechanics/WeaponRankModifiers
+#include "asm/IneptDebuff.lyn.event"
+ALIGN 4
+
+//----------------------------
+//Usability
+//----------------------------
+
+#include "asm/IneptUsability.lyn.event"
+ALIGN 4
+
+
+//----------------------------
+//Target
+//----------------------------
+
+#include "asm/IneptTarget.lyn.event"
+ALIGN 4
+
+#include "asm/MakeTargetListForInept.lyn.event"
+ALIGN 4
+
+#include "asm/IneptStaffRangeSetup.lyn.event"
+ALIGN 4
+
+#include "asm/TryAddUnitToIneptTargetList.lyn.event"
+ALIGN 4
+
+#include "asm/IneptTargetChange.lyn.event"
+ALIGN 4
+
+#include "asm/SetupIneptTargetWindow.lyn.event"
+ALIGN 4
+
+#include "asm/UnitInfoWindow_IneptDrawRanks.lyn.event"
+ALIGN 4
+
+IneptTargetBottomTextLink:
+SHORT 0x087B
+ALIGN 4
+
+gMenu_IneptTargetMenu:
+POIN 0x29CDC|1
+POIN 0x4E884|1 //ClearBG0BG1
+WORD 0
+POIN IneptTargetChange|1
+WORD 0
+POIN 0x29550|1 //GenericStaffSelection_OnSelect
+POIN 0x2282C|1 //GenericSelection_BackToUM_CamWait
+WORD 0
+
+
+//----------------------------
+//Effect
+//----------------------------
+
+#include "asm/InflictInept.lyn.event"
+ALIGN 4
+
+
+/*
+gProc_ItemAnimInept:
+PROC_CALL_ROUTINE(0x30C24|1)
+PROC_CALL_ROUTINE(0x81E48|1)
+PROC_SLEEP(1)
+PROC_CALL_ROUTINE(0x815C0|1) //MapAnim_MoveCameraOnTarget
+PROC_SLEEP(2)
+PROC_CALL_ROUTINE(0x81278|1) //MapAnim_AnimateSubjectIdle
+PROC_SLEEP(30)
+PROC_CALL_ROUTINE(0x819A8|1) //[unique to Silence] (this bl's to 0x7E48C; this starts a proc at 0x9A3E04, which I will copy and edit as gProc_IneptMapEffect)
+PROC_SLEEP(2)
+PROC_SLEEP(0x64)
+PROC_CALL_ROUTINE(0x8161C|1) //MapAnim_BeginRoundSpecificAnims
+PROC_SLEEP(30)
+PROC_LOOP_ROUTINE(0x81914|1) //MapAnim_WaitForHPToEndChangingMaybe
+PROC_SLEEP(10)
+PROC_CALL_ROUTINE(0x8129C|1) //MapAnim_SubjectResetAnim
+PROC_SLEEP(30)
+PROC_CALL_ROUTINE(0x81E54|1)
+PROC_SLEEP(1)
+PROC_CALL_ROUTINE(0x30C40|1)
+PROC_END //0x9A4F3C
+
+gProc_IneptMapEffect:
+PROC_SLEEP(1)
+PROC_CALL_ROUTINE(0x7E4D0|1) //[unique to Silence]
+PROC_SLEEP(50)
+PROC_CALL_ROUTINE(0x7E584|1) //[unique to Silence]
+PROC_SLEEP(40)
+PROC_LOOP_ROUTINE(0x7E5F0|1) //[unique to Silence]
+PROC_CALL_ROUTINE(0x7DA2C|1)
+PROC_END //0x9A3E3C
+*/

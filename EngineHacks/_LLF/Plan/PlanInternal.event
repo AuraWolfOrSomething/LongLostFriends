@@ -7,6 +7,7 @@ PUSH
 ORG $844C8 // on select tile to move to 
 callHack_r1(InsertEventOnTileSelect)
 SHORT $46c0 //noop 
+PROTECT CURRENTOFFSET-2 CURRENTOFFSET-1
 
 ORG 0x225B0
 jumpToHack(MM_SuspendUsability)
@@ -20,18 +21,21 @@ SHORT 0x6830 0x4902 //ldr r0, (r6); ldr r1, (SetSetUnitStateAsMoving)
 SHORT 0x468E 0xF800 //mov lr, r1; bl lr+0
 SHORT 0x490C 0xE001 //ldr r1, (gMapUnit); b 0x186A4
 POIN SetUnitStateAsMoving
+PROTECT 0x18694 CURRENTOFFSET-1
 
 ORG 0x27A70
 SHORT 0x1C20 0x4902 //mov r0, r4; ldr r1, =HandleMapSpriteCursorHoverExtension
 SHORT 0x468E 0xF800 //mov lr, r1; bl lr+0
 SHORT 0xE003 0 //b 0x27A82
 POIN HandleMapSpriteCursorHoverExtension
+PROTECT 0x27A70 CURRENTOFFSET-1
 
 //Moving an enemy/npc and then backing out will move the cursor back on that unit, rather than keeping the cursor on its last spot
 ORG 0x1CE64
 SHORT 0x4B01 0x469E //ldr r3, =ShouldCursorReturnToUnitLocation; mov lr, r2
 SHORT 0xF800 0xE001
 POIN ShouldCursorReturnToUnitLocation
+PROTECT 0x1CE64 CURRENTOFFSET-1
 
 //Turn doesn't auto-end during planning
 ORG 0x1DBAA
@@ -42,6 +46,7 @@ SHORT 0x2800 0xD008 //cmp r0, #0; beq 0x1DBC8
 SHORT 0xE003 //b 0x1DBC0
 POIN 0x24CEC|1
 POIN ShouldPlayerPhaseEnd
+PROTECT 0x1DBAA CURRENTOFFSET-1
 
 POP
 

@@ -1,0 +1,103 @@
+
+//Terminate lists with WORD 0
+
+SeizeUsabilityList:
+POIN CannotIfCantoing
+POIN 0x37B64 //CanUnitSeize
+POIN CannotIfNoEventSeize
+WORD 0
+
+TalkUsabilityList:
+POIN CannotIfCantoing
+POIN CannotIfEmptyTargetListTalk
+POIN GrayCommandIfSilenced
+WORD 0
+
+SupportUsabilityList:
+POIN CannotIfCantoing
+POIN CannotIfEmptyTargetListSupport
+POIN GrayCommandIfSilenced
+WORD 0
+
+VisitUsabilityList:
+POIN CannotIfPhantom
+POIN CannotIfCantoing
+POIN VisitEligibleTerrain
+POIN CannotIfNoEventVisit
+POIN GrayCommandIfSilenced
+WORD 0
+
+ChestUsabilityList:
+POIN CannotIfCantoing
+POIN IsUnitCapableOfUnlockingChest
+POIN 0x290FC //CanUseChestKey
+WORD 0
+
+DoorUsabilityList:
+POIN CannotIfCantoing
+POIN IsUnitCapableOfUnlockingDoor
+POIN CannotIfEmptyTargetListDoor
+WORD 0
+
+ArmoryUsabilityList:
+POIN CannotIfPhantom
+POIN CannotIfCantoing
+POIN CannotIfNoEventArmory
+WORD 0
+
+VendorUsabilityList:
+POIN CannotIfPhantom
+POIN CannotIfCantoing
+POIN CannotIfNoEventVendor
+WORD 0
+
+ItemUnitMenuUsabilityList:
+POIN CannotIfPhantom
+POIN CannotIfCantoing
+POIN CannotIfEmptyInventory
+WORD 0
+
+TradeUsabilityList:
+POIN CannotIfCantoing
+//POIN CannotUseMoreThanOnceTrade
+POIN CannotIfSupply
+POIN CannotIfEmptyTargetListTrade
+WORD 0
+
+RescueUsabilityList:
+POIN CannotIfCantoing
+POIN CannotIfCarryingUnit
+POIN CannotIfInsideBallista
+POIN CannotIfEmptyTargetListRescue
+WORD 0
+
+DropUsabilityList:
+POIN CannotIfCantoingExceptEscortPlus
+POIN CannotIfNotCarryingUnit
+POIN CannotIfEmptyTargetListDrop
+WORD 0
+
+TakeUsabilityList:
+POIN CannotIfCantoingExceptEscortPlus
+POIN CannotIfCarryingUnit
+//POIN CannotUseMoreThanOnceTakeGive
+POIN CannotIfEmptyTargetListTake
+WORD 0
+
+GiveUsabilityList:
+POIN CannotIfCantoingExceptEscort
+POIN CannotIfNotCarryingUnit
+//POIN CannotUseMoreThanOnceTakeGive
+POIN CannotIfEmptyTargetListGive
+WORD 0
+
+#include "asm/UnitMenuCommandConditionLoop.lyn.event"
+ALIGN 4
+
+#include "MumcuChecks.event"
+ALIGN 4
+
+#include "MumcuHooks.event"
+ALIGN 4
+
+#include "TryAddUnitToTargetList/TryAddUnitToTargetList.event"

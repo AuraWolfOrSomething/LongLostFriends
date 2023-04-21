@@ -4,13 +4,16 @@ PUSH
 ORG 0x193A4
 #include "asm/NewUnitTryHeal.lyn.event"
 ALIGN 4
+PROTECT 0x193A4 CURRENTOFFSET-1
 
 ORG 0x2EB98
 #include "asm/NewExecStandardHeal.lyn.event"
 ALIGN 4
+PROTECT 0x2EB98 CURRENTOFFSET-1
 
 ORG 0x2FEC6
 SHORT 0
+PROTECT 0x2FEC6 CURRENTOFFSET-1
 
 ORG 0x2F380
 jumpToHack(HealingItemEffect)

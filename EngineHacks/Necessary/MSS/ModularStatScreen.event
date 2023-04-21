@@ -93,8 +93,11 @@
       jumpToHack(Write_Growths_To_Battle_Struct)
 	*/
 
-    ORG $2B9C4
+	/*
+	Handled by FixedAutolevels (ExternalHacks)
+	ORG $2B9C4
       jumpToHack(Enemy_Autolevel)
+	*/
 
     ORG $17E98
       callHack_r3(New_Unit_Exp)

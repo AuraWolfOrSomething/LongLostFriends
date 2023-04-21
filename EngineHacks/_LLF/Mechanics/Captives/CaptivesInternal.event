@@ -6,6 +6,7 @@ jumpToHack(CheckIfCaptiveEscaped)
 
 ORG 0x32262
 SHORT 0
+PROTECT 0x32262 CURRENTOFFSET-1
 jumpToHack(CheckIfCaptiveDropped)
 
 POP

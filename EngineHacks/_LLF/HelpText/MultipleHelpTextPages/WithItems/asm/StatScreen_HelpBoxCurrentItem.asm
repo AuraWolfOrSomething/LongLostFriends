@@ -36,7 +36,7 @@
 		beq		GoToGetItemDescStringIndex
 		
 			mov		r1, r5
-			ldr		r3, =NextPageOfTextForItemDesc_StatScreen
+			ldr		r3, =StatScreen_NextPageOfTextForItemDesc
 			mov		lr, r3
 			.short	0xF800
 			b		StoreHelpText

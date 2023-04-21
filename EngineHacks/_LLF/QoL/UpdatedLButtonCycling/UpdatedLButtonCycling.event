@@ -11,6 +11,7 @@ jumpToHack(CheckIfValidForLPressCursor)
 ORG 0x1DB4C
 #include "asm/FindNextCursorUnit.lyn.event"
 ALIGN 4
+PROTECT 0x1DB4C CURRENTOFFSET-1
 
 POP
 

@@ -3,5 +3,10 @@
 ALIGN 4
 
 NeverFollowUpConditionsList:
-POIN NoDoublingVanilla NoDoublingWeaponEffect NoDoublingKarbaltGem NoDoublingThelrimGem NoDoublingBlitz
+POIN NoDoublingVanilla NoDoublingWeaponEffect NoDoublingKarbaltGem NoDoublingThelrimGem NoDoublingBlitz NoDoublingCapture
 WORD 0
+
+AvoidWeaponList:
+BYTE AgileEdge 15
+SHORT 0 //end of list
+ALIGN 4

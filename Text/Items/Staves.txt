@@ -169,11 +169,11 @@ Guardian[X]
 ## GuardianDesc
 Allies within 2 tiles of the target can[N]
 receive up to 2 benefits. Neither benefit[N]
-can stack on itself...[X]
+can stack on itself.[X]
 
 ## GuardianDesc2
 Benefit 1: For the rest of this phase,[N]
-+5 Def and +5 Res...[X]
++5 Def and +5 Res.[X]
 
 ## GuardianDesc3
 Benefit 2: For 5 turns, debuffs are[N]
@@ -206,3 +206,13 @@ Select a unit to distract.[X]
 
 ## DistractTargetBottomText2
 Select their destination.[X]
+
+## IneptName
+Inept[X]
+
+## IneptDesc
+Enemy has all ranks lowered by 3 letter[N]
+grades for (5 - enemyRes/5) turns.[X]
+
+## IneptUseDesc
+Lower ranks by 3.[X]

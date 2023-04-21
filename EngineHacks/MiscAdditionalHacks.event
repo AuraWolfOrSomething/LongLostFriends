@@ -22,25 +22,17 @@ jumpToHack(WeaponRankHack)
 
 ORG 0xA20164
 POIN (prFixedDifficulty+1)
+PROTECT 0xA20164 CURRENTOFFSET-1
 
 //Autolevel units with a weapon that has a lock and a rank (credit Datagne)
 ORG 0x17F88
 BYTE 0x00 0x21
+PROTECT 0x17F88 CURRENTOFFSET-1
 
 //Snag hp is the same as chapter's damaged wall hp
 ORG 0x2E3D8
 SHORT 0xD004 //beq (0x2E3E4)
-
-//Thracia Item Trading (credit aera)
-ORG 0x22F50
-SHORT 0x46C0
-
-//Trading can be canceled out of (credit area)
-//ORG 0x22F50
-//SHORT 0x1C3F 0x1C
-//ORG 0x2D772
-//BYTE 0x1D
-
+PROTECT 0x2E3D8 CURRENTOFFSET-1
 
 /*
 start of trading usability check is 08022F50
@@ -94,10 +86,12 @@ SHORT 0x1C00
 //Extra -> Support Conversations option is always available (credit 7743)
 ORG 0xAB93A
 SHORT 0
+PROTECT 0xAB93A CURRENTOFFSET-1
 
 //Melee and Magic fix (credit Hextator, Tequila, and 7743)
 ORG 0x18A58
 #incbin "Necessary/MeleeAndMagicFix/MeleeAndMagicFix_FE8U.dmp"
+PROTECT 0x18A58 CURRENTOFFSET-1
 
 //Speed up cursor on AI's target (credit Vesly)
 ORG 0x39EAE

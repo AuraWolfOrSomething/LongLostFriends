@@ -1,53 +1,19 @@
 
-//---------------------------
-//Age/Pronouns
-//---------------------------
+#include "CharacterInternal.event"
 
-#include "asmCharDesc/NameDescGetter.lyn.event"
+/*
+#include "asmModules/CheckForAgeRevelation.lyn.event"
+
+AgeRevelationEventIdLink:
+SHORT 0x66
 ALIGN 4
 
-#include "asmCharDesc/CharacterHelpTextSpace.lyn.event"
+#include "asmModules/PrologueFiveYearGap.lyn.event"
 ALIGN 4
 
-#include "asmCharDesc/CharacterHelpTextLabels.lyn.event"
+#include "asmModules/IdentifyAsWoman.lyn.event"
+
+SelfDiscoveryEventIdLink:
+SHORT 0x67
 ALIGN 4
-
-#include "asmCharDesc/CharacterHelpTextValues.lyn.event"
-ALIGN 4
-
-CharacterLabelLink:
-SHORT AgeLabel
-SHORT PronounLabel
-
-UnknownAgeLink:
-SHORT UnknownAge
-ALIGN 4
-
-
-//---------------------------
-//Promotion Information
-//---------------------------
-
-#include "asmPromo/PromotionHelpTextSpace.lyn.event"
-ALIGN 4
-
-#include "asmPromo/PromotionHelpTextLabels.lyn.event"
-ALIGN 4
-
-#include "asmPromo/PromotionHelpTextValues.lyn.event"
-ALIGN 4
-
-#include "asmPromo/ShouldPromoGainInfoBeOverridden.lyn.event"
-ALIGN 4
-
-PromotionLabelLink:
-SHORT ClassTextID
-SHORT MovementTextID
-SHORT ConstitutionTextID
-SHORT HitPointsTextID
-SHORT PowerTextID
-SHORT SkillTextID
-SHORT SpeedTextID
-SHORT DefenseTextID
-SHORT ResistanceTextID
-ALIGN 4
+*/

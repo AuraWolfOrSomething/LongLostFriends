@@ -7,6 +7,8 @@
 
 
 		NameDescGetter:
+		push	{r4,r14}
+		mov		r4, r0
 		ldr		r1, =StatScreenStruct
 		ldr		r1, [r1,#0x0C]
 		ldr		r1, [r1]
@@ -22,28 +24,21 @@
 		
 		@check if character has age/pronoun info
 		  @if so, set help text type
-		ldrb	r1, [r1,#4] @character id
-		ldr		r3, =CharDescList
-		
-		LoopThroughList:
-		ldrb	r2, [r3]
-		cmp		r2, #0 @if end of list reached, don't set
+		ldr		r0, =GetCharDescEntry
+		mov		lr, r0
+		.short	0xF800
+		cmp		r0, #0
 		beq		End
 		
-			cmp		r2, r1
-			beq		SetHelpTextType
-			
-				add		r3, #4
-				b		LoopThroughList
-		
-		SetHelpTextType:
-		ldr		r1, =CharacterHelpTextLink
-		ldrh	r1, [r1]
-		mov		r3, #0x4E
-		strh	r1, [r0,r3]
+			ldr		r0, =CharacterHelpTextLink
+			ldrh	r0, [r0]
+			mov		r1, #0x4E
+			strh	r0, [r4,r1]
 		
 		End:
-		bx		r14
+		pop		{r4}
+		pop		{r0}
+		bx		r0
 		
 		.align
 		.ltorg

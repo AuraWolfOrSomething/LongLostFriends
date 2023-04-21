@@ -10,6 +10,8 @@ PUSH
 	ORG $02B9C4
 		WORD $30324348 $4B012164 $46C04718 $80D167D
 		
+	//commented ModularStatScreen jumpToHack(Enemy_Autolevel)
+		
 	// stops promoted units from getting autolevels from unpromoted class
 	ORG 0x18124
 	SHORT 0xE010 //b (0x18148)

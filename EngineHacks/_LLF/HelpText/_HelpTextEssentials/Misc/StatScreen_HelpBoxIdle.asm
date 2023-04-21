@@ -38,16 +38,26 @@
 		beq		CheckDirButton_Up
 		
 			@Check if this thing has multiple pages or not
-			ldr		r2, [r5,#0x2C]
-			ldr		r0, [r2,#0x18]
-			mov		r1, r7
-			ldr		r3, =StatScreen_WhatCanHaveMultiplePages
-			mov		lr, r3
+			
+			@ldr		r2, [r5,#0x2C]
+			@ldr		r0, [r2,#0x18]
+			@mov		r1, r7
+			@ldr		r3, =StatScreen_WhatCanHaveMultiplePages
+			@mov		lr, r3
+			@.short	0xF800
+			
+			ldr		r0, =gProc_HelpBoxControl
+			ldr		r1, =ProcFind
+			mov		lr, r1
 			.short	0xF800
-			cmp		r0, #0
+			cmp		r0, #0 @this should probably never be true, but just as a failsafe
 			beq		CheckDirButton_Up
 			
-				b		ChangeHelpText
+				ldr		r1, =CanCurrentHelpTextHaveMultiplePages
+				mov		lr, r1
+				.short	0xF800
+				cmp		r0, #0
+				bne		ChangeHelpText
 		
 		CheckDirButton_Up:
 		mov		r0, #0x40
@@ -177,20 +187,21 @@
 			strh	r0, [r1]
 		
 		ChangeHelpText:
-		@I don't know what this is for
+		
+		@Do not play sound effect if sound is off
 		ldr		r0, =gChapterData
 		add		r0, #0x41
 		ldrb	r0, [r0]
 		lsl		r0, #0x1E
 		cmp		r0, #0 
-		blt		IfLessThan
+		blt		AfterSoundEffect
 		
 			mov		r0, #0x67
 			ldr		r3, =m4aSongNumStart
 			mov		lr, r3
 			.short	0xF800
 		
-		IfLessThan:
+		AfterSoundEffect:
 		mov		r0, r5
 		mov		r1, #0
 		ldr		r3, =ProcGoto

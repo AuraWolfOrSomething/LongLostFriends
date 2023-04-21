@@ -1,4 +1,6 @@
 
+The license for this project (CC0-1.0) only applies to the code within. To use assets not made by me, please check with their author (unless a public resource states what the usage rights are or something).
+
 ## HelpText
 This assembly changes how information accessed through helptext can be viewed. There's two main things to note here:
 - You can add additional elements to how a text id is displayed. In vanilla, weapons have shared characteristics such as might and weight, but they also have values in those elements. You can use the way the game presents these variables for other information.

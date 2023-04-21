@@ -1,5 +1,5 @@
 
-//Credit to Vesly for his ExtendWeaponDescBox assembly
+//Credit to Vesly for his ExtendWeaponDescBox assembly and for getting the Flashing Arrow to appear for MultipleHelpTextPages (HelpBoxOnOpenHook and FlashIcon)
 
 #define MoreStaffInfoInstall
 

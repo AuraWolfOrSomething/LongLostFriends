@@ -16,6 +16,3 @@ SklBonusToWeaponRankSklModifierList:
 POIN prGemSkl
 POIN prNocStatBoost
 WORD 0 //end of the list
-
-#include "asm/IneptDebuff.lyn.event"
-ALIGN 4

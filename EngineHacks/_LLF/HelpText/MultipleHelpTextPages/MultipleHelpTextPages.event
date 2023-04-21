@@ -1,23 +1,12 @@
 
-//Note: In order to change when "A" can be pressed to attempt accessing another page of help text during the Stat Screen, edit StatScreen_HelpBoxIdle (found in _HelpTextEssentials/Misc)
+//Note: The press "A" button functionality during stat screen is granted by StatScreen_HelpBoxIdle (found in _HelpTextEssentials/Misc)
 
-
-/*
-TODO
-
-Other times the player can view item help text
-- Trading
-- Supply
-- Selling an item
-- List
-
-*/
+#ifndef callHackNew 
+	#define callHackNew(offset) 		"BYTE $01 $4B $9E $46 $00 $F8 $01 $E0; POIN (offset|0x1); PROTECT CURRENTOFFSET-12 CURRENTOFFSET-1"
+#endif 
 
 
 PUSH
-
-ORG 0x88E94
-POIN HelpTextGetItemDesc
 
 ORG 0x89278
 SHORT 0x4903 0x468E //ldr r1, =OverwriteHelpTextBoxPosition; mov lr, r1
@@ -25,6 +14,7 @@ SHORT 0x4641 0x1C2A //mov r1, r8; mov r2, r5
 SHORT 0x1C3B 0xF800 //mov r3, r7; bl lr+0
 SHORT 0xE002 0 //b 0x8928C
 POIN OverwriteHelpTextBoxPosition
+PROTECT 0x89278 CURRENTOFFSET-1
 
 ORG 0x89178
 jumpToHack(StartHelpTextBubble_Extension)
@@ -33,13 +23,18 @@ jumpToHack(StartHelpTextBubble_Extension)
 ORG 0x88A00
 jumpToHack(StatScreen_HelpBoxCurrentItem)
 
+ORG 0x88D06
+SHORT 0x1C21 //mov r1, r4
+PROTECT 0x88D06 CURRENTOFFSET-1
+callHackNew(HelpBoxOnOpenHook)
+
 POP
 
 
 #include "asm/StartHelpTextBubble_Extension.lyn.event"
 ALIGN 4
 
-#include "asm/StatScreen_WhatCanHaveMultiplePages.lyn.event"
+#include "asm/CanCurrentHelpTextHaveMultiplePages.lyn.event"
 ALIGN 4
 
 #include "asm/GetMultipleHelpTextEntry.lyn.event"
@@ -48,6 +43,26 @@ ALIGN 4
 #include "asm/OverwriteHelpTextBoxPosition.lyn.event"
 ALIGN 4
 
+#include "asm/HelpBoxOnOpenHook.lyn.event"
+ALIGN 4
+
+#include "asm/FlashIcon.lyn.event"
+ALIGN 4
+
+HelpBoxFlashIconProc: 
+PROC_YIELD // Buffer.
+PROC_SET_NAME(HelpBoxFlashIconName)
+PROC_LABEL(0) 
+PROC_SLEEP(0)
+PROC_CALL_ROUTINE(HelpBoxFlashIcon)
+PROC_LABEL(1) 
+PROC_END
+ALIGN 4 
+
+HelpBoxFlashIconName:
+String("HelpTextFlashIcon")
+BYTE 0
+ALIGN 4
 
 #include "MultiplePagesAllowlist.event"
 

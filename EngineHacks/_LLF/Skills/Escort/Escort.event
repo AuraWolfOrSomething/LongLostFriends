@@ -1,26 +1,4 @@
 
-PUSH
-
-ORG 0x22910
-jumpToHack(CheckIfUnitCanSelectDrop)
-
-ORG 0x229F4
-jumpToHack(CheckIfUnitCanSelectGive)
-
-ORG 0x2298C
-jumpToHack(CheckIfUnitCanSelectTake)
-
-POP
-
-#include "asm/CheckIfUnitCanSelectDrop.lyn.event"
-ALIGN 4
-
-#include "asm/CheckIfUnitCanSelectGive.lyn.event"
-ALIGN 4
-
-#include "asm/CheckIfUnitCanSelectTake.lyn.event"
-ALIGN 4
-
 //Called by PostBattleCalcLoop  (Necessary/CalcLoops/PostBattleCalcLoop/PostBattleCalcLoop)
 #include "asm/EscortCanto.lyn.event"
 ALIGN 4

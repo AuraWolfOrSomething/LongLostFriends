@@ -1,5 +1,4 @@
 
-//MESSAGE whetstoneDamageIs currentOffset
 #include "asm/WhetstoneDamage.lyn.event"
 ALIGN 4
 

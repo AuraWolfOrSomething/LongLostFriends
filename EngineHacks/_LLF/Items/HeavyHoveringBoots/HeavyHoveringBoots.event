@@ -8,6 +8,7 @@ SHORT 0x6AFA //ldr r2, [r7,#0x2C]
 BL(CannotRetrieveHhbWhileRescuing)
 SHORT 0x2800 //cmp r0,#0
 SHORT 0xD0DB //beq 0x9E2E4
+PROTECT 0x9E322 CURRENTOFFSET-1
 
 ORG continueInBlRange
 #include "asm/CannotRetrieveHhbWhileRescuing.lyn.event"

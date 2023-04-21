@@ -204,11 +204,11 @@ Learning R.[X]
 
 ## LearningRingDesc
 Increases growth by 100%, then[NL]
-changes to the next stat in cycle...[X]
+changes to the next stat in cycle.[X]
 
 ## LearningRingDesc2
 Both uses are restored after[N]
-the chapter. The cycle is...[X]
+the chapter. The cycle is:[X]
 
 ## LearningRingDesc3
 Pow -> HP -> Skl -> Spd ->[NL]
@@ -260,7 +260,7 @@ Perfectus[X]
 ## PerfectusDesc
 Always hit/critical hit if >0.[NL]
 Opponent will always miss if <100 Hit.[NL]
--2 uses per battle...[X]
+-2 uses per battle.[X]
 
 ## PerfectusDesc2
 Uses are restored after the chapter.[NL]
@@ -290,12 +290,12 @@ Whetstone[X]
 ## WhetstoneDesc
 If unit has A or S Rank in their wielded[NL]
 weapon type, the weapon has +3 mt if[NL]
-at least one other condition is met...[X]
+at least one other condition is met.[X]
 
 ## WhetstoneDesc2
 - The weapon reverses the triangle[NL]
 and is currently effective against[NL]
-their opponent...[X]
+their opponent.[X]
 
 ## WhetstoneDesc3
 - The weapon is effective against[NL]
@@ -370,7 +370,7 @@ Pupil Gem[X]
 
 ## PupilGemDesc
 Can use weapons, tomes, and staves 1[N]
-rank greater than unit's currect rank...[X]
+rank greater than unit's currect rank.[X]
 
 ## PupilGemDesc2
 Their class still limits what they can[N]
@@ -396,17 +396,22 @@ Hvy Hvr Bts[X]
 ## HeavyHoveringBootsDesc
 Heavy Hovering Boots let this unit fly.[N]
 Newly accessible terrain costs 3 Mov.[N]
-This unit can't rescue or be rescued...[X]
+This unit can't rescue or be rescued.[X]
 
 ## HeavyHoveringBootsDesc2
 A unit that is rescuing or being[N]
 rescued cannot receive these[N]
-boots with Trade/Supply...[X]
+boots with Trade/Supply.[X]
 
 ## HeavyHoveringBootsDesc3
 A unit that's on terrain that's only[N]
 accessible because of the boots can't[N]
 give them away with Trade/Supply.[X]
+
+## HeavyHoveringBootsDesc4
+A unit that's on terrain that's only[N]
+accessible because of the boots doesn't[N]
+gain the terrain's defensive bonuses.[X]
 
 ## HeavyHoveringBootsUseDesc
 3 Mov to fly onto[N]

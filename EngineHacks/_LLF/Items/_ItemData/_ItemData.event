@@ -4,20 +4,25 @@ PUSH
 //Item Usability/Condition entry reader
 ORG 0x167A4
 #include "asm/CanUnitWieldStaff.lyn.event"
+ALIGN 4
+PROTECT 0x167A4 CURRENTOFFSET-1
 
 ORG 0x28870
 #include "asm/CanUnitUseItem.lyn.event"
 ALIGN 4
+PROTECT 0x28870 CURRENTOFFSET-1
 
 //Item Target/On Selection entry reader
 ORG 0x28E60
 #include "asm/ItemEffect_Call.lyn.event"
 ALIGN 4
+PROTECT 0x28E60 CURRENTOFFSET-1
 
 //Item Effect entry reader
 ORG 0x2FC48
 #include "asm/ActionStaffDoorChestUseItem.lyn.event"
 ALIGN 4
+PROTECT 0x2FC48 CURRENTOFFSET-1
 
 POP
 

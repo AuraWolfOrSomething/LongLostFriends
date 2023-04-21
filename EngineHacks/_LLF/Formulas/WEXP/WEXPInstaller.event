@@ -25,14 +25,17 @@ PUSH
 //no extra WEXP from followup attacks
 ORG 0x2B60C
 SHORT 0x2001 //mov r0, #1
+PROTECT 0x2B60C CURRENTOFFSET-1
 
 //no double WEXP from defeating enemies
 ORG 0x2C142
 SHORT 0x2901 0xDC00 //cmp r1, #1; bgt (0x2C148)
+PROTECT 0x2C142 CURRENTOFFSET-1
 
 //unpromoted units can reach S rank
 ORG 0x2C176
 SHORT 0xE007 //b 0x2C188
+PROTECT 0x2C176 CURRENTOFFSET-1
 
 //Weapon level modifications
 ORG 0x16d66 // D rank WEXP
@@ -49,9 +52,11 @@ BYTE ARankWEXP-1
 
 ORG 0x16d86 // S rank WEXP
 BYTE SRankWEXP-1
+PROTECT 0x16D66 CURRENTOFFSET-1
 
 ORG 0x2AD74 // S rank WEXP for in battle bonus
 BYTE SRankWEXP-1
+PROTECT 0x2AD74
 
 ORG 0x16e90 // bar to D rank WEXP
 BYTE DRankWEXP-1
@@ -79,5 +84,6 @@ BYTE ARankWEXP
 
 ORG 0x16eb8 // bar to S rank WEXP
 BYTE SRankWEXP-ARankWEXP
+PROTECT 0x16E90 CURRENTOFFSET-1
 
 POP

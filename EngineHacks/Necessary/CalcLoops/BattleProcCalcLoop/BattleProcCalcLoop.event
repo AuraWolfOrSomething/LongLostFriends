@@ -63,6 +63,8 @@ PUSH
 ORG $2b3ec
 jumpToHack(ProcLoopParent)
 
+//commented SkilllSystem jumpToHack(Rerun_Battle_Calcs)
+
 ORG $59064
 jumpToHack(SkillActivationAnims)
 

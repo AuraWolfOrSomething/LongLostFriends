@@ -4,6 +4,7 @@ PUSH
 ORG 0x1538C
 #include "asm/SwitchGameplayPhase.lyn.event"
 ALIGN 4
+PROTECT 0x1538C CURRENTOFFSET-1
 
 POP
 

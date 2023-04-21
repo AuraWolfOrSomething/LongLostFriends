@@ -85,7 +85,7 @@ act again. Limit: Once per turn.[X]
  Recapture[X]
   
 ## UM_RecaptureDesc
-"Rescue" an enemy who[N]
+[f"]Rescue[b"] an enemy who[N]
 was once a hostage.[X]
 
 ## UM_AoEName

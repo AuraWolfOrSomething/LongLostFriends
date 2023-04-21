@@ -1,84 +1,122 @@
 
+#define SetStandMapAnimEntry(classID,entryID) "PUSH; ORG classID*0x54+ClassTable+6; BYTE entryID; POP"
+#define ChangeStandMapAnimEntry(entryID) "ORG entryID*8+NewStandMapAnimTable"
+
 #define LargeMP 2 //32x32 frames
 #define MediumMP 1 //32x16 frames
 #define SmallMP 0 //16x16 frames
 
+NewStandMapAnimTable:
+ORG 8*0x7F+NewStandMapAnimTable
 PUSH
-//Lord
-ORG 0x8AF888
-SHORT 0
-SHORT SmallMP
-POIN LordMPSt
-
-ORG 0x9A2E08
-POIN LordMPMv
-//keep second pointer the same?
-
-//Deserter
-ORG 0x8AFA40
-SHORT 2
-SHORT SmallMP
-POIN DeserterMPSt
-
-ORG 0x9A3028
-POIN DeserterMPMv
-POIN 0x1EDBC4 //Soldier's AP
-//0x1C3D7C
-
-//Hunter
-ORG 0x8AFAA8
-SHORT 0
-SHORT SmallMP
-POIN HunterMPSt
-
-ORG 0x9A3098
-POIN HunterMPMv
-//keep second pointer the same?
-
-//Wyvern Rider
-ORG 0x8AF948
-SHORT 2
-SHORT MediumMP
-POIN WyvernRiderMPSt
-SHORT 2
-SHORT MediumMP
-POIN WyvernRiderMPSt
-
-ORG 0x9A2EF0
-POIN WyvernRiderMPMv
-//keep second pointer the same?
-
-ORG 0x9A2EF8
-POIN WyvernRiderMPMv
-//keep second pointer the same?
-
-
+ORG NewStandMapAnimTable
+#incbin "VanillaStandMapAnimTable.dmp"
 POP
 
-LordMPSt:
-#incbin "LordStanding.dmp"
 
-LordMPMv:
-#incbin "LordMoving.dmp"
+//Lord
+	
+	PUSH
+	
+	SetStandMapAnimEntry(ZorenLord,0x01)
+	
+	ChangeStandMapAnimEntry(0x01)
+	SHORT 0
+	SHORT SmallMP
+	POIN LordMPSt
 
-DeserterMPSt:
-//#incext Png2Dmp "DeserterStanding.png" --lz77
-#incbin "DeserterStanding.dmp"
+	ORG 0x9A2E08
+	POIN LordMPMv
+	//keep second pointer the same?
+	
+	POP
+	
+	LordMPSt:
+	#incbin "LordStanding.dmp"
 
-DeserterMPMv:
-//#incext Png2Dmp "DeserterMoving.png" --lz77
-#incbin "DeserterMoving.dmp"
+	LordMPMv:
+	#incbin "LordMoving.dmp"
 
-HunterMPSt:
-#incbin "HunterStanding.dmp"
 
-HunterMPMv:
-#incbin "HunterMoving.dmp"
+//Deserter
 
-WyvernRiderMPSt:
-#incbin "WyvernRiderStanding.dmp"
+	PUSH
+	
+	SetStandMapAnimEntry(Deserter,0x38)
+	
+	ChangeStandMapAnimEntry(0x38)
+	SHORT 2
+	SHORT SmallMP
+	POIN DeserterMPSt
 
-WyvernRiderMPMv:
-#incbin "WyvernRiderMoving.dmp"
+	ORG 0x9A3028
+	POIN DeserterMPMv
+	POIN 0x1EDBC4 //Soldier's AP
+	//0x1C3D7C
+	
+	POP
+	
+	DeserterMPSt:
+	//#incext Png2Dmp "DeserterStanding.png" --lz77
+	#incbin "DeserterStanding.dmp"
 
+	DeserterMPMv:
+	//#incext Png2Dmp "DeserterMoving.png" --lz77
+	#incbin "DeserterMoving.dmp"
+
+	
+
+//Hunter
+
+	PUSH
+	
+	SetStandMapAnimEntry(Hunter,0x45)
+	ChangeStandMapAnimEntry(0x45)
+	SHORT 0
+	SHORT SmallMP
+	POIN HunterMPSt
+
+	ORG 0x9A3098
+	POIN HunterMPMv
+	//keep second pointer the same?
+	
+	POP
+	
+	HunterMPSt:
+	#incbin "HunterStanding.dmp"
+
+	HunterMPMv:
+	#incbin "HunterMoving.dmp"
+
+
+//Wyvern Rider
+	
+	PUSH
+	
+	SetStandMapAnimEntry(WyvernRider,0x19)
+	SetStandMapAnimEntry(WyvernRider_F,0x19)
+	
+	ChangeStandMapAnimEntry(0x19)
+	SHORT 2
+	SHORT MediumMP
+	POIN WyvernRiderMPSt
+	SHORT 2
+	SHORT MediumMP
+	POIN WyvernRiderMPSt
+
+	ORG 0x9A2EF0
+	POIN WyvernRiderMPMv
+	//keep second pointer the same?
+
+	ORG 0x9A2EF8
+	POIN WyvernRiderMPMv
+	//keep second pointer the same?
+	
+	POP
+
+	WyvernRiderMPSt:
+	#incbin "WyvernRiderStanding.dmp"
+
+	WyvernRiderMPMv:
+	#incbin "WyvernRiderMoving.dmp"
 

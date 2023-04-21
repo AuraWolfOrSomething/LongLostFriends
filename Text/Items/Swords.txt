@@ -94,3 +94,10 @@ Rapier[X]
 
 ## RapierDesc
 Mt x2 vs cavalry and heavy armor.[X]
+
+## AgileEdgeName
+Agile Edge[X]
+
+## AgileEdgeDesc
+Avoid +15. If user doubles,[N]
+cannot be counterattacked.[X]

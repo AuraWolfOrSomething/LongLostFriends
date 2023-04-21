@@ -7,7 +7,9 @@ MultipleHelpTextPageList_Skills:
 /*
 BYTE CantoID 2
 SHORT SD_Canto 0x844
+*/
 
+/*
 BYTE SupplyID 3
 SHORT SD_Supply SD_SteadyAim 0x843
 */

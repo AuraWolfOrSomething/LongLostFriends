@@ -1,0 +1,144 @@
+
+PUSH
+
+//Seize
+ORG 0x22FDC
+SHORT 0xB500 0x4803 //push {r14}; ldr r0, =SeizeUsabilityList
+SHORT 0x4903 0x468E //ldr r1, =UnitMenuCommandConditionLoop; mov lr, r1
+SHORT 0xF800 0xBC02 //bl lr+r0; pop {r1}
+SHORT 0x4708 0 //bx r1 
+POIN SeizeUsabilityList
+POIN UnitMenuCommandConditionLoop
+PROTECT 0x22FDC CURRENTOFFSET-1
+
+//Talk
+ORG 0x23C80
+SHORT 0xB500 0x4803 //push {r14}; ldr r0, =TalkUsabilityList
+SHORT 0x4903 0x468E //ldr r1, =UnitMenuCommandConditionLoop; mov lr, r1
+SHORT 0xF800 0xBC02 //bl lr+r0; pop {r1}
+SHORT 0x4708 0 //bx r1 
+POIN TalkUsabilityList
+POIN UnitMenuCommandConditionLoop
+PROTECT 0x23C80 CURRENTOFFSET-1
+
+//Support
+ORG 0x23D14
+SHORT 0xB500 0x4803 //push {r14}; ldr r0, =SupportUsabilityList
+SHORT 0x4903 0x468E //ldr r1, =UnitMenuCommandConditionLoop; mov lr, r1
+SHORT 0xF800 0xBC02 //bl lr+r0; pop {r1}
+SHORT 0x4708 0 //bx r1 
+POIN SupportUsabilityList
+POIN UnitMenuCommandConditionLoop
+PROTECT 0x23D14 CURRENTOFFSET-1
+
+//Visit
+ORG 0x23040
+SHORT 0xB500 0x4803 //push {r14}; ldr r0, =VisitUsabilityList
+SHORT 0x4903 0x468E //ldr r1, =UnitMenuCommandConditionLoop; mov lr, r1
+SHORT 0xF800 0xBC02 //bl lr+r0; pop {r1}
+SHORT 0x4708 0 //bx r1 
+POIN VisitUsabilityList
+POIN UnitMenuCommandConditionLoop
+PROTECT 0x23040 CURRENTOFFSET-1
+
+//Chest
+ORG 0x23E1C
+SHORT 0xB500 0x4803 //push {r14}; ldr r0, =ChestUsabilityList
+SHORT 0x4903 0x468E //ldr r1, =UnitMenuCommandConditionLoop; mov lr, r1
+SHORT 0xF800 0xBC02 //bl lr+r0; pop {r1}
+SHORT 0x4708 0 //bx r1 
+POIN ChestUsabilityList
+POIN UnitMenuCommandConditionLoop
+PROTECT 0x23E1C CURRENTOFFSET-1
+
+//Door
+ORG 0x23DB4
+SHORT 0xB500 0x4803 //push {r14}; ldr r0, =DoorUsabilityList
+SHORT 0x4903 0x468E //ldr r1, =UnitMenuCommandConditionLoop; mov lr, r1
+SHORT 0xF800 0xBC02 //bl lr+r0; pop {r1}
+SHORT 0x4708 0 //bx r1 
+POIN DoorUsabilityList
+POIN UnitMenuCommandConditionLoop
+PROTECT 0x23DB4 CURRENTOFFSET-1
+
+//Armory
+ORG 0x23FD8
+SHORT 0xB500 0x4803 //push {r14}; ldr r0, =ArmoryUsabilityList
+SHORT 0x4903 0x468E //ldr r1, =UnitMenuCommandConditionLoop; mov lr, r1
+SHORT 0xF800 0xBC02 //bl lr+r0; pop {r1}
+SHORT 0x4708 0 //bx r1 
+POIN ArmoryUsabilityList
+POIN UnitMenuCommandConditionLoop
+PROTECT 0x23FD8 CURRENTOFFSET-1
+
+//Vendor
+ORG 0x24034
+SHORT 0xB500 0x4803 //push {r14}; ldr r0, =VendorUsabilityList
+SHORT 0x4903 0x468E //ldr r1, =UnitMenuCommandConditionLoop; mov lr, r1
+SHORT 0xF800 0xBC02 //bl lr+r0; pop {r1}
+SHORT 0x4708 0 //bx r1 
+POIN VendorUsabilityList
+POIN UnitMenuCommandConditionLoop
+PROTECT 0x24034 CURRENTOFFSET-1
+
+//Rescue
+ORG 0x228A4
+SHORT 0xB500 0x4803 //push {r14}; ldr r0, =RescueUsabilityList
+SHORT 0x4903 0x468E //ldr r1, =UnitMenuCommandConditionLoop; mov lr, r1
+SHORT 0xF800 0xBC02 //bl lr+r0; pop {r1}
+SHORT 0x4708 0 //bx r1 
+POIN RescueUsabilityList
+POIN UnitMenuCommandConditionLoop
+PROTECT 0x228A4 CURRENTOFFSET-1
+
+//Drop
+ORG 0x22910
+SHORT 0xB500 0x4803 //push {r14}; ldr r0, =DropUsabilityList
+SHORT 0x4903 0x468E //ldr r1, =UnitMenuCommandConditionLoop; mov lr, r1
+SHORT 0xF800 0xBC02 //bl lr+r0; pop {r1}
+SHORT 0x4708 0 //bx r1 
+POIN DropUsabilityList
+POIN UnitMenuCommandConditionLoop
+PROTECT 0x22910 CURRENTOFFSET-1
+
+//Take
+ORG 0x2298C
+SHORT 0xB500 0x4803 //push {r14}; ldr r0, =TakeUsabilityList
+SHORT 0x4903 0x468E //ldr r1, =UnitMenuCommandConditionLoop; mov lr, r1
+SHORT 0xF800 0xBC02 //bl lr+r0; pop {r1}
+SHORT 0x4708 0 //bx r1 
+POIN TakeUsabilityList
+POIN UnitMenuCommandConditionLoop
+PROTECT 0x2298C CURRENTOFFSET-1
+
+//Give
+ORG 0x229F4
+SHORT 0xB500 0x4803 //push {r14}; ldr r0, =GiveUsabilityList
+SHORT 0x4903 0x468E //ldr r1, =UnitMenuCommandConditionLoop; mov lr, r1
+SHORT 0xF800 0xBC02 //bl lr+r0; pop {r1}
+SHORT 0x4708 0 //bx r1 
+POIN GiveUsabilityList
+POIN UnitMenuCommandConditionLoop
+PROTECT 0x229F4 CURRENTOFFSET-1
+
+//Item
+ORG 0x232B8
+SHORT 0xB500 0x4803 //push {r14}; ldr r0, =ItemUnitMenuUsabilityList
+SHORT 0x4903 0x468E //ldr r1, =UnitMenuCommandConditionLoop; mov lr, r1
+SHORT 0xF800 0xBC02 //bl lr+r0; pop {r1}
+SHORT 0x4708 0 //bx r1 
+POIN ItemUnitMenuUsabilityList
+POIN UnitMenuCommandConditionLoop
+PROTECT 0x232B8 CURRENTOFFSET-1
+
+//Trade
+ORG 0x22F34
+SHORT 0xB500 0x4803 //push {r14}; ldr r0, =TradeUsabilityList
+SHORT 0x4903 0x468E //ldr r1, =UnitMenuCommandConditionLoop; mov lr, r1
+SHORT 0xF800 0xBC02 //bl lr+r0; pop {r1}
+SHORT 0x4708 0 //bx r1 
+POIN TradeUsabilityList
+POIN UnitMenuCommandConditionLoop
+PROTECT 0x22F34 CURRENTOFFSET-1
+
+POP

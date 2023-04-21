@@ -12,8 +12,9 @@
 		ldr		r5, =ClassCapLabelLink
 		
 		@save which stat we're looking at
-		lsl		r0, #28
-		lsr		r0, #28
+		ldr		r1, =ClassCapHelpTextLink
+		ldrh	r1, [r1]
+		sub		r0, r1
 		mov		r6, r0
 		
 		@"Cap" or "Class Cap"

@@ -4,6 +4,7 @@ PUSH
 ORG 0x33648
 #include "asm/SetUpPrepScreenMapMenu.lyn.event"
 ALIGN 4
+PROTECT 0x33648 CURRENTOFFSET-1
 
 ORG 0x971BE
 SHORT 0x9001 0x1C20 //str r0, [sp,#4]; mov r0, r4
@@ -11,6 +12,7 @@ BL(PrepScreenMapMenuCommandColor)
 SHORT 0x0071 0x4A0C //lsl r1, r6, #1; ldr r2, =gBg0MapBuffer
 SHORT 0x1889 0x1C02 //add r1, r2; mov r2, r0
 SHORT 0x2300 0x9300 //mov r3, #0; str r3, [sp]
+PROTECT 0x971BE CURRENTOFFSET-1
 
 ORG continueInBlRange
 #include "asm/PrepScreenMapMenuCommandColor.lyn.event"

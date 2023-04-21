@@ -1,0 +1,6 @@
+
+#include "IneptInternal.event"
+
+//Rank penalty
+#include "asm/DetermineIneptSeverity.lyn.event"
+ALIGN 4

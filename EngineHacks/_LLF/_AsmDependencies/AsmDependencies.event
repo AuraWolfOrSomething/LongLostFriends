@@ -5,6 +5,17 @@ WORD DebuffTable
 DebuffTableSizeLink:
 WORD DebuffTableSize
 
+ArrowTextIdLink:
+SHORT ArrowTextID
+
+RankLabelLink:
+SHORT RankLabel
+
+DurationLabelLink:
+SHORT ConditionDurationLabel
+
+ALIGN 4
+
 #include "CountUnits/CountUnits.lyn.event"
 ALIGN 4
 
@@ -58,9 +69,6 @@ ALIGN 4
 #include "EventSilentEditInventory/EventSilentEditInventory.event"
 ALIGN 4
 
-#include "TryAddUnitToRescueTargetList/TryAddUnitToRescueTargetList.event"
-ALIGN 4
-
 #include "BattleQuoteConditionalChecks/BattleQuoteConditionalChecks.event"
 ALIGN 4
 
@@ -69,3 +77,16 @@ ALIGN 4
 
 #include "ShoppingEdits/ShoppingEdits.event"
 ALIGN 4
+
+#include "ModularUnitMenuCommandUsability/ModularUnitMenuCommandUsability.event"
+ALIGN 4
+
+#include "GetUnitHighestWexp/GetUnitHighestWexp.lyn.event"
+ALIGN 4
+
+#include "CountUnits/AsmcCountUnitsInArea.lyn.event"
+ALIGN 4
+
+#include "WasDefenderCaptured/WasDefenderCaptured.lyn.event"
+ALIGN 4
+

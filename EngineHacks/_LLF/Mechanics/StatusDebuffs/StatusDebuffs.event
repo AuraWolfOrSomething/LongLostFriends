@@ -34,6 +34,7 @@ PUSH
 ORG 0x18858
 #include "asm/MapMain_UpdateUnitStatus.lyn.event"
 ALIGN 4
+PROTECT 0x18858 CURRENTOFFSET-1
 
 ORG 0x19414
 SHORT 0xB510 0x4C03 //push {r4,r14}; ldr r4, =GetUnitStatusString
@@ -41,6 +42,7 @@ SHORT 0x46A6 0xF800 //mov lr, r14; bl lr+0
 SHORT 0xBC10 0xBC01 //pop {r4}; pop {r0}
 SHORT 0x4700 0 //bx r0; lsl r0, #0 (alignment)
 POIN GetUnitStatusString
+PROTECT 0x19414 CURRENTOFFSET-1
 
 ORG 0x8C388
 jumpToHack(MMB_DrawStatusText)
@@ -55,6 +57,12 @@ POP
 ALIGN 4
 
 #include "asm/GetUnitStatusString.lyn.event"
+ALIGN 4
+
+#include "asm/CalculateDebuffDuration.lyn.event"
+ALIGN 4
+
+#include "asm/UnitInfoWindow_DrawDebuffDuration.lyn.event"
 ALIGN 4
 
 LastStatusInUseLink:

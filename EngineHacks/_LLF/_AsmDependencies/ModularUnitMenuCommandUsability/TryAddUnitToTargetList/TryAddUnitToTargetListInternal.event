@@ -1,0 +1,47 @@
+
+PUSH
+
+ORG 0x2521C
+#include "asm/TryAddUnitToTradeTargetList.lyn.event"
+ALIGN 4
+PROTECT 0x2521C CURRENTOFFSET-1
+
+//Commented Capture callHack_r3(Trade_Captured_Enemy1) and callHack_r3(Trade_Captured_Enemy2)
+
+ORG 0x25344
+SHORT 0xB500 //push {r14}
+SHORT 0x4903 //ldr r1, =RescueCommandTargetConditionsList
+SHORT 0x4A03 //ldr r2, =TryAddUnitToTargetList
+SHORT 0x4696 //mov lr, r2
+SHORT 0xF800 //bl lr+0
+SHORT 0xBC01 //pop {r0}
+SHORT 0x4700 0 //bx r0
+POIN RescueCommandTargetConditionsList
+POIN TryAddUnitToTargetList
+PROTECT 0x25344 CURRENTOFFSET-1
+
+POP
+
+#include "asm/TryAddUnitToTargetList.lyn.event"
+ALIGN 4
+
+#include "asm/TargetCheckAreAllegiancesAllied.lyn.event"
+ALIGN 4
+
+#include "asm/EitherUnitCheckPhantom.lyn.event"
+ALIGN 4
+
+#include "asm/TargetCheckBerserk.lyn.event"
+ALIGN 4
+
+#include "asm/TargetCheckAlreadyTraveling.lyn.event"
+ALIGN 4
+
+#include "asm/BothUnitsCheckEmptyInventory.lyn.event"
+ALIGN 4
+
+#include "asm/TargetCheckSupplyBit.lyn.event"
+ALIGN 4
+
+#include "asm/TargetCheckTradeRescueeAllegiance.lyn.event"
+ALIGN 4

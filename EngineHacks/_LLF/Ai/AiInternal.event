@@ -4,10 +4,12 @@ PUSH
 //Ai2, move towards enemy
 ORG 0x3C870
 SHORT 0x1C20 //mov r0, r4
+PROTECT 0x3C870 CURRENTOFFSET-1
 
 ORG 0x3ACF8
 #include "asm/OverwriteAiIsUnitExceptionFunction.lyn.event"
 ALIGN 4
+PROTECT 0x3ACF8 CURRENTOFFSET-1
 
 //Ai2, attack within double range
 ORG 0x3EFE0 
@@ -17,9 +19,11 @@ ALIGN 4
 //Whether unit should consider unit as potential target to attack or not 
 ORG 0x3AC3C
 SHORT 0xB5F0 //push {r4-r7,r14}
+PROTECT 0x3AC3C CURRENTOFFSET-1
 
 ORG 0x3AC66
 SHORT 0x181F //add r7, r3, r0
+PROTECT 0x3AC66 CURRENTOFFSET-1
 
 ORG 0x3AC76 //InjectMovGetters from MSG also writes here; this will overwrite that
 SHORT 0xBC02 //pop {r1}
@@ -34,6 +38,7 @@ SHORT 0xBC02 //pop {r1}
 SHORT 0x4708 //bx r1
 SHORT 0
 POIN CouldStatUnitBeInRangeExt
+PROTECT 0x3AC76 CURRENTOFFSET-1
 
 POP
 
