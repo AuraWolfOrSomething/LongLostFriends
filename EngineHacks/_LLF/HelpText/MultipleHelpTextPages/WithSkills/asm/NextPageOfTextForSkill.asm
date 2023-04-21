@@ -27,7 +27,8 @@
 			strh	r0, [r1]
 			
 			@no labels & values unless first page
-			mov		r3, #0
+			ldr		r3, =MultiplePageHelpTextLink
+			ldrh	r3, [r3]
 			strh	r3, [r1,#2]
 			b		End
 		
