@@ -154,6 +154,10 @@
 //Expertise: Reduce opponent's effectiveness multiplier by 50%.
 #define ExpertiseID 39
 
+//Watchful: This unit cannot be captured or stolen from.
+//By Sme
+#define WatchfulID 40
+
 //Cunning: Description pending
 #define CunningID 100
 
@@ -199,10 +203,6 @@
 //Capture: Capture an enemy after defeating it with reduced stats.
 //By Tequila
 #define CaptureID 255
-
-//Watchful: This unit cannot be captured or stolen from.
-//By Sme
-#define WatchfulID 255
 
 //Expertise: Reduce bonus damage from critical hits by 50%.
 //Author Unknown (Initial Commit)

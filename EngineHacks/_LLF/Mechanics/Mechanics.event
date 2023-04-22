@@ -46,3 +46,6 @@ ALIGN 4
 
 #include "StaffUsageRequisites/StaffUsageRequisites.event"
 ALIGN 4
+
+#include "StealRequirements/StealRequirements.event"
+ALIGN 4

@@ -195,8 +195,6 @@ BYTE $F0 $B5 $5F $46 $56 $46 $4D $46 $44 $46 $F0 $B4 $33 $4C $A2 $46 $33 $48 $00
 
 #include "ExternalHacks/EmotionBubble/Show_map_emotion_Install.event" //credit 7743 & Kenpuku
 
-#include "ExternalHacks/StealRequirements/StealRequirementsInstaller.event" //credit Vesly for StealWithFullInv
-
 #include "ExternalHacks/FE8-SetCondition/FE8-SetCondition.event" //credit Tequila
 
 #include "QualityOfLife/WalkingSoundsFix/WalkingSoundsFix.event" //credit Tequila

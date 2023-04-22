@@ -1,0 +1,24 @@
+
+//Credit Vesly for StealWithFullInv
+
+PUSH
+
+//Removes requiring higher Spd
+ORG 0x25BB0
+SHORT 0xE006 //b 0x25BC0
+PROTECT 0x25BB0 CURRENTOFFSET-1
+
+ORG 0x17054
+jumpToHack(CanItemBeStolen)
+
+//Commented out StealPlus jumpToHack(FE8-Rogue_Robbery)
+
+POP
+
+#include "StealWithFullInv/Installer.event"
+ALIGN 4
+
+#include "asm/CanItemBeStolen.lyn.event"
+WatchfulIDLink:
+BYTE WatchfulID
+ALIGN 4

@@ -3,8 +3,12 @@
 
 PUSH
 
+/*
+Handled by StealRequirements (Mechanics)
+
 ORG $17054
 jumpToHack(Rogue_Robbery)
+*/
 
 //Can this item be stolen
 ORG $2432A
@@ -26,6 +30,7 @@ SHORT 0x004E 0x9802 0x361E 0x1836 0x8836 0x46C0 //lsl r6,r1,#1; ldr r0,[sp,#8]; 
 
 POP
 
+/*
 ALIGN 4
 Rogue_Robbery:
 #incbin "FE8-Rogue_Robbery.dmp"
@@ -33,6 +38,7 @@ POIN prConGetter
 POIN SkillTester
 WORD StealPlusID
 WORD WatchfulID
+*/
 
 //#ifndef prConGetter
 //	ALIGN 4
