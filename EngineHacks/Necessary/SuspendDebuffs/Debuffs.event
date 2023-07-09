@@ -6,22 +6,15 @@
 
 /*
 These effects don't actually exist yet, but they have space set aside:
-- Slow
 - Serpent Bow
-- Absorb
-
-These exist, but there isn't an ingame way to set them (e.g. a staff):
-- Inept
-- Lull
-- Debuff block
 */
 
 /*
 Long-Lost Friends Debuff Mapping
 First byte: Rustbow (low nibble), Inept (high nibble)
-Second: Lull (low nibble)
+Second: Lull Def/Res(low nibble), Shift (high nibble)
 Third: Slow (first bit), Distract (second bit), Serpent Bow (fifth bit)
-Fourth: Absorbed Debuffs (first bit)
+Fourth: Absorb (first bit)
 
 Fifth: Debuff half (low nibble), Debuff block (high nibble)
 Sixth: Rally (first bit-fourth bit), Guardian Def/Res (fifth bit)

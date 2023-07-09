@@ -1,10 +1,4 @@
 
-#define AreaHealingStaff(EntryNumber,ItemID) "ORG 4*EntryNumber+AreaHealList; BYTE ItemID"
-#define AreaHealingStaff(BaseRange,PowPercent,UseStaffSavant) "BYTE BaseRange PowPercent UseStaffSavant"
-#define ExcludeStaffSavant 0
-#define IncludeStaffSavant 1
-#define EndAreaHealList "WORD 0"
-
 #define StatusItem(EntryNumber,ItemID,StatusEffect,Duration) "ORG 4*EntryNumber+StatusEffectItemTable; BYTE ItemID StatusEffect Duration 0"
 #define EndStatusEffectItemList(EntryNumber) "ORG 4*EntryNumber+StatusEffectItemList; WORD 0"
 

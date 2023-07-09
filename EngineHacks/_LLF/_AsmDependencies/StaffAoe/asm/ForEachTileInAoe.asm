@@ -1,12 +1,12 @@
 .thumb
 
-.include "../GuardianDefs.s"
+.include "../StaffAoeDefs.s"
 
-.global GuardianForEachTileInAoe
-.type GuardianForEachTileInAoe, %function
+.global ForEachTileInAoe
+.type ForEachTileInAoe, %function
 
 
-		GuardianForEachTileInAoe:
+		ForEachTileInAoe:
 		push	{r4-r7,r14}
 		add		sp, #-0x0C
 		str		r3, [r13] @routine to go to if a unit is in aoe range
@@ -56,7 +56,7 @@
 					mov		lr, r1
 					.short	0xF800
 					
-					@Go to the routine passed down at the beginning of GuardianForEachTileInAoe
+					@Go to the routine passed down
 					ldr		r1, [r13]
 					mov		lr, r1
 					.short	0xF800

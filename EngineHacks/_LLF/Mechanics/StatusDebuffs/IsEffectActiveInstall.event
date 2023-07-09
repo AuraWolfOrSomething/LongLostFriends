@@ -6,6 +6,7 @@ IsEffectActiveList:
 POIN IsAnyStatusActive
 POIN CountAllDebuffsActive
 POIN CountAllBuffsActive
+POIN CountOtherEffectsActive
 WORD 0
 
 
@@ -76,6 +77,7 @@ ALIGN 4
 BuffCheckingList:
 //POIN IsGuardianNullifyActive
 POIN IsGuardianDamageActive
+POIN IsWardenActive
 POIN IsDebuffHalfActive
 POIN IsRallyActive
 WORD 0
@@ -86,7 +88,25 @@ ALIGN 4
 #include "asmIsEffectActive/IsGuardianDamageActive.lyn.event"
 ALIGN 4
 
+#include "asmIsEffectActive/IsWardenActive.lyn.event"
+ALIGN 4
+
 #include "asmIsEffectActive/IsDebuffHalfActive.lyn.event"
 
 #include "asmIsEffectActive/IsRallyActive.lyn.event"
+ALIGN 4
+
+
+//-----------------------------------
+//Other
+//-----------------------------------
+
+OtherEffectCheckingList:
+POIN IsShiftEffectActive
+WORD 0
+
+#include "asmIsEffectActive/CountOtherEffectsActive.lyn.event"
+ALIGN 4
+
+#include "asmIsEffectActive/IsShiftEffectActive.lyn.event"
 ALIGN 4

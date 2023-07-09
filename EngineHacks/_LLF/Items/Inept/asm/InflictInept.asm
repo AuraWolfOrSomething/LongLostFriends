@@ -7,7 +7,7 @@
 
 
 		InflictInept:
-		push	{r4-r7,r14}
+		push	{r4-r6,r14}
 		add		sp, #-0x04
 		str		r0, [sp] @proc stuff or something
 		ldr		r4, =gActionData
@@ -41,7 +41,7 @@
 		
 		@If res is too high, treat it as a miss
 		cmp		r0, #0
-		bgt		GoToGetDebuffs
+		bgt		NonZeroDuration
 		
 			ldr		r0, =gpCurrentRound
 			ldr		r3, [r0]
@@ -56,16 +56,14 @@
 			str		r0, [r3]
 			b		FinalizeIneptEffect
 		
-		GoToGetDebuffs:
-		mov		r7, r0
+		NonZeroDuration:
+		lsl		r3, r0, #4
+		ldr		r0, =SetDebuffOrRemoveProtection
+		mov		lr, r0
 		mov		r0, r6
-		ldr		r1, =GetDebuffs
-		mov		lr, r1
+		mov		r1, #0 @where debuff is in unit debuff entry
+		mov		r2, #0xF0 @how much of the byte is for this debuff
 		.short	0xF800
-		ldrb	r1, [r0]
-		lsl		r7, #4
-		orr		r1, r7
-		strb	r1, [r0] @debuff applied
 		
 		FinalizeIneptEffect:
 		ldr		r0, [sp]
@@ -76,7 +74,7 @@
 		mov		lr, r0
 		.short	0xF800
 		add		sp, #0x04
-		pop		{r4-r7}
+		pop		{r4-r6}
 		pop		{r0}
 		bx		r0
 		

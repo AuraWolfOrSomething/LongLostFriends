@@ -235,7 +235,8 @@ GetUnitRallyBits.end:
 	.pool
 
 RallyAuraCheck:
-	ldr r0, =AuraSkillCheck
+	@ldr r0, =AuraSkillCheck
+	ldr r0, =RallyAuraSkillCheck
 	mov ip, r0
 
 	ldr r0, =gActiveUnit

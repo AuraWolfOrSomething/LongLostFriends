@@ -28,24 +28,32 @@
 			tst		r0, r1
 			bne		End
 			
-				@Get unit debuff entry
+				@Check if unit has Absorb debuff
 				mov		r0, r4
-				ldr		r1, =GetDebuffs
+				ldr		r1, =IsAbsorbDebuffActive
 				mov		lr, r1
 				.short	0xF800
-				
-				@Apply status halving on unit
-				ldrb	r1, [r0,#4]
-				mov		r2, #0xF0
-				and		r1, r2
-				add		r1, #5
-				strb	r1, [r0,#4]
-				
-				@Apply def/res buff
-				ldrb	r1, [r0,#5]
-				mov		r2, #0x10
-				orr		r1, r2
-				strb	r1, [r0,#5]
+				cmp		r0, #0
+				bne		End
+			
+					@Get unit debuff entry
+					mov		r0, r4
+					ldr		r1, =GetDebuffs
+					mov		lr, r1
+					.short	0xF800
+					
+					@Apply status halving on unit
+					ldrb	r1, [r0,#4]
+					mov		r2, #0xF0
+					and		r1, r2
+					add		r1, #5
+					strb	r1, [r0,#4]
+					
+					@Apply def/res buff
+					ldrb	r1, [r0,#5]
+					mov		r2, #0x10
+					orr		r1, r2
+					strb	r1, [r0,#5]
 		
 		End:
 		pop		{r4}

@@ -12,3 +12,4 @@ ALIGN 4
 
 StaffHealingNoStats:
 SHORT 0x2000 0x4770 //mov r0, #0; bx r14
+ALIGN 4

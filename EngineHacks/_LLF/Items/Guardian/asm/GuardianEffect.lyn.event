@@ -18,7 +18,7 @@ SHORT $480B $4686
 BYTE $0 $F8
 SHORT $BC70 $BC01 $4700
 BYTE $58 $A9 $3 $2 $30 $94 $1 $8 $24 $CB $2 $8 $6C $A5 $3 $2
-POIN GuardianForEachTileInAoe
+POIN ForEachTileInAoe
 POIN GuardianAoeMap
 POIN ApplyGuardianBuffOnUnit
 POIN GetDistanceFromCoords

@@ -56,10 +56,10 @@
 			b		DisplayArrow
 			
 			LoopThroughTable:
-			ldrb	r1, [r2]
+			ldrb	r1, [r2,#1]
 			cmp		r0, r1
-			beq		GetFirstTextId
-			
+			blt		GetFirstTextId
+		
 				add		r2, #1
 				b		LoopThroughTable
 			

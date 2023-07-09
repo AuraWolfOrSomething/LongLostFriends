@@ -1,22 +1,15 @@
 
 /*
 These effects don't actually exist yet, but they have space set aside:
-- Slow
 - Serpent Bow
-- Absorb
-
-These exist, but there isn't an ingame way to set them (e.g. a staff):
-- Inept
-- Lull
-- Debuff block
 */
 
 /*
 Long-Lost Friends Debuff Mapping
 First byte: Rustbow (low nibble), Inept (high nibble)
-Second: Lull (low nibble)
+Second: Lull Def/Res (low nibble), Shift (high nibble)
 Third: Slow (first bit), Distract (second bit), Serpent Bow (fifth bit)
-Fourth: Absorbed Debuffs (first bit)
+Fourth: Absorb (first bit)
 
 Fifth: Debuff half (low nibble), Debuff block (high nibble)
 Sixth: Rally (first bit-fourth bit), Guardian Def/Res (fifth bit)
@@ -37,19 +30,26 @@ ALIGN 4
 PROTECT 0x18858 CURRENTOFFSET-1
 
 ORG 0x19414
-SHORT 0xB510 0x4C03 //push {r4,r14}; ldr r4, =GetUnitStatusString
-SHORT 0x46A6 0xF800 //mov lr, r14; bl lr+0
-SHORT 0xBC10 0xBC01 //pop {r4}; pop {r0}
-SHORT 0x4700 0 //bx r0; lsl r0, #0 (alignment)
+SHORT 0xB500 0x4902 //push {r14}; ldr r1, =GetUnitStatusString
+SHORT 0x468E 0xF800 //mov lr, r1; bl lr+0
+SHORT 0xBC02 0x4708 //pop {r1}; bx r1
 POIN GetUnitStatusString
 PROTECT 0x19414 CURRENTOFFSET-1
 
 ORG 0x8C388
 jumpToHack(MMB_DrawStatusText)
 
+ORG 0x8C390 //not needed, but easier to find
+#include "asm/SS_WriteEffect.lyn.event"
+ALIGN 4
+PROTECT 0x8C390 CURRENTOFFSET-1
+
 //shouldn't be needed (handled by MSS), but just in case
 ORG 0x88A2C
 jumpToHack(HelpBoxCurrentCondition)
+
+ORG 0x178D8
+jumpToHack(SetUnitNewStatus)
 
 POP
 
@@ -65,6 +65,15 @@ ALIGN 4
 #include "asm/UnitInfoWindow_DrawDebuffDuration.lyn.event"
 ALIGN 4
 
+#include "asm/SetUnitNewStatus.lyn.event"
+ALIGN 4
+
+#include "asm/SetDebuffOrRemoveProtection.lyn.event"
+ALIGN 4
+
+#include "asm/AddDebuffOrRemoveProtection.lyn.event"
+ALIGN 4
+
 LastStatusInUseLink:
 BYTE 4 //Berserk
 ALIGN 4
@@ -74,6 +83,28 @@ WORD AnyBuffs
 
 AnyDebuffsBitfieldLink:
 WORD AnyDebuffs
+
+UnitDebuffEntryList:
+//BYTE location bitUsage
+
+//Rustbow
+BYTE 0 0x0F
+
+//Inept
+BYTE 0 0xF0
+
+//Lull
+BYTE 1 0x0F
+
+//Slow
+BYTE 2 0x01
+
+//Distract
+BYTE 2 0x02
+
+//End of list
+SHORT 0xFFFF
+ALIGN 4
 
 #include "AilmentCounterplayInstall.event"
 

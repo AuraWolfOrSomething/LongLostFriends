@@ -2,6 +2,13 @@
 
 //Write_Short(0x0090,0x0202BE72) //PU1 has WretchedAir in item slot 5 
 //Write_Short(0x046C,0x0202BE72) //PU1 has Vulnerary in item slot 5 
+
+/*
+SVAL s1 Zoren
+SVAL s2 Absorb|0x0500
+ASMC EventSilentGiveItem|1
+*/
+
 //Write_Byte(1,0x0202BE5F) //PU1 has 1 current hp
 //Write_Byte(20,0x0202BE61) //PU1 has 20 Skl
 //Write_Byte(71,0x0202BE74) //PU1 has C Sword rank
@@ -17,9 +24,9 @@ Write_Byte(1,0x0202BE77) //PU1 has E Bow rank
 */
 
 Write_Byte(1,0x0202BEA7) //PU2 has 1 current hp
-Write_Byte(1,0x0202BE78) //PU1 has E Staff rank
-//Write_Byte(181,0x0202BE78) //PU1 has A Staff rank
-//Write_Byte(1,0x0202D29F) //EU11 has 1 current hp
+//Write_Byte(1,0x0202BE78) //PU1 has E Staff rank
+Write_Byte(181,0x0202BE78) //PU1 has A Staff rank
+Write_Byte(1,0x0202D29F) //EU11 has 1 current hp
 //Write_Byte(1,0x0202D2E7) //EU12 has 1 current hp
 
 

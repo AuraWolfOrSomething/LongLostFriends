@@ -4,7 +4,7 @@
 #include "_Common.event"
 
 pPowerModifiers: // Power
-	POIN prAddUnitPower prHalveIfCapturing prDebuffStr prAddEquipPower prItemPassivePow prGemPow-1 prNocStatBoost-1 //prRallyStr prLifeAndDeathBonus prSkillFury prFortressDefensePow VigorDanceCheck prFortressResistancePow prResolve prDefiantStr prPushStr
+	POIN prAddUnitPower prShiftUseSpeedForPower/*prHalveIfCapturing*/ prDebuffStr prAddEquipPower prItemPassivePow prGemPow-1 prNocStatBoost-1 //prRallyStr prLifeAndDeathBonus prSkillFury prFortressDefensePow VigorDanceCheck prFortressResistancePow prResolve prDefiantStr prPushStr
 	#ifdef DEBUFFS_MIN_ZERO
 	POIN prMinZero
 	#endif
@@ -12,7 +12,7 @@ WORD 0
 
 prAddUnitPower:
 	rAdd(rSByteAt(UNIT_POWER))
-	
+
 prAddEquipPower:
 	rAdd(rForUnitEquipped(rCallExternal(prGetItemPowBonus)))
 

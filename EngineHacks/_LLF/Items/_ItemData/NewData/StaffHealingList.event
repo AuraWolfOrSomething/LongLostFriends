@@ -6,7 +6,7 @@ StaffHealingList:
 //Adjacent/nearby healing
 BYTE Heal 5 0
 BYTE Mend 15 0
-//BYTE Mend 0 1 //testing Favor
+BYTE Favor 7 1
 BYTE Recover 80 2
 
 //Distance healing
@@ -16,6 +16,7 @@ BYTE Physic 10 0
 //AOE healing
 BYTE Secure 12 2
 BYTE Fortify 10 0
+BYTE Lull 10 0
 
 //End of the list
 BYTE 0

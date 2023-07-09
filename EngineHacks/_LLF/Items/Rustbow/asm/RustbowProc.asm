@@ -35,28 +35,15 @@
 				bne		End
 					
 					@apply debuff on unit taking damage during the actual battle
+					ldr		r0, =AddDebuffOrRemoveProtection
+					mov		lr, r0
 					mov		r0, r5
-					ldr		r1, =GetDebuffs
-					mov		lr, r1
-					.short	0xF800
-					ldrb	r1, [r0]
-					mov		r2, r1
-					mov		r3, #0x0F
-					and		r2, r3
+					mov		r1, #0 @where debuff is in unit debuff entry
+					mov		r2, #0x0F @how much of the byte is for this debuff
 					ldr		r3, =RustbowDebuffDurationOnHitLink
 					ldrb	r3, [r3]
-					add		r2, r3
-					cmp		r2, #0x0F
-					ble		StoreNewDebuffAmount
+					.short	0xF800
 					
-						mov		r2, #0x0F
-					
-					StoreNewDebuffAmount:
-					lsl		r1, #28
-					lsr		r1, #28
-					add		r1, r2
-					strb	r1, [r0]
-		
 		End:
 		pop		{r4-r5}
 		pop		{r0}

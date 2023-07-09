@@ -19,6 +19,7 @@
 .equ DrawIcon, 0x80036BC
 .equ WriteTrvText, 0x80193E8
 .equ WriteStatusText, 0x8019414
+.equ WriteEffectText, 0x808C390 @this space is only available if a jumpToHack is done at 0x808C388
 .equ AppendText, 0x8004480
 .equ AffinityGetter, 0x80286BC
 .equ EquippedWeaponGetter, 0x8016B28
@@ -118,7 +119,6 @@
   add r7, #8
 .endm
 
- @08B3634C
 .macro draw_bar_at bar_x, bar_y, getter, offset, bar_id
   mov 	  r0, r8
   blh      \getter
@@ -556,7 +556,7 @@
   mov r0, r8
   mov r1, #(\tile_x)
   mov r2, #(\tile_y)
-  blh WriteStatusText, r4
+  blh WriteEffectText, r4
 .endm
 
 .macro draw_affinity_icon_at, tile_x, tile_y

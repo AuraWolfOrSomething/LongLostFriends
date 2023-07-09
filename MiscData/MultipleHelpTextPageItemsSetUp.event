@@ -33,5 +33,14 @@ SHORT RustbowDesc RustbowDesc2
 BYTE HeavyHoveringBoots 4
 SHORT HeavyHoveringBootsDesc HeavyHoveringBootsDesc2 HeavyHoveringBootsDesc3 HeavyHoveringBootsDesc4
 
+BYTE Lull 2
+SHORT LullDesc LullDesc2
+
+BYTE WardenStaff 2
+SHORT WardenDesc WardenDesc2
+
+BYTE Absorb 3
+SHORT AbsorbDesc AbsorbDesc2 AbsorbDesc3
+
 BYTE 0 //end list with this
 ALIGN 4

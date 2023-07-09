@@ -432,13 +432,31 @@ ORG 0x5926F4
 	
 	#define IneptIcon StaffIcon_First+17
 	#incbin "Staves/Inept.dmp"
+	
+	#define FavorIcon StaffIcon_First+18
+	#incbin "Staves/Favor.dmp"
+	
+	#define LullIcon StaffIcon_First+19
+	#incbin "Staves/Lull.dmp"
+	
+	#define WardenStaffIcon StaffIcon_First+20
+	#incbin "Staves/Warden.dmp"
+	
+	#define SlowStaffIcon StaffIcon_First+21
+	#incbin "Staves/Slow.dmp"
+	
+	#define AbsorbIcon StaffIcon_First+22
+	#incbin "Staves/Absorb.dmp"
+	
+	#define ShiftStaffIcon StaffIcon_First+23
+	#incbin "Staves/Shift.dmp"
 
 
 //---------------------------------------------------
 //Other
 //---------------------------------------------------
 
-#define ItemIcon_First StaffIcon_First+18
+#define ItemIcon_First StaffIcon_First+24
 
 	#define LateCrestIcon ItemIcon_First
 	#incbin "Other/LateCrest.dmp"

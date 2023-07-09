@@ -39,7 +39,7 @@
 //Each character entry is 8 bytes
 //The first four are considered debuffs; the next four are considered buffs
 #define AnyDebuffs 0x01030FFF
-#define AnyBuffs 0x00001F0F
+#define AnyBuffs 0x00001FFF
 
 #define CurrentVersion 2
 #define CurrentVersionRam 0x0203F100
@@ -365,6 +365,12 @@
 #define HeavyHoveringBoots 0xED
 #define Inept 0xEE
 #define AgileEdge 0xEF
+#define Favor 0xF0
+#define Lull 0xF1
+#define WardenStaff 0xF2
+#define SlowStaff 0xF3
+#define Absorb 0xF4
+#define ShiftStaff 0xF5
 
 #define Empower 0x7D //0xBE
 //#define WeakLockpick 0x79

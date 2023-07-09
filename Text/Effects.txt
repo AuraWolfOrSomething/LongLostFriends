@@ -85,7 +85,7 @@ Hey...wait...for...me![X]
 Distract[X]
 
 ## ConditionDistractHelpText
-(-20 Hit and -20 Avoid)[NL]
+(-20 Hit)[NL]
 What was that? Better go investigate...[X]
 
 ## AbsorbDebuffName
@@ -105,3 +105,19 @@ Rally[X]
 ## ConditionRallyHelpText
 (1 phase stat boost)[NL]
 Woah! They're really pepped up![X]
+
+## WardenBuffName
+Warden[X]
+
+## ConditionWardenHelpText
+(Block a negative status/debuff)[NL]
+They seem well-protected. Better think[N]
+twice about targeting them...[X]
+
+## ShiftEffectName
+Shift[X]
+
+## ConditionShiftHelpText
+(Base Pow and Spd are swapped)[N]
+Something's off... This unit's[N]
+style is different.[X]

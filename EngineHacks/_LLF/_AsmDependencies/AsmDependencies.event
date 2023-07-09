@@ -90,3 +90,8 @@ ALIGN 4
 #include "WasDefenderCaptured/WasDefenderCaptured.lyn.event"
 ALIGN 4
 
+#include "StaffAoe/StaffAoe.event"
+ALIGN 4
+
+#include "RallyAuraSkillCheck/RallyAuraSkillCheck.event"
+ALIGN 4

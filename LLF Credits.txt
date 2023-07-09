@@ -98,7 +98,7 @@ Weapon Icons
   EldritchA: Heavy Hovering Boots
   Indogutsu Tenbuki: Heavy Hovering Boots
   
-  Lord Glenn: [Anima- Bolganone, Donbettyr, Elthunder, Gale, Wind], [Dark- Afflict, Devour, Distort, Enigma, Ensnare, Shade, Truth, Worm], [Lances- Defender], [Light- Fortune, Insight, Lucent Luster, Ray],  [Staves- Block, Corrosion, Fortify, Physic, Warp, Guardian, Distract, Inept], [Swords- Agile Edge]
+  Lord Glenn: [Anima- Bolganone, Donbettyr, Elthunder, Gale, Wind], [Dark- Afflict, Devour, Distort, Enigma, Ensnare, Shade, Truth, Worm], [Lances- Defender], [Light- Fortune, Insight, Lucent Luster, Ray],  [Staves- Block, Corrosion, Fortify, Physic, Warp, Guardian, Distract, Inept, Favor, Lull, Warden, Slow, Absorb, Shift], [Swords- Agile Edge]
   
   SMITHYGCN: Focus Belt
 

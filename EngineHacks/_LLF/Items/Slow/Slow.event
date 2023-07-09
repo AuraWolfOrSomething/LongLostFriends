@@ -1,0 +1,6 @@
+
+#include "SlowInternal.event"
+
+//Mov penalty
+#include "asm/DetermineSlowSeverity.lyn.event"
+ALIGN 4

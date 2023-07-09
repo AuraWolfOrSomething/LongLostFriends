@@ -52,12 +52,13 @@ Amount = Res + 10[X]
 Restore[X]
 
 ## RestoreDesc
-Returns an ally to normal condition by curing[N]
-them of negative statuses and debuffs.[X]
+Relieve a nearby ally of their[N]
+negative status and debuffs.[X]
 
 ## RestoreUseDesc
-Restores allies to[NL]
-normal status.[X]
+Cure negative[N]
+statuses and[N]
+debuffs.[X]
 
 ## WarpName
 Warp[X]
@@ -168,21 +169,21 @@ Guardian[X]
 
 ## GuardianDesc
 Allies within 2 tiles of the target can[N]
-receive up to 2 benefits. Neither benefit[N]
+receive up to 2 buffs. Neither buff[N]
 can stack on itself.[X]
 
 ## GuardianDesc2
-Benefit 1: For the rest of this phase,[N]
+Buff 1: For the rest of this phase,[N]
 +5 Def and +5 Res.[X]
 
 ## GuardianDesc3
-Benefit 2: For 5 turns, debuffs are[N]
+Buff 2: For 5 turns, debuffs are[N]
 half as effective (rounding goes[N]
 towards a harsher penalty).[X]
 
 ## GuardianUseDesc
 Reduce damage taken[N]
-and nullify debuffs[N]
+and halve debuffs[N]
 for multiple allies.[X]
 
 ## GuardianTargetBottomText
@@ -194,12 +195,11 @@ Distract[X]
 ## DistractDesc
 Target can move to a tile up to 4 Mov[N]
 away (unless their Mov is less than 4).[N]
-They have -20 Hit and Avoid for 1 turn.[X]
+Debuff: -20 Hit for 1 turn.[X]
 
 ## DistractUseDesc
 Move target and[N]
-inflict -20 Hit[N]
-and Avoid.[X]
+inflict -20 Hit.[X]
 
 ## DistractTargetBottomText
 Select a unit to distract.[X]
@@ -211,8 +211,104 @@ Select their destination.[X]
 Inept[X]
 
 ## IneptDesc
-Enemy has all ranks lowered by 3 letter[N]
+Debuff: Lower enemy's ranks by 3 letter[N]
 grades for (5 - enemyRes/5) turns.[X]
 
 ## IneptUseDesc
 Lower ranks by 3.[X]
+
+## FavorName
+Favor[X]
+
+## FavorDesc
+Restores (userLck + allyLck + 7) HP[N]
+to an adjacent ally.[X]
+
+## FavorUseDesc
+Amount = userLck +[N]
+allyLck + 7[X]
+
+## LullName
+Lull[X]
+
+## LullDesc
+Restores (Res + 10) HP to an ally[N]
+and allies within two tiles of them.[X]
+
+## LullDesc2
+Debuff: Allies in the selected[N]
+area have -5 Def & -5 Res for[N]
+(5 - targetRes/5) turns.[X]
+
+## LullUseDesc
+Amount = Res + 10[N]
+Debuff = Def - 5,[N]
+Res - 5[X]
+
+## LullTargetBottomText
+Select an area with allies to heal/debuff.[X]
+
+## WardenName
+Warden[X]
+
+## WardenDesc
+Buff: The first negative status or[N]
+non-Absorb debuff the target and adjacent[N]
+allies receive is blocked.[X]
+
+## WardenDesc2
+This buff expires once this[N]
+occurs or after 3 turns.[X]
+
+## WardenUseDesc
+Block the first[N]
+harmful effect.[N]
+Expires in 3 turns.[X]
+
+## WardenTargetBottomText
+Select an area with allies to buff.[X]
+
+## SlowName
+Slow[X]
+
+## SlowDesc
+Debuff: For 1 turn, enemy has Mov[N]
+reduced by (5 - enemyRes/5).[X]
+
+## SlowUseDesc
+Mov reduced by[N]
+5 - enemyRes/5.[X]
+
+## AbsorbName
+Absorb[X]
+
+## AbsorbDesc
+Allies in range transfer their debuffs to[N]
+this unit. If multiple allies had the same[N]
+debuff, the highest duration is used.[X]
+
+## AbsorbDesc2
+For the rest of the chapter, this unit[N]
+cannot use Absorb, be targeted by[N]
+Restore, or benefit from buffs.[X]
+
+## AbsorbDesc3
+This effect cannot be blocked[N]
+by Warden or transferred by[N]
+using Absorb with another unit.[X]
+
+## AbsorbUseDesc
+Transfer debuffs, but[N]
+unit has new chapter-[N]
+long consequences.[X]
+
+## ShiftStaffName
+Shift[X]
+
+## ShiftStaffDesc
+Other: Target has their Base Pow[N]
+and Spd swapped for 3 turns.[X]
+
+## ShiftStaffUseDesc
+Swap Pow and Spd[N]
+for 3 turns.[X]

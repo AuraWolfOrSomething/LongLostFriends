@@ -32,7 +32,7 @@
 		strb	r2, [r0,r3]
 		
 		@The actual effect
-		ldr		r0, =GuardianForEachTileInAoe
+		ldr		r0, =ForEachTileInAoe
 		mov		lr, r0
 		ldrb	r0, [r4,#0x13]
 		ldrb	r1, [r4,#0x14]

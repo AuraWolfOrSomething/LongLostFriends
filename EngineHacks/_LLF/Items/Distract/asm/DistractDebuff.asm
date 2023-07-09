@@ -49,16 +49,16 @@
 				strh	r0, [r4,r1]
 				
 				@Penalty to avoid, but don't lower it past 0
-				mov		r1, #0x62
-				ldrsh	r0, [r4,r1]
-				sub		r0, r2
-				cmp		r0, #0
-				bge		StoreAvoid
+				@mov		r1, #0x62
+				@ldrsh	r0, [r4,r1]
+				@sub		r0, r2
+				@cmp		r0, #0
+				@bge		StoreAvoid
 				
-					mov		r0, #0
+					@mov		r0, #0
 				
-				StoreAvoid:
-				strh	r0, [r4,r1]
+				@StoreAvoid:
+				@strh	r0, [r4,r1]
 		
 		End:
 		pop		{r4-r5}

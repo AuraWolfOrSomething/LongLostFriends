@@ -86,8 +86,9 @@ Archers & Snipers only. Mt x7 vs fliers.[X]
 Rustbow[X]
 
 ## RustbowDesc
-Damage dealt ignores user's Pow.[X]
+Damage dealt ignores user's Pow.[N]
+Use is restored after the chapter.[X]
 
 ## RustbowDesc2
-Debuffs enemy by -3 to all stats.[N]
-Use is restored after the chapter.[X]
+Debuff: Pow/Skl/Spd/Def/Res/Lck is[N]
+lowered by duration (starts at 3).[X]

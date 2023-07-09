@@ -32,8 +32,8 @@
 			@If not, see if there is at least one target that would be added by being within aoe range (max range+aoe size)
 			mov		r0, r4
 			ldr		r1, =TryAddUnitToGuardianTargetList
-			ldr		r2, =GuardianAoeMap
-			ldr		r3, =GuardianLookForUnitsInAoeRange
+			ldr		r2, =GuardianAoeEntry
+			ldr		r3, =LookForUnitsInAoeRange
 			mov		lr, r3
 			.short	0xF800
 		

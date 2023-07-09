@@ -25,14 +25,13 @@
 		.short	0xF800
 		mov		r7, r0
 		
-		@Set debuff
-		ldr		r1, =GetDebuffs
-		mov		lr, r1
+		ldr		r0, =SetDebuffOrRemoveProtection
+		mov		lr, r0
+		mov		r0, r7 @unit
+		mov		r1, #2 @where debuff is in unit debuff entry
+		mov		r2, #2 @how much of the byte is for this debuff
+		mov		r3, #2 @value to set
 		.short	0xF800
-		ldrb	r1, [r0,#2]
-		mov		r2, #2
-		orr		r1, r2
-		strb	r1, [r0,#2]
 		
 		@Get coords
 		ldrb	r0, [r4,#0x13] @x-coord

@@ -1,0 +1,59 @@
+
+//-------------------------------------------
+//Condition
+//-------------------------------------------
+
+#include "asm/LullCondition.lyn.event"
+ALIGN 4
+
+#include "asm/LullStaffRangeSetup.lyn.event"
+ALIGN 4
+
+#include "asm/TryAddUnitToLullTargetList.lyn.event"
+ALIGN 4
+
+
+//-------------------------------------------
+//Target
+//-------------------------------------------
+
+#include "asm/LullTarget.lyn.event"
+ALIGN 4
+
+#include "asm/LullTargetPosSelect_Init.lyn.event"
+ALIGN 4
+
+#include "asm/LullTargetSelection_Loop.lyn.event"
+ALIGN 4
+
+#include "asm/LullTargetPosSelect_Cancel.lyn.event"
+ALIGN 4
+
+gProc_LullTargetPosSelection:
+PROC_CALL_ROUTINE(0x15360|1) //LockGameLogic
+PROC_CALL_ROUTINE(LullTargetPosSelect_Init)
+PROC_WHILE_EXISTS(0x59A548) //gProc_CameraMovement
+PROC_LOOP_ROUTINE(LullTargetSelection_Loop) 
+PROC_CALL_ROUTINE(0x297D0|1) //WarpTargetPosSelect_Confirm
+PROC_GOTO(0x64)
+PROC_LABEL(0x63)
+PROC_CALL_ROUTINE(LullTargetPosSelect_Cancel)
+PROC_LABEL(0x64)
+PROC_CALL_ROUTINE(0x15370|1) //UnlockGameLogic
+PROC_END
+
+LullTargetBottomTextLink:
+SHORT LullTargetBottomText
+ALIGN 4
+
+
+//-------------------------------------------
+//Effect
+//-------------------------------------------
+
+#include "asm/LullEffect.lyn.event"
+ALIGN 4
+
+#include "asm/ApplyLullToUnit.lyn.event"
+ALIGN 4
+

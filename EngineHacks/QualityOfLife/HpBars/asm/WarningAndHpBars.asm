@@ -16,6 +16,7 @@
 .equ BuffArrowFrame, FramePointers+12
 .equ AnyDebuffsBitfieldLink, FramePointers+16
 .equ AnyBuffsBitfieldLink, FramePointers+20
+.equ IsShiftEffectActive, FramePointers+24
 
 .if FE6 == 1
 	.equ WarningCache, 			0x0203ACC0	@free space in ram. Change this if necessary.
@@ -179,8 +180,16 @@ ldr		r0,[r6,#4]
 ldr		r1,AnyBuffsBitfieldLink
 ldr		r1,[r1]
 tst		r0,r1
-beq		CheckIfDebuffs
+bne		DrawBuffArrow
 
+	mov		r0,r4
+	ldr		r1,IsShiftEffectActive
+	mov		lr, r1
+	.short	0xF800
+	cmp		r0, #0
+	beq		CheckIfDebuffs
+
+	DrawBuffArrow:
 	mov		r0,r13
 	mov		r1,r5
 	ldr		r2,BuffArrowFrame
@@ -193,8 +202,15 @@ ldr		r0,[r6]
 ldr		r1,AnyDebuffsBitfieldLink
 ldr		r1,[r1]
 tst		r0,r1
-beq		CheckIfSelected
+bne		DrawDebuffArrow
 
+	mov		r0,r4
+	ldr		r1,IsShiftEffectActive
+	mov		lr, r1
+	.short	0xF800
+	cmp		r0, #0
+	beq		CheckIfSelected
+	
 	DrawDebuffArrow:
 	mov		r0,r13
 	mov		r1,r5

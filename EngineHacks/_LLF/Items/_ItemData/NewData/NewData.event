@@ -10,9 +10,6 @@ ALIGN 4
 #include "StaffHealingEnhancementList.event"
 ALIGN 4
 
-#include "AreaHealList.event"
-ALIGN 4
-
 #include "MightPenaltyExceptionList.event"
 ALIGN 4
 

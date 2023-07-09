@@ -1,0 +1,6 @@
+
+#include "asm/ForEachTileInAoe.lyn.event"
+ALIGN 4
+
+#include "asm/LookForUnitsInAoeRange.lyn.event"
+ALIGN 4

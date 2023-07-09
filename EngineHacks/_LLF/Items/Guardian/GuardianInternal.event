@@ -1,11 +1,4 @@
 
-#include "asm/GuardianForEachTileInAoe.lyn.event"
-ALIGN 4
-
-GuardianStaffIdLink:
-BYTE Guardian
-ALIGN 4
-
 
 //-------------------------------------------
 //Condition
@@ -18,9 +11,6 @@ ALIGN 4
 ALIGN 4
 
 #include "asm/TryAddUnitToGuardianTargetList.lyn.event"
-ALIGN 4
-
-#include "asm/GuardianLookForUnitsInAoeRange.lyn.event"
 ALIGN 4
 
 

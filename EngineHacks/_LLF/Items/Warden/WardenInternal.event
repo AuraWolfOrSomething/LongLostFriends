@@ -1,0 +1,63 @@
+
+#include "asm/RemoveWardenBuffOnUnit.lyn.event"
+ALIGN 4
+
+
+//-------------------------------------------
+//Condition
+//-------------------------------------------
+
+#include "asm/WardenCondition.lyn.event"
+ALIGN 4
+
+#include "asm/WardenStaffRangeSetup.lyn.event"
+ALIGN 4
+
+#include "asm/TryAddUnitToWardenTargetList.lyn.event"
+ALIGN 4
+
+
+//-------------------------------------------
+//Target
+//-------------------------------------------
+
+#include "asm/WardenTarget.lyn.event"
+ALIGN 4
+
+#include "asm/WardenTargetPosSelect_Init.lyn.event"
+ALIGN 4
+
+#include "asm/WardenTargetSelection_Loop.lyn.event"
+ALIGN 4
+
+#include "asm/WardenTargetPosSelect_Cancel.lyn.event"
+ALIGN 4
+
+gProc_WardenTargetPosSelection:
+PROC_CALL_ROUTINE(0x15360|1) //LockGameLogic
+PROC_CALL_ROUTINE(WardenTargetPosSelect_Init)
+PROC_WHILE_EXISTS(0x59A548) //gProc_CameraMovement
+PROC_LOOP_ROUTINE(WardenTargetSelection_Loop) 
+PROC_CALL_ROUTINE(0x297D0|1) //WarpTargetPosSelect_Confirm
+PROC_GOTO(0x64)
+PROC_LABEL(0x63)
+PROC_CALL_ROUTINE(WardenTargetPosSelect_Cancel)
+PROC_LABEL(0x64)
+PROC_CALL_ROUTINE(0x15370|1) //UnlockGameLogic
+PROC_END
+
+WardenTargetBottomTextLink:
+SHORT WardenTargetBottomText
+ALIGN 4
+
+
+//-------------------------------------------
+//Effect
+//-------------------------------------------
+
+#include "asm/WardenEffect.lyn.event"
+ALIGN 4
+
+#include "asm/ApplyWardenBuffOnUnit.lyn.event"
+ALIGN 4
+

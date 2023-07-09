@@ -14,5 +14,5 @@ SHORT $BC10 $BC01 $4700 $46C0
 BYTE $A4 $F8 $4 $8
 POIN TryAddUnitToGuardianTargetList
 BYTE $28 $FD $4 $8
-POIN GuardianAoeMap
-POIN GuardianLookForUnitsInAoeRange
+POIN GuardianAoeEntry
+POIN LookForUnitsInAoeRange

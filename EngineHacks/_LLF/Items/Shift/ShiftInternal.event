@@ -1,0 +1,68 @@
+
+PowLabelLink:
+SHORT PowerTextID
+
+SpdLabelLink:
+SHORT SpeedTextID
+
+//----------------------------
+//Usability
+//----------------------------
+
+#include "asm/ShiftUsability.lyn.event"
+ALIGN 4
+
+
+//----------------------------
+//Target
+//----------------------------
+
+#include "asm/ShiftTarget.lyn.event"
+ALIGN 4
+
+#include "asm/MakeTargetListForShift.lyn.event"
+ALIGN 4
+
+#include "asm/ShiftStaffRangeSetup.lyn.event"
+ALIGN 4
+
+#include "asm/TryAddUnitToShiftTargetList.lyn.event"
+ALIGN 4
+
+#include "asm/ShiftTargetChange.lyn.event"
+ALIGN 4
+
+#include "asm/SetupShiftTargetWindow.lyn.event"
+ALIGN 4
+
+#include "asm/UnitInfoWindow_ShiftDrawPower.lyn.event"
+ALIGN 4
+
+#include "asm/UnitInfoWindow_ShiftDrawSpeed.lyn.event"
+ALIGN 4
+
+#include "asm/UnitInfoWindow_DrawShiftDuration.lyn.event"
+ALIGN 4
+
+ShiftTargetBottomTextLink:
+SHORT 0x087B
+ALIGN 4
+
+gMenu_ShiftTargetMenu:
+POIN 0x29CDC|1
+POIN 0x4E884|1 //ClearBG0BG1
+WORD 0
+POIN ShiftTargetChange|1
+WORD 0
+POIN 0x29550|1 //GenericStaffSelection_OnSelect
+POIN 0x2282C|1 //GenericSelection_BackToUM_CamWait
+WORD 0
+
+
+//----------------------------
+//Effect
+//----------------------------
+
+#include "asm/InflictShift.lyn.event"
+ALIGN 4
+

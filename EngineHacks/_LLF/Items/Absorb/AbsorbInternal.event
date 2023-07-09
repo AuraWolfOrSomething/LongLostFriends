@@ -1,0 +1,32 @@
+
+//----------------------------
+//Usability
+//----------------------------
+
+#include "asm/AbsorbUsability.lyn.event"
+ALIGN 4
+
+
+//----------------------------
+//Target
+//----------------------------
+
+#include "asm/MakeTargetListForAbsorb.lyn.event"
+ALIGN 4
+
+#include "asm/AbsorbStaffRangeSetup.lyn.event"
+ALIGN 4
+
+#include "asm/TryAddUnitToAbsorbTargetList.lyn.event"
+ALIGN 4
+
+
+//----------------------------
+//Effect
+//----------------------------
+
+#include "asm/AbsorbEffect.lyn.event"
+ALIGN 4
+
+#include "asm/AbsorbTransferTargetDebuffs.lyn.event"
+ALIGN 4

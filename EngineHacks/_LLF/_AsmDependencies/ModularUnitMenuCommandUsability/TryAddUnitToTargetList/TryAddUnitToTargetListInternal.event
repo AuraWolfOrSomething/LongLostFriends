@@ -45,3 +45,9 @@ ALIGN 4
 
 #include "asm/TargetCheckTradeRescueeAllegiance.lyn.event"
 ALIGN 4
+
+#include "asm/TargetCheckCannotIfRescuedUnit.lyn.event"
+ALIGN 4
+
+#include "asm/TargetCheckAnyNegativeStatusDebuffNotAbsorb.lyn.event"
+ALIGN 4

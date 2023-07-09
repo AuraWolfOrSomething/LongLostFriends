@@ -1,0 +1,15 @@
+//Requires AoE by Vesly
+
+#include "WardenInternal.event"
+
+WardenAoeEntry:
+WORD WardenStaff //item id
+POIN WardenAoeMap
+
+WardenAoeMap:
+BYTE 3 3 // Size (1-indexed, so this is a 3x3y array) 
+BYTE 1 1 // Center (0-indexed, so [1,1] is the center)
+BYTE 0 1 0
+BYTE 1 1 1
+BYTE 0 1 0
+ALIGN 4

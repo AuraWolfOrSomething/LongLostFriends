@@ -9,7 +9,7 @@ ALIGN 4
 StatScreenStatusDebuffSetUp:
 //first entry is unique
 SHORT ConditionMultipleHelpText MultipleEffectsName //helpTextId nameTextID
-SHORT 14 5 //number of entries (including this one); how many effects the unit must have for this page to appear
+SHORT 16 5 //number of entries (including this one); how many effects the unit must have for this page to appear
 
 //SHORT helpTextID nameTextID
 //POIN checkIfActiveOrTrue
@@ -19,6 +19,12 @@ POIN IsGuardianDamageActive
 
 SHORT ConditionGuardianHalfHelpText GuardianHalfName
 POIN IsDebuffHalfActive
+
+SHORT ConditionWardenHelpText WardenBuffName
+POIN IsWardenActive
+
+SHORT ConditionShiftHelpText ShiftEffectName
+POIN IsShiftEffectActive
 
 SHORT ConditionPoisonHelpText PoisonStatusName
 POIN IsPoisonStatusActive

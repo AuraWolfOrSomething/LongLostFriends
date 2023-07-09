@@ -1,23 +1,23 @@
 .thumb
 
-.include "../GuardianDefs.s"
+.include "../StaffAoeDefs.s"
 
-.global GuardianLookForUnitsInAoeRange
-.type GuardianLookForUnitsInAoeRange, %function
+.global LookForUnitsInAoeRange
+.type LookForUnitsInAoeRange, %function
 
 
-		GuardianLookForUnitsInAoeRange:
+		LookForUnitsInAoeRange:
 		push	{r4-r7,r14}
 		add		sp, #-0x0C
 		mov		r4, #0 @x-coord
 		mov		r5, #0 @y-coord
 		mov		r6, r0 @staff user
 		mov		r7, r1 @routine to go to if a unit is in aoe range
-		str		r2, [sp] @aoe shape template
+		ldr		r0, [r2,#4]
+		str		r0, [sp] @aoe shape template
 		
 		@Get staff range before beginning loop
-		ldr		r0, =GuardianStaffIdLink
-		ldrb	r0, [r0]
+		ldrb	r0, [r2]
 		mov		r1, #0xFF
 		and		r0, r1
 		lsl		r1, r0, #3
@@ -47,7 +47,7 @@
 			cmp		r0, r1
 			blt		NextTile
 			
-				ldr		r0, =GuardianForEachTileInAoe
+				ldr		r0, =ForEachTileInAoe
 				mov		lr, r0
 				mov		r0, r4
 				mov		r1, r5

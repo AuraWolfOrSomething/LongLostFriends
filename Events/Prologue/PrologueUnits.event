@@ -62,6 +62,7 @@ UNIT
 
 Units:
 UNIT Zoren ZorenLord 0 Level(1,Ally,False) [0,12] NoUnitFlags 0 1 REDA2R12 [BronzeSword,Thunder,Concoction] NoAI
+UNIT Zoren ZorenLord 0 Level(1,Ally,False) [0,12] NoUnitFlags 0 1 REDA2R12 [Restore,Absorb,ShiftStaff] NoAI
 UNIT Iris Paladin_F 0 Level(16,Ally,False) [0,13] NoUnitFlags 0 1 REDA2R13 [SteelSword,SteelLance,BronzeSword,BronzeLance] NoAI
 UNIT Orville Fighter 0 Level(3,Ally,False) [0,13] NoUnitFlags 0 1 REDA3R13 [SteelAxe,BronzeAxe,Vulnerary] NoAI
 UNIT Nordica Archer_F 0 Level(3,Ally,False) [0,12] NoUnitFlags 0 1 REDA3R11 [ArcaneGreatbow,BronzeBow,BronzeLongbow] NoAI

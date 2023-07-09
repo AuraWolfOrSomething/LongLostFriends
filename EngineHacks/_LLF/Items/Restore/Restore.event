@@ -1,0 +1,30 @@
+
+PUSH
+
+ORG 0x25F98
+SHORT 0xB500 //push {r14}
+SHORT 0x4903 //ldr r1, =RestoreStaffTargetConditionsList
+SHORT 0x4A03 //ldr r2, =TryAddUnitToTargetList
+SHORT 0x4696 //mov lr, r2
+SHORT 0xF800 //bl lr+0
+SHORT 0xBC01 //pop {r0}
+SHORT 0x4700 0 //bx r0
+POIN RestoreStaffTargetConditionsList
+POIN TryAddUnitToTargetList
+PROTECT 0x25F98 CURRENTOFFSET-1
+
+ORG 0x2EC20
+#include "asm/ExecRestore.lyn.event"
+ALIGN 4
+PROTECT 0x2EC20 CURRENTOFFSET-1
+
+POP
+
+RestoreStaffTargetConditionsList:
+POIN TargetCheckAreAllegiancesAllied
+POIN TargetCheckCannotIfRescuedUnit
+POIN TargetCheckAnyNegativeStatusDebuffNotAbsorb
+WORD 0
+
+#include "asm/RestoreClearDebuffs.lyn.event"
+ALIGN 4

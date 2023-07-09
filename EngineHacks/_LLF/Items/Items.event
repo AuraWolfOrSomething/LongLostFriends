@@ -63,5 +63,23 @@ ALIGN 4
 #include "BagsOfGold/BagsOfGold.event"
 ALIGN 4
 
+#include "Lull/Lull.event"
+ALIGN 4
+
+#include "Warden/Warden.event"
+ALIGN 4
+
+#include "Slow/Slow.event"
+ALIGN 4
+
+#include "Absorb/Absorb.event"
+ALIGN 4
+
+#include "Restore/Restore.event"
+ALIGN 4
+
+#include "Shift/Shift.event"
+ALIGN 4
+
 #include "StatBoosterChanges.event"
 #include "WeaponStatBonuses.event"

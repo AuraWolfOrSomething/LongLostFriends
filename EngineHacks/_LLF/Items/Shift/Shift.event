@@ -1,0 +1,11 @@
+
+#include "ShiftInternal.event"
+
+//Called by StatGetters
+prShiftUseSpeedForPower:
+#include "asm/ShiftUseSpeedForPower.lyn.event"
+ALIGN 4
+
+prShiftUsePowerForSpeed:
+#include "asm/ShiftUsePowerForSpeed.lyn.event"
+ALIGN 4

@@ -23,7 +23,7 @@ HP Bars[X]
 Set health bar display[X]
 
 #0x0855 StealErrorMessage
-This unit must be asleep[N]
+The target must be asleep[N]
 before you can steal this.[X]
 
 #0x085B PromotionItemLowLevelErrorMessage

@@ -34,19 +34,27 @@
 				cmp		r0, #0
 				bne		UnitNotAdded
 				
-					@Add unit to target list
-					mov		r0, #0x10
-					ldsb	r0, [r4,r0]
-					mov		r1, #0x11
-					ldsb	r1, [r4,r1]
-					mov		r2, #0x0B
-					ldsb	r2, [r4,r2]
-					mov		r3, #0
-					ldr		r4, =AddTarget
-					mov		lr, r4
+					@Check if unit has Absorb debuff
+					mov		r0, r4
+					ldr		r1, =IsAbsorbDebuffActive
+					mov		lr, r1
 					.short	0xF800
-					mov		r0, #1
-					b		End
+					cmp		r0, #0
+					bne		UnitNotAdded
+				
+						@Add unit to target list
+						mov		r0, #0x10
+						ldsb	r0, [r4,r0]
+						mov		r1, #0x11
+						ldsb	r1, [r4,r1]
+						mov		r2, #0x0B
+						ldsb	r2, [r4,r2]
+						mov		r3, #0
+						ldr		r4, =AddTarget
+						mov		lr, r4
+						.short	0xF800
+						mov		r0, #1
+						b		End
 		
 		UnitNotAdded:
 		mov		r0, #0

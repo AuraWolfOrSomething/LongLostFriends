@@ -15,13 +15,6 @@
 .equ bl_StartBMXFADE, . + 0x0801DDC4 - origin
 .equ bl_SMS_UpdateFromGameData, . + 0x080271A0 - origin
 
-@.equ InitTargets, 0x0804F8A4
-@.equ InitMapChangeGraphics, 0x08019CBC
-@.equ RefreshEntityMaps, 0x0801A1F4
-@.equ DrawTileGraphics, 0x08019C3C
-@.equ StartBMXFADE, 0x0801DDC4
-@.equ SMS_UpdateFromGameData, 0x080271A0
-
 .equ CpuFastSet, 0x080D1674
 .equ String_GetFromIndex, 0x800A240
 .equ Text_InsertString, 0x8004480

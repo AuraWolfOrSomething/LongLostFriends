@@ -58,6 +58,7 @@
 	POIN BuffArrowFrame
 	POIN AnyDebuffsBitfieldLink
 	POIN AnyBuffsBitfieldLink
+	POIN IsShiftEffectActive
 
   ALIGN 4
   HPBarGraphic:
