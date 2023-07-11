@@ -1,0 +1,11 @@
+
+#include "asm/StoreDeadPlayerUnitInventory.lyn.event"
+ALIGN 4
+
+StoreDeadPlayerUnitInventoryExceptionList:
+POIN IsDeadPlayerUnitPhantom
+WORD 0
+
+#include "asm/IsDeadPlayerUnitPhantom.lyn.event"
+ALIGN 4
+

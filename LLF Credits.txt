@@ -36,6 +36,7 @@ Engine Hacks (organized by hack name rather than by contributor)
   EventRescue: circleseverywhere
   EventMenuCommand: nat
   EventSendToConvoy: circleseverywhere
+  ExpandedConvoy: hypergammaspaces, nat, Vesly 
   ExpandedModularSave: Colorz, nat
   ExtendWeaponDescBox: Vesly
   Fatigue: Sme

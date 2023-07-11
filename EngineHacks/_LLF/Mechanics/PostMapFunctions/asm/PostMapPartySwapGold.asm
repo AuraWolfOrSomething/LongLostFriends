@@ -1,6 +1,6 @@
 .thumb
 
-.equ gChapterData, 0x0202BCF0
+.include "../PostMapFunctionsDefs.s"
 
 .global PostMapPartySwapGold
 .type PostMapPartySwapGold, %function

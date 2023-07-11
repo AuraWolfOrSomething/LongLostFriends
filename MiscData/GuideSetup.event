@@ -80,7 +80,7 @@ GuideEntry(6,1,GuideHeader_TradeGiveTake,GuideEntry_TradeGiveTake,AllChapters,Gu
 GuideEntry(6,1,GuideHeader_Experience,GuideEntry_Experience,AllChapters,GuideOther_First+2)
 GuideEntry(6,2,GuideHeader_Reorganize,GuideEntry_Reorganize,AllChapters,GuideOther_First+3)
 GuideEntry(6,2,GuideHeader_Stealing,GuideEntry_Stealing,AllChapters,GuideOther_First+4)
-GuideEntry(6,2,GuideHeader_PostMapConvoySend,GuideEntry_PostMapConvoySend,AllChapters,GuideOther_First+5)
+GuideEntry(6,2,GuideHeader_PlayerUnitDeathConvoySend,GuideEntry_PlayerUnitDeathConvoySend,AllChapters,GuideOther_First+5)
 GuideEntry(6,3,GuideHeader_Supports,GuideEntry_Supports,AllChapters,GuideOther_First+6)
 GuideEntry(6,3,GuideHeader_Affinities,GuideEntry_Affinities,AllChapters,GuideOther_First+7)
 GuideEntry(6,3,GuideHeader_Effects,GuideEntry_Effects,AllChapters,GuideOther_First+8)
@@ -89,6 +89,7 @@ GuideEntry(6,5,GuideHeader_McVicar,GuideEntry_McVicar,AllChapters,GuideOther_Fir
 GuideEntry(6,5,GuideHeader_McVicar2,GuideEntry_McVicar2,AllChapters,GuideOther_First+11)
 //GuideEntry(6,5,GuideHeader_Promoting,GuideEntry_Promoting,AllChapters,GuideOther_First+12)
 //GuideEntry(6,6,GuideHeader_Capture,GuideEntry_Capture,AllChapters,GuideOther_First+13)
+//GuideEntry(6,6,GuideHeader_PostMapConvoySend,GuideEntry_PostMapConvoySend,AllChapters,GuideOther_First+14)
 
 
 //End of the guide

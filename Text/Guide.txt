@@ -70,6 +70,30 @@ Selecting this option will[N]
 display an enemy/NPC's AI[N]
 on the minimug box instead[N]
 of their name.[N][N]
+Pursue: This unit will move[N]
+towards the closest ideal[N]
+target if none are in range.[N][N]
+Vigil: This unit will not move[N]
+unless they can target[N]
+someone within their range.[N][N]
+Vigil mov x2: If moving would[N]
+allow this unit to target someone[N]
+on their next turn, they will move.[N][N]
+Immobile: This unit will not move.[N][N]
+Destroy: This unit can target[N]
+destructible terrain.[N][N]
+Attack/Raid: If an enemy is in[N]
+range, prioritize attacking them.[N]
+Otherwise, try to raid the[N]
+nearest village/house.[N][N]
+Loot/Escape: Until this unit runs[N]
+out of keys/lockpicks, look for[N]
+locks to use them on.[N]
+If no more locks are unopened,[N]
+switch to Escape AI.[N][N]
+Escape: This unit will try to exit[N]
+the map by moving towards the[N]
+closest escape point.[N][N]
 During Preparations, this[N]
 option is available after[N]
 selecting [f"]Check Map[b"].[X]
@@ -483,16 +507,14 @@ If their target is asleep, [N]
 their weapons, tomes, and[N]
 staves can be stolen.[X]
 
-## GuideHeader_PostMapConvoySend
-Post-Map Convoy Sending[X]
+## GuideHeader_PlayerUnitDeathConvoySend
+Send To Convoy On Death[X]
 
-## GuideEntry_PostMapConvoySend
-At the end of the chapter,[N]
-recruited units that have[N]
-died will have their[N]
-inventories sent to the convoy,[N]
-unless the convoy is full or[N]
-not present with the party.[X]
+## GuideEntry_PlayerUnitDeathConvoySend
+If a player unit dies, their[N]
+inventory is immediately sent[N]
+to the convoy unless there is[N]
+no more space.[X]
 
 ## GuideEntry_PostMapConvoySendCapture
 At the end of the chapter,[N]
@@ -662,6 +684,16 @@ are rescued by the unit[N]
 that defeated them.[N]
 Unless the enemy is dropped,[N]
 you can trade with them.[X]
+
+## GuideHeader_PostMapConvoySend
+Post-Map Convoy Sending[X]
+
+## GuideEntry_PostMapConvoySend
+At the end of the chapter,[N]
+enemies that are still captured[N]
+will have their inventories[N]
+sent to the convoy unless[N]
+there is no more space.[X]
 
 ## GuideHeader_Credits
 Credits[X]

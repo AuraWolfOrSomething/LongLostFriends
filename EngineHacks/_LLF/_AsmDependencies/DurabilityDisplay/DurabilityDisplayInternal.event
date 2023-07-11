@@ -31,8 +31,8 @@ PROTECT 0x16A2C CURRENTOFFSET-1
 /*
 replace branches to:
 - 08004B94 with a branch to DrawDurabilityIfDestructible
-- 080174F4 with a branch to the new GetAndBufferItemName
-- 08017584 with a branch to the new GetCurrentUses
+- 080174F4 with a branch to NewGetItemNameString
+- 08017584 with a branch to NewGetItemUses
 */
 
 #ifndef DashesForIndestructibleItems
@@ -56,6 +56,10 @@ replace branches to:
 	ORG 0x9D3E8
 	BL(DrawDurabilityIfDestructible)
 	PROTECT 0x9D3E8 CURRENTOFFSET-1
+	
+	ORG 0x9D518
+	BL(DrawDurabilityIfDestructible)
+	PROTECT 0x9D518 CURRENTOFFSET-1
 	
 #endif
 
@@ -98,6 +102,14 @@ PROTECT 0x9D394 CURRENTOFFSET-1
 ORG 0x9D3DE
 BL(NewGetItemUses)
 PROTECT 0x9D3DE CURRENTOFFSET-1
+
+ORG 0x9D4D4
+BL(NewGetItemNameString)
+PROTECT 0x9D4D4 CURRENTOFFSET-1
+
+ORG 0x9D50E
+BL(NewGetItemUses)
+PROTECT 0x9D50E CURRENTOFFSET-1
 
 POP
 

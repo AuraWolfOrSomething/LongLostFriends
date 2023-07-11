@@ -1,0 +1,77 @@
+//Convoy size expansion
+  
+#define ConvoyExpansionRAM $0203B200
+#define ConvoySize 200 //if adjusted from 200, have to still adjust EMS manually
+
+ALIGN 4
+ConvoyExpansionRamLink:
+WORD ConvoyExpansionRAM
+
+PUSH
+
+ORG $1DFB2
+BYTE ConvoySize-1
+
+ORG $1E05A
+BYTE ConvoySize-1
+
+ORG $1E0EC
+BYTE ConvoySize-1
+
+ORG $31504
+WORD ConvoyExpansionRAM
+ORG $31524
+WORD ConvoyExpansionRAM
+ORG $31590
+WORD ConvoyExpansionRAM
+ORG $315B4				//AddItemToConvoy
+WORD ConvoyExpansionRAM
+ORG $315E0				//i think this is called when removing item from convoy?
+WORD ConvoyExpansionRAM
+ORG $31604				//GetConvoyItemSlot
+WORD ConvoyExpansionRAM
+
+ORG $31528
+BYTE ConvoySize
+
+ORG $31576
+BYTE ConvoySize-1
+
+ORG $315BC
+BYTE ConvoySize-1
+
+ORG $9828E
+BYTE ConvoySize-1
+
+ORG $9A550
+BYTE ConvoySize-1
+
+ORG $9A56A
+BYTE ConvoySize-1
+
+ORG $9D676
+BYTE ConvoySize
+
+ORG $9D73E
+BYTE ConvoySize
+
+ORG $9D768
+BYTE ConvoySize
+
+ORG $9DD10
+BYTE ConvoySize-1
+
+ORG $9E902
+BYTE ConvoySize
+
+ORG $B4738
+BYTE ConvoySize-1
+
+//need this
+ORG $A324A
+BYTE ConvoySize-1
+
+ORG $A32D2
+BYTE ConvoySize-1
+
+POP

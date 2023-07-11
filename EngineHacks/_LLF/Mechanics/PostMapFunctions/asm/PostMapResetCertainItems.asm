@@ -1,6 +1,6 @@
 .thumb
 
-.include "PostMapFunctionsDefinitions.asm"
+.include "../PostMapFunctionsDefs.s"
 
 .global PostMapResetCertainItems
 .type PostMapResetCertainItems, %function
@@ -56,7 +56,7 @@
 		ldr		r4, =ConvoyPointer
 		ldr		r4, [r4]
 		mov		r5, #0
-		ldr		r6, =ConvoySize
+		ldr		r6, =ConvoySizePointer
 		ldrb	r6, [r6]
 		add		r6, #1
 		

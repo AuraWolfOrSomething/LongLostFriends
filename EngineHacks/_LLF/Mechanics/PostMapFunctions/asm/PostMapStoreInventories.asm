@@ -1,6 +1,6 @@
 .thumb
 
-.include "PostMapFunctionsDefinitions.asm"
+.include "../PostMapFunctionsDefs.s"
 
 .global PostMapStoreInventories
 .type PostMapStoreInventories, %function
@@ -10,7 +10,7 @@
 		push	{r4-r7}
 		
 		@First, check if the convoy even has space for potential items
-		ldr		r0, =ConvoySize
+		ldr		r0, =ConvoySizePointer
 		ldrb	r4, [r0]
 		ldr		r0, =ConvoyPointer
 		ldr		r5, [r0]
@@ -37,16 +37,21 @@
 		ldr		r0, [r6]
 		cmp		r0, #0
 		beq		CheckIfMoreUnits
-		
-			@Check if unit is dead
-			ldrb	r0, [r6,#0x13]
-			cmp		r0, #0
-			bne		CheckIfRescuingEnemy
 			
-				@If so, store their inventory
-				mov		r0, r6
-				
-				GoToUnitInventory:
+			@Check if unit has a captured enemy
+			CheckIfRescuingEnemy:
+			ldrb	r0, [r6,#0x1B]
+			mov		r1, #0x80
+			and		r0, r1
+			cmp		r0, #0
+			beq		CheckIfMoreUnits
+			
+				@If so, store the captured enemy's inventory
+				ldrb	r0, [r6,#0x1B]
+				sub		r0, #0x81
+				ldr		r1, =EnemyCharacterStructStart
+				mul		r0, r3
+				add		r0, r1
 				add		r0, #0x1E
 				mov		r2, #0
 					
@@ -66,22 +71,6 @@
 						blt		StoreInConvoyLoop
 						
 						b		CheckIfMoreUnits
-			
-			@Check if unit has a captured enemy
-			CheckIfRescuingEnemy:
-			ldrb	r0, [r6,#0x1B]
-			mov		r1, #0x80
-			and		r0, r1
-			cmp		r0, #0
-			beq		CheckIfMoreUnits
-			
-				@If so, store the captured enemy's inventory
-				ldrb	r0, [r6,#0x1B]
-				sub		r0, #0x81
-				ldr		r1, =EnemyCharacterStructStart
-				mul		r0, r3
-				add		r0, r1
-				b		GoToUnitInventory
 		
 		CheckIfMoreUnits:
 		add 	r7, #1

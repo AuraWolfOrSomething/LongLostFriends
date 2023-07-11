@@ -44,3 +44,6 @@ ALIGN 4
 
 #include "ApplyPatchChanges/ApplyPatchChanges.event"
 ALIGN 4
+
+#include "StoreDeadPlayerUnitInventory/StoreDeadPlayerUnitInventory.event"
+ALIGN 4
