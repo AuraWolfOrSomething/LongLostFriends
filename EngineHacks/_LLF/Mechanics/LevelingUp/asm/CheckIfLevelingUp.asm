@@ -656,42 +656,10 @@
 		.short	0xF800
 
 		@If Learning Ring has non-zero uses, subtract 1 use and change stat
-		LowerLearningRingDurabilityLoop:
-		mov		r0,r7
-		ldr		r1,=LearningRingIDLink
-		ldrb	r1,[r1]
-		mov		r5,r1
-		mov		r2,#1
-		ldr		r3,=FindItemInUnitInventory
-		mov		r14,r3
+		mov		r0, r7
+		ldr		r1, =LowerLearningRingUse
+		mov		lr, r1
 		.short	0xF800
-		cmp		r0,#0
-		beq		GoBack
-		
-		@Lower current uses by 1 if not at 0
-		ldrb	r1,[r0,#1]
-		lsl		r2,r1,#0x1C
-		lsr		r2,#0x1C
-		cmp		r2, #0
-		beq		GoBack
-		
-		sub		r2,#1
-		
-		ChangeStatOnLearningRing:
-		lsr		r1,#4
-		add		r1,#1
-		ldr		r3,=LearningRingCycle
-		ldrb	r5,[r3,r1]
-		cmp		r5,#0xFF
-		bne		StoreStatChangeOnLearningRing
-		
-		mov		r1,#0
-		
-		StoreStatChangeOnLearningRing:
-		lsl		r1,#4
-		add		r2,r1
-		strb	r2,[r0,#1]
-		@b		LowerLearningRingDurabilityLoop
 
 		GoBack:
 		add		sp, #0x44

@@ -112,11 +112,16 @@
 						cmp		r2, #0x0A
 						beq		AddToFactionCount
 		
-							@lower by 1
+							@lower by 1; if 0, clear status
 							lsr		r0, r3, #4
 							sub		r0, #1
-							lsl		r0, #4
-							orr		r0, r2
+							cmp		r0, #0
+							ble		StoreDecrementedStatus
+							
+								lsl		r0, #4
+								orr		r0, r2
+							
+							StoreDecrementedStatus:
 							strb	r0, [r4,r1]
 		
 			AddToFactionCount:

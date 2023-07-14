@@ -1,8 +1,7 @@
 
 //Increased growth is handled by GrowthGetters/Extra_Growth_Boosts
 //Changing item display is handled by ASM_Dependencies/DurabilityDisplay
-//Lowering item use after a level up is handled by Mechanics/LevelingUp
-
+//Lowering item use after a level up is called by Mechanics/LevelingUp
 
 #define HpCycle 0
 #define PowCycle 1
@@ -37,4 +36,7 @@ SHORT SpeedTextID
 SHORT DefenseTextID
 SHORT ResistanceTextID
 SHORT LuckTextID
+ALIGN 4
+
+#include "asm/LowerLearningRingUse.lyn.event"
 ALIGN 4

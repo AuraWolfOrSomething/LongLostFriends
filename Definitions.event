@@ -46,11 +46,11 @@
 
 #define USE_FATIGUE
 #define USE_PREP_SCREEN_GUIDE
-#define TESTING_PURPOSES
+//#define TESTING_PURPOSES
 //#define TESTING_EASY_MOVEMENT
 //#define TESTING_EASY_MOVEMENT_REFRESH
 //#define TESTING_EASY_RECRUITMENT
-#define TESTING_EASY_CLEAR
+//#define TESTING_EASY_CLEAR
 //#define TESTING_ALWAYS_LEVEL_UP
 //#define TESTING_WORST_OUTCOME
 //#define TESTING_PARTY_SWAP
@@ -81,9 +81,9 @@
 
 #define Load(Units) "LOAD1 0x1 Units; ENUN"
 #define Load(Units1,Units2) "LOAD1 0x1 Units1; LOAD1 0x1 Units2; ENUN"
-#define LoadAgain(Units) "LOAD2 0x1 Units; ENUN"
 //#define LoadPrepUnits(Units) "LOAD1 0x0 Units; ENUN; CALL MoveMainLordToSlot1Event"
 #define LoadPrepUnits(Units) "LOAD1 0x0 Units; ENUN"
+#define LoadNoPrepUnits(Units) "LOAD3 0x0 Units; ENUN"
 #define NoUnitFlags 0x00
 
 #define BlackBG 0x35

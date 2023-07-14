@@ -96,42 +96,43 @@ AptitudeEffect:
 add		r5,#20 @growth +20%
 
 LearningRingCheck:
-mov		r0,r4
-add		r0,#0x1E
 mov		r3,#0
-ldr		r2,=LearningRingIDLink
-ldrb	r2,[r2]
+ldr		r7,=LearningRingIDLink
+ldrb	r7,[r7]
 
-LookForLearningRingLoop:
-ldrb	r1,[r0,r3]
-cmp		r0,#0
+LearningRingLoop:
+lsl		r2,r3,#1
+add		r2,#0x1E
+ldrb	r1,[r4,r2]
+cmp		r1,#0
 beq		GoBack
 
-cmp		r1,r2
-beq		CheckIfLearningRingHasDurabilityUse
+	cmp		r1,r7
+	bne		NextItem_LearningRing
 
-add		r3,#0x2
-cmp		r3,#0x8
-ble		LookForLearningRingLoop
-b		GoBack
+		CheckIfLearningRingHasDurabilityUse:
+		add		r2,#1
+		ldrb	r1,[r4,r2]
+		lsl		r1,#0x1C
+		lsr		r1,#0x1C
+		cmp		r1,#0
+		beq		NextItem_LearningRing
 
-CheckIfLearningRingHasDurabilityUse:
-add		r2,r3,#1
-ldrb	r1,[r0,r2]
-lsl		r3,r1,#0x1C
-lsr		r3,#0x1C
-cmp		r3,#0
-beq		GoBack
+			ldrb	r1,[r4,r2]
+			lsr		r1,#4
+			ldr		r0,=LearningRingCycle
+			ldrb	r1,[r0,r1]
+			mov		r0,r6
+			sub		r0,#0x0A
+			cmp		r1,r0
+			bne		NextItem_LearningRing
 
-lsr		r1,#4
-ldr		r0,=LearningRingCycle
-ldrb	r1,[r0,r1]
-mov		r0,r6
-sub		r0,#10
-cmp		r1,r0
-bne		GoBack
+				add		r5,#100 @growth +100%
 
-add		r5,#100 @growth +100%
+				NextItem_LearningRing:
+				add		r3,#1
+				cmp		r3,#4
+				ble		LearningRingLoop
 
 GoBack:
 mov		r1,r8
